@@ -3,6 +3,8 @@ layout: default
 title: Home
 ---
 
+<img src="{{ site.baseurl }}/assets/images/heidelberg_placeholder.jpg" alt="Symbolbild Heidelberg oder Mathematik" style="width:100%; max-height: 300px; object-fit: cover; margin-bottom: 20px;">
+
 # AG Computational Arithmetic Geometry
 
 ### Prof. Dr. Gebhard Böckle
@@ -17,4 +19,8 @@ A more detailed survey of our activities can be found here and in the publicatio
 
 ---
 
-[Home](index.html) | [Research](research.html) | [Publications](publications.html) | [Teaching](teaching.html) | [Members](members.html) | [Links](links.html) | [Contact](contact.html) | [Interna](interna.html) 
+[Home]({{ "/" | relative_url }}) | [Research]({{ "research.html" | relative_url }}) | [Publications]({{ "publications.html" | relative_url }}) | [Teaching]({{ "teaching.html" | relative_url }}) | [Members]({{ "members.html" | relative_url }}) | [Links]({{ "links.html" | relative_url }}) | [Contact]({{ "contact.html" | relative_url }}) | [Interna]({{ "interna.html" | relative_url }})
+
+---
+
+[Zur Original-Webseite (typo.iwr.uni-heidelberg.de)](https://typo.iwr.uni-heidelberg.de/groups/arith-geom/) 

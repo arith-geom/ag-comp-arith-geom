@@ -20,6 +20,4 @@ Dieser Bereich ist passwortgeschützt.
   <div>
     <button type="submit">Anmelden</button>
   </div>
-</form>
-
-<small>Hinweis: Dies ist eine statische Webseite. Die Anmeldefunktion ist hier nur zur Veranschaulichung dargestellt und hat keine serverseitige Logik.</small> 
+</form> 

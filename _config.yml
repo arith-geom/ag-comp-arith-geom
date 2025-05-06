@@ -1,10 +1,11 @@
 title: AG Computational Arithmetic Geometry
 description: Website of the research group Computational Arithmetic Geometry at IWR, Heidelberg University
 email: arithgeo@iwr.uni-heidelberg.de
+author: Victor
 
 # GitHub Pages settings
 url: "https://Hausplayer31.github.io" # Your GitHub Pages URL
-baseurl: "/ag-comp-arith-geom" # The subpath of your site, e.g. /blog. Leave empty if you're using a custom domain or a user/organization page.
+baseurl: "/ag-comp-arith-geom" # The subpath of your site - RE-ENABLING FOR GITHUB PAGES
 
 # Build settings
 theme: jekyll-theme-minimal # This should be set by github-pages gem, but good to have
