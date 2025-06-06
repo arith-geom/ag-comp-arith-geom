@@ -3,16 +3,48 @@ description: Website of the research group Computational Arithmetic Geometry at 
 email: arithgeo@iwr.uni-heidelberg.de
 author: Victor
 
-# GitHub Pages settings
-url: "https://Hausplayer31.github.io" # Your GitHub Pages URL
-baseurl: "/ag-comp-arith-geom" # The subpath of your site - RE-ENABLING FOR GITHUB PAGES
+# Site settings
+url: "http://localhost:4000"
+baseurl: ""
+
+# al-folio settings
+navbar_fixed: true
+footer_fixed: true
+search_enabled: true
+max_width: 930px
+back_to_top: true
 
 # Build settings
-theme: jekyll-theme-minimal # This should be set by github-pages gem, but good to have
-
 plugins:
   - jekyll-feed
-  # - jekyll-seo-tag # github-pages includes this, usually no need to list explicitly
+  - jekyll-scholar
+  - jekyll-sitemap
+
+# Markdown and syntax highlight
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    css_class: "highlight"
+
+# Includes & excludes
+include: ["_pages"]
+exclude:
+  - vendor
+
+# Collections
+collections:
+  news:
+    output: true
+  projects:
+    output: true
+
+sass:
+  style: compressed
+
+# GitHub Pages settings
+# theme: jekyll-theme-minimal # This should be set by github-pages gem, but good to have
 
 # Define pages order for navigation if needed
 # navigation_pages:
