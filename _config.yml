@@ -1,58 +1,56 @@
+# Basic Jekyll Configuration for Phase 1
 title: AG Computational Arithmetic Geometry
-description: Website of the research group Computational Arithmetic Geometry at IWR, Heidelberg University
-email: arithgeo@iwr.uni-heidelberg.de
-author: Victor
-
-# Site settings
-url: "http://localhost:4000"
-baseurl: ""
-
-# al-folio settings
-navbar_fixed: true
-footer_fixed: true
-search_enabled: true
-max_width: 930px
-back_to_top: true
+email: placeholder@math.uni-heidelberg.de
+description: >- 
+  Placeholder research group description. This is placeholder text for the initial website phase.
+baseurl: "" 
+url: "https://placeholder-ag-comp-arith-geom.github.io"
+twitter_username: placeholder
+github_username: placeholder
 
 # Build settings
-plugins:
-  - jekyll-feed
-  - jekyll-scholar
-  - jekyll-sitemap
-
-# Markdown and syntax highlight
 markdown: kramdown
 highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    css_class: "highlight"
+permalink: pretty
+timezone: Europe/Berlin
 
-# Includes & excludes
-include: ["_pages"]
-exclude:
-  - vendor
+# Theme settings - Keep theme switcher for Phase 1
+theme_mode: auto
+enable_darkmode: true
+enable_theme_switcher: true
 
-# Collections
+# Basic collections
 collections:
-  news:
+  pages:
     output: true
-  projects:
-    output: true
+    permalink: /:name/
 
+# Basic plugins only
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .private/
+
+# Sass
 sass:
+  sass_dir: _sass
   style: compressed
 
-# GitHub Pages settings
-# theme: jekyll-theme-minimal # This should be set by github-pages gem, but good to have
-
-# Define pages order for navigation if needed
-# navigation_pages:
-#   - index.md
-#   - research.md
-#   - publications.md
-#   - teaching.md
-#   - members.md
-#   - links.md
-#   - contact.md 
-#   - interna.md 
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default" 

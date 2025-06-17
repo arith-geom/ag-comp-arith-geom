@@ -1,0 +1,236 @@
+/*******************************************************************************
+ * Theme 5: Ultra Minimal
+ * Bauhaus-inspired ultra-clean design
+ ******************************************************************************/
+
+:root {
+  --theme-primary: #000000;
+  --theme-secondary: #666666;
+  --theme-accent: #ff0000;
+  --theme-bg: #ffffff;
+  --theme-bg-secondary: #fafafa;
+  --theme-text: #000000;
+  --theme-text-light: #666666;
+  --theme-border: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --theme-primary: #ffffff;
+  --theme-secondary: #cccccc;
+  --theme-accent: #ff4444;
+  --theme-bg: #000000;
+  --theme-bg-secondary: #111111;
+  --theme-text: #ffffff;
+  --theme-text-light: #cccccc;
+  --theme-border: #333333;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--theme-bg);
+  color: var(--theme-text);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* Minimal Hero */
+.hero-section {
+  background: var(--theme-bg);
+  padding: 8rem 0;
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.hero-title {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 100;
+  font-size: 4rem;
+  color: var(--theme-text);
+  text-align: left;
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--theme-text-light);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Clean Navigation */
+.navbar {
+  background: var(--theme-bg) !important;
+  border-bottom: 1px solid var(--theme-border);
+  padding: 2rem 0;
+}
+
+.navbar-nav .nav-link {
+  color: var(--theme-text) !important;
+  font-weight: 300;
+  font-size: 0.8rem;
+  padding: 20px 30px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--theme-accent) !important;
+}
+
+/* Minimal Cards */
+.card {
+  border: 1px solid var(--theme-border);
+  border-radius: 0;
+  background: var(--theme-bg);
+  box-shadow: none;
+  margin-bottom: 4rem;
+}
+
+.card:hover {
+  border-color: var(--theme-accent);
+}
+
+.card-header {
+  background: var(--theme-bg);
+  border-bottom: 1px solid var(--theme-border);
+  padding: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.7rem;
+}
+
+/* Bauhaus Buttons */
+.btn {
+  border-radius: 0;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 20px 40px;
+  font-size: 0.7rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--theme-accent);
+  border: 1px solid var(--theme-accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--theme-accent);
+}
+
+/* Minimal Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+  color: var(--theme-text);
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+/* Profile Image */
+.profile-image {
+  border-radius: 0;
+  border: 1px solid var(--theme-border);
+  max-width: 150px;
+}
+
+/* Minimal Lists */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--theme-border);
+  font-weight: 300;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* Clean Links */
+a {
+  color: var(--theme-text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--theme-accent);
+  color: var(--theme-text);
+}
+
+/* Grid Layout */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.row {
+  margin-bottom: 6rem;
+}
+
+/* Minimal Spacing */
+.hero-section, .features-section, .quick-access-section {
+  padding: 6rem 0;
+}
+
+/* Typography Scale */
+p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--theme-text-light);
+}
+
+/* Minimal News/Research Items */
+.news-item, .research-item, .member-item {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--theme-border);
+  margin-bottom: 0;
+}
+
+.news-item:hover, .research-item:hover, .member-item:hover {
+  background: none;
+}
+
+/* Ultra-clean member avatars */
+.member-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  border: 1px solid var(--theme-border);
+}
+
+/* Minimal spacing for sections */
+.section-title {
+  font-size: 0.7rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 4rem;
+  color: var(--theme-text-light);
+} 

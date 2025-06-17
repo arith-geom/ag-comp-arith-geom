@@ -1,0 +1,221 @@
+/*******************************************************************************
+ * Theme 3: Dark Professional
+ * Sophisticated dark theme with neon accents
+ ******************************************************************************/
+
+:root {
+  --theme-primary: #00ff88;
+  --theme-secondary: #00d4ff;
+  --theme-accent: #ff0080;
+  --theme-bg: #0a0a0a;
+  --theme-bg-secondary: #1a1a1a;
+  --theme-text: #ffffff;
+  --theme-text-light: #b0b0b0;
+  --theme-border: #333333;
+}
+
+[data-theme="dark"] {
+  --theme-primary: #00ff88;
+  --theme-secondary: #00d4ff;
+  --theme-accent: #ff0080;
+  --theme-bg: #0a0a0a;
+  --theme-bg-secondary: #1a1a1a;
+  --theme-text: #ffffff;
+  --theme-text-light: #b0b0b0;
+  --theme-border: #333333;
+}
+
+body {
+  font-family: 'SF Mono', 'Monaco', 'Cascadia Code', monospace;
+  background: var(--theme-bg);
+  color: var(--theme-text);
+  line-height: 1.6;
+}
+
+/* Cyberpunk Hero */
+.hero-section {
+  background: linear-gradient(45deg, #0a0a0a 0%, #1a0a1a 50%, #0a1a0a 100%);
+  padding: 5rem 0;
+  position: relative;
+  border-bottom: 2px solid var(--theme-primary);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 98px,
+    rgba(0, 255, 136, 0.03) 100px
+  );
+}
+
+.hero-title {
+  font-family: 'SF Mono', monospace;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: var(--theme-primary);
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--theme-secondary);
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+/* Futuristic Navigation */
+.navbar {
+  background: rgba(10, 10, 10, 0.95) !important;
+  border-bottom: 1px solid var(--theme-primary);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-nav .nav-link {
+  color: var(--theme-text) !important;
+  font-family: monospace;
+  font-weight: 500;
+  padding: 10px 20px !important;
+  border: 1px solid transparent;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--theme-primary) !important;
+  border-color: var(--theme-primary);
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+/* Neon Cards */
+.card {
+  background: var(--theme-bg-secondary);
+  border: 1px solid var(--theme-border);
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.3);
+}
+
+.card-header {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+  border-bottom: 1px solid var(--theme-primary);
+  color: var(--theme-primary);
+  font-family: monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Cyberpunk Buttons */
+.btn {
+  font-family: monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 12px 30px;
+  border: 2px solid var(--theme-primary);
+  background: transparent;
+  color: var(--theme-primary);
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  border-color: var(--theme-primary);
+  color: var(--theme-primary);
+}
+
+.btn-primary:hover {
+  background: var(--theme-primary);
+  color: #000000;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+  text-shadow: none;
+}
+
+/* Terminal Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--theme-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2 {
+  border-left: 4px solid var(--theme-secondary);
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  color: var(--theme-secondary);
+}
+
+h2::before {
+  content: '> ';
+  color: var(--theme-accent);
+}
+
+/* Profile Image */
+.profile-image {
+  border: 3px solid var(--theme-primary);
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+}
+
+/* Terminal Lists */
+ul {
+  list-style: none;
+  padding-left: 0;
+  font-family: monospace;
+}
+
+li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+li::before {
+  content: '$ ';
+  position: absolute;
+  left: 0;
+  color: var(--theme-secondary);
+  font-weight: bold;
+}
+
+/* Glowing Links */
+a {
+  color: var(--theme-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--theme-primary);
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+}
+
+/* Code blocks */
+code, pre {
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid var(--theme-primary);
+  color: var(--theme-primary);
+  font-family: monospace;
+}
+
+/* Selection */
+::selection {
+  background: var(--theme-primary);
+  color: #000000;
+} 

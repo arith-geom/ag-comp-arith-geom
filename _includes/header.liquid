@@ -1,150 +1,142 @@
 <header>
-  <!-- Nav Bar -->
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
-    <div class="container">
-      {% if page.permalink != '/' %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-          {% if site.title == 'blank' %}
-            {% if site.first_name %}
-              <span class="font-weight-bold">
-                {{- site.first_name -}}
-              </span>
-            {% endif %}
-            {% if site.middle_name %}
-              {{- site.middle_name -}}
-            {% endif %}
-            {% if site.last_name %}
-              {{- site.last_name -}}
-            {% endif %}
-          {% else %}
-            {{- site.title -}}
-          {% endif %}
+  <!-- Simple Navigation Bar for Phase 1 -->
+  <nav id="navbar" class="navbar heidelberg-navbar navbar-expand-lg sticky-top" role="navigation">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ site.baseurl }}/">
+          <div class="brand-icon me-2">
+            <div class="bg-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+              <i class="fas fa-infinity text-primary"></i>
+            </div>
+          </div>
+          <div class="brand-text">
+            <div class="fw-bold text-white">Placeholder Research Group</div>
+            <small class="text-white-50 d-none d-md-block">Placeholder University</small>
+          </div>
         </a>
-      {% elsif site.enable_navbar_social %}
-        <!-- Social Icons -->
-        <div class="navbar-brand social">{% include social.liquid %}</div>
-      {% endif %}
+
       <!-- Navbar Toggle -->
       <button
-        class="navbar-toggler collapsed ml-auto"
+        class="navbar-toggler"
         type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar top-bar"></span>
-        <span class="icon-bar middle-bar"></span>
-        <span class="icon-bar bottom-bar"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap">
-          {% for page in site.pages %}
-            {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
-          {% endfor %}
-
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto flex-nowrap align-items-center">
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- about_title }}
-              {% if page.permalink == '/' %}
-                <span class="sr-only">(current)</span>
-              {% endif %}
+            <a class="nav-link text-white" href="{{ '/' | relative_url }}">
+              <i class="fas fa-home me-1"></i>
+              About
             </a>
           </li>
 
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
-            {% if p.nav and p.autogen == null %}
-              {% if p.dropdown %}
-                {% assign has_active_child = false %}
-                {% for child in p.children %}
-                  {% if page.title == child.title %}
-                    {% assign has_active_child = true %}
+            {% if p.nav and p.autogen == null and p.permalink != '/' %}
+              <li class="nav-item {% if page.url == p.url %}active{% endif %}">
+                <a class="nav-link text-white" href="{{ p.url | relative_url }}">
+                  {% if p.title == 'Research' %}
+                    <i class="fas fa-microscope me-1"></i>
+                  {% elsif p.title == 'Publications' %}
+                    <i class="fas fa-file-alt me-1"></i>
+                  {% elsif p.title == 'Teaching' %}
+                    <i class="fas fa-chalkboard-teacher me-1"></i>
+                  {% elsif p.title == 'Members' %}
+                    <i class="fas fa-users me-1"></i>
+                  {% elsif p.title == 'Links' %}
+                    <i class="fas fa-link me-1"></i>
+                  {% elsif p.title == 'Contact' %}
+                    <i class="fas fa-envelope me-1"></i>
+                  {% else %}
+                    <i class="fas fa-circle me-1" style="font-size: 0.5rem;"></i>
                   {% endif %}
-                {% endfor %}
-                <li class="nav-item dropdown {% if page.title == p.title or has_active_child %}active{% endif %}">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    {{- p.title }}
-                    {% if page.title == p.title or has_active_child %}
-                      <span class="sr-only">(current)</span>
-                    {% endif %}
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    {% for child in p.children %}
-                      {% if child.title == 'divider' %}
-                        <div class="dropdown-divider"></div>
-                      {% else %}
-                        <a
-                          class="dropdown-item {% if page.title == child.title %}active{% endif %}"
-                          href="{% if child.permalink contains '://' %}{{ child.permalink }}{% else %}{{ child.permalink | relative_url }}{% endif %}"
-                        >
-                          {{- child.title -}}
-                        </a>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                </li>
-              {% else %}
-                {% assign parent_link = p.permalink | remove: 'index.html' %}
-                <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
-                  {%- if p.permalink contains '://' -%}
-                    {%- assign url = p.permalink -%}
-                  {%- elsif p.permalink contains '/blog/' -%}
-                    {%- assign url = '/blog/' -%}
-                  {%- else -%}
-                    {%- assign url = p.url -%}
-                  {%- endif %}
-                  <a class="nav-link" href="{{ url | relative_url }}">
-                    {{- p.title }}
-                    {% if page.url contains p.url %}
-                      <span class="sr-only">(current)</span>
-                    {% endif %}
-                  </a>
-                </li>
-              {% endif %}
+                  {{ p.title }}
+                </a>
+              </li>
             {% endif %}
           {% endfor %}
-          {% if site.search_enabled %}
-            <!-- Search -->
+
+          <!-- Theme Switcher -->
+          {% if site.enable_theme_switcher %}
             <li class="nav-item">
-              <button id="search-toggle" title="Search" onclick="openSearchModal()">
-                <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
-              </button>
-            </li>
-          {% endif %}
-          {% if site.enable_darkmode %}
-            <!-- Toogle theme mode -->
-            <li class="toggle-container">
-              <button id="light-toggle" title="Change theme">
-                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
-                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
-                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
-              </button>
+              <div class="theme-switcher-container">
+                <button id="theme-toggle" class="btn btn-outline-light btn-sm" title="Switch Theme">
+                  <i class="fas fa-palette"></i>
+                </button>
+              </div>
             </li>
           {% endif %}
         </ul>
       </div>
     </div>
   </nav>
-  {% if site.enable_progressbar %}
-    <!-- Scrolling Progress Bar -->
-    <progress id="progress" value="0">
-      <div class="progress-container">
-        <span class="progress-bar"></span>
-      </div>
-    </progress>
-  {% endif %}
 </header>
+
+<style>
+/* Simple Navbar Styles for Phase 1 */
+.heidelberg-navbar {
+  background-color: #C22032 !important;
+  border-bottom: 2px solid #991B1B;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.heidelberg-navbar .navbar-brand {
+  color: white !important;
+  font-weight: 700;
+}
+
+.heidelberg-navbar .navbar-brand:hover {
+  color: #FEE2E2 !important;
+}
+
+.heidelberg-navbar .nav-link {
+  color: rgba(255,255,255,0.9) !important;
+  font-weight: 500;
+  padding: 0.75rem 1rem !important;
+  margin: 0 0.25rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.heidelberg-navbar .nav-link:hover {
+  color: white !important;
+  background-color: rgba(255,255,255,0.1);
+}
+
+.heidelberg-navbar .nav-link.active,
+.heidelberg-navbar .nav-item.active .nav-link {
+  color: white !important;
+  background-color: #991B1B;
+  font-weight: 600;
+}
+
+.heidelberg-navbar .navbar-toggler {
+  border-color: rgba(255,255,255,0.3);
+}
+
+.heidelberg-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.theme-switcher-container {
+  position: relative;
+}
+
+#theme-toggle {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+}
+
+#theme-toggle:hover {
+  background-color: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+}
+</style>

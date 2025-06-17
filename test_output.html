@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="de">
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Metadata, OpenGraph and Schema.org -->
+
+
+
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+  
+  
+    AG Computergestützte Arithmetische Geometrie
+  
+</title>
+<meta name="author" content="Prof. Dr. Gebhard Böckle">
+<meta name="description" content="Forschungsgruppe " computergest arithmetische geometrie am interdisziplin zentrum f wissenschaftliches rechnen universit heidelberg. fokus auf galois-darstellungen modulformen elliptische kurven deformationstheorie und funktionenk>
+
+  <meta name="keywords" content="arithmetische geometrie, galois darstellungen, modulformen, computergestützte mathematik">
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap & MDB -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="" integrity="" crossorigin="anonymous">
+
+
+
+<!-- Fonts & Icons -->
+<link defer rel="stylesheet" href="/assets/css/academicons.min.css">
+<link defer rel="stylesheet" href="/assets/css/scholar-icons.css">
+<link defer rel="stylesheet" type="text/css" href="">
+
+<!-- Code Syntax Highlighting -->
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css" media="" id="highlight_theme_light">
+
+
+
+<!-- Styles -->
+
+
+
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/modern-ag.css">
+<link rel="canonical" href="http://0.0.0.0:4001/">
+
+<!-- Theme Color for Mobile Browsers -->
+<meta name="theme-color" content="#C22032" id="theme-color-meta">
+
+<!-- Enhanced Meta Tags -->
+<meta name="application-name" content="AG Computational Arithmetic Geometry">
+<meta name="msapplication-TileColor" content="#C22032">
+
+<!-- Dark Mode -->
+<script src="/assets/js/theme.js"></script>
+
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css" media="none" id="highlight_theme_dark">
+  <script>
+    initTheme();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header>
+  <!-- Fixed Red Navigation Bar -->
+  <nav id="navbar" class="navbar heidelberg-navbar navbar-expand-lg fixed-top" role="navigation">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
+          <div class="brand-icon me-2">
+            <div class="bg-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+              <i class="fas fa-infinity text-primary"></i>
+            </div>
+          </div>
+          <div class="brand-text">
+            <div class="fw-bold text-white">AG Computational Arithmetic Geometry</div>
+            <small class="text-white-50 d-none d-md-block">IWR Heidelberg University</small>
+          </div>
+        </a>
+
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto flex-nowrap align-items-center">
+          
+
+          <!-- About -->
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="/">
+              <i class="fas fa-home me-1"></i>about
+              
+                <span class="sr-only">(current)</span>
+              
+            </a>
+          </li>
+
+          <!-- Other pages -->
+          
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link text-white" href="/research/">
+                    
+                      <i class="fas fa-microscope me-1"></i>
+                    Forschung
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link text-white" href="/mitglieder/">
+                    
+                      <i class="fas fa-users me-1"></i>
+                    Mitglieder
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link text-white" href="/publications/">
+                    
+                      <i class="fas fa-file-alt me-1"></i>
+                    Publikationen
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link text-white" href="/teaching/">
+                    
+                      <i class="fas fa-chalkboard-teacher me-1"></i>
+                    Lehre
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link text-white" href="/links/">
+                    
+                      <i class="fas fa-link me-1"></i>
+                    links
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link text-white" href="/contact/">
+                    
+                      <i class="fas fa-envelope me-1"></i>
+                    Kontakt
+                    
+                  </a>
+                </li>
+              
+            
+          
+
+          <!-- Language Switcher -->
+          <li class="nav-item">
+            <!-- Language Switcher Component -->
+<div class="language-switcher dropdown">
+  <button class="btn btn-sm btn-glass dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fas fa-globe me-1"></i>
+    
+      <span class="d-none d-md-inline">Deutsch</span>
+      <span class="d-md-none">DE</span>
+    
+  </button>
+  <ul class="dropdown-menu glass-card dropdown-menu-end" aria-labelledby="languageDropdown">
+    
+    
+      
+        <li>
+          <span class="dropdown-item active">
+            
+              <i class="fas fa-flag-de me-2"></i>Deutsch
+            
+            <i class="fas fa-check ms-auto text-success"></i>
+          </span>
+        </li>
+      
+    
+      
+        <li>
+          <a class="dropdown-item" href="/en/">
+            
+              <i class="fas fa-flag-us me-2"></i>English
+            
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+<style>
+.language-switcher .dropdown-toggle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  min-width: 70px;
+}
+
+.language-switcher .dropdown-menu {
+  min-width: 120px;
+  font-size: 0.875rem;
+}
+
+.language-switcher .dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  transition: all var(--transition-fast);
+}
+
+.language-switcher .dropdown-item:hover {
+  background: var(--bg-secondary);
+  color: var(--heidelberg-red);
+}
+
+.language-switcher .dropdown-item.active {
+  background: var(--primary-50);
+  color: var(--heidelberg-red);
+  font-weight: 500;
+}
+
+[data-theme="dark"] .language-switcher .dropdown-item.active {
+  background: rgba(196, 32, 50, 0.2);
+  color: #FCA5A5;
+}
+
+@media (max-width: 768px) {
+  .language-switcher .dropdown-toggle {
+    min-width: 50px;
+  }
+}
+</style> 
+          </li>
+
+          <!-- Search -->
+          
+            <li class="nav-item">
+              <button id="search-toggle" class="btn btn-outline-light btn-sm" title="Search">
+                <i class="fas fa-search"></i>
+                <span class="d-none d-lg-inline ms-1">Suchen</span>
+              </button>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+    <!-- Progress Bar -->
+    <progress id="progress" value="0" class="progress-bar-modern">
+      <div class="progress-container">
+        <span class="progress-bar bg-primary"></span>
+      </div>
+    </progress>
+  
+</header>
+
+<style>
+/* Heidelberg Red Navbar - Always Red Background */
+.heidelberg-navbar {
+  background-color: #C22032 !important;
+  border-bottom: 3px solid #991B1B;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1030;
+}
+
+.heidelberg-navbar .navbar-brand {
+  color: white !important;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.heidelberg-navbar .navbar-brand:hover {
+  color: #FEE2E2 !important;
+  transform: scale(1.02);
+}
+
+.heidelberg-navbar .nav-link {
+  color: rgba(255,255,255,0.9) !important;
+  font-weight: 500;
+  padding: 0.75rem 1rem !important;
+  margin: 0 0.25rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.heidelberg-navbar .nav-link:hover {
+  color: white !important;
+  background-color: rgba(255,255,255,0.1);
+  transform: translateY(-1px);
+}
+
+.heidelberg-navbar .nav-link.active,
+.heidelberg-navbar .nav-item.active .nav-link {
+  color: white !important;
+  background-color: #991B1B;
+  font-weight: 600;
+}
+
+.heidelberg-navbar .navbar-toggler {
+  border-color: rgba(255,255,255,0.3);
+  color: white;
+}
+
+.heidelberg-navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.25);
+}
+
+.heidelberg-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.heidelberg-navbar .btn-outline-light {
+  border-color: rgba(255,255,255,0.5);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.heidelberg-navbar .btn-outline-light:hover {
+  background-color: white;
+  color: #C22032;
+  transform: translateY(-1px);
+}
+
+.heidelberg-navbar .btn-outline-light:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.25);
+}
+
+.heidelberg-navbar .dropdown-menu {
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.heidelberg-navbar .dropdown-item {
+  color: #333;
+}
+
+.heidelberg-navbar .dropdown-item:hover {
+  background-color: #FEE2E2;
+  color: #C22032;
+}
+
+/* REMOVE ALL DROPDOWN ARROWS */
+.navbar .dropdown-toggle::after,
+.navbar .nav-link::after,
+.nav-item.dropdown .nav-link::after,
+.navbar-nav .dropdown-toggle::after,
+.navbar-nav .nav-link[data-bs-toggle="dropdown"]::after,
+.heidelberg-navbar .dropdown-toggle::after,
+.heidelberg-navbar .nav-link.dropdown-toggle::after {
+  display: none !important;
+  border: none !important;
+  content: none !important;
+}
+
+/* Text colors to ensure visibility */
+.brand-text .fw-bold {
+  color: white !important;
+}
+
+.brand-text small {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* Progress bar styling */
+.progress-bar-modern {
+  height: 3px;
+  background-color: rgba(255,255,255,0.2);
+  border: none;
+  appearance: none;
+}
+
+.progress-bar-modern::-webkit-progress-bar {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.progress-bar-modern::-webkit-progress-value {
+  background-color: white;
+}
+
+/* Dark mode support */
+[data-theme="dark"] .heidelberg-navbar {
+  background-color: rgba(194, 32, 50, 0.95) !important;
+  border-bottom: 3px solid #7F1D1D;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .heidelberg-navbar .navbar-nav {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .heidelberg-navbar .nav-link {
+    margin: 0.25rem 0;
+    padding: 0.75rem 1rem !important;
+    border-radius: 0.5rem;
+  }
+  
+  .heidelberg-navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Show brand subtitle on collapsed view */
+  .brand-text .d-none.d-md-block {
+    display: block !important;
+    font-size: 0.75rem;
+  }
+  
+  /* Mobile dropdown styling */
+  .heidelberg-navbar .dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Mobile search and theme buttons */
+  .heidelberg-navbar .btn-outline-light {
+    width: 100%;
+    margin: 0.25rem 0;
+    justify-content: flex-start;
+  }
+  
+  .heidelberg-navbar .btn-outline-light .d-none.d-lg-inline {
+    display: inline !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .heidelberg-navbar .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .brand-text > div {
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+  
+  .brand-text small {
+    font-size: 0.7rem;
+  }
+  
+  .brand-icon .bg-white {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  
+  .brand-icon .fas {
+    font-size: 0.8rem;
+  }
+  
+  /* Improve navbar toggle button */
+  .navbar-toggler {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+  }
+}
+
+@media (max-width: 576px) {
+  .heidelberg-navbar .container-fluid {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .brand-text > div {
+    font-size: 0.8rem;
+  }
+  
+  .brand-text small {
+    font-size: 0.65rem;
+  }
+  
+  .brand-icon .bg-white {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  .brand-icon .fas {
+    font-size: 0.75rem;
+  }
+  
+  /* Compact navbar on very small screens */
+  .heidelberg-navbar {
+    padding: 0.5rem 0;
+  }
+  
+  .heidelberg-navbar .navbar-nav {
+    padding: 0.75rem;
+  }
+  
+  .heidelberg-navbar .nav-link {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand-text > div {
+    font-size: 0.75rem;
+  }
+  
+  .brand-text small {
+    display: none;
+  }
+  
+  .brand-icon .bg-white {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  .heidelberg-navbar .navbar-nav {
+    padding: 0.5rem;
+  }
+}
+
+/* Navbar scroll effect */
+.navbar-scrolled {
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(255, 69, 0, 0.15) !important;
+}
+
+/* Animation for fade-in on load */
+@keyframes navbarFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heidelberg-navbar {
+  animation: navbarFadeIn 0.6s ease;
+}
+</style>
+
+<script>
+// Search button functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const searchButton = document.getElementById('search-toggle');
+  if (searchButton) {
+    searchButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      const ninjaKeys = document.querySelector("ninja-keys");
+      if (ninjaKeys) {
+        // Close mobile navbar if open
+        const navbarCollapse = document.getElementById('navbarNav');
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+          bsCollapse.hide();
+        }
+        ninjaKeys.open();
+      }
+    });
+  }
+});
+</script>
+
+
+    <!-- Content -->
+    <div class="container mt-5" role="main" id="main-content">
+      <div class="content-wrapper page-content">
+        
+          <div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+        AG Computergestützte Arithmetische Geometrie
+      
+    </h1>
+    <p class="desc">AG Computational Arithmetic Geometry, IWR Heidelberg University</p>
+  </header>
+
+  <article>
+    
+      <div class="profile float-right">
+        
+          
+          
+          
+          
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/placeholder.jpg" class="img-fluid z-depth-1
+      rounded" width="100%" height="auto" alt="placeholder.jpg" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+</figure>
+
+        
+        
+          <div class="more-info">
+<p>IWR Heidelberg University</p> <p>Computational Arithmetic Geometry</p> <p>Heidelberg, Germany</p>
+</div>
+        
+      </div>
+    
+
+    <div class="clearfix">
+<!-- Clean Hero Section -->
+<section class="hero-section py-5 my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="hero-content text-center">
+                    <h1 class="hero-title display-3 fw-bold mb-4">
+                        Computational <span>Arithmetic Geometry</span>
+                    </h1>
+                    <p class="hero-subtitle fs-4 mb-4 mx-auto">
+                        Forschungsgruppe am Interdisziplinären Zentrum für Wissenschaftliches Rechnen (IWR)<br>
+                        <strong>Universität Heidelberg</strong>
+                    </p>
+                    <div class="hero-description-container mx-auto mb-5">
+                        <p class="hero-description fs-5 lh-lg">
+                            Wir entwickeln und verwenden computergestützte Methoden zur Lösung von Problemen in der arithmetischen Geometrie, algebraischen Zahlentheorie und verwandten Gebieten. Unser Fokus liegt auf <strong>Galois-Darstellungen</strong>, <strong>Modulformen</strong>, <strong>elliptischen Kurven</strong> und <strong>Funktionenkörperarithmetik</strong>.
+                        </p>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                        <a href="/research/" class="btn btn-primary btn-lg px-4 py-3">
+                            <i class="fas fa-microscope me-2"></i>Forschung entdecken
+                        </a>
+                        <a href="/members/" class="btn btn-outline-primary btn-lg px-4 py-3">
+                            <i class="fas fa-users me-2"></i>Unser Team
+                        </a>
+                        <a href="/publications/" class="btn btn-outline-secondary btn-lg px-4 py-3">
+                            <i class="fas fa-file-alt me-2"></i>Publikationen
+                        </a>
+            </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Clean Feature Section - No Background Color -->
+<section class="features-section py-5">
+        <div class="container">
+        <div class="row g-4">
+            <!-- News Column -->
+            <div class="col-lg-4">
+                <div class="feature-card card h-100 border shadow-sm">
+                    <div class="card-header bg-primary text-white border-0">
+                        <h5 class="mb-0 fw-semibold">
+                            <i class="fas fa-newspaper me-2"></i>Neuigkeiten
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="news-preview">
+                            
+                            <div class="news-item mb-3 pb-3 border-bottom">
+                                <h6 class="news-title">
+                                    <a href="/nachrichten/announcement_4/" class="text-decoration-none">
+                                        Promotionsstellen verfügbar
+                                    </a>
+                                </h6>
+                                <small class="text-muted">10.03.2024</small>
+                                
+                                <p class="small mt-2">Wir haben mehrere Promotionsstellen in computergestützter arithmetischer Geometrie zu besetzen. I...</p>
+                                
+                            </div>
+                            
+                            <div class="news-item mb-3 pb-3 border-bottom">
+                                <h6 class="news-title">
+                                    <a href="/nachrichten/announcement_3/" class="text-decoration-none">
+                                        Neue Publikation über Galois-Darstellungen
+                                    </a>
+                                </h6>
+                                <small class="text-muted">20.04.2024</small>
+                                
+                                <p class="small mt-2">Unser neuester Artikel über computergestützte Methoden zur Berechnung von Galois-Darstellungen wu...</p>
+                                
+                            </div>
+                            
+                            <div class="news-item mb-3 pb-3 border-bottom">
+                                <h6 class="news-title">
+                                    <a href="/nachrichten/announcement_2/" class="text-decoration-none">
+                                        Workshop zu L-Funktionen angekündigt
+                                    </a>
+                                </h6>
+                                <small class="text-muted">15.05.2024</small>
+                                
+                                <p class="small mt-2">Wir organisieren einen Workshop über computergestützte Aspekte von L-Funktionen für Frühjahr 2025...</p>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="/news/" class="btn btn-sm btn-outline-primary">
+                                Alle Neuigkeiten
+                            </a>
+                        </div>
+        </div>
+                </div>
+            </div>
+
+            <!-- Research Column -->
+            <div class="col-lg-4">
+                <div class="feature-card card h-100 border shadow-sm">
+                    <div class="card-header bg-success text-white border-0">
+                        <h5 class="mb-0 fw-semibold">
+                            <i class="fas fa-microscope me-2"></i>Forschung
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="research-highlights">
+                            <div class="research-item mb-3">
+                                <h6 class="text-primary fw-semibold">Galois-Darstellungen</h6>
+                                <p class="small text-muted mb-2">Deformationstheorie und Beziehungen zu Modulformen</p>
+                            </div>
+                            <div class="research-item mb-3">
+                                <h6 class="text-primary fw-semibold">Drinfeld-Modulvarietäten</h6>
+                                <p class="small text-muted mb-2">Funktionenkörperarithmetik und L-Funktionen</p>
+                            </div>
+                            <div class="research-item mb-3">
+                                <h6 class="text-primary fw-semibold">Computeralgebra</h6>
+                                <p class="small text-muted mb-2">Algorithmenentwicklung und Implementierung</p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="/research/" class="btn btn-sm btn-outline-success">
+                                Mehr erfahren
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Members Column -->
+            <div class="col-lg-4">
+                <div class="feature-card card h-100 border shadow-sm">
+                    <div class="card-header bg-info text-white border-0">
+                        <h5 class="mb-0 fw-semibold">
+                            <i class="fas fa-users me-2"></i>Team
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="team-preview">
+                            <div class="member-item mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="member-avatar me-3">
+                                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-user-tie text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0 fw-semibold">Prof. Dr. Gebhard Böckle</h6>
+                                        <small class="text-muted">Gruppenleiter</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-item mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="member-avatar me-3">
+                                        <div class="bg-info rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-user-graduate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0 fw-semibold">Dr. Andrea Conti</h6>
+                                        <small class="text-muted">Postdoc</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-item mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="member-avatar me-3">
+                                        <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-user-graduate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0 fw-semibold">Dr. Giacomo Hermes Ferraro</h6>
+                                        <small class="text-muted">Postdoc</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="/members/" class="btn btn-sm btn-outline-info">
+                                Alle Mitglieder
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Quick Access Section -->
+<section class="quick-access-section py-5">
+        <div class="container">
+        <div class="row text-center">
+            <div class="col-12 mb-4">
+                <h2 class="section-title fw-semibold">Schnellzugriff</h2>
+                <p class="text-muted">Direkter Zugang zu unseren wichtigsten Bereichen</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3 col-sm-6">
+                <a href="/teaching/" class="quick-access-card text-decoration-none">
+                    <div class="card border shadow-sm h-100 text-center">
+                        <div class="card-body py-4">
+                            <div class="quick-access-icon mb-3">
+                                <i class="fas fa-chalkboard-teacher fa-3x text-warning"></i>
+                            </div>
+                            <h5 class="card-title fw-semibold">Lehre</h5>
+                            <p class="card-text text-muted">Aktuelle Kurse und Lehrveranstaltungen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="/publications/" class="quick-access-card text-decoration-none">
+                    <div class="card border shadow-sm h-100 text-center">
+                        <div class="card-body py-4">
+                            <div class="quick-access-icon mb-3">
+                                <i class="fas fa-file-alt fa-3x text-info"></i>
+                            </div>
+                            <h5 class="card-title fw-semibold">Publikationen</h5>
+                            <p class="card-text text-muted">Forschungsergebnisse und Veröffentlichungen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="/links/" class="quick-access-card text-decoration-none">
+                    <div class="card border shadow-sm h-100 text-center">
+                        <div class="card-body py-4">
+                            <div class="quick-access-icon mb-3">
+                                <i class="fas fa-link fa-3x text-success"></i>
+                            </div>
+                            <h5 class="card-title fw-semibold">Links</h5>
+                            <p class="card-text text-muted">Nützliche Ressourcen und Werkzeuge</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="/contact/" class="quick-access-card text-decoration-none">
+                    <div class="card border shadow-sm h-100 text-center">
+                        <div class="card-body py-4">
+                            <div class="quick-access-icon mb-3">
+                                <i class="fas fa-envelope fa-3x text-danger"></i>
+                            </div>
+                            <h5 class="card-title fw-semibold">Kontakt</h5>
+                            <p class="card-text text-muted">Kontaktinformationen und Anfahrt</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+<p>&lt;/body&gt;
+&lt;/html&gt;</p>
+
+<hr>
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+<strong>Navigation:</strong> <a href="/">Home</a>
+</td>
+      <td><a href="/research/">Research</a></td>
+      <td><a href="/publications/">Publications</a></td>
+      <td><a href="/teaching/">Teaching</a></td>
+      <td><a href="/members/">Members</a></td>
+      <td><a href="/links/">Links</a></td>
+      <td><a href="/contact/">Contact</a></td>
+      <td><a href="/interna/">Interna</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<p><strong>Official Website:</strong> Visit our <a href="https://typo.iwr.uni-heidelberg.de/groups/arith-geom/" rel="external nofollow noopener" target="_blank">original website</a> at typo.iwr.uni-heidelberg.de</p>
+
+<p><strong>Contact:</strong> For inquiries, please contact <a href="mailto:arithgeo@iwr.uni-heidelberg.de">arithgeo@iwr.uni-heidelberg.de</a></p>
+</div>
+
+    <!-- News -->
+    
+
+    <!-- Latest posts -->
+    
+
+    <!-- Selected papers -->
+    
+
+    <!-- Social -->
+    
+      <div class="social">
+        <div class="contact-icons">
+</div>
+
+        <div class="contact-note"></div>
+      </div>
+    
+
+    
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+
+    <!-- Footer -->
+    
+
+
+  <footer class="fixed-bottom" role="contentinfo">
+    <div class="container mt-0">
+      
+  © Copyright 2025
+  Prof. Dr. Gebhard
+  
+  Böckle. Erstellt mit <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> und <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> Theme. Gehostet auf <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.
+
+  
+  
+
+    </div>
+  </footer>
+
+
+
+    <!-- Floating Theme Switcher -->
+    <!-- Floating Theme Controls -->
+
+<div id="floating-controls" class="floating-controls">
+  <!-- Dark/Light Mode Toggle -->
+  <button id="dark-mode-toggle" class="floating-control-btn dark-mode-btn" title="Toggle Dark/Light Mode">
+    <i class="fas fa-moon" id="dark-mode-icon"></i>
+  </button>
+  
+  <!-- Theme Switcher -->
+  <button id="floating-theme-toggle" class="floating-control-btn theme-switcher-btn" title="Change Theme">
+    <i class="fas fa-palette" id="floating-theme-icon"></i>
+  </button>
+  
+  <!-- Theme Options Panel -->
+  <div id="theme-options-panel" class="theme-options-panel">
+    <div class="theme-option" data-theme="modern-ag" data-css="">
+      <div class="theme-preview theme-preview-red"></div>
+      <span>Modern AG</span>
+    </div>
+    <div class="theme-option" data-theme="classic" data-css="/assets/css/theme-1-classic.css">
+      <div class="theme-preview theme-preview-classic"></div>
+      <span>Classic</span>
+    </div>
+    <div class="theme-option" data-theme="modern" data-css="/assets/css/theme-2-modern.css">
+      <div class="theme-preview theme-preview-modern"></div>
+      <span>Modern</span>
+    </div>
+    <div class="theme-option" data-theme="dark" data-css="/assets/css/theme-3-dark.css">
+      <div class="theme-preview theme-preview-dark"></div>
+      <span>Dark</span>
+    </div>
+    <div class="theme-option" data-theme="pastel" data-css="/assets/css/theme-4-pastel.css">
+      <div class="theme-preview theme-preview-pastel"></div>
+      <span>Pastel</span>
+    </div>
+    <div class="theme-option" data-theme="minimal" data-css="/assets/css/theme-5-minimal.css">
+      <div class="theme-preview theme-preview-minimal"></div>
+      <span>Minimal</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.floating-controls {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.floating-control-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode-btn {
+  background: var(--neutral-900, #171717);
+  color: var(--neutral-50, #fafafa);
+}
+
+.dark-mode-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background: var(--neutral-800, #262626);
+}
+
+.theme-switcher-btn {
+  background: var(--primary, #dc2626);
+  color: white;
+}
+
+.theme-switcher-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+  background: var(--red-700, #b91c1c);
+}
+
+.theme-options-panel {
+  position: absolute;
+  bottom: 0;
+  left: 75px;
+  background: var(--card, #ffffff);
+  border: 1px solid var(--border, #e5e5e5);
+  border-radius: var(--radius, 0.5rem);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.theme-options-panel.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: calc(var(--radius, 0.5rem) - 2px);
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.theme-option:hover {
+  background: var(--muted, #f5f5f5);
+}
+
+.theme-option.active {
+  background: var(--red-50, #fef2f2);
+  border-color: var(--primary, #dc2626);
+}
+
+.theme-preview {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--border, #e5e5e5);
+}
+
+.theme-preview-red {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+}
+
+.theme-preview-classic {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.theme-preview-modern {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.theme-preview-dark {
+  background: linear-gradient(135deg, #374151, #111827);
+}
+
+.theme-preview-pastel {
+  background: linear-gradient(135deg, #f472b6, #ec4899);
+}
+
+.theme-preview-minimal {
+  background: linear-gradient(135deg, #6b7280, #374151);
+}
+
+/* Dark mode styles */
+body.dark-mode .theme-options-panel,
+[data-theme="dark"] .theme-options-panel {
+  background: var(--neutral-900, #171717);
+  border-color: var(--neutral-700, #404040);
+  color: var(--neutral-50, #fafafa);
+}
+
+body.dark-mode .theme-option:hover,
+[data-theme="dark"] .theme-option:hover {
+  background: var(--neutral-800, #262626);
+}
+
+body.dark-mode .theme-option.active,
+[data-theme="dark"] .theme-option.active {
+  background: var(--red-950, #450a0a);
+  border-color: var(--red-600, #dc2626);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .floating-controls {
+    bottom: 1rem;
+    left: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .floating-control-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+  
+  .theme-options-panel {
+    min-width: 180px;
+    left: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-controls {
+    bottom: 0.75rem;
+    left: 0.75rem;
+  }
+  
+  .floating-control-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 0.9rem;
+  }
+  
+  .theme-options-panel {
+    min-width: 160px;
+    padding: 0.75rem;
+    left: 55px;
+  }
+  
+  .theme-option {
+    padding: 0.5rem;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .theme-preview {
+    width: 20px;
+    height: 20px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let themeStylesheet = null;
+  let isDarkMode = localStorage.getItem('darkMode') === 'true';
+  
+  // Initialize dark mode
+  function initDarkMode() {
+    const body = document.body;
+    const html = document.documentElement;
+    const icon = document.getElementById('dark-mode-icon');
+    
+    console.log('Initializing dark mode:', isDarkMode);
+    
+    if (isDarkMode) {
+      // DARK MODE: Dark background (#0a0a0a) with WHITE text (#fafafa)
+      body.classList.add('dark-mode');
+      body.setAttribute('data-theme', 'dark');
+      if (icon) icon.className = 'fas fa-sun';
+      
+      // Force dark background with white text
+      body.style.backgroundColor = '#0a0a0a';
+      body.style.color = '#fafafa';
+      html.style.backgroundColor = '#0a0a0a';
+      
+      // Apply dark mode CSS variables
+      document.documentElement.style.setProperty('--background', '#0a0a0a');
+      document.documentElement.style.setProperty('--foreground', '#fafafa');
+      document.documentElement.style.setProperty('--card', '#171717');
+      document.documentElement.style.setProperty('--card-foreground', '#fafafa');
+      document.documentElement.style.setProperty('--border', '#262626');
+      document.documentElement.style.setProperty('--muted', '#171717');
+      document.documentElement.style.setProperty('--muted-foreground', '#a3a3a3');
+      
+      // Force dark background with white text on main content areas
+      const mainElements = document.querySelectorAll('main, .container, .container-fluid, .hero-section, section, article, .card, .card-body');
+      mainElements.forEach(el => {
+        el.style.backgroundColor = '#0a0a0a';
+        el.style.color = '#fafafa';
+      });
+      
+      // Fix specific text elements
+      const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, div, li, td, th');
+      textElements.forEach(el => {
+        // Only apply if not in navbar (navbar has its own styling)
+        if (!el.closest('.navbar, .heidelberg-navbar, .glass-navbar')) {
+          el.style.color = '#fafafa';
+        }
+      });
+      
+      // Force navbar dark mode styles
+      const navbars = document.querySelectorAll('.navbar, .heidelberg-navbar, .glass-navbar');
+      navbars.forEach(navbar => {
+        navbar.style.backgroundColor = '#991b1b';
+        navbar.style.borderBottomColor = '#262626';
+      });
+      
+      const navbarBrands = document.querySelectorAll('.navbar .navbar-brand, .heidelberg-navbar .navbar-brand, .glass-navbar .navbar-brand');
+      navbarBrands.forEach(brand => {
+        brand.style.color = '#fafafa';
+      });
+      
+      const navLinks = document.querySelectorAll('.navbar .nav-link, .heidelberg-navbar .nav-link, .glass-navbar .nav-link');
+      navLinks.forEach(link => {
+        link.style.color = 'rgba(255,255,255,0.95)';
+      });
+      
+    } else {
+      // LIGHT MODE: White background (#ffffff) with BLACK text (#0a0a0a)
+      body.classList.remove('dark-mode');
+      body.removeAttribute('data-theme');
+      if (icon) icon.className = 'fas fa-moon';
+      
+      // Force light background with dark text
+      body.style.backgroundColor = '#ffffff';
+      body.style.color = '#0a0a0a';
+      html.style.backgroundColor = '#ffffff';
+      
+      // Apply light mode CSS variables
+      document.documentElement.style.setProperty('--background', '#ffffff');
+      document.documentElement.style.setProperty('--foreground', '#0a0a0a');
+      document.documentElement.style.setProperty('--card', '#ffffff');
+      document.documentElement.style.setProperty('--card-foreground', '#0a0a0a');
+      document.documentElement.style.setProperty('--border', '#e5e5e5');
+      document.documentElement.style.setProperty('--muted', '#f5f5f5');
+      document.documentElement.style.setProperty('--muted-foreground', '#737373');
+      
+      // Force light background with dark text on main content areas
+      const mainElements = document.querySelectorAll('main, .container, .container-fluid, .hero-section, section, article, .card, .card-body');
+      mainElements.forEach(el => {
+        el.style.backgroundColor = '#ffffff';
+        el.style.color = '#0a0a0a';
+      });
+      
+      // Fix specific text elements
+      const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, div, li, td, th');
+      textElements.forEach(el => {
+        // Only apply if not in navbar (navbar has its own styling)
+        if (!el.closest('.navbar, .heidelberg-navbar, .glass-navbar')) {
+          el.style.color = '#0a0a0a';
+        }
+      });
+      
+      // Force navbar light mode styles (restore original red)
+      const navbars = document.querySelectorAll('.navbar, .heidelberg-navbar, .glass-navbar');
+      navbars.forEach(navbar => {
+        navbar.style.backgroundColor = '#dc2626';
+        navbar.style.borderBottomColor = '#e5e5e5';
+      });
+      
+      const navbarBrands = document.querySelectorAll('.navbar .navbar-brand, .heidelberg-navbar .navbar-brand, .glass-navbar .navbar-brand');
+      navbarBrands.forEach(brand => {
+        brand.style.color = '#fafafa';
+      });
+      
+      const navLinks = document.querySelectorAll('.navbar .nav-link, .heidelberg-navbar .nav-link, .glass-navbar .nav-link');
+      navLinks.forEach(link => {
+        link.style.color = 'rgba(255,255,255,0.9)';
+      });
+    }
+    
+    console.log('Dark mode applied:', isDarkMode);
+    console.log('Body background:', window.getComputedStyle(body).backgroundColor);
+    console.log('Body color:', window.getComputedStyle(body).color);
+  }
+  
+  // Toggle dark mode
+  function toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+    localStorage.setItem('darkMode', isDarkMode);
+    console.log('Toggling dark mode to:', isDarkMode);
+    initDarkMode();
+    
+    // Show notification
+    const message = isDarkMode ? 'Dark mode enabled' : 'Light mode enabled';
+    showNotification(message, isDarkMode ? '🌙' : '☀️');
+  }
+  
+  // Theme switching function
+  function loadTheme(themeName, cssFile) {
+    console.log('Loading theme:', themeName, 'CSS:', cssFile);
+    
+    // Remove existing theme stylesheet
+    if (themeStylesheet) {
+      themeStylesheet.remove();
+      themeStylesheet = null;
+    }
+    
+    // Load new theme if CSS file specified
+    if (cssFile && cssFile.trim() !== '') {
+      themeStylesheet = document.createElement('link');
+      themeStylesheet.rel = 'stylesheet';
+      themeStylesheet.href = cssFile;
+      themeStylesheet.id = 'theme-stylesheet';
+      document.head.appendChild(themeStylesheet);
+    }
+    
+    // Store theme preference
+    localStorage.setItem('selected-theme', themeName);
+    localStorage.setItem('theme', themeName);
+    
+    // Update body class
+    document.body.className = document.body.className.replace(/theme-\w+/g, '');
+    if (themeName !== 'modern-ag') {
+      document.body.classList.add('theme-' + themeName);
+    }
+    
+    // Reapply dark mode after theme change
+    if (isDarkMode) {
+      setTimeout(() => {
+        initDarkMode();
+      }, 200);
+    }
+    
+    // Show notification
+    showNotification(`Theme changed to ${themeName}`, '🎨');
+    
+    console.log('Theme loaded successfully:', themeName);
+  }
+  
+  // Show notification
+  function showNotification(message, icon) {
+    const notification = document.createElement('div');
+    notification.className = 'floating-notification';
+    notification.innerHTML = `
+      <span class="notification-icon">${icon}</span>
+      <span class="notification-text">${message}</span>
+    `;
+    
+    // Add styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .floating-notification {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 10001;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .floating-notification.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      body.dark-mode .floating-notification,
+      [data-theme="dark"] .floating-notification {
+        background: rgba(255, 255, 255, 0.9);
+        color: black;
+      }
+    `;
+    
+    document.head.appendChild(style);
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => notification.classList.add('show'), 100);
+    
+    // Remove after 2.5 seconds
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => {
+        if (document.body.contains(notification)) {
+          document.body.removeChild(notification);
+          document.head.removeChild(style);
+        }
+      }, 300);
+    }, 2500);
+  }
+  
+  const darkModeBtn = document.getElementById('dark-mode-toggle');
+  const themeBtn = document.getElementById('floating-theme-toggle');
+  const themePanel = document.getElementById('theme-options-panel');
+  const themeOptions = document.querySelectorAll('.theme-option');
+  
+  // Initialize dark mode first
+  initDarkMode();
+  
+  if (darkModeBtn) {
+    darkModeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      console.log('Dark mode button clicked');
+      toggleDarkMode();
+    });
+  }
+  
+  if (themeBtn && themePanel) {
+    // Toggle theme panel
+    themeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      themePanel.classList.toggle('show');
+    });
+    
+    // Close panel when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!document.querySelector('.floating-controls').contains(e.target)) {
+        themePanel.classList.remove('show');
+      }
+    });
+    
+    // Handle theme selection
+    themeOptions.forEach(option => {
+      option.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const selectedTheme = this.dataset.theme;
+        const cssFile = this.dataset.css;
+        
+        console.log('Theme option clicked:', selectedTheme);
+        
+        // Update active state
+        themeOptions.forEach(opt => opt.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Load the theme
+        loadTheme(selectedTheme, cssFile);
+        
+        // Close panel
+        themePanel.classList.remove('show');
+      });
+    });
+    
+    // Set initial active theme
+    const currentTheme = localStorage.getItem('selected-theme') || localStorage.getItem('theme') || 'modern-ag';
+    console.log('Current theme:', currentTheme);
+    
+    themeOptions.forEach(option => {
+      if (option.dataset.theme === currentTheme) {
+        option.classList.add('active');
+        // Load the theme CSS if it exists and isn't the default
+        const cssFile = option.dataset.css;
+        if (cssFile && cssFile.trim() !== '' && currentTheme !== 'modern-ag') {
+          loadTheme(currentTheme, cssFile);
+        }
+      }
+    });
+  }
+  
+  console.log('Floating controls initialized');
+});
+</script>
+ 
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+<script src="" integrity="" crossorigin="anonymous"></script>
+
+<!-- Bootsrap & MDB scripts -->
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="" integrity="" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Tooltips -->
+  <script src="/assets/js/tooltips-setup.js"></script>
+
+
+
+  <!-- Medium Zoom JS -->
+  <script defer src="" integrity="" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script>
+
+
+
+
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/no_defer.js"></script>
+<script defer src="/assets/js/common.js"></script>
+<script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+<!-- Theme Management -->
+<script defer src="/assets/js/theme-switcher-multi.js" type="text/javascript"></script>
+
+<!-- Jupyter Open External Links New Tab -->
+<script defer src="/assets/js/jupyter_new_tab.js"></script>
+
+<!-- Badges -->
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Scrolling Progress Bar -->
+  <script defer src="/assets/js/progress-bar.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+  <!-- Back to Top -->
+  <script src="/assets/js/vanilla-back-to-top.min.js"></script>
+  <script>
+    addBackToTop();
+  </script>
+
+
+
+  <!-- Search -->
+  <script type="module" src="/assets/js/search/ninja-keys.min.js"></script>
+  <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys>
+  <script src="/assets/js/search-setup.js"></script>
+  <script src="/assets/js/search-data.js"></script>
+  <script src="/assets/js/shortcut-key.js"></script>
+
+
+
+
+<!-- Glass Morphism Toggle System -->
+<script defer src="/assets/js/glass-toggle.js" type="text/javascript"></script>
+
+<!-- Multi-Theme Switcher -->
+<script defer src="/assets/js/theme-switcher-multi.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -31,6 +31,14 @@ body.sticky-bottom-footer {
   max-width: $max-content-width;
 }
 
+.content-wrapper {
+  background-color: var(--global-card-bg-color);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: 2rem;
+}
+
 // Profile
 .profile {
   img {

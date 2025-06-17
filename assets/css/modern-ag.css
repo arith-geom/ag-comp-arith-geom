@@ -1,0 +1,319 @@
+/*******************************************************************************
+ * Clean AG Computational Arithmetic Geometry Website
+ * Understated and Refined CSS
+ ******************************************************************************/
+
+/* Enhanced color variables for better contrast */
+:root {
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --border-color: #e5e7eb;
+  --heidelberg-red: #C22032;
+}
+
+[data-theme="dark"] {
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --border-color: #374151;
+}
+
+/* Subtle Hero Section */
+.hero-section {
+  background: var(--bg-primary);
+  padding: 3rem 0;
+}
+
+.hero-title {
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  font-weight: 300;
+}
+
+.profile-image {
+  border-radius: 50%;
+  max-width: 180px;
+  border: 1px solid var(--border-color);
+}
+
+/* Minimal Feature Cards */
+.feature-card {
+  transition: none;
+  height: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.feature-card:hover {
+  box-shadow: none;
+  border-color: #ccc;
+}
+
+[data-theme="dark"] .feature-card:hover {
+  border-color: #555;
+}
+
+/* Simple Quick Access Cards */
+.quick-access-card {
+  display: block;
+  text-decoration: none;
+  transition: none;
+}
+
+.quick-access-card:hover {
+  transform: none;
+  text-decoration: none;
+}
+
+.quick-access-icon i {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/* Subtle News Items */
+.news-item {
+  padding: 0.75rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  transition: none;
+}
+
+.news-item:hover {
+  background: none;
+}
+
+.news-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.news-title a:hover {
+  color: #555;
+  text-decoration: none;
+}
+
+/* Simple Research and Member Items */
+.research-item, .member-item {
+  padding: 0.75rem;
+  border-radius: 3px;
+  transition: none;
+}
+
+.research-item:hover, .member-item:hover {
+  background: none;
+}
+
+/* Clean Member Avatars */
+.member-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Understated Button Styles */
+.btn {
+  font-weight: 400;
+  border-radius: 3px;
+  transition: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: #666;
+  border-color: #666;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #555;
+  border-color: #555;
+}
+
+.btn-outline-primary {
+  border-color: #666;
+  color: #666;
+}
+
+.btn-outline-primary:hover {
+  background-color: #666;
+  border-color: #666;
+  color: white;
+}
+
+/* Section Titles */
+.section-title {
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+/* Publikationen (Publications) - Very Understated */
+.card {
+  border: 1px solid #e9ecef;
+  border-radius: 3px;
+  background: var(--bg-primary);
+  box-shadow: none;
+  transition: none;
+}
+
+.card:hover {
+  box-shadow: none;
+  border-color: #ddd;
+}
+
+[data-theme="dark"] .card {
+  border-color: #444;
+}
+
+[data-theme="dark"] .card:hover {
+  border-color: #555;
+}
+
+.card-header {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  padding: 0.75rem 1rem;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+[data-theme="dark"] .card-header {
+  background: #2d2d2d;
+  border-color: #444;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .profile-image {
+    max-width: 140px;
+  }
+  
+  .quick-access-section .col-md-3 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .btn {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+}
+
+/* Clean Image Handling */
+img[src*="placeholder"] {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  min-height: 150px;
+}
+
+[data-theme="dark"] img[src*="placeholder"] {
+  background-color: #333;
+  border-color: #444;
+}
+
+/* Profile and member images */
+.profile img, .member-photo img {
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Understated link styling */
+a {
+  color: #555;
+  text-decoration: none;
+  transition: none;
+}
+
+a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+[data-theme="dark"] a {
+  color: #ccc;
+}
+
+[data-theme="dark"] a:hover {
+  color: #fff;
+}
+
+/* Remove all animations and effects */
+.container {
+  max-width: 1140px;
+}
+
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Remove focus effects */
+.btn:focus, a:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Simple typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Remove any remaining flashy elements */
+.badge {
+  background-color: #f8f9fa;
+  color: #666;
+  border: 1px solid #e9ecef;
+  font-weight: 400;
+}
+
+[data-theme="dark"] .badge {
+  background-color: #333;
+  color: #ccc;
+  border-color: #444;
+} 

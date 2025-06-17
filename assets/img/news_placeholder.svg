@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#e9ecef"/>
+  
+  <!-- Document/Paper icons -->
+  <g transform="translate(80, 60)">
+    <rect x="0" y="0" width="40" height="50" fill="#fff" stroke="#6c757d" stroke-width="2"/>
+    <line x1="5" y1="10" x2="35" y2="10" stroke="#adb5bd" stroke-width="1"/>
+    <line x1="5" y1="15" x2="30" y2="15" stroke="#adb5bd" stroke-width="1"/>
+    <line x1="5" y1="20" x2="35" y2="20" stroke="#adb5bd" stroke-width="1"/>
+    <line x1="5" y1="25" x2="25" y2="25" stroke="#adb5bd" stroke-width="1"/>
+  </g>
+  
+  <g transform="translate(180, 60)">
+    <rect x="0" y="0" width="40" height="50" fill="#fff" stroke="#6c757d" stroke-width="2"/>
+    <line x1="5" y1="10" x2="35" y2="10" stroke="#adb5bd" stroke-width="1"/>
+    <line x1="5" y1="15" x2="30" y2="15" stroke="#adb5bd" stroke-width="1"/>
+    <line x1="5" y1="20" x2="35" y2="20" stroke="#adb5bd" stroke-width="1"/>
+    <line x1="5" y1="25" x2="25" y2="25" stroke="#adb5bd" stroke-width="1"/>
+  </g>
+  
+  <g transform="translate(280, 60)">
+    <rect x="0" y="0" width="40" height="50" fill="#fff" stroke="#6c757d" stroke-width="2"/>
+    <line x1="5" y1="10" x2="35" y2="10" stroke="#adb5bd" stroke-width="1"/>
+    <line x1="5" y1="15" x2="30" y2="15" stroke="#adb5bd" stroke-width="1"/>
+    <line x1="5" y1="20" x2="35" y2="20" stroke="#adb5bd" stroke-width="1"/>
+    <line x1="5" y1="25" x2="25" y2="25" stroke="#adb5bd" stroke-width="1"/>
+  </g>
+  
+  <!-- Citation/Reference symbols -->
+  <text x="100" y="140" text-anchor="middle" font-family="serif" font-size="16" fill="#495057">[1]</text>
+  <text x="200" y="140" text-anchor="middle" font-family="serif" font-size="16" fill="#495057">[2]</text>
+  <text x="300" y="140" text-anchor="middle" font-family="serif" font-size="16" fill="#495057">[3]</text>
+  
+  <!-- Journal/Conference indicators -->
+  <text x="100" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#6c757d">Journal</text>
+  <text x="200" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#6c757d">Conference</text>
+  <text x="300" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#6c757d">Preprint</text>
+  
+  <text x="200" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6c757d">
+    Publications & Papers
+  </text>
+</svg> 

@@ -1,46 +1,28 @@
 source "https://rubygems.org"
 
-# gem "jekyll", "~> 4.2" # Let github-pages manage the Jekyll version
+# Jekyll
+gem "jekyll", "~> 4.3.0"
 
-# Add the theme gem
-gem "jekyll-theme-minimal"
-
-# Other potential plugins
-# gem "jekyll-feed", "~> 0.15.1" # Let github-pages manage this if it includes it
-# gem "jekyll-seo-tag", "~> 2.7"
-
-# If you have GitHub Pages, uncomment the following line
-# gem "github-pages", group: :jekyll_plugins
-
-gem "jekyll"
-
+# Basic plugins for Phase 1
 group :jekyll_plugins do
-  gem 'jekyll-archives-v2'
-  gem 'jekyll-email-protect'
-  gem 'jekyll-feed'
-  gem 'jekyll-get-json'
-  gem 'jekyll-imagemagick'
-  gem 'jekyll-jupyter-notebook'
-  gem 'jekyll-link-attributes'
-  gem 'jekyll-minifier'
-  gem 'jekyll-paginate-v2'
-  gem 'jekyll-regex-replace'
-  gem 'jekyll-scholar'
-  gem 'jekyll-sitemap'
-  gem 'jekyll-tabs'
-  gem 'jekyll-terser', :git => "https://github.com/RobertoJBeltran/jekyll-terser.git"
-  gem 'jekyll-toc'
-  gem 'jekyll-twitter-plugin'
-  gem 'jemoji'
-
-  gem 'classifier-reborn'  # used for content categorization during the build
-  gem 'kramdown-parser-gfm'
+  gem "jekyll-feed", "~> 0.17"
+  gem "jekyll-sitemap"
+  gem "jekyll-seo-tag"
 end
 
-group :other_plugins do
-  gem 'css_parser'
-  gem 'feedjira'
-  gem 'httparty'
-  gem 'observer'       # used by jekyll-scholar
-  gem 'ostruct'        # used by jekyll-twitter-plugin
-end 
+# Theme support
+gem "sass-embedded", "~> 1.87"
+
+# Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
+# and associated library.
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo-data"
+end
+
+# Performance-booster for watching directories on Windows
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+
+# Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
+# do not have a Java counterpart.
+gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby] 
