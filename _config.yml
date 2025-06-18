@@ -48,7 +48,7 @@ sass:
   style: compressed
 
 # Defaults
-    defaults:
+defaults:
   - scope:
       path: ""
       type: "pages"

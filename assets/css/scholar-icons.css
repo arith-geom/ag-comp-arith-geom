@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'scholar-icons';
+  src: url('../fonts/scholar-icons.woff') format('woff'),
+       url('../fonts/scholar-icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.scholar-icon {
+  font-family: 'scholar-icons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Common scholar icon classes - add more as needed */
+.scholar-icon-paper:before { content: "\e001"; }
+.scholar-icon-book:before { content: "\e002"; }
+.scholar-icon-citation:before { content: "\e003"; }
+.scholar-icon-conference:before { content: "\e004"; }
+.scholar-icon-journal:before { content: "\e005"; }
+.scholar-icon-preprint:before { content: "\e006"; }
+.scholar-icon-thesis:before { content: "\e007"; }
+.scholar-icon-presentation:before { content: "\e008"; }
+.scholar-icon-poster:before { content: "\e009"; }
+.scholar-icon-award:before { content: "\e00a"; } 
