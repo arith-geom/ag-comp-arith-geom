@@ -1,366 +1,421 @@
 /**
- * Heidelberg University Theme Switcher & Mobile Navigation
- * Handles dark/light mode switching and mobile menu functionality
+ * Enhanced High-Contrast Theme Switcher & Navigation Manager
+ * Handles dark/light mode switching with maximum readability and accessibility
  */
 
 (function() {
   'use strict';
 
-  // Theme Management
+  // Enhanced Theme Manager with High Contrast Support
   const ThemeManager = {
     init() {
       this.body = document.body;
-      this.themeToggle = document.querySelector('.theme-toggle');
-      this.sunIcon = document.querySelector('.sun-icon');
-      this.moonIcon = document.querySelector('.moon-icon');
+      this.html = document.documentElement;
+      this.themeToggle = document.querySelector('#theme-toggle');
+      this.darkModeToggle = document.querySelector('#dark-mode-toggle');
+      this.floatingToggle = document.querySelector('#floating-theme-toggle');
       
-      // Load saved theme or default to light
-      this.currentTheme = localStorage.getItem('heidelberg-theme') || 'light';
+      // Load saved theme or detect system preference
+      this.currentTheme = this.getSavedTheme();
       this.applyTheme(this.currentTheme);
       
       // Bind events
       this.bindEvents();
       
-      console.log('Theme Manager initialized');
+      console.log('Enhanced High-Contrast Theme Manager initialized with theme:', this.currentTheme);
+    },
+
+    getSavedTheme() {
+      const saved = localStorage.getItem('theme');
+      if (saved && (saved === 'light' || saved === 'dark')) {
+        return saved;
+      }
+      
+      // Detect system preference
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+      
+      return 'light';
     },
 
     bindEvents() {
+      // Main theme toggle (in navbar)
       if (this.themeToggle) {
-        this.themeToggle.addEventListener('click', () => this.toggleTheme());
+        this.themeToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.toggleTheme();
+        });
+      }
+      
+      // Dark mode toggle (floating)
+      if (this.darkModeToggle) {
+        this.darkModeToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.toggleTheme();
+        });
       }
       
       // Listen for system theme changes
       if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          if (!localStorage.getItem('heidelberg-theme')) {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        mediaQuery.addEventListener('change', (e) => {
+          // Only auto-switch if user hasn't manually set a theme
+          if (!localStorage.getItem('theme')) {
             this.currentTheme = e.matches ? 'dark' : 'light';
             this.applyTheme(this.currentTheme);
           }
         });
       }
+      
+      // Listen for custom theme change events
+      document.addEventListener('themeChanged', (e) => {
+        if (e.detail && e.detail.theme !== this.currentTheme) {
+          this.currentTheme = e.detail.theme;
+          this.applyTheme(this.currentTheme);
+        }
+      });
     },
 
     toggleTheme() {
       this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
       this.applyTheme(this.currentTheme);
-      localStorage.setItem('heidelberg-theme', this.currentTheme);
+      localStorage.setItem('theme', this.currentTheme);
+      
+      // Dispatch custom event for other components
+      document.dispatchEvent(new CustomEvent('themeChanged', {
+        detail: { theme: this.currentTheme }
+      }));
       
       // Announce theme change for accessibility
       this.announceThemeChange();
     },
 
     applyTheme(theme) {
+      // Remove existing theme classes and attributes
+      this.body.classList.remove('dark-mode', 'light-mode');
+      this.body.removeAttribute('data-theme');
+      this.html.removeAttribute('data-theme');
+      
       if (theme === 'dark') {
+        // Apply dark mode with maximum contrast
         this.body.classList.add('dark-mode');
+        this.body.setAttribute('data-theme', 'dark');
+        this.html.setAttribute('data-theme', 'dark');
+        
+        // Force high contrast dark theme styles
+        this.applyDarkModeStyles();
       } else {
-        this.body.classList.remove('dark-mode');
+        // Apply light mode with maximum contrast
+        this.body.classList.add('light-mode');
+        this.body.setAttribute('data-theme', 'light');
+        this.html.setAttribute('data-theme', 'light');
+        
+        // Force high contrast light theme styles
+        this.applyLightModeStyles();
       }
       
-      // Update icons
-      if (this.sunIcon && this.moonIcon) {
-        if (theme === 'dark') {
-          this.sunIcon.style.display = 'none';
-          this.moonIcon.style.display = 'block';
-        } else {
-          this.sunIcon.style.display = 'block';
-          this.moonIcon.style.display = 'none';
+      // Update all theme toggle icons and labels
+      this.updateAllToggleElements(theme);
+    },
+
+    applyDarkModeStyles() {
+      // Set CSS custom properties for maximum dark mode contrast
+      const root = document.documentElement;
+      
+      // High contrast dark mode colors
+      root.style.setProperty('--bg-primary', '#000000');
+      root.style.setProperty('--bg-secondary', '#0A0A0A');
+      root.style.setProperty('--bg-tertiary', '#111827');
+      root.style.setProperty('--bg-muted', '#111827');
+      root.style.setProperty('--bg-accent', '#450A0A');
+      
+      root.style.setProperty('--text-primary', '#FFFFFF');
+      root.style.setProperty('--text-secondary', '#F3F4F6');
+      root.style.setProperty('--text-tertiary', '#E5E7EB');
+      root.style.setProperty('--text-muted', '#9CA3AF');
+      root.style.setProperty('--text-inverse', '#000000');
+      
+      root.style.setProperty('--border-color', '#374151');
+      root.style.setProperty('--border-dark', '#4B5563');
+      root.style.setProperty('--border-light', '#1F2937');
+      
+      root.style.setProperty('--link-color', '#FF6B6B');
+      root.style.setProperty('--link-hover', '#FF5252');
+      
+      root.style.setProperty('--primary', '#DC2626');
+      root.style.setProperty('--primary-hover', '#B91C1C');
+      root.style.setProperty('--primary-text', '#000000');
+    },
+
+    applyLightModeStyles() {
+      // Set CSS custom properties for maximum light mode contrast
+      const root = document.documentElement;
+      
+      // High contrast light mode colors
+      root.style.setProperty('--bg-primary', '#FFFFFF');
+      root.style.setProperty('--bg-secondary', '#F9FAFB');
+      root.style.setProperty('--bg-tertiary', '#F3F4F6');
+      root.style.setProperty('--bg-muted', '#F3F4F6');
+      root.style.setProperty('--bg-accent', '#FEF2F2');
+      
+      root.style.setProperty('--text-primary', '#000000');
+      root.style.setProperty('--text-secondary', '#111827');
+      root.style.setProperty('--text-tertiary', '#1F2937');
+      root.style.setProperty('--text-muted', '#4B5563');
+      root.style.setProperty('--text-inverse', '#FFFFFF');
+      
+      root.style.setProperty('--border-color', '#E5E7EB');
+      root.style.setProperty('--border-dark', '#D1D5DB');
+      root.style.setProperty('--border-light', '#F3F4F6');
+      
+      root.style.setProperty('--link-color', '#C22032');
+      root.style.setProperty('--link-hover', '#991B1B');
+      
+      root.style.setProperty('--primary', '#C22032');
+      root.style.setProperty('--primary-hover', '#991B1B');
+      root.style.setProperty('--primary-text', '#FFFFFF');
+    },
+
+    updateAllToggleElements(theme) {
+      // Update main theme toggle icon (navbar)
+      const themeIcon = document.querySelector('#theme-icon');
+      if (themeIcon) {
+        themeIcon.className = theme === 'dark' ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon';
+      }
+      
+      // Update floating dark mode toggle icon
+      const darkModeIcon = document.querySelector('#dark-mode-icon');
+      if (darkModeIcon) {
+        darkModeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+      
+      // Update any other theme icons
+      const allThemeIcons = document.querySelectorAll('.theme-icon');
+      allThemeIcons.forEach(icon => {
+        if (icon.id !== 'theme-icon') { // Avoid double-updating the main icon
+          icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
-      }
+      });
       
-      // Update theme toggle aria-label
-      if (this.themeToggle) {
-        this.themeToggle.setAttribute('aria-label', 
-          theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
-        );
-      }
+      // Update aria labels and titles
+      this.updateAriaLabels(theme);
+      
+      // Update meta theme color for mobile browsers
+      this.updateMetaThemeColor(theme);
+    },
+
+    updateAriaLabels(theme) {
+      const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+      
+      // Update all theme toggle buttons
+      const toggleButtons = document.querySelectorAll('#theme-toggle, #dark-mode-toggle');
+      toggleButtons.forEach(button => {
+        button.setAttribute('aria-label', label);
+        button.setAttribute('title', label);
+      });
     },
 
     announceThemeChange() {
+      // Create screen reader announcement
       const announcement = document.createElement('div');
       announcement.setAttribute('aria-live', 'polite');
-      announcement.setAttribute('aria-atomic', 'true');
       announcement.className = 'sr-only';
       announcement.textContent = `Switched to ${this.currentTheme} mode`;
-      
       document.body.appendChild(announcement);
       
+      // Remove announcement after screen readers have processed it
       setTimeout(() => {
+        if (document.body.contains(announcement)) {
         document.body.removeChild(announcement);
+        }
       }, 1000);
+    },
+
+    updateMetaThemeColor(theme) {
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', theme === 'dark' ? '#000000' : '#C22032');
+      }
     }
   };
 
-  // Mobile Menu Management
-  const MobileMenu = {
+  // Enhanced Mobile Menu Manager
+  const MobileMenuManager = {
     init() {
-      this.menuToggle = document.querySelector('.mobile-menu-toggle');
-      this.mobileMenu = document.querySelector('.navbar-nav');
-      this.isOpen = false;
+      this.navbarToggler = document.querySelector('.navbar-toggler');
+      this.navbarCollapse = document.querySelector('.navbar-collapse');
+      this.navLinks = document.querySelectorAll('.navbar-nav .nav-link');
       
       this.bindEvents();
-      this.createMenuIcon();
-      
-      console.log('Mobile Menu initialized');
     },
 
     bindEvents() {
-      if (this.menuToggle) {
-        this.menuToggle.addEventListener('click', () => this.toggleMenu());
-      }
-      
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (this.isOpen && !this.menuToggle.contains(e.target) && !this.mobileMenu.contains(e.target)) {
+      if (this.navbarToggler && this.navbarCollapse) {
+        this.navbarToggler.addEventListener('click', () => {
+          this.toggleMenu();
+        });
+        
+        // Close menu when clicking nav links (mobile only)
+        this.navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (window.innerWidth < 992) {
           this.closeMenu();
         }
+          });
       });
       
       // Close menu on escape key
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && this.isOpen) {
+          if (e.key === 'Escape' && this.navbarCollapse.classList.contains('show')) {
           this.closeMenu();
         }
       });
-      
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && this.isOpen) {
-          this.closeMenu();
-        }
-      });
-    },
-
-    createMenuIcon() {
-      if (this.menuToggle && !this.menuToggle.innerHTML.trim()) {
-        this.menuToggle.innerHTML = '☰';
       }
     },
 
     toggleMenu() {
-      if (this.isOpen) {
-        this.closeMenu();
-      } else {
-        this.openMenu();
-      }
+      // This will be handled by Bootstrap's collapse component
     },
 
     openMenu() {
-      if (this.mobileMenu) {
-        this.mobileMenu.classList.add('mobile-menu-open');
-        this.isOpen = true;
-        this.menuToggle.innerHTML = '✕';
-        
-        // Focus first menu item for accessibility
-        const firstMenuItem = this.mobileMenu.querySelector('.nav-link');
-        if (firstMenuItem) {
-          firstMenuItem.focus();
-        }
+      const isExpanded = this.navbarToggler.getAttribute('aria-expanded') === 'true';
+      if (!isExpanded) {
+        this.navbarToggler.setAttribute('aria-expanded', 'true');
+        this.announceMenuState('Menu expanded');
       }
     },
 
     closeMenu() {
-      if (this.mobileMenu) {
-        this.mobileMenu.classList.remove('mobile-menu-open');
-        this.isOpen = false;
-        this.menuToggle.innerHTML = '☰';
+      const bsCollapse = bootstrap?.Collapse?.getInstance(this.navbarCollapse);
+      if (bsCollapse) {
+        bsCollapse.hide();
       }
-    }
-  };
-
-  // Search Enhancement
-  const SearchManager = {
-    init() {
-      this.searchInput = document.querySelector('.search-input');
-      this.searchContainer = document.querySelector('.search-container');
-      
-      if (this.searchInput) {
-        this.bindEvents();
-        console.log('Search Manager initialized');
-      }
+      this.navbarToggler.setAttribute('aria-expanded', 'false');
+      this.announceMenuState('Menu collapsed');
     },
 
-    bindEvents() {
-      // Enhanced search functionality
-      this.searchInput.addEventListener('input', (e) => {
-        this.handleSearchInput(e.target.value);
-      });
+    announceMenuState(message) {
+      // Create screen reader announcement
+      const announcement = document.createElement('div');
+      announcement.setAttribute('aria-live', 'polite');
+      announcement.className = 'sr-only';
+      announcement.textContent = message;
+      document.body.appendChild(announcement);
       
-      this.searchInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          this.performSearch(e.target.value);
+      setTimeout(() => {
+        if (document.body.contains(announcement)) {
+          document.body.removeChild(announcement);
         }
-      });
-    },
-
-    handleSearchInput(query) {
-      if (query.length > 2) {
-        // Add search suggestions or live search here
-        console.log('Searching for:', query);
-      }
-    },
-
-    performSearch(query) {
-      if (query.trim()) {
-        // Implement search functionality
-        console.log('Performing search for:', query);
-        // You can integrate with Jekyll's search or external search service
-      }
+      }, 1000);
     }
   };
 
-  // Animation Manager
-  const AnimationManager = {
-    init() {
-      this.observeElements();
-      console.log('Animation Manager initialized');
-    },
-
-    observeElements() {
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-fade-in');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1,
-          rootMargin: '50px'
-        });
-
-        // Observe elements with animation classes
-        document.querySelectorAll('.animate-slide-up, .animate-slide-in-left, .animate-slide-in-right').forEach(el => {
-          observer.observe(el);
-        });
-      }
-    }
-  };
-
-  // Accessibility Manager
+  // Enhanced Accessibility Manager
   const AccessibilityManager = {
     init() {
       this.addSkipLink();
       this.enhanceKeyboardNavigation();
-      console.log('Accessibility Manager initialized');
+      this.addKeyboardSupportToCustomElements();
+      this.improveColorContrast();
     },
 
     addSkipLink() {
-      const skipLink = document.createElement('a');
-      skipLink.href = '#main-content';
-      skipLink.textContent = 'Skip to main content';
-      skipLink.className = 'skip-link sr-only';
-      skipLink.style.cssText = `
-        position: absolute;
-        top: -40px;
-        left: 6px;
-        background: #C22032;
-        color: white;
-        padding: 8px;
-        text-decoration: none;
-        border-radius: 4px;
-        z-index: 10000;
-        transition: top 0.3s ease;
-      `;
-      
-      skipLink.addEventListener('focus', () => {
-        skipLink.style.top = '6px';
-      });
-      
-      skipLink.addEventListener('blur', () => {
-        skipLink.style.top = '-40px';
-      });
-      
-      document.body.insertBefore(skipLink, document.body.firstChild);
+      // Skip link is already in the header template
+      const skipLink = document.querySelector('.skip-link');
+      if (skipLink) {
+        skipLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector('#main-content');
+          if (target) {
+            target.focus();
+            target.scrollIntoView();
+          }
+        });
+      }
     },
 
     enhanceKeyboardNavigation() {
-      // Add focus indicators for better keyboard navigation
+      // Add keyboard support for custom elements
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Tab') {
-          document.body.classList.add('keyboard-nav');
+        // Handle theme switching with keyboard shortcuts
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'T') {
+          e.preventDefault();
+          ThemeManager.toggleTheme();
         }
       });
-      
-      document.addEventListener('mousedown', () => {
-        document.body.classList.remove('keyboard-nav');
+    },
+
+    addKeyboardSupportToCustomElements() {
+      // Ensure all interactive elements have proper keyboard support
+      const interactiveElements = document.querySelectorAll('[role="button"]:not(button):not(input)');
+      interactiveElements.forEach(element => {
+        if (!element.getAttribute('tabindex')) {
+          element.setAttribute('tabindex', '0');
+        }
+        
+        element.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            element.click();
+          }
+        });
       });
+    },
+
+    improveColorContrast() {
+      // This is handled by CSS variables and forced contrast in theme files
+      // Additional contrast improvements could be added here if needed
+      console.log('Color contrast improvements applied');
     }
   };
 
-  // Performance Manager
+  // Performance Manager for optimizations
   const PerformanceManager = {
     init() {
       this.optimizeImages();
       this.addLoadingStates();
-      console.log('Performance Manager initialized');
     },
 
     optimizeImages() {
-      // Add loading="lazy" to images
-      document.querySelectorAll('img').forEach(img => {
-        if (!img.hasAttribute('loading')) {
+      // Add loading="lazy" to images that don't have it
+      const images = document.querySelectorAll('img:not([loading])');
+      images.forEach(img => {
           img.setAttribute('loading', 'lazy');
-        }
       });
     },
 
     addLoadingStates() {
-      // Add loading states for better perceived performance
-      document.addEventListener('DOMContentLoaded', () => {
-        document.body.classList.add('loaded');
+      // Add loading states for theme switches
+      document.addEventListener('themeChanged', () => {
+        document.body.classList.add('theme-transitioning');
+        setTimeout(() => {
+          document.body.classList.remove('theme-transitioning');
+        }, 300);
       });
     }
   };
 
-  // Initialize everything when DOM is ready
+  // Initialize all managers when DOM is ready
   function initializeApp() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeApp);
+      return;
+    }
+
+    // Initialize all components
     ThemeManager.init();
-    MobileMenu.init();
-    SearchManager.init();
-    AnimationManager.init();
+    MobileMenuManager.init();
     AccessibilityManager.init();
     PerformanceManager.init();
     
-    console.log('Heidelberg University Theme - All systems initialized');
+    console.log('Theme Switcher: All components initialized successfully');
   }
 
-  // Wait for DOM to be ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeApp);
-  } else {
+  // Start initialization
     initializeApp();
-  }
 
-  // Add CSS for keyboard navigation
-  const style = document.createElement('style');
-  style.textContent = `
-    .keyboard-nav *:focus {
-      outline: 2px solid #C22032 !important;
-      outline-offset: 2px !important;
-    }
-    
-    .sr-only {
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      padding: 0 !important;
-      margin: -1px !important;
-      overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-      white-space: nowrap !important;
-      border: 0 !important;
-    }
-    
-    .loaded {
-      opacity: 1;
-      transition: opacity 0.3s ease;
-    }
-    
-    body:not(.loaded) {
-      opacity: 0;
-    }
-  `;
-  document.head.appendChild(style);
+  // Expose ThemeManager globally for external access
+  window.ThemeManager = ThemeManager;
 
 })(); 

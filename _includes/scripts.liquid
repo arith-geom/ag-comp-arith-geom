@@ -9,10 +9,14 @@
 <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
 
 <!-- Load Common JS -->
-<script defer src="{{ '/assets/js/common.js' | relative_url }}"></script>
-
-<!-- Multi-Theme Switcher -->
-<script defer src="{{ '/assets/js/theme-switcher-multi.js' | relative_url }}" type="text/javascript"></script>
+<script defer src="{{ '/assets/js/common.js' | relative_url }}" type="text/javascript"></script>
 
 <!-- Theme Management -->
 <script defer src="{{ '/assets/js/theme.js' | relative_url }}" type="text/javascript"></script>
+
+<!-- Page Specific JS -->
+{% if page.scripts %}
+  {% for script in page.scripts %}
+    <script defer src="{{ script | relative_url }}" type="text/javascript"></script>
+  {% endfor %}
+{% endif %}
