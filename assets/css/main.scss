@@ -249,7 +249,7 @@ textarea {
   padding: 0.5rem 0.75rem;
   transition: all var(--transition-fast);
   font-size: var(--text-base);
-
+  
   &:focus {
     background: var(--bg-primary) !important;
     color: var(--text-primary) !important;
@@ -295,7 +295,7 @@ thead th {
 
 tbody tr {
   border-bottom: 1px solid var(--border-color) !important;
-
+  
   &:hover {
     background: var(--bg-muted) !important;
   }
@@ -324,16 +324,16 @@ tbody td {
     padding: 1rem;
     box-shadow: var(--shadow-md);
   }
-
+  
   [data-theme="dark"] .navbar-collapse,
   body.dark-mode .navbar-collapse {
     background: var(--heidelberg-red-darker) !important;
   }
-
+  
   .navbar-nav {
     gap: 0.25rem;
   }
-
+  
   .navbar-nav .nav-link {
     padding: 0.75rem 1rem !important;
     border-radius: var(--radius-md);
@@ -424,7 +424,7 @@ tbody td {
   h2 { font-size: var(--text-2xl); }
   h3 { font-size: var(--text-xl); }
   h4 { font-size: var(--text-lg); }
-
+  
   .btn {
     padding: 0.75rem 1rem;
     font-size: var(--text-sm);

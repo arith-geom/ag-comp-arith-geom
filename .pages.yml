@@ -1,6 +1,9 @@
 media:
-  input: assets/uploads
-  output: /assets/uploads
+  - name: uploads
+    label: All Uploads
+    input: assets/uploads
+    output: /assets/uploads
+    extensions: ["png", "jpg", "jpeg", "gif", "svg", "pdf", "tex"]
 
 content:
   - name: publications
@@ -53,4 +56,21 @@ content:
         type: image
       - name: bio
         label: Biography
-        type: rich-text 
+        type: rich-text
+
+  - name: resources
+    label: Resources
+    path: _resources
+    type: collection
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+      - name: file
+        label: File
+        type: file
+        required: true 

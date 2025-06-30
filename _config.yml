@@ -20,6 +20,8 @@ enable_darkmode: true
 enable_theme_switcher: true
 
 # Basic collections
+collections_dir: .
+
 collections:
   pages:
     output: true
@@ -27,6 +29,8 @@ collections:
   publications:
     output: true
   members:
+    output: false
+  resources:
     output: true
 
 # Basic plugins only
@@ -34,6 +38,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-scholar
 
 # Exclude from processing
 exclude:
@@ -62,3 +67,11 @@ defaults:
 # Reading Files
 include:
   - .htaccess 
+
+scholar:
+  style: "apa"
+  sort_by: "year"
+  order: "descending"
+
+# Analytics
+analytics: 
