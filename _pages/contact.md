@@ -25,7 +25,7 @@ Placeholder Country
 
 ### Placeholder Contact Details
 
-**Email:** placeholder@placeholder.edu  
+**Email:** [Please add a contact email address]  
 **Phone:** +XX XXX XXX XXXX  
 **Fax:** +XX XXX XXX XXXX  
 
@@ -33,7 +33,7 @@ Placeholder Country
 
 **Prof. Dr. Placeholder Name**  
 **Position:** Placeholder Professor  
-**Email:** placeholder.leader@placeholder.edu  
+**Email:** [Please add a contact email address]  
 **Phone:** +XX XXX XXX XXXX  
 **Office:** Placeholder Building, Room XXX  
 **Office Hours:** Placeholder day, XX:XX - XX:XX (by appointment)  
@@ -42,7 +42,7 @@ Placeholder Country
 
 **Placeholder Administrator Name**  
 **Position:** Placeholder Administrative Assistant  
-**Email:** placeholder.admin@placeholder.edu  
+**Email:** [Please add a contact email address]  
 **Phone:** +XX XXX XXX XXXX  
 **Office:** Placeholder Building, Room XXX  
 
@@ -58,7 +58,7 @@ Placeholder parking information and driving directions to our building.
 
 ### Placeholder Campus Map
 
-A placeholder campus map would be available here showing the location of our department.
+[Please add a campus map.]
 
 ## Placeholder Visiting Information
 
@@ -70,7 +70,7 @@ A placeholder campus map would be available here showing the location of our dep
 
 ### Placeholder Accommodation
 
-For visiting researchers, placeholder accommodation options are available:
+[Please add accommodation options for visiting researchers.]
 - Placeholder Guest House
 - Placeholder Hotel Recommendations
 - Placeholder Apartment Rentals

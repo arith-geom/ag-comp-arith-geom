@@ -48,7 +48,7 @@ Placeholder City, Placeholder Country
 
 ## Placeholder Contact Information
 
-**Email:** placeholder@placeholder.edu  
+**Email:** [Please add a contact email address]  
 **Phone:** +XX XXX XXX XXXX  
 **Office Hours:** Placeholder office hours
 
@@ -64,4 +64,18 @@ Placeholder City, Placeholder Country
 
 **Official Website:** Visit our [original website](https://typo.iwr.uni-heidelberg.de/groups/arith-geom/) at typo.iwr.uni-heidelberg.de
 
-**Contact:** For inquiries, please contact [arithgeo@iwr.uni-heidelberg.de](mailto:arithgeo@iwr.uni-heidelberg.de) 
+**Contact:** For inquiries, please contact [arithgeo@iwr.uni-heidelberg.de](mailto:arithgeo@iwr.uni-heidelberg.de)
+
+For a list of our members, please see the [Members](/members) page.
+
+### Contact Information
+
+For inquiries, please contact [arithgeo@iwr.uni-heidelberg.de](mailto:arithgeo@iwr.uni-heidelberg.de).
+
+### Location
+
+Placeholder University  
+Placeholder Department  
+Placeholder Building, Room XXX  
+Placeholder Address  
+Placeholder City, Placeholder Country 

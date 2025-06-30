@@ -11,18 +11,8 @@ vendor/
 # ==============================================================================
 # Private Documentation & AI-Related Content (KEEP PRIVATE)
 # ==============================================================================
-.private/
-project_plan.md
-MODERNIZATION_UPDATES.md
-THEME_OVERVIEW.md
-theme-demo.md
-*_plan.md
-*plan*.md
-*ai*.md
-*AI*.md
-*assistant*.md
-*chat*.md
-*conversation*.md
+docs/internal/
+docs/private/
 
 # ==============================================================================
 # Development & Debugging Files
@@ -114,4 +104,4 @@ SCRATCH.md
 test/
 tests/
 spec/
-coverage/ 
+coverage/

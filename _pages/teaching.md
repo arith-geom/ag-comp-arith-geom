@@ -10,7 +10,7 @@ nav_order: 5
 
 ## Placeholder Course Information
 
-This section contains placeholder information about our teaching activities.
+[Please add content to this page.]
 
 ### Placeholder Current Semester (Winter 2024/25)
 
@@ -45,7 +45,7 @@ This section contains placeholder information about our teaching activities.
 
 ### Placeholder Bachelor Theses
 - Placeholder thesis topics available
-- Contact placeholder@placeholder.edu for information
+- Contact [Please add a contact email address] for information
 
 ### Placeholder Master Theses
 - Placeholder research projects in placeholder areas

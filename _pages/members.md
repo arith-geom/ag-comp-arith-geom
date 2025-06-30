@@ -12,7 +12,7 @@ nav_order: 3
 
 ### Prof. Dr. Placeholder Name
 **Position:** Placeholder Professor  
-**Email:** placeholder@placeholder.edu  
+**Email:** [Please add a contact email address]  
 **Office:** Placeholder Building, Room XXX  
 
 **Research Interests:**
@@ -28,7 +28,7 @@ nav_order: 3
 
 ### Dr. Placeholder Name 1
 **Position:** Placeholder Postdoc  
-**Email:** placeholder1@placeholder.edu  
+**Email:** [Please add a contact email address]  
 **Office:** Placeholder Building, Room XXX  
 
 **Research Interests:**
@@ -37,7 +37,7 @@ nav_order: 3
 
 ### Dr. Placeholder Name 2
 **Position:** Placeholder Postdoc  
-**Email:** placeholder2@placeholder.edu  
+**Email:** [Please add a contact email address]  
 **Office:** Placeholder Building, Room XXX  
 
 **Research Interests:**
@@ -50,14 +50,14 @@ nav_order: 3
 
 ### Placeholder Student Name 1
 **Position:** Placeholder PhD Student  
-**Email:** placeholder3@placeholder.edu  
+**Email:** [Please add a contact email address]  
 **Office:** Placeholder Building, Room XXX  
 
 **Research Topic:** Placeholder thesis topic
 
 ### Placeholder Student Name 2
 **Position:** Placeholder PhD Student  
-**Email:** placeholder4@placeholder.edu  
+**Email:** [Please add a contact email address]  
 **Office:** Placeholder Building, Room XXX  
 
 **Research Topic:** Placeholder thesis topic

@@ -10,7 +10,7 @@ nav_order: 4
 
 ## Placeholder Publication List
 
-This section contains placeholder publications for the initial website phase.
+[Please add content to this page.]
 
 ### Placeholder Recent Papers (2024)
 

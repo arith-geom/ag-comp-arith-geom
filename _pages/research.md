@@ -10,7 +10,7 @@ nav_order: 2
 
 ## Placeholder Research Overview
 
-This section contains placeholder descriptions of our research areas and methodologies.
+[Please add content to this page.]
 
 ### Placeholder Research Area 1
 

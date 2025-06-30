@@ -9,7 +9,7 @@ nav: false
 
 ## Placeholder Internal Resources
 
-This section contains placeholder internal information for group members.
+[Please add content to this page.]
 
 ### Placeholder Access Required
 
