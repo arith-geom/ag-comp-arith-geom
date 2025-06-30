@@ -69,8 +69,9 @@ content:
         required: true
       - name: description
         label: Description
-        type: text
-      - name: file
-        label: File
+        type: rich-text
+      - name: files
+        label: Files
         type: file
+        list: true
         required: false 
