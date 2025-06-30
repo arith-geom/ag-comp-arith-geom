@@ -1,0 +1,56 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: publications
+    label: Publications
+    path: _publications
+    type: collection
+    description: "Manage research papers and articles. Upload a PDF for each entry."
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: authors
+        label: Authors
+        type: string
+        required: true
+      - name: publication_details
+        label: "Journal, Conference, or Preprint Details"
+        type: string
+      - name: year
+        label: Year
+        type: number
+      - name: abstract
+        label: Abstract
+        type: rich-text
+      - name: file
+        label: PDF File
+        type: file
+        description: "Upload the publication PDF here."
+
+  - name: members
+    label: Team Members
+    path: _members
+    type: collection
+    description: "Manage team members."
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: role
+        label: Role
+        type: string
+        description: "e.g., Professor, PhD Student, Postdoc"
+      - name: email
+        label: Email
+        type: string
+      - name: photo
+        label: Photo
+        type: image
+      - name: bio
+        label: Biography
+        type: rich-text 
