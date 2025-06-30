@@ -1,12 +1,25 @@
 ---
-layout: default
+layout: page
 title: Publications
 permalink: /publications/
-nav: true
-nav_order: 4
 ---
-
-# Publications
+<div class="publications">
+  {% for pub in site.publications %}
+    <div class="publication">
+      <h3 class="publication-title">{{ pub.title }}</h3>
+      <p class="publication-authors">{{ pub.authors }}</p>
+      <p class="publication-details"><em>{{ pub.publication_details }} ({{ pub.year }})</em></p>
+      {% if pub.abstract %}
+        <div class="publication-abstract">
+          {{ pub.abstract | markdownify }}
+        </div>
+      {% endif %}
+      {% if pub.file %}
+        <a href="{{ pub.file | relative_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download PDF</a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
 
 ## Placeholder Publication List
 

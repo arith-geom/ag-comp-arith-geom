@@ -24,6 +24,10 @@ collections:
   pages:
     output: true
     permalink: /:name/
+  publications:
+    output: true
+  members:
+    output: true
 
 # Basic plugins only
 plugins:
@@ -53,4 +57,8 @@ defaults:
       path: ""
       type: "pages"
     values:
-      layout: "default" 
+      layout: "default"
+
+# Reading Files
+include:
+  - .htaccess 
