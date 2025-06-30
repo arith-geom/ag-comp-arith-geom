@@ -2,22 +2,30 @@
 layout: page
 title: Publications
 permalink: /publications/
+nav: true
 ---
-<div class="publications">
-  {% for pub in site.publications %}
-    <div class="publication">
-      <h3 class="publication-title">{{ pub.title }}</h3>
-      <p class="publication-authors">{{ pub.authors }}</p>
-      <p class="publication-details"><em>{{ pub.publication_details }} ({{ pub.year }})</em></p>
-      {% if pub.abstract %}
-        <div class="publication-abstract">
-          {{ pub.abstract | markdownify }}
-        </div>
-      {% endif %}
-      {% if pub.file %}
-        <a href="{{ pub.file | relative_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download PDF</a>
-      {% endif %}
-    </div>
+
+<div class="publications-list">
+  {% assign publications_by_year = site.publications | group_by: "year" | sort: "name" | reverse %}
+  {% for year_group in publications_by_year %}
+    <h2 class="year-heading mt-5 mb-3">{{ year_group.name }}</h2>
+    <ul class="list-group list-group-flush">
+      {% for pub in year_group.items %}
+        <li class="list-group-item">
+          <p class="mb-1">
+            <strong>
+              {% if pub.file %}
+                <a href="{{ pub.file | relative_url }}">{{ pub.title }}</a>
+              {% else %}
+                {{ pub.title }}
+              {% endif %}
+            </strong>
+          </p>
+          <p class="mb-1 text-muted">{{ pub.authors }}</p>
+          <p class="mb-1">{{ pub.publication_details }}</p>
+        </li>
+      {% endfor %}
+    </ul>
   {% endfor %}
 </div>
 

@@ -67,6 +67,9 @@ content:
         label: Title
         type: string
         required: true
+      - name: author
+        label: Author
+        type: string
       - name: description
         label: Description
         type: rich-text
