@@ -1,30 +1,33 @@
-{% capture footer_contents %}
-  &copy; Copyright {{ site.time | date: '%Y' }}
-  {{ site.first_name }}
-  {{ site.middle_name }}
-  {{ site.last_name }}. {{ site.footer_text }}
-  {% if site.impressum_path %}
-    <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-  {% endif %}
-  {% if site.last_updated %}
-    Last updated: {{ 'now' | date: '%B %d, %Y' }}.
-  {% endif %}
-{% endcapture %}
-
-{% if site.footer_fixed %}
-  <footer class="fixed-bottom" role="contentinfo">
-    <div class="container mt-0">
-      {{ footer_contents }}
+<footer class="footer mt-auto py-4 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5>AG Computational Arithmetic Geometry</h5>
+        <p class="text-muted">
+          Mathematikon, INF 205<br>
+          69120 Heidelberg, Germany
+        </p>
+      </div>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
+          <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+          <li><a href="{{ '/members/' | relative_url }}">Team</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <a href="https://www.uni-heidelberg.de/en" target="_blank" rel="noopener">
+          <img src="/assets/img/heidelberg_logo.svg" alt="Heidelberg University Logo" height="40" class="mb-2">
+        </a><br>
+        <a href="https://www.iwr.uni-heidelberg.de/en" target="_blank" rel="noopener" class="text-muted">Interdisciplinary Center for Scientific Computing (IWR)</a>
+      </div>
     </div>
-  </footer>
-{% else %}
-  <footer class="sticky-bottom mt-5" role="contentinfo">
-    {% if site.newsletter.enabled %}
-      {% include newsletter.liquid %}
-    {% endif %}
-
-    <div class="container">
-      {{ footer_contents }}
+    <hr>
+    <div class="text-center text-muted small">
+      &copy; {{ "now" | date: "%Y" }} {{ site.title }}. All Rights Reserved.
+      Last updated: {{ site.time | date: "%B %d, %Y" }}.
     </div>
-  </footer>
-{% endif %}
+  </div>
+</footer>

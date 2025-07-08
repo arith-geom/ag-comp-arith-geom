@@ -119,4 +119,71 @@ content:
         type: file
         list: true
         required: false
-        description: "Upload any relevant papers, posters, or images for this topic." 
+        description: "Upload any relevant papers, posters, or images for this topic."
+
+  - name: teaching
+    label: Teaching
+    path: _teaching
+    type: collection
+    description: "Manage courses and seminars. Each entry will appear on the Teaching page."
+    fields:
+      - name: title
+        label: Course Title
+        type: string
+        required: true
+      - name: semester
+        label: Semester
+        type: string
+        description: "e.g., Summer 2024, Winter 2023/24"
+        required: true
+      - name: instructor
+        label: Instructor(s)
+        type: string
+        required: true
+      - name: details
+        label: "Time & Location"
+        type: string
+        description: "e.g., Tuesdays & Thursdays, 10:00 - 12:00, Mathematikon, Room 5.104"
+      - name: description
+        label: Description
+        type: rich-text
+        description: "A brief description of the course content."
+
+  - name: news
+    label: News
+    path: _news
+    type: collection
+    description: "Create and manage news, announcements, or blog posts."
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: content
+        label: Content
+        type: rich-text
+        description: "The main content of the news post. You can use Markdown here."
+
+  - name: links
+    label: Links
+    path: _links
+    type: collection
+    description: "Manage the list of useful links. Use the category field to group them."
+    fields:
+      - name: title
+        label: Link Title
+        type: string
+        required: true
+      - name: url
+        label: Link URL
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: string
+        description: "e.g., Mathematical Software, Research Institutions, Online Resources"
+        required: true
+      - name: description
+        label: Description
+        type: string
+        description: "A short description of the link." 

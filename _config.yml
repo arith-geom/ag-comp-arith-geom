@@ -36,6 +36,14 @@ collections:
   research:
     output: true
     permalink: /research/:title/
+  teaching:
+    output: true
+    permalink: /teaching/:title/
+  news:
+    output: true
+    permalink: /news/:title/
+  links:
+    output: true
 
 # Basic plugins only
 plugins:
@@ -77,6 +85,21 @@ defaults:
       type: "research"
     values:
       layout: "resource"
+  - scope:
+      path: ""
+      type: "teaching"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "links"
+    values:
+      layout: "default"
 
 # Reading Files
 include:

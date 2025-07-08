@@ -59,12 +59,13 @@ layout: default
   </header>
 
   <article class="post-content">
-    {% if page.toc and page.toc.beginning %}
-      <div id="table-of-contents">
-        {% toc %}
+    {% if page.toc %}
+      <div class="toc-container">
+        <h4>On this page</h4>
+        <nav id="toc"></nav>
       </div>
-      <hr>
     {% endif %}
+
     <div id="markdown-content">
       {{ content }}
     </div>

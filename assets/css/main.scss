@@ -312,6 +312,34 @@ textarea {
   color: var(--link-hover);
 }
 
+/* Table of Contents Styling */
+.toc-container {
+  background: var(--bg-secondary);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+#toc.nav-pills .nav-link {
+  color: var(--text-secondary);
+}
+
+#toc.nav-pills .nav-link.active,
+#toc.nav-pills .show > .nav-link {
+  color: var(--primary-text);
+  background-color: var(--primary);
+}
+
+#toc .nav .nav-link {
+  padding-left: 2rem;
+  font-size: 0.9rem;
+}
+
+#toc .nav .nav .nav-link {
+  padding-left: 3rem;
+}
+
 // Dark mode form adjustments
 [data-theme="dark"] .form-control:focus,
 [data-theme="dark"] .form-select:focus,

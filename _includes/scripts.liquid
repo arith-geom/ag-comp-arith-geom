@@ -12,6 +12,19 @@
 <script src="https://unpkg.com/lunr/lunr.min.js"></script>
 <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
 
+<!-- Bootstrap Table of Contents -->
+<script src="{{ '/assets/js/bootstrap-toc.min.js' | relative_url }}"></script>
+<script>
+  $(function () {
+    var navSelector = '#toc';
+    var $myNav = $(navSelector);
+    Toc.init($myNav);
+    $('body').scrollspy({
+      target: navSelector
+    });
+  });
+</script>
+
 <!-- Load Common JS -->
 <script defer src="{{ '/assets/js/common.js' | relative_url }}" type="text/javascript"></script>
 
