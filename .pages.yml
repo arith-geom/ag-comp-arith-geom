@@ -24,18 +24,13 @@ content:
         label: Publication Type
         type: select
         options:
-          - label: Journal Article
-            value: Journal Article
-          - label: Conference Paper
-            value: Conference Paper
-          - label: Preprint
-            value: Preprint
-          - label: Book
-            value: Book
-          - label: Book Chapter
-            value: Book Chapter
-          - label: Thesis
-            value: Thesis
+          values:
+            - Journal Article
+            - Conference Paper
+            - Preprint
+            - Book
+            - Book Chapter
+            - Thesis
         required: true
       - name: publication_details
         label: "Journal, Conference, or Preprint Details"
@@ -104,4 +99,24 @@ content:
         label: Files
         type: file
         list: true
-        required: false 
+        required: false
+  - name: research
+    label: Research Topics
+    path: _research
+    type: collection
+    description: "Manage research topics and areas. Each entry will appear on the research page."
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: rich-text
+        description: "A summary of the research topic. This will be shown as a preview on the main research page."
+      - name: files
+        label: "Associated Files (PDFs, Images, etc.)"
+        type: file
+        list: true
+        required: false
+        description: "Upload any relevant papers, posters, or images for this topic." 
