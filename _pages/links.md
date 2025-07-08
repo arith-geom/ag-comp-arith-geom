@@ -1,73 +1,27 @@
 ---
-layout: default
+layout: page
 title: Links
 permalink: /links/
 nav: true
-nav_order: 7
 ---
 
-# Useful Links
+Here are some links that may be of interest to students and researchers in arithmetic geometry and number theory.
 
-## Placeholder Mathematical Resources
+### Mathematical Software
 
-### Placeholder Journals
-- **Placeholder Mathematics Journal 1**: Placeholder description
-- **Placeholder Mathematics Journal 2**: Placeholder description
-- **Placeholder Mathematics Journal 3**: Placeholder description
+- [**MAGMA**](http://magma.maths.usyd.edu.au/magma/): A powerful computer algebra system for number theory, algebra, and geometry.
+- [**SageMath**](https://www.sagemath.org/): A free open-source mathematics software system.
+- [**PARI/GP**](https://pari.math.u-bordeaux.fr/): A computer algebra system for fast computations in number theory.
 
-### Placeholder Research Databases
-- **Placeholder Database 1**: Placeholder mathematical database
-- **Placeholder Database 2**: Placeholder research repository
-- **Placeholder Database 3**: Placeholder academic search engine
+### Research Institutions & Groups
 
-## Placeholder Software Tools
+- [**Max Planck Institute for Mathematics (MPIM)**](https://www.mpim-bonn.mpg.de/): A leading research institute in Bonn, Germany.
+- [**Institut des Hautes Études Scientifiques (IHÉS)**](https://www.ihes.fr/): A French research institute in mathematics and theoretical physics.
+- [**Clay Mathematics Institute**](https://www.claymath.org/): A private, non-profit foundation dedicated to increasing and disseminating mathematical knowledge.
 
-### Placeholder Mathematical Software
-- **Placeholder Software 1**: Placeholder computational system
-- **Placeholder Software 2**: Placeholder mathematical package
-- **Placeholder Software 3**: Placeholder research tool
+### Online Resources
 
-### Placeholder Online Calculators
-- **Placeholder Calculator 1**: Placeholder mathematical calculations
-- **Placeholder Calculator 2**: Placeholder specialized computations
-- **Placeholder Calculator 3**: Placeholder research computations
-
-## Placeholder Academic Institutions
-
-### Placeholder Universities
-- **Placeholder University 1**: Placeholder mathematics department
-- **Placeholder University 2**: Placeholder research institute
-- **Placeholder University 3**: Placeholder academic center
-
-### Placeholder Research Groups
-- **Placeholder Research Group 1**: Placeholder specialization
-- **Placeholder Research Group 2**: Placeholder research area
-- **Placeholder Research Group 3**: Placeholder academic focus
-
-## Placeholder Conferences and Events
-
-### Placeholder Conferences
-- **Placeholder Conference 1**: Annual placeholder mathematics meeting
-- **Placeholder Conference 2**: International placeholder symposium
-- **Placeholder Conference 3**: Placeholder research workshop
-
-### Placeholder Workshops
-- **Placeholder Workshop 1**: Placeholder computational methods
-- **Placeholder Workshop 2**: Placeholder theoretical advances
-- **Placeholder Workshop 3**: Placeholder applications meeting
-
-## Placeholder Educational Resources
-
-### Placeholder Online Courses
-- **Placeholder Course 1**: Introduction to placeholder mathematics
-- **Placeholder Course 2**: Advanced placeholder topics
-- **Placeholder Course 3**: Placeholder computational methods
-
-### Placeholder Textbooks
-- **Placeholder Book 1**: Placeholder mathematical text
-- **Placeholder Book 2**: Placeholder research monograph
-- **Placeholder Book 3**: Placeholder educational resource
-
----
-
-*This is placeholder content for the initial website phase.* 
+- [**arXiv**](https://arxiv.org/): An open-access archive for scholarly articles in mathematics, physics, and computer science.
+- [**MathSciNet**](https://mathscinet.ams.org/mathscinet/): A comprehensive database of reviews, abstracts, and bibliographic information for mathematical sciences literature.
+- [**The Stacks Project**](https://stacks.math.columbia.edu/): An open-source textbook and reference work on algebraic stacks and the geometry of schemes.
+- [**Number Theory Web**](https://www.numbertheory.org/ntw/): A collection of links to resources in number theory. 

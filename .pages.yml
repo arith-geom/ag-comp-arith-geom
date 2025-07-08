@@ -24,12 +24,18 @@ content:
         label: Publication Type
         type: select
         options:
-          - Journal Article
-          - Conference Paper
-          - Preprint
-          - Book
-          - Book Chapter
-          - Thesis
+          - label: Journal Article
+            value: Journal Article
+          - label: Conference Paper
+            value: Conference Paper
+          - label: Preprint
+            value: Preprint
+          - label: Book
+            value: Book
+          - label: Book Chapter
+            value: Book Chapter
+          - label: Thesis
+            value: Thesis
         required: true
       - name: publication_details
         label: "Journal, Conference, or Preprint Details"

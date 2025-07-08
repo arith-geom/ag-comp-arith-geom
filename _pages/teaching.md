@@ -1,74 +1,30 @@
 ---
-layout: default
+layout: page
 title: Teaching
 permalink: /teaching/
 nav: true
-nav_order: 5
 ---
 
-# Teaching
+Our group is actively involved in teaching at Heidelberg University. Below is a list of current and past courses. For detailed information, please refer to the university's course catalog.
 
-## Placeholder Course Information
+### Current Semester (Summer 2024)
 
-[Please add content to this page.]
+- **MA1: Advanced Topics in Algebraic Geometry**
+  - **Lecturer:** Prof. Dr. Gebhard Böckle
+  - **Time:** Tuesdays & Thursdays, 10:00 - 12:00
+  - **Location:** Mathematikon, Room 5.104
+  - **Description:** A graduate-level course exploring advanced concepts in scheme theory and cohomology.
 
-### Placeholder Current Semester (Winter 2024/25)
+- **Praktikum: Computational Number Theory**
+  - **Instructor:** Dr. Postdoc Name
+  - **Time:** Wednesdays, 14:00 - 16:00
+  - **Location:** Mathematikon, Computer Pool
+  - **Description:** A hands-on course introducing students to computational tools like MAGMA and SageMath for number theory research.
 
-#### Placeholder Course 1
-**Course Title:** Placeholder Mathematics Course  
-**Instructor:** Prof. Dr. Placeholder Name  
-**Time:** Placeholder Day, XX:XX - XX:XX  
-**Location:** Placeholder Building, Room XXX  
+### Past Semesters
 
-**Description:** Placeholder course description covering placeholder topics and placeholder methodologies.
+- **Winter 2023/24:** Introduction to Cryptography
+- **Summer 2023:** Elliptic Curves
+- **Winter 2022/23:** Modular Forms
 
-#### Placeholder Course 2
-**Course Title:** Placeholder Advanced Topics  
-**Instructor:** Dr. Placeholder Name  
-**Time:** Placeholder Day, XX:XX - XX:XX  
-**Location:** Placeholder Building, Room XXX  
-
-**Description:** Placeholder advanced course description for placeholder specialized topics.
-
-### Placeholder Previous Courses
-
-#### Placeholder Summer 2024
-- **Placeholder Course A**: Placeholder topic (Prof. Dr. Placeholder)
-- **Placeholder Course B**: Placeholder seminar (Dr. Placeholder)
-- **Placeholder Course C**: Placeholder practicum (Placeholder Instructor)
-
-#### Placeholder Winter 2023/24
-- **Placeholder Course D**: Placeholder theory (Prof. Dr. Placeholder)
-- **Placeholder Course E**: Placeholder applications (Dr. Placeholder)
-
-## Placeholder Student Projects
-
-### Placeholder Bachelor Theses
-- Placeholder thesis topics available
-- Contact [Please add a contact email address] for information
-
-### Placeholder Master Theses
-- Placeholder research projects in placeholder areas
-- Computational placeholder methods
-- Theoretical placeholder investigations
-
-### Placeholder PhD Opportunities
-- Placeholder doctoral positions available
-- Research in placeholder computational methods
-- Collaboration with placeholder international partners
-
-## Placeholder Resources
-
-### Placeholder Course Materials
-- Placeholder lecture notes
-- Placeholder exercise sheets
-- Placeholder software tutorials
-
-### Placeholder Software Tools
-- Placeholder mathematical software
-- Placeholder computational packages
-- Placeholder online resources
-
----
-
-*This is placeholder content for the initial website phase.* 
+For specific course materials, please contact the respective lecturer or check the internal section of our website. 

@@ -33,6 +33,9 @@ collections:
   resources:
     output: true
     permalink: /resources/:title/
+  research:
+    output: true
+    permalink: /research/:title/
 
 # Basic plugins only
 plugins:
@@ -67,6 +70,11 @@ defaults:
   - scope:
       path: ""
       type: "resources"
+    values:
+      layout: "resource"
+  - scope:
+      path: ""
+      type: "research"
     values:
       layout: "resource"
 
