@@ -1,80 +1,33 @@
 ---
-layout: default
+layout: page
 title: Contact
 permalink: /contact/
 nav: true
-nav_order: 6
 ---
 
-# Contact Information
+### Address
 
-## Placeholder Research Group
+Prof. Dr. Gebhard Böckle  
+Interdisciplinary Center for Scientific Computing (IWR)  
+Mathematikon, INF 205  
+69120 Heidelberg  
+Germany
 
-**Group Name:** Placeholder Computational Research Group  
-**Institution:** Placeholder University  
-**Department:** Placeholder Department  
+**Office:** Room 3.212, 3rd Floor
 
-### Placeholder Address
+### Email
 
-Placeholder University  
-Placeholder Department  
-Placeholder Building  
-Placeholder Street XXX  
-XXXXX Placeholder City  
-Placeholder Country  
+For inquiries, please contact us at: [arithgeo@iwr.uni-heidelberg.de](mailto:arithgeo@iwr.uni-heidelberg.de)
 
-### Placeholder Contact Details
+### How to find us
 
-**Email:** [Please add a contact email address]  
-**Phone:** +XX XXX XXX XXXX  
-**Fax:** +XX XXX XXX XXXX  
+The Mathematikon is located at **Im Neuenheimer Feld 205, 69120 Heidelberg**. You can use the map below for directions. Our offices are on the 3rd floor.
 
-## Placeholder Group Leader
-
-**Prof. Dr. Placeholder Name**  
-**Position:** Placeholder Professor  
-**Email:** [Please add a contact email address]  
-**Phone:** +XX XXX XXX XXXX  
-**Office:** Placeholder Building, Room XXX  
-**Office Hours:** Placeholder day, XX:XX - XX:XX (by appointment)  
-
-## Placeholder Administrative Contact
-
-**Placeholder Administrator Name**  
-**Position:** Placeholder Administrative Assistant  
-**Email:** [Please add a contact email address]  
-**Phone:** +XX XXX XXX XXXX  
-**Office:** Placeholder Building, Room XXX  
-
-## Placeholder Directions
-
-### By Placeholder Transport
-
-Placeholder directions for reaching our location using placeholder transportation methods.
-
-### By Placeholder Vehicle
-
-Placeholder parking information and driving directions to our building.
-
-### Placeholder Campus Map
-
-[Please add a campus map.]
-
-## Placeholder Visiting Information
-
-### Placeholder Visitor Guidelines
-
-- Placeholder visitor registration process
-- Placeholder security requirements
-- Placeholder meeting room booking
-
-### Placeholder Accommodation
-
-[Please add accommodation options for visiting researchers.]
-- Placeholder Guest House
-- Placeholder Hotel Recommendations
-- Placeholder Apartment Rentals
-
----
-
-*This is placeholder content for the initial website phase.* 
+<iframe
+  width="100%"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ70D9Zms_l0cR2z_w-A4-CoY&key={{ site.google_maps_api_key }}">
+</iframe> 

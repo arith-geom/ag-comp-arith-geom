@@ -69,6 +69,14 @@
             {% endif %}
           {% endfor %}
 
+          <!-- Search Bar -->
+          <li class="nav-item" role="none">
+            <div class="search-container">
+              <input type="text" id="search-input" class="form-control search-input" placeholder="Search..." aria-label="Search this site">
+              <div id="search-results" class="search-results-container"></div>
+            </div>
+          </li>
+
           <!-- Theme Switcher -->
           {% if site.enable_theme_switcher %}
             <li class="nav-item" role="none">

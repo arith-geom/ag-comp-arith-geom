@@ -20,12 +20,27 @@ content:
         label: Authors
         type: string
         required: true
+      - name: publication_type
+        label: Publication Type
+        type: select
+        options:
+          - Journal Article
+          - Conference Paper
+          - Preprint
+          - Book
+          - Book Chapter
+          - Thesis
+        required: true
       - name: publication_details
         label: "Journal, Conference, or Preprint Details"
         type: string
       - name: year
         label: Year
         type: number
+        required: true
+      - name: doi
+        label: "DOI (Digital Object Identifier)"
+        type: string
       - name: abstract
         label: Abstract
         type: rich-text
@@ -48,12 +63,18 @@ content:
         label: Role
         type: string
         description: "e.g., Professor, PhD Student, Postdoc"
-      - name: email
-        label: Email
-        type: string
       - name: photo
         label: Photo
         type: image
+      - name: email
+        label: Email
+        type: string
+      - name: website
+        label: Personal Website
+        type: string
+      - name: github
+        label: GitHub Username
+        type: string
       - name: bio
         label: Biography
         type: rich-text

@@ -21,6 +21,18 @@ nav: true
         {% if member.email %}
           <p class="team-member-email"><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>
         {% endif %}
+        <div class="team-member-links">
+          {% if member.website %}
+            <a href="{{ member.website }}" target="_blank" rel="noopener noreferrer" class="team-member-link" aria-label="Personal Website">
+              <i class="fas fa-globe"></i>
+            </a>
+          {% endif %}
+          {% if member.github %}
+            <a href="https://github.com/{{ member.github }}" target="_blank" rel="noopener noreferrer" class="team-member-link" aria-label="GitHub Profile">
+              <i class="fab fa-github"></i>
+            </a>
+          {% endif %}
+        </div>
         {% if member.bio %}
           <div class="team-member-bio">
             {{ member.bio | markdownify }}
@@ -67,6 +79,18 @@ nav: true
   font-style: italic;
   color: var(--text-color-secondary);
   margin-bottom: 1rem;
+}
+.team-member-links {
+  margin-bottom: 1rem;
+}
+.team-member-link {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  color: var(--text-color-secondary);
+  transition: color 0.3s ease;
+}
+.team-member-link:hover {
+  color: var(--link-color);
 }
 .team-member-bio {
   text-align: left;

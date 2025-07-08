@@ -1,8 +1,8 @@
 # Basic Jekyll Configuration for Phase 1
 title: AG Computational Arithmetic Geometry
-email: placeholder@math.uni-heidelberg.de
+email: arithgeo@iwr.uni-heidelberg.de
 description: >- 
-  Placeholder research group description. This is placeholder text for the initial website phase.
+  This is the website of the research group "computational arithmetic geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.
 baseurl: ""
 url: "https://placeholder-ag-comp-arith-geom.github.io"
 twitter_username: placeholder

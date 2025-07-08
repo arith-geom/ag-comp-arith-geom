@@ -1,63 +1,14 @@
 ---
-layout: default
+layout: page
 title: Research
 permalink: /research/
 nav: true
-nav_order: 2
 ---
 
-# Research Areas
+The research of our group is in **arithmetic geometry** and **number theory**. We are particularly interested in the following topics:
 
-## Placeholder Research Overview
+- **Galois representations:** These are a central tool in modern number theory. They encode deep arithmetic information, for instance about elliptic curves or modular forms. We study their properties, in particular through their deformation theory.
+- **Modular forms and automorphic forms:** These are analytic functions with a huge amount of symmetry. They are a bridge between many areas of mathematics. We are interested in their connection to Galois representations and their applications in number theory.
+- **Function field arithmetic:** This is the study of arithmetic properties of function fields over finite fields. It is an area with many analogies to classical number theory, but also with its own specific challenges. We study L-functions, Drinfeld modular forms and shtukas in this context.
 
-[Please add content to this page.]
-
-### Placeholder Research Area 1
-
-**Placeholder Topic Name**
-
-Placeholder description of research area one. This area focuses on placeholder methodologies and placeholder applications.
-
-#### Key Research Questions:
-- Placeholder research question 1?
-- Placeholder research question 2?
-- Placeholder research question 3?
-
-### Placeholder Research Area 2
-
-**Placeholder Topic Name**
-
-Placeholder description of research area two. This involves placeholder techniques and placeholder theoretical frameworks.
-
-#### Current Projects:
-- **Placeholder Project 1**: Placeholder project description
-- **Placeholder Project 2**: Placeholder project description
-- **Placeholder Project 3**: Placeholder project description
-
-### Placeholder Research Area 3
-
-**Placeholder Topic Name**
-
-Placeholder description of research area three. We investigate placeholder phenomena using placeholder computational methods.
-
-#### Recent Results:
-- Placeholder result 1
-- Placeholder result 2
-- Placeholder result 3
-
-## Placeholder Collaborations
-
-We collaborate with placeholder institutions and placeholder researchers worldwide.
-
-### Placeholder Partners:
-- Placeholder University 1
-- Placeholder University 2
-- Placeholder Research Institute
-
-## Placeholder Funding
-
-Our research is supported by placeholder funding agencies and placeholder grants.
-
----
-
-*This is placeholder content for the initial website phase.* 
+To learn more about our work, you can browse the [publications](/publications) of our group members. 
