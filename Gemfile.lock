@@ -3,6 +3,7 @@ GEM
   specs:
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    base64 (0.3.0)
     bibtex-ruby (6.1.0)
       latex-decode (~> 0.0)
       racc (~> 1.7)
@@ -30,6 +31,7 @@ GEM
       time (< 1.0)
     csl-styles (2.0.1)
       csl (~> 2.0)
+    csv (3.3.5)
     date (3.4.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
@@ -121,6 +123,8 @@ PLATFORMS
   x86_64-linux-gnu
 
 DEPENDENCIES
+  base64
+  csv
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.3.0)
   jekyll-feed (~> 0.17)
