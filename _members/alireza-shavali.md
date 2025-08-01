@@ -1,8 +1,10 @@
 ---
-name: "Alireza Shavali"
-role: "PhD Student"
+name: "Dr. Alireza Shavali"
+role: "Postdoctoral Researcher"
 photo: "/assets/img/placeholder.jpg"
-order: 4
+order: 2
+email: "alireza.shavali@iwr.uni-heidelberg.de"
+research_interests: "Computational number theory, modular forms, Galois representations"
 ---
 
-Alireza Shavali is a PhD student working on computational aspects of arithmetic geometry and number theory. 
+Dr. Alireza Shavali is a postdoctoral researcher working on computational aspects of number theory, particularly modular forms and Galois representations. 

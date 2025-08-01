@@ -1,5 +1,5 @@
-// Enhanced Search Functionality
-// Fixed and improved search implementation with mobile support
+// Enhanced Search Functionality with Modern UX
+// Improved search implementation with better animations and user feedback
 
 (function(){
   'use strict';
@@ -14,6 +14,7 @@
   var currentQuery = '';
   var searchTimeout = null;
   var isInitialized = false;
+  var isLoading = false;
   
   // Initialize search when DOM is ready
   if (document.readyState === 'loading') {
@@ -28,7 +29,7 @@
       return;
     }
     
-    console.log('Initializing search functionality...');
+    console.log('Initializing enhanced search functionality...');
     
     // Load search data and build index
     loadSearchData();
@@ -39,12 +40,16 @@
     // Add search toggle functionality
     addSearchToggle();
     
+    // Add loading states
+    addLoadingStates();
+    
     isInitialized = true;
-    console.log('Search functionality initialized');
+    console.log('Enhanced search functionality initialized');
   }
   
   function loadSearchData() {
     console.log('Loading search data...');
+    showLoadingState();
     
     // Try multiple paths to load search data
     const searchPaths = [
@@ -57,6 +62,7 @@
     function tryLoadSearchData(index) {
       if (index >= searchPaths.length) {
         console.warn('All search data loading attempts failed, using fallback');
+        hideLoadingState();
         extractPageContent();
         return;
       }
@@ -75,6 +81,7 @@
           console.log('Search data loaded successfully from', path + ':', data.length, 'items');
           searchData = data;
           buildSearchIndex();
+          hideLoadingState();
         })
         .catch(function(error) {
           console.warn('Failed to load from', path + ':', error);
@@ -157,7 +164,7 @@
   }
   
   function setupSearchInput(input, results) {
-    // Input event for real-time search
+    // Input event for real-time search with enhanced feedback
     input.addEventListener('input', function(e) {
       e.preventDefault();
       const query = e.target.value.trim();
@@ -167,22 +174,37 @@
         clearTimeout(searchTimeout);
       }
       
-      // Debounce search
+      // Show typing indicator for longer queries
+      if (query.length > 2) {
+        showTypingIndicator(results);
+      }
+      
+      // Debounce search with progressive delay
+      const delay = query.length > 3 ? 100 : 200;
       searchTimeout = setTimeout(function() {
         performSearch(query, results);
-      }, 150);
+      }, delay);
     });
     
-    // Keydown events for navigation
+    // Enhanced keydown events for navigation
     input.addEventListener('keydown', function(e) {
       handleSearchKeydown(e, results);
     });
     
-    // Focus events
+    // Focus events with enhanced feedback
     input.addEventListener('focus', function() {
       if (currentQuery.length > 0) {
         showSearchResults(results);
       }
+      // Add focus animation
+      this.parentElement.parentElement.classList.add('search-focused');
+    });
+    
+    input.addEventListener('blur', function() {
+      // Remove focus animation after a delay
+      setTimeout(() => {
+        this.parentElement.parentElement.classList.remove('search-focused');
+      }, 200);
     });
     
     // Click outside to close results
@@ -192,13 +214,18 @@
       }
     });
     
-    // Prevent form submission
+    // Prevent form submission and enhance enter key behavior
     input.addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
         e.preventDefault();
-        const firstResult = results.querySelector('.search-result-item');
-        if (firstResult) {
-          firstResult.click();
+        const activeResult = results.querySelector('.search-result-item.active');
+        if (activeResult) {
+          activeResult.click();
+        } else {
+          const firstResult = results.querySelector('.search-result-item');
+          if (firstResult) {
+            firstResult.click();
+          }
         }
       }
     });
@@ -242,12 +269,14 @@
         break;
     }
     
-    // Update active state
+    // Update active state with smooth transitions
     if (currentActive) {
       currentActive.classList.remove('active');
     }
     if (nextActive) {
       nextActive.classList.add('active');
+      // Ensure the active item is visible
+      nextActive.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }
   
@@ -259,7 +288,7 @@
       return;
     }
     
-    console.log('Performing search for:', query);
+    console.log('Performing enhanced search for:', query);
     
     if (!searchIndex) {
       // Fallback to simple search
@@ -346,7 +375,7 @@
       return;
     }
     
-    const resultsHTML = results.slice(0, 8).map(function(result) {
+    const resultsHTML = results.slice(0, 8).map(function(result, index) {
       const item = searchData[result.ref];
       const title = item.title || 'Untitled';
       const content = item.content || '';
@@ -358,7 +387,7 @@
       const displayContent = description || content.substring(0, 120) + (content.length > 120 ? '...' : '');
       
       return `
-        <div class="search-result-item" data-url="${escapeHtml(url)}">
+        <div class="search-result-item" data-url="${escapeHtml(url)}" style="animation-delay: ${index * 0.05}s">
           <div class="search-result-header">
             <div class="search-result-title">${highlightText(title, query)}</div>
             ${category ? `<div class="search-result-category">${escapeHtml(category)}</div>` : ''}
@@ -372,13 +401,26 @@
     resultsContainer.innerHTML = resultsHTML;
     showSearchResults(resultsContainer);
     
-    // Add click handlers
+    // Add enhanced click handlers with feedback
     resultsContainer.querySelectorAll('.search-result-item').forEach(function(item) {
       item.addEventListener('click', function() {
         const url = this.getAttribute('data-url');
         if (url && url !== '#') {
-          window.location.href = url;
+          // Add click feedback
+          this.style.transform = 'scale(0.98)';
+          setTimeout(() => {
+            window.location.href = url;
+          }, 150);
         }
+      });
+      
+      // Add hover effects
+      item.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(4px) scale(1.01)';
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateX(0) scale(1)';
       });
     });
   }
@@ -403,46 +445,167 @@
   function showSearchResults(resultsContainer) {
     if (resultsContainer) {
       resultsContainer.style.display = 'block';
-      resultsContainer.classList.add('show');
+      // Add a small delay for smooth animation
+      setTimeout(() => {
+        resultsContainer.classList.add('show');
+      }, 10);
     }
   }
   
   function hideSearchResults(resultsContainer) {
     if (resultsContainer) {
-      resultsContainer.style.display = 'none';
       resultsContainer.classList.remove('show');
+      // Wait for animation to complete before hiding
+      setTimeout(() => {
+        resultsContainer.style.display = 'none';
+      }, 200);
     }
   }
   
+  function showLoadingState() {
+    isLoading = true;
+    const containers = [searchResults, searchResultsMobile];
+    containers.forEach(container => {
+      if (container) {
+        container.innerHTML = `
+          <div class="search-loading-state">
+            <div class="search-spinner"></div>
+            <p>Loading search data...</p>
+          </div>
+        `;
+        showSearchResults(container);
+      }
+    });
+  }
+  
+  function hideLoadingState() {
+    isLoading = false;
+    const containers = [searchResults, searchResultsMobile];
+    containers.forEach(container => {
+      if (container) {
+        hideSearchResults(container);
+      }
+    });
+  }
+  
+  function showTypingIndicator(resultsContainer) {
+    if (isLoading) return;
+    
+    if (resultsContainer && !resultsContainer.querySelector('.search-typing-indicator')) {
+      const typingIndicator = document.createElement('div');
+      typingIndicator.className = 'search-typing-indicator';
+      typingIndicator.innerHTML = `
+        <div class="typing-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p>Searching...</p>
+      `;
+      resultsContainer.appendChild(typingIndicator);
+      showSearchResults(resultsContainer);
+    }
+  }
+  
+  function addLoadingStates() {
+    // Add CSS for loading states
+    const loadingCSS = `
+      <style>
+        .search-loading-state {
+          padding: 2rem;
+          text-align: center;
+          color: var(--text-muted);
+        }
+        
+        .search-spinner {
+          width: 2rem;
+          height: 2rem;
+          border: 2px solid var(--border-color);
+          border-top: 2px solid var(--primary);
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin: 0 auto 1rem;
+        }
+        
+        .search-typing-indicator {
+          padding: 1rem;
+          text-align: center;
+          color: var(--text-muted);
+        }
+        
+        .typing-dots {
+          display: flex;
+          justify-content: center;
+          gap: 0.25rem;
+          margin-bottom: 0.5rem;
+        }
+        
+        .typing-dots span {
+          width: 0.5rem;
+          height: 0.5rem;
+          background: var(--text-muted);
+          border-radius: 50%;
+          animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes typing {
+          0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+          40% { transform: scale(1); opacity: 1; }
+        }
+        
+        .search-focused {
+          transform: translateY(-2px) scale(1.02);
+        }
+        
+        .search-result-item {
+          animation: searchResultSlideIn 0.3s ease forwards;
+          opacity: 0;
+          transform: translateX(-10px);
+        }
+        
+        @keyframes searchResultSlideIn {
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      </style>
+    `;
+    
+    document.head.insertAdjacentHTML('beforeend', loadingCSS);
+  }
+  
   function addSearchToggle() {
-    // Add keyboard shortcut (Ctrl/Cmd + K)
+    // Add keyboard shortcut (Ctrl/Cmd + K) with enhanced feedback
     document.addEventListener('keydown', function(e) {
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         // Focus desktop search if available, otherwise mobile
         if (searchInput) {
           searchInput.focus();
+          // Add visual feedback
+          searchInput.parentElement.parentElement.classList.add('search-shortcut-triggered');
+          setTimeout(() => {
+            searchInput.parentElement.parentElement.classList.remove('search-shortcut-triggered');
+          }, 300);
         } else if (searchInputMobile) {
           searchInputMobile.focus();
+          // Add visual feedback
+          searchInputMobile.parentElement.parentElement.classList.add('search-shortcut-triggered');
+          setTimeout(() => {
+            searchInputMobile.parentElement.parentElement.classList.remove('search-shortcut-triggered');
+          }, 300);
         }
       }
     });
-    
-    // Add search toggle button functionality
-    const searchToggle = document.getElementById('search-toggle');
-    const searchToggleMobile = document.getElementById('search-toggle-mobile');
-    
-    if (searchToggle && searchInput) {
-      searchToggle.addEventListener('click', function() {
-        searchInput.focus();
-      });
-    }
-    
-    if (searchToggleMobile && searchInputMobile) {
-      searchToggleMobile.addEventListener('click', function() {
-        searchInputMobile.focus();
-      });
-    }
     
     // Listen for theme changes to update search styling
     document.addEventListener('themeChanged', function(e) {

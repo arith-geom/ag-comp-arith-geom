@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py-4 bg-light">
+<footer class="footer mt-auto py-4">
   <div class="container">
     <div class="row">
       <div class="col-md-4 mb-3 mb-md-0">
@@ -24,7 +24,7 @@
         <a href="https://www.iwr.uni-heidelberg.de/en" target="_blank" rel="noopener" class="text-muted">Interdisciplinary Center for Scientific Computing (IWR)</a>
       </div>
     </div>
-    <hr>
+    <hr class="footer-divider">
     <div class="text-center text-muted small">
       &copy; {{ "now" | date: "%Y" }} {{ site.title }}. All Rights Reserved.
       Last updated: {{ site.time | date: "%B %d, %Y" }}.
@@ -92,6 +92,73 @@ body.dark-mode .floating-theme-toggle:hover {
     height: 45px;
     font-size: 1.1rem;
   }
+}
+
+/* Footer Dark Mode Styles */
+.footer {
+  background-color: var(--bg-secondary, #F3F4F6) !important;
+  color: var(--text-primary, #000000) !important;
+  border-top: 1px solid var(--border-color, #E5E7EB) !important;
+}
+
+.footer h5 {
+  color: var(--text-primary, #000000) !important;
+}
+
+.footer .text-muted {
+  color: var(--text-muted, #6B7280) !important;
+}
+
+.footer a {
+  color: var(--link-color, #C22032) !important;
+}
+
+.footer a:hover {
+  color: var(--link-hover, #991B1B) !important;
+}
+
+.footer-divider {
+  border-color: var(--border-color, #E5E7EB) !important;
+  margin: 1.5rem 0;
+}
+
+/* Dark mode footer styles */
+[data-theme="dark"] .footer,
+body.dark-mode .footer,
+html[data-theme="dark"] .footer {
+  background-color: var(--bg-secondary, #0A0A0A) !important;
+  color: var(--text-primary, #FFFFFF) !important;
+  border-top: 1px solid var(--border-color, #374151) !important;
+}
+
+[data-theme="dark"] .footer h5,
+body.dark-mode .footer h5,
+html[data-theme="dark"] .footer h5 {
+  color: var(--text-primary, #FFFFFF) !important;
+}
+
+[data-theme="dark"] .footer .text-muted,
+body.dark-mode .footer .text-muted,
+html[data-theme="dark"] .footer .text-muted {
+  color: var(--text-muted, #9CA3AF) !important;
+}
+
+[data-theme="dark"] .footer a,
+body.dark-mode .footer a,
+html[data-theme="dark"] .footer a {
+  color: var(--link-color, #FF6B6B) !important;
+}
+
+[data-theme="dark"] .footer a:hover,
+body.dark-mode .footer a:hover,
+html[data-theme="dark"] .footer a:hover {
+  color: var(--link-hover, #FF5252) !important;
+}
+
+[data-theme="dark"] .footer-divider,
+body.dark-mode .footer-divider,
+html[data-theme="dark"] .footer-divider {
+  border-color: var(--border-color, #374151) !important;
 }
 
 /* Force dark mode styles with high specificity */

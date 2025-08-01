@@ -10,7 +10,7 @@ nav: true
 </div>
 
 <div class="translatable-content" data-translation-key="about.content">
-  Within algebraic number theory and arithmetic geometry, the focus of the research group is on Galois representations, their relations to modular forms and elliptic curves, their deformation theory etc., as well as on some aspects of function field arithmetic such as L-functions and Drinfeld modular forms.
+  Within algebraic number theory and arithmetic geometry, the focus of the research group is on Galois representations, their relations to modular forms and elliptic curves, their deformation theory etc., as well as on some aspects of function field arithmetic such as $L$-functions and Drinfeld modular forms.
 </div>
 
 <div class="translatable-content" data-translation-key="about.methods">

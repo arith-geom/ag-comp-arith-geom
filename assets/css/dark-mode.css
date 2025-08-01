@@ -213,4 +213,37 @@ body.dark-mode .search-result-url {
 body.dark-mode .search-result-category {
   background-color: #374151 !important;
   color: #9ca3af !important;
+}
+
+/* Footer Dark Mode Styles */
+[data-theme="dark"] .footer,
+body.dark-mode .footer {
+  background-color: #0A0A0A !important;
+  color: #ffffff !important;
+  border-top: 1px solid #374151 !important;
+}
+
+[data-theme="dark"] .footer h5,
+body.dark-mode .footer h5 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .footer .text-muted,
+body.dark-mode .footer .text-muted {
+  color: #9ca3af !important;
+}
+
+[data-theme="dark"] .footer a,
+body.dark-mode .footer a {
+  color: #ff6b6b !important;
+}
+
+[data-theme="dark"] .footer a:hover,
+body.dark-mode .footer a:hover {
+  color: #ff5252 !important;
+}
+
+[data-theme="dark"] .footer-divider,
+body.dark-mode .footer-divider {
+  border-color: #374151 !important;
 } 

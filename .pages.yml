@@ -3,150 +3,146 @@
 # Visit https://app.pagescms.org/ to manage content
 
 media:
-  - name: uploads
-    label: All Uploads
-    input: assets/uploads
-    output: /assets/uploads
-    extensions: ["png", "jpg", "jpeg", "gif", "svg", "pdf", "tex"]
-    categories: ["image", "document"]
+  input: assets/img
+  output: /assets/img
+  path: assets/img
+  categories: [image]
+  extensions: [jpg, jpeg, png, gif, svg, webp]
 
 content:
+  # Members/Team Management
   - name: members
     label: Team Members
-    path: _members
     type: collection
-    delete: true
-    description: "Manage team members."
+    path: _members
     view:
-      fields:
-        - name
-        - role
-        - email
+      fields: [name, role, order, photo]
       sort:
-        field: name
-        order: asc
+        field: order
+        direction: asc
     fields:
       - name: name
-        label: Name
+        label: Full Name
         type: string
         required: true
       - name: role
-        label: Role
+        label: Role/Position
         type: string
-        description: "e.g., Professor, PhD Student, Postdoc"
+        required: true
       - name: photo
-        label: Photo
+        label: Profile Photo
         type: image
+        description: Upload a profile photo (recommended size: 400x400px)
+      - name: order
+        label: Display Order
+        type: number
+        description: Lower numbers appear first (1 = first, 2 = second, etc.)
+        default: 999
       - name: email
-        label: Email
+        label: Email Address
         type: string
+        pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
       - name: website
         label: Personal Website
         type: string
+        pattern: ^https?://.*
       - name: github
         label: GitHub Username
         type: string
+      - name: orcid
+        label: ORCID ID
+        type: string
+        pattern: ^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]$
+      - name: research_interests
+        label: Research Interests
+        type: text
+        description: Brief description of research interests
       - name: bio
         label: Biography
-        type: text
+        type: rich-text
+        description: Detailed biography and background information
 
-  - name: research
-    label: Research Topics
-    path: _research
-    type: collection
-    delete: true
-    description: "Manage research topics and areas. Each entry will appear on the research page."
-    view:
-      fields:
-        - title
-        - description
-      sort:
-        field: title
-        order: asc
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: description
-        label: Description
-        type: text
-        description: "A summary of the research topic. This will be shown as a preview on the main research page."
-      - name: files
-        label: "Associated Files (PDFs, Images, etc.)"
-        type: file
-        list: true
-        required: false
-        description: "Upload any relevant papers, posters, or images for this topic."
-
+  # Publications Management
   - name: publications
     label: Publications
-    path: _publications
     type: collection
-    delete: true
-    description: "Manage research papers and articles. Upload a PDF for each entry."
+    path: _publications
     view:
-      fields:
-        - title
-        - authors
-        - year
-        - publication_type
+      fields: [title, authors, year, publication_type, doi]
       sort:
         field: year
-        order: desc
+        direction: desc
     fields:
       - name: title
-        label: Title
+        label: Publication Title
         type: string
         required: true
       - name: authors
         label: Authors
         type: string
         required: true
+        description: Comma-separated list of authors
       - name: publication_type
         label: Publication Type
         type: select
         options:
-          values:
-            - Journal Article
-            - Conference Paper
-            - Preprint
-            - Book
-            - Book Chapter
-            - Thesis
-        required: true
-      - name: publication_details
-        label: "Journal, Conference, or Preprint Details"
-        type: string
+          - Journal Article
+          - Conference Paper
+          - Preprint
+          - Book Chapter
+          - Thesis
+          - Technical Report
+        default: Journal Article
       - name: year
-        label: Year
+        label: Publication Year
         type: number
         required: true
-      - name: doi
-        label: "DOI (Digital Object Identifier)"
+      - name: journal
+        label: Journal/Conference
         type: string
+      - name: volume
+        label: Volume
+        type: string
+      - name: issue
+        label: Issue
+        type: string
+      - name: pages
+        label: Pages
+        type: string
+        description: Page range (e.g., "123-145")
+      - name: doi
+        label: DOI
+        type: string
+        pattern: ^10\.\d{4,}/[-._;()/:\w]+$
+      - name: url
+        label: URL
+        type: string
+        pattern: ^https?://.*
       - name: abstract
         label: Abstract
         type: text
-      - name: file
-        label: PDF File
-        type: file
-        description: "Upload the publication PDF here."
+        description: Brief abstract of the publication
+      - name: keywords
+        label: Keywords
+        type: string
+        list: true
+        description: Research keywords/tags
+      - name: featured
+        label: Featured Publication
+        type: boolean
+        default: false
+        description: Mark as featured publication for homepage display
 
+  # Teaching/Courses Management
   - name: teaching
-    label: Teaching
-    path: _teaching
+    label: Teaching & Courses
     type: collection
-    delete: true
-    description: "Manage courses and seminars. Each entry will appear on the Teaching page."
+    path: _teaching
     view:
-      fields:
-        - title
-        - semester
-        - instructor
+      fields: [title, semester, instructor, course_type]
       sort:
         field: semester
-        order: desc
+        direction: desc
     fields:
       - name: title
         label: Course Title
@@ -155,50 +151,251 @@ content:
       - name: semester
         label: Semester
         type: string
-        description: "e.g., Summer 2024, Winter 2023/24"
         required: true
+        description: e.g., "Winter term 2024/25" or "Summer term 2025"
       - name: instructor
         label: Instructor(s)
         type: string
         required: true
-      - name: details
-        label: "Time & Location"
+        description: Comma-separated list of instructors
+      - name: course_type
+        label: Course Type
+        type: select
+        options:
+          - Lecture
+          - Seminar
+          - Exercise
+          - Tutorial
+          - Workshop
+        default: Lecture
+      - name: credits
+        label: ECTS Credits
+        type: number
+      - name: language
+        label: Language
+        type: select
+        options:
+          - English
+          - German
+          - Bilingual
+        default: English
+      - name: description
+        label: Course Description
+        type: rich-text
+      - name: syllabus
+        label: Syllabus
+        type: rich-text
+      - name: materials
+        label: Course Materials
+        type: file
+        list: true
+        description: Upload course materials (PDFs, slides, etc.)
+      - name: active
+        label: Currently Active
+        type: boolean
+        default: false
+
+  # Research Areas Management
+  - name: research
+    label: Research Areas
+    type: collection
+    path: _research
+    view:
+      fields: [title, order, featured]
+      sort:
+        field: order
+        direction: asc
+    fields:
+      - name: title
+        label: Research Area Title
         type: string
-        description: "e.g., Tuesdays & Thursdays, 10:00 - 12:00, Mathematikon, Room 5.104"
+        required: true
+      - name: order
+        label: Display Order
+        type: number
+        default: 999
+        description: Lower numbers appear first
+      - name: featured
+        label: Featured Research Area
+        type: boolean
+        default: false
       - name: description
         label: Description
-        type: text
-        description: "A brief description of the course content."
+        type: rich-text
+        required: true
+      - name: keywords
+        label: Keywords
+        type: string
+        list: true
+      - name: related_publications
+        label: Related Publications
+        type: reference
+        collection: publications
+        list: true
+        description: Link to related publications
 
-  - name: links
-    label: Links
-    path: _links
+  # News/Blog Posts Management
+  - name: news
+    label: News & Blog Posts
     type: collection
-    delete: true
-    description: "Manage the list of useful links. Use the category field to group them."
+    path: _news
     view:
-      fields:
-        - title
-        - category
-        - url
+      fields: [title, date, published, author]
       sort:
-        field: category
-        order: asc
+        field: date
+        direction: desc
+    fields:
+      - name: title
+        label: Post Title
+        type: string
+        required: true
+      - name: date
+        label: Publication Date
+        type: date
+        required: true
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+      - name: author
+        label: Author
+        type: string
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: text
+        description: Brief summary for preview
+      - name: content
+        label: Content
+        type: rich-text
+        required: true
+      - name: featured_image
+        label: Featured Image
+        type: image
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          - Research
+          - Teaching
+          - Events
+          - Awards
+          - General
+        default: General
+
+  # Links/Resources Management
+  - name: links
+    label: Links & Resources
+    type: collection
+    path: _links
+    view:
+      fields: [title, category, order]
+      sort:
+        field: order
+        direction: asc
     fields:
       - name: title
         label: Link Title
         type: string
         required: true
       - name: url
-        label: Link URL
+        label: URL
         type: string
         required: true
+        pattern: ^https?://.*
       - name: category
         label: Category
-        type: string
-        description: "e.g., Mathematical Software, Research Institutions, Online Resources"
-        required: true
+        type: select
+        options:
+          - Funding
+          - Collaborations
+          - Resources
+          - Software
+          - External Links
+        default: External Links
+      - name: order
+        label: Display Order
+        type: number
+        default: 999
       - name: description
         label: Description
+        type: text
+      - name: featured
+        label: Featured Link
+        type: boolean
+        default: false
+
+  # Site Configuration
+  - name: config
+    label: Site Configuration
+    path: _config.yml
+    type: file
+    fields:
+      - name: title
+        label: Website Title
         type: string
-        description: "A short description of the link." 
+      - name: description
+        label: Website Description
+        type: text
+      - name: email
+        label: Contact Email
+        type: string
+        pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+      - name: url
+        label: Website URL
+        type: string
+        pattern: ^https?://.*
+      - name: twitter_username
+        label: Twitter Username
+        type: string
+      - name: github_username
+        label: GitHub Username
+        type: string
+
+components:
+  # Reusable component for contact information
+  contact_info:
+    label: Contact Information
+    fields:
+      - name: email
+        label: Email
+        type: string
+        pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+      - name: phone
+        label: Phone
+        type: string
+      - name: office
+        label: Office Location
+        type: string
+      - name: office_hours
+        label: Office Hours
+        type: text
+
+  # Reusable component for social media links
+  social_links:
+    label: Social Media Links
+    fields:
+      - name: twitter
+        label: Twitter
+        type: string
+        pattern: ^https?://.*
+      - name: github
+        label: GitHub
+        type: string
+        pattern: ^https?://.*
+      - name: linkedin
+        label: LinkedIn
+        type: string
+        pattern: ^https?://.*
+      - name: researchgate
+        label: ResearchGate
+        type: string
+        pattern: ^https?://.*
+
+settings:
+  content:
+    merge: true 

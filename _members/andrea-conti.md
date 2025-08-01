@@ -1,8 +1,10 @@
 ---
 name: "Dr. Andrea Conti"
-role: "Researcher"
+role: "Postdoctoral Researcher"
 photo: "/assets/img/placeholder.jpg"
 order: 3
+email: "andrea.conti@iwr.uni-heidelberg.de"
+research_interests: "Arithmetic geometry, elliptic curves, computational methods"
 ---
 
-Dr. Andrea Conti is a researcher in the computational arithmetic geometry group. His work focuses on modular forms and their applications in arithmetic geometry. 
+Dr. Andrea Conti is a postdoctoral researcher specializing in arithmetic geometry and computational methods for elliptic curves. 

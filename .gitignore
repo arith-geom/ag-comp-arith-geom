@@ -101,6 +101,7 @@ config/secrets.yml
 TODO.md
 NOTES.md
 SCRATCH.md
+PAGES_CMS_SETUP.md
 test/
 tests/
 spec/

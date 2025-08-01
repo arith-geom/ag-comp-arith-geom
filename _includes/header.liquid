@@ -18,34 +18,36 @@
         </div>
       </a>
 
-      <!-- Search Bar - Moved to center on larger screens -->
+      <!-- Enhanced Search Bar - Center position for larger screens -->
       <div class="d-none d-lg-flex search-container-center">
         <div class="search-container">
-          <button id="search-toggle" class="btn btn-outline-light btn-sm search-toggle-btn" 
-                  title="Search (Ctrl+K)" aria-label="Open search">
-            <i class="ti ti-search" aria-hidden="true"></i>
-          </button>
-          <input type="text" id="search-input" class="form-control search-input" 
-                 placeholder="Search..." aria-label="Search this site" autocomplete="off" 
-                 data-placeholder-en="Search..." data-placeholder-de="Suchen..." 
-                 data-placeholder-fr="Rechercher..." data-placeholder-es="Buscar..." 
-                 data-placeholder-it="Cerca...">
+          <div class="search-input-wrapper">
+            <i class="ti ti-search search-input-icon" aria-hidden="true"></i>
+            <input type="text" id="search-input" class="search-input" 
+                   placeholder="Search articles, publications, research..." 
+                   aria-label="Search this site" autocomplete="off" 
+                   data-placeholder-en="Search articles, publications, research..." 
+                   data-placeholder-de="Artikel, Publikationen, Forschung suchen..." 
+                   data-placeholder-fr="Rechercher articles, publications, recherche..." 
+                   data-placeholder-es="Buscar artículos, publicaciones, investigación..." 
+                   data-placeholder-it="Cerca articoli, pubblicazioni, ricerca...">
+          </div>
           <div id="search-results" class="search-results-container"></div>
         </div>
       </div>
 
       <!-- Right side controls -->
       <div class="d-flex align-items-center gap-2">
-        <!-- Language Switcher -->
+        <!-- Enhanced Language Switcher -->
         <div class="dropdown">
-          <button class="btn btn-outline-light btn-sm dropdown-toggle language-switcher-btn" 
+          <button class="header-control-btn dropdown-toggle" 
                   type="button" 
                   id="language-switcher" 
                   data-bs-toggle="dropdown" 
                   aria-expanded="false"
                   title="Switch Language">
             <span class="flag-icon flag-icon-us"></span>
-            <span class="language-code ms-1">EN</span>
+            <span class="language-code">EN</span>
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="language-switcher">
             <li>
@@ -63,16 +65,16 @@
           </ul>
         </div>
 
-        <!-- Theme Switcher -->
+        <!-- Enhanced Theme Switcher -->
         {% if site.enable_theme_switcher %}
-          <button id="theme-toggle" class="btn btn-outline-light btn-sm theme-toggle-btn" 
+          <button id="theme-toggle" class="header-control-btn" 
                   title="Switch Theme" aria-label="Toggle dark and light mode">
             <i class="fas fa-moon theme-icon" id="theme-icon" aria-hidden="true"></i>
           </button>
         {% endif %}
 
-        <!-- Pages CMS Admin Button -->
-        <button id="pagescms-admin-toggle" class="btn btn-outline-light btn-sm" 
+        <!-- Enhanced Pages CMS Admin Button -->
+        <button id="pagescms-admin-toggle" class="header-control-btn" 
                 title="Pages CMS Admin (Ctrl+Shift+P)" aria-label="Open Pages CMS Admin"
                 onclick="openPagesCMSAdmin()">
           <i class="fas fa-cog" aria-hidden="true"></i>
@@ -145,15 +147,15 @@
             </a>
           </li>
 
-          <!-- Search Bar - Mobile only -->
+          <!-- Enhanced Search Bar - Mobile version -->
           <li class="nav-item d-lg-none" role="none">
             <div class="search-container">
-              <button id="search-toggle-mobile" class="btn btn-outline-light btn-sm search-toggle-btn" 
-                      title="Search (Ctrl+K)" aria-label="Open search">
-                <i class="ti ti-search" aria-hidden="true"></i>
-              </button>
-              <input type="text" id="search-input-mobile" class="form-control search-input" 
-                     placeholder="Search..." aria-label="Search this site" autocomplete="off">
+              <div class="search-input-wrapper">
+                <i class="ti ti-search search-input-icon" aria-hidden="true"></i>
+                <input type="text" id="search-input-mobile" class="search-input" 
+                       placeholder="Search articles, publications, research..." 
+                       aria-label="Search this site" autocomplete="off">
+              </div>
               <div id="search-results-mobile" class="search-results-container"></div>
             </div>
           </li>

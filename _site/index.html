@@ -50,6 +50,7 @@
 
 <!-- Language Switcher -->
 <link rel="stylesheet" href="/assets/css/flag-icons.css">
+<!-- Google Fonts -->
 <link
   defer
   rel="stylesheet"
@@ -156,34 +157,36 @@
         </div>
       </a>
 
-      <!-- Search Bar - Moved to center on larger screens -->
+      <!-- Enhanced Search Bar - Center position for larger screens -->
       <div class="d-none d-lg-flex search-container-center">
         <div class="search-container">
-          <button id="search-toggle" class="btn btn-outline-light btn-sm search-toggle-btn" 
-                  title="Search (Ctrl+K)" aria-label="Open search">
-            <i class="ti ti-search" aria-hidden="true"></i>
-          </button>
-          <input type="text" id="search-input" class="form-control search-input" 
-                 placeholder="Search..." aria-label="Search this site" autocomplete="off" 
-                 data-placeholder-en="Search..." data-placeholder-de="Suchen..." 
-                 data-placeholder-fr="Rechercher..." data-placeholder-es="Buscar..." 
-                 data-placeholder-it="Cerca...">
+          <div class="search-input-wrapper">
+            <i class="ti ti-search search-input-icon" aria-hidden="true"></i>
+            <input type="text" id="search-input" class="search-input" 
+                   placeholder="Search articles, publications, research..." 
+                   aria-label="Search this site" autocomplete="off" 
+                   data-placeholder-en="Search articles, publications, research..." 
+                   data-placeholder-de="Artikel, Publikationen, Forschung suchen..." 
+                   data-placeholder-fr="Rechercher articles, publications, recherche..." 
+                   data-placeholder-es="Buscar artículos, publicaciones, investigación..." 
+                   data-placeholder-it="Cerca articoli, pubblicazioni, ricerca...">
+          </div>
           <div id="search-results" class="search-results-container"></div>
         </div>
       </div>
 
       <!-- Right side controls -->
       <div class="d-flex align-items-center gap-2">
-        <!-- Language Switcher -->
+        <!-- Enhanced Language Switcher -->
         <div class="dropdown">
-          <button class="btn btn-outline-light btn-sm dropdown-toggle language-switcher-btn" 
+          <button class="header-control-btn dropdown-toggle" 
                   type="button" 
                   id="language-switcher" 
                   data-bs-toggle="dropdown" 
                   aria-expanded="false"
                   title="Switch Language">
             <span class="flag-icon flag-icon-us"></span>
-            <span class="language-code ms-1">EN</span>
+            <span class="language-code">EN</span>
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="language-switcher">
             <li>
@@ -201,16 +204,16 @@
           </ul>
         </div>
 
-        <!-- Theme Switcher -->
+        <!-- Enhanced Theme Switcher -->
         
-          <button id="theme-toggle" class="btn btn-outline-light btn-sm theme-toggle-btn" 
+          <button id="theme-toggle" class="header-control-btn" 
                   title="Switch Theme" aria-label="Toggle dark and light mode">
             <i class="fas fa-moon theme-icon" id="theme-icon" aria-hidden="true"></i>
           </button>
         
 
-        <!-- Pages CMS Admin Button -->
-        <button id="pagescms-admin-toggle" class="btn btn-outline-light btn-sm" 
+        <!-- Enhanced Pages CMS Admin Button -->
+        <button id="pagescms-admin-toggle" class="header-control-btn" 
                 title="Pages CMS Admin (Ctrl+Shift+P)" aria-label="Open Pages CMS Admin"
                 onclick="openPagesCMSAdmin()">
           <i class="fas fa-cog" aria-hidden="true"></i>
@@ -283,15 +286,15 @@
             </a>
           </li>
 
-          <!-- Search Bar - Mobile only -->
+          <!-- Enhanced Search Bar - Mobile version -->
           <li class="nav-item d-lg-none" role="none">
             <div class="search-container">
-              <button id="search-toggle-mobile" class="btn btn-outline-light btn-sm search-toggle-btn" 
-                      title="Search (Ctrl+K)" aria-label="Open search">
-                <i class="ti ti-search" aria-hidden="true"></i>
-              </button>
-              <input type="text" id="search-input-mobile" class="form-control search-input" 
-                     placeholder="Search..." aria-label="Search this site" autocomplete="off">
+              <div class="search-input-wrapper">
+                <i class="ti ti-search search-input-icon" aria-hidden="true"></i>
+                <input type="text" id="search-input-mobile" class="search-input" 
+                       placeholder="Search articles, publications, research..." 
+                       aria-label="Search this site" autocomplete="off">
+              </div>
               <div id="search-results-mobile" class="search-results-container"></div>
             </div>
           </li>
@@ -831,7 +834,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-4 bg-light">
+    <footer class="footer mt-auto py-4">
   <div class="container">
     <div class="row">
       <div class="col-md-4 mb-3 mb-md-0">
@@ -857,7 +860,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <a href="https://www.iwr.uni-heidelberg.de/en" target="_blank" rel="noopener" class="text-muted">Interdisciplinary Center for Scientific Computing (IWR)</a>
       </div>
     </div>
-    <hr>
+    <hr class="footer-divider">
     <div class="text-center text-muted small">
       &copy; 2025 AG Computational Arithmetic Geometry. All Rights Reserved.
       Last updated: August 01, 2025.
@@ -925,6 +928,73 @@ body.dark-mode .floating-theme-toggle:hover {
     height: 45px;
     font-size: 1.1rem;
   }
+}
+
+/* Footer Dark Mode Styles */
+.footer {
+  background-color: var(--bg-secondary, #F3F4F6) !important;
+  color: var(--text-primary, #000000) !important;
+  border-top: 1px solid var(--border-color, #E5E7EB) !important;
+}
+
+.footer h5 {
+  color: var(--text-primary, #000000) !important;
+}
+
+.footer .text-muted {
+  color: var(--text-muted, #6B7280) !important;
+}
+
+.footer a {
+  color: var(--link-color, #C22032) !important;
+}
+
+.footer a:hover {
+  color: var(--link-hover, #991B1B) !important;
+}
+
+.footer-divider {
+  border-color: var(--border-color, #E5E7EB) !important;
+  margin: 1.5rem 0;
+}
+
+/* Dark mode footer styles */
+[data-theme="dark"] .footer,
+body.dark-mode .footer,
+html[data-theme="dark"] .footer {
+  background-color: var(--bg-secondary, #0A0A0A) !important;
+  color: var(--text-primary, #FFFFFF) !important;
+  border-top: 1px solid var(--border-color, #374151) !important;
+}
+
+[data-theme="dark"] .footer h5,
+body.dark-mode .footer h5,
+html[data-theme="dark"] .footer h5 {
+  color: var(--text-primary, #FFFFFF) !important;
+}
+
+[data-theme="dark"] .footer .text-muted,
+body.dark-mode .footer .text-muted,
+html[data-theme="dark"] .footer .text-muted {
+  color: var(--text-muted, #9CA3AF) !important;
+}
+
+[data-theme="dark"] .footer a,
+body.dark-mode .footer a,
+html[data-theme="dark"] .footer a {
+  color: var(--link-color, #FF6B6B) !important;
+}
+
+[data-theme="dark"] .footer a:hover,
+body.dark-mode .footer a:hover,
+html[data-theme="dark"] .footer a:hover {
+  color: var(--link-hover, #FF5252) !important;
+}
+
+[data-theme="dark"] .footer-divider,
+body.dark-mode .footer-divider,
+html[data-theme="dark"] .footer-divider {
+  border-color: var(--border-color, #374151) !important;
 }
 
 /* Force dark mode styles with high specificity */
