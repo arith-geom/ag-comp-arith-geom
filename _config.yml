@@ -8,102 +8,232 @@ url: "https://placeholder-ag-comp-arith-geom.github.io"
 twitter_username: placeholder
 github_username: placeholder
 
+# Bilingual CMS Configuration
+bilingual_cms:
+  enabled: true
+  default_language: "en"
+  supported_languages: ["en", "de"]
+  language_names:
+    en: "English"
+    de: "Deutsch"
+  content_structure:
+    - name: "pages"
+      types: ["about", "research", "publications", "teaching", "members", "contact", "links", "resources", "news"]
+      fields:
+        - title
+        - content
+        - description
+        - meta_description
+    - name: "members"
+      fields:
+        - name
+        - role
+        - bio
+        - research_interests
+        - email
+        - website
+        - github
+        - orcid
+    - name: "publications"
+      fields:
+        - title
+        - authors
+        - abstract
+        - journal
+        - year
+        - doi
+        - url
+    - name: "news"
+      fields:
+        - title
+        - content
+        - excerpt
+        - date
+        - author
+
+# PagesCMS Integration
+pagescms:
+  enabled: true
+  api_url: "https://app.pagescms.org"
+  webhook_url: ""
+  content_types:
+    - members
+    - publications
+    - news
+    - research
+    - resources
+    - teaching
+  auto_sync: true
+  cache_duration: 3600
+  bilingual_support: true
+  language_fields:
+    - title
+    - content
+    - description
+    - bio
+    - abstract
+    - excerpt
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
 timezone: Europe/Berlin
 
+# Kramdown settings for LaTeX support
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
 # Theme settings - Keep theme switcher for Phase 1
 theme_mode: auto
 enable_darkmode: true
 enable_theme_switcher: true
 
-# Basic collections
-collections_dir: .
+# Language and locale settings
+lang: "en"
+locale: "en_US"
+default_language: "en"
+supported_languages: ["en", "de"]
 
+# Third-party libraries configuration
+third_party_libraries:
+  mdb:
+    url:
+      css: "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+      js: "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  bootstrap-table:
+    url:
+      css: "https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css"
+      js: "https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  pseudocode:
+    url:
+      css: "https://unpkg.com/pseudocode@2.4.1/build/pseudocode.min.css"
+      js: "https://unpkg.com/pseudocode@2.4.1/build/pseudocode.min.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  leaflet:
+    url:
+      css: "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      js: "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  highlightjs:
+    url:
+      css:
+        light: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css"
+        dark: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+    integrity:
+      css:
+        light: "sha512-..."
+        dark: "sha512-..."
+  diff2html:
+    url:
+      css: "https://cdnjs.cloudflare.com/ajax/libs/diff2html/3.4.42/diff2html.min.css"
+      js: "https://cdnjs.cloudflare.com/ajax/libs/diff2html/3.4.42/diff2html.min.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  img-comparison-slider:
+    url:
+      css: "https://unpkg.com/img-comparison-slider@7.4.0/dist/styles.css"
+      js: "https://unpkg.com/img-comparison-slider@7.4.0/dist/index.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  lightbox2:
+    url:
+      css: "https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+      js: "https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  photoswipe:
+    url:
+      css: "https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.8/photoswipe.min.css"
+      js: "https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.8/photoswipe.umd.min.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  swiper:
+    url:
+      css: "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+      js: "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  spotlight:
+    url:
+      css: "https://cdn.jsdelivr.net/npm/spotlight.js@0.8.0/dist/spotlight.min.css"
+      js: "https://cdn.jsdelivr.net/npm/spotlight.js@0.8.0/dist/spotlight.min.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  venobox:
+    url:
+      css: "https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.min.css"
+      js: "https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.min.js"
+    integrity:
+      css: "sha512-..."
+      js: "sha512-..."
+  google_fonts:
+    url:
+      fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+
+# Collections
 collections:
   pages:
     output: true
     permalink: /:name/
+  members:
+    output: true
+    permalink: /members/:name/
   publications:
     output: true
-  members:
-    output: false
-  resources:
-    output: true
-    permalink: /resources/:title/
-  research:
-    output: true
-    permalink: /research/:title/
-  teaching:
-    output: true
-    permalink: /teaching/:title/
+    permalink: /publications/:title/
   news:
     output: true
     permalink: /news/:title/
-  links:
+  research:
     output: true
+    permalink: /research/:title/
 
-# Basic plugins only
+# Plugins
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-scholar
+  - jekyll-sitemap
 
 # Exclude from processing
 exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
   - Gemfile
   - Gemfile.lock
-  - node_modules/
-  - vendor/
-  - .private/
-
-# Sass
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "resources"
-    values:
-      layout: "resource"
-  - scope:
-      path: ""
-      type: "research"
-    values:
-      layout: "resource"
-  - scope:
-      path: ""
-      type: "teaching"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "news"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "links"
-    values:
-      layout: "default"
-
-# Reading Files
-include:
-  - .htaccess 
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .git/
+  - .gitignore
+  - README.md
+  - _site/
+  - .sass-cache/
+  - .jekyll-cache/
+  - .jekyll-metadata
+  - .bundle/
+  - .vscode/
+  - .idea/
+  - "*.log"
+  - .DS_Store
+  - Thumbs.db
 
 scholar:
   style: "apa"
@@ -111,4 +241,5 @@ scholar:
   order: "descending"
 
 # Analytics
-analytics: 
+analytics:
+  enabled: false

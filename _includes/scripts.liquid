@@ -12,6 +12,9 @@
 <script src="https://unpkg.com/lunr/lunr.min.js"></script>
 <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
 
+<!-- PagesCMS Integration -->
+<script src="{{ '/assets/js/pagescms-integration.js' | relative_url }}"></script>
+
 <!-- Bootstrap Table of Contents -->
 <script src="{{ '/assets/js/bootstrap-toc.min.js' | relative_url }}"></script>
 <script>
@@ -28,8 +31,14 @@
 <!-- Load Common JS -->
 <script defer src="{{ '/assets/js/common.js' | relative_url }}" type="text/javascript"></script>
 
-<!-- Theme Swapper -->
-<script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+<!-- Enhanced Theme Switcher -->
+<script src="{{ '/assets/js/theme-switcher.js' | relative_url }}"></script>
+
+<!-- Language Switcher -->
+<script src="{{ '/assets/js/language-switcher.js' | relative_url }}"></script>
+
+<!-- Bilingual CMS -->
+<script src="{{ '/assets/js/bilingual-cms.js' | relative_url }}"></script>
 
 <!-- Page Specific JS -->
 {% if page.scripts %}

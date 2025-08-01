@@ -1,0 +1,262 @@
+{
+  "en": {
+    "nav": {
+      "about": "About",
+      "research": "Research",
+      "publications": "Publications",
+      "teaching": "Teaching",
+      "members": "Members",
+      "links": "Links",
+      "contact": "Contact",
+      "resources": "Resources",
+      "news": "News"
+    },
+    "common": {
+      "search": "Search",
+      "search_placeholder": "Search...",
+      "theme_toggle": "Switch Theme",
+      "language_switch": "Switch Language",
+      "skip_to_content": "Skip to main content",
+      "home": "Home",
+      "view_all": "View all",
+      "read_more": "Read more",
+      "back_to_top": "Back to top"
+    },
+    "header": {
+      "brand_title": "AG Computational Arithmetic Geometry",
+      "university_name": "University of Heidelberg",
+      "toggle_navigation": "Toggle navigation menu"
+    },
+    "about": {
+      "title": "About",
+      "description": "This is the website of the research group \"computational arithmetic geometry\" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.",
+      "content": "Within algebraic number theory and arithmetic geometry, the focus of the research group is on Galois representations, their relations to modular forms and elliptic curves, their deformation theory etc., as well as on some aspects of function field arithmetic such as L-functions and Drinfeld modular forms.",
+      "methods": "To tackle problems in the themes described above, we apply a broad range of methods. On one hand we pursue these questions by purely theoretical methods. On the other, we use computer algebra to carry out experiments that help us gather examples for the theory or to solve particular questions that arise from the theory. Some members of our group have also developed routines on top of existing computer algebra packages.",
+      "more_info": "A more detailed survey of our activities can be found in the research section and in the publications of our members.",
+      "latest_news": "Latest News",
+      "view_all_news": "View all news"
+    },
+    "research": {
+      "title": "Research",
+      "description": "The research of our group is in **arithmetic geometry** and **number theory**. Below are some of our key research areas and topics. For more details, click on any of the topics to see a detailed description, related papers, and resources.",
+      "publications_link": "You can also browse the [publications](/publications) of our group members.",
+      "intro_lead": "Our research focuses on **arithmetic geometry** and **number theory**, with particular emphasis on computational methods and their applications.",
+      "intro_description": "We investigate Galois representations, modular forms, elliptic curves, and their connections to modern number theory. Our work combines theoretical insights with computational experiments to advance understanding in these areas.",
+      "areas_title": "Research Areas",
+      "methodology_title": "Methodology",
+      "collaborations_title": "Collaborations",
+      "collaborations_description": "We collaborate with researchers worldwide on various aspects of arithmetic geometry and computational number theory. Our group maintains active connections with:",
+      "method_computational": {
+        "title": "Computational Methods",
+        "description": "We develop and use advanced computational techniques to explore arithmetic objects and verify theoretical predictions."
+      },
+      "method_theoretical": {
+        "title": "Theoretical Analysis",
+        "description": "Deep theoretical understanding guides our computational experiments and helps interpret their results."
+      },
+      "method_experimental": {
+        "title": "Experimental Mathematics",
+        "description": "We use computational experiments to discover patterns and formulate new conjectures in arithmetic geometry."
+      },
+      "collaboration_1": "International research institutions",
+      "collaboration_2": "Mathematical software development teams",
+      "collaboration_3": "Number theory conferences and workshops",
+      "collaboration_4": "Graduate and undergraduate research programs",
+      "learn_more": "Learn More",
+      "papers_count": "papers"
+    },
+    "publications": {
+      "title": "Publications",
+      "description": "Publications by our research group members.",
+      "intro": "Publications and preprints of our research group:",
+      "group_members": "Group Members",
+      "group_leader": "Group Leader",
+      "postdoc": "Postdoctoral Researcher",
+      "filter_by_year": "Filter by year:",
+      "all_years": "All Years",
+      "search_publications": "Search publications:",
+      "show_abstract": "Show Abstract"
+    },
+    "teaching": {
+      "title": "Teaching",
+      "description": "Current and past teaching activities.",
+      "intro": "Our group is actively involved in teaching at Heidelberg University. Below is a list of current and past courses, which you can manage from the CMS. For official details, please refer to the university's course catalog.",
+      "instructor": "Instructor:",
+      "time_location": "Time/Location:"
+    },
+    "members": {
+      "title": "Members",
+      "description": "Current and former members of our research group.",
+      "intro": "Our research group consists of faculty, postdoctoral researchers, and students working on computational arithmetic geometry.",
+      "research_interests": "Research Interests"
+    },
+    "links": {
+      "title": "Links",
+      "description": "Useful links and resources.",
+      "intro": "Here are some links that may be of interest to students and researchers, managed from the CMS."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with our research group.",
+      "intro": "Get in touch with our research group. We welcome inquiries from students, researchers, and collaborators interested in arithmetic geometry and computational number theory.",
+      "postal_address": "Postal Address",
+      "contact_details": "Contact Details",
+      "office_hours": "Office Hours",
+      "getting_here": "Getting Here",
+      "location": "Location",
+      "by_public_transport": "By Public Transport",
+      "by_car": "By Car",
+      "monday_friday": "Monday - Friday",
+      "weekends": "Weekends",
+      "closed": "Closed",
+      "parking_available": "Parking available at Mathematikon building",
+      "follow_signs": "Follow signs to \"IWR\" or \"Mathematikon\"",
+      "building_location": "Building is located on the north side of Im Neuenheimer Feld",
+      "bus_lines": "Bus: Lines 32, 33, 35 to \"Mathematikon\" stop",
+      "tram_line": "Tram: Line 5 to \"Universitätsplatz\" then bus connection",
+      "train": "Train: Heidelberg Hauptbahnhof, then bus connection",
+      "office_hours_note": "Please note that we may be unavailable during university holidays and conference periods."
+    },
+    "resources": {
+      "title": "Resources",
+      "description": "Resources and tools.",
+      "visit_resource": "Visit Resource",
+      "no_resources": "There are no resources available at this time."
+    },
+    "news": {
+      "title": "News",
+      "description": "Latest news and announcements.",
+      "read_more": "Read More"
+    }
+  },
+  "de": {
+    "nav": {
+      "about": "Über uns",
+      "research": "Forschung",
+      "publications": "Publikationen",
+      "teaching": "Lehre",
+      "members": "Mitglieder",
+      "links": "Links",
+      "contact": "Kontakt",
+      "resources": "Ressourcen",
+      "news": "Neuigkeiten"
+    },
+    "common": {
+      "search": "Suche",
+      "search_placeholder": "Suchen...",
+      "theme_toggle": "Theme wechseln",
+      "language_switch": "Sprache wechseln",
+      "skip_to_content": "Zum Hauptinhalt",
+      "home": "Startseite",
+      "view_all": "Alle anzeigen",
+      "read_more": "Weiterlesen",
+      "back_to_top": "Nach oben"
+    },
+    "header": {
+      "brand_title": "AG Computational Arithmetic Geometry",
+      "university_name": "Universität Heidelberg",
+      "toggle_navigation": "Navigationsmenü umschalten"
+    },
+    "about": {
+      "title": "Über uns",
+      "description": "Dies ist die Website der Forschungsgruppe \"Computational Arithmetic Geometry\" am Interdisziplinären Zentrum für Wissenschaftliches Rechnen (IWR) in Heidelberg.",
+      "content": "Innerhalb der algebraischen Zahlentheorie und arithmetischen Geometrie liegt der Schwerpunkt der Forschungsgruppe auf Galois-Darstellungen, ihren Beziehungen zu Modulformen und elliptischen Kurven, ihrer Deformationstheorie usw. sowie auf einigen Aspekten der Funktionenkörper-Arithmetik wie L-Funktionen und Drinfeld-Modulformen.",
+      "methods": "Um Probleme in den oben beschriebenen Themen zu lösen, wenden wir eine breite Palette von Methoden an. Einerseits verfolgen wir diese Fragen mit rein theoretischen Methoden. Andererseits verwenden wir Computeralgebra, um Experimente durchzuführen, die uns helfen, Beispiele für die Theorie zu sammeln oder bestimmte Fragen zu lösen, die sich aus der Theorie ergeben. Einige Mitglieder unserer Gruppe haben auch Routinen auf Basis bestehender Computeralgebra-Pakete entwickelt.",
+      "more_info": "Eine detailliertere Übersicht über unsere Aktivitäten finden Sie im Forschungsbereich und in den Publikationen unserer Mitglieder.",
+      "latest_news": "Neueste Nachrichten",
+      "view_all_news": "Alle Nachrichten anzeigen"
+    },
+    "research": {
+      "title": "Forschung",
+      "description": "Die Forschung unserer Gruppe liegt in der **arithmetischen Geometrie** und **Zahlentheorie**. Nachfolgend finden Sie einige unserer wichtigsten Forschungsbereiche und Themen. Für weitere Details klicken Sie auf eines der Themen, um eine detaillierte Beschreibung, verwandte Arbeiten und Ressourcen zu sehen.",
+      "publications_link": "Sie können auch die [Publikationen](/publications) unserer Gruppenmitglieder durchsuchen.",
+      "intro_lead": "Unsere Forschung konzentriert sich auf **arithmetische Geometrie** und **Zahlentheorie**, mit besonderem Schwerpunkt auf computergestützten Methoden und deren Anwendungen.",
+      "intro_description": "Wir untersuchen Galois-Darstellungen, Modulformen, elliptische Kurven und deren Verbindungen zur modernen Zahlentheorie. Unsere Arbeit kombiniert theoretische Erkenntnisse mit computergestützten Experimenten, um das Verständnis in diesen Bereichen voranzutreiben.",
+      "areas_title": "Forschungsbereiche",
+      "methodology_title": "Methodik",
+      "collaborations_title": "Kooperationen",
+      "collaborations_description": "Wir arbeiten mit Forschern weltweit an verschiedenen Aspekten der arithmetischen Geometrie und computergestützten Zahlentheorie zusammen. Unsere Gruppe unterhält aktive Verbindungen zu:",
+      "method_computational": {
+        "title": "Computergestützte Methoden",
+        "description": "Wir entwickeln und verwenden fortschrittliche computergestützte Techniken, um arithmetische Objekte zu erforschen und theoretische Vorhersagen zu verifizieren."
+      },
+      "method_theoretical": {
+        "title": "Theoretische Analyse",
+        "description": "Tiefes theoretisches Verständnis leitet unsere computergestützten Experimente und hilft bei der Interpretation ihrer Ergebnisse."
+      },
+      "method_experimental": {
+        "title": "Experimentelle Mathematik",
+        "description": "Wir verwenden computergestützte Experimente, um Muster zu entdecken und neue Vermutungen in der arithmetischen Geometrie zu formulieren."
+      },
+      "collaboration_1": "Internationale Forschungseinrichtungen",
+      "collaboration_2": "Teams für mathematische Softwareentwicklung",
+      "collaboration_3": "Zahlentheorie-Konferenzen und Workshops",
+      "collaboration_4": "Graduierten- und Bachelor-Forschungsprogramme",
+      "learn_more": "Mehr erfahren",
+      "papers_count": "Arbeiten"
+    },
+    "publications": {
+      "title": "Publikationen",
+      "description": "Publikationen unserer Forschungsgruppenmitglieder.",
+      "intro": "Publikationen und Preprints unserer Forschungsgruppe:",
+      "group_members": "Gruppenmitglieder",
+      "group_leader": "Gruppenleiter",
+      "postdoc": "Postdoktorand",
+      "filter_by_year": "Nach Jahr filtern:",
+      "all_years": "Alle Jahre",
+      "search_publications": "Publikationen suchen:",
+      "show_abstract": "Abstract anzeigen"
+    },
+    "teaching": {
+      "title": "Lehre",
+      "description": "Aktuelle und vergangene Lehrveranstaltungen.",
+      "intro": "Unsere Gruppe ist aktiv in der Lehre an der Universität Heidelberg tätig. Nachfolgend finden Sie eine Liste aktueller und vergangener Kurse, die Sie über das CMS verwalten können. Für offizielle Details konsultieren Sie bitte den Universitätskatalog.",
+      "instructor": "Dozent:",
+      "time_location": "Zeit/Ort:"
+    },
+    "members": {
+      "title": "Mitglieder",
+      "description": "Aktuelle und ehemalige Mitglieder unserer Forschungsgruppe.",
+      "intro": "Unsere Forschungsgruppe besteht aus Fakultätsmitgliedern, Postdoktoranden und Studierenden, die an computergestützter arithmetischer Geometrie arbeiten.",
+      "research_interests": "Forschungsinteressen"
+    },
+    "links": {
+      "title": "Links",
+      "description": "Nützliche Links und Ressourcen.",
+      "intro": "Hier sind einige Links, die für Studierende und Forscher von Interesse sein könnten, verwaltet über das CMS."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontaktieren Sie unsere Forschungsgruppe.",
+      "intro": "Kontaktieren Sie unsere Forschungsgruppe. Wir freuen uns über Anfragen von Studierenden, Forschern und Kooperationspartnern, die sich für arithmetische Geometrie und computergestützte Zahlentheorie interessieren.",
+      "postal_address": "Postanschrift",
+      "contact_details": "Kontaktdaten",
+      "office_hours": "Öffnungszeiten",
+      "getting_here": "Anfahrt",
+      "location": "Standort",
+      "by_public_transport": "Mit öffentlichen Verkehrsmitteln",
+      "by_car": "Mit dem Auto",
+      "monday_friday": "Montag - Freitag",
+      "weekends": "Wochenenden",
+      "closed": "Geschlossen",
+      "parking_available": "Parkplätze verfügbar im Mathematikon-Gebäude",
+      "follow_signs": "Folgen Sie den Schildern zu \"IWR\" oder \"Mathematikon\"",
+      "building_location": "Das Gebäude befindet sich auf der Nordseite des Im Neuenheimer Feld",
+      "bus_lines": "Bus: Linien 32, 33, 35 zur Haltestelle \"Mathematikon\"",
+      "tram_line": "Straßenbahn: Linie 5 zum \"Universitätsplatz\" dann Busverbindung",
+      "train": "Zug: Heidelberg Hauptbahnhof, dann Busverbindung",
+      "office_hours_note": "Bitte beachten Sie, dass wir während der Universitätsferien und Konferenzzeiten möglicherweise nicht erreichbar sind."
+    },
+    "resources": {
+      "title": "Ressourcen",
+      "description": "Ressourcen und Werkzeuge.",
+      "visit_resource": "Ressource besuchen",
+      "no_resources": "Derzeit sind keine Ressourcen verfügbar."
+    },
+    "news": {
+      "title": "Neuigkeiten",
+      "description": "Neueste Nachrichten und Ankündigungen.",
+      "read_more": "Weiterlesen"
+    }
+  }
+} 

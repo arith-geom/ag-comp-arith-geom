@@ -1,17 +1,99 @@
+# Pages CMS Configuration for Official Pages CMS
+# This file configures the content management system for the website
+# Visit https://app.pagescms.org/ to manage content
+
 media:
   - name: uploads
     label: All Uploads
     input: assets/uploads
     output: /assets/uploads
     extensions: ["png", "jpg", "jpeg", "gif", "svg", "pdf", "tex"]
+    categories: ["image", "document"]
 
 content:
+  - name: members
+    label: Team Members
+    path: _members
+    type: collection
+    delete: true
+    description: "Manage team members."
+    view:
+      fields:
+        - name
+        - role
+        - email
+      sort:
+        field: name
+        order: asc
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: role
+        label: Role
+        type: string
+        description: "e.g., Professor, PhD Student, Postdoc"
+      - name: photo
+        label: Photo
+        type: image
+      - name: email
+        label: Email
+        type: string
+      - name: website
+        label: Personal Website
+        type: string
+      - name: github
+        label: GitHub Username
+        type: string
+      - name: bio
+        label: Biography
+        type: text
+
+  - name: research
+    label: Research Topics
+    path: _research
+    type: collection
+    delete: true
+    description: "Manage research topics and areas. Each entry will appear on the research page."
+    view:
+      fields:
+        - title
+        - description
+      sort:
+        field: title
+        order: asc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        description: "A summary of the research topic. This will be shown as a preview on the main research page."
+      - name: files
+        label: "Associated Files (PDFs, Images, etc.)"
+        type: file
+        list: true
+        required: false
+        description: "Upload any relevant papers, posters, or images for this topic."
+
   - name: publications
     label: Publications
     path: _publications
     type: collection
     delete: true
     description: "Manage research papers and articles. Upload a PDF for each entry."
+    view:
+      fields:
+        - title
+        - authors
+        - year
+        - publication_type
+      sort:
+        field: year
+        order: desc
     fields:
       - name: title
         label: Title
@@ -45,85 +127,11 @@ content:
         type: string
       - name: abstract
         label: Abstract
-        type: rich-text
+        type: text
       - name: file
         label: PDF File
         type: file
         description: "Upload the publication PDF here."
-
-  - name: members
-    label: Team Members
-    path: _members
-    type: collection
-    delete: true
-    description: "Manage team members."
-    fields:
-      - name: name
-        label: Name
-        type: string
-        required: true
-      - name: role
-        label: Role
-        type: string
-        description: "e.g., Professor, PhD Student, Postdoc"
-      - name: photo
-        label: Photo
-        type: image
-      - name: email
-        label: Email
-        type: string
-      - name: website
-        label: Personal Website
-        type: string
-      - name: github
-        label: GitHub Username
-        type: string
-      - name: bio
-        label: Biography
-        type: rich-text
-
-  - name: resources
-    label: Resources
-    path: _resources
-    type: collection
-    delete: true
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: author
-        label: Author
-        type: string
-      - name: description
-        label: Description
-        type: rich-text
-      - name: files
-        label: Files
-        type: file
-        list: true
-        required: false
-  - name: research
-    label: Research Topics
-    path: _research
-    type: collection
-    delete: true
-    description: "Manage research topics and areas. Each entry will appear on the research page."
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: description
-        label: Description
-        type: rich-text
-        description: "A summary of the research topic. This will be shown as a preview on the main research page."
-      - name: files
-        label: "Associated Files (PDFs, Images, etc.)"
-        type: file
-        list: true
-        required: false
-        description: "Upload any relevant papers, posters, or images for this topic."
 
   - name: teaching
     label: Teaching
@@ -131,6 +139,14 @@ content:
     type: collection
     delete: true
     description: "Manage courses and seminars. Each entry will appear on the Teaching page."
+    view:
+      fields:
+        - title
+        - semester
+        - instructor
+      sort:
+        field: semester
+        order: desc
     fields:
       - name: title
         label: Course Title
@@ -151,24 +167,8 @@ content:
         description: "e.g., Tuesdays & Thursdays, 10:00 - 12:00, Mathematikon, Room 5.104"
       - name: description
         label: Description
-        type: rich-text
+        type: text
         description: "A brief description of the course content."
-
-  - name: news
-    label: News
-    path: _news
-    type: collection
-    delete: true
-    description: "Create and manage news, announcements, or blog posts."
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: content
-        label: Content
-        type: rich-text
-        description: "The main content of the news post. You can use Markdown here."
 
   - name: links
     label: Links
@@ -176,6 +176,14 @@ content:
     type: collection
     delete: true
     description: "Manage the list of useful links. Use the category field to group them."
+    view:
+      fields:
+        - title
+        - category
+        - url
+      sort:
+        field: category
+        order: asc
     fields:
       - name: title
         label: Link Title

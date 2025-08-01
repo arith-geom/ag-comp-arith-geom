@@ -5,32 +5,36 @@ permalink: /teaching/
 nav: true
 ---
 
-Our group is actively involved in teaching at Heidelberg University. Below is a list of current and past courses, which you can manage from the CMS. For official details, please refer to the university's course catalog.
+<p class="translatable-content" data-translation-key="teaching.intro">Our group is actively involved in teaching at Heidelberg University. Below is a list of current and past courses, which you can manage from the CMS. For official details, please refer to the university's course catalog.</p>
 
 <div class="teaching-list mt-5">
-  {% assign courses_by_semester = site.teaching | group_by: "semester" | sort: "name" | reverse %}
-  
-  {% for semester_group in courses_by_semester %}
-    <h2 class="semester-heading">{{ semester_group.name }}</h2>
-    <div class="course-grid">
-      {% for course in semester_group.items %}
-        <div class="course-card">
-          <div class="card-body">
-            <h4 class="card-title">{{ course.title }}</h4>
-            <p class="card-subtitle mb-2 text-muted"><strong>Instructor:</strong> {{ course.instructor }}</p>
-            {% if course.details %}
-              <p class="card-text"><strong>Time/Location:</strong> {{ course.details }}</p>
-            {% endif %}
-            {% if course.description %}
-              <div class="course-description mt-3">
-                {{ course.description | markdownify }}
-              </div>
-            {% endif %}
+  {% if site.teaching %}
+    {% assign courses_by_semester = site.teaching | group_by: "semester" | sort: "name" | reverse %}
+    
+    {% for semester_group in courses_by_semester %}
+      <h2 class="semester-heading">{{ semester_group.name }}</h2>
+      <div class="course-grid">
+        {% for course in semester_group.items %}
+          <div class="course-card">
+            <div class="card-body">
+              <h4 class="card-title">{{ course.title }}</h4>
+              <p class="card-subtitle mb-2 text-muted"><strong class="translatable-content" data-translation-key="teaching.instructor">Instructor:</strong> {{ course.instructor }}</p>
+              {% if course.details %}
+                <p class="card-text"><strong class="translatable-content" data-translation-key="teaching.time_location">Time/Location:</strong> {{ course.details }}</p>
+              {% endif %}
+              {% if course.description %}
+                <div class="course-description mt-3">
+                  {{ course.description | markdownify }}
+                </div>
+              {% endif %}
+            </div>
           </div>
-        </div>
-      {% endfor %}
-    </div>
-  {% endfor %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="text-muted">No teaching information available at this time.</p>
+  {% endif %}
 </div>
 
 <style>
