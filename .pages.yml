@@ -1,97 +1,231 @@
-media:
-  input: assets/img
-  output: /assets/img
-  path: assets/img
-  categories: [image]
-  extensions: [jpg, jpeg, png, gif, svg, webp]
+# Pages CMS Configuration for AG Computational Arithmetic Geometry
+# This file configures the content management interface at https://app.pagescms.org/
 
+# Media Configuration
+media:
+  - name: images
+    label: Images & Photos
+    input: assets/img
+    output: /assets/img
+    path: assets/img
+    categories: [image]
+    extensions: [jpg, jpeg, png, gif, svg, webp]
+  - name: documents
+    label: Documents & PDFs
+    input: assets/uploads
+    output: /assets/uploads
+    path: assets/uploads
+    categories: [document]
+    extensions: [pdf, doc, docx, ppt, pptx, xls, xlsx, txt, md]
+  - name: media
+    label: Media Files
+    input: assets/media
+    output: /assets/media
+    path: assets/media
+    categories: [video, audio]
+    extensions: [mp4, avi, mov, wmv, mp3, wav, aac, ogg]
+
+# Content Types Configuration
 content:
+  # Team Members
   - name: members
     label: Team Members
     type: collection
     path: _members
     filename: "{name|slugify}.md"
+    format: yaml-frontmatter
     view:
-      fields: [name, role, photo, email]
+      fields: [name, role, photo, email, status, order]
       sort:
-        field: name
+        field: order
         direction: asc
+      search: [name, role, research_interests]
+      filters:
+        - field: status
+          label: Status
+        - field: role
+          label: Role
     fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: member
+        hidden: true
       - name: name
         label: Full Name
         type: string
         required: true
+        description: "Enter the person's full name"
       - name: role
         label: Role/Position
         type: string
         required: true
+        description: "Academic or professional role"
+      - name: status
+        label: Status
+        type: select
+        options:
+          active: Active Member
+          alumni: Alumni
+          visitor: Visitor
+          student: Student
+        default: active
+        required: true
       - name: photo
         label: Profile Photo
         type: image
+        options:
+          multiple: false
+          max_size: 5242880
+          accepted_types: [jpg, jpeg, png, webp]
       - name: order
         label: Display Order
         type: number
         default: 999
         hidden: true
+        description: "Lower numbers appear first"
       - name: email
         label: Email Address
         type: string
+        description: "Professional email address"
       - name: website
         label: Personal Website
         type: string
+        description: "Full URL including http:// or https://"
       - name: github
         label: GitHub Username
         type: string
+        description: "GitHub username without @"
       - name: orcid
         label: ORCID ID
         type: string
+        description: "ORCID ID in format 0000-0000-0000-0000"
       - name: research_interests
         label: Research Interests
         type: rich-text
+        options:
+          toolbar: ["bold", "italic", "link", "list", "code"]
+          height: 150
+        description: "Areas of research and expertise"
       - name: bio
         label: Biography
         type: rich-text
+        options:
+          toolbar: ["bold", "italic", "link", "list", "quote", "code"]
+          height: 200
+        description: "Academic background and achievements"
+      - name: education
+        label: Education
+        type: object
+        list:
+          min: 1
+          max: 10
+          collapsible:
+            collapsed: false
+            summary: "{degree} - {institution} ({year})"
+        fields:
+          - name: degree
+            label: Degree
+            type: string
+            required: true
+          - name: institution
+            label: Institution
+            type: string
+            required: true
+          - name: year
+            label: Year
+            type: number
+            required: true
+          - name: field
+            label: Field of Study
+            type: string
+      - name: publications
+        label: Key Publications
+        type: reference
+        collection: publications
+        list:
+          min: 0
+          max: 10
+        options:
+          multiple: true
+          search_fields: [title, authors]
+        description: "Publications related to this person"
+      - name: languages
+        label: Languages
+        type: select
+        list: true
+        options:
+          en: English
+          de: German
+          fr: French
+          es: Spanish
+          it: Italian
+          other: Other
+        description: "Languages spoken"
 
+  # Publications
   - name: publications
     label: Publications
     type: collection
     path: _publications
     filename: "{year}-{title|slugify}.md"
+    format: yaml-frontmatter
     view:
-      fields: [title, authors, year, publication_type, doi]
+      fields: [title, authors, year, publication_type, doi, featured]
       sort:
         field: year
         direction: desc
+      search: [title, authors, abstract, keywords]
+      filters:
+        - field: publication_type
+          label: Type
+        - field: year
+          label: Year
+        - field: featured
+          label: Featured
     fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: publication
+        hidden: true
       - name: title
         label: Publication Title
         type: string
         required: true
+        description: "Full title of the publication"
       - name: authors
         label: Authors
         type: string
         required: true
+        description: "Comma-separated list of authors"
       - name: publication_type
         label: Publication Type
         type: select
         options:
-          Journal Article: Journal Article
-          Conference Paper: Conference Paper
-          Preprint: Preprint
-          Book Chapter: Book Chapter
-          Thesis: Thesis
-          Technical Report: Technical Report
-        default: Journal Article
+          journal: Journal Article
+          conference: Conference Paper
+          preprint: Preprint
+          book_chapter: Book Chapter
+          thesis: Thesis
+          technical_report: Technical Report
+          book: Book
+          proceedings: Conference Proceedings
+        default: journal
+        required: true
       - name: year
         label: Publication Year
         type: number
         required: true
+        description: "Year of publication (YYYY)"
       - name: journal
         label: Journal/Conference
         type: string
+        description: "Journal name or conference title"
       - name: publication_details
         label: Publication Details
-        type: string
+        type: text
+        description: "Additional publication information"
       - name: volume
         label: Volume
         type: string
@@ -101,93 +235,189 @@ content:
       - name: pages
         label: Pages
         type: string
+        description: "Page range (e.g., 123-145)"
       - name: doi
         label: DOI
         type: string
+        description: "Digital Object Identifier"
       - name: url
         label: URL
         type: string
+        description: "Link to publication"
       - name: abstract
         label: Abstract
         type: text
+        options:
+          height: 150
+        description: "Abstract or summary"
       - name: keywords
         label: Keywords
         type: string
-        list: true
+        list:
+          min: 1
+          max: 20
+        description: "Research keywords"
       - name: featured
         label: Featured Publication
         type: boolean
         default: false
+        description: "Highlight this publication"
+      - name: citations
+        label: Citation Count
+        type: number
+        default: 0
+        description: "Number of citations"
+      - name: funding
+        label: Funding Information
+        type: text
+        description: "Funding sources and grants"
+      - name: code_repository
+        label: Code Repository
+        type: string
+        description: "Link to associated code"
 
+  # Teaching & Courses
   - name: teaching
     label: Teaching & Courses
     type: collection
     path: _teaching
     filename: "{semester|slugify}-{title|slugify}.md"
+    format: yaml-frontmatter
     view:
-      fields: [title, semester, instructor]
+      fields: [title, semester, instructor, course_type, active]
       sort:
         field: semester
         direction: desc
+      search: [title, instructor, description]
+      filters:
+        - field: course_type
+          label: Course Type
+        - field: language
+          label: Language
+        - field: active
+          label: Active
     fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: teaching
+        hidden: true
       - name: title
         label: Course Title
         type: string
         required: true
+        description: "Full course title"
       - name: semester
         label: Semester
         type: string
         required: true
+        description: "Semester (e.g., WS2024, SS2025)"
       - name: instructor
         label: Instructor(s)
         type: string
         required: true
+        description: "Course instructor(s)"
       - name: course_type
         label: Course Type
         type: select
         options:
-          Lecture: Lecture
-          Seminar: Seminar
-          Exercise: Exercise
-          Tutorial: Tutorial
-          Workshop: Workshop
-        default: Seminar
+          lecture: Lecture
+          seminar: Seminar
+          exercise: Exercise
+          tutorial: Tutorial
+          workshop: Workshop
+          lab: Laboratory
+          colloquium: Colloquium
+        default: seminar
+        required: true
       - name: credits
         label: ECTS Credits
         type: number
+        description: "ECTS credit points"
       - name: language
         label: Language
         type: select
         options:
-          English: English
-          German: German
-          Bilingual: Bilingual
-        default: English
+          en: English
+          de: German
+          bilingual: Bilingual
+        default: en
+        required: true
       - name: description
         label: Course Description
         type: rich-text
+        options:
+          toolbar: ["bold", "italic", "link", "list", "code"]
+          height: 150
+        description: "Course overview and objectives"
       - name: syllabus
         label: Syllabus
         type: rich-text
+        options:
+          toolbar: ["bold", "italic", "link", "list", "table"]
+          height: 200
+        description: "Detailed course content"
       - name: materials
         label: Course Materials
         type: file
-        list: true
+        list:
+          min: 0
+          max: 20
+        options:
+          multiple: true
+          accepted_types: [pdf, doc, docx, ppt, pptx, zip]
+        description: "Course materials and resources"
+      - name: schedule
+        label: Schedule
+        type: object
+        list:
+          min: 0
+          max: 20
+          collapsible:
+            collapsed: true
+            summary: "{date} - {topic}"
+        fields:
+          - name: date
+            label: Date
+            type: date
+            required: true
+          - name: topic
+            label: Topic
+            type: string
+            required: true
+          - name: description
+            label: Description
+            type: text
       - name: active
         label: Currently Active
         type: boolean
         default: false
+        description: "Is this course currently being taught?"
+      - name: enrollment_limit
+        label: Enrollment Limit
+        type: number
+        description: "Maximum number of students"
+      - name: prerequisites
+        label: Prerequisites
+        type: text
+        description: "Required background knowledge"
 
+  # Research Areas
   - name: research
     label: Research Areas
     type: collection
     path: _research
     filename: "{title|slugify}.md"
+    format: yaml-frontmatter
     view:
-      fields: [title, description]
+      fields: [title, description, featured, order]
       sort:
-        field: title
+        field: order
         direction: asc
+      search: [title, description, keywords]
+      filters:
+        - field: featured
+          label: Featured
     fields:
       - name: layout
         label: Layout
@@ -198,39 +428,97 @@ content:
         label: Research Area Title
         type: string
         required: true
+        description: "Name of the research area"
       - name: description
         label: Description
-        type: text
+        type: rich-text
         required: true
+        options:
+          toolbar: ["bold", "italic", "link", "list", "code"]
+          height: 200
+        description: "Detailed description of the research area"
       - name: order
         label: Display Order
         type: number
         default: 999
         hidden: true
+        description: "Lower numbers appear first"
       - name: featured
         label: Featured Research Area
         type: boolean
         default: false
+        description: "Highlight this research area"
       - name: keywords
         label: Keywords
         type: string
-        list: true
+        list:
+          min: 1
+          max: 15
+        description: "Research keywords and tags"
       - name: related_publications
         label: Related Publications
         type: reference
         collection: publications
-        list: true
+        list:
+          min: 0
+          max: 20
+        options:
+          multiple: true
+          search_fields: [title, authors]
+        description: "Publications related to this research area"
+      - name: team_members
+        label: Team Members
+        type: reference
+        collection: members
+        list:
+          min: 0
+          max: 10
+        options:
+          multiple: true
+          search_fields: [name, role]
+        description: "Team members working in this area"
+      - name: external_collaborators
+        label: External Collaborators
+        type: object
+        list:
+          min: 0
+          max: 10
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: institution
+            label: Institution
+            type: string
+            required: true
+          - name: role
+            label: Role
+            type: string
+          - name: website
+            label: Website
+            type: string
 
+  # News & Blog Posts
   - name: news
     label: News & Blog Posts
     type: collection
     path: _news
     filename: "{year}-{month}-{day}-{title|slugify}.md"
+    format: yaml-frontmatter
     view:
-      fields: [title, date, published, categories]
+      fields: [title, date, published, categories, featured]
       sort:
         field: date
         direction: desc
+      search: [title, content, excerpt]
+      filters:
+        - field: published
+          label: Published
+        - field: categories
+          label: Categories
+        - field: featured
+          label: Featured
     fields:
       - name: layout
         label: Layout
@@ -241,68 +529,251 @@ content:
         label: Post Title
         type: string
         required: true
+        description: "News article or blog post title"
       - name: date
         label: Publication Date
         type: date
         required: true
+        description: "When the post was published"
       - name: published
         label: Published
         type: boolean
         default: true
+        description: "Make this post visible to visitors"
+      - name: featured
+        label: Featured Post
+        type: boolean
+        default: false
+        description: "Highlight this post on the homepage"
       - name: categories
         label: Categories
-        type: string
+        type: select
         list: true
+        options:
+          research: Research
+          teaching: Teaching
+          events: Events
+          awards: Awards
+          publications: Publications
+          general: General
+        description: "Post categories"
       - name: tags
         label: Tags
         type: string
-        list: true
+        list:
+          min: 0
+          max: 10
+        description: "Additional tags for better organization"
       - name: excerpt
         label: Excerpt
         type: text
+        options:
+          height: 100
+        description: "Short summary for previews"
       - name: content
         label: Content
         type: rich-text
         required: true
+        options:
+          toolbar: ["bold", "italic", "link", "list", "quote", "code", "image", "table"]
+          height: 400
+        description: "Main content of the post"
       - name: featured_image
         label: Featured Image
         type: image
+        options:
+          multiple: false
+          max_size: 5242880
+          accepted_types: [jpg, jpeg, png, webp]
+        description: "Main image for the post"
+      - name: author
+        label: Author
+        type: reference
+        collection: members
+        options:
+          multiple: false
+          search_fields: [name]
+        description: "Post author"
+      - name: related_posts
+        label: Related Posts
+        type: reference
+        collection: news
+        list:
+          min: 0
+          max: 5
+        options:
+          multiple: true
+          search_fields: [title]
+        description: "Related news posts"
 
+  # Links & Resources
   - name: links
     label: Links & Resources
     type: collection
     path: _links
     filename: "{title|slugify}.md"
+    format: yaml-frontmatter
     view:
-      fields: [title, category, url]
+      fields: [title, category, url, featured, order]
       sort:
-        field: title
+        field: order
         direction: asc
+      search: [title, description]
+      filters:
+        - field: category
+          label: Category
+        - field: featured
+          label: Featured
     fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: link
+        hidden: true
       - name: title
         label: Link Title
         type: string
         required: true
+        description: "Name of the resource or link"
       - name: url
         label: URL
         type: string
         required: true
+        description: "Full URL including http:// or https://"
       - name: category
         label: Category
-        type: string
+        type: select
+        options:
+          software: Software
+          database: Database
+          journal: Journal
+          conference: Conference
+          organization: Organization
+          tool: Tool
+          tutorial: Tutorial
+          documentation: Documentation
+          other: Other
+        default: other
+        description: "Resource category"
       - name: order
         label: Display Order
         type: number
         default: 999
         hidden: true
+        description: "Lower numbers appear first"
       - name: description
         label: Description
         type: text
+        options:
+          height: 100
+        description: "Brief description of the resource"
       - name: featured
         label: Featured Link
         type: boolean
         default: false
+        description: "Highlight this resource"
+      - name: tags
+        label: Tags
+        type: string
+        list:
+          min: 0
+          max: 10
+        description: "Tags for better organization"
+      - name: icon
+        label: Icon
+        type: string
+        description: "FontAwesome icon class (e.g., fas fa-link)"
 
+  # Events
+  - name: events
+    label: Events
+    type: collection
+    path: _events
+    filename: "{date}-{title|slugify}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [title, date, event_type, location, featured]
+      sort:
+        field: date
+        direction: desc
+      search: [title, description]
+      filters:
+        - field: event_type
+          label: Event Type
+        - field: featured
+          label: Featured
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: event
+        hidden: true
+      - name: title
+        label: Event Title
+        type: string
+        required: true
+        description: "Name of the event"
+      - name: date
+        label: Event Date
+        type: date
+        required: true
+        description: "When the event takes place"
+      - name: end_date
+        label: End Date
+        type: date
+        description: "End date for multi-day events"
+      - name: event_type
+        label: Event Type
+        type: select
+        options:
+          conference: Conference
+          workshop: Workshop
+          seminar: Seminar
+          colloquium: Colloquium
+          defense: Defense
+          meeting: Meeting
+          other: Other
+        default: seminar
+        required: true
+      - name: location
+        label: Location
+        type: string
+        description: "Event location"
+      - name: description
+        label: Description
+        type: rich-text
+        required: true
+        options:
+          toolbar: ["bold", "italic", "link", "list"]
+          height: 200
+        description: "Event description"
+      - name: featured
+        label: Featured Event
+        type: boolean
+        default: false
+        description: "Highlight this event"
+      - name: registration_required
+        label: Registration Required
+        type: boolean
+        default: false
+        description: "Does this event require registration?"
+      - name: registration_url
+        label: Registration URL
+        type: string
+        description: "Link to registration page"
+      - name: organizers
+        label: Organizers
+        type: reference
+        collection: members
+        list:
+          min: 1
+          max: 10
+        options:
+          multiple: true
+          search_fields: [name]
+        description: "Event organizers"
+
+  # Site Configuration
   - name: config
     label: Site Configuration
     path: _config.yml
@@ -311,22 +782,40 @@ content:
       - name: title
         label: Website Title
         type: string
+        required: true
+        description: "Main website title"
       - name: description
         label: Website Description
         type: text
+        options:
+          height: 100
+        description: "Brief description of the website"
       - name: email
         label: Contact Email
         type: string
+        description: "Primary contact email"
       - name: url
         label: Website URL
         type: string
+        description: "Full website URL"
       - name: twitter_username
         label: Twitter Username
         type: string
+        description: "Twitter handle without @"
       - name: github_username
         label: GitHub Username
         type: string
+        description: "GitHub username"
+      - name: linkedin_url
+        label: LinkedIn URL
+        type: string
+        description: "LinkedIn profile URL"
+      - name: researchgate_url
+        label: ResearchGate URL
+        type: string
+        description: "ResearchGate profile URL"
 
+# Reusable Components
 components:
   contact_info:
     label: Contact Information
@@ -343,6 +832,8 @@ components:
       - name: office_hours
         label: Office Hours
         type: text
+        options:
+          height: 100
 
   social_links:
     label: Social Media Links
@@ -359,7 +850,67 @@ components:
       - name: researchgate
         label: ResearchGate
         type: string
+      - name: orcid
+        label: ORCID
+        type: string
 
+  academic_info:
+    label: Academic Information
+    fields:
+      - name: position
+        label: Position
+        type: string
+        required: true
+      - name: department
+        label: Department
+        type: string
+      - name: institution
+        label: Institution
+        type: string
+        required: true
+      - name: start_date
+        label: Start Date
+        type: date
+      - name: end_date
+        label: End Date
+        type: date
+
+  publication_metadata:
+    label: Publication Metadata
+    fields:
+      - name: doi
+        label: DOI
+        type: string
+      - name: arxiv_id
+        label: arXiv ID
+        type: string
+      - name: pubmed_id
+        label: PubMed ID
+        type: string
+      - name: scopus_id
+        label: Scopus ID
+        type: string
+
+# Global Settings
 settings:
+  hide: false
   content:
-    merge: true 
+    merge: true
+  bilingual:
+    enabled: true
+    default_language: "en"
+    supported_languages: ["en", "de"]
+    language_names:
+      en: "English"
+      de: "Deutsch"
+  webhooks:
+    enabled: true
+    events: ["content.created", "content.updated", "content.deleted"]
+  analytics:
+    enabled: false
+    provider: "google"
+    tracking_id: ""
+  security:
+    max_file_size: 5242880
+    allowed_file_types: ["jpg", "jpeg", "png", "gif", "svg", "webp", "pdf", "doc", "docx"]
+    require_authentication: false 
