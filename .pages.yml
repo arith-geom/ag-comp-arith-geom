@@ -12,9 +12,9 @@ content:
     path: _members
     filename: "{name|slugify}.md"
     view:
-      fields: [name, role, order, photo, email]
+      fields: [name, role, photo, email]
       sort:
-        field: order
+        field: name
         direction: asc
     fields:
       - name: name
@@ -32,6 +32,7 @@ content:
         label: Display Order
         type: number
         default: 999
+        hidden: true
       - name: email
         label: Email Address
         type: string
@@ -74,12 +75,12 @@ content:
         label: Publication Type
         type: select
         options:
-          - Journal Article
-          - Conference Paper
-          - Preprint
-          - Book Chapter
-          - Thesis
-          - Technical Report
+          Journal Article: Journal Article
+          Conference Paper: Conference Paper
+          Preprint: Preprint
+          Book Chapter: Book Chapter
+          Thesis: Thesis
+          Technical Report: Technical Report
         default: Journal Article
       - name: year
         label: Publication Year
@@ -145,11 +146,11 @@ content:
         label: Course Type
         type: select
         options:
-          - Lecture
-          - Seminar
-          - Exercise
-          - Tutorial
-          - Workshop
+          Lecture: Lecture
+          Seminar: Seminar
+          Exercise: Exercise
+          Tutorial: Tutorial
+          Workshop: Workshop
         default: Seminar
       - name: credits
         label: ECTS Credits
@@ -158,9 +159,9 @@ content:
         label: Language
         type: select
         options:
-          - English
-          - German
-          - Bilingual
+          English: English
+          German: German
+          Bilingual: Bilingual
         default: English
       - name: description
         label: Course Description
@@ -205,6 +206,7 @@ content:
         label: Display Order
         type: number
         default: 999
+        hidden: true
       - name: featured
         label: Featured Research Area
         type: boolean
@@ -292,6 +294,7 @@ content:
         label: Display Order
         type: number
         default: 999
+        hidden: true
       - name: description
         label: Description
         type: text

@@ -69,6 +69,9 @@
     // Listen for Pages CMS events
     setupEventListeners();
     
+    // Fix select field options
+    fixSelectFieldOptions();
+    
     // Show initial status
     showSyncStatus('Pages CMS ready', 'success');
   }
@@ -142,6 +145,20 @@
       const { error } = event.detail;
       console.error('Pages CMS error:', error);
       showSyncStatus(`Error: ${error}`, 'error');
+    });
+    
+    // Listen for DOM changes to fix select fields
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'childList') {
+          fixSelectFieldOptions();
+        }
+      });
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
     });
   }
   
@@ -292,6 +309,43 @@
     teachingContainer.innerHTML = teachingHTML;
   }
   
+  // Fix select field options to prevent "Z.options.values.map is not a function" error
+  function fixSelectFieldOptions() {
+    try {
+      // Find all select elements in Pages CMS
+      const selectElements = document.querySelectorAll('select[data-field], select[name*="type"], select[name*="language"]');
+      
+      selectElements.forEach(select => {
+        // Check if the select has options
+        if (select.options && select.options.length > 0) {
+          // Ensure options are properly formatted
+          Array.from(select.options).forEach(option => {
+            if (!option.value && option.text) {
+              option.value = option.text;
+            }
+          });
+        }
+      });
+      
+      // Also fix any select components that might be using a different structure
+      const selectComponents = document.querySelectorAll('[data-component="select"], .select-component');
+      selectComponents.forEach(component => {
+        const optionsContainer = component.querySelector('.options, .select-options');
+        if (optionsContainer) {
+          const options = optionsContainer.querySelectorAll('.option, [data-option]');
+          options.forEach(option => {
+            if (!option.dataset.value && option.textContent) {
+              option.dataset.value = option.textContent.trim();
+            }
+          });
+        }
+      });
+      
+    } catch (error) {
+      console.warn('Error fixing select field options:', error);
+    }
+  }
+
   // Utility function to escape HTML
   function escapeHtml(text) {
     if (!text) return '';
