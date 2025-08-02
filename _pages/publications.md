@@ -3,325 +3,380 @@ layout: page
 title: Publications
 permalink: /publications/
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
-<div class="publications-intro">
-  <p class="lead translatable-content" data-translation-key="publications.intro">Publications and preprints of our research group:</p>
-  <div class="publications-authors">
-    <h4 class="translatable-content" data-translation-key="publications.group_members">Group Members</h4>
-    <ul class="list-unstyled">
-      <li><strong>Prof. Dr. Gebhard Böckle</strong> - <span class="translatable-content" data-translation-key="publications.group_leader">Group Leader</span></li>
-      <li><strong>Dr. Barinder Banwait</strong> - <span class="translatable-content" data-translation-key="publications.postdoc">Postdoctoral Researcher</span></li>
-      <li><strong>Dr. Peter Gräf</strong> - <span class="translatable-content" data-translation-key="publications.postdoc">Postdoctoral Researcher</span></li>
-    </ul>
-  </div>
-  <hr>
-  <p class="text-muted translatable-content" data-translation-key="publications.description">
-    The following is a dynamic list of publications from our group, organized by year. New papers can be added through the CMS and will appear here automatically.
-  </p>
+<div class="team-intro mb-5">
+  <h2 class="text-center mb-4">Publications and Software</h2>
+  <p class="lead text-center">Discover the research output and computational tools developed by our research group.</p>
 </div>
 
-<div class="publications-controls mb-4">
-  <div class="row">
-    <div class="col-md-6">
-      <label for="publication-filter" class="form-label translatable-content" data-translation-key="publications.filter_by_year">Filter by year:</label>
-      <select id="publication-filter" class="form-select">
-        <option value="all" class="translatable-content" data-translation-key="publications.all_years">All Years</option>
-        {% assign years = site.publications | map: "year" | uniq | sort | reverse %}
-        {% for year in years %}
-          <option value="{{ year }}">{{ year }}</option>
-        {% endfor %}
-      </select>
+<div class="team-sections">
+  <!-- Member Publications -->
+  <div class="team-section">
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="fas fa-book" aria-hidden="true"></i>
+      </div>
+      <h3>Publications and Preprints</h3>
     </div>
-    <div class="col-md-6">
-      <label for="publication-search" class="form-label translatable-content" data-translation-key="publications.search_publications">Search publications:</label>
-      <input type="text" id="publication-search" class="form-control" placeholder="Search by title, author, or keyword..." data-placeholder-en="Search by title, author, or keyword..." data-placeholder-de="Suche nach Titel, Autor oder Schlüsselwort...">
-    </div>
-  </div>
-</div>
-
-<div class="publications-list">
-  {% assign pubs_by_year = site.publications | group_by: "year" | sort: "name" | reverse %}
-  
-  {% for year_group in pubs_by_year %}
-    <div class="publication-year-group" data-year="{{ year_group.name }}">
-      <h2 class="year-heading">{{ year_group.name }}</h2>
-      <div class="publication-year-content">
-        {% for pub in year_group.items %}
-          <div class="publication-entry" data-title="{{ pub.title | downcase }}" data-authors="{{ pub.authors | downcase }}" data-keywords="{{ pub.tags | join: ' ' | downcase }}">
-            <div class="publication-header">
-              <h4 class="publication-title">{{ pub.title }}</h4>
-              <div class="publication-meta">
-                <span class="publication-authors"><em>{{ pub.authors }}</em></span>
-                {% if pub.publication_type %}
-                  <span class="publication-type">{{ pub.publication_type }}</span>
-                {% endif %}
-                {% if pub.publication_details %}
-                  <span class="publication-details">{{ pub.publication_details }}</span>
-                {% endif %}
-                {% if pub.year %}
-                  <span class="publication-year">{{ pub.year }}</span>
-                {% endif %}
-              </div>
-            </div>
-            
-            <div class="publication-links">
-              {% if pub.doi %}
-                <a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary" aria-label="View DOI for {{ pub.title }}">
-                  <i class="fas fa-external-link-alt me-1" aria-hidden="true"></i> DOI
-                </a>
-              {% endif %}
-              {% if pub.file %}
-                <a href="{{ pub.file | relative_url }}" class="btn btn-sm btn-primary" target="_blank" rel="noopener" aria-label="Download PDF for {{ pub.title }}">
-                  <i class="fas fa-file-pdf me-1" aria-hidden="true"></i> PDF
-                </a>
-              {% endif %}
-              {% if pub.abstract %}
-                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#abstract-{{ forloop.index0 }}-{{ year_group.name }}" aria-expanded="false" aria-controls="abstract-{{ forloop.index0 }}-{{ year_group.name }}">
-                  <i class="fas fa-eye me-1" aria-hidden="true"></i> <span class="translatable-content" data-translation-key="publications.show_abstract">Show Abstract</span>
-                </button>
-              {% endif %}
-            </div>
-            
-            {% if pub.abstract %}
-              <div class="publication-abstract mt-3">
-                <div class="collapse" id="abstract-{{ forloop.index0 }}-{{ year_group.name }}">
-                  <div class="card card-body">
-                    {{ pub.abstract | markdownify }}
-                  </div>
-                </div>
-              </div>
-            {% endif %}
+    
+    <div class="members-grid">
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/11.jpg" alt="Prof. Dr. Gebhard Böckle" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="/members/gebhard-boeckle/publications/">Prof. Dr. Gebhard Böckle</a></h4>
+          <p class="member-role">Professor & Group Leader</p>
+          <p class="member-description">Research interests in arithmetic geometry, modular forms, Galois representations, and computational number theory.</p>
+          <div class="member-links">
+            <a href="/members/gebhard-boeckle/publications/" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-book me-2" aria-hidden="true"></i>View Publications
+            </a>
+            <a href="mailto:gebhard.boeckle@math.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+            </a>
           </div>
-        {% endfor %}
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/prof.svg" alt="Dr. Barinder Banwait" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="https://members.vistaserv.net/barinder" target="_blank" rel="noopener">Dr. Barinder Banwait</a></h4>
+          <p class="member-role">External Researcher</p>
+          <p class="member-description">Research focuses on arithmetic geometry and number theory, with expertise in computational methods.</p>
+          <div class="member-links">
+            <a href="https://members.vistaserv.net/barinder" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i>External Profile
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/prof.svg" alt="Dr. Peter Gräf" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="/members/peter-graef/publications/">Dr. Peter Gräf</a></h4>
+          <p class="member-role">Research Associate</p>
+          <p class="member-description">Research focuses on arithmetic geometry, computational number theory, and modular forms.</p>
+          <div class="member-links">
+            <a href="/members/peter-graef/publications/" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-book me-2" aria-hidden="true"></i>View Publications
+            </a>
+            <a href="mailto:peter.graef@math.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  {% endfor %}
-</div>
+  </div>
 
-<div class="publications-empty-state" style="display: none;">
-  <div class="text-center py-5">
-    <i class="fas fa-search fa-3x text-muted mb-3"></i>
-    <h4>No publications found</h4>
-    <p class="text-muted">Try adjusting your search criteria or year filter.</p>
+  <!-- Software Packages -->
+  <div class="team-section">
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="fas fa-code" aria-hidden="true"></i>
+      </div>
+      <h3>Software Packages</h3>
+    </div>
+    
+    <div class="members-grid">
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/prof.svg" alt="Dr. Ralf Butenuth" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="/members/ralf-butenuth/publications/">QaQuotGraphs Magma Package</a></h4>
+          <p class="member-role">Author: Dr. Ralf Butenuth</p>
+          <p class="member-description">A comprehensive Magma package for computing the action by unit groups of maximal orders in quaternion algebras over F<sub>q</sub>(T).</p>
+          <div class="member-links">
+            <a href="/members/ralf-butenuth/publications/" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-user me-2" aria-hidden="true"></i>View Author
+            </a>
+            <a href="/assets/uploads/qaquotgraph_package.tar.gz" class="btn btn-outline-success btn-sm">
+              <i class="fas fa-download me-2" aria-hidden="true"></i>Download
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/prof.svg" alt="Lutz Hofmann" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="https://github.com/lhofmann/buildings" target="_blank" rel="noopener">Bruhat-Tits Buildings Package</a></h4>
+          <p class="member-role">Author: Lutz Hofmann (former Master's student)</p>
+          <p class="member-description">Magma package to compute quotients of Bruhat-Tits buildings over function fields modulo congruence subgroups and the action of Hecke operators on harmonic cocycles.</p>
+          <div class="member-links">
+            <a href="https://github.com/lhofmann/buildings" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
+              <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/prof.svg" alt="Burak Cakir" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="https://github.com/b-cakir/hecke-operator" target="_blank" rel="noopener">Hecke Operator Package</a></h4>
+          <p class="member-role">Author: Burak Cakir (Master's student)</p>
+          <p class="member-description">Magma package to compute Hecke eigensystems for harmonic cocycles on the Bruhat-Tits tree for GL<sub>2</sub>(F<sub>q</sub>(T)).</p>
+          <div class="member-links">
+            <a href="https://github.com/b-cakir/hecke-operator" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
+              <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub
+            </a>
+            <a href="/assets/uploads/Thesis_Cakir.pdf" class="btn btn-outline-success btn-sm">
+              <i class="fas fa-file-pdf me-2" aria-hidden="true"></i>Thesis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <style>
-.publications-intro {
-  margin-bottom: 2rem;
+.team-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
 }
 
-.publications-authors {
-  margin: 1.5rem 0;
-}
-
-.publications-authors h4 {
+.team-intro h2 {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.publications-authors ul {
-  margin-left: 1rem;
-}
-
-.publications-authors li {
-  margin-bottom: 0.5rem;
+.team-intro .lead {
+  font-size: 1.25rem;
   color: var(--text-secondary);
+  line-height: 1.6;
 }
 
-.publications-controls {
-  background: var(--bg-secondary);
-  padding: 1.5rem;
+.team-sections {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-section {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: var(--bg-primary);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
-}
-
-.year-heading {
-  font-size: 2rem;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary);
-  color: var(--text-primary);
-}
-
-.publication-entry {
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: var(--radius-lg);
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
 }
 
-.publication-entry:hover {
+.team-section:hover {
   box-shadow: var(--shadow-md);
-  border-color: var(--primary);
   transform: translateY(-2px);
 }
 
-.publication-header {
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.section-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-header h3 {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.member-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-base);
   margin-bottom: 1rem;
 }
 
-.publication-title {
-  font-size: 1.4rem;
-  font-weight: 600;
+.member-card:hover {
+  transform: translateX(8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.member-avatar {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+
+.member-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.member-card:hover .member-avatar {
+  transform: scale(1.1);
+}
+
+.member-card:hover .member-photo {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.member-info {
+  flex-grow: 1;
+}
+
+.member-info h4 {
   color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
-  line-height: 1.3;
 }
 
-.publication-meta {
+.member-info h4 a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.member-info h4 a:hover {
+  color: var(--primary);
+}
+
+.member-role {
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.publication-authors {
-  display: block;
+  font-style: italic;
   margin-bottom: 0.5rem;
-}
-
-.publication-type,
-.publication-details,
-.publication-year {
-  display: inline-block;
-  margin-right: 1rem;
   font-weight: 500;
 }
 
-.publication-type {
-  color: var(--primary);
-  background-color: var(--bg-accent);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.8rem;
-}
-
-.publication-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.member-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
   margin-bottom: 1rem;
 }
 
-.publication-links a,
-.publication-links button {
-  min-height: 36px;
-  display: inline-flex;
-  align-items: center;
+.member-links {
+  display: flex;
+  gap: 0.5rem;
 }
 
-.publication-abstract .card {
-  background-color: var(--bg-secondary);
-  border-color: var(--border-color);
-}
-
-.publication-abstract .card-body {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .publications-controls .row {
+  .team-intro h2 {
+    font-size: 2rem;
+  }
+  
+  .team-intro .lead {
+    font-size: 1.1rem;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .section-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .section-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .member-card {
+    flex-direction: column;
+    text-align: center;
     gap: 1rem;
   }
   
-  .publication-entry {
-    padding: 1rem;
+  .member-card:hover {
+    transform: translateY(4px);
   }
   
-  .publication-title {
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .member-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .member-info h4 {
     font-size: 1.2rem;
-  }
-  
-  .publication-links {
-    flex-direction: column;
-  }
-  
-  .publication-links a,
-  .publication-links button {
-    width: 100%;
-    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  .year-heading {
-    font-size: 1.5rem;
+  .team-section {
+    padding: 1rem;
   }
   
-  .publication-meta {
-    font-size: 0.9rem;
+  .member-card {
+    padding: 1rem;
   }
   
-  .publication-type,
-  .publication-details,
-  .publication-year {
-    display: block;
-    margin-right: 0;
-    margin-bottom: 0.25rem;
+  .member-avatar {
+    width: 50px;
+    height: 50px;
   }
 }
 </style>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const yearFilter = document.getElementById('publication-filter');
-  const searchInput = document.getElementById('publication-search');
-  const publicationEntries = document.querySelectorAll('.publication-entry');
-  const yearGroups = document.querySelectorAll('.publication-year-group');
-  const emptyState = document.querySelector('.publications-empty-state');
-  
-  function filterPublications() {
-    const selectedYear = yearFilter.value;
-    const searchTerm = searchInput.value.toLowerCase();
-    let visibleCount = 0;
-    
-    publicationEntries.forEach(entry => {
-      const year = entry.closest('.publication-year-group').dataset.year;
-      const title = entry.dataset.title || '';
-      const authors = entry.dataset.authors || '';
-      const keywords = entry.dataset.keywords || '';
-      
-      const yearMatch = selectedYear === 'all' || year === selectedYear;
-      const searchMatch = !searchTerm || 
-        title.includes(searchTerm) || 
-        authors.includes(searchTerm) || 
-        keywords.includes(searchTerm);
-      
-      if (yearMatch && searchMatch) {
-        entry.style.display = 'block';
-        visibleCount++;
-      } else {
-        entry.style.display = 'none';
-      }
-    });
-    
-    // Show/hide year groups based on visibility
-    yearGroups.forEach(group => {
-      const hasVisibleEntries = group.querySelectorAll('.publication-entry[style*="display: block"]').length > 0;
-      group.style.display = hasVisibleEntries ? 'block' : 'none';
-    });
-    
-    // Show/hide empty state
-    if (visibleCount === 0) {
-      emptyState.style.display = 'block';
-    } else {
-      emptyState.style.display = 'none';
-    }
-  }
-  
-  // Event listeners
-  yearFilter.addEventListener('change', filterPublications);
-  searchInput.addEventListener('input', filterPublications);
-  
-  // Initialize
-  filterPublications();
-});
-</script> 
+ 

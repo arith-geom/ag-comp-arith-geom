@@ -20,20 +20,35 @@
 
     console.log('Initializing drag and drop reordering...');
 
-    // Wait for Pages CMS to load
-    const checkInterval = setInterval(() => {
-      const cmsContainer = document.querySelector('[data-pagescms]') || 
-                          document.querySelector('.pagescms-container') ||
-                          document.querySelector('.cms-content');
-      
-      if (cmsContainer) {
-        clearInterval(checkInterval);
-        setupDragAndDrop();
-      }
-    }, 1000);
+    // Try to setup immediately
+    setupDragAndDrop();
 
-    // Also listen for Pages CMS content updates
+    // Also try periodically in case Pages CMS loads later
+    const checkInterval = setInterval(() => {
+      setupDragAndDrop();
+    }, 2000);
+
+    // Stop checking after 30 seconds
+    setTimeout(() => {
+      clearInterval(checkInterval);
+    }, 30000);
+
+    // Listen for Pages CMS content updates
     document.addEventListener('pagescms-content-updated', setupDragAndDrop);
+    
+    // Listen for DOM changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'childList') {
+          setupDragAndDrop();
+        }
+      });
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
   }
 
   // Setup drag and drop for all collections
@@ -45,16 +60,62 @@
 
   // Setup drag and drop for a specific collection
   function setupCollectionDragAndDrop(collectionName) {
-    const collectionContainer = document.querySelector(`[data-collection="${collectionName}"]`) ||
-                               document.querySelector(`.${collectionName}-list`) ||
-                               document.querySelector(`.collection-${collectionName}`);
+    // Try multiple selectors to find the collection container
+    const selectors = [
+      `[data-collection="${collectionName}"]`,
+      `.${collectionName}-list`,
+      `.collection-${collectionName}`,
+      `[data-testid="${collectionName}-list"]`,
+      `.pagescms-collection[data-name="${collectionName}"]`,
+      `table[data-collection="${collectionName}"]`,
+      `.collection-table[data-collection="${collectionName}"]`
+    ];
+
+    let collectionContainer = null;
+    for (const selector of selectors) {
+      collectionContainer = document.querySelector(selector);
+      if (collectionContainer) break;
+    }
+
+    // If no specific container found, try to find any table or list that might contain the collection
+    if (!collectionContainer) {
+      const tables = document.querySelectorAll('table, .collection-list, .list-container');
+      for (const table of tables) {
+        if (table.textContent.toLowerCase().includes(collectionName)) {
+          collectionContainer = table;
+          break;
+        }
+      }
+    }
 
     if (!collectionContainer) {
       console.log(`Collection container not found for: ${collectionName}`);
       return;
     }
 
-    const rows = collectionContainer.querySelectorAll('tr[data-id], .collection-item, .cms-item');
+    // Find rows - try multiple selectors
+    const rowSelectors = [
+      'tr[data-id]',
+      'tr[data-item-id]',
+      '.collection-item',
+      '.cms-item',
+      '.list-item',
+      'tr:not(:first-child)', // All table rows except header
+      '.item-row'
+    ];
+
+    let rows = [];
+    for (const selector of rowSelectors) {
+      rows = collectionContainer.querySelectorAll(selector);
+      if (rows.length > 0) break;
+    }
+
+    if (rows.length === 0) {
+      console.log(`No rows found for collection: ${collectionName}`);
+      return;
+    }
+
+    console.log(`Found ${rows.length} rows for collection: ${collectionName}`);
     
     rows.forEach((row, index) => {
       // Add drag handle
@@ -93,21 +154,27 @@
       justify-content: center;
       border-radius: 4px;
       transition: all 0.2s ease;
+      margin-right: 8px;
+      opacity: 0.7;
     `;
 
     // Add hover effects
     dragHandle.addEventListener('mouseenter', () => {
       dragHandle.style.color = '#007bff';
       dragHandle.style.background = '#f8f9fa';
+      dragHandle.style.opacity = '1';
+      dragHandle.style.transform = 'scale(1.1)';
     });
 
     dragHandle.addEventListener('mouseleave', () => {
       dragHandle.style.color = '#666';
       dragHandle.style.background = 'transparent';
+      dragHandle.style.opacity = '0.7';
+      dragHandle.style.transform = 'scale(1)';
     });
 
     // Insert drag handle at the beginning of the row
-    const firstCell = row.querySelector('td, .cell, .field');
+    const firstCell = row.querySelector('td, .cell, .field, th');
     if (firstCell) {
       firstCell.insertBefore(dragHandle, firstCell.firstChild);
     } else {
@@ -128,12 +195,18 @@
       // Add visual feedback
       row.style.opacity = '0.5';
       row.style.transform = 'rotate(2deg)';
+      row.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+      row.style.zIndex = '1000';
+      row.style.position = 'relative';
     });
 
     row.addEventListener('dragend', (e) => {
       row.classList.remove(DRAG_DROP_CONFIG.draggingClass);
       row.style.opacity = '';
       row.style.transform = '';
+      row.style.boxShadow = '';
+      row.style.zIndex = '';
+      row.style.position = '';
     });
   }
 
@@ -146,17 +219,20 @@
       // Add visual feedback for drop zone
       row.classList.add(DRAG_DROP_CONFIG.dropZoneClass);
       row.style.borderTop = '2px solid #007bff';
+      row.style.backgroundColor = '#f8f9fa';
     });
 
     row.addEventListener('dragleave', (e) => {
       row.classList.remove(DRAG_DROP_CONFIG.dropZoneClass);
       row.style.borderTop = '';
+      row.style.backgroundColor = '';
     });
 
     row.addEventListener('drop', (e) => {
       e.preventDefault();
       row.classList.remove(DRAG_DROP_CONFIG.dropZoneClass);
       row.style.borderTop = '';
+      row.style.backgroundColor = '';
 
       const draggedRow = document.querySelector(`.${DRAG_DROP_CONFIG.draggingClass}`);
       if (draggedRow && draggedRow !== row) {
@@ -169,7 +245,7 @@
   // Reorder rows and update order values
   function reorderRows(draggedRow, targetRow, collectionName) {
     const container = draggedRow.parentNode;
-    const rows = Array.from(container.querySelectorAll('tr[data-id], .collection-item, .cms-item'));
+    const rows = Array.from(container.querySelectorAll('tr, .collection-item, .cms-item, .list-item'));
     
     // Find positions
     const draggedIndex = rows.indexOf(draggedRow);
@@ -193,7 +269,7 @@
 
   // Update order values for all rows
   function updateOrderValues(container, collectionName) {
-    const rows = Array.from(container.querySelectorAll('tr[data-id], .collection-item, .cms-item'));
+    const rows = Array.from(container.querySelectorAll('tr, .collection-item, .cms-item, .list-item'));
     
     rows.forEach((row, index) => {
       // Update the order field in the row
@@ -208,6 +284,13 @@
       if (hiddenOrderField) {
         hiddenOrderField.value = index + 1;
       }
+
+      // Try to find order field by name
+      const orderInputs = row.querySelectorAll('input[name*="order"], input[data-field*="order"]');
+      orderInputs.forEach(input => {
+        input.value = index + 1;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      });
     });
   }
 
@@ -215,11 +298,14 @@
   function saveOrderChanges(collectionName) {
     console.log(`Saving order changes for collection: ${collectionName}`);
     
-    // Trigger save in Pages CMS
-    const saveButton = document.querySelector('.save-button, .btn-save, [data-action="save"]');
-    if (saveButton) {
-      saveButton.click();
-    }
+    // Try to trigger save in Pages CMS
+    const saveButtons = document.querySelectorAll('.save-button, .btn-save, [data-action="save"], button[type="submit"]');
+    saveButtons.forEach(button => {
+      if (button.textContent.toLowerCase().includes('save') || 
+          button.getAttribute('data-action') === 'save') {
+        button.click();
+      }
+    });
     
     // Show success message
     showReorderMessage('Order updated successfully!', 'success');
@@ -240,6 +326,7 @@
       font-weight: 500;
       z-index: 10000;
       animation: slideIn 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     `;
 
     // Set background color based on type
@@ -284,18 +371,25 @@
       .${DRAG_DROP_CONFIG.draggingClass} {
         opacity: 0.5;
         transform: rotate(2deg);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        position: relative;
       }
       
       .${DRAG_DROP_CONFIG.dropZoneClass} {
         background-color: #f8f9fa;
+        border-top: 2px solid #007bff;
+        transition: all 0.2s ease;
       }
       
       .${DRAG_DROP_CONFIG.dragHandleClass}:hover {
         background-color: #e9ecef;
+        transform: scale(1.1);
       }
       
       .${DRAG_DROP_CONFIG.dragHandleClass}:active {
         cursor: grabbing;
+        transform: scale(0.95);
       }
     `;
     document.head.appendChild(style);

@@ -5,6 +5,81 @@ permalink: /about/
 nav: true
 ---
 
+<div class="about-hero mb-5">
+  <img src="{{ site.baseurl }}/assets/img/heidelberg_castle.jpg" alt="Heidelberg Castle" class="about-hero-image">
+  <div class="about-hero-overlay">
+    <div class="about-hero-content">
+      <h1 class="about-hero-title">About Our Research Group</h1>
+      <p class="about-hero-subtitle">Interdisciplinary Center for Scientific Computing (IWR), Heidelberg</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  margin-bottom: 3rem;
+}
+
+.about-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero-content {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.about-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.about-hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 250px;
+  }
+  
+  .about-hero-title {
+    font-size: 2rem;
+  }
+  
+  .about-hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+</style>
+
 <div class="translatable-content" data-translation-key="about.description">
   This is the website of the research group "computational arithmetic geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.
 </div>

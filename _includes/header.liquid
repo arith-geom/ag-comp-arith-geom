@@ -103,14 +103,6 @@
               About
             </a>
           </li>
-
-          <!-- Navigation Pages - Simplified -->
-          <li class="nav-item {% if page.url == '/members/' %}active{% endif %}" role="none">
-            <a class="nav-link" href="{{ '/members/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/members/' %}page{% endif %}">
-              <i class="fas fa-users me-1" aria-hidden="true"></i>
-              Members
-            </a>
-          </li>
           
           <li class="nav-item {% if page.url == '/research/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/research/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/research/' %}page{% endif %}">
@@ -130,6 +122,14 @@
             <a class="nav-link" href="{{ '/teaching/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/teaching/' %}page{% endif %}">
               <i class="fas fa-chalkboard-teacher me-1" aria-hidden="true"></i>
               Teaching
+            </a>
+          </li>
+          
+          <!-- Members - positioned before Links -->
+          <li class="nav-item {% if page.url == '/members/' %}active{% endif %}" role="none">
+            <a class="nav-link" href="{{ '/members/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/members/' %}page{% endif %}">
+              <i class="fas fa-users me-1" aria-hidden="true"></i>
+              Members
             </a>
           </li>
           

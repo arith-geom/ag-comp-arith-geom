@@ -6,227 +6,462 @@ nav: true
 nav_order: 3
 ---
 
-<div class="team-intro mb-4">
-  <p class="lead translatable-content" data-translation-key="members.intro">Our research group consists of faculty, postdoctoral researchers, and students working on computational arithmetic geometry.</p>
+<div class="team-intro mb-5">
+  <h2 class="text-center mb-4">Our Research Team</h2>
+  <p class="lead text-center">Meet the dedicated researchers and staff of the AG Computational Arithmetic Geometry group at the University of Heidelberg.</p>
 </div>
 
-<div class="team-grid">
-  {% assign sorted_members = site.members | sort: "order" %}
-  {% for member in sorted_members %}
-    <div class="team-member-card">
-      <div class="team-member-photo-container">
-        {% if member.photo %}
-          <img src="{{ member.photo | relative_url }}" alt="Photo of {{ member.name }}" class="team-member-photo" loading="lazy">
-        {% else %}
-          <img src="{{ '/assets/img/team_placeholder.svg' | relative_url }}" alt="Placeholder photo for {{ member.name }}" class="team-member-photo" loading="lazy">
-        {% endif %}
+<div class="team-sections">
+  <!-- Head of Group -->
+  <div class="team-section">
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="fas fa-crown" aria-hidden="true"></i>
       </div>
-      <div class="team-member-info">
-        <h3 class="team-member-name">{{ member.name }}</h3>
-        {% if member.role %}
-          <p class="team-member-role">{{ member.role }}</p>
-        {% endif %}
-        {% if member.email %}
-          <p class="team-member-email">
-            <a href="mailto:{{ member.email }}" aria-label="Email {{ member.name }}">
-              <i class="fas fa-envelope me-2" aria-hidden="true"></i>{{ member.email }}
-            </a>
-          </p>
-        {% endif %}
-        <div class="team-member-links">
-          {% if member.website %}
-            <a href="{{ member.website }}" target="_blank" rel="noopener noreferrer" class="team-member-link" aria-label="Personal Website of {{ member.name }}">
-              <i class="fas fa-globe" aria-hidden="true"></i>
-            </a>
-          {% endif %}
-          {% if member.github %}
-            <a href="https://github.com/{{ member.github }}" target="_blank" rel="noopener noreferrer" class="team-member-link" aria-label="GitHub Profile of {{ member.name }}">
-              <i class="fab fa-github" aria-hidden="true"></i>
-            </a>
-          {% endif %}
-          {% if member.orcid %}
-            <a href="https://orcid.org/{{ member.orcid }}" target="_blank" rel="noopener noreferrer" class="team-member-link" aria-label="ORCID Profile of {{ member.name }}">
-              <i class="ai ai-orcid" aria-hidden="true"></i>
-            </a>
-          {% endif %}
+      <h3>Head of Research Group</h3>
+    </div>
+          <div class="member-card featured">
+        <div class="member-avatar">
+          <img src="/assets/img/11.jpg" alt="Prof. Dr. Gebhard Böckle" class="member-photo">
         </div>
-        {% if member.bio %}
-          <div class="team-member-bio">
-            {{ member.bio | markdownify }}
+        <div class="member-info">
+          <h4><a href="/members/gebhard-boeckle/">Prof. Dr. Gebhard Böckle</a></h4>
+          <p class="member-role">Professor & Group Leader</p>
+          <p class="member-description">Head of the research group "Computational Arithmetic Geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.</p>
+          <div class="member-links">
+            <a href="/members/gebhard-boeckle/" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+            </a>
+            <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+            </a>
           </div>
-        {% endif %}
-        {% if member.research_interests %}
-          <div class="team-member-research">
-            <h4 class="team-member-research-title">Research Interests</h4>
-            <p class="team-member-research-text">{{ member.research_interests }}</p>
-          </div>
-        {% endif %}
+        </div>
+      </div>
+  </div>
+
+  <!-- Secretary -->
+  <div class="team-section">
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="fas fa-user-cog" aria-hidden="true"></i>
+      </div>
+      <h3>Administrative Support</h3>
+    </div>
+    <div class="member-card">
+      <div class="member-avatar">
+        <img src="/assets/img/2.jpg" alt="Astrid Cederbaum" class="member-photo">
+      </div>
+      <div class="member-info">
+        <h4><a href="/members/astrid-cederbaum/">Astrid Cederbaum</a></h4>
+        <p class="member-role">Secretary</p>
+        <p class="member-description">Provides administrative support for the research group, including managing correspondence, organizing meetings, and assisting with various administrative tasks.</p>
+        <div class="member-links">
+          <a href="/members/astrid-cederbaum/" class="btn btn-outline-primary btn-sm">
+            <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+          </a>
+          <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
+            <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+          </a>
+        </div>
       </div>
     </div>
-  {% endfor %}
+  </div>
+
+  <!-- Research Members -->
+  <div class="team-section">
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="fas fa-users" aria-hidden="true"></i>
+      </div>
+      <h3>Research Members</h3>
+    </div>
+    <div class="members-grid">
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/12.jpg" alt="Dr. Andrea Conti" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="/members/andrea-conti/">Dr. Andrea Conti</a></h4>
+          <p class="member-role">Postdoctoral Researcher</p>
+          <p class="member-description">Research focuses on Galois representations and their deformations, particularly in the context of modular forms and elliptic curves.</p>
+          <div class="member-links">
+            <a href="/members/andrea-conti/" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+            </a>
+            <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/4.jpg" alt="Dr. Giacomo Hermes Ferraro" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="/members/giacomo-hermes-ferraro/">Dr. Giacomo Hermes Ferraro</a></h4>
+          <p class="member-role">Postdoctoral Researcher</p>
+          <p class="member-description">Research focuses on function field arithmetic, particularly Drinfeld modular forms and L-functions.</p>
+          <div class="member-links">
+            <a href="/members/giacomo-hermes-ferraro/" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+            </a>
+            <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/10.jpg" alt="Paola Chilla" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="/members/paola-chilla/">Paola Chilla</a></h4>
+          <p class="member-role">PhD Student</p>
+          <p class="member-description">Research focuses on computational aspects of arithmetic geometry, particularly in the study of Galois representations and their applications.</p>
+          <div class="member-links">
+            <a href="/members/paola-chilla/" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+            </a>
+            <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/5.jpg" alt="Sriram Chinthalagiri Venkata" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="/members/sriram-chinthalagiri-venkata/">Sriram Chinthalagiri Venkata</a></h4>
+          <p class="member-role">PhD Student</p>
+          <p class="member-description">Research focuses on arithmetic geometry and number theory, particularly in the study of modular forms and their connections to Galois representations.</p>
+          <div class="member-links">
+            <a href="/members/sriram-chinthalagiri-venkata/" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+            </a>
+            <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/3.jpg" alt="Theresa Kaiser" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="/members/theresa-kaiser/">Theresa Kaiser</a></h4>
+          <p class="member-role">PhD Student</p>
+          <p class="member-description">Research focuses on computational arithmetic geometry, particularly in the study of elliptic curves and their applications in cryptography.</p>
+          <div class="member-links">
+            <a href="/members/theresa-kaiser/" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+            </a>
+            <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="/assets/img/1.jpg" alt="Alireza Shavali" class="member-photo">
+        </div>
+        <div class="member-info">
+          <h4><a href="/members/alireza-shavali/">Alireza Shavali</a></h4>
+          <p class="member-role">PhD Student</p>
+          <p class="member-description">Research focuses on arithmetic geometry and number theory, particularly in the study of Galois representations and their deformation theory.</p>
+          <div class="member-links">
+            <a href="/members/alireza-shavali/" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+            </a>
+            <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Former Members -->
+  <div class="team-section">
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="fas fa-history" aria-hidden="true"></i>
+      </div>
+      <h3>Alumni</h3>
+    </div>
+    <div class="alumni-section">
+      <p class="text-center mb-3">Discover our former team members and their contributions to the field.</p>
+      <div class="text-center">
+        <a href="/former-members/" class="btn btn-primary">
+          <i class="fas fa-users me-2" aria-hidden="true"></i>View Former Members
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
 .team-intro {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 2rem;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
-  padding-top: 1rem;
-}
-
-.team-member-card {
-  border: 1px solid var(--border-color);
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  text-align: center;
-  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.team-intro h2 {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.team-intro .lead {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.team-sections {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-section {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
-.team-member-card:hover {
-  transform: translateY(-4px);
+.team-section:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.section-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-header h3 {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.member-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-base);
+  margin-bottom: 1rem;
+}
+
+.member-card:hover {
+  transform: translateX(8px);
   box-shadow: var(--shadow-md);
   border-color: var(--primary);
 }
 
-.team-member-photo-container {
-  margin-bottom: 1.5rem;
+.member-card.featured {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  border: 2px solid var(--primary);
+  box-shadow: var(--shadow-md);
 }
 
-.team-member-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--border-color);
+.member-avatar {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
   transition: all var(--transition-base);
 }
 
-.team-member-card:hover .team-member-photo {
+.member-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.member-card:hover .member-avatar {
+  transform: scale(1.1);
+}
+
+.member-card:hover .member-photo {
   border-color: var(--primary);
-  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
 }
 
-.team-member-name {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--text-primary);
-}
-
-.team-member-role {
-  font-style: italic;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-
-.team-member-email {
-  margin-bottom: 1rem;
-}
-
-.team-member-email a {
-  color: var(--link-color);
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.team-member-email a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
-}
-
-.team-member-links {
-  margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.team-member-link {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  transition: all var(--transition-fast);
-  padding: 0.5rem;
-  border-radius: var(--radius-md);
-  min-width: 44px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team-member-link:hover {
-  color: var(--primary);
-  background-color: var(--bg-secondary);
-  transform: translateY(-2px);
-}
-
-.team-member-bio {
-  text-align: left;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
+.member-info {
   flex-grow: 1;
 }
 
-.team-member-research {
-  text-align: left;
-  margin-top: auto;
-}
-
-.team-member-research-title {
-  font-size: 1rem;
-  font-weight: 600;
+.member-info h4 {
   color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.team-member-research-text {
-  font-size: 0.9rem;
+.member-info h4 a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.member-info h4 a:hover {
+  color: var(--primary);
+}
+
+.member-role {
   color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.member-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
   line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.member-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.alumni-section {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.alumni-section p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .team-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+  .team-intro h2 {
+    font-size: 2rem;
   }
   
-  .team-member-card {
-    padding: 1rem;
+  .team-intro .lead {
+    font-size: 1.1rem;
   }
   
-  .team-member-photo {
-    width: 120px;
-    height: 120px;
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
   }
   
-  .team-member-name {
-    font-size: 1.25rem;
+  .section-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .section-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .member-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .member-card:hover {
+    transform: translateY(4px);
+  }
+  
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .member-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .member-info h4 {
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .team-grid {
-    grid-template-columns: 1fr;
+  .team-section {
+    padding: 1rem;
   }
   
-  .team-member-photo {
-    width: 100px;
-    height: 100px;
+  .member-card {
+    padding: 1rem;
+  }
+  
+  .member-avatar {
+    width: 50px;
+    height: 50px;
   }
 }
 </style> 

@@ -1,5 +1,10 @@
 ---
 title: "Journal of Number Theory"
 url: "https://www.sciencedirect.com/journal/journal-of-number-theory"
-category: "Journals"
---- 
+category: "Journal"
+order: 1
+---
+
+Leading international journal publishing original research papers in all areas of number theory and arithmetic geometry.
+
+For more information, visit the [official website](https://www.sciencedirect.com/journal/journal-of-number-theory).

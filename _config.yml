@@ -205,12 +205,18 @@ collections:
   research:
     output: true
     permalink: /research/:title/
+  teaching:
+    output: true
+    permalink: /teaching/:name/
+    sort_by: title
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+
 
 # Exclude from processing
 exclude:

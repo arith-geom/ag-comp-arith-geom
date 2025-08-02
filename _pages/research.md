@@ -6,340 +6,200 @@ nav: true
 nav_order: 2
 ---
 
-<div class="research-intro">
-  <p class="lead translatable-content" data-translation-key="research.intro_lead">Our research focuses on <strong>arithmetic geometry</strong> and <strong>number theory</strong>, with particular emphasis on computational methods and their applications.</p>
-  <p class="translatable-content" data-translation-key="research.intro_description">We investigate Galois representations, modular forms, elliptic curves, and their connections to modern number theory. Our work combines theoretical insights with computational experiments to advance understanding in these areas.</p>
+<div class="research-intro mb-5">
+  <h2 class="text-center mb-4">Research Themes</h2>
+  <p class="lead text-center">Our research focuses on the intersection of arithmetic geometry, Galois representations, and computational methods in number theory.</p>
 </div>
 
-<div class="research-areas mt-5">
-  <h2 class="research-section-title translatable-content" data-translation-key="research.areas_title">Research Areas</h2>
-  <div class="research-grid">
-    {% for item in site.research %}
-      <div class="research-card">
-        <div class="research-card-header">
-          <h3 class="research-card-title">{{ item.title }}</h3>
-          {% if item.keywords %}
-            <div class="research-card-keywords">
-              {% for keyword in item.keywords %}
-                <span class="keyword-tag">{{ keyword }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </div>
-        <div class="research-card-body">
-          {% if item.description %}
-            <p class="research-card-description">{{ item.description | markdownify | strip_html | truncatewords: 30 }}</p>
-          {% endif %}
-          <div class="research-card-content">
-            {{ item.content | markdownify | truncatewords: 50 }}
-          </div>
-        </div>
-                 <div class="research-card-footer">
-           <a href="{{ item.url | relative_url }}" class="btn btn-outline-primary">
-             <i class="fas fa-arrow-right me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="research.learn_more">Learn More</span>
-           </a>
-           {% if item.papers %}
-             <span class="research-paper-count">
-               <i class="fas fa-file-alt me-1" aria-hidden="true"></i>{{ item.papers | size }} <span class="translatable-content" data-translation-key="research.papers_count">papers</span>
-             </span>
-           {% endif %}
-         </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
-
-<div class="research-methods mt-5">
-  <h2 class="research-section-title translatable-content" data-translation-key="research.methodology_title">Methodology</h2>
-  <div class="methods-grid">
-    <div class="method-card">
-      <div class="method-icon">
-        <i class="fas fa-calculator" aria-hidden="true"></i>
-      </div>
-      <h3 class="translatable-content" data-translation-key="research.method_computational.title">Computational Methods</h3>
-      <p class="translatable-content" data-translation-key="research.method_computational.description">We develop and use advanced computational techniques to explore arithmetic objects and verify theoretical predictions.</p>
+<div class="research-areas">
+  <div class="research-area-card">
+    <div class="research-icon">
+      <i class="fas fa-infinity" aria-hidden="true"></i>
     </div>
-    <div class="method-card">
-      <div class="method-icon">
-        <i class="fas fa-brain" aria-hidden="true"></i>
+    <div class="research-content">
+      <h3>Galois representations and modular forms</h3>
+      <div class="research-text">
+        <p>A modern way to look at algebraic number theory is to study the group G<sub>Q</sub> of symmetries of all finite extension of the rational number Q, i.e. of all number fields. One way of doing this is via p-adic (or complex) Galois representations. These are homomorphisms from G<sub>Q</sub> to GL<sub>n</sub>(K) for (the complex or) a p-adic field K.</p>
+        
+        <p>If one would understand all these, one could deduce many results in number theory. The reason why this approach is promising is that the Langlands program predicts (conjectures) that many interesting Galois representation can be found in (arithmetic) geometry, for instance by studying modular forms or elliptic curves.</p>
+        
+        <div class="highlight-box">
+          <p><strong>The most visible success of this method has been the proof of Fermat's last theorem by Wiles and Taylor-Wiles building on work of many others.</strong></p>
+        </div>
       </div>
-      <h3 class="translatable-content" data-translation-key="research.method_theoretical.title">Theoretical Analysis</h3>
-      <p class="translatable-content" data-translation-key="research.method_theoretical.description">Deep theoretical understanding guides our computational experiments and helps interpret their results.</p>
-    </div>
-    <div class="method-card">
-      <div class="method-icon">
-        <i class="fas fa-flask" aria-hidden="true"></i>
-      </div>
-      <h3 class="translatable-content" data-translation-key="research.method_experimental.title">Experimental Mathematics</h3>
-      <p class="translatable-content" data-translation-key="research.method_experimental.description">We use computational experiments to discover patterns and formulate new conjectures in arithmetic geometry.</p>
     </div>
   </div>
-</div>
 
-<div class="research-collaborations mt-5">
-  <h2 class="research-section-title translatable-content" data-translation-key="research.collaborations_title">Collaborations</h2>
-  <p class="translatable-content" data-translation-key="research.collaborations_description">We collaborate with researchers worldwide on various aspects of arithmetic geometry and computational number theory. Our group maintains active connections with:</p>
-  <ul class="collaboration-list">
-    <li class="translatable-content" data-translation-key="research.collaboration_1">International research institutions</li>
-    <li class="translatable-content" data-translation-key="research.collaboration_2">Mathematical software development teams</li>
-    <li class="translatable-content" data-translation-key="research.collaboration_3">Number theory conferences and workshops</li>
-    <li class="translatable-content" data-translation-key="research.collaboration_4">Graduate and undergraduate research programs</li>
-  </ul>
+  <div class="research-area-card">
+    <div class="research-icon">
+      <i class="fas fa-cube" aria-hidden="true"></i>
+    </div>
+    <div class="research-content">
+      <h3>Drinfeld modular varieties and Drinfeld modular forms</h3>
+      <div class="research-text">
+        <p>It has been observed that questions in number theory often have analogs over global function fields; then the ring of integers Z is replaced by rings like the polynomial ring F<sub>p</sub>[t], and the field of rational numbers Q by the field of rational functions over the finite field F<sub>p</sub> of p elements, where p is a prime number.</p>
+        
+        <p>Because methods from algebraic geometry can be applied to function fields, many questions over the latter are more tractable than the corresponding questions over number fields. One particular instance of this is Drinfeld's proof of the global Langlands correspondence for GL<sub>2</sub> over function fields.</p>
+        
+        <p>In his proof Drinfeld introduced what are now called Drinfeld modular varieties; these are function field analogs of certain Shimura varieties. Their cohomology gives rise to Galois representations and these varieties have an interesting geometry coming from their moduli interpretation.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
+/* Clean and modern research page styling */
 .research-intro {
   text-align: center;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.research-intro h2 {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .research-intro .lead {
   font-size: 1.25rem;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
-.research-section-title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 2rem;
-  text-align: center;
-  position: relative;
-}
-
-.research-section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: var(--primary);
-  border-radius: 2px;
-}
-
-.research-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.research-card {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: all var(--transition-base);
-  height: 100%;
+.research-areas {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 3rem;
 }
 
-.research-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary);
-}
-
-.research-card-header {
-  padding: 1.5rem 1.5rem 1rem;
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.research-card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 1rem;
-  line-height: 1.3;
-}
-
-.research-card-keywords {
+.research-area-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.keyword-tag {
-  background: var(--primary);
-  color: var(--white);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.research-card-body {
-  padding: 1.5rem;
-  flex-grow: 1;
-}
-
-.research-card-description {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-
-.research-card-content {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.research-card-footer {
-  padding: 1rem 1.5rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border-color);
-}
-
-.research-paper-count {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.methods-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
-}
-
-.method-card {
-  text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
 }
 
-.method-card:hover {
+.research-area-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: var(--primary);
 }
 
-.method-icon {
+.research-icon {
   width: 80px;
   height: 80px;
-  background: var(--primary);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
   font-size: 2rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
 }
 
-.method-card:hover .method-icon {
+.research-area-card:hover .research-icon {
   transform: scale(1.1);
-  background: var(--primary-dark);
+  box-shadow: var(--shadow-md);
 }
 
-.method-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
+.research-area-card .research-content h3 {
   color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+}
+
+.research-text p {
+  color: var(--text-secondary);
+  line-height: 1.7;
   margin-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
-.method-card p {
-  color: var(--text-secondary);
-  line-height: 1.6;
+.highlight-box {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.highlight-box p {
+  color: var(--text-primary);
+  font-size: 1.1rem;
   margin: 0;
-}
-
-.research-collaborations {
-  background: var(--bg-secondary);
-  padding: 2rem;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
-}
-
-.collaboration-list {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0 0;
-}
-
-.collaboration-list li {
-  padding: 0.75rem 0;
-  color: var(--text-secondary);
-  position: relative;
-  padding-left: 2rem;
-}
-
-.collaboration-list li::before {
-  content: '•';
-  color: var(--primary);
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-  font-size: 1.5rem;
-  line-height: 1;
+  line-height: 1.6;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .research-section-title {
+  .research-intro h2 {
     font-size: 2rem;
   }
   
-  .research-grid {
-    grid-template-columns: 1fr;
+  .research-intro .lead {
+    font-size: 1.1rem;
+  }
+  
+  .research-area-card {
+    flex-direction: column;
+    text-align: center;
     gap: 1.5rem;
+    padding: 2rem;
   }
   
-  .methods-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .research-area-card:hover {
+    transform: translateY(-2px);
   }
   
-  .research-card-header,
-  .research-card-body,
-  .research-card-footer {
-    padding: 1rem;
-  }
-  
-  .method-card {
-    padding: 1.5rem 1rem;
-  }
-  
-  .method-icon {
+  .research-icon {
     width: 60px;
     height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .research-area-card .research-content h3 {
     font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .research-intro .lead {
-    font-size: 1.1rem;
-  }
-  
-  .research-card-title {
-    font-size: 1.25rem;
-  }
-  
-  .method-card h3 {
-    font-size: 1.25rem;
-  }
-  
-  .research-collaborations {
+  .research-area-card {
     padding: 1.5rem;
+  }
+  
+  .research-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+  
+  .research-area-card .research-content h3 {
+    font-size: 1.3rem;
   }
 }
 </style> 

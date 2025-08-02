@@ -1,32 +1,6 @@
 ---
-layout: page
-title: Arithmetic of function fields
-description: >
-  We study the arithmetic of function fields, which are the function fields of curves over finite fields. This is a very active area of research that has many connections to other fields, such as coding theory, cryptography, and algebraic geometry. We are interested in the study of $\\zeta$-functions, $L$-functions, and the distribution of primes in function fields.
+title: "Group Arith Geometry: Research"
+order: 1
 ---
 
-## Function Fields
-
-### Basic Setup
-A function field over a finite field $\mathbb{F}_q$ is the field of rational functions on a smooth projective curve $C$ over $\mathbb{F}_q$. The most basic example is $\mathbb{F}_q(t)$, the field of rational functions in one variable.
-
-### Zeta Functions
-The zeta function of a function field $K/\mathbb{F}_q$ is defined as:
-
-$$Z_K(s) = \prod_{P} \frac{1}{1 - q^{-s \deg(P)}}$$
-
-where the product runs over all places $P$ of $K$. This function has a functional equation and satisfies the Riemann hypothesis (proved by Weil).
-
-### L-Functions
-For a character $\chi$ of the idele class group, the L-function is:
-
-$$L(s, \chi) = \prod_{P} \frac{1}{1 - \chi(P) q^{-s \deg(P)}}$$
-
-where $\chi(P)$ is the value of $\chi$ at the prime $P$.
-
-### Distribution of Primes
-The prime number theorem for function fields states that the number of primes of degree $n$ is approximately:
-
-$$\frac{q^n}{n}$$
-
-This is much more precise than the corresponding result for number fields, making function fields an excellent testing ground for conjectures in number theory. 
+HomeMembersResearchPublicationsTeachingLinksContactInterna Uni Heidelberg > IWR > ARITHGEO >  Research [english] | [] Research themesGalois representations and modular forms:A modern way to look at algebraic number theory is to study the group G_Q of symmetries of all finite extension of the rational number Q, i.e. of all number fields. One way of doing this is via p-adic (or complex) Galois representations. These are homomorphisms from G_Q to GL_n(K) for (the complex or) a p-adic field K. If one would understand all these, one could deduce many results in number theory. The reason why this approach is promising is that the Langlands program predicts (conjectures) that many interesting Galois representation can be found in (arithmetic) geometry, for instance by studying modular forms or elliptic curves. The most visible success of this method has been the proof of Fermat's last theorem by Wiles and Taylor-Wiles building on work of many others.Drinfeld modular varieties and Drinfeld modular forms:It has been observed that questions in number theory often have analogs over global function fields; then the ring of integers Z is replaced by rings like the polynomial ring F_p[t], and the field of rational numbers Q by the field of rational functions over the finite field F_p of p elements, where p is a prime number. Because methods from algebraic geometry can be applied to function fields, many questions over the latter are more tractable than the corresponding questions over number fields. One particular instance of this is Drinfeld's proof of the global Langlands correspondence for GL_2 over function fields. In his proof Drinfeld introduced what are now called Drinfeld modular varieties; these are function field analogs of certain Shimura varieties. Their cohomology gives rise to Galois representations and these varieties have an interesting geometry coming from their moduli interpretation. arithgeo@iwr.uni-heidelberg.deLast Update: 25.10.2021 - 15:17 © Copyright Universität Heidelberg. Impressum.

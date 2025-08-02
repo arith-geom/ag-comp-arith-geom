@@ -1,5 +1,10 @@
 ---
-title: "DFG Priority Project SSP 1489 - Algorithmic and Experimental Methods"
-url: "https://www.spp1489.de/"
-category: "Research Groups & Projects"
---- 
+title: "DFG SSP 1489"
+url: "https://www.dfg.de/en/research_funding/programmes/coordinated_programmes/priority_programmes/"
+category: "Research Project"
+order: 8
+---
+
+DFG Priority Programme 1489: "Algorithmic and Experimental Methods in Algebra, Geometry and Number Theory".
+
+For more information, visit the [official website](https://www.dfg.de/en/research_funding/programmes/coordinated_programmes/priority_programmes/).

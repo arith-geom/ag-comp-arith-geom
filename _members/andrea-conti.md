@@ -1,10 +1,15 @@
 ---
-name: "Dr. Andrea Conti"
-role: "Postdoctoral Researcher"
-photo: "/assets/img/placeholder.jpg"
-order: 3
-email: "andrea.conti@iwr.uni-heidelberg.de"
-research_interests: "Arithmetic geometry, elliptic curves, computational methods"
----
-
-Dr. Andrea Conti is a postdoctoral researcher specializing in arithmetic geometry and computational methods for elliptic curves. 
+name: Andrea Conti
+title: Dr.
+email: andrea.conti@math.uni-heidelberg.de
+website: 
+github: 
+linkedin: 
+twitter: 
+googlescholar: 
+researchgate: 
+orcid: 
+image: prof.svg
+description: >
+  Research interests in Galois representations, deformation theory, and arithmetic geometry.
+--- 
