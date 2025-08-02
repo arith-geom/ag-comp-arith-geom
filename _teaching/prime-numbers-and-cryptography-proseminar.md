@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Proseminar
+description: Prime numbers and Cryptography - Course information and materials.
+instructor: Dr. Banwait, C. V. Sriram
+language: en
 layout: teaching
-title: "Prime numbers and Cryptography"
-description: "Prime numbers and Cryptography - Course information and materials."
-permalink: /teaching/prime-numbers-and-cryptography-proseminar/
-nav: false
-course_type: "Proseminar"
-semester: "Summer term 2022"
-instructors: "Dr. Banwait, C. V. Sriram"
+order: 999
+semester: Summer term 2022
+title: Prime numbers and Cryptography
 ---
 
 # Prime numbers and Cryptography

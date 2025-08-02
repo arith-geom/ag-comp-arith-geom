@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Affine Algebraic Groups - Course information and materials.
+instructor: Prof. Dr. Böckle, C.V. Sriram
+language: en
 layout: teaching
-title: "Affine Algebraic Groups"
-description: "Affine Algebraic Groups - Course information and materials."
-permalink: /teaching/affine-algebraic-groups/
-nav: false
-course_type: "Seminar"
-semester: "Winter term 2022/23"
-instructors: "Prof. Dr. Böckle, C.V. Sriram"
+order: 999
+semester: Winter term 2022/23
+title: Affine Algebraic Groups
 ---
 
 # Affine Algebraic Groups

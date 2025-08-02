@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Vorlesung
+description: Kompatible Systeme von Galoisdarstellungen - Course information and materials.
+instructor: Prof. Dr. Böckle, Dr. Conti
+language: en
 layout: teaching
-title: "Kompatible Systeme von Galoisdarstellungen"
-description: "Kompatible Systeme von Galoisdarstellungen - Course information and materials."
-permalink: /teaching/kompatible-systeme-von-galoisdarstellungen/
-nav: false
-course_type: "Vorlesung"
-semester: "Summer term 2019"
-instructors: "Prof. Dr. Böckle, Dr. Conti"
+order: 999
+semester: Summer term 2019
+title: Kompatible Systeme von Galoisdarstellungen
 ---
 
 # Kompatible Systeme von Galoisdarstellungen

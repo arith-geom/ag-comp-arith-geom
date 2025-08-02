@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Abelian Varieties - Course information and materials.
+instructor: Dr. Banwait, Prof. Dr. Böckle
+language: en
 layout: teaching
-title: "Abelian Varieties"
-description: "Abelian Varieties - Course information and materials."
-permalink: /teaching/abelian-varieties/
-nav: false
-course_type: "Seminar"
-semester: "Winter term 2021/22"
-instructors: "Dr. Banwait, Prof. Dr. Böckle"
+order: 999
+semester: Winter term 2021/22
+title: Abelian Varieties
 ---
 
 # Abelian Varieties

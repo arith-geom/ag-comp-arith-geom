@@ -1,19 +1,13 @@
 ---
+email: arithgeo@iwr.uni-heidelberg.de
 layout: member
 name: Giacomo Hermes Ferraro
-title: Dr.
-role: Postdoctoral Researcher
-email: arithgeo@iwr.uni-heidelberg.de
-website: 
-github: 
-linkedin: 
-twitter: 
-googlescholar: 
-researchgate: 
-orcid: 
+order: 999
 photo: /assets/img/4.jpg
-research_interests: >
-  Research focuses on function field arithmetic, particularly Drinfeld modular forms and L-functions.
+research_interests: Research focuses on function field arithmetic, particularly Drinfeld
+  modular forms and L-functions.
+role: Postdoctoral Researcher
+status: active
 ---
 
 Dr. Giacomo Hermes Ferraro is a postdoctoral researcher in the AG Computational Arithmetic Geometry group. His research focuses on function field arithmetic, particularly Drinfeld modular forms and L-functions.
@@ -34,4 +28,4 @@ Dr. Giacomo Hermes Ferraro is a postdoctoral researcher in the AG Computational 
 
 ## Publications
 
-Dr. Ferraro has published several papers on Drinfeld modular forms, L-functions, and function field arithmetic. 
+Dr. Ferraro has published several papers on Drinfeld modular forms, L-functions, and function field arithmetic.

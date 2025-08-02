@@ -1,0 +1,28 @@
+---
+layout: teaching
+title: "Past Teaching at the University Duisburg-Essen"
+description: "Past Teaching at the University Duisburg-Essen - Course information and materials."
+permalink: /teaching/past-teaching/
+nav: false
+collection: teaching
+---
+
+## Past Teaching at the University Duisburg-Essen
+
+This page contains information about teaching activities at the University Duisburg-Essen before joining Heidelberg University.
+
+### Courses Taught
+
+**Note:** This section will be populated with historical teaching information from the University Duisburg-Essen.
+
+### Research Seminars
+
+**Note:** This section will contain information about research seminars conducted at the University Duisburg-Essen.
+
+### Student Supervision
+
+**Note:** This section will list supervised students and their thesis topics from the University Duisburg-Essen period.
+
+---
+
+*For current teaching activities, please see the main [Teaching](/teaching/) page.*

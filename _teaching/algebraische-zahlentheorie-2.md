@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Vorlesung
+description: Algebraische Zahlentheorie 2 - Course information and materials.
+instructor: Prof. Dr. Böckle, Dr. Conti
+language: en
 layout: teaching
-title: "Algebraische Zahlentheorie 2"
-description: "Algebraische Zahlentheorie 2 - Course information and materials."
-permalink: /teaching/algebraische-zahlentheorie-2/
-nav: false
-course_type: "Vorlesung"
-semester: "Summer term 2018"
-instructors: "Prof. Dr. Böckle, Dr. Conti"
+order: 999
+semester: Summer term 2018
+title: Algebraische Zahlentheorie 2
 ---
 
 # Algebraische Zahlentheorie 2

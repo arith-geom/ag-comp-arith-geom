@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Proseminar
+description: p-adische Analysis - Course information and materials.
+instructor: Prof. Dr. Böckle, Gräf
+language: en
 layout: teaching
-title: "p-adische Analysis"
-description: "p-adische Analysis - Course information and materials."
-permalink: /teaching/proseminar/
-nav: false
-course_type: "Proseminar"
-semester: "Summer term 2016"
-instructors: "Prof. Dr. Böckle, Gräf"
+order: 999
+semester: Summer term 2016
+title: p-adische Analysis
 ---
 
 # p-adische Analysis

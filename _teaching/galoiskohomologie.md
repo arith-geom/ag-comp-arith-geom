@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Vorlesung
+description: Galoiskohomologie und Galoisdarstellungen - Course information and materials.
+instructor: Prof. Dr. Böckle
+language: en
 layout: teaching
-title: "Galoiskohomologie und Galoisdarstellungen"
-description: "Galoiskohomologie und Galoisdarstellungen - Course information and materials."
-permalink: /teaching/galoiskohomologie/
-nav: false
-course_type: "Vorlesung"
-semester: "Winter term 2018/19"
-instructors: "Prof. Dr. Böckle"
+order: 999
+semester: Winter term 2018/19
+title: Galoiskohomologie und Galoisdarstellungen
 ---
 
 # Galoiskohomologie und Galoisdarstellungen

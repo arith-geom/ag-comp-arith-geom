@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Elliptische Kurven - Course information and materials.
+instructor: Prof. Dr. Böckle, Dr. Ludwig
+language: en
 layout: teaching
-title: "Elliptische Kurven"
-description: "Elliptische Kurven - Course information and materials."
-permalink: /teaching/seminar-elliptische-kurven/
-nav: false
-course_type: "Seminar"
-semester: "Winter term 2020/21"
-instructors: "Prof. Dr. Böckle, Dr. Ludwig"
+order: 999
+semester: Winter term 2020/21
+title: Elliptische Kurven
 ---
 
 # Elliptische Kurven

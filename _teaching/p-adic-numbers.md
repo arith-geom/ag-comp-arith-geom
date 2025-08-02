@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Proseminar
+description: p-adic numbers - Course information and materials.
+instructor: Dr. Böckle, C. V. Sriram
+language: en
 layout: teaching
-title: "p-adic numbers"
-description: "p-adic numbers - Course information and materials."
-permalink: /teaching/p-adic-numbers/
-nav: false
-course_type: "Proseminar"
-semester: "Summer term 2023"
-instructors: "Dr. Böckle, C. V. Sriram"
+order: 999
+semester: Summer term 2023
+title: p-adic numbers
 ---
 
 # p-adic numbers

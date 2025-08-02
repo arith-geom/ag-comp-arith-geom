@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Vorlesung
+description: p-divisible Gruppen - Course information and materials.
+instructor: Dr. Ludwig
+language: en
 layout: teaching
-title: "p-divisible Gruppen"
-description: "p-divisible Gruppen - Course information and materials."
-permalink: /teaching/p-divisible-gruppen/
-nav: false
-course_type: "Vorlesung"
-semester: "Summer term 2019"
-instructors: "Dr. Ludwig"
+order: 999
+semester: Summer term 2019
+title: p-divisible Gruppen
 ---
 
 # p-divisible Gruppen

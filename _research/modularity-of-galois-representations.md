@@ -1,7 +1,15 @@
 ---
+description: The modularity theorem, proved by Wiles and Taylor-Wiles, states that
+  every semistable elliptic curve over $\mathbb{Q}$ is modular. This means that the
+  Galois representation attached to the $p$-adic Tate module of the curve comes from
+  a modular form. This result has been generalized in various directions, including
+  the proof of the full modularity theorem by Breuil, Conrad, Diamond, and Taylor.
+  We study generalizations of these results to other Galois representations and their
+  applications to Diophantine equations.
+featured: false
 layout: page
-title: "Modularity of Galois representations"
-description: "The modularity theorem, proved by Wiles and Taylor-Wiles, states that every semistable elliptic curve over $\\mathbb{Q}$ is modular. This means that the Galois representation attached to the $p$-adic Tate module of the curve comes from a modular form. This result has been generalized in various directions, including the proof of the full modularity theorem by Breuil, Conrad, Diamond, and Taylor. We study generalizations of these results to other Galois representations and their applications to Diophantine equations."
+order: 999
+title: Modularity of Galois representations
 ---
 
 ## Modularity Theorems
@@ -40,4 +48,4 @@ associated to a putative solution $a^p + b^p = c^p$ is modular, which leads to a
 Modularity results have been applied to solve various Diophantine equations, including:
 - The equation $x^p + y^p = z^p$ for $p \geq 3$
 - Generalized Fermat equations
-- Catalan's conjecture (Mihăilescu's theorem) 
+- Catalan's conjecture (Mihăilescu's theorem)

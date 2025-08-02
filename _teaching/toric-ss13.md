@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Torische Varietäten - Course information and materials.
+instructor: Prof. Dr. Böckle
+language: en
 layout: teaching
-title: "Torische Varietäten"
-description: "Torische Varietäten - Course information and materials."
-permalink: /teaching/toric-ss13/
-nav: false
-course_type: "Seminar"
-semester: "Summer term 2013"
-instructors: "Prof. Dr. Böckle"
+order: 999
+semester: Summer term 2013
+title: Torische Varietäten
 ---
 
 # Torische Varietäten

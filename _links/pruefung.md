@@ -1,8 +1,9 @@
 ---
-title: "Prüfungsausschuss"
-url: "https://www.mathcomp.uni-heidelberg.de/studium/pruefungsausschuss/"
-category: "Administrative"
+category: Administrative
+layout: link
 order: 9
+title: Prüfungsausschuss
+url: https://www.mathcomp.uni-heidelberg.de/studium/pruefungsausschuss/
 ---
 
 Examination board for mathematics and computer science students.

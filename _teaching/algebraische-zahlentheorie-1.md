@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Vorlesung
+description: Algebraische Zahlentheorie 1 - Course information and materials.
+instructor: Prof. Dr. Böckle, Dr. Guiraud
+language: en
 layout: teaching
-title: "Algebraische Zahlentheorie 1"
-description: "Algebraische Zahlentheorie 1 - Course information and materials."
-permalink: /teaching/algebraische-zahlentheorie-1/
-nav: false
-course_type: "Vorlesung"
-semester: "Winter term 2017/18"
-instructors: "Prof. Dr. Böckle, Dr. Guiraud"
+order: 999
+semester: Winter term 2017/18
+title: Algebraische Zahlentheorie 1
 ---
 
 # Algebraische Zahlentheorie 1

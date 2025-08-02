@@ -1,9 +1,14 @@
 ---
+active: false
+course_type: seminar
+description: Heidelberg University Arithmetic Geometry Teaching Archive - Course information
+  and materials.
+instructor: Unknown
+language: en
 layout: teaching
-title: "Heidelberg University Arithmetic Geometry Teaching Archive"
-description: "Heidelberg University Arithmetic Geometry Teaching Archive - Course information and materials."
-permalink: /teaching/heidelberg-archive/
-collection: teaching
+order: 999
+semester: Unknown
+title: Heidelberg University Arithmetic Geometry Teaching Archive
 ---
 
 # Heidelberg University Arithmetic Geometry Teaching Archive

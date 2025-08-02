@@ -1,19 +1,13 @@
 ---
+email: arithgeo@iwr.uni-heidelberg.de
 layout: member
 name: Sriram Chinthalagiri Venkata
-title: 
-role: PhD Student
-email: arithgeo@iwr.uni-heidelberg.de
-website: 
-github: 
-linkedin: 
-twitter: 
-googlescholar: 
-researchgate: 
-orcid: 
+order: 999
 photo: /assets/img/5.jpg
-research_interests: >
-  Research focuses on arithmetic geometry and number theory, particularly in the study of modular forms and their connections to Galois representations.
+research_interests: Research focuses on arithmetic geometry and number theory, particularly
+  in the study of modular forms and their connections to Galois representations.
+role: PhD Student
+status: active
 ---
 
 Sriram Chinthalagiri Venkata is a PhD student in the AG Computational Arithmetic Geometry group. His research focuses on arithmetic geometry and number theory, particularly in the study of modular forms and their connections to Galois representations.
@@ -34,4 +28,4 @@ Sriram Chinthalagiri Venkata is a PhD student in the AG Computational Arithmetic
 
 ## Education
 
-Sriram is pursuing his PhD in Mathematics at the University of Heidelberg, focusing on arithmetic geometry and number theory. 
+Sriram is pursuing his PhD in Mathematics at the University of Heidelberg, focusing on arithmetic geometry and number theory.

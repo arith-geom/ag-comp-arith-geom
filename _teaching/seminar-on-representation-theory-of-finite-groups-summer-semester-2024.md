@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Seminar covering the representation theory of finite groups and its applications.
+instructor: Prof. Dr. Böckle, Chilla, Dr. Gezmiş
+language: en
 layout: teaching
-title: "Representation theory of finite groups"
-permalink: /teaching/seminar-on-representation-theory-of-finite-groups-summer-semester-2024/
-nav: false
-course_type: "Seminar"
-semester: "Summer term 2024"
-instructors: "Prof. Dr. Böckle, Chilla, Dr. Gezmiş"
-description: "Seminar covering the representation theory of finite groups and its applications."
+order: 999
+semester: Summer term 2024
+title: Representation theory of finite groups
 ---
 
 ## Course Description

@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Homological Algebra - Course information and materials.
+instructor: Prof. Dr. Böckle, Dr. Ferraro
+language: en
 layout: teaching
-title: "Homological Algebra"
-description: "Homological Algebra - Course information and materials."
-permalink: /teaching/homological-algebra-seminar/
-nav: false
-course_type: "Seminar"
-semester: "Summer term 2025"
-instructors: "Prof. Dr. Böckle, Dr. Ferraro"
+order: 999
+semester: Summer term 2025
+title: Homological Algebra
 ---
 
 # Homological Algebra

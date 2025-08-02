@@ -1,13 +1,14 @@
 ---
-collection: teaching
+active: false
+course_type: Vorlesung
+description: Galois representations and their deformations - Course information and
+  materials.
+instructor: Dr. Conti
+language: en
 layout: teaching
-title: "Galois representations and their deformations"
-description: "Galois representations and their deformations - Course information and materials."
-permalink: /teaching/galois-representations-and-their-deformations/
-nav: false
-course_type: "Vorlesung"
-semester: "Summer term 2018"
-instructors: "Dr. Conti"
+order: 999
+semester: Summer term 2018
+title: Galois representations and their deformations
 ---
 
 # Galois representations and their deformations

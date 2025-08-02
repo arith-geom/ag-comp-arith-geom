@@ -1,8 +1,9 @@
 ---
-title: "Contact"
-url: "#"
-category: "Contact"
+category: Contact
+layout: link
 order: 1
+title: Contact
+url: '#'
 ---
 
 **Postal Address:**

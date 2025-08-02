@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Algorithmische Algebra - Course information and materials.
+instructor: Dr. Maurischat
+language: en
 layout: teaching
-title: "Algorithmische Algebra"
-description: "Algorithmische Algebra - Course information and materials."
-permalink: /teaching/seminar-algorithmische-algebra/
-nav: false
-course_type: "Seminar"
-semester: "Winter term 2018/19"
-instructors: "Dr. Maurischat"
+order: 999
+semester: Winter term 2018/19
+title: Algorithmische Algebra
 ---
 
 # Algorithmische Algebra

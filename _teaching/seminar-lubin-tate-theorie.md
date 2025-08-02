@@ -1,13 +1,14 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Lokale Klassenkörpertheorie nach Lubin-Tate - Course information and
+  materials.
+instructor: Prof. Dr. Böckle, Fischer
+language: en
 layout: teaching
-title: "Lokale Klassenkörpertheorie nach Lubin-Tate"
-description: "Lokale Klassenkörpertheorie nach Lubin-Tate - Course information and materials."
-permalink: /teaching/seminar-lubin-tate-theorie/
-nav: false
-course_type: "Seminar"
-semester: "Summer term 2018"
-instructors: "Prof. Dr. Böckle, Fischer"
+order: 999
+semester: Summer term 2018
+title: Lokale Klassenkörpertheorie nach Lubin-Tate
 ---
 
 # Lokale Klassenkörpertheorie nach Lubin-Tate

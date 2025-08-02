@@ -1,13 +1,14 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Derivierte Kategorien und Algebraische Geometrie - Course information
+  and materials.
+instructor: Prof. Dr. Böckle, Dr. Ludwig
+language: en
 layout: teaching
-title: "Derivierte Kategorien und Algebraische Geometrie"
-description: "Derivierte Kategorien und Algebraische Geometrie - Course information and materials."
-permalink: /teaching/derivierte-kategorien/
-nav: false
-course_type: "Seminar"
-semester: "Summer term 2021"
-instructors: "Prof. Dr. Böckle, Dr. Ludwig"
+order: 999
+semester: Summer term 2021
+title: Derivierte Kategorien und Algebraische Geometrie
 ---
 
 # Derivierte Kategorien und Algebraische Geometrie

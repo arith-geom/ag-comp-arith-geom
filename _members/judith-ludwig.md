@@ -1,15 +1,9 @@
 ---
-name: Judith Ludwig
-title: Dr.
 email: judith.ludwig@math.uni-heidelberg.de
-website: 
-github: 
-linkedin: 
-twitter: 
-googlescholar: 
-researchgate: 
-orcid: 
-image: prof.svg
-description: >
-  Research interests in derived categories, algebraic geometry, and p-divisible groups.
---- 
+layout: member
+name: Judith Ludwig
+order: 999
+role: Researcher
+status: active
+---
+

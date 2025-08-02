@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Deformationen von (Pseudo-)Darstellungen - Course information and materials.
+instructor: Prof. Dr. Böckle, Juschka
+language: en
 layout: teaching
-title: "Deformationen von (Pseudo-)Darstellungen"
-description: "Deformationen von (Pseudo-)Darstellungen - Course information and materials."
-permalink: /teaching/seminar-ws2013/
-nav: false
-course_type: "Seminar"
-semester: "Winter term 2013/14"
-instructors: "Prof. Dr. Böckle, Juschka"
+order: 999
+semester: Winter term 2013/14
+title: Deformationen von (Pseudo-)Darstellungen
 ---
 
 # Deformationen von (Pseudo-)Darstellungen

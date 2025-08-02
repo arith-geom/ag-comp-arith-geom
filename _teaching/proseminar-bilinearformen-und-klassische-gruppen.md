@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Proseminar
+description: Bilinearformen und klassische Gruppen - Course information and materials.
+instructor: Prof. Dr. Böckle, Quast
+language: en
 layout: teaching
-title: "Bilinearformen und klassische Gruppen"
-description: "Bilinearformen und klassische Gruppen - Course information and materials."
-permalink: /teaching/proseminar-bilinearformen-und-klassische-gruppen/
-nav: false
-course_type: "Proseminar"
-semester: "Summer term 2019"
-instructors: "Prof. Dr. Böckle, Quast"
+order: 999
+semester: Summer term 2019
+title: Bilinearformen und klassische Gruppen
 ---
 
 # Bilinearformen und klassische Gruppen

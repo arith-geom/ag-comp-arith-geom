@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Hauptseminar
+description: Arithmetik von Zahl- und Funktionenkörpern - Course information and materials.
+instructor: Prof. Dr. Böckle, Dr. Maurischat, Gazda
+language: en
 layout: teaching
-title: "Arithmetik von Zahl- und Funktionenkörpern"
-description: "Arithmetik von Zahl- und Funktionenkörpern - Course information and materials."
-permalink: /teaching/hauptseminar-ss2018/
-nav: false
-course_type: "Hauptseminar"
-semester: "Summer term 2018"
-instructors: "Prof. Dr. Böckle, Dr. Maurischat, Gazda"
+order: 999
+semester: Summer term 2018
+title: Arithmetik von Zahl- und Funktionenkörpern
 ---
 
 # Arithmetik von Zahl- und Funktionenkörpern

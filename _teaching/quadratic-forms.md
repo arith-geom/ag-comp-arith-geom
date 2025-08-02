@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Proseminar
+description: Quadratic forms - Course information and materials.
+instructor: Prof. Dr. Böckle, C.V. Sriram
+language: en
 layout: teaching
-title: "Quadratic forms"
-description: "Quadratic forms - Course information and materials."
-permalink: /teaching/quadratic-forms/
-nav: false
-course_type: "Proseminar"
-semester: "Winter term 2023/24"
-instructors: "Prof. Dr. Böckle, C.V. Sriram"
+order: 999
+semester: Winter term 2023/24
+title: Quadratic forms
 ---
 
 # Quadratic forms

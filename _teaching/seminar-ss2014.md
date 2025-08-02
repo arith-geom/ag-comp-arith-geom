@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: p-adische Geometrie - Course information and materials.
+instructor: Prof. Dr. Böckle, Juschka, Qiu
+language: en
 layout: teaching
-title: "p-adische Geometrie"
-description: "p-adische Geometrie - Course information and materials."
-permalink: /teaching/seminar-ss2014/
-nav: false
-course_type: "Seminar"
-semester: "Summer term 2014"
-instructors: "Prof. Dr. Böckle, Juschka, Qiu"
+order: 999
+semester: Summer term 2014
+title: p-adische Geometrie
 ---
 
 # p-adische Geometrie

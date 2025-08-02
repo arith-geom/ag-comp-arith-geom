@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Vorlesung
+description: Funktionentheorie 2 - Course information and materials.
+instructor: Dr. Maurischat, Quast
+language: en
 layout: teaching
-title: "Funktionentheorie 2"
-description: "Funktionentheorie 2 - Course information and materials."
-permalink: /teaching/funktionentheorie-2/
-nav: false
-course_type: "Vorlesung"
-semester: "Winter term 2018/19"
-instructors: "Dr. Maurischat, Quast"
+order: 999
+semester: Winter term 2018/19
+title: Funktionentheorie 2
 ---
 
 # Funktionentheorie 2

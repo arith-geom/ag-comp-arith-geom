@@ -1,13 +1,14 @@
 ---
-collection: teaching
+active: false
+course_type: Proseminar
+description: Primzahlen und Faktorisierung für die Kryptographie - Course information
+  and materials.
+instructor: Prof. Dr. Böckle, Fischer
+language: en
 layout: teaching
-title: "Primzahlen und Faktorisierung für die Kryptographie"
-description: "Primzahlen und Faktorisierung für die Kryptographie - Course information and materials."
-permalink: /teaching/proseminar-primzahlen-und-faktorisierung/
-nav: false
-course_type: "Proseminar"
-semester: "Winter term 2016/17"
-instructors: "Prof. Dr. Böckle, Fischer"
+order: 999
+semester: Winter term 2016/17
+title: Primzahlen und Faktorisierung für die Kryptographie
 ---
 
 # Primzahlen und Faktorisierung für die Kryptographie

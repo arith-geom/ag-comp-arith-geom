@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Gruppenkohomologie - Course information and materials.
+instructor: Prof. Dr. Böckle, Fischer
+language: en
 layout: teaching
-title: "Gruppenkohomologie"
-description: "Gruppenkohomologie - Course information and materials."
-permalink: /teaching/seminar-gruppenkohomologie/
-nav: false
-course_type: "Seminar"
-semester: "Winter term 2017/18"
-instructors: "Prof. Dr. Böckle, Fischer"
+order: 999
+semester: Winter term 2017/18
+title: Gruppenkohomologie
 ---
 
 # Gruppenkohomologie

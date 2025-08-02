@@ -1,19 +1,13 @@
 ---
+email: arithgeo@iwr.uni-heidelberg.de
 layout: member
 name: Andrea Conti
-title: Dr.
-role: Postdoctoral Researcher
-email: arithgeo@iwr.uni-heidelberg.de
-website: 
-github: 
-linkedin: 
-twitter: 
-googlescholar: 
-researchgate: 
-orcid: 
+order: 999
 photo: /assets/img/12.jpg
-research_interests: >
-  Research focuses on Galois representations and their deformations, particularly in the context of modular forms and elliptic curves.
+research_interests: Research focuses on Galois representations and their deformations,
+  particularly in the context of modular forms and elliptic curves.
+role: Postdoctoral Researcher
+status: active
 ---
 
 Dr. Andrea Conti is a postdoctoral researcher in the AG Computational Arithmetic Geometry group. His research focuses on Galois representations and their deformations, particularly in the context of modular forms and elliptic curves.
@@ -34,4 +28,4 @@ Dr. Andrea Conti is a postdoctoral researcher in the AG Computational Arithmetic
 
 ## Publications
 
-Dr. Conti has published several papers on Galois representations, modular forms, and related topics in arithmetic geometry. 
+Dr. Conti has published several papers on Galois representations, modular forms, and related topics in arithmetic geometry.

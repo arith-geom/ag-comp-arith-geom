@@ -1,10 +1,14 @@
 ---
+active: false
+course_type: seminar
+description: Past Teaching at the University Duisburg-Essen - Course information and
+  materials.
+instructor: Unknown
+language: en
 layout: teaching
-title: "Past Teaching at the University Duisburg-Essen"
-description: "Past Teaching at the University Duisburg-Essen - Course information and materials."
-permalink: /teaching/past-teaching/
-nav: false
-collection: teaching
+order: 999
+semester: Unknown
+title: Past Teaching at the University Duisburg-Essen
 ---
 
 ## Past Teaching at the University Duisburg-Essen

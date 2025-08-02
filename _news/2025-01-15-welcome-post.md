@@ -1,9 +1,11 @@
 ---
-layout: post
-title: "Welcome to AG Computational Arithmetic Geometry"
+categories:
+- general
 date: 2025-01-15
-categories: [Research Group]
-tags: [Welcome, Heidelberg, IWR]
+layout: post
+order: 999
+published: true
+title: Welcome to AG Computational Arithmetic Geometry
 ---
 
 Welcome to the research group "Computational Arithmetic Geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.
@@ -20,4 +22,4 @@ Our research focuses on Galois representations, modular forms, elliptic curves, 
 - Theresa Kaiser
 - Alireza Shavali
 
-For more information about our research areas and publications, please explore our website. 
+For more information about our research areas and publications, please explore our website.

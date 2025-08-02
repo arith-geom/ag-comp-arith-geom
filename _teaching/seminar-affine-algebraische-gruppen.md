@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Affine algebraische Gruppen - Course information and materials.
+instructor: Prof. Dr. Böckle, Quast
+language: en
 layout: teaching
-title: "Affine algebraische Gruppen"
-description: "Affine algebraische Gruppen - Course information and materials."
-permalink: /teaching/seminar-affine-algebraische-gruppen/
-nav: false
-course_type: "Seminar"
-semester: "Winter term 2019/20"
-instructors: "Prof. Dr. Böckle, Quast"
+order: 999
+semester: Winter term 2019/20
+title: Affine algebraische Gruppen
 ---
 
 # Affine algebraische Gruppen

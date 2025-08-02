@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Vorlesung
+description: Adische Räume II - Course information and materials.
+instructor: Dr. Ludwig
+language: en
 layout: teaching
-title: "Adische Räume II"
-description: "Adische Räume II - Course information and materials."
-permalink: /teaching/adischeraeumeii/
-nav: false
-course_type: "Vorlesung"
-semester: "Summer term 2020"
-instructors: "Dr. Ludwig"
+order: 999
+semester: Summer term 2020
+title: Adische Räume II
 ---
 
 # Adische Räume II

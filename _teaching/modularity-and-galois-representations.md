@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Vorlesung
+description: Modularity and Galois Representations - Course information and materials.
+instructor: Prof. Dr. Böckle, Shavali
+language: en
 layout: teaching
-title: "Modularity and Galois Representations"
-description: "Modularity and Galois Representations - Course information and materials."
-permalink: /teaching/modularity-and-galois-representations/
-nav: false
-course_type: "Vorlesung"
-semester: "Winter term 2024/25"
-instructors: "Prof. Dr. Böckle, Shavali"
+order: 999
+semester: Winter term 2024/25
+title: Modularity and Galois Representations
 ---
 
 # Modularity and Galois Representations

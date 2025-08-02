@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Hauptseminar
+description: Modularity Lifting - Course information and materials.
+instructor: Prof. Dr. Böckle, Dr. Cerviño, Fischer
+language: en
 layout: teaching
-title: "Modularity Lifting"
-description: "Modularity Lifting - Course information and materials."
-permalink: /teaching/mls-ws13/
-nav: false
-course_type: "Hauptseminar"
-semester: "Winter term 2013/14"
-instructors: "Prof. Dr. Böckle, Dr. Cerviño, Fischer"
+order: 999
+semester: Winter term 2013/14
+title: Modularity Lifting
 ---
 
 # Modularity Lifting

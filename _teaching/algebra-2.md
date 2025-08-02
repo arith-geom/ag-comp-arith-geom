@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Vorlesung
+description: Algebra 2 - Course information and materials.
+instructor: Dr. Malte Witte, K. Fischer
+language: en
 layout: teaching
-title: "Algebra 2"
-description: "Algebra 2 - Course information and materials."
-permalink: /teaching/algebra-2/
-nav: false
-course_type: "Vorlesung"
-semester: "Summer term 2017"
-instructors: "Dr. Malte Witte, K. Fischer"
+order: 999
+semester: Summer term 2017
+title: Algebra 2
 ---
 
 # Algebra 2

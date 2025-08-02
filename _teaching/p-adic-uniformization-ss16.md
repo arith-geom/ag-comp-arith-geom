@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Hauptseminar
+description: p-adic Uniformization - Course information and materials.
+instructor: Prof. Dr. Böckle, Dr. Guiraud, Fischer, Gräf
+language: en
 layout: teaching
-title: "p-adic Uniformization"
-description: "p-adic Uniformization - Course information and materials."
-permalink: /teaching/p-adic-uniformization-ss16/
-nav: false
-course_type: "Hauptseminar"
-semester: "Summer term 2016"
-instructors: "Prof. Dr. Böckle, Dr. Guiraud, Fischer, Gräf"
+order: 999
+semester: Summer term 2016
+title: p-adic Uniformization
 ---
 
 # p-adic Uniformization

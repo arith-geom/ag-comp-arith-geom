@@ -1,13 +1,13 @@
 ---
-collection: teaching
+active: false
+course_type: Seminar
+description: Darstellungstheorie - Course information and materials.
+instructor: Prof. Dr. Böckle, Qiu
+language: en
 layout: teaching
-title: "Darstellungstheorie"
-description: "Darstellungstheorie - Course information and materials."
-permalink: /teaching/dar-ss2015/
-nav: false
-course_type: "Seminar"
-semester: "Summer term 2015"
-instructors: "Prof. Dr. Böckle, Qiu"
+order: 999
+semester: Summer term 2015
+title: Darstellungstheorie
 ---
 
 # Darstellungstheorie
