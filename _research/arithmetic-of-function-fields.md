@@ -1,11 +1,12 @@
 ---
 layout: page
-title: "Arithmetic of Function Fields"
-description: "Research in arithmetic geometry and function fields"
-order: 1
-featured: false
+title: Arithmetic of Function Fields
+description: Research in arithmetic geometry and function fields
+order: 999
+featured: true
+keywords:
+  - a
 ---
-
 # Arithmetic of Function Fields
 
 ## Research Themes
