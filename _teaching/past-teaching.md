@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: teaching
 title: "Past Teaching at the University Duisburg-Essen"
+description: "Past Teaching at the University Duisburg-Essen - Course information and materials."
 permalink: /teaching/past-teaching/
 nav: false
+collection: teaching
 ---
 
 ## Past Teaching at the University Duisburg-Essen

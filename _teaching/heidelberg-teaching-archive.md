@@ -1,7 +1,9 @@
 ---
-layout: page
+layout: teaching
 title: "Heidelberg University Arithmetic Geometry Teaching Archive"
+description: "Heidelberg University Arithmetic Geometry Teaching Archive - Course information and materials."
 permalink: /teaching/heidelberg-archive/
+collection: teaching
 ---
 
 # Heidelberg University Arithmetic Geometry Teaching Archive
@@ -320,4 +322,4 @@ This archive contains teaching materials from the Arithmetic Geometry group at H
 
 **Total Files Downloaded:** 57 files (PDFs and documents)
 
-**Archive Size:** ~7.5 MB 
+**Archive Size:** ~7.5 MB

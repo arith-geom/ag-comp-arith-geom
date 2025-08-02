@@ -7,8 +7,8 @@ nav_order: 3
 ---
 
 <div class="team-intro mb-5">
-  <h2 class="text-center mb-4">Our Research Team</h2>
-  <p class="lead text-center">Meet the dedicated researchers and staff of the AG Computational Arithmetic Geometry group at the University of Heidelberg.</p>
+  <h2 class="text-center mb-4 translatable-content" data-translation-key="members.title">Our Research Team</h2>
+  <p class="lead text-center translatable-content" data-translation-key="members.intro">Meet the dedicated researchers and staff of the AG Computational Arithmetic Geometry group at the University of Heidelberg.</p>
 </div>
 
 <div class="team-sections">
@@ -18,7 +18,7 @@ nav_order: 3
       <div class="section-icon">
         <i class="fas fa-crown" aria-hidden="true"></i>
       </div>
-      <h3>Head of Research Group</h3>
+      <h3 class="translatable-content" data-translation-key="members.group_leader">Head of Research Group</h3>
     </div>
           <div class="member-card featured">
         <div class="member-avatar">
@@ -26,14 +26,14 @@ nav_order: 3
         </div>
         <div class="member-info">
           <h4><a href="/members/gebhard-boeckle/">Prof. Dr. Gebhard Böckle</a></h4>
-          <p class="member-role">Professor & Group Leader</p>
-          <p class="member-description">Head of the research group "Computational Arithmetic Geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.</p>
+          <p class="member-role translatable-content" data-translation-key="members.professor_group_leader">Professor & Group Leader</p>
+          <p class="member-description translatable-content" data-translation-key="members.boeckle_description">Head of the research group "Computational Arithmetic Geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.</p>
           <div class="member-links">
             <a href="/members/gebhard-boeckle/" class="btn btn-outline-primary btn-sm">
-              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+              <i class="fas fa-user me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.view_profile">View Profile</span>
             </a>
             <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.email">Email</span>
             </a>
           </div>
         </div>
@@ -46,7 +46,7 @@ nav_order: 3
       <div class="section-icon">
         <i class="fas fa-user-cog" aria-hidden="true"></i>
       </div>
-      <h3>Administrative Support</h3>
+      <h3 class="translatable-content" data-translation-key="members.administrative_support">Administrative Support</h3>
     </div>
     <div class="member-card">
       <div class="member-avatar">
@@ -54,14 +54,14 @@ nav_order: 3
       </div>
       <div class="member-info">
         <h4><a href="/members/astrid-cederbaum/">Astrid Cederbaum</a></h4>
-        <p class="member-role">Secretary</p>
-        <p class="member-description">Provides administrative support for the research group, including managing correspondence, organizing meetings, and assisting with various administrative tasks.</p>
+        <p class="member-role translatable-content" data-translation-key="members.secretary">Secretary</p>
+        <p class="member-description translatable-content" data-translation-key="members.cederbaum_description">Provides administrative support for the research group, including managing correspondence, organizing meetings, and assisting with various administrative tasks.</p>
         <div class="member-links">
           <a href="/members/astrid-cederbaum/" class="btn btn-outline-primary btn-sm">
-            <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+            <i class="fas fa-user me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.view_profile">View Profile</span>
           </a>
           <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
-            <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+            <i class="fas fa-envelope me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.email">Email</span>
           </a>
         </div>
       </div>
@@ -74,7 +74,7 @@ nav_order: 3
       <div class="section-icon">
         <i class="fas fa-users" aria-hidden="true"></i>
       </div>
-      <h3>Research Members</h3>
+      <h3 class="translatable-content" data-translation-key="members.research_members">Research Members</h3>
     </div>
     <div class="members-grid">
       <div class="member-card">
@@ -83,14 +83,14 @@ nav_order: 3
         </div>
         <div class="member-info">
           <h4><a href="/members/andrea-conti/">Dr. Andrea Conti</a></h4>
-          <p class="member-role">Postdoctoral Researcher</p>
-          <p class="member-description">Research focuses on Galois representations and their deformations, particularly in the context of modular forms and elliptic curves.</p>
+          <p class="member-role translatable-content" data-translation-key="members.postdoc">Postdoctoral Researcher</p>
+          <p class="member-description translatable-content" data-translation-key="members.conti_description">Research focuses on Galois representations and their deformations, particularly in the context of modular forms and elliptic curves.</p>
           <div class="member-links">
             <a href="/members/andrea-conti/" class="btn btn-outline-primary btn-sm">
-              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+              <i class="fas fa-user me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.view_profile">View Profile</span>
             </a>
             <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.email">Email</span>
             </a>
           </div>
         </div>
@@ -102,14 +102,14 @@ nav_order: 3
         </div>
         <div class="member-info">
           <h4><a href="/members/giacomo-hermes-ferraro/">Dr. Giacomo Hermes Ferraro</a></h4>
-          <p class="member-role">Postdoctoral Researcher</p>
-          <p class="member-description">Research focuses on function field arithmetic, particularly Drinfeld modular forms and L-functions.</p>
+          <p class="member-role translatable-content" data-translation-key="members.postdoc">Postdoctoral Researcher</p>
+          <p class="member-description translatable-content" data-translation-key="members.ferraro_description">Research focuses on function field arithmetic, particularly Drinfeld modular forms and L-functions.</p>
           <div class="member-links">
             <a href="/members/giacomo-hermes-ferraro/" class="btn btn-outline-primary btn-sm">
-              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+              <i class="fas fa-user me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.view_profile">View Profile</span>
             </a>
             <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.email">Email</span>
             </a>
           </div>
         </div>
@@ -121,14 +121,14 @@ nav_order: 3
         </div>
         <div class="member-info">
           <h4><a href="/members/paola-chilla/">Paola Chilla</a></h4>
-          <p class="member-role">PhD Student</p>
-          <p class="member-description">Research focuses on computational aspects of arithmetic geometry, particularly in the study of Galois representations and their applications.</p>
+          <p class="member-role translatable-content" data-translation-key="members.phd_student">PhD Student</p>
+          <p class="member-description translatable-content" data-translation-key="members.chilla_description">Research focuses on computational aspects of arithmetic geometry, particularly in the study of Galois representations and their applications.</p>
           <div class="member-links">
             <a href="/members/paola-chilla/" class="btn btn-outline-primary btn-sm">
-              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+              <i class="fas fa-user me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.view_profile">View Profile</span>
             </a>
             <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.email">Email</span>
             </a>
           </div>
         </div>
@@ -140,14 +140,14 @@ nav_order: 3
         </div>
         <div class="member-info">
           <h4><a href="/members/sriram-chinthalagiri-venkata/">Sriram Chinthalagiri Venkata</a></h4>
-          <p class="member-role">PhD Student</p>
-          <p class="member-description">Research focuses on arithmetic geometry and number theory, particularly in the study of modular forms and their connections to Galois representations.</p>
+          <p class="member-role translatable-content" data-translation-key="members.phd_student">PhD Student</p>
+          <p class="member-description translatable-content" data-translation-key="members.sriram_description">Research focuses on arithmetic geometry and number theory, particularly in the study of modular forms and their connections to Galois representations.</p>
           <div class="member-links">
             <a href="/members/sriram-chinthalagiri-venkata/" class="btn btn-outline-primary btn-sm">
-              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+              <i class="fas fa-user me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.view_profile">View Profile</span>
             </a>
             <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.email">Email</span>
             </a>
           </div>
         </div>
@@ -159,14 +159,14 @@ nav_order: 3
         </div>
         <div class="member-info">
           <h4><a href="/members/theresa-kaiser/">Theresa Kaiser</a></h4>
-          <p class="member-role">PhD Student</p>
-          <p class="member-description">Research focuses on computational arithmetic geometry, particularly in the study of elliptic curves and their applications in cryptography.</p>
+          <p class="member-role translatable-content" data-translation-key="members.phd_student">PhD Student</p>
+          <p class="member-description translatable-content" data-translation-key="members.kaiser_description">Research focuses on computational arithmetic geometry, particularly in the study of elliptic curves and their applications in cryptography.</p>
           <div class="member-links">
             <a href="/members/theresa-kaiser/" class="btn btn-outline-primary btn-sm">
-              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+              <i class="fas fa-user me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.view_profile">View Profile</span>
             </a>
             <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.email">Email</span>
             </a>
           </div>
         </div>
@@ -178,14 +178,14 @@ nav_order: 3
         </div>
         <div class="member-info">
           <h4><a href="/members/alireza-shavali/">Alireza Shavali</a></h4>
-          <p class="member-role">PhD Student</p>
-          <p class="member-description">Research focuses on arithmetic geometry and number theory, particularly in the study of Galois representations and their deformation theory.</p>
+          <p class="member-role translatable-content" data-translation-key="members.phd_student">PhD Student</p>
+          <p class="member-description translatable-content" data-translation-key="members.shavali_description">Research focuses on arithmetic geometry and number theory, particularly in the study of Galois representations and their deformation theory.</p>
           <div class="member-links">
             <a href="/members/alireza-shavali/" class="btn btn-outline-primary btn-sm">
-              <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
+              <i class="fas fa-user me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.view_profile">View Profile</span>
             </a>
             <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Email
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="common.email">Email</span>
             </a>
           </div>
         </div>
@@ -199,13 +199,13 @@ nav_order: 3
       <div class="section-icon">
         <i class="fas fa-history" aria-hidden="true"></i>
       </div>
-      <h3>Alumni</h3>
+      <h3 class="translatable-content" data-translation-key="members.alumni">Alumni</h3>
     </div>
     <div class="alumni-section">
-      <p class="text-center mb-3">Discover our former team members and their contributions to the field.</p>
+      <p class="text-center mb-3 translatable-content" data-translation-key="members.alumni_description">Discover our former team members and their contributions to the field.</p>
       <div class="text-center">
         <a href="/former-members/" class="btn btn-primary">
-          <i class="fas fa-users me-2" aria-hidden="true"></i>View Former Members
+          <i class="fas fa-users me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="members.view_former_members">View Former Members</span>
         </a>
       </div>
     </div>

@@ -1,141 +1,452 @@
 .teaching-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  /* Header Styles - Simple and Theme Compatible */
   .teaching-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 3rem 0;
+    background: var(--bg-secondary);
+    border-bottom: 3px solid var(--heidelberg-red);
+    padding: 2rem 0;
     margin: -2rem -2rem 2rem -2rem;
     border-radius: 0 0 15px 15px;
-    
-    .teaching-intro {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      
-      h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        font-weight: 300;
-      }
-      
-      p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-        line-height: 1.6;
-      }
+  }
+
+  .teaching-intro {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
     }
   }
-  
-  h4 {
-    color: #2c3e50;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin: 2rem 0 1rem 0;
-    padding: 0.5rem 0;
-    border-bottom: 3px solid #3498db;
-    display: inline-block;
+
+  /* Filter Controls - Dark Mode Compatible */
+  .filter-controls {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    box-shadow: var(--shadow-sm);
   }
-  
-  ul {
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+  }
+
+  .filter-select, .filter-input {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--heidelberg-red);
+      box-shadow: 0 0 0 3px rgba(194, 32, 50, 0.1);
+    }
+  }
+
+  /* Section Styles - Dark Mode Compatible */
+  .teaching-section {
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 3px solid;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  .current-title {
+    color: var(--heidelberg-red);
+    border-bottom-color: var(--heidelberg-red);
+  }
+
+  .recent-title {
+    color: var(--heidelberg-red-dark);
+    border-bottom-color: var(--heidelberg-red-dark);
+  }
+
+  .historical-title {
+    color: var(--text-secondary);
+    border-bottom-color: var(--border-color);
+  }
+
+  /* Semester Groups - Dark Mode Compatible */
+  .semester-group {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+  }
+
+  .semester-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 2px solid;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .current-semester {
+    color: var(--heidelberg-red);
+    border-bottom-color: var(--heidelberg-red);
+  }
+
+  .recent-semester {
+    color: var(--heidelberg-red-dark);
+    border-bottom-color: var(--heidelberg-red-dark);
+  }
+
+  .historical-semester {
+    color: var(--text-secondary);
+    border-bottom-color: var(--border-color);
+  }
+
+  /* Course Lists - Dark Mode Compatible */
+  .course-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 1.5rem 0;
+    margin: 0;
   }
-  
-  li {
-    background: #f8f9fa;
-    margin: 0.5rem 0;
+
+  .course-item {
+    background: var(--bg-secondary);
+    margin: 0.75rem 0;
     padding: 1rem 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid #3498db;
+    border-left: 4px solid var(--heidelberg-red);
     transition: all 0.3s ease;
-    
-    .course-type {
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-right: 0.5rem;
-      
-      &.seminar {
-        background: #e8f5e8;
-        color: #27ae60;
-      }
-      
-      &.vorlesung {
-        background: #e3f2fd;
-        color: #1976d2;
-      }
-      
-      &.proseminar {
-        background: #fff3e0;
-        color: #f57c00;
-      }
-      
-      &.hauptseminar {
-        background: #fce4ec;
-        color: #c2185b;
-      }
-    }
-    
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+
     &:hover {
-      background: #e3f2fd;
+      background: var(--bg-accent);
       transform: translateX(5px);
-      box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+      box-shadow: 0 4px 12px rgba(194, 32, 50, 0.15);
     }
-    
+
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.3s; }
+    &:nth-child(4) { animation-delay: 0.4s; }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  /* Course Badges - Dark Mode Compatible */
+  .course-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &.seminar {
+      background: var(--bg-accent);
+      color: var(--heidelberg-red);
+      border: 1px solid var(--heidelberg-red);
+    }
+
+    &.vorlesung {
+      background: var(--bg-accent);
+      color: var(--heidelberg-red-dark);
+      border: 1px solid var(--heidelberg-red-dark);
+    }
+
+    &.proseminar {
+      background: var(--bg-accent);
+      color: var(--heidelberg-red-light);
+      border: 1px solid var(--heidelberg-red-light);
+    }
+
+    &.hauptseminar {
+      background: var(--bg-accent);
+      color: var(--heidelberg-red-darker);
+      border: 1px solid var(--heidelberg-red-darker);
+    }
+  }
+
+  /* Course Links - Dark Mode Compatible */
+  .course-link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    flex: 1;
+    min-width: 200px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+  }
+
+  .instructors {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  /* Historical Content - Always Visible */
+  .historical-content {
+    /* Content is always visible now */
+  }
+
+  .historical-note {
+    background: var(--bg-accent);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+
+    p {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  /* Footer - Dark Mode Compatible */
+  .teaching-footer {
+    background: var(--bg-secondary);
+    border-top: 3px solid var(--heidelberg-red);
+    margin: 3rem -2rem -2rem -2rem;
+    padding: 2rem;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .contact-info {
+    h3 {
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      color: var(--text-secondary);
+    }
+
     a {
-      color: #2980b9;
+      color: var(--link-color);
       text-decoration: none;
-      font-weight: 500;
-      
+
       &:hover {
-        color: #1f5f8b;
         text-decoration: underline;
       }
     }
   }
-  
-  .teaching-footer {
-    background: #f8f9fa;
-    border-top: 3px solid #3498db;
-    margin: 3rem -2rem -2rem -2rem;
-    padding: 2rem;
+
+  .last-update {
+    text-align: right;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+
+    p {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      justify-content: flex-end;
+    }
+  }
+
+  /* Hidden class for filtering */
+  .semester-group.hidden {
+    display: none;
+  }
+
+  /* Filter Status - Dark Mode Compatible */
+  .filter-status {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: var(--bg-accent);
+    border-radius: 6px;
+    border-left: 4px solid var(--heidelberg-red);
+  }
+
+  .status-message {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .clear-filters {
+    margin-left: auto;
+    background: var(--heidelberg-red);
+    color: var(--white);
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: var(--heidelberg-red-dark);
+    }
+  }
+
+  .export-button {
+    grid-column: 1 / -1;
+    background: var(--heidelberg-red);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+
+    &:hover {
+      background: var(--heidelberg-red-dark);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .teaching-page {
+    .teaching-intro h2 {
+      font-size: 2rem;
+    }
+    
+    .filter-controls {
+      grid-template-columns: 1fr;
+    }
+    
+    .course-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .course-badge {
+      align-self: flex-start;
+    }
     
     .footer-content {
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    
+    .last-update {
+      text-align: center;
       
-      .contact-info {
-        h3 {
-          color: #2c3e50;
-          margin-bottom: 1rem;
-          font-size: 1.2rem;
-        }
-        
-        p {
-          margin: 0.5rem 0;
-          color: #555;
-          
-          a {
-            color: #3498db;
-            text-decoration: none;
-            
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
+      p {
+        justify-content: center;
       }
-      
-      .last-update {
-        text-align: right;
-        color: #7f8c8d;
-        font-size: 0.9rem;
-      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .teaching-page {
+    .course-badge {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.6rem;
+    }
+    
+    .course-link {
+      min-width: auto;
     }
   }
 } 

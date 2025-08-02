@@ -7,8 +7,8 @@ nav_order: 2
 ---
 
 <div class="research-intro mb-5">
-  <h2 class="text-center mb-4">Research Themes</h2>
-  <p class="lead text-center">Our research focuses on the intersection of arithmetic geometry, Galois representations, and computational methods in number theory.</p>
+  <h2 class="text-center mb-4 translatable-content" data-translation-key="research.title">Research Themes</h2>
+  <p class="lead text-center translatable-content" data-translation-key="research.intro_lead">Our research focuses on the intersection of arithmetic geometry, Galois representations, and computational methods in number theory.</p>
 </div>
 
 <div class="research-areas">
@@ -17,14 +17,14 @@ nav_order: 2
       <i class="fas fa-infinity" aria-hidden="true"></i>
     </div>
     <div class="research-content">
-      <h3>Galois representations and modular forms</h3>
+      <h3 class="translatable-content" data-translation-key="research.galois_representations_title">Galois representations and modular forms</h3>
       <div class="research-text">
-        <p>A modern way to look at algebraic number theory is to study the group G<sub>Q</sub> of symmetries of all finite extension of the rational number Q, i.e. of all number fields. One way of doing this is via p-adic (or complex) Galois representations. These are homomorphisms from G<sub>Q</sub> to GL<sub>n</sub>(K) for (the complex or) a p-adic field K.</p>
+        <p class="translatable-content" data-translation-key="research.galois_representations_content">A modern way to look at algebraic number theory is to study the group G<sub>Q</sub> of symmetries of all finite extension of the rational number Q, i.e. of all number fields. One way of doing this is via p-adic (or complex) Galois representations. These are homomorphisms from G<sub>Q</sub> to GL<sub>n</sub>(K) for (the complex or) a p-adic field K.</p>
         
-        <p>If one would understand all these, one could deduce many results in number theory. The reason why this approach is promising is that the Langlands program predicts (conjectures) that many interesting Galois representation can be found in (arithmetic) geometry, for instance by studying modular forms or elliptic curves.</p>
+        <p class="translatable-content" data-translation-key="research.galois_representations_approach">If one would understand all these, one could deduce many results in number theory. The reason why this approach is promising is that the Langlands program predicts (conjectures) that many interesting Galois representation can be found in (arithmetic) geometry, for instance by studying modular forms or elliptic curves.</p>
         
         <div class="highlight-box">
-          <p><strong>The most visible success of this method has been the proof of Fermat's last theorem by Wiles and Taylor-Wiles building on work of many others.</strong></p>
+          <p class="translatable-content" data-translation-key="research.fermat_theorem"><strong>The most visible success of this method has been the proof of Fermat's last theorem by Wiles and Taylor-Wiles building on work of many others.</strong></p>
         </div>
       </div>
     </div>
@@ -35,13 +35,13 @@ nav_order: 2
       <i class="fas fa-cube" aria-hidden="true"></i>
     </div>
     <div class="research-content">
-      <h3>Drinfeld modular varieties and Drinfeld modular forms</h3>
+      <h3 class="translatable-content" data-translation-key="research.drinfeld_title">Drinfeld modular varieties and Drinfeld modular forms</h3>
       <div class="research-text">
-        <p>It has been observed that questions in number theory often have analogs over global function fields; then the ring of integers Z is replaced by rings like the polynomial ring F<sub>p</sub>[t], and the field of rational numbers Q by the field of rational functions over the finite field F<sub>p</sub> of p elements, where p is a prime number.</p>
+        <p class="translatable-content" data-translation-key="research.drinfeld_intro">It has been observed that questions in number theory often have analogs over global function fields; then the ring of integers Z is replaced by rings like the polynomial ring F<sub>p</sub>[t], and the field of rational numbers Q by the field of rational functions over the finite field F<sub>p</sub> of p elements, where p is a prime number.</p>
         
-        <p>Because methods from algebraic geometry can be applied to function fields, many questions over the latter are more tractable than the corresponding questions over number fields. One particular instance of this is Drinfeld's proof of the global Langlands correspondence for GL<sub>2</sub> over function fields.</p>
+        <p class="translatable-content" data-translation-key="research.drinfeld_methods">Because methods from algebraic geometry can be applied to function fields, many questions over the latter are more tractable than the corresponding questions over number fields. One particular instance of this is Drinfeld's proof of the global Langlands correspondence for GL<sub>2</sub> over function fields.</p>
         
-        <p>In his proof Drinfeld introduced what are now called Drinfeld modular varieties; these are function field analogs of certain Shimura varieties. Their cohomology gives rise to Galois representations and these varieties have an interesting geometry coming from their moduli interpretation.</p>
+        <p class="translatable-content" data-translation-key="research.drinfeld_varieties">In his proof Drinfeld introduced what are now called Drinfeld modular varieties; these are function field analogs of certain Shimura varieties. Their cohomology gives rise to Galois representations and these varieties have an interesting geometry coming from their moduli interpretation.</p>
       </div>
     </div>
   </div>

@@ -308,9 +308,21 @@ class LanguageSwitcher {
   }
 
   updateResearchPage() {
+    // Update page title
     const pageTitle = document.querySelector('h1, .page-title');
     if (pageTitle) {
       pageTitle.textContent = this.getTranslation('research.title');
+    }
+
+    // Update research intro section
+    const researchIntro = document.querySelector('.research-intro h2');
+    if (researchIntro) {
+      researchIntro.textContent = this.getTranslation('research.title');
+    }
+
+    const researchLead = document.querySelector('.research-intro .lead');
+    if (researchLead) {
+      researchLead.textContent = this.getTranslation('research.intro_lead');
     }
   }
 
@@ -329,9 +341,21 @@ class LanguageSwitcher {
   }
 
   updateMembersPage() {
+    // Update page title
     const pageTitle = document.querySelector('h1, .page-title');
     if (pageTitle) {
       pageTitle.textContent = this.getTranslation('members.title');
+    }
+
+    // Update team intro section
+    const teamIntro = document.querySelector('.team-intro h2');
+    if (teamIntro) {
+      teamIntro.textContent = this.getTranslation('members.title');
+    }
+
+    const teamLead = document.querySelector('.team-intro .lead');
+    if (teamLead) {
+      teamLead.textContent = this.getTranslation('members.intro');
     }
   }
 
@@ -343,9 +367,21 @@ class LanguageSwitcher {
   }
 
   updateContactPage() {
+    // Update page title
     const pageTitle = document.querySelector('h1, .page-title');
     if (pageTitle) {
       pageTitle.textContent = this.getTranslation('contact.title');
+    }
+
+    // Update contact intro section
+    const contactIntro = document.querySelector('.contact-intro h2');
+    if (contactIntro) {
+      contactIntro.textContent = this.getTranslation('contact.title');
+    }
+
+    const contactLead = document.querySelector('.contact-intro .lead');
+    if (contactLead) {
+      contactLead.textContent = this.getTranslation('contact.intro');
     }
   }
 

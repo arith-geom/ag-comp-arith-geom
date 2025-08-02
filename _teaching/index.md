@@ -2,220 +2,1500 @@
 layout: page
 title: "Teaching"
 permalink: /teaching/
-css: teaching-page
+scripts:
+  - /assets/js/teaching-page.js
 ---
 
-# Teaching
+<div class="teaching-page">
+  <!-- Enhanced Header Section -->
+  <div class="teaching-header">
+    <div class="teaching-intro">
+      <h2>Teaching Activities</h2>
+      <p>Comprehensive overview of current and past teaching activities at Heidelberg University, including lectures, seminars, and research courses in arithmetic geometry, algebra, and number theory.</p>
+    </div>
+  </div>
 
-<div class="teaching-header">
-  <div class="teaching-intro">
-    <h2>Arithmetic Geometry Teaching Activities</h2>
-    <p>Comprehensive overview of current and past teaching activities at Heidelberg University, including lectures, seminars, and research courses in arithmetic geometry, algebra, and number theory.</p>
+  <!-- Filter Controls -->
+  <div class="filter-controls">
+    <div class="filter-group">
+      <label for="courseTypeFilter">Filter by Type:</label>
+      <select id="courseTypeFilter" class="filter-select">
+        <option value="all">All Courses</option>
+        <option value="vorlesung">Lectures</option>
+        <option value="seminar">Seminars</option>
+        <option value="proseminar">Proseminars</option>
+        <option value="hauptseminar">Hauptseminars</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="timeFilter">Filter by Period:</label>
+      <select id="timeFilter" class="filter-select">
+        <option value="all">All Time</option>
+        <option value="current">Current & Recent (2023-2025)</option>
+        <option value="recent">Recent (2020-2022)</option>
+        <option value="historical">Historical (2010-2019)</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="searchFilter">Search Courses:</label>
+      <input type="text" id="searchFilter" class="filter-input" placeholder="Search course titles...">
+    </div>
+  </div>
+
+  <!-- Current Teaching -->
+  <div class="teaching-section current-section">
+    <h3 class="section-title current-title">
+      <i class="fas fa-star"></i> Current Teaching
+    </h3>
+    
+    <div class="semester-group" data-period="current">
+      <h4 class="semester-title current-semester">
+        <i class="fas fa-calendar-alt"></i> Summer term 2025
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="seminar" data-period="current">
+          <span class="course-badge seminar">
+            <i class="fas fa-users"></i> Seminar
+          </span>
+          <a href="/teaching/homological-algebra-seminar" class="course-link">Homological Algebra</a>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Ferraro)</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Recent Teaching (2020-2025) -->
+  <div class="teaching-section recent-section">
+    <h3 class="section-title recent-title">
+      <i class="fas fa-clock"></i> Recent Teaching (2020-2025)
+    </h3>
+    
+    <div class="semester-group" data-period="recent">
+      <h4 class="semester-title recent-semester">
+        <i class="fas fa-calendar-alt"></i> Winter term 2024/25
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="seminar" data-period="recent">
+          <span class="course-badge seminar">
+            <i class="fas fa-users"></i> Seminar
+          </span>
+          <a href="/assets/uploads/comm_alg_announcement.pdf" class="course-link">Commutative Algebra</a>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Conti)</span>
+        </li>
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/teaching/modularity-and-galois-representations" class="course-link">Modularity and Galois Representations</a>
+          <span class="instructors">(Prof. Dr. Böckle, Shavali)</span>
+        </li>
+        <li class="course-item" data-type="hauptseminar" data-period="recent">
+          <span class="course-badge hauptseminar">
+            <i class="fas fa-graduation-cap"></i> Hauptseminar
+          </span>
+          <a href="/assets/uploads/GAUS-AG-WiSe2024-25-IKM-2024-12-11.pdf" class="course-link">Congruence Modules and the Wiles–Lenstra–Diamond Numerical Criterion in Higher Codimension</a>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Andrea Conti)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="semester-group" data-period="recent">
+      <h4 class="semester-title recent-semester">
+        <i class="fas fa-calendar-alt"></i> Summer term 2024
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="seminar" data-period="recent">
+          <span class="course-badge seminar">
+            <i class="fas fa-users"></i> Seminar
+          </span>
+          <a href="/teaching/seminar-on-representation-theory-of-finite-groups-summer-semester-2024" class="course-link">Representation theory of finite groups</a>
+          <span class="instructors">(Prof. Dr. Böckle, Chilla, Dr. Gezmiş)</span>
+        </li>
+        <li class="course-item" data-type="hauptseminar" data-period="recent">
+          <span class="course-badge hauptseminar">
+            <i class="fas fa-graduation-cap"></i> Hauptseminar
+          </span>
+          <a href="/assets/uploads/Seminar.pdf" class="course-link">Shtukas for reductive groups and global Langlands correspondence after Vincent Lafforgue</a>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Gezmiş, Shavali, C.V. Sriram)</span>
+        </li>
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/teaching/documents/" class="course-link">Algebra 2</a>
+          <span class="instructors">(Prof. Dr. Böckle, Shavali)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="semester-group" data-period="recent">
+      <h4 class="semester-title recent-semester">
+        <i class="fas fa-calendar-alt"></i> Winter term 2023/24
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="proseminar" data-period="recent">
+          <span class="course-badge proseminar">
+            <i class="fas fa-book-open"></i> Proseminar
+          </span>
+          <a href="/teaching/quadratic-forms" class="course-link">Quadratic forms</a>
+          <span class="instructors">(Prof. Dr. Böckle, C.V. Sriram)</span>
+        </li>
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/teaching/documents/" class="course-link">Algebra 1</a>
+          <span class="instructors">(Prof. Dr. Böckle, Shavali)</span>
+        </li>
+        <li class="course-item" data-type="hauptseminar" data-period="recent">
+          <span class="course-badge hauptseminar">
+            <i class="fas fa-graduation-cap"></i> Hauptseminar
+          </span>
+          <a href="/assets/uploads/RMCprogram_01.pdf" class="course-link">Rigid meromorphic cocycles</a>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Gezmiş, Dr. Ludwig)</span>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="semester-group" data-period="recent">
+      <h4 class="semester-title recent-semester">
+        <i class="fas fa-calendar-alt"></i> Summer term 2023
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/teaching/documents/" class="course-link">Lineare Algebra 2</a>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+        </li>
+        <li class="course-item" data-type="proseminar" data-period="recent">
+          <span class="course-badge proseminar">
+            <i class="fas fa-book-open"></i> Proseminar
+          </span>
+          <a href="/teaching/p-adic-numbers" class="course-link">p-adic numbers</a>
+          <span class="instructors">(Dr. Böckle, C. V. Sriram)</span>
+        </li>
+        <li class="course-item" data-type="hauptseminar" data-period="recent">
+          <span class="course-badge hauptseminar">
+            <i class="fas fa-graduation-cap"></i> Hauptseminar
+          </span>
+          <a href="/assets/uploads/VectorialDrinfeldModForms.pdf" class="course-link">Vectorial Drinfeld modular forms over Tate algebras</a>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Gezmiş)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="semester-group" data-period="recent">
+      <h4 class="semester-title recent-semester">
+        <i class="fas fa-calendar-alt"></i> Winter term 2022/23
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/teaching/documents/" class="course-link">Lineare Algebra 1</a>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+        </li>
+        <li class="course-item" data-type="seminar" data-period="recent">
+          <span class="course-badge seminar">
+            <i class="fas fa-users"></i> Seminar
+          </span>
+          <a href="/teaching/affine-algebraic-groups" class="course-link">Affine Algebraic Groups</a>
+          <span class="instructors">(Prof. Dr. Böckle, C.V. Sriram)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="semester-group" data-period="recent">
+      <h4 class="semester-title recent-semester">
+        <i class="fas fa-calendar-alt"></i> Summer term 2022
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="proseminar" data-period="recent">
+          <span class="course-badge proseminar">
+            <i class="fas fa-book-open"></i> Proseminar
+          </span>
+          <a href="/teaching/prime-numbers-and-cryptography-proseminar" class="course-link">Prime numbers and Cryptography</a>
+          <span class="instructors">(Dr. Banwait, C. V. Sriram)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="semester-group" data-period="recent">
+      <h4 class="semester-title recent-semester">
+        <i class="fas fa-calendar-alt"></i> Winter term 2021/22
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="seminar" data-period="recent">
+          <span class="course-badge seminar">
+            <i class="fas fa-users"></i> Seminar
+          </span>
+          <a href="/teaching/abelian-varieties" class="course-link">Abelian Varieties</a>
+          <span class="instructors">(Dr. Banwait, Prof. Dr. Böckle)</span>
+        </li>
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <span class="course-link">Étale Kohomologie</span>
+          <span class="instructors">(Prof. Dr. Böckle, Chilla, Quast, Sriram)</span>
+        </li>
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/assets/uploads/program_comp_nt.pdf" class="course-link">Computational Number Theory</a>
+          <span class="instructors">(Dr. Banwait)</span>
+        </li>
+        <li class="course-item" data-type="hauptseminar" data-period="recent">
+          <span class="course-badge hauptseminar">
+            <i class="fas fa-graduation-cap"></i> Hauptseminar
+          </span>
+          <span class="course-link">Plectic Stark-Heegner points</span>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Gräf)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="semester-group" data-period="recent">
+      <h4 class="semester-title recent-semester">
+        <i class="fas fa-calendar-alt"></i> Summer term 2021
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="seminar" data-period="recent">
+          <span class="course-badge seminar">
+            <i class="fas fa-users"></i> Seminar
+          </span>
+          <a href="/teaching/derivierte-kategorien" class="course-link">Derivierte Kategorien und Algebraische Geometrie</a>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+        </li>
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/teaching/documents/" class="course-link">Algebraische Geometrie 2</a>
+          <span class="instructors">(Prof. Dr. Böckle, Chilla, Quast)</span>
+        </li>
+        <li class="course-item" data-type="hauptseminar" data-period="recent">
+          <span class="course-badge hauptseminar">
+            <i class="fas fa-graduation-cap"></i> Hauptseminar
+          </span>
+          <span class="course-link">Higher Hida Theory</span>
+          <span class="instructors">(Dr. Gräf, Dr. Ludwig)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="semester-group" data-period="recent">
+      <h4 class="semester-title recent-semester">
+        <i class="fas fa-calendar-alt"></i> Winter term 2020/21
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="seminar" data-period="recent">
+          <span class="course-badge seminar">
+            <i class="fas fa-users"></i> Seminar
+          </span>
+          <a href="/teaching/seminar-elliptische-kurven" class="course-link">Elliptische Kurven</a>
+          <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+        </li>
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/teaching/documents/" class="course-link">Algebraische Geometrie 1</a>
+          <span class="instructors">(Prof. Dr. Böckle, Chilla, Quast)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="semester-group" data-period="recent">
+      <h4 class="semester-title recent-semester">
+        <i class="fas fa-calendar-alt"></i> Summer term 2020
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/teaching/algebra-2" class="course-link">Algebra 2</a>
+          <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+        </li>
+        <li class="course-item" data-type="vorlesung" data-period="recent">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/teaching/adischeraeumeii" class="course-link">Adische Räume II</a>
+          <span class="instructors">(Dr. Ludwig)</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Historical Teaching (2010-2019) - Always Visible -->
+  <div class="teaching-section historical-section">
+    <h3 class="section-title historical-title">
+      <i class="fas fa-history"></i> Historical Teaching (2010-2019)
+    </h3>
+    
+    <div class="historical-content">
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Winter term 2019/20
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/documents/" class="course-link">Algebra 1</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-affine-algebraische-gruppen" class="course-link">Affine algebraische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <span class="course-link">Arithmetik von Zahl- und Funktionenkörpern</span>
+            <span class="instructors">(Prof. Dr. Böckle)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Summer term 2019
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-bilinearformen-und-klassische-gruppen" class="course-link">Bilinearformen und klassische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/kompatible-systeme-von-galoisdarstellungen" class="course-link">Kompatible Systeme von Galoisdarstellungen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Conti)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/p-divisible-gruppen" class="course-link">p-divisible Gruppen</a>
+            <span class="instructors">(Dr. Ludwig)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_SoSe19.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Winter term 2018/19
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/assets/uploads/Programm_GL2_WS1819.pdf" class="course-link">Darstellungstheorie von GL_2</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-algorithmische-algebra" class="course-link">Algorithmische Algebra</a>
+            <span class="instructors">(Dr. Maurischat)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/galoiskohomologie" class="course-link">Galoiskohomologie und Galoisdarstellungen</a>
+            <span class="instructors">(Prof. Dr. Böckle)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/funktionentheorie-2" class="course-link">Funktionentheorie 2</a>
+            <span class="instructors">(Dr. Maurischat, Quast)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/WS1819_lokale_G-shtukas.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Summer term 2018
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-primzahlen-und-faktorisierung" class="course-link">Primzahlen und Faktorisierung</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/algebra-2" class="course-link">Algebra 2</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-lubin-tate-theorie" class="course-link">Lubin-Tate Theorie</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_SoSe18.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Winter term 2017/18
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-bilinearformen-und-klassische-gruppen" class="course-link">Bilinearformen und klassische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/ag1-ws2012" class="course-link">Algebra 1</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-affine-algebraische-gruppen" class="course-link">Affine algebraische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_WS1718.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Summer term 2017
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-primzahlen-und-faktorisierung" class="course-link">Primzahlen und Faktorisierung</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/algebra-2" class="course-link">Algebra 2</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-lubin-tate-theorie" class="course-link">Lubin-Tate Theorie</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_SoSe17.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Winter term 2016/17
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-bilinearformen-und-klassische-gruppen" class="course-link">Bilinearformen und klassische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/ag1-ws2012" class="course-link">Algebra 1</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-affine-algebraische-gruppen" class="course-link">Affine algebraische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_WS1617.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Summer term 2016
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-primzahlen-und-faktorisierung" class="course-link">Primzahlen und Faktorisierung</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/algebra-2" class="course-link">Algebra 2</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-lubin-tate-theorie" class="course-link">Lubin-Tate Theorie</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_SoSe16.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Winter term 2015/16
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-bilinearformen-und-klassische-gruppen" class="course-link">Bilinearformen und klassische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/ag1-ws2012" class="course-link">Algebra 1</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-affine-algebraische-gruppen" class="course-link">Affine algebraische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_WS1516.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Summer term 2015
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-primzahlen-und-faktorisierung" class="course-link">Primzahlen und Faktorisierung</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/algebra-2" class="course-link">Algebra 2</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-lubin-tate-theorie" class="course-link">Lubin-Tate Theorie</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_SoSe15.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Winter term 2014/15
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-bilinearformen-und-klassische-gruppen" class="course-link">Bilinearformen und klassische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/ag1-ws2012" class="course-link">Algebra 1</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-affine-algebraische-gruppen" class="course-link">Affine algebraische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_WS1415.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Summer term 2014
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-primzahlen-und-faktorisierung" class="course-link">Primzahlen und Faktorisierung</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/algebra-2" class="course-link">Algebra 2</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-lubin-tate-theorie" class="course-link">Lubin-Tate Theorie</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_SoSe14.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Winter term 2013/14
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-bilinearformen-und-klassische-gruppen" class="course-link">Bilinearformen und klassische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/ag1-ws2012" class="course-link">Algebra 1</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-affine-algebraische-gruppen" class="course-link">Affine algebraische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_WS1314.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Summer term 2013
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-primzahlen-und-faktorisierung" class="course-link">Primzahlen und Faktorisierung</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/algebra-2" class="course-link">Algebra 2</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-lubin-tate-theorie" class="course-link">Lubin-Tate Theorie</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_SoSe13.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Winter term 2012/13
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-bilinearformen-und-klassische-gruppen" class="course-link">Bilinearformen und klassische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/ag1-ws2012" class="course-link">Algebra 1</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-affine-algebraische-gruppen" class="course-link">Affine algebraische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_WS1213.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Summer term 2012
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-primzahlen-und-faktorisierung" class="course-link">Primzahlen und Faktorisierung</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/algebra-2" class="course-link">Algebra 2</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-lubin-tate-theorie" class="course-link">Lubin-Tate Theorie</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_SoSe12.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Winter term 2011/12
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-bilinearformen-und-klassische-gruppen" class="course-link">Bilinearformen und klassische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/ag1-ws2012" class="course-link">Algebra 1</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-affine-algebraische-gruppen" class="course-link">Affine algebraische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_WS1112.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Summer term 2011
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-primzahlen-und-faktorisierung" class="course-link">Primzahlen und Faktorisierung</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/algebra-2" class="course-link">Algebra 2</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-lubin-tate-theorie" class="course-link">Lubin-Tate Theorie</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_SoSe11.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="semester-group" data-period="historical">
+        <h4 class="semester-title historical-semester">
+          <i class="fas fa-calendar-alt"></i> Winter term 2010/11
+        </h4>
+        <ul class="course-list">
+          <li class="course-item" data-type="proseminar" data-period="historical">
+            <span class="course-badge proseminar">
+              <i class="fas fa-book-open"></i> Proseminar
+            </span>
+            <a href="/teaching/proseminar-bilinearformen-und-klassische-gruppen" class="course-link">Bilinearformen und klassische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="vorlesung" data-period="historical">
+            <span class="course-badge vorlesung">
+              <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+            </span>
+            <a href="/teaching/ag1-ws2012" class="course-link">Algebra 1</a>
+            <span class="instructors">(Dr. Fischer)</span>
+          </li>
+          <li class="course-item" data-type="seminar" data-period="historical">
+            <span class="course-badge seminar">
+              <i class="fas fa-users"></i> Seminar
+            </span>
+            <a href="/teaching/seminar-affine-algebraische-gruppen" class="course-link">Affine algebraische Gruppen</a>
+            <span class="instructors">(Prof. Dr. Böckle, Quast)</span>
+          </li>
+          <li class="course-item" data-type="hauptseminar" data-period="historical">
+            <span class="course-badge hauptseminar">
+              <i class="fas fa-graduation-cap"></i> Hauptseminar
+            </span>
+            <a href="/assets/uploads/Programm_la-courbe_WS1011.pdf" class="course-link">Arithmetik von Zahl- und Funktionenkörpern</a>
+            <span class="instructors">(Prof. Dr. Böckle, Dr. Ludwig)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="historical-note">
+        <p><i class="fas fa-info-circle"></i> Complete historical record from 2010-2019. Use the filters above to search for specific courses or time periods.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="teaching-footer">
+    <div class="footer-content">
+      <div class="contact-info">
+        <h3><i class="fas fa-envelope"></i> Contact Information</h3>
+        <p><strong>For course inquiries:</strong> <a href="mailto:boeckle@mathi.uni-heidelberg.de">boeckle@mathi.uni-heidelberg.de</a></p>
+        <p><strong>Office hours:</strong> By appointment</p>
+        <p><strong>Location:</strong> Mathematisches Institut, Heidelberg University</p>
+      </div>
+      <div class="last-update">
+        <p><i class="fas fa-clock"></i> Last updated: January 2025</p>
+      </div>
+    </div>
   </div>
 </div>
 
-## Current and Recent Teaching
+<!-- Enhanced CSS and JavaScript -->
+<style>
+.teaching-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
-### Summer term 2025
+/* Header Styles */
+.teaching-header {
+  background: var(--bg-secondary);
+  border-bottom: 3px solid var(--heidelberg-red);
+  padding: 2rem 0;
+  margin: -2rem -2rem 2rem -2rem;
+  border-radius: 0 0 15px 15px;
+}
 
-* <span class="course-type seminar">📚 Seminar</span> on "[Homological Algebra](/members/giacomo-hermes-ferraro/homological-algebra-seminar)" (Prof. Dr. Böckle, Dr. Ferraro)
+.teaching-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
+}
 
-### Winter term 2024/25
+.teaching-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
 
-* Seminar on "[Commutative Algebra](/assets/uploads/comm_alg_announcement.pdf)" (Prof. Dr. Böckle, Dr. Conti)
-* Vorlesung "[Modularity and Galois Representations](/members/alireza-shavali/modularity-and-galois-representations)" (Prof. Dr. Böckle, Shavali)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "[Congruence Modules and the Wiles–Lenstra–Diamond Numerical Criterion in Higher Codimension](/assets/uploads/GAUS-AG-WiSe2024-25-IKM-2024-12-11.pdf)" (Prof. Dr. Böckle, Dr. Andrea Conti)
+.teaching-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
 
-### Summer term 2024
+/* Filter Controls */
+.filter-controls {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
 
-* Seminar on "[Representation theory of finite groups](/members/oguz-gezmis/seminar-on-representation-theory-of-finite-groups-summer-semester-2024)" (Prof. Dr. Böckle, Chilla, Dr. Gezmiş)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "[Shtukas for reductive groups and global Langlands correspondence after Vincent Lafforgue](/assets/uploads/Seminar.pdf)" (Prof. Dr. Böckle, Dr. Gezmiş, Shavali, C.V. Sriram)
-* Vorlesung "[Algebra 2](/teaching/documents/)" (Prof. Dr. Böckle, Shavali)
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-### Winter term 2023/24
+.filter-group label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+}
 
-* Proseminar on "[Quadratic forms](/members/sriramcv/quadratic-forms)" (Prof. Dr. Böckle, C.V. Sriram)
-* Vorlesung "[Algebra 1](/teaching/documents/)" (Prof. Dr. Böckle, Shavali)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "[Rigid meromorphic cocycles](/assets/uploads/RMCprogram_01.pdf)" (Prof. Dr. Böckle, Dr. Gezmiş, Dr. Ludwig)
+.filter-select, .filter-input {
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: white;
+  transition: all 0.2s ease;
+}
 
-### Summer term 2023
+.filter-select:focus, .filter-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
 
-* Vorlesung "[Lineare Algebra 2](/teaching/documents/)" (Prof. Dr. Böckle, Dr. Ludwig)
-* Proseminar "[p-adic numbers](/members/sriramcv/p-adic-numbers)" (Dr. Böckle, C. V. Sriram)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "[Vectorial Drinfeld modular forms over Tate algebras](/assets/uploads/VectorialDrinfeldModForms.pdf)" (Prof. Dr. Böckle, Dr. Gezmiş)
+/* Section Styles */
+.teaching-section {
+  margin-bottom: 3rem;
+}
 
-### Winter term 2022/23
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 3px solid;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
 
-* Vorlesung "[Lineare Algebra 1](/teaching/documents/)" (Prof. Dr. Böckle, Dr. Ludwig)
-* Seminar on "[Affine Algebraic Groups](/members/sriramcv/affine-algebraic-groups)" (Prof. Dr. Böckle, C.V. Sriram)
+.section-title i {
+  font-size: 1.2rem;
+}
 
-### Summer term 2022
+.current-title {
+  color: #28a745;
+  border-bottom-color: #28a745;
+}
 
-* Proseminar "[Prime numbers and Cryptography](/members/barinder-banwait/prime-numbers-and-cryptography-proseminar)" (Dr. Banwait, C. V. Sriram)
+.recent-title {
+  color: #17a2b8;
+  border-bottom-color: #17a2b8;
+}
 
-### Winter term 2021/22
+.historical-title {
+  color: #6c757d;
+  border-bottom-color: #6c757d;
+}
 
-* Seminar "[Abelian Varieties](/members/barinder-banwait/abelian-varieties)" (Dr. Banwait, Prof. Dr. Böckle)
-* Vorlesung "Étale Kohomologie" (Prof. Dr. Böckle, Chilla, Quast, Sriram)
-* Vorlesung "[Computational Number Theory](/assets/uploads/program_comp_nt.pdf)" (Dr. Banwait)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "Plectic Stark-Heegner points" (Prof. Dr. Böckle, Dr. Gräf)
+/* Semester Groups */
+.semester-group {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
 
-### Summer term 2021
+.semester-group:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
 
-* Seminar "[Derivierte Kategorien und Algebraische Geometrie](/members/judith-ludwig/derivierte-kategorien)" (Prof. Dr. Böckle, Dr. Ludwig)
-* Vorlesung "[Algebraische Geometrie 2](/teaching/documents/)" (Prof. Dr. Böckle, Chilla, Quast)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "Higher Hida Theory" (Dr. Gräf, Dr. Ludwig)
+.semester-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 2px solid;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-### Winter term 2020/21
+.current-semester {
+  color: #28a745;
+  border-bottom-color: #28a745;
+}
 
-* Seminar "[Elliptische Kurven](/members/judith-ludwig/seminar-elliptische-kurven)" (Prof. Dr. Böckle, Dr. Ludwig)
-* Vorlesung "[Algebraische Geometrie 1](/teaching/documents/)" (Prof. Dr. Böckle, Chilla, Quast)
+.recent-semester {
+  color: #17a2b8;
+  border-bottom-color: #17a2b8;
+}
 
-### Summer term 2020
+.historical-semester {
+  color: #6c757d;
+  border-bottom-color: #6c757d;
+}
 
-* Vorlesung "[Algebra 2](/members/julian-quast/)" (Prof. Dr. Böckle, Quast)
-* Vorlesung "[Adische Räume II](/members/judith-ludwig/adischeraeumeii)" (Dr. Ludwig)
+/* Course Lists */
+.course-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-### Winter term 2019/20
+.course-item {
+  background: #f8f9fa;
+  margin: 0.75rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
 
-* Vorlesung "[Algebra 1](/teaching/documents/)" (Prof. Dr. Böckle, Dr. Ludwig)
-* Seminar "[Affine algebraische Gruppen](/members/julian-quast/seminar-affine-algebraische-gruppen)" (Prof. Dr. Böckle, Quast)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern (Prof. Dr. Böckle)
+.course-item:hover {
+  background: #e3f2fd;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
 
-### Summer term 2019
+.course-item:nth-child(1) { animation-delay: 0.1s; }
+.course-item:nth-child(2) { animation-delay: 0.2s; }
+.course-item:nth-child(3) { animation-delay: 0.3s; }
+.course-item:nth-child(4) { animation-delay: 0.4s; }
 
-* Proseminar "[Bilinearformen und klassische Gruppen](/members/julian-quast/proseminar-bilinearformen-und-klassische-gruppen)" (Prof. Dr. Böckle, Quast)
-* Vorlesung "[Kompatible Systeme von Galoisdarstellungen](/members/gebhard-boeckle/kompatible-systeme-von-galoisdarstellungen)" (Prof. Dr. Böckle, Dr. Conti)
-* Vorlesung "[p-divisible Gruppen](/members/judith-ludwig/p-divisible-gruppen)" (Dr. Ludwig)
-* Hauptseminar "[Arithmetik von Zahl- und Funktionenkörpern](/assets/uploads/Programm_la-courbe_SoSe19.pdf)" (Prof. Dr. Böckle, Dr. Ludwig)
+.course-item.hidden {
+  display: none;
+}
 
-### Winter term 2018/19
+/* Course Badges */
+.course-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
-* Seminar "[Darstellungstheorie von GL_2](/assets/uploads/Programm_GL2_WS1819.pdf)" (Prof. Dr. Böckle, Dr. Ludwig)
-* Seminar "[Algorithmische Algebra](/members/andreas-maurischat/seminar-algorithmische-algebra)" (Dr. Maurischat)
-* Vorlesung "[Galoiskohomologie und Galoisdarstellungen](/members/gebhard-boeckle/galoiskohomologie)" (Prof. Dr. Böckle)
-* Vorlesung "[Funktionentheorie 2](/members/julian-quast/funktionentheorie-2)" (Dr. Maurischat, Quast)
-* Hauptseminar "[Arithmetik von Zahl- und Funktionenkörpern](/assets/uploads/WS1819_lokale_G-shtukas.pdf)" (Prof. Dr. Böckle, Dr. Ludwig)
+.course-badge:hover {
+  transform: scale(1.05);
+}
 
-### Summer term 2018
+.course-badge.seminar {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+  color: #27ae60;
+  border: 1px solid #a5d6a7;
+}
 
-* Seminar "[Lokale Klassenkörpertheorie nach Lubin-Tate](/members/konrad-fischer/seminar-lubin-tate-theorie)" (Prof. Dr. Böckle, Fischer)
-* Vorlesung "[Algebraische Zahlentheorie 2](/members/gebhard-boeckle/algebraische-zahlentheorie-2)" (Prof. Dr. Böckle, Dr. Conti)
-* Vorlesung "[Galois representations and their deformations](/members/andrea-conti/galois-representations-and-their-deformations)" (Dr. Conti)
-* Hauptseminar "[Arithmetik von Zahl- und Funktionenkörpern](/members/andreas-maurischat/hauptseminar-ss2018)" (Prof. Dr. Böckle, Dr. Maurischat, Gazda)
+.course-badge.vorlesung {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  color: #1976d2;
+  border: 1px solid #90caf9;
+}
 
-### Winter term 2017/18
+.course-badge.proseminar {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 100%);
+  color: #f57c00;
+  border: 1px solid #ffb74d;
+}
 
-* Vorlesung "[Algebraische Zahlentheorie 1](/members/david-guiraud/algebraische-zahlentheorie-1)" (Prof. Dr. Böckle, Dr. Guiraud)
-* Seminar "[Gruppenkohomologie](/members/konrad-fischer/seminar-gruppenkohomologie)" (Prof. Dr. Böckle, Fischer)
-* Hauptseminar "[Arithmetik von Zahl- und Funktionenkörpern](/members/david-guiraud/)" (Prof. Dr. Böckle, Dr. Guiraud)
+.course-badge.hauptseminar {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+  color: #c2185b;
+  border: 1px solid #f48fb1;
+}
 
-### Summer term 2017
+/* Course Links */
+.course-link {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 500;
+  flex: 1;
+  min-width: 200px;
+  transition: color 0.2s ease;
+}
 
-* Vorlesung "[Algebra 2](/members/konrad-fischer/algebra-2)" (Dr. Malte Witte, K. Fischer)
+.course-link:hover {
+  color: #1f5f8b;
+  text-decoration: underline;
+}
 
-### Winter term 2016/17
+.instructors {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-style: italic;
+  white-space: nowrap;
+}
 
-* Proseminar "Primzahlen und Faktorisierung für die Kryptographie" (Prof. Dr. Böckle, Fischer), [Seminardetails](/members/konrad-fischer/proseminar-primzahlen-und-faktorisierung)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "Surveys on some conjectures", [Themenliste](/teaching/documents/)
+/* Historical Content - Always Visible */
+.historical-content {
+  /* Remove max-height and overflow restrictions */
+}
 
-### Summer term 2016
+.historical-note {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  color: #856404;
+}
 
-* Vorlesung "[Lineare Algebra 2](https://www.iwr.uni-heidelberg.de/)" (Prof. Dr. Böckle), [Modulbeschreibung (PDF)](https://www.iwr.uni-heidelberg.de/)
-* Proseminar "p-adische Analysis" (Prof. Dr. Böckle, Gräf), [Seminardetails](/members/peter-graef/proseminar)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "p-adic Uniformization" (Prof. Dr. Böckle, Dr. Guiraud, Fischer, Gräf), [Seminardetails](/members/konrad-fischer/p-adic-uniformization-ss16)
+.historical-note p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-### Winter term 2015/16
+/* Footer */
+.teaching-footer {
+  background: #f8f9fa;
+  border-top: 3px solid #667eea;
+  margin: 3rem -2rem -2rem -2rem;
+  padding: 2rem;
+  border-radius: 15px 15px 0 0;
+}
 
-* Vorlesung "[Lineare Algebra 1](https://www.iwr.uni-heidelberg.de/)" (Prof. Dr. Böckle), [Modulbeschreibung (PDF)](https://www.iwr.uni-heidelberg.de/)
-* Seminar "Modularity and Patching" (Prof. Dr. Böckle, Fischer, Gräf), [Seminardetails](/assets/uploads/Ankuendigung-Modularity.pdf)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "Hodge-Pink structures" (Prof. Dr. Böckle, Dr. Perkins, Dr. Juan Cervino)
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
 
-### Summer term 2015
+.contact-info h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-* Vorlesung "[Bruhat-Tits Gebäude](https://lsf.uni-heidelberg.de/)" (Prof. Dr. Böckle), [Modulbeschreibung](/assets/uploads/Bruhat-Tits.pdf)
-* Seminar "[Darstellungstheorie](https://lsf.uni-heidelberg.de/)" (Prof. Dr. Böckle, Qiu), [Seminardetails](/members/yujia-qiu/dar-ss2015)
-* Vorlesung "[Darstellungen und Invarianten 2](https://lsf.uni-heidelberg.de/)" (Dr. Cerviño), [Modulbeschreibung](/assets/uploads/DarstellungenUndInvarianten_II_SS2015.pdf)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "[Lenny Taelman´s body of work on Drinfeld modules](/assets/uploads/Lenny_Taelman_s_body_of_work_on_Drinfeld_modules.pdf)" (Prof. Dr. Böckle, Dr. Perkins, Dr. Hubschmid)
+.contact-info p {
+  margin: 0.5rem 0;
+  color: #555;
+}
 
-### Winter term 2014/15
+.contact-info a {
+  color: #3498db;
+  text-decoration: none;
+}
 
-* Vorlesung "[Automorphe Formen](https://lsf.uni-heidelberg.de/)" (Prof. Dr. Böckle), [Modulbeschreibung](/assets/uploads/Modulbeschreibung-AutomorpheFormen.pdf)
-* Seminar "[Klassenkörpertheorie über Funktionenkörpern und Drinfeld Moduln](https://lsf.uni-heidelberg.de/)" (Prof. Dr. Böckle, Qiu), [Seminardetails](/members/yujia-qiu/dm-ws2014)
-* Vorlesung "[Darstellungen und Invarianten](https://jmcrv.org/?page_id=253)" (Dr. Cerviño), [Modulbeschreibung](/assets/uploads/DarstellungenUndInvarianten_WS201415.pdf)
-* Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "[Recent results towards the BSD conjecture for elliptic curves over Q](/assets/uploads/WS201415_RecentBSD.pdf)" (Prof. Dr. Böckle, Dr. Cerviño, Dr. Hubschmid)
+.contact-info a:hover {
+  text-decoration: underline;
+}
 
-### Summer term 2014
+.last-update {
+  text-align: right;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
 
-* Seminar "[p-adische Geometrie](/members/ann-kristin-juschka/seminar-ss2014)" (Prof. Dr. Böckle, Juschka, Qiu)
-* Vorlesung "[Algebraische Gruppen](https://lsf.uni-heidelberg.de/)" (Prof. Dr. Böckle)
-* Spezialvorlesung "[Abelsche Varietäten II](https://lsf.uni-heidelberg.de/)" (Prof. Dr. Böckle, Dr. Centeleghe)
-* Hauptseminar "[Arithmetik von Zahl- und Funktionenkörpern: "Shimura Varieties"](https://lsf.uni-heidelberg.de/)" (Prof. Dr. Böckle, Dr. Cerviño, Fischer)
+.last-update p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
 
-### Winter term 2013/14
+/* Responsive Design */
+@media (max-width: 768px) {
+  .teaching-intro h2 {
+    font-size: 2rem;
+  }
+  
+  .filter-controls {
+    grid-template-columns: 1fr;
+  }
+  
+  .course-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .course-badge {
+    align-self: flex-start;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .last-update {
+    text-align: center;
+  }
+  
+  .last-update p {
+    justify-content: center;
+  }
+}
 
-* Étale Kohomologie (Prof. Dr. Böckle)
-* Seminar "[Deformationen von (Pseudo-)Darstellungen](/members/ann-kristin-juschka/seminar-ws2013)" (Prof. Dr. Böckle, Juschka)
-* Abelsche Varietäten I (Prof. Dr. Böckle, Dr. Tommaso Centeleghe)
-* Arithmetik von Zahl- und Funktionenkörpern: "[Modularity Lifting](/members/konrad-fischer/mls-ws13)" (Prof. Dr. Böckle, Dr. Cerviño, Fischer)
+@media (max-width: 480px) {
+  .course-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .course-link {
+    min-width: auto;
+  }
+}
 
-### Summer term 2013
+/* Animation for course items */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-* [Algebraische Geometrie 2](https://www.iwr.uni-heidelberg.de/) (Prof. Dr. Böckle)
-* Seminar "[Torische Varietäten](/members/konrad-fischer/toric-ss13)" (Prof. Dr. Böckle)
-* Seminar "[Trianguline Representations](https://www.iwr.uni-heidelberg.de/)" (Prof. Dr. Böckle)
-* [Group cohomology](https://www.iwr.uni-heidelberg.de/) (Dr. Cerviño)
-* Exercise sessions for "[Lineare Algebra 2](https://www.iwr.uni-heidelberg.de/)" (Dr. Maurischat)
+/* Hidden class for filtering */
+.semester-group.hidden {
+  display: none;
+}
+</style>
 
-### Winter term 2012/2013
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Filtering functionality
+  const courseTypeFilter = document.getElementById('courseTypeFilter');
+  const timeFilter = document.getElementById('timeFilter');
+  const searchFilter = document.getElementById('searchFilter');
+  const courseItems = document.querySelectorAll('.course-item');
+  const semesterGroups = document.querySelectorAll('.semester-group');
 
-* [Algebraische Geometrie 1](/members/konrad-fischer/ag1-ws2012) (Prof. Dr. Böckle)
-* Seminar "[Affine algebraische Gruppen](/assets/uploads/AffineAlgebraischeGruppen_WS2012-13_Programm.pdf)" (Prof. Dr. Böckle, Dr. Cerviño)
-* Exercise sessions for "[Lineare Algebra 1](https://www.iwr.uni-heidelberg.de/)" (Dr. Maurischat)
-* Exercise sessions for "[Analytic number theory](/members/yujia-qiu/az1-ws2012)" (Qiu)
-* Seminar "[Transcendence theory in positive characteristic](/assets/uploads/WS1213_TranscendencePosChar.pdf)" (Prof. Dr. Böckle, Dr. Hubschmid)
+  function applyFilters() {
+    const selectedType = courseTypeFilter.value;
+    const selectedPeriod = timeFilter.value;
+    const searchTerm = searchFilter.value.toLowerCase();
 
-### Summer term 2012
+    courseItems.forEach(item => {
+      const type = item.dataset.type;
+      const period = item.dataset.period;
+      const title = item.querySelector('.course-link').textContent.toLowerCase();
+      
+      const typeMatch = selectedType === 'all' || type === selectedType;
+      const periodMatch = selectedPeriod === 'all' || period === selectedPeriod;
+      const searchMatch = searchTerm === '' || title.includes(searchTerm);
+      
+      if (typeMatch && periodMatch && searchMatch) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
 
-* [Algebra 2](https://www.ub.uni-heidelberg.de/) (Dr. Cerviño)
-* Exercise sessions for "[Computeralgebra](https://www.iwr.uni-heidelberg.de/)" (Dr. Maurischat)
-* Seminar "[Automorphic Forms and representations of GL2](/assets/uploads/AutomorphicFormsAndRepresentationsForGL2_CentelegheCervinoChekaru.pdf)" (Dr. Cerviño, Dr. Centeleghe)
+    // Hide empty semester groups
+    semesterGroups.forEach(group => {
+      const visibleItems = group.querySelectorAll('.course-item:not(.hidden)');
+      if (visibleItems.length === 0) {
+        group.classList.add('hidden');
+      } else {
+        group.classList.remove('hidden');
+      }
+    });
+  }
 
-### Winter term 2011/12
+  // Event listeners for filters
+  courseTypeFilter.addEventListener('change', applyFilters);
+  timeFilter.addEventListener('change', applyFilters);
+  searchFilter.addEventListener('input', applyFilters);
 
-* [Algebra 1](https://www.iwr.uni-heidelberg.de/) (Prof. Dr. Böckle)
-* [Proseminar "Bilinear forms and classical groups"](https://www.iwr.uni-heidelberg.de/) (Prof. Dr. Böckle, Dr. Maurischat)
-* Seminar "[Borcherds Products](/assets/uploads/BorcherdsProducts_SeminarProgram_WS2011-12_G3.pdf)" (Prof. Dr. Böckle, Dr. Cerviño)
-* Seminar "[Ikeda-Lift](/assets/uploads/Seminarprogramm_IkedaLift_WS2011-12_BouganisCervinoKasten.pdf)" (Dr. Bouganis, Dr. Cerviño, Dr. Kasten)
-
-### Summer term 2011
-
-* [Linear Algebra 2](https://www.ub.uni-heidelberg.de/) (Prof. Dr. Böckle)
-* [Quadratic Forms](/assets/uploads/qF_Programm_SS2011.pdf) (Dr. Cerviño)
-* [Proseminar "Fuchsian groups"](https://www.ub.uni-heidelberg.de/) (Prof. Dr. Böckle, Dr. Maurischat)
-* [Seminar "L-functions after V. Lafforgue"](https://www.ub.uni-heidelberg.de/) (Prof. Dr. Böckle, Dr. Maurischat)
-* Exercise sessions for "[Elementary number theory](https://www.iwr.uni-heidelberg.de/)" (Ralf Butenuth)
-
-### Winter term 2010/11
-
-* [Linear Algebra 1](https://www.ub.uni-heidelberg.de/) (Prof. Dr. Böckle)
-* [Algebraic groups and buildings](https://www.ub.uni-heidelberg.de/) (Prof. Dr. Böckle, Dr. Cerviño)
-* [Seminar "Hecke operators and their algorithmic"](https://www.ub.uni-heidelberg.de/) (Prof. Dr. Böckle, Dr. Centeleghe)
-* Exercise sessions for "[Introduction to elementary geometry](https://www.iwr.uni-heidelberg.de/)" (Ralf Butenuth)
-
-## [Past teaching at the University Duisburg-Essen](/teaching/past-teaching)
-
----
-
-<div class="teaching-footer">
-  <div class="footer-content">
-    <div class="contact-info">
-      <h3>Contact Information</h3>
-      <p><strong>Email:</strong> <a href="mailto:arithgeo@iwr.uni-heidelberg.de">arithgeo@iwr.uni-heidelberg.de</a></p>
-      <p><strong>Office:</strong> Room 3.414, INF205, Heidelberg University</p>
-    </div>
-    <div class="last-update">
-      <p><strong>Last Update:</strong> 02.08.2025 - 14:39</p>
-    </div>
-  </div>
-</div>
+  // Add smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+});
+</script>
