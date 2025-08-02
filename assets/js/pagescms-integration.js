@@ -7,13 +7,50 @@
   // Pages CMS Configuration
   const PAGESCMS_CONFIG = {
     enabled: true,
-    autoRefresh: true,
+    autoRefresh: false, // Disabled by default to avoid unnecessary requests
     refreshInterval: 300000, // 5 minutes
     showSyncStatus: true,
     officialUrl: 'https://app.pagescms.org/',
-    repoUrl: window.location.origin + window.location.pathname.replace(/\/$/, ''),
-    branch: 'main' // Default branch, can be overridden
+    repoUrl: getRepoUrl(),
+    branch: getBranch()
   };
+  
+  // Get repository URL from meta tags or current location
+  function getRepoUrl() {
+    // Try to get from meta tag first
+    const metaRepo = document.querySelector('meta[name="repository-url"]');
+    if (metaRepo && metaRepo.content) {
+      return metaRepo.content;
+    }
+    
+    // Try to get from GitHub Pages URL
+    const hostname = window.location.hostname;
+    if (hostname.includes('github.io')) {
+      const pathParts = window.location.pathname.split('/').filter(Boolean);
+      if (pathParts.length >= 2) {
+        return `https://github.com/${pathParts[0]}/${pathParts[1]}`;
+      }
+    }
+    
+    // Fallback to current origin
+    return window.location.origin;
+  }
+  
+  // Get branch from meta tags or default to main
+  function getBranch() {
+    const metaBranch = document.querySelector('meta[name="repository-branch"]');
+    if (metaBranch && metaBranch.content) {
+      return metaBranch.content;
+    }
+    
+    // Try to detect from URL path
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    if (pathParts.length > 2 && pathParts[2] !== 'assets' && pathParts[2] !== '_site') {
+      return pathParts[2];
+    }
+    
+    return 'main';
+  }
   
   // Initialize Pages CMS integration
   function initPagesCMS() {
@@ -22,12 +59,7 @@
       return;
     }
     
-    console.log('Initializing Pages CMS integration...');
-    
-    // Set up auto-refresh if enabled
-    if (PAGESCMS_CONFIG.autoRefresh) {
-      setupAutoRefresh();
-    }
+    console.log('Initializing Pages CMS integration...', PAGESCMS_CONFIG);
     
     // Set up sync status indicator
     if (PAGESCMS_CONFIG.showSyncStatus) {
@@ -36,24 +68,18 @@
     
     // Listen for Pages CMS events
     setupEventListeners();
-  }
-  
-  // Set up auto-refresh
-  function setupAutoRefresh() {
-    setInterval(() => {
-      refreshContent();
-    }, PAGESCMS_CONFIG.refreshInterval);
     
-    // Refresh on page visibility change
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) {
-        refreshContent();
-      }
-    });
+    // Show initial status
+    showSyncStatus('Pages CMS ready', 'success');
   }
   
   // Set up sync status indicator
   function setupSyncStatus() {
+    // Check if status indicator already exists
+    if (document.getElementById('pagescms-status')) {
+      return;
+    }
+    
     const statusIndicator = document.createElement('div');
     statusIndicator.id = 'pagescms-status';
     statusIndicator.style.cssText = `
@@ -67,6 +93,8 @@
       font-size: 12px;
       z-index: 1000;
       display: none;
+      max-width: 300px;
+      word-wrap: break-word;
     `;
     document.body.appendChild(statusIndicator);
   }
@@ -119,8 +147,6 @@
   
   // Refresh content from Pages CMS
   function refreshContent() {
-    // This would typically be handled by the Pages CMS system
-    // We just show a status message for now
     showSyncStatus('Checking for updates...', 'info');
     
     // Simulate content refresh
@@ -144,8 +170,8 @@
       case 'research':
         updateResearch(data);
         break;
-      case 'resources':
-        updateResources(data);
+      case 'links':
+        updateLinks(data);
         break;
       case 'teaching':
         updateTeaching(data);
@@ -157,7 +183,7 @@
   
   // Update members content
   function updateMembers(data) {
-    const membersContainer = document.querySelector('.team-grid, .members-list');
+    const membersContainer = document.querySelector('.team-grid, .members-list, .team-members');
     if (!membersContainer || !data || !Array.isArray(data)) return;
     
     // Sort members by order if available
@@ -167,7 +193,7 @@
       <div class="team-member-card">
         ${member.photo ? 
           `<img src="${member.photo}" alt="Photo of ${member.name}" class="team-member-photo">` :
-          `<img src="/assets/img/placeholder.jpg" alt="Placeholder photo for ${member.name}" class="team-member-photo">`
+          `<img src="/assets/img/team_placeholder.svg" alt="Placeholder photo for ${member.name}" class="team-member-photo">`
         }
         <div class="team-member-info">
           <h3 class="team-member-name">${escapeHtml(member.name)}</h3>
@@ -187,16 +213,15 @@
   
   // Update publications content
   function updatePublications(data) {
-    const publicationsContainer = document.querySelector('.publications-list, .papers-list');
+    const publicationsContainer = document.querySelector('.publications-list, .papers-list, .publications');
     if (!publicationsContainer || !data || !Array.isArray(data)) return;
     
     const publicationsHTML = data.map(pub => `
       <div class="publication-item">
         <h3 class="publication-title">${escapeHtml(pub.title)}</h3>
         <p class="publication-authors">${escapeHtml(pub.authors)}</p>
-        <p class="publication-journal">${escapeHtml(pub.publication_details)} (${pub.year})</p>
+        <p class="publication-journal">${escapeHtml(pub.publication_details || pub.journal || '')} (${pub.year})</p>
         ${pub.abstract ? `<p class="publication-abstract">${pub.abstract}</p>` : ''}
-        ${pub.file ? `<a href="${pub.file}" class="publication-link" target="_blank">View PDF</a>` : ''}
         ${pub.doi ? `<a href="https://doi.org/${pub.doi}" class="publication-link" target="_blank">DOI</a>` : ''}
       </div>
     `).join('');
@@ -206,7 +231,7 @@
   
   // Update news content
   function updateNews(data) {
-    const newsContainer = document.querySelector('.news-list, .posts-list');
+    const newsContainer = document.querySelector('.news-list, .posts-list, .news');
     if (!newsContainer || !data || !Array.isArray(data)) return;
     
     const newsHTML = data.map(item => `
@@ -221,7 +246,7 @@
   
   // Update research content
   function updateResearch(data) {
-    const researchContainer = document.querySelector('.research-list, .topics-list');
+    const researchContainer = document.querySelector('.research-list, .topics-list, .research');
     if (!researchContainer || !data || !Array.isArray(data)) return;
     
     const researchHTML = data.map(item => `
@@ -234,26 +259,25 @@
     researchContainer.innerHTML = researchHTML;
   }
   
-  // Update resources content
-  function updateResources(data) {
-    const resourcesContainer = document.querySelector('.resources-list');
-    if (!resourcesContainer || !data || !Array.isArray(data)) return;
+  // Update links content
+  function updateLinks(data) {
+    const linksContainer = document.querySelector('.links-list, .resources-list');
+    if (!linksContainer || !data || !Array.isArray(data)) return;
     
-    const resourcesHTML = data.map(item => `
-      <div class="resource-item">
-        <h3 class="resource-title">${escapeHtml(item.title)}</h3>
-        <p class="resource-description">${escapeHtml(item.description)}</p>
-        ${item.author ? `<p class="resource-author">Author: ${escapeHtml(item.author)}</p>` : ''}
-        ${item.files ? `<div class="resource-files">${item.files.map(file => `<a href="${file}" class="resource-link" target="_blank">Download</a>`).join('')}</div>` : ''}
+    const linksHTML = data.map(item => `
+      <div class="link-item">
+        <h3 class="link-title">${escapeHtml(item.title)}</h3>
+        <p class="link-description">${escapeHtml(item.description || '')}</p>
+        <a href="${item.url}" class="link-url" target="_blank" rel="noopener noreferrer">Visit Link</a>
       </div>
     `).join('');
     
-    resourcesContainer.innerHTML = resourcesHTML;
+    linksContainer.innerHTML = linksHTML;
   }
   
   // Update teaching content
   function updateTeaching(data) {
-    const teachingContainer = document.querySelector('.teaching-list, .courses-list');
+    const teachingContainer = document.querySelector('.teaching-list, .courses-list, .teaching');
     if (!teachingContainer || !data || !Array.isArray(data)) return;
     
     const teachingHTML = data.map(item => `
@@ -261,7 +285,6 @@
         <h3 class="teaching-title">${escapeHtml(item.title)}</h3>
         <p class="teaching-semester">${escapeHtml(item.semester)}</p>
         <p class="teaching-instructor">Instructor: ${escapeHtml(item.instructor)}</p>
-        ${item.details ? `<p class="teaching-details">${escapeHtml(item.details)}</p>` : ''}
         ${item.description ? `<div class="teaching-description">${item.description}</div>` : ''}
       </div>
     `).join('');
@@ -281,7 +304,17 @@
   function openOfficialPagesCMS() {
     const repoUrl = PAGESCMS_CONFIG.repoUrl;
     const branch = PAGESCMS_CONFIG.branch;
-    const pagesCMSUrl = `${PAGESCMS_CONFIG.officialUrl}?repo=${encodeURIComponent(repoUrl)}&branch=${encodeURIComponent(branch)}`;
+    
+    // Construct the Pages CMS URL
+    let pagesCMSUrl = PAGESCMS_CONFIG.officialUrl;
+    
+    // Add repository and branch parameters if available
+    if (repoUrl && repoUrl !== window.location.origin) {
+      pagesCMSUrl += `?repo=${encodeURIComponent(repoUrl)}`;
+      if (branch && branch !== 'main') {
+        pagesCMSUrl += `&branch=${encodeURIComponent(branch)}`;
+      }
+    }
     
     console.log('Opening Pages CMS:', pagesCMSUrl);
     window.open(pagesCMSUrl, '_blank', 'noopener,noreferrer');
@@ -294,7 +327,8 @@
     refresh: refreshContent,
     showStatus: showSyncStatus,
     updateContent: updateContent,
-    openOfficial: openOfficialPagesCMS
+    openOfficial: openOfficialPagesCMS,
+    config: PAGESCMS_CONFIG
   };
   
   // Global function for button click

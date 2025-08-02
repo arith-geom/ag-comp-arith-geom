@@ -88,6 +88,10 @@
 <meta name="application-name" content="AG Computational Arithmetic Geometry">
 <meta name="msapplication-TileColor" content="#C22032">
 
+<!-- Pages CMS Integration Meta Tags -->
+<meta name="repository-url" content="https://github.com/your-username/hiwiwebsiteaddingnewstuff">
+<meta name="repository-branch" content="main">
+
 <!-- MathJax for LaTeX support -->
 <script>
   window.MathJax = {
@@ -863,7 +867,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <hr class="footer-divider">
     <div class="text-center text-muted small">
       &copy; 2025 AG Computational Arithmetic Geometry. All Rights Reserved.
-      Last updated: August 01, 2025.
+      Last updated: August 02, 2025.
     </div>
   </div>
 </footer>
@@ -1113,15 +1117,16 @@ html[data-theme="dark"] a:hover {
         <p>This website uses <a href="https://pagescms.org" target="_blank">Pages CMS</a> for content management.</p>
         <p>To edit content, please visit the official Pages CMS interface:</p>
         <div class="pagescms-admin-actions">
-          <a href="https://app.pagescms.org" target="_blank" class="btn btn-primary">
+          <button onclick="openOfficialPagesCMS()" class="btn btn-primary">
             <i class="fas fa-external-link-alt"></i> Open Pages CMS
-          </a>
+          </button>
           <button class="btn btn-secondary" onclick="refreshPagesCMSContent()">
             <i class="fas fa-sync-alt"></i> Refresh Content
           </button>
         </div>
         <div class="pagescms-admin-status">
           <p><strong>Status:</strong> <span id="pagescms-status-text">Ready</span></p>
+          <p><strong>Repository:</strong> <span id="pagescms-repo-info">Loading...</span></p>
         </div>
       </div>
     </div>
@@ -1210,6 +1215,12 @@ html[data-theme="dark"] a:hover {
   font-weight: 500;
 }
 
+#pagescms-repo-info {
+  color: #666;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
 @media (max-width: 768px) {
   .pagescms-admin-modal {
     width: 95%;
@@ -1231,11 +1242,24 @@ html[data-theme="dark"] a:hover {
 function openPagesCMSAdmin() {
   document.getElementById('pagescms-admin').style.display = 'block';
   document.body.style.overflow = 'hidden';
+  
+  // Update repository info
+  updateRepoInfo();
 }
 
 function closePagesCMSAdmin() {
   document.getElementById('pagescms-admin').style.display = 'none';
   document.body.style.overflow = 'auto';
+}
+
+function updateRepoInfo() {
+  const repoInfo = document.getElementById('pagescms-repo-info');
+  if (window.PagesCMS && window.PagesCMS.config) {
+    const config = window.PagesCMS.config;
+    repoInfo.textContent = `${config.repoUrl} (${config.branch})`;
+  } else {
+    repoInfo.textContent = 'Configuration not available';
+  }
 }
 
 function refreshPagesCMSContent() {

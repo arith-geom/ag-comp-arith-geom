@@ -1,7 +1,3 @@
-# Pages CMS Configuration for Official Pages CMS
-# This file configures the content management system for the website
-# Visit https://app.pagescms.org/ to manage content
-
 media:
   input: assets/img
   output: /assets/img
@@ -10,13 +6,13 @@ media:
   extensions: [jpg, jpeg, png, gif, svg, webp]
 
 content:
-  # Members/Team Management
   - name: members
     label: Team Members
     type: collection
     path: _members
+    filename: "{name|slugify}.md"
     view:
-      fields: [name, role, order, photo]
+      fields: [name, role, order, photo, email]
       sort:
         field: order
         direction: asc
@@ -32,41 +28,34 @@ content:
       - name: photo
         label: Profile Photo
         type: image
-        description: Upload a profile photo (recommended size: 400x400px)
       - name: order
         label: Display Order
         type: number
-        description: Lower numbers appear first (1 = first, 2 = second, etc.)
         default: 999
       - name: email
         label: Email Address
         type: string
-        pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
       - name: website
         label: Personal Website
         type: string
-        pattern: ^https?://.*
       - name: github
         label: GitHub Username
         type: string
       - name: orcid
         label: ORCID ID
         type: string
-        pattern: ^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]$
       - name: research_interests
         label: Research Interests
-        type: text
-        description: Brief description of research interests
+        type: rich-text
       - name: bio
         label: Biography
         type: rich-text
-        description: Detailed biography and background information
 
-  # Publications Management
   - name: publications
     label: Publications
     type: collection
     path: _publications
+    filename: "{year}-{title|slugify}.md"
     view:
       fields: [title, authors, year, publication_type, doi]
       sort:
@@ -81,7 +70,6 @@ content:
         label: Authors
         type: string
         required: true
-        description: Comma-separated list of authors
       - name: publication_type
         label: Publication Type
         type: select
@@ -100,6 +88,9 @@ content:
       - name: journal
         label: Journal/Conference
         type: string
+      - name: publication_details
+        label: Publication Details
+        type: string
       - name: volume
         label: Volume
         type: string
@@ -109,37 +100,31 @@ content:
       - name: pages
         label: Pages
         type: string
-        description: Page range (e.g., "123-145")
       - name: doi
         label: DOI
         type: string
-        pattern: ^10\.\d{4,}/[-._;()/:\w]+$
       - name: url
         label: URL
         type: string
-        pattern: ^https?://.*
       - name: abstract
         label: Abstract
         type: text
-        description: Brief abstract of the publication
       - name: keywords
         label: Keywords
         type: string
         list: true
-        description: Research keywords/tags
       - name: featured
         label: Featured Publication
         type: boolean
         default: false
-        description: Mark as featured publication for homepage display
 
-  # Teaching/Courses Management
   - name: teaching
     label: Teaching & Courses
     type: collection
     path: _teaching
+    filename: "{semester|slugify}-{title|slugify}.md"
     view:
-      fields: [title, semester, instructor, course_type]
+      fields: [title, semester, instructor]
       sort:
         field: semester
         direction: desc
@@ -152,12 +137,10 @@ content:
         label: Semester
         type: string
         required: true
-        description: e.g., "Winter term 2024/25" or "Summer term 2025"
       - name: instructor
         label: Instructor(s)
         type: string
         required: true
-        description: Comma-separated list of instructors
       - name: course_type
         label: Course Type
         type: select
@@ -167,7 +150,7 @@ content:
           - Exercise
           - Tutorial
           - Workshop
-        default: Lecture
+        default: Seminar
       - name: credits
         label: ECTS Credits
         type: number
@@ -189,40 +172,43 @@ content:
         label: Course Materials
         type: file
         list: true
-        description: Upload course materials (PDFs, slides, etc.)
       - name: active
         label: Currently Active
         type: boolean
         default: false
 
-  # Research Areas Management
   - name: research
     label: Research Areas
     type: collection
     path: _research
+    filename: "{title|slugify}.md"
     view:
-      fields: [title, order, featured]
+      fields: [title, description]
       sort:
-        field: order
+        field: title
         direction: asc
     fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: page
+        hidden: true
       - name: title
         label: Research Area Title
         type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
         required: true
       - name: order
         label: Display Order
         type: number
         default: 999
-        description: Lower numbers appear first
       - name: featured
         label: Featured Research Area
         type: boolean
         default: false
-      - name: description
-        label: Description
-        type: rich-text
-        required: true
       - name: keywords
         label: Keywords
         type: string
@@ -232,19 +218,23 @@ content:
         type: reference
         collection: publications
         list: true
-        description: Link to related publications
 
-  # News/Blog Posts Management
   - name: news
     label: News & Blog Posts
     type: collection
     path: _news
+    filename: "{year}-{month}-{day}-{title|slugify}.md"
     view:
-      fields: [title, date, published, author]
+      fields: [title, date, published, categories]
       sort:
         field: date
         direction: desc
     fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: post
+        hidden: true
       - name: title
         label: Post Title
         type: string
@@ -257,14 +247,17 @@ content:
         label: Published
         type: boolean
         default: true
-      - name: author
-        label: Author
+      - name: categories
+        label: Categories
         type: string
-        required: true
+        list: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
       - name: excerpt
         label: Excerpt
         type: text
-        description: Brief summary for preview
       - name: content
         label: Content
         type: rich-text
@@ -272,30 +265,16 @@ content:
       - name: featured_image
         label: Featured Image
         type: image
-      - name: tags
-        label: Tags
-        type: string
-        list: true
-      - name: category
-        label: Category
-        type: select
-        options:
-          - Research
-          - Teaching
-          - Events
-          - Awards
-          - General
-        default: General
 
-  # Links/Resources Management
   - name: links
     label: Links & Resources
     type: collection
     path: _links
+    filename: "{title|slugify}.md"
     view:
-      fields: [title, category, order]
+      fields: [title, category, url]
       sort:
-        field: order
+        field: title
         direction: asc
     fields:
       - name: title
@@ -306,17 +285,9 @@ content:
         label: URL
         type: string
         required: true
-        pattern: ^https?://.*
       - name: category
         label: Category
-        type: select
-        options:
-          - Funding
-          - Collaborations
-          - Resources
-          - Software
-          - External Links
-        default: External Links
+        type: string
       - name: order
         label: Display Order
         type: number
@@ -329,7 +300,6 @@ content:
         type: boolean
         default: false
 
-  # Site Configuration
   - name: config
     label: Site Configuration
     path: _config.yml
@@ -344,11 +314,9 @@ content:
       - name: email
         label: Contact Email
         type: string
-        pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
       - name: url
         label: Website URL
         type: string
-        pattern: ^https?://.*
       - name: twitter_username
         label: Twitter Username
         type: string
@@ -357,14 +325,12 @@ content:
         type: string
 
 components:
-  # Reusable component for contact information
   contact_info:
     label: Contact Information
     fields:
       - name: email
         label: Email
         type: string
-        pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
       - name: phone
         label: Phone
         type: string
@@ -375,26 +341,21 @@ components:
         label: Office Hours
         type: text
 
-  # Reusable component for social media links
   social_links:
     label: Social Media Links
     fields:
       - name: twitter
         label: Twitter
         type: string
-        pattern: ^https?://.*
       - name: github
         label: GitHub
         type: string
-        pattern: ^https?://.*
       - name: linkedin
         label: LinkedIn
         type: string
-        pattern: ^https?://.*
       - name: researchgate
         label: ResearchGate
         type: string
-        pattern: ^https?://.*
 
 settings:
   content:
