@@ -71,11 +71,61 @@
             "Inactive",
             "Alumni"
           ],
-          "default": "Active"
+          "default": "Active",
+          "help": "Active: Currently with the group. Inactive: Temporarily away. Alumni: Former member who has left."
+        },
+        "alumni_info": {
+          "type": "object",
+          "label": "Alumni Information",
+          "fields": {
+            "graduation_year": {
+              "type": "number",
+              "label": "Graduation/Departure Year",
+              "validation": {
+                "min": 1990,
+                "max": 2030
+              }
+            },
+            "current_position": {
+              "type": "string",
+              "label": "Current Position/Institution"
+            },
+            "alumni_website": {
+              "type": "string",
+              "label": "Current Website",
+              "validation": {
+                "pattern": "^https?://.+"
+              }
+            }
+          },
+          "help": "Fill this information for alumni members"
         }
       },
       "views": {
         "default": {
+          "sort": "name",
+          "groupBy": "status"
+        },
+        "active": {
+          "sort": "name",
+          "groupBy": "role",
+          "filter": {
+            "status": "Active"
+          }
+        },
+        "alumni": {
+          "sort": "name",
+          "filter": {
+            "status": "Alumni"
+          }
+        },
+        "inactive": {
+          "sort": "name",
+          "filter": {
+            "status": "Inactive"
+          }
+        },
+        "by-role": {
           "sort": "name",
           "groupBy": "role"
         }

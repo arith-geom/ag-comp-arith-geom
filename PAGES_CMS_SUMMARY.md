@@ -37,6 +37,8 @@ This document summarizes the comprehensive modernization of the AG Computational
 ### **2. Pages CMS Configuration - Streamlined & Enhanced**
 
 #### **📝 Content Type Improvements:**
+- **Enhanced Team Member Management**: Status tracking (Active/Inactive/Alumni) with dedicated views
+- **Alumni Information Tracking**: Graduation year, current position, and website fields
 - **Simplified Validation**: Essential pattern validation for emails, URLs, DOIs
 - **Better Organization**: Grouped views and improved sorting options
 - **Essential Fields**: Focus on what matters most
@@ -97,7 +99,7 @@ assets/
 
 ### **CMS Configuration Features:**
 1. **Content Type Management**
-   - Team Members with photos and academic info
+   - Team Members with status tracking (Active/Inactive/Alumni) and alumni information
    - Publications with DOI and citation tracking
    - Teaching courses with materials and schedules
    - Research areas with team associations
@@ -245,4 +247,4 @@ The website now provides an excellent user experience for students, researchers,
 ---
 
 **Last Updated**: January 2025  
-**Status**: ✅ Complete and Production Ready - Unused content types (news, events, links) removed for streamlined CMS 
+**Status**: ✅ Complete and Production Ready - Enhanced team member management with status tracking and alumni information 
