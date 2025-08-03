@@ -133,77 +133,226 @@
     },
     "publications": {
       "name": "Publications",
-      "description": "Academic papers and research outputs",
+      "description": "Academic papers, research outputs, and software packages",
       "fields": {
         "title": {
           "type": "string",
-          "label": "Title",
+          "label": "Publication Title",
           "required": true,
           "validation": {
             "minLength": 5,
             "maxLength": 500
-          }
+          },
+          "placeholder": "Enter the full title of the publication"
         },
         "authors": {
           "type": "string",
           "label": "Authors",
-          "required": true
+          "required": true,
+          "placeholder": "List all authors separated by commas (e.g., John Smith, Jane Doe)"
         },
-              "year": {
-        "type": "number",
-        "label": "Publication Year",
-        "validation": {
-          "min": 1900,
-          "max": 2030
+        "year": {
+          "type": "number",
+          "label": "Publication Year",
+          "validation": {
+            "min": 1900,
+            "max": 2030
+          },
+          "default": 2025,
+          "help": "Year when the publication was published or submitted"
         },
-        "default": 2025
-      },
+        "month": {
+          "type": "select",
+          "label": "Publication Month",
+          "options": [
+            "",
+            "January",
+            "February", 
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+          ],
+          "help": "Optional: Month of publication"
+        },
         "journal": {
           "type": "string",
-          "label": "Journal/Conference"
+          "label": "Journal/Conference/Publisher",
+          "placeholder": "Journal name, conference name, or publisher"
         },
-              "doi": {
-        "type": "string",
-        "label": "DOI",
-        "validation": {
-          "pattern": "^10\\.\\d{4,}/.+"
+        "volume": {
+          "type": "string",
+          "label": "Volume/Issue",
+          "placeholder": "Volume number, issue number, or proceedings details"
         },
-        "placeholder": "10.1000/123456",
-        "help": "Digital Object Identifier (e.g., 10.1000/123456)"
-      },
+        "pages": {
+          "type": "string",
+          "label": "Pages",
+          "placeholder": "Page range (e.g., 123-145) or article number"
+        },
+        "doi": {
+          "type": "string",
+          "label": "DOI",
+          "validation": {
+            "pattern": "^10\\.\\d{4,}/.+"
+          },
+          "placeholder": "10.1000/123456",
+          "help": "Digital Object Identifier (e.g., 10.1000/123456)"
+        },
+        "arxiv": {
+          "type": "string",
+          "label": "arXiv ID",
+          "validation": {
+            "pattern": "^\\d{4}\\.\\d{4,}$"
+          },
+          "placeholder": "2401.12345",
+          "help": "arXiv identifier (e.g., 2401.12345)"
+        },
         "abstract": {
           "type": "text",
           "label": "Abstract",
-          "rows": 5
+          "rows": 6,
+          "placeholder": "Brief description of the publication's content and contributions"
+        },
+        "keywords": {
+          "type": "string",
+          "label": "Keywords",
+          "placeholder": "Comma-separated keywords (e.g., arithmetic geometry, modular forms, Galois representations)"
         },
         "url": {
           "type": "string",
-          "label": "URL",
+          "label": "Publication URL",
           "validation": {
             "pattern": "^https?://.+"
-          }
+          },
+          "placeholder": "https://example.com/paper",
+          "help": "Direct link to the publication"
+        },
+        "pdf": {
+          "type": "file",
+          "label": "PDF File",
+          "accept": ".pdf",
+          "maxSize": "50MB",
+          "help": "Upload the publication PDF if available"
         },
         "type": {
           "type": "select",
-          "label": "Type",
+          "label": "Publication Type",
           "options": [
             "Journal Article",
             "Conference Paper",
             "Book Chapter",
             "Preprint",
-            "Technical Report"
-          ]
+            "Technical Report",
+            "Software Package",
+            "Thesis",
+            "Book",
+            "Survey Article",
+            "Other"
+          ],
+          "required": true,
+          "default": "Journal Article"
         },
         "status": {
           "type": "select",
-          "label": "Status",
+          "label": "Publication Status",
           "options": [
             "Published",
             "Submitted",
             "In Preparation",
-            "Under Review"
+            "Under Review",
+            "Accepted",
+            "In Press"
           ],
           "default": "Published"
+        },
+        "impact_factor": {
+          "type": "number",
+          "label": "Journal Impact Factor",
+          "validation": {
+            "min": 0,
+            "max": 100
+          },
+          "help": "Optional: Journal impact factor if available"
+        },
+        "citations": {
+          "type": "number",
+          "label": "Citation Count",
+          "validation": {
+            "min": 0
+          },
+          "help": "Optional: Number of citations (can be updated periodically)"
+        },
+        "team_members": {
+          "type": "reference",
+          "label": "Team Members Involved",
+          "contentType": "team-members",
+          "multiple": true,
+          "help": "Select team members who are authors or contributors"
+        },
+        "research_areas": {
+          "type": "reference",
+          "label": "Related Research Areas",
+          "contentType": "research",
+          "multiple": true,
+          "help": "Select research areas this publication relates to"
+        },
+        "software_info": {
+          "type": "object",
+          "label": "Software Package Information",
+          "fields": {
+            "repository_url": {
+              "type": "string",
+              "label": "Repository URL",
+              "validation": {
+                "pattern": "^https?://.+"
+              },
+              "placeholder": "https://github.com/username/package"
+            },
+            "download_url": {
+              "type": "string",
+              "label": "Download URL",
+              "validation": {
+                "pattern": "^https?://.+"
+              }
+            },
+            "version": {
+              "type": "string",
+              "label": "Version",
+              "placeholder": "1.0.0"
+            },
+            "license": {
+              "type": "string",
+              "label": "License",
+              "placeholder": "MIT, GPL, etc."
+            },
+            "documentation": {
+              "type": "string",
+              "label": "Documentation URL",
+              "validation": {
+                "pattern": "^https?://.+"
+              }
+            }
+          },
+          "help": "Fill this information for software packages"
+        },
+        "featured": {
+          "type": "boolean",
+          "label": "Featured Publication",
+          "default": false,
+          "help": "Mark as featured to highlight on the main publications page"
+        },
+        "order": {
+          "type": "number",
+          "label": "Display Order",
+          "default": 0,
+          "help": "Order for displaying publications (lower numbers appear first)"
         }
       },
       "views": {
@@ -215,6 +364,33 @@
           "sort": "year",
           "order": "desc",
           "groupBy": "type"
+        },
+        "by-status": {
+          "sort": "year",
+          "order": "desc",
+          "groupBy": "status"
+        },
+        "featured": {
+          "sort": "order",
+          "filter": {
+            "featured": true
+          }
+        },
+        "recent": {
+          "sort": "year",
+          "order": "desc",
+          "filter": {
+            "year": {
+              "gte": 2020
+            }
+          }
+        },
+        "software": {
+          "sort": "year",
+          "order": "desc",
+          "filter": {
+            "type": "Software Package"
+          }
         }
       }
     },

@@ -6,8 +6,8 @@ order: 999
 photo: /assets/img/12.jpg
 research_interests: Research focuses on Galois representations and their deformations,
   particularly in the context of modular forms and elliptic curves.
-role: Postdoctoral Researcher
-status: active
+role: Alumni
+status: alumni
 ---
 
 Dr. Andrea Conti is a postdoctoral researcher in the AG Computational Arithmetic Geometry group. His research focuses on Galois representations and their deformations, particularly in the context of modular forms and elliptic curves.

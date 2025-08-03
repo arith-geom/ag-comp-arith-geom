@@ -26,280 +26,191 @@ nav: false
     <h2>Publications of Dr. Peter Gräf</h2>
     
     <div class="member-info">
-      <img src="/assets/img/prof.svg" alt="Dr. Peter Gräf" class="member-photo">
+      <img src="/assets/img/peter-graef.jpg" alt="Dr. Peter Gräf" class="member-photo">
       <div class="member-details">
         <h3>Dr. Peter Gräf</h3>
-        <p><strong>Research interests:</strong> Arithmetic geometry, computational number theory, and modular forms.</p>
-        <p><strong>Email:</strong> <a href="mailto:peter.graef@math.uni-heidelberg.de">peter.graef@math.uni-heidelberg.de</a></p>
+        <p><strong>Former PhD Student</strong> (2015-2020)</p>
+        <p><strong>Research interests:</strong> Drinfeld modular forms, p-adic automorphic forms, L-invariants, representation theory, arithmetic geometry</p>
+        <p><strong>Email:</strong> <a href="mailto:peter.graef@iwr.uni-heidelberg.de">peter.graef@iwr.uni-heidelberg.de</a></p>
+        <p><strong>Website:</strong> <a href="https://sites.google.com/view/peter-graef" target="_blank">Personal Website</a></p>
       </div>
     </div>
 
-    <h3>Selected Publications</h3>
+    <h3>Journal Publications</h3>
     <ul class="publication-list">
       <li>
-        <strong>P. Gräf</strong>, "Computational methods in arithmetic geometry", 
-        <em>Journal of Number Theory</em> 45 (2023), 123-145.
+        <strong>P. Gräf, G. Böckle, R. Perkins</strong>, "A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation theory, and an investigation of its subfactors", 
+        <em>Research in Number Theory</em> 7, Article number: 44, 2021.
+        <br><a href="https://link.springer.com/article/10.1007%2Fs40993-021-00254-0" target="_blank">Published version</a>
       </li>
       <li>
-        <strong>P. Gräf</strong>, "Modular forms and their applications", 
-        <em>Mathematical Research Letters</em> 12 (2022), 789-812.
+        <strong>S. Anni, G. Böckle, P. Gräf, A. Troya</strong>, "Computing L-invariants via the Greenberg-Stevens formula", 
+        <em>Journal de Théorie des Nombres de Bordeaux</em> 31, 727–746, 2019.
+        <br><a href="https://jtnb.centre-mersenne.org/article/JTNB_2019__31_3_727_0.pdf" target="_blank">Published version</a>
       </li>
       <li>
-        <strong>P. Gräf</strong>, "Arithmetic of elliptic curves over function fields", 
-        <em>Compositio Mathematica</em> 158 (2021), 456-478.
+        <strong>P. Gräf</strong>, "A control theorem for p-adic automorphic forms and Teitelbaum's L-invariant", 
+        <em>The Ramanujan Journal</em> 50(1), 13-43, 2019.
+        <br><a href="http://dx.doi.org/10.1007/s11139-019-00160-1" target="_blank">Published version</a>
       </li>
     </ul>
 
-    <h3>Preprints</h3>
-    <ul class="publication-list">
+    <h3>Thesis</h3>
+    <ul class="thesis-list">
       <li>
-        <strong>P. Gräf</strong>, "New computational techniques in arithmetic geometry", 
-        <em>Preprint</em> (2024).
+        <strong>P. Gräf</strong>, "Boundary Distributions for GL3 over a Local Field and Symmetric Power Coefficients", 
+        <em>Ph.D. thesis</em>, 2020.
+        <br><a href="/assets/uploads/boundary_peter_graef.pdf" class="download">Download PDF</a>
       </li>
     </ul>
 
-    <h3>Software and Computational Tools</h3>
-    <ul class="software-list">
+    <h3>Conference Presentations</h3>
+    <ul class="presentation-list">
       <li>
-        <strong>Computational tools for elliptic curves</strong> - Software for studying the arithmetic of elliptic curves over function fields.
+        <strong>Journées du GDR TLAG 2021</strong> (Rennes, 24/03/2021 - 26/03/2021)
+        <br><a href="/assets/uploads/slides_rennes.pdf" class="download">Slides</a>
       </li>
       <li>
-        <strong>Modular forms calculator</strong> - Implementation of algorithms for computing with modular forms.
+        <strong>AMS Fall Eastern Virtual Sectional Meeting</strong> (03/10/2020 - 04/10/2020)
+        <br>Special Session on Drinfeld Modules, Modular Varieties and Arithmetic Applications
+        <br><a href="/assets/uploads/Slides_AMS.pdf" class="download">Slides</a>
       </li>
     </ul>
+
+    <h3>Posters</h3>
+    <ul class="poster-list">
+      <li>
+        <strong>Workshop Arithmetic Geometry and Computer Algebra</strong> (Oldenburg, 29/06/2017 - 01/07/2017)
+        <br><a href="/assets/uploads/Poster_Peter_Graef.pdf" class="download">Poster</a> | 
+        <a href="http://www.uni-oldenburg.de/jan-steffen-mueller/workshop" target="_blank">Workshop Website</a>
+      </li>
+    </ul>
+
+    <h3>Research Summary</h3>
+    <p>Dr. Peter Gräf's research focused on Drinfeld modular forms, p-adic automorphic forms, and L-invariants. His work made significant contributions to:</p>
+    <ul>
+      <li><strong>Drinfeld Modular Forms:</strong> Developed Hecke-equivariant decomposition methods for spaces of Drinfeld cusp forms using representation theory</li>
+      <li><strong>L-invariants:</strong> Advanced computational methods for computing L-invariants via the Greenberg-Stevens formula</li>
+      <li><strong>p-adic Automorphic Forms:</strong> Established control theorems for p-adic automorphic forms and Teitelbaum's L-invariant</li>
+      <li><strong>Boundary Distributions:</strong> Studied boundary distributions for GL3 over local fields and their relationship to symmetric power coefficients</li>
+    </ul>
+
+    <h3>Teaching Experience</h3>
+    <p>During his time at Heidelberg University, Peter was involved in various teaching activities:</p>
+    <ul>
+      <li><strong>Working Group Seminars:</strong> Plectic Stark-Heegner points (WS 2021/22), Higher Hida theory (SS 2021), p-adic Uniformization (SS 2016)</li>
+      <li><strong>Lectures:</strong> Linear algebra 1 & 2, Introduction to geometry, Complex analysis 1 & 2</li>
+      <li><strong>Proseminars:</strong> p-adic Analysis (SS 2016)</li>
+    </ul>
+
+    <div class="contact-info">
+      <h3>Contact</h3>
+      <p>For questions about Peter's research or publications:</p>
+      <p><strong>Email:</strong> <a href="mailto:arithgeo@iwr.uni-heidelberg.de">arithgeo@iwr.uni-heidelberg.de</a></p>
+      <p><strong>Personal Website:</strong> <a href="https://sites.google.com/view/peter-graef" target="_blank">https://sites.google.com/view/peter-graef</a></p>
+    </div>
   </div>
-
-  <!-- Footer -->
-  <hr class="ce-div">
-  <table width="100%">
-    <tbody>
-      <tr>
-        <td align="right">
-          <div class="bearbeiter">
-            <a href="mailto:peter.graef@math.uni-heidelberg.de?subject=About%20Publications">peter.graef@math.uni-heidelberg.de</a><br>
-            Last Update: 04.06.2024 - 16:09<br>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>
 
 <style>
-/* Heidelberg-style Publications Page */
 .heidelberg-style-publications {
+  font-family: Arial, sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
 }
 
-/* Breadcrumb Navigation */
 .pathway {
   background: #f5f5f5;
-  padding: 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 10px;
   margin-bottom: 20px;
-  overflow: hidden;
+  border-left: 4px solid #c22032;
+  font-size: 0.9em;
 }
 
 .pathway a {
-  color: #0066cc;
+  color: #c22032;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .pathway a:hover {
   text-decoration: underline;
 }
 
-.pathway div[style*="float:right"] a {
-  color: #333;
-  font-weight: normal;
-}
-
-/* Main Content */
-.publications-content {
-  background: white;
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.publications-content h2 {
-  color: #333;
-  font-size: 1.8em;
-  font-weight: bold;
-  margin: 0 0 20px 0;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #0066cc;
-}
-
-.publications-content h3 {
-  color: #333;
-  font-size: 1.4em;
-  font-weight: bold;
-  margin: 30px 0 15px 0;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #ddd;
-}
-
-/* Member Info */
 .member-info {
   display: flex;
   gap: 20px;
   margin-bottom: 30px;
   padding: 20px;
   background: #f9f9f9;
-  border-radius: 8px;
-  border-left: 4px solid #0066cc;
+  border-radius: 5px;
 }
 
 .member-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 150px;
+  height: 225px;
   object-fit: cover;
-  border: 3px solid #0066cc;
-}
-
-.member-details {
-  flex-grow: 1;
+  border-radius: 5px;
 }
 
 .member-details h3 {
-  margin: 0 0 10px 0;
-  color: #333;
-  font-size: 1.5em;
+  color: #c22032;
+  margin-top: 0;
 }
 
-.member-details p {
-  margin: 8px 0;
-  color: #555;
-}
-
-.member-details a {
-  color: #0066cc;
-  text-decoration: none;
-}
-
-.member-details a:hover {
-  text-decoration: underline;
-}
-
-/* Publication Lists */
-.publication-list,
-.software-list {
+.publication-list, .thesis-list, .presentation-list, .poster-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 30px 0;
 }
 
-.publication-list li,
-.software-list li {
+.publication-list li, .thesis-list li, .presentation-list li, .poster-list li {
   margin-bottom: 15px;
   padding: 15px;
   background: #f9f9f9;
-  border-left: 4px solid #0066cc;
-  border-radius: 4px;
-  transition: all 0.2s ease;
+  border-left: 4px solid #c22032;
+  border-radius: 3px;
 }
 
-.publication-list li:hover,
-.software-list li:hover {
-  background: #f0f8ff;
-  transform: translateX(5px);
+.publication-list li strong, .thesis-list li strong, .presentation-list li strong, .poster-list li strong {
+  color: #c22032;
 }
 
-.publication-list strong {
-  color: #0066cc;
+.download {
+  color: #c22032;
+  text-decoration: none;
   font-weight: bold;
 }
 
-.publication-list em {
-  color: #666;
-  font-style: italic;
-}
-
-/* Divider */
-.ce-div {
-  border: none;
-  height: 1px;
-  background: #ddd;
-  margin: 30px 0;
-}
-
-/* Footer */
-.bearbeiter {
-  font-size: 0.9em;
-  color: #666;
-  line-height: 1.4;
-}
-
-.bearbeiter a {
-  color: #0066cc;
-  text-decoration: none;
-}
-
-.bearbeiter a:hover {
+.download:hover {
   text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .heidelberg-style-publications {
-    padding: 10px;
-  }
-  
-  .publications-content {
-    padding: 20px;
-  }
-  
-  .pathway {
-    font-size: 0.9em;
-  }
-  
-  .pathway div[style*="float:left"] {
-    float: none !important;
-    margin-bottom: 10px;
-  }
-  
-  .pathway div[style*="float:right"] {
-    float: none !important;
-    text-align: left;
-  }
-  
-  .member-info {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .member-photo {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-  }
+.contact-info {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 5px;
 }
 
-@media (max-width: 480px) {
-  .publications-content {
-    padding: 15px;
-  }
-  
-  .publications-content h2 {
-    font-size: 1.5em;
-  }
-  
-  .publications-content h3 {
-    font-size: 1.2em;
+.contact-info h3 {
+  color: #c22032;
+  margin-top: 0;
+}
+
+h2, h3 {
+  color: #c22032;
+  border-bottom: 2px solid #c22032;
+  padding-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .member-info {
+    flex-direction: column;
   }
   
   .member-photo {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 180px;
   }
 }
 </style> 

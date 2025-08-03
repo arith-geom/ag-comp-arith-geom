@@ -74,7 +74,7 @@ nav_order: 7
     <h3 class="text-center mb-4 translatable-content" data-translation-key="contact.send_message">Send us a Message</h3>
     <div class="google-form-wrapper">
       <iframe 
-        src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform?embedded=true" 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfy6sa-CR4aqkB9fG5_VBGudtn0MU4rbOIy5V6NluNDkMwDyQ/viewform?embedded=true" 
         width="100%" 
         height="800" 
         frameborder="0" 
