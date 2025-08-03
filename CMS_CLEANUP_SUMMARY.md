@@ -55,6 +55,12 @@ This document summarizes the cleanup of unused content types and functionality f
 - Removed `links` content type definition
 - Kept essential content types: `team-members`, `publications`, `teaching`, `research`
 
+### **Pages CMS Dashboard Config** (`.pages.yml`)
+- Removed `news` content type definition (News & Blog Posts)
+- Removed `links` content type definition (Links & Resources)
+- Removed `events` content type definition (Events)
+- Kept essential content types: `members`, `publications`, `teaching`, `research`
+
 ### **Jekyll Config** (`_config.yml`)
 - Removed `news` from `pagescms.content_types`
 - Removed `resources` from `pagescms.content_types`
@@ -113,6 +119,7 @@ This document summarizes the cleanup of unused content types and functionality f
 
 - ✅ `PAGES_CMS_SUMMARY.md` - Updated to reflect current state
 - ✅ `pagescms.config.json` - Cleaned configuration
+- ✅ `.pages.yml` - Removed unused content types from CMS dashboard
 - ✅ `_config.yml` - Removed unused content type references
 
 ---
