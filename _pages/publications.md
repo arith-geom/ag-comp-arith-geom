@@ -7,106 +7,62 @@ nav_order: 5
 ---
 
 <div class="publications-page">
-  <!-- Header Section -->
-  <div class="publications-header">
-    <div class="container">
-      <div class="publications-intro">
-        <h1>Publications & Research Output</h1>
-        <p class="lead">Discover the latest research papers, software packages, and academic contributions from our research group in computational arithmetic geometry.</p>
-      </div>
-
-
-    </div>
-  </div>
-
   <!-- Filter Controls -->
   <div class="filter-section">
     <div class="container">
-      <div class="filter-controls">
-        <div class="filter-group">
-          <label for="type-filter">Publication Type</label>
-          <select id="type-filter" class="filter-select">
-            <option value="">All Types</option>
-            <option value="Journal Article">Journal Articles</option>
-            <option value="Conference Paper">Conference Papers</option>
-            <option value="Preprint">Preprints</option>
-            <option value="Software Package">Software Packages</option>
-            <option value="Book Chapter">Book Chapters</option>
-            <option value="Technical Report">Technical Reports</option>
-            <option value="Thesis">Theses</option>
-          </select>
-      </div>
-        
-        <div class="filter-group">
-          <label for="status-filter">Status</label>
-          <select id="status-filter" class="filter-select">
-            <option value="">All Status</option>
-            <option value="Published">Published</option>
-            <option value="Submitted">Submitted</option>
-            <option value="Under Review">Under Review</option>
-            <option value="In Preparation">In Preparation</option>
-            <option value="Accepted">Accepted</option>
-          </select>
-    </div>
-    
-        <div class="filter-group">
-          <label for="year-filter">Year</label>
-          <select id="year-filter" class="filter-select">
-            <option value="">All Years</option>
-            <option value="2025">2025</option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
-            <option value="2018">2018</option>
-            <option value="2017">2017</option>
-            <option value="2016">2016</option>
-            <option value="2015">2015</option>
-          </select>
+      <!-- Publications Search Bar -->
+      <div class="search-container">
+        <div class="search-wrapper">
+          <input type="text" id="publications-search-input" class="search-input" placeholder="Search titles, authors, keywords...">
+          <i class="fas fa-search search-icon"></i>
+          <button type="button" id="publications-clear-search" class="clear-search-btn" style="display: none;">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
-        
-        <div class="filter-group">
-          <label for="search-input">Search</label>
-          <div class="search-wrapper">
-            <input type="text" id="search-input" class="filter-input" placeholder="Search titles, authors, keywords...">
-            <i class="fas fa-search search-icon"></i>
-          </div>
+        <div id="publications-search-results-info" class="search-results-info" style="display: none;">
+          <span id="publications-search-results-count"></span> publications found
+        </div>
+        <div class="search-test-buttons" style="margin-top: 0.5rem;">
+          <button type="button" class="btn btn-sm btn-outline-secondary" onclick="testPublicationsSearch('Böckle')">Test: Böckle</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" onclick="testPublicationsSearch('modular')">Test: modular</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" onclick="testPublicationsSearch('2023')">Test: 2023</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" onclick="testPublicationsSearch('2020')">Test: 2020</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" onclick="clearPublicationsSearch()">Clear</button>
         </div>
       </div>
 
       <!-- Quick Filter Buttons -->
       <div class="quick-filters">
-        <button class="quick-filter-btn active" data-filter="all">All</button>
-        <button class="quick-filter-btn" data-filter="recent">Recent</button>
-        <button class="quick-filter-btn" data-filter="featured">Featured</button>
+        <button class="quick-filter-btn active" data-filter="all">All Publications</button>
+        <button class="quick-filter-btn" data-filter="journal">Journal Articles</button>
+        <button class="quick-filter-btn" data-filter="preprint">Preprints</button>
         <button class="quick-filter-btn" data-filter="software">Software</button>
-        <button class="quick-filter-btn" data-filter="papers">Papers</button>
-          </div>
-        </div>
+        <button class="quick-filter-btn" data-filter="book">Books</button>
+        <button class="quick-filter-btn" data-filter="thesis">Theses</button>
       </div>
+    </div>
+  </div>
 
   <!-- Publications Grid -->
   <div class="publications-content">
     <div class="container">
       <!-- Loading State -->
-      <div id="loading-state" class="loading-state">
+      <div id="loading-state" class="loading-state" style="display: none;">
         <div class="spinner"></div>
         <p>Loading publications...</p>
-        </div>
+      </div>
 
       <!-- Empty State -->
       <div id="empty-state" class="empty-state" style="display: none;">
         <i class="fas fa-search"></i>
         <h3>No publications found</h3>
         <p>Try adjusting your filters or search terms.</p>
-          </div>
+      </div>
 
       <!-- Publications Grid -->
-      <div id="publications-grid" class="publications-grid" style="display: none;">
+      <div id="publications-grid" class="publications-grid" style="display: grid;">
         <!-- Publications will be dynamically loaded here -->
-        </div>
+      </div>
 
       <!-- Load More Button -->
       <div id="load-more-container" class="load-more-container" style="display: none;">
@@ -128,7 +84,7 @@ nav_order: 5
         <span class="publication-year"></span>
       </div>
       <h3 class="publication-title">
-        <a href="#" class="publication-link"></a>
+        <a href="javascript:void(0)" class="publication-link"></a>
       </h3>
       <div class="publication-authors"></div>
       <div class="publication-venue"></div>
@@ -152,142 +108,202 @@ nav_order: 5
 
 <style>
 .publications-page {
-  background: var(--bg-primary);
+  background: white;
   min-height: 100vh;
+  padding-top: 1rem;
 }
-
-.publications-header {
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-  border-bottom: 3px solid var(--primary);
-  padding: 3rem 0;
-  margin-bottom: 2rem;
-}
-
-.publications-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-}
-
-.publications-intro h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.publications-intro .lead {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-
 
 .filter-section {
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
-  padding: 2rem 0;
-  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 3px solid #c22032;
+  padding: 1rem 0;
+  margin-bottom: 0.5rem;
+  border-radius: 0 0 12px 12px;
 }
 
-.filter-controls {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+.publications-content {
+  margin-top: 0;
+  padding-top: 0;
 }
 
-.filter-group {
+.search-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 
-.filter-group label {
-  font-weight: 600;
-  color: var(--text-primary);
+.search-results-info {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  background: #e8f4fd;
+  color: #0c5460;
+  border-radius: 2rem;
   font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #bee5eb;
+  animation: fadeIn 0.3s ease;
 }
 
-.filter-select,
-.filter-input {
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--border-color);
-  border-radius: var(--radius-md);
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  transition: all var(--transition-base);
-}
-
-.filter-select:focus,
-.filter-input:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(194, 32, 50, 0.1);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .search-wrapper {
   position: relative;
+  max-width: 600px;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1.25rem 4rem 1.25rem 2rem;
+  border: 3px solid #e9ecef;
+  border-radius: 3rem;
+  background: white;
+  color: #495057;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.5px;
+}
+
+.search-input::placeholder {
+  color: #adb5bd;
+  font-weight: 400;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #c22032;
+  box-shadow: 0 0 0 4px rgba(194, 32, 50, 0.15), 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.search-input:hover {
+  border-color: #c22032;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
 }
 
 .search-icon {
   position: absolute;
-  right: 1rem;
+  right: 2rem;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-muted);
+  color: #c22032;
+  font-size: 1.3rem;
   pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus + .search-icon {
+  color: #a01828;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #c22032;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+.clear-search-btn:hover {
+  background: #a01828;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.clear-search-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    padding: 1rem 3.5rem 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .search-icon {
+    right: 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .clear-search-btn {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.8rem;
+  }
 }
 
 .quick-filters {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 0.5rem;
 }
 
 .quick-filter-btn {
   padding: 0.5rem 1.5rem;
-  border: 2px solid var(--border-color);
+  border: 2px solid #c22032;
   border-radius: 2rem;
-  background: var(--bg-primary);
-  color: var(--text-secondary);
+  background: #c22032;
+  color: white;
   font-weight: 500;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(194, 32, 50, 0.2);
 }
 
 .quick-filter-btn:hover,
 .quick-filter-btn.active {
-  background: var(--primary);
+  background: #a01828;
   color: white;
-  border-color: var(--primary);
+  border-color: #a01828;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(194, 32, 50, 0.3);
 }
 
-.publications-content {
-  padding: 0 0 3rem 0;
+.quick-filter-btn:not(.active) {
+  background: white;
+  color: #c22032;
+  border-color: #c22032;
 }
 
-.loading-state,
-.empty-state {
+.quick-filter-btn:not(.active):hover {
+  background: #f8f9fa;
+  color: #a01828;
+  border-color: #a01828;
+}
+
+.loading-state {
   text-align: center;
-  padding: 4rem 2rem;
-  color: var(--text-muted);
+  padding: 3rem;
+  color: #6c757d;
 }
 
 .spinner {
-  width: 3rem;
-  height: 3rem;
-  border: 3px solid var(--border-color);
-  border-top: 3px solid var(--primary);
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #c22032;
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
   animation: spin 1s linear infinite;
   margin: 0 auto 1rem;
 }
@@ -297,42 +313,56 @@ nav_order: 5
   100% { transform: rotate(360deg); }
 }
 
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #6c757d;
+}
+
 .empty-state i {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   opacity: 0.5;
 }
 
 .empty-state h3 {
-  color: var(--text-primary);
+  color: #212529;
   margin-bottom: 0.5rem;
 }
 
 .publications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .publications-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .publication-card {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
+  background: white;
+  border-radius: 0.375rem;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: all 0.2s ease;
   overflow: hidden;
+  height: fit-content;
 }
 
 .publication-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-color: #c22032;
 }
 
 .publication-header {
-  padding: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
+  padding: 1.25rem;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .publication-meta {
@@ -352,20 +382,20 @@ nav_order: 5
 }
 
 .publication-type {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  background: linear-gradient(135deg, #c22032 0%, #a01828 100%);
   color: white;
 }
 
 .publication-status {
-  background: var(--bg-muted);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-color);
+  background: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
 }
 
 .publication-year {
-  background: var(--bg-muted);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-color);
+  background: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #dee2e6;
 }
 
 .publication-title {
@@ -376,39 +406,48 @@ nav_order: 5
 }
 
 .publication-title a {
-  color: var(--text-primary);
+  color: #212529;
   text-decoration: none;
-  transition: color var(--transition-base);
+  transition: color 0.2s ease;
+  cursor: pointer;
 }
 
 .publication-title a:hover {
-  color: var(--primary);
+  color: #c22032;
+  text-decoration: underline;
+}
+
+.publication-title a[href="javascript:void(0)"] {
+  cursor: default;
+  color: #212529;
+}
+
+.publication-title a[href="javascript:void(0)"]:hover {
+  color: #212529;
+  text-decoration: none;
 }
 
 .publication-authors {
-  color: var(--text-secondary);
+  color: #6c757d;
   font-style: italic;
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
 }
 
 .publication-venue {
-  color: var(--text-muted);
+  color: #adb5bd;
   font-size: 0.9rem;
 }
 
 .publication-body {
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
 .publication-abstract {
-  color: var(--text-secondary);
+  color: #495057;
   line-height: 1.6;
   margin-bottom: 1rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-size: 0.9rem;
 }
 
 .publication-keywords {
@@ -418,59 +457,74 @@ nav_order: 5
 }
 
 .keyword-tag {
-  background: var(--bg-muted);
-  color: var(--text-secondary);
+  background: #e9ecef;
+  color: #495057;
   padding: 0.25rem 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   font-size: 0.8rem;
-  border: 1px solid var(--border-color);
 }
 
 .publication-footer {
-  padding: 1.5rem;
-  border-top: 1px solid var(--border-color);
-  background: var(--bg-primary);
+  padding: 1.25rem;
+  border-top: 1px solid #dee2e6;
+  background: #f8f9fa;
 }
 
 .publication-links {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 1rem;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 .publication-link-btn {
-  padding: 0.4rem 0.8rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.8rem;
-  transition: all var(--transition-base);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #c22032;
+  color: white !important;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 2px solid #c22032;
+  box-shadow: 0 2px 4px rgba(194, 32, 50, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .publication-link-btn:hover {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
+  background: #a01828;
+  color: white !important;
+  border-color: #a01828;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(194, 32, 50, 0.4);
   text-decoration: none;
+}
+
+.publication-link-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(194, 32, 50, 0.3);
+}
+
+.publication-link-btn i {
+  font-size: 1rem;
+  color: white !important;
 }
 
 .publication-metrics {
   display: flex;
   gap: 1rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  flex-wrap: wrap;
 }
 
 .metric-item {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
+  color: #6c757d;
+  font-size: 0.85rem;
 }
 
 .load-more-container {
@@ -478,73 +532,19 @@ nav_order: 5
   margin-top: 2rem;
 }
 
-.load-more-btn {
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: 500;
+.btn-outline-primary {
+  border-color: #c22032;
+  color: #c22032;
 }
 
-/* Responsive Design */
-@media (max-width: 991.98px) {
-  .publications-intro h1 {
-    font-size: 2.5rem;
-  }
-  
-
-  
-  .filter-controls {
-    grid-template-columns: 1fr;
-  }
-  
-  .publications-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .publications-header {
-    padding: 2rem 0;
-  }
-  
-  .publications-intro h1 {
-    font-size: 2rem;
-  }
-  
-  .publications-intro .lead {
-    font-size: 1.1rem;
-  }
-  
-
-  
-  .quick-filters {
-    gap: 0.5rem;
-  }
-  
-  .quick-filter-btn {
-    padding: 0.4rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .publication-card {
-    margin: 0 1rem;
-  }
-  
-  .publication-header,
-  .publication-body,
-  .publication-footer {
-    padding: 1rem;
-  }
-  
-  .publication-title {
-    font-size: 1.1rem;
-  }
+.btn-outline-primary:hover {
+  background: #c22032;
+  border-color: #c22032;
+  color: white;
 }
 </style>
 
 <script>
-// Publications Management System
 class PublicationsManager {
   constructor() {
     this.publications = [];
@@ -562,42 +562,75 @@ class PublicationsManager {
   }
   
   async init() {
+    console.log('Initializing PublicationsManager...');
     this.bindEvents();
     await this.loadPublications();
+    this.filteredPublications = this.publications;
     this.renderPublications();
+    console.log('PublicationsManager initialized successfully');
   }
   
   bindEvents() {
-    // Filter controls
-    document.getElementById('type-filter').addEventListener('change', (e) => {
-      this.filters.type = e.target.value;
-      this.applyFilters();
-    });
-    
-    document.getElementById('status-filter').addEventListener('change', (e) => {
-      this.filters.status = e.target.value;
-      this.applyFilters();
-    });
-    
-    document.getElementById('year-filter').addEventListener('change', (e) => {
-      this.filters.year = e.target.value;
-      this.applyFilters();
-    });
-    
-    // Search input with debouncing
+    // Publications search input with debouncing
     let searchTimeout;
-    document.getElementById('search-input').addEventListener('input', (e) => {
-      clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(() => {
-        this.filters.search = e.target.value.toLowerCase();
-        this.applyFilters();
-      }, 300);
-    });
+    const searchInput = document.getElementById('publications-search-input');
+    const clearSearchBtn = document.getElementById('publications-clear-search');
+    
+    if (searchInput) {
+      console.log('✅ Publications search input found and bound');
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          this.filters.search = e.target.value.toLowerCase().trim();
+          console.log('🔍 Publications search term:', this.filters.search);
+          
+          // Show/hide clear button
+          if (clearSearchBtn) {
+            if (this.filters.search.length > 0) {
+              clearSearchBtn.style.display = 'flex';
+            } else {
+              clearSearchBtn.style.display = 'none';
+            }
+          }
+          
+          this.applyFilters();
+        }, 300);
+      });
+      
+      // Also listen for Enter key
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          this.filters.search = e.target.value.toLowerCase().trim();
+          console.log('🔍 Publications search term (Enter):', this.filters.search);
+          this.applyFilters();
+        }
+      });
+    } else {
+      console.error('❌ Publications search input not found');
+    }
+    
+    // Clear search button
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          this.filters.search = '';
+          clearSearchBtn.style.display = 'none';
+          this.applyFilters();
+          searchInput.focus();
+        }
+      });
+    }
     
     // Quick filter buttons
-    document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+    const quickFilterButtons = document.querySelectorAll('.quick-filter-btn');
+    
+    quickFilterButtons.forEach((btn, index) => {
       btn.addEventListener('click', (e) => {
+        // Remove active class from all buttons
         document.querySelectorAll('.quick-filter-btn').forEach(b => b.classList.remove('active'));
+        
+        // Add active class to clicked button
         e.target.classList.add('active');
         
         const filter = e.target.dataset.filter;
@@ -606,9 +639,12 @@ class PublicationsManager {
     });
     
     // Load more button
-    document.getElementById('load-more-btn').addEventListener('click', () => {
-      this.loadMore();
-    });
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        this.loadMore();
+      });
+    }
   }
   
   async loadPublications() {
@@ -618,9 +654,9 @@ class PublicationsManager {
       document.getElementById('publications-grid').style.display = 'none';
       document.getElementById('empty-state').style.display = 'none';
       
-      // In a real implementation, this would fetch from the CMS API
-      // For now, we'll use sample data
-      this.publications = await this.getSamplePublications();
+      // Load real publications data
+      this.publications = await this.getPublicationsData();
+      console.log('Loaded publications:', this.publications.length, this.publications);
       
       // Hide loading state
       document.getElementById('loading-state').style.display = 'none';
@@ -632,10 +668,24 @@ class PublicationsManager {
     }
   }
   
-  async getSamplePublications() {
-    // Sample publications data - in real implementation, this would come from CMS
+  async getPublicationsData() {
+    try {
+      const response = await fetch('/assets/json/publications-data.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log('Loaded publications data:', data.length, 'publications');
+      return data;
+    } catch (error) {
+      console.error('Error loading publications data:', error);
+      // Fallback to sample data if loading fails
+      return this.getSamplePublications();
+    }
+  }
+  
+  getSamplePublications() {
     return [
-      // Prof. Dr. Gebhard Böckle Publications
       {
         id: 1,
         title: "Irreducibility of versal deformation rings in the (p,p)-case for 2-dimensional representations",
@@ -644,292 +694,19 @@ class PublicationsManager {
         journal: "J. Algebra",
         volume: "444",
         pages: "81–123",
-        doi: "10.1016/j.jalgebra.2015.07.001",
-        abstract: "This paper studies the irreducibility of versal deformation rings in the (p,p)-case for 2-dimensional representations, providing important insights into deformation theory.",
+        abstract: "This paper studies the irreducibility of versal deformation rings in the (p,p)-case for 2-dimensional representations.",
         keywords: "deformation theory, Galois representations, irreducibility",
         type: "Journal Article",
         status: "Published",
         featured: true,
-        url: "http://www.sciencedirect.com/science/article/pii/S002186931500352X",
-        pdf: "/assets/uploads/BoeckleJuschka-Irreducibility.pdf"
-      },
-      {
-        id: 2,
-        title: "Independence of l-adic representations of geometric Galois groups",
-        authors: "Gebhard Böckle, W. Gajda, S. Petersen",
-        year: 2015,
-        journal: "J. Reine Angew. Math.",
-        doi: "10.1515/crelle-2015-0024",
-        abstract: "This work establishes independence results for l-adic representations of geometric Galois groups, extending our understanding of Galois representations.",
-        keywords: "l-adic representations, Galois groups, independence",
-        type: "Journal Article",
-        status: "Published",
-        featured: true,
-        url: "http://dx.doi.org/10.1515/crelle-2015-0024",
-        pdf: "/assets/uploads/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf"
-      },
-      {
-        id: 3,
-        title: "Hecke characters associated to Drinfeld modular forms",
-        authors: "Gebhard Böckle, T. Centeleghe",
-        year: 2015,
-        journal: "Compos. Math.",
-        abstract: "This paper explores the relationship between Hecke characters and Drinfeld modular forms, providing new insights into function field arithmetic.",
-        keywords: "Hecke characters, Drinfeld modular forms, function fields",
-        type: "Journal Article",
-        status: "Published",
-        featured: true,
-        url: "http://dx.doi.org/10.1112/S0010437X15007290",
-        pdf: "/assets/uploads/Boeckle-Centeleghe-HeckeCharactersAssociatedToDrinfeldModularForms.pdf"
-      },
-      {
-        id: 4,
-        title: "The distribution of the zeros of the Goss zeta-function for A=F₂[x,y]/(y²+y+x³+x+1)",
-        authors: "Gebhard Böckle",
-        year: 2013,
-        journal: "Math. Z.",
-        volume: "275",
-        pages: "835–861",
-        doi: "10.1007/s00209-013-1162-9",
-        abstract: "This work studies the distribution of zeros of the Goss zeta-function for a specific function field, contributing to our understanding of L-functions over function fields.",
-        keywords: "Goss zeta-function, function fields, zero distribution",
-        type: "Journal Article",
-        status: "Published",
-        url: "http://dx.doi.org/10.1007/s00209-013-1162-9",
-        pdf: "/assets/uploads/ZeroDistribForOneA.pdf"
-      },
-      {
-        id: 5,
-        title: "Algebraic Hecke characters and compatible systems of abelian mod p Galois representations over global fields",
-        authors: "Gebhard Böckle",
-        year: 2013,
-        journal: "Manuscripta Math.",
-        volume: "140",
-        pages: "303-331",
-        doi: "10.1007/s00222-012-0418-z",
-        abstract: "This paper establishes connections between algebraic Hecke characters and compatible systems of abelian mod p Galois representations.",
-        keywords: "Hecke characters, Galois representations, global fields",
-        type: "Journal Article",
-        status: "Published",
-        url: "http://www.springerlink.com/content/ll5v246782212835/",
-        pdf: "/assets/uploads/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf"
-      },
-      {
-        id: 6,
-        title: "On computing quaternion quotient graphs for function fields",
-        authors: "Gebhard Böckle, Ralf Butenuth",
-        year: 2012,
-        journal: "J. Théor. Nombres Bordeaux",
-        volume: "24",
-        pages: "73-99",
-        doi: "10.5802/jtnb.789",
-        abstract: "This work presents computational methods for computing quaternion quotient graphs over function fields.",
-        keywords: "quaternion algebras, function fields, computational methods",
-        type: "Journal Article",
-        status: "Published",
-        url: "http://jtnb.cedram.org/jtnb-bin/item?id=JTNB_2012__24_1_73_0",
-        pdf: "/assets/uploads/Proofs-Boeckle-Butenuth.pdf"
-      },
-      {
-        id: 7,
-        title: "Cartier Modules: finiteness results",
-        authors: "M. Blickle, Gebhard Böckle",
-        year: 2011,
-        journal: "J. Reine Angew. Math.",
-        volume: "661",
-        pages: "85-123",
-        doi: "10.1515/CRELLE.2011.085",
-        abstract: "This paper establishes finiteness results for Cartier modules, contributing to the theory of D-modules in positive characteristic.",
-        keywords: "Cartier modules, D-modules, finiteness results",
-        type: "Journal Article",
-        status: "Published",
-        url: "http://www.ams.org/mathscinet-getitem?mr=2863904",
-        pdf: "/assets/uploads/BlickleBoeckle-CartierModulesFinitenessResults.pdf"
-      },
-      {
-        id: 8,
-        title: "Computations with Modular Forms",
-        authors: "Gebhard Böckle, G. Wiese",
-        year: 2014,
-        journal: "Springer",
-        abstract: "A comprehensive textbook on computational aspects of modular forms, covering both theoretical foundations and practical implementation.",
-        keywords: "modular forms, computational methods, textbook",
-        type: "Book",
-        status: "Published",
-        featured: true,
-        url: "http://link.springer.com/book/10.1007/978-3-319-03847-6"
-      },
-      {
-        id: 9,
-        title: "Cohomological Theory of Crystals over Function Fields",
-        authors: "Gebhard Böckle, R. Pink",
-        year: 2009,
-        journal: "European Mathematical Society",
-        abstract: "A comprehensive treatment of the cohomological theory of crystals over function fields, including applications to arithmetic geometry.",
-        keywords: "crystals, function fields, cohomology, arithmetic geometry",
-        type: "Book",
-        status: "Published",
-        featured: true,
-        url: "http://www.ams.org/mathscinet-getitem?mr=2561048"
-      },
-      // Dr. Barinder Banwait Publications
-      {
-        id: 10,
-        title: "Explicit Chabauty-Kim for the thrice-punctured line in depth two",
-        authors: "Barinder S. Banwait, Ishai Dan-Cohen",
-        year: 2019,
-        journal: "Preprint",
-        doi: "10.48550/arXiv.1905.08902",
-        arxiv: "1905.08902",
-        abstract: "This paper presents explicit computations for the Chabauty-Kim method applied to the thrice-punctured line. The work extends previous results in computational arithmetic geometry and provides new insights into the structure of fundamental groups in relative pro-unipotent completions.",
-        keywords: "Chabauty-Kim method, arithmetic geometry, fundamental groups",
-        type: "Preprint",
-        status: "Published",
-        featured: true,
-        url: "https://arxiv.org/abs/1905.08902"
-      },
-      // Dr. Peter Gräf Publications
-      {
-        id: 11,
-        title: "A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation theory, and an investigation of its subfactors",
-        authors: "Peter Gräf, G. Böckle, R. Perkins",
-        year: 2021,
-        journal: "Research in Number Theory",
-        volume: "7",
-        pages: "Article number: 44",
-        doi: "10.1007/s40993-021-00254-0",
-        abstract: "This paper develops Hecke-equivariant decomposition methods for spaces of Drinfeld cusp forms using representation theory, providing new insights into the structure of these spaces.",
-        keywords: "Drinfeld modular forms, representation theory, Hecke operators, cusp forms",
-        type: "Journal Article",
-        status: "Published",
-        featured: true,
-        url: "https://link.springer.com/article/10.1007%2Fs40993-021-00254-0"
-      },
-      {
-        id: 12,
-        title: "Computing L-invariants via the Greenberg-Stevens formula",
-        authors: "S. Anni, G. Böckle, Peter Gräf, A. Troya",
-        year: 2019,
-        journal: "Journal de Théorie des Nombres de Bordeaux",
-        volume: "31",
-        pages: "727–746",
-        doi: "10.5802/jtnb.789",
-        abstract: "This work advances computational methods for computing L-invariants via the Greenberg-Stevens formula, contributing to our understanding of p-adic L-functions.",
-        keywords: "L-invariants, Greenberg-Stevens formula, p-adic L-functions, computational methods",
-        type: "Journal Article",
-        status: "Published",
-        url: "https://jtnb.centre-mersenne.org/article/JTNB_2019__31_3_727_0.pdf"
-      },
-      {
-        id: 13,
-        title: "A control theorem for p-adic automorphic forms and Teitelbaum's L-invariant",
-        authors: "Peter Gräf",
-        year: 2019,
-        journal: "The Ramanujan Journal",
-        volume: "50",
-        pages: "13-43",
-        doi: "10.1007/s11139-019-00160-1",
-        abstract: "This paper establishes control theorems for p-adic automorphic forms and Teitelbaum's L-invariant, advancing our understanding of p-adic automorphic representations.",
-        keywords: "p-adic automorphic forms, L-invariants, control theorems, Teitelbaum",
-        type: "Journal Article",
-        status: "Published",
-        url: "http://dx.doi.org/10.1007/s11139-019-00160-1"
-      },
-      {
-        id: 14,
-        title: "Boundary Distributions for GL3 over a Local Field and Symmetric Power Coefficients",
-        authors: "Peter Gräf",
-        year: 2020,
-        journal: "Ph.D. Thesis",
-        abstract: "This thesis studies boundary distributions for GL3 over local fields and their relationship to symmetric power coefficients, providing new insights into the structure of automorphic representations.",
-        keywords: "boundary distributions, GL3, local fields, symmetric power coefficients, automorphic representations",
-        type: "Thesis",
-        status: "Published",
-        pdf: "/assets/uploads/boundary_peter_graef.pdf"
-      },
-      // Software Packages
-      {
-        id: 15,
-        title: "QaQuotGraphs Magma Package",
-        authors: "Dr. Ralf Butenuth",
-        year: 2020,
-        journal: "Software Package",
-        abstract: "A comprehensive Magma package for computing the action by unit groups of maximal orders in quaternion algebras over F_q(T). This package provides efficient algorithms for working with quaternion algebras and their unit groups in the function field setting.",
-        keywords: "Magma, quaternion algebras, computational algebra, function fields",
-        type: "Software Package",
-        status: "Published",
-        featured: true,
-        software_info: {
-          repository_url: "https://github.com/example/qaquotgraphs",
-          download_url: "/assets/uploads/qaquotgraph_package.tar.gz",
-          version: "1.0.0",
-          license: "GPL-3.0",
-          documentation: "https://github.com/example/qaquotgraphs/wiki"
-        }
-      },
-      {
-        id: 16,
-        title: "Bruhat-Tits Buildings Package",
-        authors: "Lutz Hofmann",
-        year: 2021,
-        journal: "Software Package",
-        abstract: "Magma package to compute quotients of Bruhat-Tits buildings over function fields modulo congruence subgroups and the action of Hecke operators on harmonic cocycles with coefficients in char. 0.",
-        keywords: "Bruhat-Tits buildings, Hecke operators, harmonic cocycles, function fields",
-        type: "Software Package",
-        status: "Published",
-        software_info: {
-          repository_url: "https://github.com/lhofmann/buildings",
-          version: "2.1.0",
-          license: "MIT",
-          documentation: "https://github.com/lhofmann/buildings/blob/main/README.md"
-        }
-      },
-      {
-        id: 17,
-        title: "Hecke Operator Package",
-        authors: "Burak Cakir",
-        year: 2022,
-        journal: "Software Package",
-        abstract: "Magma package to compute Hecke eigensystems for harmonic cocycles on the Bruhat-Tits tree for GL_2(F_q(T)). This package implements efficient algorithms for computing with Hecke operators in the function field setting.",
-        keywords: "Hecke operators, harmonic cocycles, GL_2, Bruhat-Tits tree",
-        type: "Software Package",
-        status: "Published",
-        software_info: {
-          repository_url: "https://github.com/b-cakir/hecke-operator",
-          version: "1.5.0",
-          license: "GPL-2.0",
-          documentation: "https://github.com/b-cakir/hecke-operator/blob/main/README.md"
-        }
-      },
-      // Preprints and In Preparation
-      {
-        id: 18,
-        title: "Equidimensionality of universal pseudodeformation rings in characteristic p for absolute Galois groups of p-adic fields",
-        authors: "Gebhard Böckle, A.-K. Juschka",
-        year: 2023,
-        journal: "Preprint",
-        abstract: "This preprint establishes equidimensionality results for universal pseudodeformation rings in characteristic p for absolute Galois groups of p-adic fields.",
-        keywords: "pseudodeformation rings, Galois groups, p-adic fields",
-        type: "Preprint",
-        status: "In Preparation",
-        pdf: "/assets/uploads/Boeckle-Juschka-Pseudo-20230701.pdf"
-      },
-      {
-        id: 19,
-        title: "An Eichler-Shimura isomorphism over function fields between Drinfeld modular forms and cohomology classes of crystals",
-        authors: "Gebhard Böckle",
-        year: 2023,
-        journal: "Preprint",
-        abstract: "This work establishes an Eichler-Shimura isomorphism over function fields, connecting Drinfeld modular forms to cohomology classes of crystals.",
-        keywords: "Eichler-Shimura isomorphism, Drinfeld modular forms, crystals, function fields",
-        type: "Preprint",
-        status: "In Preparation",
-        pdf: "/assets/uploads/EiShNew.pdf"
+        url: "http://www.sciencedirect.com/science/article/pii/S002186931500352X"
       }
     ];
   }
   
   applyFilters() {
+    console.log('Applying filters:', this.filters);
+    
     this.filteredPublications = this.publications.filter(pub => {
       // Type filter
       if (this.filters.type && pub.type !== this.filters.type) return false;
@@ -941,15 +718,37 @@ class PublicationsManager {
       if (this.filters.year && pub.year.toString() !== this.filters.year) return false;
       
       // Search filter
-      if (this.filters.search) {
+      if (this.filters.search && this.filters.search.length > 0) {
         const searchTerm = this.filters.search;
-        const searchableText = `${pub.title} ${pub.authors} ${pub.abstract} ${pub.keywords}`.toLowerCase();
-        if (!searchableText.includes(searchTerm)) return false;
+        const searchableText = [
+          pub.title || '',
+          pub.authors || '',
+          pub.journal || '',
+          pub.abstract || '',
+          pub.keywords || '',
+          pub.year ? pub.year.toString() : '',
+          pub.volume || '',
+          pub.pages || '',
+          pub.doi || '',
+          pub.arxiv || ''
+        ].join(' ').toLowerCase();
+        
+        console.log('🔍 Searching in:', searchableText);
+        console.log('🔍 Looking for:', searchTerm);
+        console.log('🔍 Publication:', pub.title, 'Year:', pub.year);
+        
+        if (!searchableText.includes(searchTerm)) {
+          console.log('❌ No match found for:', pub.title);
+          return false;
+        } else {
+          console.log('✅ Match found for:', pub.title);
+        }
       }
       
       return true;
     });
     
+    console.log('Filtered publications count:', this.filteredPublications.length);
     this.currentPage = 1;
     this.renderPublications();
   }
@@ -960,19 +759,25 @@ class PublicationsManager {
     
     // Apply quick filter
     switch (filter) {
-      case 'recent':
-        this.filters.year = '2020';
+      case 'journal':
+        this.filters.type = 'Journal Article';
         break;
-      case 'featured':
-        this.filteredPublications = this.publications.filter(pub => pub.featured);
-        this.renderPublications();
-        return;
+      case 'preprint':
+        this.filters.type = 'Preprint';
+        break;
       case 'software':
         this.filters.type = 'Software Package';
         break;
-      case 'papers':
-        this.filters.type = 'Journal Article';
+      case 'book':
+        this.filters.type = 'Book';
         break;
+      case 'thesis':
+        this.filters.type = 'Thesis';
+        break;
+      case 'all':
+        this.filteredPublications = this.publications;
+        this.renderPublications();
+        return;
       default:
         this.filteredPublications = this.publications;
         this.renderPublications();
@@ -983,19 +788,36 @@ class PublicationsManager {
   }
   
   renderPublications() {
+    console.log('Rendering publications...', this.filteredPublications.length);
     const grid = document.getElementById('publications-grid');
     const emptyState = document.getElementById('empty-state');
     const loadMoreContainer = document.getElementById('load-more-container');
+    const searchResultsInfo = document.getElementById('publications-search-results-info');
+    const searchResultsCount = document.getElementById('publications-search-results-count');
+    
+    console.log('DOM elements found:', { grid: !!grid, emptyState: !!emptyState, loadMoreContainer: !!loadMoreContainer });
+    
+    // Update search results info
+    if (searchResultsInfo && searchResultsCount) {
+      if (this.filters.search && this.filters.search.length > 0) {
+        searchResultsCount.textContent = this.filteredPublications.length;
+        searchResultsInfo.style.display = 'block';
+        console.log('📊 Publications search results:', this.filteredPublications.length);
+      } else {
+        searchResultsInfo.style.display = 'none';
+      }
+    }
     
     if (this.filteredPublications.length === 0) {
-      grid.style.display = 'none';
-      emptyState.style.display = 'block';
-      loadMoreContainer.style.display = 'none';
+      console.log('No publications to display, showing empty state');
+      if (grid) grid.style.display = 'none';
+      if (emptyState) emptyState.style.display = 'block';
+      if (loadMoreContainer) loadMoreContainer.style.display = 'none';
       return;
     }
     
-    grid.style.display = 'grid';
-    emptyState.style.display = 'none';
+    if (grid) grid.style.display = 'grid';
+    if (emptyState) emptyState.style.display = 'none';
     
     // Calculate pagination
     const startIndex = 0;
@@ -1012,23 +834,64 @@ class PublicationsManager {
     });
     
     // Show/hide load more button
-    if (endIndex < this.filteredPublications.length) {
-      loadMoreContainer.style.display = 'block';
-    } else {
-      loadMoreContainer.style.display = 'none';
+    if (loadMoreContainer) {
+      if (endIndex < this.filteredPublications.length) {
+        loadMoreContainer.style.display = 'block';
+      } else {
+        loadMoreContainer.style.display = 'none';
+      }
     }
   }
   
   createPublicationCard(pub) {
+    console.log('Creating card for publication:', pub.title);
     const template = document.getElementById('publication-card-template');
+    if (!template) {
+      console.error('Publication card template not found!');
+      return document.createElement('div');
+    }
     const card = template.content.cloneNode(true);
     
     // Set basic information
-    card.querySelector('.publication-type').textContent = pub.type;
-    card.querySelector('.publication-status').textContent = pub.status;
-    card.querySelector('.publication-year').textContent = pub.year;
-    card.querySelector('.publication-title a').textContent = pub.title;
-    card.querySelector('.publication-title a').href = `/publications/${pub.id}/`;
+    const typeEl = card.querySelector('.publication-type');
+    const statusEl = card.querySelector('.publication-status');
+    const yearEl = card.querySelector('.publication-year');
+    
+    if (typeEl) typeEl.textContent = pub.type;
+    if (statusEl) statusEl.textContent = pub.status;
+    if (yearEl) yearEl.textContent = pub.year;
+    const titleEl = card.querySelector('.publication-title a');
+    if (titleEl) titleEl.textContent = pub.title;
+    
+    // Set the link to the actual URL if available, otherwise make it non-clickable
+    const titleLink = card.querySelector('.publication-title a');
+    if (titleLink) {
+      if (pub.url) {
+        titleLink.href = pub.url;
+        titleLink.target = '_blank';
+        titleLink.style.cursor = 'pointer';
+        titleLink.style.color = '#c22032';
+      } else if (pub.pdf) {
+        titleLink.href = pub.pdf;
+        titleLink.target = '_blank';
+        titleLink.style.cursor = 'pointer';
+        titleLink.style.color = '#c22032';
+      } else if (pub.software_info && pub.software_info.repository_url) {
+        // For software packages, use the repository URL
+        titleLink.href = pub.software_info.repository_url;
+        titleLink.target = '_blank';
+        titleLink.style.cursor = 'pointer';
+        titleLink.style.color = '#c22032';
+      } else {
+        // Make it clear this is not clickable
+        titleLink.href = 'javascript:void(0)';
+        titleLink.style.cursor = 'default';
+        titleLink.style.color = '#212529';
+        titleLink.style.textDecoration = 'none';
+        titleLink.title = 'No link available';
+      }
+    }
+    
     card.querySelector('.publication-authors').textContent = pub.authors;
     card.querySelector('.publication-venue').textContent = pub.journal;
     card.querySelector('.publication-abstract').textContent = pub.abstract;
@@ -1074,29 +937,22 @@ class PublicationsManager {
       linksContainer.appendChild(urlLink);
     }
     
-    if (pub.software_info && pub.software_info.repository_url) {
+    if (pub.pdf) {
+      const pdfLink = document.createElement('a');
+      pdfLink.href = pub.pdf;
+      pdfLink.className = 'publication-link-btn';
+      pdfLink.innerHTML = '<i class="fas fa-file-pdf"></i> PDF';
+      pdfLink.target = '_blank';
+      linksContainer.appendChild(pdfLink);
+    }
+    
+    if (pub.software_info && pub.software_info.repository_url && pub.software_info.repository_url !== 'https://github.com/rbutenuth/qaquotgraphs') {
       const repoLink = document.createElement('a');
       repoLink.href = pub.software_info.repository_url;
       repoLink.className = 'publication-link-btn';
       repoLink.innerHTML = '<i class="fab fa-github"></i> Repository';
       repoLink.target = '_blank';
       linksContainer.appendChild(repoLink);
-    }
-    
-    // Add metrics
-    const metricsContainer = card.querySelector('.publication-metrics');
-    if (pub.impact_factor) {
-      const impactMetric = document.createElement('div');
-      impactMetric.className = 'metric-item';
-      impactMetric.innerHTML = `<i class="fas fa-star"></i> IF: ${pub.impact_factor}`;
-      metricsContainer.appendChild(impactMetric);
-    }
-    
-    if (pub.citations) {
-      const citationMetric = document.createElement('div');
-      citationMetric.className = 'metric-item';
-      citationMetric.innerHTML = `<i class="fas fa-quote-left"></i> ${pub.citations} citations`;
-      metricsContainer.appendChild(citationMetric);
     }
     
     return card;
@@ -1106,14 +962,265 @@ class PublicationsManager {
     this.currentPage++;
     this.renderPublications();
   }
-  
-
 }
 
 // Initialize the publications manager when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-  new PublicationsManager();
+  console.log('🚀 Initializing Publications Manager...');
+  const manager = new PublicationsManager();
+  
+  // Make manager globally accessible for debugging
+  window.publicationsManager = manager;
+  
+  // Link validation and error detection script
+  setTimeout(() => {
+    validatePublicationLinks();
+  }, 2000); // Wait for publications to load
+  
+  // Test publications search functionality
+  setTimeout(() => {
+    console.log('🧪 Testing publications search functionality...');
+    const searchInput = document.getElementById('publications-search-input');
+    if (searchInput) {
+      console.log('✅ Publications search input found');
+      // Test with a sample search
+      searchInput.value = 'Böckle';
+      searchInput.dispatchEvent(new Event('input'));
+    } else {
+      console.error('❌ Publications search input not found');
+    }
+  }, 3000);
 });
+
+// Publications search test functions
+function testPublicationsSearch(term) {
+  console.log('🧪 Testing publications search with term:', term);
+  const searchInput = document.getElementById('publications-search-input');
+  if (searchInput && window.publicationsManager) {
+    searchInput.value = term;
+    searchInput.dispatchEvent(new Event('input'));
+    console.log('✅ Publications search test executed');
+  } else {
+    console.error('❌ Publications search test failed - elements not found');
+  }
+}
+
+function clearPublicationsSearch() {
+  console.log('🧪 Clearing publications search test');
+  const searchInput = document.getElementById('publications-search-input');
+  if (searchInput && window.publicationsManager) {
+    searchInput.value = '';
+    searchInput.dispatchEvent(new Event('input'));
+    console.log('✅ Publications search cleared');
+  }
+}
+
+// Link validation and error detection function
+async function validatePublicationLinks() {
+  console.log('🔍 Starting publication link validation...');
+  
+  const links = document.querySelectorAll('a[href]');
+  const brokenLinks = [];
+  const workingLinks = [];
+  
+  for (let link of links) {
+    const href = link.href;
+    
+    // Skip internal links and anchors
+    if (href.startsWith(window.location.origin) || href.startsWith('#') || href.startsWith('mailto:')) {
+      continue;
+    }
+    
+    try {
+      // Check if link is accessible
+      const response = await fetch(href, { 
+        method: 'HEAD', 
+        mode: 'no-cors',
+        cache: 'no-cache'
+      });
+      
+      // If we can't check due to CORS, assume it's working
+      workingLinks.push({
+        url: href,
+        element: link,
+        text: link.textContent.trim()
+      });
+      
+    } catch (error) {
+      // Try alternative validation for known domains
+      if (isLikelyWorking(href)) {
+        workingLinks.push({
+          url: href,
+          element: link,
+          text: link.textContent.trim()
+        });
+      } else {
+        brokenLinks.push({
+          url: href,
+          element: link,
+          text: link.textContent.trim(),
+          error: error.message
+        });
+        
+        // Add visual indicator for broken links
+        link.style.opacity = '0.6';
+        link.style.textDecoration = 'line-through';
+        link.title = 'Link may be broken - ' + error.message;
+      }
+    }
+  }
+  
+  // Log results
+  console.log(`✅ Working links: ${workingLinks.length}`);
+  console.log(`❌ Broken links: ${brokenLinks.length}`);
+  
+  if (brokenLinks.length > 0) {
+    console.warn('🚨 Broken links detected:', brokenLinks);
+    
+    // Create a summary in the console
+    console.group('📋 Link Validation Summary');
+    console.log('Working links:', workingLinks.map(l => l.url));
+    console.log('Broken links:', brokenLinks.map(l => l.url));
+    console.groupEnd();
+  }
+  
+  // Check for clickable content issues
+  checkClickableContent();
+}
+
+// Helper function to check if a link is likely working based on domain
+function isLikelyWorking(url) {
+  const knownWorkingDomains = [
+    'doi.org',
+    'arxiv.org',
+    'springer.com',
+    'link.springer.com',
+    'ams.org',
+    'mathscinet.ams.org',
+    'jtnb.cedram.org',
+    'github.com',
+    'dx.doi.org'
+  ];
+  
+  return knownWorkingDomains.some(domain => url.includes(domain));
+}
+
+// Check for clickable content issues
+function checkClickableContent() {
+  console.log('🔍 Checking clickable content...');
+  
+  const issues = [];
+  
+  // Check publication titles
+  const titles = document.querySelectorAll('.publication-title a');
+  titles.forEach((title, index) => {
+    if (!title.href || title.href === '#' || title.href === window.location.href) {
+      issues.push({
+        type: 'Non-clickable title',
+        element: title,
+        text: title.textContent.trim(),
+        index: index
+      });
+    }
+  });
+  
+  // Check publication link buttons
+  const linkButtons = document.querySelectorAll('.publication-link-btn');
+  linkButtons.forEach((btn, index) => {
+    if (!btn.href || btn.href === '#' || btn.href === window.location.href) {
+      issues.push({
+        type: 'Non-clickable button',
+        element: btn,
+        text: btn.textContent.trim(),
+        index: index
+      });
+    }
+  });
+  
+  // Check filter buttons
+  const filterButtons = document.querySelectorAll('.quick-filter-btn');
+  filterButtons.forEach((btn, index) => {
+    if (!btn.onclick && !btn.dataset.filter) {
+      issues.push({
+        type: 'Non-functional filter button',
+        element: btn,
+        text: btn.textContent.trim(),
+        index: index
+      });
+    }
+  });
+  
+  if (issues.length > 0) {
+    console.warn('⚠️ Clickable content issues detected:', issues);
+    
+    // Add visual indicators for issues
+    issues.forEach(issue => {
+      if (issue.element) {
+        issue.element.style.border = '2px solid #ffc107';
+        issue.element.style.backgroundColor = '#fff3cd';
+        issue.element.title = `Issue: ${issue.type}`;
+      }
+    });
+  } else {
+    console.log('✅ All clickable content appears to be working correctly');
+  }
+  
+  // Check for missing content
+  checkMissingContent();
+}
+
+// Check for missing content
+function checkMissingContent() {
+  console.log('🔍 Checking for missing content...');
+  
+  const issues = [];
+  
+  // Check for empty abstracts
+  const abstracts = document.querySelectorAll('.publication-abstract');
+  abstracts.forEach((abstract, index) => {
+    if (!abstract.textContent.trim()) {
+      issues.push({
+        type: 'Empty abstract',
+        element: abstract,
+        index: index
+      });
+    }
+  });
+  
+  // Check for missing authors
+  const authors = document.querySelectorAll('.publication-authors');
+  authors.forEach((author, index) => {
+    if (!author.textContent.trim()) {
+      issues.push({
+        type: 'Missing authors',
+        element: author,
+        index: index
+      });
+    }
+  });
+  
+  // Check for missing links
+  const cards = document.querySelectorAll('.publication-card');
+  cards.forEach((card, index) => {
+    const links = card.querySelectorAll('.publication-link-btn');
+    if (links.length === 0) {
+      issues.push({
+        type: 'No links available',
+        element: card,
+        index: index
+      });
+    }
+  });
+  
+  if (issues.length > 0) {
+    console.warn('⚠️ Missing content issues detected:', issues);
+  } else {
+    console.log('✅ All content appears to be complete');
+  }
+  
+  // Final summary
+  console.log('🎯 Publication page validation complete!');
+}
 </script>
 
  

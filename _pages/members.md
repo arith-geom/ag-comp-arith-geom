@@ -6,10 +6,7 @@ nav: true
 nav_order: 3
 ---
 
-<div class="team-intro mb-5">
-  <h2 class="text-center mb-4 translatable-content" data-translation-key="members.title">Our Research Team</h2>
-  <p class="lead text-center translatable-content" data-translation-key="members.intro">Meet the dedicated researchers and staff of the AG Computational Arithmetic Geometry group at the University of Heidelberg.</p>
-</div>
+
 
 <div class="team-sections">
   <!-- Head of Group -->

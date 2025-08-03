@@ -6,11 +6,6 @@ nav: true
 nav_order: 2
 ---
 
-<div class="research-intro mb-5">
-  <h2 class="text-center mb-4 translatable-content" data-translation-key="research.title">Research Themes</h2>
-  <p class="lead text-center translatable-content" data-translation-key="research.intro_lead">Our research focuses on the intersection of arithmetic geometry, Galois representations, and computational methods in number theory.</p>
-</div>
-
 <div class="research-areas">
   <div class="research-area-card">
     <div class="research-icon">
@@ -49,34 +44,6 @@ nav_order: 2
 
 <style>
 /* Clean and modern research page styling */
-.research-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-}
-
-.research-intro h2 {
-  color: var(--text-primary);
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.research-intro .lead {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
 .research-areas {
   max-width: 1200px;
   margin: 0 auto;

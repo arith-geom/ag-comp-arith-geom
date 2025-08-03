@@ -6,6 +6,14 @@ description: This is the website of the research group "computational arithmetic
 url: https://github.com/VictorMerk/ag-comp-arith-geom
 twitter_username: placeholder
 github_username: placeholder
+
+# Website Creator Information
+creator:
+  name: "Victor Merk"
+  github: "VictorMerk"
+  github_url: "https://github.com/VictorMerk"
+  role: "Website Designer & Developer"
+  year: "2024"
 bilingual_cms:
   enabled: true
   default_language: en
@@ -194,6 +202,9 @@ collections:
   teaching:
     output: true
     permalink: /teaching/:name/
+  members:
+    output: true
+    permalink: /members/:name/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

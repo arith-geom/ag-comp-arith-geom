@@ -1153,6 +1153,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="text-center text-muted small">
       &copy; 2025 AG Computational Arithmetic Geometry . All Rights Reserved.
       Last updated: August 03, 2025.
+      <br>
+      <span class="website-credits">
+        Website designed and developed by 
+        <a href="https://github.com/VictorMerk" target="_blank" rel="noopener" class="creator-link">
+          Victor Merk
+        </a>
+      </span>
     </div>
   </div>
 </footer>
@@ -1284,6 +1291,39 @@ html[data-theme="dark"] .footer a:hover {
 body.dark-mode .footer-divider,
 html[data-theme="dark"] .footer-divider {
   border-color: var(--border-color, #374151) !important;
+}
+
+/* Website credits styling */
+.website-credits {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.creator-link {
+  color: var(--link-color, #C22032) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.creator-link:hover {
+  color: var(--link-hover, #991B1B) !important;
+  text-decoration: underline;
+}
+
+/* Dark mode creator link */
+[data-theme="dark"] .creator-link,
+body.dark-mode .creator-link,
+html[data-theme="dark"] .creator-link {
+  color: var(--link-color, #FF6B6B) !important;
+}
+
+[data-theme="dark"] .creator-link:hover,
+body.dark-mode .creator-link:hover,
+html[data-theme="dark"] .creator-link:hover {
+  color: var(--link-hover, #FF5252) !important;
 }
 
 /* Force dark mode styles with high specificity */

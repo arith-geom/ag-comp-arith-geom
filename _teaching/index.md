@@ -7,14 +7,6 @@ scripts:
 ---
 
 <div class="teaching-page">
-  <!-- Enhanced Header Section -->
-  <div class="teaching-header">
-    <div class="teaching-intro">
-      <h2>Teaching Activities</h2>
-      <p>Comprehensive overview of current and past teaching activities at Heidelberg University, including lectures, seminars, and research courses in arithmetic geometry, algebra, and number theory.</p>
-    </div>
-  </div>
-
   <!-- Filter Controls -->
   <div class="filter-controls">
     <div class="filter-group">
@@ -1052,35 +1044,6 @@ scripts:
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-}
-
-/* Header Styles */
-.teaching-header {
-  background: var(--bg-secondary);
-  border-bottom: 3px solid var(--heidelberg-red);
-  padding: 2rem 0;
-  margin: -2rem -2rem 2rem -2rem;
-  border-radius: 0 0 15px 15px;
-}
-
-.teaching-intro {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 2rem;
-}
-
-.teaching-intro h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.teaching-intro p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
 }
 
 /* Filter Controls */

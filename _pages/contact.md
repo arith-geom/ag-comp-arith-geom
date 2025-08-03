@@ -6,42 +6,54 @@ nav: true
 nav_order: 7
 ---
 
-<div class="contact-intro mb-5">
-  <h2 class="text-center mb-4 translatable-content" data-translation-key="contact.title">Get in Touch</h2>
-  <p class="lead text-center translatable-content" data-translation-key="contact.intro">We welcome inquiries from students, researchers, and collaborators interested in arithmetic geometry and computational number theory.</p>
+
+
+
+
+<div class="location-section mt-5">
+  <div class="location-container">
+    <div class="location-header">
+      <div class="location-icon">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+      </div>
+      <h3 class="translatable-content" data-translation-key="contact.our_location">Our Location</h3>
+    </div>
+    <div class="location-content">
+      <div class="address-info">
+        <h4 class="translatable-content" data-translation-key="contact.postal_address">Postal Address</h4>
+        <div class="address-block">
+          <p><strong>Computational Arithmetic Geometry</strong></p>
+          <p>IWR (Interdisciplinary Center for Scientific Computing)</p>
+          <p>University of Heidelberg</p>
+          <p>Im Neuenheimer Feld 205</p>
+          <p>69120 Heidelberg</p>
+          <p>Germany</p>
+        </div>
+        <div class="map-actions mt-3">
+          <a href="https://maps.google.com/?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany" 
+             target="_blank" 
+             rel="noopener" 
+             class="btn btn-primary">
+            <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="contact.open_in_google_maps">Open in Google Maps</span>
+          </a>
+        </div>
+      </div>
+      <div class="map-wrapper">
+        <iframe
+          width="100%"
+          height="300"
+          style="border:0; border-radius: var(--radius-lg);"
+          loading="lazy"
+          allowfullscreen
+          title="Map showing the location of AG Computational Arithmetic Geometry at University of Heidelberg"
+          src="https://www.google.com/maps/embed/v1/place?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+        </iframe>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="contact-container">
-  <div class="contact-card">
-    <div class="contact-icon">
-      <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-    </div>
-    <div class="contact-content">
-      <h3 class="translatable-content" data-translation-key="contact.postal_address">Postal Address</h3>
-      <div class="address-block">
-        <p><strong>Computational Arithmetic Geometry</strong></p>
-        <p>IWR (Interdisciplinary Center for Scientific Computing)</p>
-        <p>University of Heidelberg</p>
-        <p>Im Neuenheimer Feld 205</p>
-        <p>69120 Heidelberg</p>
-        <p>Germany</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="contact-card">
-    <div class="contact-icon">
-      <i class="fas fa-envelope" aria-hidden="true"></i>
-    </div>
-    <div class="contact-content">
-      <h3 class="translatable-content" data-translation-key="common.email">Email</h3>
-      <div class="contact-detail">
-        <p><a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="email-link"><strong>sekretariat.boeckle@iwr.uni-heidelberg.de</strong></a></p>
-        <small class="text-muted translatable-content" data-translation-key="contact.email_note">Click the email address to open your email client</small>
-      </div>
-    </div>
-  </div>
-
+<div class="contact-container mt-5">
   <div class="contact-card">
     <div class="contact-icon">
       <i class="fas fa-phone" aria-hidden="true"></i>
@@ -71,19 +83,43 @@ nav_order: 7
 
 <div class="contact-form-section mt-5">
   <div class="form-container">
-    <h3 class="text-center mb-4 translatable-content" data-translation-key="contact.send_message">Send us a Message</h3>
-    <div class="google-form-wrapper">
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfy6sa-CR4aqkB9fG5_VBGudtn0MU4rbOIy5V6NluNDkMwDyQ/viewform?embedded=true" 
-        width="100%" 
-        height="800" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0"
-        title="Contact Form - AG Computational Arithmetic Geometry"
-        class="google-form-iframe">
-        Loading…
-      </iframe>
+    <div class="form-header">
+      <div class="form-icon">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+      </div>
+      <h3 class="translatable-content" data-translation-key="contact.send_message">Get in Touch</h3>
+    </div>
+    <div class="form-content">
+      <div class="email-info">
+        <h4 class="translatable-content" data-translation-key="common.email">Direct Email</h4>
+        <div class="contact-detail">
+          <p><a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="email-link"><strong>sekretariat.boeckle@iwr.uni-heidelberg.de</strong></a></p>
+          <small class="text-muted translatable-content" data-translation-key="contact.email_note">Click the email address to open your email client</small>
+        </div>
+        <div class="contact-options mt-3">
+          <p class="text-muted mb-2"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>Choose your preferred contact method:</p>
+          <div class="contact-buttons">
+            <a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="btn btn-outline-primary">
+              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Send Email
+            </a>
+            <span class="contact-divider">or</span>
+            <span class="form-label">Use the contact form</span>
+          </div>
+        </div>
+      </div>
+      <div class="google-form-wrapper">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfy6sa-CR4aqkB9fG5_VBGudtn0MU4rbOIy5V6NluNDkMwDyQ/viewform?embedded=true" 
+          width="100%" 
+          height="600" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          title="Contact Form - AG Computational Arithmetic Geometry"
+          class="google-form-iframe">
+          Loading…
+        </iframe>
+      </div>
     </div>
     <div class="form-note mt-3">
       <p class="text-center text-muted">
@@ -96,30 +132,7 @@ nav_order: 7
   </div>
 </div>
 
-<div class="map-section mt-5">
-  <div class="map-container">
-    <h3 class="text-center mb-4 translatable-content" data-translation-key="contact.our_location">Our Location</h3>
-    <div class="map-wrapper">
-      <iframe
-        width="100%"
-        height="400"
-        style="border:0; border-radius: var(--radius-lg);"
-        loading="lazy"
-        allowfullscreen
-        title="Map showing the location of AG Computational Arithmetic Geometry at University of Heidelberg"
-        src="https://www.google.com/maps/embed/v1/place?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
-      </iframe>
-    </div>
-    <div class="map-actions mt-3 text-center">
-      <a href="https://maps.google.com/?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany" 
-         target="_blank" 
-         rel="noopener" 
-         class="btn btn-primary">
-        <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="contact.open_in_google_maps">Open in Google Maps</span>
-      </a>
-    </div>
-  </div>
-</div>
+
 
 <style>
 .contact-intro {
@@ -253,24 +266,74 @@ nav_order: 7
   border-radius: 4px;
 }
 
-.map-section {
+.location-section {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.map-container {
+.location-container {
   background: var(--bg-primary);
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
 }
 
-.map-container h3 {
+.location-container:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.location-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.location-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.location-container:hover .location-icon {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+.location-header h3 {
   color: var(--text-primary);
   font-size: 1.8rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin: 0;
+}
+
+.location-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.address-info h4 {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .map-wrapper {
@@ -278,6 +341,8 @@ nav_order: 7
   overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
 }
 
 .map-actions .btn {
@@ -294,7 +359,7 @@ nav_order: 7
 
 /* Contact Form Styles */
 .contact-form-section {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -304,13 +369,88 @@ nav_order: 7
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
 }
 
-.form-container h3 {
+.form-container:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.form-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.form-container:hover .form-icon {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+.form-header h3 {
   color: var(--text-primary);
   font-size: 1.8rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin: 0;
+}
+
+.form-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.email-info h4 {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.contact-options {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.contact-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-divider {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.form-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
 .google-form-wrapper {
@@ -387,20 +527,30 @@ nav_order: 7
     font-size: 1.3rem;
   }
   
-  .map-container {
+  .location-container {
     padding: 1.5rem;
   }
   
-  .map-container h3 {
+  .location-header h3 {
     font-size: 1.5rem;
+  }
+  
+  .location-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .form-container {
     padding: 1.5rem;
   }
   
-  .form-container h3 {
+  .form-header h3 {
     font-size: 1.5rem;
+  }
+  
+  .form-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .google-form-iframe {
@@ -423,7 +573,7 @@ nav_order: 7
     font-size: 1.2rem;
   }
   
-  .map-container {
+  .location-container {
     padding: 1rem;
   }
   
@@ -431,7 +581,7 @@ nav_order: 7
     padding: 1rem;
   }
   
-  .form-container h3 {
+  .form-header h3 {
     font-size: 1.3rem;
   }
   

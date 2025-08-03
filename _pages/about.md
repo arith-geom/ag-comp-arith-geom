@@ -96,4 +96,74 @@ nav: true
   A more detailed survey of our activities can be found in the research section and in the publications of our members.
 </div>
 
+<!-- Website Credits Section -->
+<div class="website-credits-section mt-5 pt-4 border-top">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <h4 class="text-center mb-3">Website Credits</h4>
+      <div class="credits-content text-center">
+        <p class="text-muted mb-2">
+          This website was designed and developed by 
+          <a href="https://github.com/VictorMerk" target="_blank" rel="noopener" class="creator-link">
+            Victor Merk
+          </a>
+          as part of a comprehensive web development project.
+        </p>
+        <p class="text-muted small">
+          Built with modern web technologies including Jekyll, Bootstrap, and custom JavaScript. 
+          Features include responsive design, dark mode support, and a content management system.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.website-credits-section {
+  background: var(--bg-secondary, #f8f9fa);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.website-credits-section h4 {
+  color: var(--text-primary, #212529);
+  font-weight: 600;
+}
+
+.credits-content .creator-link {
+  color: var(--link-color, #C22032);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.credits-content .creator-link:hover {
+  color: var(--link-hover, #991B1B);
+  text-decoration: underline;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .website-credits-section,
+body.dark-mode .website-credits-section {
+  background: var(--bg-secondary, #1a1a1a);
+  border-color: var(--border-color, #374151);
+}
+
+[data-theme="dark"] .website-credits-section h4,
+body.dark-mode .website-credits-section h4 {
+  color: var(--text-primary, #FFFFFF);
+}
+
+[data-theme="dark"] .credits-content .creator-link,
+body.dark-mode .credits-content .creator-link {
+  color: var(--link-color, #FF6B6B);
+}
+
+[data-theme="dark"] .credits-content .creator-link:hover,
+body.dark-mode .credits-content .creator-link:hover {
+  color: var(--link-hover, #FF5252);
+}
+</style>
+
  
