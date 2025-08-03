@@ -206,11 +206,12 @@ assets/
 ## 🔮 **Future Enhancements**
 
 ### **Planned Features:**
-1. **Advanced Analytics**: Course popularity tracking
-2. **Export Functionality**: PDF and CSV exports
-3. **Calendar Integration**: Course schedule calendar
-4. **Student Portal**: Student-specific content areas
-5. **Multi-language Support**: German/English content
+1. **Advanced Team Analytics**: Member status tracking and alumni network management
+2. **Advanced Analytics**: Course popularity tracking
+3. **Export Functionality**: PDF and CSV exports
+4. **Calendar Integration**: Course schedule calendar
+5. **Student Portal**: Student-specific content areas
+6. **Multi-language Support**: German/English content
 
 ### **Technical Roadmap:**
 1. **Performance Optimization**: Further speed improvements
