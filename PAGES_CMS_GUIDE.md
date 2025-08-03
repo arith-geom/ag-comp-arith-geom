@@ -20,10 +20,8 @@ Once connected, you'll see all your content types in the sidebar:
 - **Publications** - Academic papers and research outputs
 - **Teaching & Courses** - Course information and materials
 - **Research Areas** - Research topics and descriptions
-- **News & Blog Posts** - News articles and updates
+- **News & Events** - News articles and updates
 - **Links & Resources** - Useful links and resources
-- **Events** - Conferences, seminars, and events
-- **Site Configuration** - Website settings
 
 ## 🎯 Content Management
 
@@ -42,64 +40,63 @@ Once connected, you'll see all your content types in the sidebar:
 ### **Managing Media**
 - **Images**: Upload to the "Images & Photos" section
 - **Documents**: Upload to the "Documents & PDFs" section
-- **Media Files**: Upload to the "Media Files" section
 
 ## 📝 Content Types Overview
 
 ### **Team Members**
 - **Basic Info**: Name, role, status, photo
-- **Contact**: Email, website, GitHub, ORCID
-- **Academic**: Research interests, biography, education history
-- **Publications**: Link to key publications
-- **Languages**: Languages spoken
+- **Contact**: Email, website
+- **Academic**: Research interests, biography
+- **Status**: Active, Inactive, Alumni
 
 ### **Publications**
 - **Basic Info**: Title, authors, year, type
-- **Details**: Journal, volume, pages, DOI
-- **Content**: Abstract, keywords, funding info
-- **Links**: URL, code repository
-- **Metadata**: Citations, featured status
+- **Details**: Journal, DOI, abstract
+- **Links**: URL for external access
+- **Status**: Published, Submitted, In Preparation, Under Review
 
 ### **Teaching & Courses**
 - **Basic Info**: Title, semester, instructor, type
 - **Details**: Credits, language, description
-- **Content**: Syllabus, course materials
-- **Schedule**: Course schedule with dates and topics
-- **Settings**: Active status, enrollment limits
+- **Content**: Course materials (PDFs, documents)
+- **Settings**: Active status for current courses
 
 ### **Research Areas**
-- **Basic Info**: Title, description, order
-- **Content**: Keywords, detailed description
-- **Relationships**: Related publications, team members
-- **Collaborations**: External collaborators
+- **Basic Info**: Title, description, keywords
+- **Relationships**: Link to team members and publications
+- **Organization**: Display order for website
 
-### **News & Blog Posts**
+### **News & Events**
 - **Basic Info**: Title, date, author
-- **Content**: Excerpt, main content, featured image
-- **Organization**: Categories, tags, related posts
-- **Settings**: Published status, featured status
+- **Content**: Excerpt, main content
+- **Settings**: Featured status, published status
 
 ### **Links & Resources**
 - **Basic Info**: Title, URL, category
-- **Details**: Description, icon, tags
-- **Organization**: Display order, featured status
+- **Details**: Description, featured status
+- **Categories**: Academic, Software, Database, Conference, Other
 
-### **Events**
-- **Basic Info**: Title, date, type, location
-- **Content**: Description, organizers
-- **Settings**: Registration requirements, featured status
-
-## 🔧 Advanced Features
+## 🔧 Key Features
 
 ### **Rich Text Editing**
 - Use the rich text editor for content fields
-- Supports formatting: bold, italic, links, lists, code
+- Supports formatting: bold, italic, links, lists
 - Tables and images can be embedded
 
 ### **File Uploads**
 - Drag and drop files directly into the interface
 - Supported formats are automatically filtered
-- Files are organized by type and category
+- Files are organized by type
+
+### **Enhanced Validation**
+- Real-time field validation with helpful error messages
+- Pattern matching for emails, DOIs, and URLs
+- Required field indicators and placeholders
+
+### **Media Management**
+- **Images**: Optimized uploads with size recommendations
+- **Documents**: Support for academic formats (PDF, DOCX, TEX, BIB)
+- **Presentations**: Dedicated section for slides and presentations
 
 ### **Search and Filtering**
 - Use the search bar to find content quickly
@@ -109,7 +106,6 @@ Once connected, you'll see all your content types in the sidebar:
 ### **Content Relationships**
 - Link publications to team members
 - Connect research areas to publications
-- Associate events with organizers
 - Cross-reference related content
 
 ## 📱 Media Management
@@ -118,17 +114,13 @@ Once connected, you'll see all your content types in the sidebar:
 - **Profile Photos**: 400x400px recommended
 - **Featured Images**: 1200x630px recommended
 - **Formats**: JPG, PNG, WebP, SVG
-- **Size Limit**: 5MB per file
+- **Size Limit**: 10MB per file
 
 ### **Document Guidelines**
-- **Formats**: PDF, DOC, DOCX, PPT, PPTX
+- **Formats**: PDF, DOC, DOCX, PPT, PPTX, TXT, MD
 - **Naming**: Use descriptive filenames
 - **Organization**: Group by type and year
-
-### **Media Guidelines**
-- **Video**: MP4, AVI, MOV formats
-- **Audio**: MP3, WAV, AAC formats
-- **Size**: Consider file sizes for web delivery
+- **Size Limit**: 50MB per file
 
 ## 🎨 Content Best Practices
 
@@ -170,13 +162,12 @@ Once connected, you'll see all your content types in the sidebar:
 - Website title and description
 - Contact information
 - Social media links
-- Analytics settings
 
 ### **Advanced Settings**
 - Language preferences
 - Content merge settings
-- Webhook configurations
-- Security settings
+- Backup configuration
+- Notification settings
 
 ## 🚨 Troubleshooting
 
@@ -259,6 +250,6 @@ Once connected, you'll see all your content types in the sidebar:
 
 ---
 
-**Last Updated**: January 2024  
+**Last Updated**: January 2025  
 **Pages CMS Version**: 2.0+  
 **Repository**: placeholder-ag-comp-arith-geom/placeholder-ag-comp-arith-geom.github.io 

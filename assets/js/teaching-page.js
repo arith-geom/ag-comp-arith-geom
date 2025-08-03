@@ -1,17 +1,57 @@
 /**
- * Teaching Page Interactive Functionality
- * Handles filtering and animations
+ * Simple Teaching Page Interactive Functionality
+ * Handles filtering, statistics, and user interactions
  */
 
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize all interactive features
+  initStatistics();
   initFilters();
-  initAnimations();
-  initSmoothScrolling();
+  initQuickFilters();
+  initKeyboardNavigation();
 });
 
 /**
- * Initialize filtering functionality
+ * Initialize and update statistics
+ */
+function initStatistics() {
+  const courseItems = document.querySelectorAll('.course-item');
+  const currentCourses = document.querySelectorAll('.course-item[data-period="current"]');
+  
+  // Update statistics
+  document.getElementById('totalCourses').textContent = courseItems.length;
+  document.getElementById('currentCourses').textContent = currentCourses.length;
+  
+  // Animate statistics on load
+  animateStatistics();
+}
+
+function animateStatistics() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  
+  statNumbers.forEach(stat => {
+    const finalValue = stat.textContent;
+    const isNumber = !isNaN(parseInt(finalValue));
+    
+    if (isNumber) {
+      const target = parseInt(finalValue);
+      let current = 0;
+      const increment = target / 20;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        stat.textContent = Math.floor(current);
+      }, 50);
+    }
+  });
+}
+
+/**
+ * Initialize enhanced filtering functionality
  */
 function initFilters() {
   const courseTypeFilter = document.getElementById('courseTypeFilter');
@@ -28,25 +68,30 @@ function initFilters() {
     const searchTerm = searchFilter.value.toLowerCase();
 
     let visibleCount = 0;
+    let currentCount = 0;
 
     courseItems.forEach(item => {
       const type = item.dataset.type;
       const period = item.dataset.period;
       const title = item.querySelector('.course-link')?.textContent.toLowerCase() || '';
+      const instructors = item.querySelector('.instructors')?.textContent.toLowerCase() || '';
       
       const typeMatch = selectedType === 'all' || type === selectedType;
       const periodMatch = selectedPeriod === 'all' || period === selectedPeriod;
-      const searchMatch = searchTerm === '' || title.includes(searchTerm);
+      const searchMatch = searchTerm === '' || 
+                         title.includes(searchTerm) || 
+                         instructors.includes(searchTerm);
       
       if (typeMatch && periodMatch && searchMatch) {
         item.classList.remove('hidden');
         visibleCount++;
+        if (period === 'current') currentCount++;
       } else {
         item.classList.add('hidden');
       }
     });
 
-    // Hide empty semester groups and show/hide section headers
+    // Hide empty semester groups
     semesterGroups.forEach(group => {
       const visibleItems = group.querySelectorAll('.course-item:not(.hidden)');
       if (visibleItems.length === 0) {
@@ -56,6 +101,9 @@ function initFilters() {
       }
     });
 
+    // Update statistics
+    updateStatistics(visibleCount, currentCount);
+    
     // Update filter status
     updateFilterStatus(visibleCount, courseItems.length);
   }
@@ -67,6 +115,51 @@ function initFilters() {
 
   // Initialize filters
   applyFilters();
+}
+
+/**
+ * Initialize quick filter buttons
+ */
+function initQuickFilters() {
+  const quickFilterBtns = document.querySelectorAll('.quick-filter-btn');
+  const courseTypeFilter = document.getElementById('courseTypeFilter');
+  const timeFilter = document.getElementById('timeFilter');
+
+  quickFilterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const filter = this.dataset.filter;
+      
+      // Update active state
+      quickFilterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Apply filter
+      if (filter === 'all') {
+        courseTypeFilter.value = 'all';
+        timeFilter.value = 'all';
+      } else if (filter === 'current') {
+        courseTypeFilter.value = 'all';
+        timeFilter.value = 'current';
+      } else {
+        courseTypeFilter.value = filter;
+        timeFilter.value = 'all';
+      }
+      
+      // Trigger filter change
+      courseTypeFilter.dispatchEvent(new Event('change'));
+    });
+  });
+}
+
+/**
+ * Update statistics display
+ */
+function updateStatistics(visibleCount, currentCount) {
+  const totalCoursesEl = document.getElementById('totalCourses');
+  const currentCoursesEl = document.getElementById('currentCourses');
+  
+  if (totalCoursesEl) totalCoursesEl.textContent = visibleCount;
+  if (currentCoursesEl) currentCoursesEl.textContent = currentCount;
 }
 
 /**
@@ -91,10 +184,9 @@ function updateFilterStatus(visibleCount, totalCount) {
     statusElement.style.display = 'block';
     statusElement.innerHTML = `
       <div class="status-message">
-        <i class="fas fa-filter"></i>
         Showing ${visibleCount} of ${totalCount} courses
         <button class="clear-filters" onclick="clearAllFilters()">
-          <i class="fas fa-times"></i> Clear filters
+          Clear filters
         </button>
       </div>
     `;
@@ -108,56 +200,40 @@ function clearAllFilters() {
   const courseTypeFilter = document.getElementById('courseTypeFilter');
   const timeFilter = document.getElementById('timeFilter');
   const searchFilter = document.getElementById('searchFilter');
+  const quickFilterBtns = document.querySelectorAll('.quick-filter-btn');
 
-  if (courseTypeFilter) courseTypeFilter.value = 'all';
-  if (timeFilter) timeFilter.value = 'all';
-  if (searchFilter) searchFilter.value = '';
+  // Reset filters
+  courseTypeFilter.value = 'all';
+  timeFilter.value = 'all';
+  searchFilter.value = '';
+
+  // Reset quick filter buttons
+  quickFilterBtns.forEach(btn => btn.classList.remove('active'));
+  quickFilterBtns[0].classList.add('active'); // "All" button
 
   // Trigger filter update
-  const event = new Event('change');
-  courseTypeFilter?.dispatchEvent(event);
+  courseTypeFilter.dispatchEvent(new Event('change'));
 }
 
 /**
- * Initialize animations
+ * Initialize keyboard navigation
  */
-function initAnimations() {
-  // Intersection Observer for fade-in animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  // Observe course items for animation
-  document.querySelectorAll('.course-item').forEach(item => {
-    observer.observe(item);
-  });
-}
-
-/**
- * Initialize smooth scrolling for anchor links
- */
-function initSmoothScrolling() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+function initKeyboardNavigation() {
+  document.addEventListener('keydown', function(e) {
+    // Ctrl/Cmd + F to focus search
+    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+      const searchFilter = document.getElementById('searchFilter');
+      if (searchFilter) {
+        searchFilter.focus();
+        searchFilter.select();
       }
-    });
+    }
+    
+    // Escape to clear filters
+    if (e.key === 'Escape') {
+      clearAllFilters();
+    }
   });
 }
 
@@ -176,102 +252,5 @@ function debounce(func, wait) {
   };
 }
 
-/**
- * Add keyboard navigation support
- */
-function initKeyboardNavigation() {
-  document.addEventListener('keydown', function(e) {
-    // Ctrl/Cmd + F to focus search
-    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
-      e.preventDefault();
-      const searchInput = document.getElementById('searchFilter');
-      if (searchInput) {
-        searchInput.focus();
-      }
-    }
-
-    // Escape to clear search
-    if (e.key === 'Escape') {
-      const searchInput = document.getElementById('searchFilter');
-      if (searchInput && document.activeElement === searchInput) {
-        searchInput.value = '';
-        searchInput.dispatchEvent(new Event('input'));
-      }
-    }
-  });
-}
-
-/**
- * Add tooltips for course badges
- */
-function initTooltips() {
-  const badges = document.querySelectorAll('.course-badge');
-  
-  badges.forEach(badge => {
-    const type = badge.classList.contains('seminar') ? 'Seminar' :
-                 badge.classList.contains('vorlesung') ? 'Lecture' :
-                 badge.classList.contains('proseminar') ? 'Proseminar' :
-                 badge.classList.contains('hauptseminar') ? 'Hauptseminar' : 'Course';
-    
-    badge.title = `${type} - Click to filter by this type`;
-    
-    badge.addEventListener('click', function() {
-      const courseTypeFilter = document.getElementById('courseTypeFilter');
-      if (courseTypeFilter) {
-        courseTypeFilter.value = this.dataset.type || 'all';
-        courseTypeFilter.dispatchEvent(new Event('change'));
-      }
-    });
-  });
-}
-
-/**
- * Add export functionality
- */
-function initExport() {
-  const exportButton = document.createElement('button');
-  exportButton.className = 'export-button';
-  exportButton.innerHTML = '<i class="fas fa-download"></i> Export Course List';
-  exportButton.onclick = exportCourseList;
-  
-  const filterControls = document.querySelector('.filter-controls');
-  if (filterControls) {
-    filterControls.appendChild(exportButton);
-  }
-}
-
-/**
- * Export course list to CSV
- */
-function exportCourseList() {
-  const courseItems = document.querySelectorAll('.course-item:not(.hidden)');
-  let csvContent = 'data:text/csv;charset=utf-8,';
-  csvContent += 'Semester,Type,Course Title,Instructors\n';
-  
-  courseItems.forEach(item => {
-    const semester = item.closest('.semester-group')?.querySelector('.semester-title')?.textContent.trim() || '';
-    const type = item.querySelector('.course-badge')?.textContent.trim() || '';
-    const title = item.querySelector('.course-link')?.textContent.trim() || '';
-    const instructors = item.querySelector('.instructors')?.textContent.trim() || '';
-    
-    csvContent += `"${semester}","${type}","${title}","${instructors}"\n`;
-  });
-  
-  const encodedUri = encodeURI(csvContent);
-  const link = document.createElement('a');
-  link.setAttribute('href', encodedUri);
-  link.setAttribute('download', 'teaching_courses.csv');
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-// Initialize additional features
-document.addEventListener('DOMContentLoaded', function() {
-  initKeyboardNavigation();
-  initTooltips();
-  initExport();
-});
-
-// Note: CSS styles are now handled in the main teaching-page.scss file
-// to ensure proper theme integration 
+// Global functions for HTML onclick handlers
+window.clearAllFilters = clearAllFilters; 

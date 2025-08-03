@@ -6,7 +6,11 @@
     "build": "jekyll build",
     "serve": "jekyll serve",
     "watch": "jekyll serve --watch",
-    "clean": "jekyll clean"
+    "clean": "jekyll clean",
+    "dev": "jekyll serve --watch --livereload",
+    "production": "JEKYLL_ENV=production jekyll build",
+    "test": "jekyll build --safe",
+    "validate": "jekyll doctor"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"

@@ -1,0 +1,447 @@
+{
+  "name": "AG Computational Arithmetic Geometry",
+  "description": "Academic website for the AG Computational Arithmetic Geometry research group at Heidelberg University",
+  "version": "1.0.0",
+  "contentTypes": {
+      "team-members": {
+    "name": "Team Members",
+    "description": "Faculty, staff, and students",
+    "fields": {
+      "name": {
+        "type": "string",
+        "label": "Full Name",
+        "required": true,
+        "validation": {
+          "minLength": 2,
+          "maxLength": 100,
+          "pattern": "^[a-zA-ZÀ-ÿ\\s\\-\\.']+$"
+        },
+        "placeholder": "Enter full name (e.g., Dr. John Smith)"
+      },
+        "role": {
+          "type": "select",
+          "label": "Role",
+          "options": [
+            "Professor",
+            "Postdoctoral Researcher",
+            "PhD Student",
+            "Master Student",
+            "Bachelor Student",
+            "Guest Researcher",
+            "Alumni"
+          ],
+          "required": true
+        },
+              "email": {
+        "type": "string",
+        "label": "Email Address",
+        "validation": {
+          "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        },
+        "placeholder": "name@uni-heidelberg.de"
+      },
+        "website": {
+          "type": "string",
+          "label": "Personal Website",
+          "validation": {
+            "pattern": "^https?://.+"
+          }
+        },
+              "photo": {
+        "type": "file",
+        "label": "Profile Photo",
+        "accept": "image/*",
+        "maxSize": "5MB",
+        "help": "Recommended: 400x400px, JPG or PNG format"
+      },
+        "research": {
+          "type": "text",
+          "label": "Research Interests",
+          "rows": 3
+        },
+        "bio": {
+          "type": "rich-text",
+          "label": "Biography"
+        },
+        "status": {
+          "type": "select",
+          "label": "Status",
+          "options": [
+            "Active",
+            "Inactive",
+            "Alumni"
+          ],
+          "default": "Active"
+        }
+      },
+      "views": {
+        "default": {
+          "sort": "name",
+          "groupBy": "role"
+        }
+      }
+    },
+    "publications": {
+      "name": "Publications",
+      "description": "Academic papers and research outputs",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Title",
+          "required": true,
+          "validation": {
+            "minLength": 5,
+            "maxLength": 500
+          }
+        },
+        "authors": {
+          "type": "string",
+          "label": "Authors",
+          "required": true
+        },
+              "year": {
+        "type": "number",
+        "label": "Publication Year",
+        "validation": {
+          "min": 1900,
+          "max": 2030
+        },
+        "default": 2025
+      },
+        "journal": {
+          "type": "string",
+          "label": "Journal/Conference"
+        },
+              "doi": {
+        "type": "string",
+        "label": "DOI",
+        "validation": {
+          "pattern": "^10\\.\\d{4,}/.+"
+        },
+        "placeholder": "10.1000/123456",
+        "help": "Digital Object Identifier (e.g., 10.1000/123456)"
+      },
+        "abstract": {
+          "type": "text",
+          "label": "Abstract",
+          "rows": 5
+        },
+        "url": {
+          "type": "string",
+          "label": "URL",
+          "validation": {
+            "pattern": "^https?://.+"
+          }
+        },
+        "type": {
+          "type": "select",
+          "label": "Type",
+          "options": [
+            "Journal Article",
+            "Conference Paper",
+            "Book Chapter",
+            "Preprint",
+            "Technical Report"
+          ]
+        },
+        "status": {
+          "type": "select",
+          "label": "Status",
+          "options": [
+            "Published",
+            "Submitted",
+            "In Preparation",
+            "Under Review"
+          ],
+          "default": "Published"
+        }
+      },
+      "views": {
+        "default": {
+          "sort": "year",
+          "order": "desc"
+        },
+        "by-type": {
+          "sort": "year",
+          "order": "desc",
+          "groupBy": "type"
+        }
+      }
+    },
+    "teaching": {
+      "name": "Teaching & Courses",
+      "description": "Course information and materials",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Course Title",
+          "required": true
+        },
+              "semester": {
+        "type": "select",
+        "label": "Semester",
+        "options": [
+          "Winter 2025/26",
+          "Summer 2025",
+          "Winter 2024/25",
+          "Summer 2024",
+          "Winter 2023/24",
+          "Summer 2023",
+          "Winter 2022/23",
+          "Summer 2022",
+          "Winter 2021/22",
+          "Summer 2021"
+        ],
+        "default": "Winter 2025/26"
+      },
+        "instructors": {
+          "type": "string",
+          "label": "Instructors"
+        },
+        "type": {
+          "type": "select",
+          "label": "Course Type",
+          "options": [
+            "Vorlesung",
+            "Seminar",
+            "Proseminar",
+            "Hauptseminar"
+          ]
+        },
+        "credits": {
+          "type": "number",
+          "label": "ECTS Credits"
+        },
+        "language": {
+          "type": "select",
+          "label": "Language",
+          "options": [
+            "German",
+            "English"
+          ]
+        },
+        "description": {
+          "type": "text",
+          "label": "Course Description",
+          "rows": 4
+        },
+        "materials": {
+          "type": "file",
+          "label": "Course Materials",
+          "multiple": true,
+          "accept": ".pdf,.doc,.docx,.ppt,.pptx"
+        },
+        "active": {
+          "type": "boolean",
+          "label": "Currently Active",
+          "default": false
+        }
+      },
+      "views": {
+        "default": {
+          "sort": "semester",
+          "order": "desc"
+        },
+        "current": {
+          "sort": "semester",
+          "order": "desc",
+          "filter": {
+            "active": true
+          }
+        }
+      }
+    },
+    "research": {
+      "name": "Research Areas",
+      "description": "Research topics and descriptions",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Research Area",
+          "required": true
+        },
+        "description": {
+          "type": "rich-text",
+          "label": "Description"
+        },
+        "keywords": {
+          "type": "string",
+          "label": "Keywords",
+          "placeholder": "Comma-separated keywords"
+        },
+        "team-members": {
+          "type": "reference",
+          "label": "Team Members",
+          "contentType": "team-members",
+          "multiple": true
+        },
+        "publications": {
+          "type": "reference",
+          "label": "Related Publications",
+          "contentType": "publications",
+          "multiple": true
+        },
+        "order": {
+          "type": "number",
+          "label": "Display Order",
+          "default": 0
+        }
+      },
+      "views": {
+        "default": {
+          "sort": "order"
+        }
+      }
+    },
+    "news": {
+      "name": "News & Events",
+      "description": "News articles and updates",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Title",
+          "required": true
+        },
+        "date": {
+          "type": "date",
+          "label": "Publication Date",
+          "required": true
+        },
+        "author": {
+          "type": "string",
+          "label": "Author"
+        },
+        "excerpt": {
+          "type": "text",
+          "label": "Excerpt",
+          "rows": 3
+        },
+        "content": {
+          "type": "rich-text",
+          "label": "Content"
+        },
+        "featured": {
+          "type": "boolean",
+          "label": "Featured Article",
+          "default": false
+        },
+        "published": {
+          "type": "boolean",
+          "label": "Published",
+          "default": true
+        }
+      },
+      "views": {
+        "default": {
+          "sort": "date",
+          "order": "desc"
+        },
+        "featured": {
+          "sort": "date",
+          "order": "desc",
+          "filter": {
+            "featured": true
+          }
+        }
+      }
+    },
+    "links": {
+      "name": "Links & Resources",
+      "description": "Useful links and resources",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Title",
+          "required": true
+        },
+        "url": {
+          "type": "string",
+          "label": "URL",
+          "required": true,
+          "validation": {
+            "pattern": "^https?://.+"
+          }
+        },
+        "description": {
+          "type": "text",
+          "label": "Description",
+          "rows": 2
+        },
+        "category": {
+          "type": "select",
+          "label": "Category",
+          "options": [
+            "Academic",
+            "Software",
+            "Database",
+            "Conference",
+            "Other"
+          ]
+        },
+        "featured": {
+          "type": "boolean",
+          "label": "Featured Link",
+          "default": false
+        }
+      },
+      "views": {
+        "default": {
+          "sort": "title"
+        },
+        "by-category": {
+          "sort": "title",
+          "groupBy": "category"
+        }
+      }
+    }
+  },
+  "media": {
+    "images": {
+      "name": "Images & Photos",
+      "description": "Images for the website",
+      "accept": "image/*",
+      "maxSize": "10MB",
+      "recommendedFormats": ["jpg", "png", "webp"],
+      "recommendedSizes": {
+        "profile": "400x400px",
+        "banner": "1200x400px",
+        "thumbnail": "300x200px"
+      }
+    },
+    "documents": {
+      "name": "Documents & PDFs",
+      "description": "Academic documents and PDFs",
+      "accept": ".pdf,.doc,.docx,.ppt,.pptx,.txt,.md,.tex,.bib",
+      "maxSize": "50MB",
+      "recommendedFormats": ["pdf", "docx"]
+    },
+    "presentations": {
+      "name": "Presentations & Slides",
+      "description": "Academic presentations and slides",
+      "accept": ".pdf,.ppt,.pptx,.key",
+      "maxSize": "100MB"
+    }
+  },
+  "settings": {
+    "backup": {
+      "enabled": true,
+      "frequency": "daily",
+      "retention": "30 days"
+    },
+    "notifications": {
+      "enabled": true,
+      "email": "admin@mathi.uni-heidelberg.de",
+      "types": ["content_updates", "system_alerts", "backup_reports"]
+    },
+    "security": {
+      "maxLoginAttempts": 5,
+      "sessionTimeout": 3600,
+      "requireTwoFactor": false
+    },
+    "performance": {
+      "cacheEnabled": true,
+      "cacheDuration": 3600,
+      "imageOptimization": true
+    }
+  }
+} 

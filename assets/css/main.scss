@@ -1486,6 +1486,15 @@ tbody td {
   &:hover .fa-cog {
     transform: rotate(90deg) scale(1.1);
   }
+  
+  &.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--primary);
+    
+    .fa-cog {
+      color: var(--primary);
+    }
+  }
 }
 
 // Mobile responsive adjustments for header controls

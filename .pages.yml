@@ -1,4 +1,4 @@
-# Pages CMS Configuration for AG Computational Arithmetic Geometry
+# Enhanced Pages CMS Configuration for AG Computational Arithmetic Geometry
 # This file configures the content management interface at https://app.pagescms.org/
 
 # Media Configuration
@@ -10,6 +10,7 @@ media:
     path: assets/img
     categories: [image]
     extensions: [jpg, jpeg, png, gif, svg, webp]
+    description: "Upload images for team members, research areas, and general website content"
   - name: documents
     label: Documents & PDFs
     input: assets/uploads
@@ -17,6 +18,7 @@ media:
     path: assets/uploads
     categories: [document]
     extensions: [pdf, doc, docx, ppt, pptx, xls, xlsx, txt, md]
+    description: "Course materials, announcements, and research documents"
   - name: media
     label: Media Files
     input: assets/media
@@ -24,10 +26,11 @@ media:
     path: assets/media
     categories: [video, audio]
     extensions: [mp4, avi, mov, wmv, mp3, wav, aac, ogg]
+    description: "Video lectures, audio recordings, and multimedia content"
 
 # Content Types Configuration
 content:
-  # Team Members
+  # Team Members - Enhanced with better organization
   - name: members
     label: Team Members
     type: collection
@@ -45,6 +48,7 @@ content:
           label: Status
         - field: role
           label: Role
+      group_by: status
     fields:
       - name: layout
         label: Layout
@@ -55,12 +59,18 @@ content:
         label: Full Name
         type: string
         required: true
-        description: "Enter the person's full name"
+        description: "Enter the person's full name (e.g., Prof. Dr. Gebhard Böckle)"
+        validation:
+          min_length: 2
+          max_length: 100
       - name: role
         label: Role/Position
         type: string
         required: true
-        description: "Academic or professional role"
+        description: "Academic or professional role (e.g., Professor, PhD Student, Postdoc)"
+        validation:
+          min_length: 2
+          max_length: 100
       - name: status
         label: Status
         type: select
@@ -69,8 +79,11 @@ content:
           alumni: Alumni
           visitor: Visitor
           student: Student
+          professor: Professor
+          postdoc: Postdoctoral Researcher
         default: active
         required: true
+        description: "Current status of the team member"
       - name: photo
         label: Profile Photo
         type: image
@@ -78,20 +91,25 @@ content:
           multiple: false
           max_size: 5242880
           accepted_types: [jpg, jpeg, png, webp]
+        description: "Professional headshot or profile photo (recommended: 400x400px)"
       - name: order
         label: Display Order
         type: number
         default: 999
         hidden: true
-        description: "Lower numbers appear first"
+        description: "Lower numbers appear first in listings"
       - name: email
         label: Email Address
         type: string
         description: "Professional email address"
+        validation:
+          pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
       - name: website
         label: Personal Website
         type: string
         description: "Full URL including http:// or https://"
+        validation:
+          pattern: "^https?://.+"
       - name: github
         label: GitHub Username
         type: string
@@ -100,20 +118,22 @@ content:
         label: ORCID ID
         type: string
         description: "ORCID ID in format 0000-0000-0000-0000"
+        validation:
+          pattern: "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
       - name: research_interests
         label: Research Interests
         type: rich-text
         options:
           toolbar: ["bold", "italic", "link", "list", "code"]
           height: 150
-        description: "Areas of research and expertise"
+        description: "Areas of research and expertise (e.g., Arithmetic Geometry, Modular Forms)"
       - name: bio
         label: Biography
         type: rich-text
         options:
           toolbar: ["bold", "italic", "link", "list", "quote", "code"]
           height: 200
-        description: "Academic background and achievements"
+        description: "Academic background, achievements, and career highlights"
       - name: education
         label: Education
         type: object
@@ -128,17 +148,21 @@ content:
             label: Degree
             type: string
             required: true
+            description: "e.g., PhD in Mathematics"
           - name: institution
             label: Institution
             type: string
             required: true
+            description: "e.g., Heidelberg University"
           - name: year
             label: Year
             type: number
             required: true
+            description: "Year of completion"
           - name: field
             label: Field of Study
             type: string
+            description: "e.g., Arithmetic Geometry"
       - name: publications
         label: Key Publications
         type: reference
@@ -149,7 +173,7 @@ content:
         options:
           multiple: true
           search_fields: [title, authors]
-        description: "Publications related to this person"
+        description: "Select publications related to this person"
       - name: languages
         label: Languages
         type: select
@@ -161,9 +185,9 @@ content:
           es: Spanish
           it: Italian
           other: Other
-        description: "Languages spoken"
+        description: "Languages spoken by this person"
 
-  # Publications
+  # Publications - Enhanced with better metadata
   - name: publications
     label: Publications
     type: collection
@@ -183,6 +207,7 @@ content:
           label: Year
         - field: featured
           label: Featured
+      group_by: year
     fields:
       - name: layout
         label: Layout
@@ -194,11 +219,17 @@ content:
         type: string
         required: true
         description: "Full title of the publication"
+        validation:
+          min_length: 5
+          max_length: 500
       - name: authors
         label: Authors
         type: string
         required: true
-        description: "Comma-separated list of authors"
+        description: "Comma-separated list of authors (e.g., G. Böckle, B. Banwait)"
+        validation:
+          min_length: 2
+          max_length: 200
       - name: publication_type
         label: Publication Type
         type: select
@@ -213,11 +244,15 @@ content:
           proceedings: Conference Proceedings
         default: journal
         required: true
+        description: "Type of publication"
       - name: year
         label: Publication Year
         type: number
         required: true
         description: "Year of publication (YYYY)"
+        validation:
+          min: 1900
+          max: 2030
       - name: journal
         label: Journal/Conference
         type: string
@@ -225,13 +260,15 @@ content:
       - name: publication_details
         label: Publication Details
         type: text
-        description: "Additional publication information"
+        description: "Additional publication information (volume, issue, etc.)"
       - name: volume
         label: Volume
         type: string
+        description: "Journal volume number"
       - name: issue
         label: Issue
         type: string
+        description: "Journal issue number"
       - name: pages
         label: Pages
         type: string
@@ -240,33 +277,39 @@ content:
         label: DOI
         type: string
         description: "Digital Object Identifier"
+        validation:
+          pattern: "^10\\.[0-9]{4,}/.+"
       - name: url
         label: URL
         type: string
         description: "Link to publication"
+        validation:
+          pattern: "^https?://.+"
       - name: abstract
         label: Abstract
         type: text
         options:
           height: 150
-        description: "Abstract or summary"
+        description: "Abstract or summary of the publication"
       - name: keywords
         label: Keywords
         type: string
         list:
           min: 1
           max: 20
-        description: "Research keywords"
+        description: "Research keywords and tags"
       - name: featured
         label: Featured Publication
         type: boolean
         default: false
-        description: "Highlight this publication"
+        description: "Highlight this publication on the homepage"
       - name: citations
         label: Citation Count
         type: number
         default: 0
         description: "Number of citations"
+        validation:
+          min: 0
       - name: funding
         label: Funding Information
         type: text
@@ -275,8 +318,10 @@ content:
         label: Code Repository
         type: string
         description: "Link to associated code"
+        validation:
+          pattern: "^https?://.+"
 
-  # Teaching & Courses
+  # Teaching & Courses - Enhanced with better course management
   - name: teaching
     label: Teaching & Courses
     type: collection
@@ -296,6 +341,7 @@ content:
           label: Language
         - field: active
           label: Active
+      group_by: semester
     fields:
       - name: layout
         label: Layout
@@ -306,22 +352,27 @@ content:
         label: Course Title
         type: string
         required: true
-        description: "Full course title"
+        description: "Full course title (e.g., Homological Algebra Seminar)"
+        validation:
+          min_length: 5
+          max_length: 200
       - name: semester
         label: Semester
         type: string
         required: true
         description: "Semester (e.g., WS2024, SS2025)"
+        validation:
+          pattern: "^(WS|SS)[0-9]{4}$"
       - name: instructor
         label: Instructor(s)
         type: string
         required: true
-        description: "Course instructor(s)"
+        description: "Course instructor(s) (e.g., Prof. Dr. Böckle, Dr. Ferraro)"
       - name: course_type
         label: Course Type
         type: select
         options:
-          lecture: Lecture
+          lecture: Lecture (Vorlesung)
           seminar: Seminar
           exercise: Exercise
           tutorial: Tutorial
@@ -330,10 +381,14 @@ content:
           colloquium: Colloquium
         default: seminar
         required: true
+        description: "Type of course"
       - name: credits
         label: ECTS Credits
         type: number
         description: "ECTS credit points"
+        validation:
+          min: 1
+          max: 30
       - name: language
         label: Language
         type: select
@@ -343,6 +398,7 @@ content:
           bilingual: Bilingual
         default: en
         required: true
+        description: "Primary language of instruction"
       - name: description
         label: Course Description
         type: rich-text
@@ -356,7 +412,7 @@ content:
         options:
           toolbar: ["bold", "italic", "link", "list", "table"]
           height: 200
-        description: "Detailed course content"
+        description: "Detailed course content and schedule"
       - name: materials
         label: Course Materials
         type: file
@@ -397,12 +453,14 @@ content:
         label: Enrollment Limit
         type: number
         description: "Maximum number of students"
+        validation:
+          min: 1
       - name: prerequisites
         label: Prerequisites
         type: text
         description: "Required background knowledge"
 
-  # Research Areas
+  # Research Areas - Enhanced with better organization
   - name: research
     label: Research Areas
     type: collection
@@ -418,6 +476,7 @@ content:
       filters:
         - field: featured
           label: Featured
+      group_by: featured
     fields:
       - name: layout
         label: Layout
@@ -428,7 +487,10 @@ content:
         label: Research Area Title
         type: string
         required: true
-        description: "Name of the research area"
+        description: "Name of the research area (e.g., Arithmetic of Function Fields)"
+        validation:
+          min_length: 3
+          max_length: 100
       - name: description
         label: Description
         type: rich-text
@@ -447,7 +509,7 @@ content:
         label: Featured Research Area
         type: boolean
         default: false
-        description: "Highlight this research area"
+        description: "Highlight this research area on the homepage"
       - name: keywords
         label: Keywords
         type: string
@@ -498,8 +560,10 @@ content:
           - name: website
             label: Website
             type: string
+            validation:
+              pattern: "^https?://.+"
 
-  # News & Blog Posts
+  # News & Blog Posts - Enhanced with better content management
   - name: news
     label: News & Blog Posts
     type: collection
@@ -519,6 +583,7 @@ content:
           label: Categories
         - field: featured
           label: Featured
+      group_by: year
     fields:
       - name: layout
         label: Layout
@@ -530,6 +595,9 @@ content:
         type: string
         required: true
         description: "News article or blog post title"
+        validation:
+          min_length: 5
+          max_length: 200
       - name: date
         label: Publication Date
         type: date
@@ -606,7 +674,7 @@ content:
           search_fields: [title]
         description: "Related news posts"
 
-  # Links & Resources
+  # Links & Resources - Enhanced with better categorization
   - name: links
     label: Links & Resources
     type: collection
@@ -624,6 +692,7 @@ content:
           label: Category
         - field: featured
           label: Featured
+      group_by: category
     fields:
       - name: layout
         label: Layout
@@ -635,11 +704,16 @@ content:
         type: string
         required: true
         description: "Name of the resource or link"
+        validation:
+          min_length: 2
+          max_length: 100
       - name: url
         label: URL
         type: string
         required: true
         description: "Full URL including http:// or https://"
+        validation:
+          pattern: "^https?://.+"
       - name: category
         label: Category
         type: select
@@ -684,7 +758,7 @@ content:
         type: string
         description: "FontAwesome icon class (e.g., fas fa-link)"
 
-  # Events
+  # Events - Enhanced with better event management
   - name: events
     label: Events
     type: collection
@@ -702,6 +776,7 @@ content:
           label: Event Type
         - field: featured
           label: Featured
+      group_by: event_type
     fields:
       - name: layout
         label: Layout
@@ -713,6 +788,9 @@ content:
         type: string
         required: true
         description: "Name of the event"
+        validation:
+          min_length: 3
+          max_length: 200
       - name: date
         label: Event Date
         type: date
@@ -735,6 +813,7 @@ content:
           other: Other
         default: seminar
         required: true
+        description: "Type of event"
       - name: location
         label: Location
         type: string
@@ -761,6 +840,8 @@ content:
         label: Registration URL
         type: string
         description: "Link to registration page"
+        validation:
+          pattern: "^https?://.+"
       - name: organizers
         label: Organizers
         type: reference
@@ -773,7 +854,7 @@ content:
           search_fields: [name]
         description: "Event organizers"
 
-  # Site Configuration
+  # Site Configuration - Enhanced with better settings
   - name: config
     label: Site Configuration
     path: _config.yml
@@ -784,6 +865,9 @@ content:
         type: string
         required: true
         description: "Main website title"
+        validation:
+          min_length: 3
+          max_length: 100
       - name: description
         label: Website Description
         type: text
@@ -794,10 +878,14 @@ content:
         label: Contact Email
         type: string
         description: "Primary contact email"
+        validation:
+          pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
       - name: url
         label: Website URL
         type: string
         description: "Full website URL"
+        validation:
+          pattern: "^https?://.+"
       - name: twitter_username
         label: Twitter Username
         type: string
@@ -810,19 +898,26 @@ content:
         label: LinkedIn URL
         type: string
         description: "LinkedIn profile URL"
+        validation:
+          pattern: "^https?://.+"
       - name: researchgate_url
         label: ResearchGate URL
         type: string
         description: "ResearchGate profile URL"
+        validation:
+          pattern: "^https?://.+"
 
-# Reusable Components
+# Reusable Components - Enhanced with better organization
 components:
   contact_info:
     label: Contact Information
+    description: "Standard contact information component"
     fields:
       - name: email
         label: Email
         type: string
+        validation:
+          pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
       - name: phone
         label: Phone
         type: string
@@ -837,25 +932,37 @@ components:
 
   social_links:
     label: Social Media Links
+    description: "Social media and professional profile links"
     fields:
       - name: twitter
         label: Twitter
         type: string
+        validation:
+          pattern: "^https?://.+"
       - name: github
         label: GitHub
         type: string
+        validation:
+          pattern: "^https?://.+"
       - name: linkedin
         label: LinkedIn
         type: string
+        validation:
+          pattern: "^https?://.+"
       - name: researchgate
         label: ResearchGate
         type: string
+        validation:
+          pattern: "^https?://.+"
       - name: orcid
         label: ORCID
         type: string
+        validation:
+          pattern: "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
 
   academic_info:
     label: Academic Information
+    description: "Academic position and institutional information"
     fields:
       - name: position
         label: Position
@@ -877,21 +984,28 @@ components:
 
   publication_metadata:
     label: Publication Metadata
+    description: "Additional publication identifiers and metadata"
     fields:
       - name: doi
         label: DOI
         type: string
+        validation:
+          pattern: "^10\\.[0-9]{4,}/.+"
       - name: arxiv_id
         label: arXiv ID
         type: string
+        validation:
+          pattern: "^[0-9]{4}\\.[0-9]{4,}$"
       - name: pubmed_id
         label: PubMed ID
         type: string
+        validation:
+          pattern: "^[0-9]+$"
       - name: scopus_id
         label: Scopus ID
         type: string
 
-# Global Settings
+# Global Settings - Enhanced with better configuration
 settings:
   hide: false
   content:
@@ -913,4 +1027,12 @@ settings:
   security:
     max_file_size: 5242880
     allowed_file_types: ["jpg", "jpeg", "png", "gif", "svg", "webp", "pdf", "doc", "docx"]
-    require_authentication: false 
+    require_authentication: false
+  notifications:
+    enabled: true
+    email_notifications: false
+    slack_webhook: ""
+  backup:
+    enabled: true
+    auto_backup: true
+    backup_frequency: "daily" 

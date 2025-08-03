@@ -1,12 +1,9 @@
 ---
-active: false
-course_type: seminar
-instructor: Unknown
-language: en
-layout: teaching
-order: 999
-semester: Unknown
-title: Teaching
+layout: page
+title: "Teaching"
+permalink: /teaching/
+scripts:
+  - /assets/js/teaching-page.js
 ---
 
 <div class="teaching-page">

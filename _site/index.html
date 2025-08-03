@@ -1152,7 +1152,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <hr class="footer-divider">
     <div class="text-center text-muted small">
       &copy; 2025 AG Computational Arithmetic Geometry. All Rights Reserved.
-      Last updated: August 02, 2025.
+      Last updated: August 03, 2025.
     </div>
   </div>
 </footer>
@@ -1403,15 +1403,17 @@ html[data-theme="dark"] a:hover {
         <p>To edit content, please visit the official Pages CMS interface:</p>
         <div class="pagescms-admin-actions">
           <button onclick="openOfficialPagesCMS()" class="btn btn-primary">
-            <i class="fas fa-external-link-alt"></i> Open Pages CMS
+            Open Pages CMS
           </button>
           <button class="btn btn-secondary" onclick="refreshPagesCMSContent()">
-            <i class="fas fa-sync-alt"></i> Refresh Content
+            Refresh Content
           </button>
         </div>
         <div class="pagescms-admin-status">
           <p><strong>Status:</strong> <span id="pagescms-status-text">Ready</span></p>
           <p><strong>Repository:</strong> <span id="pagescms-repo-info">Loading...</span></p>
+          <p><strong>Content Types:</strong> <span id="pagescms-content-types">6 configured</span></p>
+          <p><strong>Last Sync:</strong> <span id="pagescms-last-sync">Checking...</span></p>
         </div>
       </div>
     </div>
@@ -1539,12 +1541,18 @@ function closePagesCMSAdmin() {
 
 function updateRepoInfo() {
   const repoInfo = document.getElementById('pagescms-repo-info');
+  const lastSync = document.getElementById('pagescms-last-sync');
+  
   if (window.PagesCMS && window.PagesCMS.config) {
     const config = window.PagesCMS.config;
     repoInfo.textContent = `${config.repoUrl} (${config.branch})`;
   } else {
     repoInfo.textContent = 'Configuration not available';
   }
+  
+  // Update last sync time
+  const now = new Date();
+  lastSync.textContent = now.toLocaleString();
 }
 
 function refreshPagesCMSContent() {
@@ -1599,7 +1607,6 @@ document.addEventListener('keydown', function(e) {
 <script src="/assets/js/search.js"></script>
 
 <!-- PagesCMS Integration -->
-<script src="/assets/js/pagescms-integration.js"></script>
 <script src="/assets/js/drag-drop-reorder.js"></script>
 
 <!-- Bootstrap Table of Contents -->
@@ -1623,9 +1630,6 @@ document.addEventListener('keydown', function(e) {
 
 <!-- Language Switcher -->
 <script src="/assets/js/language-switcher.js"></script>
-
-<!-- Bilingual CMS -->
-<script src="/assets/js/bilingual-cms.js"></script>
 
 <!-- Page Specific JS -->
 

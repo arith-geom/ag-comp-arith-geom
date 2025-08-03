@@ -73,6 +73,13 @@ pagescms:
     - bio
     - abstract
     - excerpt
+  performance:
+    image_optimization: true
+    lazy_loading: true
+    compression: true
+  security:
+    content_validation: true
+    sanitization: true
 
 # Build settings
 markdown: kramdown
@@ -193,22 +200,10 @@ collections:
   pages:
     output: true
     permalink: /:name/
-  members:
-    output: true
-    permalink: /members/:name/
-  publications:
-    output: true
-    permalink: /publications/:title/
-  news:
-    output: true
-    permalink: /news/:title/
-  research:
-    output: true
-    permalink: /research/:title/
   teaching:
     output: true
     permalink: /teaching/:name/
-    sort_by: title
+  # Pages CMS handles all other content types, so no additional collections needed
 
 # Plugins
 plugins:

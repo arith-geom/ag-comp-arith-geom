@@ -1,0 +1,140 @@
+<!-- Pages CMS Status Component -->
+<div class="pagescms-status-widget">
+  <div class="status-header">
+    <h4>CMS Status</h4>
+    <span class="status-indicator" id="cms-status-indicator"></span>
+  </div>
+  
+  <div class="status-details">
+    <div class="status-item">
+      <span class="status-label">Content Types:</span>
+      <span class="status-value" id="cms-content-count">6</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Last Sync:</span>
+      <span class="status-value" id="cms-last-sync">Checking...</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">Auto Sync:</span>
+      <span class="status-value" id="cms-auto-sync">Enabled</span>
+    </div>
+  </div>
+  
+  <div class="status-actions">
+    <button class="btn btn-sm btn-outline-primary" onclick="checkCMSStatus()">
+      Check Status
+    </button>
+    <button class="btn btn-sm btn-outline-secondary" onclick="openPagesCMSAdmin()">
+      Admin Panel
+    </button>
+  </div>
+</div>
+
+<style>
+.pagescms-status-widget {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.status-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #28a745;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.warning {
+  background: #ffc107;
+}
+
+.status-indicator.error {
+  background: #dc3545;
+}
+
+.status-details {
+  margin-bottom: 1rem;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.status-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.status-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.status-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.status-actions .btn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .pagescms-status-widget {
+    padding: 0.75rem;
+  }
+  
+  .status-actions {
+    flex-direction: column;
+  }
+}
+</style>
+
+<script>
+function checkCMSStatus() {
+  const indicator = document.getElementById('cms-status-indicator');
+  const lastSync = document.getElementById('cms-last-sync');
+  
+  // Simulate status check
+  indicator.className = 'status-indicator warning';
+  
+  setTimeout(() => {
+    indicator.className = 'status-indicator';
+    lastSync.textContent = new Date().toLocaleString();
+  }, 1000);
+}
+
+// Initialize status on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const lastSync = document.getElementById('cms-last-sync');
+  if (lastSync) {
+    lastSync.textContent = new Date().toLocaleString();
+  }
+});
+</script> 

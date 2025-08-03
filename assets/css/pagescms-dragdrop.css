@@ -3,15 +3,17 @@
 /* Drag Handle Styles */
 .drag-handle {
   cursor: grab;
-  padding: 4px;
+  padding: 6px;
   color: #666;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: all 0.2s ease;
   margin-right: 8px;
   opacity: 0.7;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
 }
 
 .drag-handle:hover {
@@ -19,6 +21,8 @@
   background-color: #f8f9fa;
   opacity: 1;
   transform: scale(1.1);
+  border-color: #007bff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
 }
 
 .drag-handle:active {
