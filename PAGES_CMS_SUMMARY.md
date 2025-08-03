@@ -101,8 +101,6 @@ assets/
    - Publications with DOI and citation tracking
    - Teaching courses with materials and schedules
    - Research areas with team associations
-   - News and events with rich content
-   - Links and resources with categorization
 
 2. **Essential Field Types**
    - Rich text editors with formatting
@@ -247,4 +245,4 @@ The website now provides an excellent user experience for students, researchers,
 ---
 
 **Last Updated**: January 2025  
-**Status**: ✅ Complete and Production Ready 
+**Status**: ✅ Complete and Production Ready - Unused content types (news, events, links) removed for streamlined CMS 

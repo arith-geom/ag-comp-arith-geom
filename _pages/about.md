@@ -96,27 +96,4 @@ nav: true
   A more detailed survey of our activities can be found in the research section and in the publications of our members.
 </div>
 
----
-
-<h2 class="mt-5 translatable-content" data-translation-key="about.latest_news">Latest News</h2>
-<div class="news-list-home mt-4">
-  {% for post in site.news limit:3 %}
-    <div class="news-item-home">
-      <p class="news-meta-home text-muted">{{ post.date | date: "%B %d, %Y" }}</p>
-      <h4 class="news-title-home"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
-      <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
-    </div>
-  {% endfor %}
-  <a href="{{ '/news/' | relative_url }}" class="btn btn-outline-primary mt-3 translatable-content" data-translation-key="about.view_all_news">View all news</a>
-</div>
-
-<style>
-.news-item-home {
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid var(--border-color);
-}
-.news-title-home a {
-  text-decoration: none;
-}
-</style> 
+ 
