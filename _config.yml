@@ -72,7 +72,6 @@ pagescms:
     - publications
     - research
     - teaching
-    - news
   auto_sync: true
   cache_duration: 3600
   bilingual_support: true
@@ -207,6 +206,9 @@ collections:
   members:
     output: true
     permalink: /members/:name/
+  research:
+    output: true
+    permalink: /research/:name/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
