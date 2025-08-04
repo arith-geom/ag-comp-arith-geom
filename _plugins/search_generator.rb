@@ -103,25 +103,8 @@ module Jekyll
         }
       end
       
-      # Add publications
-      site.collections['publications']&.docs&.each do |publication|
-        content = extract_content(publication)
-        next if content.strip.empty?
-        
-        search_data << {
-          'id' => "publication-#{publication.data['title'] || publication.basename}",
-          'title' => publication.data['title'] || publication.name,
-          'content' => content,
-          'url' => publication.url,
-          'category' => 'publication',
-          'description' => publication.data['description'] || publication.data['abstract'] || '',
-          'tags' => Array(publication.data['tags']).join(', '),
-          'authors' => publication.data['authors'] || '',
-          'journal' => publication.data['journal'] || '',
-          'year' => publication.data['year'] || '',
-          'doi' => publication.data['doi'] || ''
-        }
-      end
+      # Add publications (skip since they don't have URLs when output: false)
+      # Publications are displayed directly on the publications page, not as individual pages
       
       # Add links
       site.collections['links']&.docs&.each do |link|
@@ -141,7 +124,13 @@ module Jekyll
       
       # Write search data to source assets directory
       FileUtils.mkdir_p(File.join(site.source, 'assets'))
-      File.write(File.join(site.source, 'assets', 'search-data.json'), search_data.to_json)
+      search_data_path = File.join(site.source, 'assets', 'search-data.json')
+      File.write(search_data_path, search_data.to_json)
+      
+      # Also write to _site/assets for immediate access
+      site_assets_path = File.join(site.dest, 'assets')
+      FileUtils.mkdir_p(site_assets_path)
+      File.write(File.join(site_assets_path, 'search-data.json'), search_data.to_json)
       
       puts "Generated search data for #{search_data.length} items"
     end

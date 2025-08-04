@@ -31,6 +31,175 @@ media:
 
 # Content Types Configuration
 content:
+  # Publications - NEW: Full collection management
+  - name: publications
+    label: Publications
+    type: collection
+    path: _publications
+    filename: "{year}-{title|slugify}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [title, authors, year, type, status, featured]
+      primary: title
+      sort:
+        field: year
+        direction: desc
+      search: [title, authors, abstract, keywords]
+      filters:
+        - field: type
+          label: Publication Type
+        - field: status
+          label: Status
+        - field: featured
+          label: Featured
+      group_by: year
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: publication
+        hidden: true
+      - name: title
+        label: Publication Title
+        type: string
+        required: true
+        description: "Full title of the publication"
+        validation:
+          min_length: 5
+          max_length: 500
+      - name: authors
+        label: Authors
+        type: string
+        required: true
+        description: "Author names separated by commas"
+        validation:
+          min_length: 2
+          max_length: 200
+      - name: year
+        label: Publication Year
+        type: number
+        required: true
+        description: "Year of publication"
+        validation:
+          min: 1900
+          max: 2030
+      - name: type
+        label: Publication Type
+        type: select
+        required: true
+        options:
+          "Journal Article": Journal Article
+          "Preprint": Preprint
+          "Conference Paper": Conference Paper
+          "Book": Book
+          "Book Chapter": Book Chapter
+          "Thesis": Thesis
+          "Software": Software
+          "Technical Report": Technical Report
+        default: "Journal Article"
+        description: "Type of publication"
+      - name: status
+        label: Publication Status
+        type: select
+        options:
+          "Published": Published
+          "Submitted": Submitted
+          "Under Review": Under Review
+          "In Preparation": In Preparation
+          "Accepted": Accepted
+        default: "Published"
+        description: "Current status of the publication"
+      - name: featured
+        label: Featured Publication
+        type: boolean
+        default: false
+        description: "Highlight this publication on the homepage"
+      - name: journal
+        label: Journal/Conference/Publisher
+        type: string
+        description: "Journal name, conference name, or publisher"
+        validation:
+          max_length: 200
+      - name: volume
+        label: Volume
+        type: string
+        description: "Journal volume or book volume"
+        validation:
+          max_length: 50
+      - name: pages
+        label: Pages
+        type: string
+        description: "Page range or total pages"
+        validation:
+          max_length: 50
+      - name: abstract
+        label: Abstract
+        type: rich-text
+        options:
+          toolbar: ["bold", "italic", "link", "list", "code"]
+          height: 200
+        description: "Abstract or summary of the publication"
+      - name: keywords
+        label: Keywords
+        type: string
+        list:
+          min: 1
+          max: 20
+        description: "Research keywords and tags"
+      - name: doi
+        label: DOI
+        type: string
+        description: "Digital Object Identifier"
+        validation:
+          pattern: "^10\\.[0-9]{4,}/.+"
+      - name: url
+        label: External URL
+        type: string
+        description: "Link to published version"
+        validation:
+          pattern: "^https?://.+"
+      - name: pdf
+        label: PDF File
+        type: file
+        options:
+          multiple: false
+          accepted_types: [pdf]
+        description: "Upload PDF version of the publication"
+      - name: arxiv_id
+        label: arXiv ID
+        type: string
+        description: "arXiv identifier"
+        validation:
+          pattern: "^[0-9]{4}\\.[0-9]{4,}$"
+      - name: pubmed_id
+        label: PubMed ID
+        type: string
+        description: "PubMed identifier"
+        validation:
+          pattern: "^[0-9]+$"
+      - name: related_members
+        label: Related Team Members
+        type: reference
+        collection: members
+        list:
+          min: 0
+          max: 10
+        options:
+          multiple: true
+          search_fields: [name, role]
+        description: "Team members associated with this publication"
+      - name: related_research
+        label: Related Research Areas
+        type: reference
+        collection: research
+        list:
+          min: 0
+          max: 5
+        options:
+          multiple: true
+          search_fields: [title, keywords]
+        description: "Research areas related to this publication"
+
   # Team Members - Enhanced and aligned with actual content
   - name: members
     label: Team Members
@@ -444,8 +613,6 @@ content:
             type: string
             validation:
               pattern: "^https?://.+"
-
-
 
   # Site Configuration - Enhanced with better settings
   - name: config

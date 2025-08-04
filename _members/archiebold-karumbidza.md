@@ -2,7 +2,7 @@
 email: 
 layout: member
 name: Dr. Archiebold Karumbidza
-order: 999
+order: 24
 photo: /assets/images/heidelberg_placeholder.jpg
 research_interests: Research interests in arithmetic geometry and number theory.
 role: Former Member

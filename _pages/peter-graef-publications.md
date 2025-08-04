@@ -36,33 +36,54 @@ nav: false
       </div>
     </div>
 
-    <h3>Journal Publications</h3>
-    <ul class="publication-list">
-      <li>
-        <strong>P. Gräf, G. Böckle, R. Perkins</strong>, "A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation theory, and an investigation of its subfactors", 
-        <em>Research in Number Theory</em> 7, Article number: 44, 2021.
-        <br><a href="https://link.springer.com/article/10.1007%2Fs40993-021-00254-0" target="_blank">Published version</a>
-      </li>
-      <li>
-        <strong>S. Anni, G. Böckle, P. Gräf, A. Troya</strong>, "Computing L-invariants via the Greenberg-Stevens formula", 
-        <em>Journal de Théorie des Nombres de Bordeaux</em> 31, 727–746, 2019.
-        <br><a href="https://jtnb.centre-mersenne.org/article/JTNB_2019__31_3_727_0.pdf" target="_blank">Published version</a>
-      </li>
-      <li>
-        <strong>P. Gräf</strong>, "A control theorem for p-adic automorphic forms and Teitelbaum's L-invariant", 
-        <em>The Ramanujan Journal</em> 50(1), 13-43, 2019.
-        <br><a href="http://dx.doi.org/10.1007/s11139-019-00160-1" target="_blank">Published version</a>
-      </li>
-    </ul>
-
-    <h3>Thesis</h3>
-    <ul class="thesis-list">
-      <li>
-        <strong>P. Gräf</strong>, "Boundary Distributions for GL3 over a Local Field and Symmetric Power Coefficients", 
-        <em>Ph.D. thesis</em>, 2020.
-        <br><a href="/assets/uploads/boundary_peter_graef.pdf" class="download">Download PDF</a>
-      </li>
-    </ul>
+    <h3>Publications</h3>
+    <div class="member-publications">
+      {% assign peter_publications = site.publications | where_exp: "pub", "pub.authors contains 'P. Gräf' or pub.authors contains 'Peter Gräf'" | sort: 'year' | reverse %}
+      {% if peter_publications.size > 0 %}
+        {% for publication in peter_publications %}
+          <div class="publication-item">
+            <div class="publication-header">
+              <h4><a href="{{ publication.url }}">{{ publication.title }}</a></h4>
+              <div class="publication-meta">
+                <span class="publication-type">{{ publication.type }}</span>
+                <span class="publication-year">{{ publication.year }}</span>
+              </div>
+            </div>
+            <div class="publication-authors">{{ publication.authors }}</div>
+            {% if publication.journal %}
+              <div class="publication-venue">{{ publication.journal }}{% if publication.volume %}, {{ publication.volume }}{% endif %}{% if publication.pages %}, {{ publication.pages }}{% endif %}</div>
+            {% endif %}
+            {% if publication.abstract %}
+              <div class="publication-abstract">{{ publication.abstract | truncate: 300 }}</div>
+            {% endif %}
+            <div class="publication-links">
+              {% if publication.doi %}
+                <a href="https://doi.org/{{ publication.doi }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> DOI
+                </a>
+              {% endif %}
+              {% if publication.url %}
+                <a href="{{ publication.url }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> View
+                </a>
+              {% endif %}
+              {% if publication.pdf %}
+                <a href="{{ publication.pdf }}" class="btn btn-sm btn-outline-secondary" target="_blank">
+                  <i class="fas fa-file-pdf"></i> PDF
+                </a>
+              {% endif %}
+              {% if publication.arxiv_id %}
+                <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" class="btn btn-sm btn-outline-info" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> arXiv
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No publications found for Peter Gräf in the CMS system.</p>
+      {% endif %}
+    </div>
 
     <h3>Conference Presentations</h3>
     <ul class="presentation-list">

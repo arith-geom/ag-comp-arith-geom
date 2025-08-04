@@ -2,7 +2,7 @@
 email: alireza.shavali@math.uni-heidelberg.de
 layout: member
 name: Alireza Shavali
-order: 999
+order: 10
 photo: /assets/img/1.jpg
 research_interests: Research interests in modularity, Galois representations, and
   arithmetic geometry.

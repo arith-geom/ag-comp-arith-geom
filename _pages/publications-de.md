@@ -24,27 +24,88 @@ nav_order: 5
   <!-- Main Content -->
   <div class="publications-content">
     <h2>Publikationen und Preprints unserer Forschungsgruppe:</h2>
+    
+    <!-- Publications by Type -->
+    <div class="publications-by-type">
+      <h3>Journal-Artikel</h3>
+      {% assign journal_pubs = site.publications | where: "type", "Journal Article" | sort: 'year' | reverse %}
+      {% if journal_pubs.size > 0 %}
+        <div class="publications-grid">
+          {% for publication in journal_pubs limit: 10 %}
+            <div class="publication-item">
+              <h4><a href="{{ publication.url }}">{{ publication.title }}</a></h4>
+              <div class="publication-authors">{{ publication.authors }}</div>
+              <div class="publication-venue">{{ publication.journal }}{% if publication.volume %}, {{ publication.volume }}{% endif %}{% if publication.pages %}, {{ publication.pages }}{% endif %}, {{ publication.year }}</div>
+              <div class="publication-links">
+                {% if publication.doi %}
+                  <a href="https://doi.org/{{ publication.doi }}" target="_blank">DOI</a>
+                {% endif %}
+                {% if publication.url %}
+                  <a href="{{ publication.url }}" target="_blank">View</a>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>Keine Journal-Artikel gefunden.</p>
+      {% endif %}
+
+      <h3>Preprints</h3>
+      {% assign preprint_pubs = site.publications | where: "type", "Preprint" | sort: 'year' | reverse %}
+      {% if preprint_pubs.size > 0 %}
+        <div class="publications-grid">
+          {% for publication in preprint_pubs %}
+            <div class="publication-item">
+              <h4><a href="{{ publication.url }}">{{ publication.title }}</a></h4>
+              <div class="publication-authors">{{ publication.authors }}</div>
+              <div class="publication-venue">{{ publication.year }}</div>
+              <div class="publication-links">
+                {% if publication.arxiv_id %}
+                  <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" target="_blank">arXiv</a>
+                {% endif %}
+                {% if publication.url %}
+                  <a href="{{ publication.url }}" target="_blank">View</a>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>Keine Preprints gefunden.</p>
+      {% endif %}
+
+      <h3>Software-Pakete</h3>
+      {% assign software_pubs = site.publications | where: "type", "Software" | sort: 'year' | reverse %}
+      {% if software_pubs.size > 0 %}
+        <div class="publications-grid">
+          {% for publication in software_pubs %}
+            <div class="publication-item">
+              <h4><a href="{{ publication.url }}">{{ publication.title }}</a></h4>
+              <div class="publication-authors">{{ publication.authors }}</div>
+              <div class="publication-venue">{{ publication.year }}</div>
+              <div class="publication-links">
+                {% if publication.url %}
+                  <a href="{{ publication.url }}" target="_blank">Repository</a>
+                {% endif %}
+                {% if publication.pdf %}
+                  <a href="{{ publication.pdf }}" target="_blank">PDF</a>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>Keine Software-Pakete gefunden.</p>
+      {% endif %}
+    </div>
+
+    <!-- Member Publications Links -->
+    <h3>Publikationen nach Mitgliedern:</h3>
     <ul class="member-publications">
       <li><a href="/members/gebhard-boeckle/publications/" class="internal-link">Prof. Dr. Gebhard Böckle</a></li>
       <li><a href="https://members.vistaserv.net/barinder" target="_blank" class="external-link">Dr. Barinder Banwait</a></li>
       <li><a href="/members/peter-graef/publications/" class="internal-link">Dr. Peter Gräf</a></li>
-    </ul>
-
-    <h2>Software-Pakete:</h2>
-    <ul class="software-packages">
-      <li>
-        <a href="/members/ralf-butenuth/publications/" class="internal-link">Magma-Paket QaQuotGraphs</a> 
-        zur Berechnung der Wirkung von Einheitengruppen maximaler Ordnungen in Quaternionenalgebren über F<sub>q</sub>(T) von Dr. Ralf Butenuth.
-      </li>
-      <li>
-        <a href="https://github.com/lhofmann/buildings" target="_blank" class="external-link">Magma-Paket</a> 
-        zur Berechnung von Quotienten von Bruhat-Tits-Gebäuden über Funktionskörpern modulo Kongruenzuntergruppen und der Wirkung von Hecke-Operatoren auf harmonische Koketten mit Koeffizienten in char. 0 von ehemaligem Masterstudenten Lutz Hofmann.
-      </li>
-      <li>
-        <a href="https://github.com/b-cakir/hecke-operator" target="_blank" class="external-link">Magma-Paket</a> 
-        zur Berechnung von Hecke-Eigensystemen für harmonische Koketten auf dem Bruhat-Tits-Baum für GL<sub>2</sub>(F<sub>q</sub>(T)) von Masterstudent Burak Cakir, Thesis verfügbar 
-        <a href="/assets/uploads/Thesis_Cakir.pdf" class="download">hier</a>.
-      </li>
     </ul>
   </div>
 

@@ -2,7 +2,7 @@
 email: arithgeo@iwr.uni-heidelberg.de
 layout: member
 name: Giacomo Hermes Ferraro
-order: 999
+order: 3
 photo: /assets/img/4.jpg
 research_interests: Research focuses on function field arithmetic, particularly Drinfeld
   modular forms and L-functions.

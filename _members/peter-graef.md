@@ -2,7 +2,7 @@
 email: peter.graef@iwr.uni-heidelberg.de
 layout: member
 name: Peter Gräf
-order: 999
+order: 34
 role: Alumni
 status: alumni
 photo: /assets/img/peter-graef.jpg

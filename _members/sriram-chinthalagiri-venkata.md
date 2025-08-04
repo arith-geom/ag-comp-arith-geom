@@ -1,31 +1,35 @@
 ---
-email: arithgeo@iwr.uni-heidelberg.de
+email: sriram.cv@math.uni-heidelberg.de
 layout: member
 name: Sriram Chinthalagiri Venkata
-order: 999
-photo: /assets/img/5.jpg
-research_interests: Research focuses on arithmetic geometry and number theory, particularly
-  in the study of modular forms and their connections to Galois representations.
+order: 5
+photo: /assets/img/sriram-cv.jpg
+research_interests: Research focuses on computational arithmetic geometry, Galois representations, and modular forms.
 role: PhD Student
 status: active
 ---
 
-Sriram Chinthalagiri Venkata is a PhD student in the AG Computational Arithmetic Geometry group. His research focuses on arithmetic geometry and number theory, particularly in the study of modular forms and their connections to Galois representations.
+Sriram Chinthalagiri Venkata is a PhD student in the AG Computational Arithmetic Geometry group at the University of Heidelberg. His research focuses on computational aspects of arithmetic geometry, particularly Galois representations and modular forms.
 
 ## Research Areas
 
-- **Arithmetic Geometry**: Study of geometric objects defined over number fields
-- **Number Theory**: Classical and modern number theory
-- **Modular Forms**: Classical and p-adic modular forms
-- **Galois Representations**: Connections between modular forms and Galois representations
+- **Computational Arithmetic Geometry**: Algorithmic methods in arithmetic geometry
+- **Galois Representations**: Computational aspects of Galois representations
+- **Modular Forms**: Classical and Drinfeld modular forms
+- **Number Theory**: Computational number theory and its applications
 
 ## Current Research
 
-- Modular forms and their L-functions
-- Galois representations associated to modular forms
-- Computational aspects of modular forms
-- Applications of modular forms in number theory
+- Computational methods for Galois representations
+- Algorithmic aspects of modular forms
+- Implementation of arithmetic geometry algorithms
+- Computer algebra applications in number theory
 
 ## Education
 
-Sriram is pursuing his PhD in Mathematics at the University of Heidelberg, focusing on arithmetic geometry and number theory.
+Sriram is pursuing his PhD in Mathematics at the University of Heidelberg, working under the supervision of Prof. Dr. Gebhard Böckle.
+
+## Contact
+
+- **Email:** sriram.cv@math.uni-heidelberg.de
+- **Office:** Interdisciplinary Center for Scientific Computing (IWR), University of Heidelberg

@@ -2,7 +2,7 @@
 email: arithgeo@iwr.uni-heidelberg.de
 layout: member
 name: Astrid Cederbaum
-order: 999
+order: 2
 photo: /assets/img/2.jpg
 research_interests: Administrative support and coordination for the research group.
 role: Secretary

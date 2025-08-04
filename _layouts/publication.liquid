@@ -1,535 +1,312 @@
 ---
 ---
-<div class="publication-page">
-  <!-- Publication Header -->
-  <div class="publication-header">
-    <div class="container">
-      <div class="publication-meta">
-        <div class="publication-type-badge">
-          <i class="fas fa-{{ page.type | downcase | replace: ' ', '-' }}"></i>
-          {{ page.type }}
-        </div>
-        {% if page.status %}
-        <div class="publication-status-badge status-{{ page.status | downcase | replace: ' ', '-' }}">
-          {{ page.status }}
-        </div>
-        {% endif %}
-        {% if page.year %}
-        <div class="publication-year">
-          {{ page.year }}
-        </div>
-        {% endif %}
-      </div>
-      
-      <h1 class="publication-title">{{ page.title }}</h1>
-      
-      {% if page.authors %}
-      <div class="publication-authors">
-        {{ page.authors }}
-      </div>
-      {% endif %}
-      
-      {% if page.journal or page.volume or page.pages %}
-      <div class="publication-venue">
-        {% if page.journal %}<em>{{ page.journal }}</em>{% endif %}
-        {% if page.volume %}{% if page.journal %}, {% endif %}{{ page.volume }}{% endif %}
-        {% if page.pages %}{% if page.journal or page.volume %}, {% endif %}{{ page.pages }}{% endif %}
-      </div>
-      {% endif %}
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="description" content="{{ page.abstract | default: page.description | default: site.description }}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.abstract | default: page.description }}">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="twitter:title" content="{{ page.title }}">
+  <meta property="twitter:description" content="{{ page.abstract | default: page.description }}">
+  
+  <!-- Authors -->
+  {% if page.authors %}
+    <meta name="author" content="{{ page.authors }}">
+    <meta property="article:author" content="{{ page.authors }}">
+  {% endif %}
+  
+  <!-- Publication date -->
+  {% if page.year %}
+    <meta property="article:published_time" content="{{ page.year }}-01-01T00:00:00Z">
+  {% endif %}
+  
+  <!-- DOI -->
+  {% if page.doi %}
+    <meta name="citation_doi" content="{{ page.doi }}">
+  {% endif %}
+  
+  <!-- Include site head -->
+  {% include head.liquid %}
+</head>
 
-  <!-- Publication Content -->
-  <div class="publication-content">
+<body>
+  {% include header.liquid %}
+  
+  <main class="publication-page">
     <div class="container">
       <div class="row">
-        <!-- Main Content -->
-        <div class="col-lg-8">
+        <div class="col-lg-8 mx-auto">
+          <!-- Breadcrumb -->
+          <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{{ '/' | relative_url }}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+            </ol>
+          </nav>
+          
+          <!-- Publication Header -->
+          <div class="publication-header">
+            <div class="publication-meta">
+              {% if page.type %}
+                <span class="badge bg-primary">{{ page.type }}</span>
+              {% endif %}
+              {% if page.status %}
+                <span class="badge bg-secondary">{{ page.status }}</span>
+              {% endif %}
+              {% if page.year %}
+                <span class="badge bg-info">{{ page.year }}</span>
+              {% endif %}
+            </div>
+            
+            <h1 class="publication-title">{{ page.title }}</h1>
+            
+            {% if page.authors %}
+              <div class="publication-authors">
+                <strong>Authors:</strong> {{ page.authors }}
+              </div>
+            {% endif %}
+            
+            {% if page.journal %}
+              <div class="publication-venue">
+                <strong>Journal/Conference:</strong> {{ page.journal }}
+                {% if page.volume %}, Volume {{ page.volume }}{% endif %}
+                {% if page.pages %}, Pages {{ page.pages }}{% endif %}
+              </div>
+            {% endif %}
+          </div>
+          
+          <!-- Publication Links -->
+          <div class="publication-links mb-4">
+            {% if page.doi %}
+              <a href="https://doi.org/{{ page.doi }}" class="btn btn-outline-primary" target="_blank">
+                <i class="fas fa-external-link-alt"></i> DOI
+              </a>
+            {% endif %}
+            
+            {% if page.pdf %}
+              <a href="{{ page.pdf }}" class="btn btn-outline-secondary" target="_blank">
+                <i class="fas fa-file-pdf"></i> PDF
+              </a>
+            {% endif %}
+            
+            {% if page.arxiv %}
+              <a href="https://arxiv.org/abs/{{ page.arxiv }}" class="btn btn-outline-info" target="_blank">
+                <i class="fas fa-external-link-alt"></i> arXiv
+              </a>
+            {% endif %}
+            
+            {% if page.url and page.url != page.pdf %}
+              <a href="{{ page.url }}" class="btn btn-outline-success" target="_blank">
+                <i class="fas fa-external-link-alt"></i> View Online
+              </a>
+            {% endif %}
+          </div>
+          
+          <!-- Abstract -->
           {% if page.abstract %}
-          <div class="publication-section">
-            <h3>Abstract</h3>
-            <div class="abstract-text">
-              {{ page.abstract | markdownify }}
+            <div class="publication-abstract mb-4">
+              <h3>Abstract</h3>
+              <p>{{ page.abstract }}</p>
             </div>
-          </div>
           {% endif %}
-
+          
+          <!-- Keywords -->
           {% if page.keywords %}
-          <div class="publication-section">
-            <h3>Keywords</h3>
-            <div class="keywords">
-              {% assign keywords = page.keywords | split: ',' %}
-              {% for keyword in keywords %}
-              <span class="keyword-badge">{{ keyword | strip }}</span>
-              {% endfor %}
+            <div class="publication-keywords mb-4">
+              <h3>Keywords</h3>
+              <div class="keywords-list">
+                {% for keyword in page.keywords %}
+                  <span class="badge bg-light text-dark me-2 mb-2">{{ keyword }}</span>
+                {% endfor %}
+              </div>
             </div>
-          </div>
           {% endif %}
-
-          {% if page.software_info %}
-          <div class="publication-section">
-            <h3>Software Information</h3>
-            <div class="software-info">
-              {% if page.software_info.repository_url %}
-              <div class="software-item">
-                <strong>Repository:</strong>
-                <a href="{{ page.software_info.repository_url }}" target="_blank" rel="noopener">
-                  <i class="fab fa-github"></i> View Repository
-                </a>
-              </div>
-              {% endif %}
-              
-              {% if page.software_info.download_url %}
-              <div class="software-item">
-                <strong>Download:</strong>
-                <a href="{{ page.software_info.download_url }}" target="_blank" rel="noopener">
-                  <i class="fas fa-download"></i> Download Package
-                </a>
-              </div>
-              {% endif %}
-              
-              {% if page.software_info.version %}
-              <div class="software-item">
-                <strong>Version:</strong> {{ page.software_info.version }}
-              </div>
-              {% endif %}
-              
-              {% if page.software_info.license %}
-              <div class="software-item">
-                <strong>License:</strong> {{ page.software_info.license }}
-              </div>
-              {% endif %}
-              
-              {% if page.software_info.documentation %}
-              <div class="software-item">
-                <strong>Documentation:</strong>
-                <a href="{{ page.software_info.documentation }}" target="_blank" rel="noopener">
-                  <i class="fas fa-book"></i> View Documentation
-                </a>
-              </div>
-              {% endif %}
-            </div>
-          </div>
-          {% endif %}
-
+          
           <!-- Publication Content -->
-          <div class="publication-section">
-            {{ content }}
-          </div>
-        </div>
-
-        <!-- Sidebar -->
-        <div class="col-lg-4">
-          <div class="publication-sidebar">
-            <!-- Links -->
-            <div class="sidebar-section">
-              <h4>Links</h4>
-              <div class="publication-links">
-                {% if page.doi %}
-                <a href="https://doi.org/{{ page.doi }}" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">
-                  <i class="fas fa-external-link-alt"></i> DOI
-                </a>
-                {% endif %}
-                
-                {% if page.arxiv %}
-                <a href="https://arxiv.org/abs/{{ page.arxiv }}" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">
-                  <i class="fas fa-file-alt"></i> arXiv
-                </a>
-                {% endif %}
-                
-                {% if page.url %}
-                <a href="{{ page.url }}" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">
-                  <i class="fas fa-external-link-alt"></i> View Paper
-                </a>
-                {% endif %}
-                
-                {% if page.pdf %}
-                <a href="{{ page.pdf }}" class="btn btn-outline-success btn-sm" target="_blank" rel="noopener">
-                  <i class="fas fa-file-pdf"></i> PDF
-                </a>
-                {% endif %}
-              </div>
+          {% if page.content %}
+            <div class="publication-content">
+              {{ page.content }}
             </div>
-
-            <!-- Metrics -->
-            {% if page.impact_factor or page.citations %}
-            <div class="sidebar-section">
-              <h4>Metrics</h4>
-              <div class="publication-metrics">
-                {% if page.impact_factor %}
-                <div class="metric-item">
-                  <strong>Impact Factor:</strong> {{ page.impact_factor }}
-                </div>
-                {% endif %}
-                
-                {% if page.citations %}
-                <div class="metric-item">
-                  <strong>Citations:</strong> {{ page.citations }}
-                </div>
-                {% endif %}
-              </div>
-            </div>
-            {% endif %}
-
-            <!-- Team Members -->
-            {% if page.team_members %}
-            <div class="sidebar-section">
-              <h4>Team Members</h4>
-              <div class="team-members-list">
-                {% for member in page.team_members %}
-                <div class="team-member-item">
-                  <a href="/members/{{ member.name | downcase | replace: ' ', '-' }}/">
-                    {{ member.name }}
-                  </a>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-            {% endif %}
-
-            <!-- Research Areas -->
-            {% if page.research_areas %}
-            <div class="sidebar-section">
-              <h4>Research Areas</h4>
-              <div class="research-areas-list">
-                {% for area in page.research_areas %}
-                <div class="research-area-item">
-                  <a href="/research/{{ area.title | downcase | replace: ' ', '-' }}/">
-                    {{ area.title }}
-                  </a>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-            {% endif %}
+          {% endif %}
+          
+          <!-- Back to Publications -->
+          <div class="text-center mt-5">
+            <a href="{{ '/publications/' | relative_url }}" class="btn btn-primary">
+              <i class="fas fa-arrow-left"></i> Back to Publications
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<style>
-.publication-page {
-  background: var(--bg-primary);
-  min-height: 100vh;
-}
-
-.publication-header {
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-  border-bottom: 3px solid var(--primary);
-  padding: 3rem 0;
-  margin-bottom: 2rem;
-}
-
-.publication-meta {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.publication-type-badge {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.publication-status-badge {
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border: 2px solid;
-}
-
-.status-published {
-  background: #d4edda;
-  color: #155724;
-  border-color: #c3e6cb;
-}
-
-.status-submitted {
-  background: #fff3cd;
-  color: #856404;
-  border-color: #ffeaa7;
-}
-
-.status-under-review {
-  background: #d1ecf1;
-  color: #0c5460;
-  border-color: #bee5eb;
-}
-
-.status-in-preparation {
-  background: #f8d7da;
-  color: #721c24;
-  border-color: #f5c6cb;
-}
-
-.publication-year {
-  background: var(--bg-muted);
-  color: var(--text-secondary);
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.publication-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.publication-authors {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.publication-venue {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-}
-
-.publication-content {
-  padding: 0 0 3rem 0;
-}
-
-.publication-section {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-}
-
-.publication-section h3 {
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary);
-}
-
-.abstract-text {
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-size: 1.1rem;
-}
-
-.keywords {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.keyword-badge {
-  background: var(--bg-muted);
-  color: var(--text-secondary);
-  padding: 0.4rem 0.8rem;
-  border-radius: 1rem;
-  font-size: 0.9rem;
-  border: 1px solid var(--border-color);
-}
-
-.software-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.software-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem;
-  background: var(--bg-primary);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-}
-
-.software-item strong {
-  color: var(--text-primary);
-  min-width: 100px;
-}
-
-.software-item a {
-  color: var(--primary);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.software-item a:hover {
-  text-decoration: underline;
-}
-
-.publication-sidebar {
-  position: sticky;
-  top: 2rem;
-}
-
-.sidebar-section {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-}
-
-.sidebar-section h4 {
-  color: var(--text-primary);
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary);
-}
-
-.publication-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.publication-links .btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.publication-metrics {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.metric-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.metric-item:last-child {
-  border-bottom: none;
-}
-
-.metric-item strong {
-  color: var(--text-primary);
-}
-
-.team-members-list,
-.research-areas-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.team-member-item,
-.research-area-item {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.team-member-item:last-child,
-.research-area-item:last-child {
-  border-bottom: none;
-}
-
-.team-member-item a,
-.research-area-item a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.team-member-item a:hover,
-.research-area-item a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 991.98px) {
-  .publication-header {
-    padding: 2rem 0;
-  }
+  </main>
   
-  .publication-title {
-    font-size: 2rem;
-  }
+  {% include footer.liquid %}
   
-  .publication-meta {
-    gap: 0.75rem;
-  }
-  
-  .publication-type-badge,
-  .publication-status-badge,
-  .publication-year {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-  }
-  
-  .publication-sidebar {
-    position: static;
-    margin-top: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .publication-title {
-    font-size: 1.8rem;
-  }
-  
-  .publication-authors {
-    font-size: 1.1rem;
-  }
-  
-  .publication-section {
-    padding: 1.5rem;
-  }
-  
-  .publication-meta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 576px) {
-  .publication-header {
-    padding: 1.5rem 0;
-  }
-  
-  .publication-title {
-    font-size: 1.5rem;
-  }
-  
-  .publication-section {
-    padding: 1rem;
-  }
-  
-  .sidebar-section {
-    padding: 1rem;
-  }
-}
-</style> 
+  <style>
+    .publication-page {
+      padding: 2rem 0;
+      min-height: 60vh;
+    }
+    
+    .publication-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+    
+    .publication-meta {
+      margin-bottom: 1rem;
+    }
+    
+    .publication-meta .badge {
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    .publication-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    .publication-authors {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .publication-venue {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    
+    .publication-links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .publication-links .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+    }
+    
+    .publication-abstract {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .publication-abstract h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    
+    .publication-abstract p {
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+    
+    .publication-keywords h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    
+    .keywords-list .badge {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }
+    
+    .publication-content {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .publication-content h1,
+    .publication-content h2,
+    .publication-content h3,
+    .publication-content h4,
+    .publication-content h5,
+    .publication-content h6 {
+      color: var(--text-primary);
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .publication-content p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .publication-content ul,
+    .publication-content ol {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    
+    .publication-content li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .breadcrumb {
+      background: var(--bg-secondary);
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+    }
+    
+    .breadcrumb-item a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .breadcrumb-item a:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+    
+    .breadcrumb-item.active {
+      color: var(--text-muted);
+    }
+    
+    @media (max-width: 768px) {
+      .publication-title {
+        font-size: 1.5rem;
+      }
+      
+      .publication-links {
+        justify-content: center;
+      }
+      
+      .publication-links .btn {
+        flex: 1;
+        min-width: 120px;
+      }
+    }
+  </style>
+</body>
+</html> 

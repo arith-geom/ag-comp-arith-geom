@@ -2,7 +2,7 @@
 email: arithgeo@iwr.uni-heidelberg.de
 layout: member
 name: Andrea Conti
-order: 999
+order: 4
 photo: /assets/img/12.jpg
 research_interests: Research focuses on Galois representations and their deformations,
   particularly in the context of modular forms and elliptic curves.

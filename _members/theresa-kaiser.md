@@ -2,7 +2,7 @@
 email: arithgeo@iwr.uni-heidelberg.de
 layout: member
 name: Theresa Kaiser
-order: 999
+order: 12
 photo: /assets/img/3.jpg
 research_interests: Research focuses on computational arithmetic geometry, particularly
   in the study of elliptic curves and their applications in cryptography.

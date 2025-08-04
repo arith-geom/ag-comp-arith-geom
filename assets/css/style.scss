@@ -32,4 +32,356 @@ a:hover, a:focus {
 #interna form button[type="submit"]:hover {
   background-color: #a00;
   border-color: #800;
+}
+
+// Publication cards styling
+.publication-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.publication-title a {
+  color: #c00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.publication-title a:hover {
+  color: #e00;
+  text-decoration: underline;
+}
+
+.publication-meta {
+  margin-bottom: 10px;
+}
+
+.publication-meta span {
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin-right: 5px;
+  color: #666;
+}
+
+.publication-authors {
+  font-style: italic;
+  color: #666;
+  margin: 5px 0;
+}
+
+.publication-venue {
+  color: #888;
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+.publication-details {
+  margin: 10px 0;
+}
+
+.detail-item {
+  background: #f8f8f8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-right: 8px;
+  color: #555;
+}
+
+.publication-abstract {
+  margin: 15px 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+.publication-content {
+  margin: 15px 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+.publication-content h2 {
+  color: #c00;
+  font-size: 1.2em;
+  margin: 15px 0 10px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.publication-content h3 {
+  color: #c00;
+  font-size: 1.1em;
+  margin: 12px 0 8px 0;
+}
+
+.publication-content ul, .publication-content ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.publication-content li {
+  margin: 5px 0;
+}
+
+.publication-content a {
+  color: #c00;
+  text-decoration: none;
+}
+
+.publication-content a:hover {
+  text-decoration: underline;
+}
+
+.publication-expandable {
+  margin: 20px 0;
+}
+
+.publication-expand-btn {
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #c00 0%, #a00 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  user-select: none;
+  font-size: 0.95em;
+  box-shadow: 0 3px 10px rgba(192, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.publication-expand-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.publication-expand-btn:hover::before {
+  left: 100%;
+}
+
+.publication-expand-btn:hover {
+  background: linear-gradient(135deg, #d00 0%, #b00 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(192, 0, 0, 0.3);
+}
+
+.publication-expand-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(192, 0, 0, 0.2);
+}
+
+.publication-expand-btn.expanded {
+  background: linear-gradient(135deg, #a00 0%, #800 100%);
+  box-shadow: 0 4px 15px rgba(192, 0, 0, 0.25);
+}
+
+.publication-expand-btn .btn-text {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.publication-expand-btn .btn-icon {
+  transition: transform 0.3s ease;
+  font-size: 0.9em;
+}
+
+.publication-expand-btn.expanded .btn-icon {
+  transform: rotate(180deg);
+}
+
+.publication-expanded-content {
+  display: none;
+  padding: 25px;
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+  border: 2px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  margin-top: -2px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.publication-details-content h2 {
+  color: #c00;
+  font-size: 1.3em;
+  margin: 0 0 15px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #c00;
+}
+
+.publication-details-content h3 {
+  color: #c00;
+  font-size: 1.1em;
+  margin: 15px 0 10px 0;
+}
+
+.publication-details-content ul, .publication-details-content ol {
+  margin: 12px 0;
+  padding-left: 25px;
+}
+
+.publication-details-content li {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.publication-details-content a {
+  color: #c00;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.publication-details-content a:hover {
+  border-bottom-color: #c00;
+  text-decoration: none;
+}
+
+
+
+.publication-keywords {
+  margin: 10px 0;
+}
+
+.keyword-tag {
+  background: #e8f4fd;
+  color: #0066cc;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin-right: 5px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.publication-links {
+  margin-top: 15px;
+}
+
+.publication-links .btn {
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+
+// Software packages section
+.software-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border-left: 5px solid #c00;
+}
+
+.software-section h2 {
+  color: #c00;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.software-section h2 i {
+  font-size: 1.2em;
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.software-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.software-card:hover {
+  border-color: #c00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(192, 0, 0, 0.15);
+}
+
+.software-header h3 {
+  color: #c00;
+  margin: 0 0 8px 0;
+  font-size: 1.2em;
+}
+
+.software-author {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.software-year {
+  color: #888;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+}
+
+.software-description {
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.software-links {
+  margin-top: 15px;
+}
+
+.software-links .btn {
+  background: #c00;
+  border-color: #c00;
+  color: white;
+}
+
+.software-links .btn:hover {
+  background: #a00;
+  border-color: #a00;
+}
+
+.software-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.software-empty p {
+  margin: 0;
+  font-size: 1.1em;
 } 

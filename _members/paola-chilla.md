@@ -2,7 +2,7 @@
 email: arithgeo@iwr.uni-heidelberg.de
 layout: member
 name: Paola Chilla
-order: 999
+order: 11
 photo: /assets/img/10.jpg
 research_interests: Research focuses on computational aspects of arithmetic geometry,
   particularly in the study of Galois representations and their applications.

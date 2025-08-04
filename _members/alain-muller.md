@@ -2,7 +2,7 @@
 email: 
 layout: member
 name: Dr. Alain Muller
-order: 999
+order: 21
 photo: /assets/images/heidelberg_placeholder.jpg
 research_interests: Research interests in arithmetic geometry and number theory.
 role: Former Member

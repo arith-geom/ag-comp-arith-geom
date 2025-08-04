@@ -200,6 +200,9 @@ collections:
   pages:
     output: true
     permalink: /:name/
+  publications:
+    output: true
+    permalink: /publications/:name/
   teaching:
     output: true
     permalink: /teaching/:name/
@@ -234,7 +237,6 @@ exclude:
   - "*.log"
   - .DS_Store
   - Thumbs.db
-  - assets/search-data.json
   - assets/search-data-backup.json
 
 # Performance and regeneration settings

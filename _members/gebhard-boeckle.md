@@ -2,7 +2,7 @@
 email: gebhard.boeckle@math.uni-heidelberg.de
 layout: member
 name: Gebhard Böckle
-order: 999
+order: 1
 photo: /assets/img/11.jpg
 research_interests: Research interests in arithmetic geometry, modular forms, Galois
   representations, and computational number theory.
