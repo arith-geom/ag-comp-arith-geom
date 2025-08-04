@@ -1,4 +1,5 @@
 ---
+---
 layout: teaching
 title: Neues Semester
 semester: WS25
@@ -7,4 +8,9 @@ course_type: seminar
 language: en
 description: Das wird gut
 active: true
+status: Active
 ---
+
+
+
+

@@ -1,13 +1,18 @@
 ---
-layout: teaching
-title: "Test Semester 2025"
-semester: "Winter Semester 2025"
-type: "Lecture"
-language: "en"
-description: "This is a test course created to verify Pages CMS real-time integration"
-active: true
-status: "Active"
 ---
+layout: teaching
+title: Test Semester 2025
+semester: Winter Semester 2025
+type: Lecture
+language: en
+description: This is a test course created to verify Pages CMS real-time integration
+active: true
+status: Active
+---
+
+
+
+
 
 This is a test course created to verify that Pages CMS real-time integration is working properly.
 

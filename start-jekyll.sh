@@ -41,6 +41,11 @@ bundle exec jekyll serve \
     --port 4000 \
     --verbose
 
+# Copy favicon to _site directory
+echo ""
+echo "📄 Setting up favicon..."
+./scripts/copy_favicon.sh
+
 echo ""
 echo "✅ Jekyll started successfully!"
 echo "🌐 Your site should be available at: http://localhost:4000"

@@ -9,7 +9,11 @@ layout: teaching
 order: 999
 semester: Summer term 2024
 title: Representation theory of finite groups
+status: Active
 ---
+
+
+
 
 
 ## Course Description

@@ -5,7 +5,15 @@ title: Teaching
 permalink: "/teaching/"
 scripts:
 - "/assets/js/teaching-page.js"
+status: Active
+active: false
 ---
+
+
+
+
+
+
 
 
 <div class="teaching-page">

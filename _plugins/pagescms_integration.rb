@@ -334,12 +334,19 @@ module Jekyll
 
     def process_pagescms_item(content_type, item)
       begin
+        return unless item && item.is_a?(Hash)
+        
         file_path = item['file']
         content_type_name = item['type']
+        
+        return unless file_path && content_type_name
         
         # Read the file content
         content = File.read(file_path)
         front_matter = YAML.load_file(file_path)
+        
+        # Skip if YAML loading failed or returned nil
+        return unless front_matter && front_matter.is_a?(Hash)
         
         # Ensure proper front matter structure
         front_matter = ensure_front_matter_structure(content_type_name, front_matter)
@@ -395,6 +402,9 @@ module Jekyll
           begin
             member_data = YAML.load_file(file)
             
+            # Skip if YAML loading failed or returned nil
+            next unless member_data && member_data.is_a?(Hash)
+            
             # Ensure member data has required fields for Pages CMS
             member_data['layout'] ||= 'member'
             member_data['status'] ||= 'Active'
@@ -420,6 +430,9 @@ module Jekyll
         Dir.glob(File.join(publications_dir, '*.md')).each do |file|
           begin
             pub_data = YAML.load_file(file)
+            
+            # Skip if YAML loading failed or returned nil
+            next unless pub_data && pub_data.is_a?(Hash)
             
             # Ensure publication data has required fields for Pages CMS
             pub_data['layout'] ||= 'publication'
@@ -447,6 +460,9 @@ module Jekyll
           begin
             research_data = YAML.load_file(file)
             
+            # Skip if YAML loading failed or returned nil
+            next unless research_data && research_data.is_a?(Hash)
+            
             # Ensure research data has required fields for Pages CMS
             research_data['layout'] ||= 'research'
             
@@ -471,6 +487,9 @@ module Jekyll
         Dir.glob(File.join(teaching_dir, '*.md')).each do |file|
           begin
             teaching_data = YAML.load_file(file)
+            
+            # Skip if YAML loading failed or returned nil
+            next unless teaching_data && teaching_data.is_a?(Hash)
             
             # Ensure teaching data has required fields for Pages CMS
             teaching_data['layout'] ||= 'teaching'
