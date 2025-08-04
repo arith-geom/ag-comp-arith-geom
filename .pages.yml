@@ -277,10 +277,8 @@ content:
         description: "Lower numbers appear first in listings"
       - name: email
         label: Email Address
-        type: string
+        type: email
         description: "Professional email address"
-        validation:
-          pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
       - name: website
         label: Personal Website
         type: string
@@ -636,10 +634,8 @@ content:
         description: "Brief description of the website"
       - name: email
         label: Contact Email
-        type: string
+        type: email
         description: "Primary contact email"
-        validation:
-          pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
       - name: url
         label: Website URL
         type: string
@@ -675,9 +671,7 @@ components:
     fields:
       - name: email
         label: Email
-        type: string
-        validation:
-          pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        type: email
       - name: phone
         label: Phone
         type: string

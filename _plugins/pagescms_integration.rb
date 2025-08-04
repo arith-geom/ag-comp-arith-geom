@@ -240,15 +240,25 @@ module Jekyll
       members_dir = File.join(@site.source, '_members')
       return unless Dir.exist?(members_dir)
 
-      Dir.glob(File.join(members_dir, '*.md')).each do |file|
-        member_data = YAML.load_file(file)
-        
-        # Ensure member data has required fields for Pages CMS
-        member_data['layout'] ||= 'member'
-        member_data['status'] ||= 'Active'
-        
-        # Update file with standardized front matter
-        update_member_file(file, member_data)
+      begin
+        Dir.glob(File.join(members_dir, '*.md')).each do |file|
+          begin
+            member_data = YAML.load_file(file)
+            
+            # Ensure member data has required fields for Pages CMS
+            member_data['layout'] ||= 'member'
+            member_data['status'] ||= 'Active'
+            
+            # Update file with standardized front matter
+            update_member_file(file, member_data)
+            
+            Jekyll.logger.debug "Pages CMS: Processed member file #{file}"
+          rescue => e
+            Jekyll.logger.warn "Pages CMS: Error processing member file #{file}: #{e.message}"
+          end
+        end
+      rescue => e
+        Jekyll.logger.error "Pages CMS: Error processing members directory: #{e.message}"
       end
     end
 
@@ -256,15 +266,25 @@ module Jekyll
       publications_dir = File.join(@site.source, '_publications')
       return unless Dir.exist?(publications_dir)
 
-      Dir.glob(File.join(publications_dir, '*.md')).each do |file|
-        pub_data = YAML.load_file(file)
-        
-        # Ensure publication data has required fields for Pages CMS
-        pub_data['layout'] ||= 'publication'
-        pub_data['type'] ||= 'Journal Article'
-        
-        # Update file with standardized front matter
-        update_publication_file(file, pub_data)
+      begin
+        Dir.glob(File.join(publications_dir, '*.md')).each do |file|
+          begin
+            pub_data = YAML.load_file(file)
+            
+            # Ensure publication data has required fields for Pages CMS
+            pub_data['layout'] ||= 'publication'
+            pub_data['type'] ||= 'Journal Article'
+            
+            # Update file with standardized front matter
+            update_publication_file(file, pub_data)
+            
+            Jekyll.logger.debug "Pages CMS: Processed publication file #{file}"
+          rescue => e
+            Jekyll.logger.warn "Pages CMS: Error processing publication file #{file}: #{e.message}"
+          end
+        end
+      rescue => e
+        Jekyll.logger.error "Pages CMS: Error processing publications directory: #{e.message}"
       end
     end
 
@@ -272,14 +292,24 @@ module Jekyll
       research_dir = File.join(@site.source, '_research')
       return unless Dir.exist?(research_dir)
 
-      Dir.glob(File.join(research_dir, '*.md')).each do |file|
-        research_data = YAML.load_file(file)
-        
-        # Ensure research data has required fields for Pages CMS
-        research_data['layout'] ||= 'research'
-        
-        # Update file with standardized front matter
-        update_research_file(file, research_data)
+      begin
+        Dir.glob(File.join(research_dir, '*.md')).each do |file|
+          begin
+            research_data = YAML.load_file(file)
+            
+            # Ensure research data has required fields for Pages CMS
+            research_data['layout'] ||= 'research'
+            
+            # Update file with standardized front matter
+            update_research_file(file, research_data)
+            
+            Jekyll.logger.debug "Pages CMS: Processed research file #{file}"
+          rescue => e
+            Jekyll.logger.warn "Pages CMS: Error processing research file #{file}: #{e.message}"
+          end
+        end
+      rescue => e
+        Jekyll.logger.error "Pages CMS: Error processing research directory: #{e.message}"
       end
     end
 
@@ -287,14 +317,24 @@ module Jekyll
       teaching_dir = File.join(@site.source, '_teaching')
       return unless Dir.exist?(teaching_dir)
 
-      Dir.glob(File.join(teaching_dir, '*.md')).each do |file|
-        teaching_data = YAML.load_file(file)
-        
-        # Ensure teaching data has required fields for Pages CMS
-        teaching_data['layout'] ||= 'teaching'
-        
-        # Update file with standardized front matter
-        update_teaching_file(file, teaching_data)
+      begin
+        Dir.glob(File.join(teaching_dir, '*.md')).each do |file|
+          begin
+            teaching_data = YAML.load_file(file)
+            
+            # Ensure teaching data has required fields for Pages CMS
+            teaching_data['layout'] ||= 'teaching'
+            
+            # Update file with standardized front matter
+            update_teaching_file(file, teaching_data)
+            
+            Jekyll.logger.debug "Pages CMS: Processed teaching file #{file}"
+          rescue => e
+            Jekyll.logger.warn "Pages CMS: Error processing teaching file #{file}: #{e.message}"
+          end
+        end
+      rescue => e
+        Jekyll.logger.error "Pages CMS: Error processing teaching directory: #{e.message}"
       end
     end
 

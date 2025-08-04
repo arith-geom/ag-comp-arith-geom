@@ -102,10 +102,6 @@ enable_darkmode: true
 enable_theme_switcher: true
 lang: en
 locale: en_US
-default_language: en
-supported_languages:
-  - en
-  - de
 third_party_libraries:
   mdb:
     url:
