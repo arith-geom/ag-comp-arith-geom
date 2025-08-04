@@ -1,6 +1,6 @@
 ---
 ---
-@use "forward" as *;
+@import "forward";
 
 // Enhanced High-Contrast Academic Theme
 // Optimized for performance and accessibility
@@ -136,6 +136,158 @@ html.dark-mode {
     color: $white-color !important;
   }
   
+  // Additional dark mode fixes for specific pages
+  .teaching-page,
+  .publications-page,
+  .links-list,
+  .contact-form-section {
+    background-color: $black-color !important;
+    color: $white-color !important;
+  }
+  
+  // Fix for list group items in links page
+  .list-group-item {
+    background-color: $gray-900 !important;
+    border-color: $gray-700 !important;
+    color: $white-color !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .list-group-item:hover {
+    background-color: $gray-800 !important;
+    border-color: $red-400 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(248, 113, 113, 0.2) !important;
+  }
+  
+  .list-group-item h5 {
+    color: $white-color !important;
+  }
+  
+  .list-group-item small,
+  .list-group-item p {
+    color: $gray-300 !important;
+  }
+  
+  // Teaching page specific fixes
+  .teaching-page {
+    background-color: $black-color !important;
+  }
+  
+  .teaching-header {
+    background: linear-gradient(135deg, $gray-800 0%, $gray-900 100%) !important;
+    border-bottom: 3px solid $red-400 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  .teaching-header::before {
+    background: linear-gradient(135deg, rgba(248, 113, 113, 0.1) 0%, rgba(248, 113, 113, 0.05) 100%) !important;
+  }
+  
+  .filter-controls {
+    background: linear-gradient(135deg, $gray-900 0%, $gray-800 100%) !important;
+    border-color: $gray-700 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 12px !important;
+  }
+  
+  .filter-select,
+  .filter-input {
+    background: linear-gradient(135deg, $gray-800 0%, $gray-700 100%) !important;
+    border-color: $gray-700 !important;
+    color: $white-color !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .filter-select:focus,
+  .filter-input:focus {
+    border-color: $red-400 !important;
+    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2), 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-1px) !important;
+  }
+  
+  .semester-group {
+    background-color: $gray-900 !important;
+    border-color: $gray-700 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  .semester-group:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+    border-color: $red-400 !important;
+  }
+  
+  .course-item {
+    background-color: $gray-800 !important;
+    border-color: $gray-700 !important;
+    color: $white-color !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .course-item:hover {
+    background-color: $gray-700 !important;
+    border-color: $red-400 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(248, 113, 113, 0.2) !important;
+  }
+  
+  .course-badge {
+    background: linear-gradient(135deg, $red-400 0%, $red-500 100%) !important;
+    color: $black-color !important;
+    box-shadow: 0 2px 8px rgba(248, 113, 113, 0.3) !important;
+    border-radius: 20px !important;
+    padding: 0.25rem 0.75rem !important;
+  }
+  
+  .course-link {
+    color: $red-400 !important;
+  }
+  
+  .course-link:hover {
+    color: $red-300 !important;
+  }
+  
+  .instructors {
+    color: $gray-400 !important;
+  }
+  
+  // Research page specific fixes
+  .research-areas {
+    background-color: $black-color !important;
+  }
+  
+  .research-area-card {
+    background-color: $gray-900 !important;
+    border-color: $gray-700 !important;
+    color: $white-color !important;
+  }
+  
+  .research-area-card:hover {
+    background-color: $gray-800 !important;
+    border-color: $red-400 !important;
+  }
+  
+  .research-content h3 {
+    color: $white-color !important;
+    border-bottom-color: $red-400 !important;
+  }
+  
+  .research-text p {
+    color: $gray-300 !important;
+  }
+  
+  .highlight-box {
+    background: linear-gradient(135deg, $gray-800 0%, $gray-700 100%) !important;
+    border-left-color: $red-400 !important;
+    color: $white-color !important;
+  }
+  
+  .highlight-box p {
+    color: $white-color !important;
+  }
+  
   // Enhanced dark mode for cards
   .card {
     background-color: $gray-900 !important;
@@ -250,12 +402,106 @@ html.dark-mode {
     background-color: $gray-900 !important;
     border-color: $gray-700 !important;
     color: $white-color !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
   }
   
   .search-input:focus {
     background-color: $gray-900 !important;
     border-color: $red-400 !important;
     color: $white-color !important;
+    box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.15), 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-2px) !important;
+  }
+  
+  // Publications page specific fixes
+  .publications-page {
+    background-color: $black-color !important;
+  }
+  
+  .filter-section {
+    background: linear-gradient(135deg, $gray-800 0%, $gray-900 100%) !important;
+    border-bottom: 3px solid $red-400 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  // Fix for publication cards to ensure proper dark backgrounds
+  .publication-card {
+    background-color: $gray-900 !important;
+    border-color: $gray-700 !important;
+    color: $white-color !important;
+  }
+  
+  .publication-card:hover {
+    background-color: $gray-800 !important;
+    border-color: $red-400 !important;
+  }
+  
+  // Fix for publication card elements
+  .publication-header,
+  .publication-body,
+  .publication-footer {
+    background-color: transparent !important;
+    color: $white-color !important;
+  }
+  
+  .publication-title a {
+    color: $red-400 !important;
+  }
+  
+  .publication-title a:hover {
+    color: $red-300 !important;
+  }
+  
+  .publication-authors {
+    color: $gray-300 !important;
+  }
+  
+  .publication-venue {
+    color: $gray-400 !important;
+  }
+  
+  .publication-abstract {
+    color: $gray-300 !important;
+  }
+  
+  .publication-keywords {
+    color: $gray-400 !important;
+  }
+  
+  .search-results-info {
+    background: linear-gradient(135deg, $gray-800 0%, $gray-700 100%) !important;
+    color: $gray-300 !important;
+    border-color: $gray-700 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 20px !important;
+  }
+  
+  .quick-filter-btn {
+    background: linear-gradient(135deg, $red-400 0%, $red-500 100%) !important;
+    border-color: $red-400 !important;
+    color: $black-color !important;
+    box-shadow: 0 2px 8px rgba(248, 113, 113, 0.3) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .quick-filter-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(248, 113, 113, 0.4) !important;
+  }
+  
+  .quick-filter-btn:not(.active) {
+    background: linear-gradient(135deg, $gray-800 0%, $gray-700 100%) !important;
+    color: $red-400 !important;
+    border-color: $red-400 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  .quick-filter-btn:not(.active):hover {
+    background: linear-gradient(135deg, $gray-700 0%, $gray-600 100%) !important;
+    color: $red-300 !important;
+    border-color: $red-300 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(248, 113, 113, 0.3) !important;
   }
   
   .search-results-container {
@@ -2014,6 +2260,32 @@ body.dark-mode .search-overlay-content .search-overlay-input {
 [data-theme="dark"] .search-overlay-content .search-overlay-input:focus,
 body.dark-mode .search-overlay-content .search-overlay-input:focus {
   background: var(--dark-bg);
+}
+
+// Fix z-index and overlapping issues for dark mode
+[data-theme="dark"] .search-wrapper,
+body.dark-mode .search-wrapper {
+  z-index: 10 !important;
+}
+
+[data-theme="dark"] .search-results-container,
+body.dark-mode .search-results-container {
+  z-index: 20 !important;
+}
+
+[data-theme="dark"] .dropdown-menu,
+body.dark-mode .dropdown-menu {
+  z-index: 30 !important;
+}
+
+[data-theme="dark"] .modal,
+body.dark-mode .modal {
+  z-index: 50 !important;
+}
+
+[data-theme="dark"] .floating-theme-toggle,
+body.dark-mode .floating-theme-toggle {
+  z-index: 100 !important;
 }
 
 // Animations

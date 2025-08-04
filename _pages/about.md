@@ -45,6 +45,38 @@ nav: true
   justify-content: center;
 }
 
+/* Dark mode enhancement for about page image */
+[data-theme="dark"] .about-hero-image,
+body.dark-mode .about-hero-image {
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+[data-theme="dark"] .about-hero-overlay,
+body.dark-mode .about-hero-overlay {
+  background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%) !important;
+}
+
+/* Ensure the about hero container itself doesn't get affected by global filters */
+[data-theme="dark"] .about-hero,
+body.dark-mode .about-hero {
+  filter: none !important;
+}
+
+/* Additional specificity to override any global image filters */
+[data-theme="dark"] .about-hero img,
+body.dark-mode .about-hero img,
+[data-theme="dark"] .about-hero-image,
+body.dark-mode .about-hero-image {
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  transform: none !important;
+}
+
 .about-hero-content {
   text-align: center;
   color: white;

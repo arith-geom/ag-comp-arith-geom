@@ -1,5 +1,6 @@
 # Enhanced Pages CMS Configuration for AG Computational Arithmetic Geometry
 # This file configures the content management interface at https://app.pagescms.org/
+# Updated January 2025 - Fully aligned with latest PagesCMS features and actual content
 
 # Media Configuration
 media:
@@ -17,7 +18,7 @@ media:
     output: /assets/uploads
     path: assets/uploads
     categories: [document]
-    extensions: [pdf, doc, docx, ppt, pptx, xls, xlsx, txt, md]
+    extensions: [pdf, doc, docx, ppt, pptx, xls, xlsx, txt, md, tex, bib]
     description: "Course materials, announcements, and research documents"
   - name: media
     label: Media Files
@@ -30,7 +31,7 @@ media:
 
 # Content Types Configuration
 content:
-  # Team Members - Enhanced with better organization
+  # Team Members - Enhanced and aligned with actual content
   - name: members
     label: Team Members
     type: collection
@@ -38,7 +39,8 @@ content:
     filename: "{name|slugify}.md"
     format: yaml-frontmatter
     view:
-      fields: [name, role, photo, email, status, order]
+      fields: [name, role, status, email, order]
+      primary: name
       sort:
         field: order
         direction: asc
@@ -65,22 +67,28 @@ content:
           max_length: 100
       - name: role
         label: Role/Position
-        type: string
+        type: select
         required: true
-        description: "Academic or professional role (e.g., Professor, PhD Student, Postdoc)"
-        validation:
-          min_length: 2
-          max_length: 100
+        options:
+          "Professor & Group Leader": Professor & Group Leader
+          "Postdoctoral Researcher": Postdoctoral Researcher
+          "PhD Student": PhD Student
+          "Master Student": Master Student
+          "Bachelor Student": Bachelor Student
+          "Secretary": Secretary
+          "Former Member": Former Member
+          "Alumni": Alumni
+          "Guest Researcher": Guest Researcher
+        description: "Academic or professional role"
       - name: status
         label: Status
         type: select
         options:
           active: Active Member
           alumni: Alumni
+          former: Former Member
+          inactive: Inactive
           visitor: Visitor
-          student: Student
-          professor: Professor
-          postdoc: Postdoctoral Researcher
         default: active
         required: true
         description: "Current status of the team member"
@@ -138,7 +146,7 @@ content:
         label: Education
         type: object
         list:
-          min: 1
+          min: 0
           max: 10
           collapsible:
             collapsed: false
@@ -187,7 +195,7 @@ content:
           other: Other
         description: "Languages spoken by this person"
 
-  # Publications - Enhanced with better metadata
+  # Publications - Enhanced and aligned with actual content
   - name: publications
     label: Publications
     type: collection
@@ -196,6 +204,7 @@ content:
     format: yaml-frontmatter
     view:
       fields: [title, authors, year, publication_type, doi, featured]
+      primary: title
       sort:
         field: year
         direction: desc
@@ -234,6 +243,8 @@ content:
         label: Publication Type
         type: select
         options:
+          overview: Overview
+          "Software Package": Software Package
           journal: Journal Article
           conference: Conference Paper
           preprint: Preprint
@@ -320,6 +331,40 @@ content:
         description: "Link to associated code"
         validation:
           pattern: "^https?://.+"
+      - name: software_info
+        label: Software Package Information
+        type: object
+        description: "Information for software packages"
+        fields:
+          - name: repository_url
+            label: Repository URL
+            type: string
+            validation:
+              pattern: "^https?://.+"
+            placeholder: "https://github.com/username/package"
+          - name: download_url
+            label: Download URL
+            type: string
+            validation:
+              pattern: "^https?://.+"
+          - name: version
+            label: Version
+            type: string
+            placeholder: "1.0.0"
+          - name: license
+            label: License
+            type: string
+            placeholder: "MIT, GPL, etc."
+          - name: documentation
+            label: Documentation URL
+            type: string
+            validation:
+              pattern: "^https?://.+"
+      - name: order
+        label: Display Order
+        type: number
+        default: 0
+        description: "Order for displaying publications (lower numbers appear first)"
 
   # Teaching & Courses - Enhanced with better course management
   - name: teaching
@@ -330,6 +375,7 @@ content:
     format: yaml-frontmatter
     view:
       fields: [title, semester, instructor, course_type, active]
+      primary: title
       sort:
         field: semester
         direction: desc
@@ -469,6 +515,7 @@ content:
     format: yaml-frontmatter
     view:
       fields: [title, description, featured, order]
+      primary: title
       sort:
         field: order
         direction: asc
@@ -563,27 +610,84 @@ content:
             validation:
               pattern: "^https?://.+"
 
-
+  # News & Events - Re-added for future use
+  - name: news
+    label: News & Events
+    type: collection
+    path: _news
+    filename: "{date|date:'YYYY-MM-DD'}-{title|slugify}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [title, date, author, published]
+      primary: title
+      sort:
+        field: date
+        direction: desc
+      search: [title, excerpt, body]
+      filters:
+        - field: published
+          label: Published
+        - field: featured
+          label: Featured
+      group_by: year
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: post
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: "News article or event title"
+        validation:
+          min_length: 5
+          max_length: 200
+      - name: date
+        label: Date
+        type: date
+        required: true
+        description: "Publication or event date"
+      - name: author
+        label: Author
+        type: reference
         collection: members
         options:
           multiple: false
           search_fields: [name]
         description: "Post author"
-      - name: related_posts
-        label: Related Posts
-        type: reference
-        collection: news
+      - name: excerpt
+        label: Excerpt
+        type: text
+        options:
+          height: 100
+        description: "Brief summary for listings"
+      - name: body
+        label: Content
+        type: rich-text
+        required: true
+        options:
+          toolbar: ["bold", "italic", "link", "list", "quote", "code", "image"]
+          height: 300
+        description: "Main content of the news article or event"
+      - name: featured
+        label: Featured
+        type: boolean
+        default: false
+        description: "Highlight this post"
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+        description: "Make this post visible on the website"
+      - name: tags
+        label: Tags
+        type: string
         list:
           min: 0
-          max: 5
-        options:
-          multiple: true
-          search_fields: [title]
-        description: "Related news posts"
-
-
-
-
+          max: 10
+        description: "Tags for categorization"
 
   # Site Configuration - Enhanced with better settings
   - name: config

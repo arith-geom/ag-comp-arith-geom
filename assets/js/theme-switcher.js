@@ -189,25 +189,31 @@
     },
 
     updateAllToggleElements(theme) {
-      // Update main theme toggle icon (navbar)
-      const themeIcon = document.querySelector('#theme-icon');
-      if (themeIcon) {
-        themeIcon.className = theme === 'dark' ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon';
-      }
-      
-      // Update floating dark mode toggle icon
-      const darkModeIcon = document.querySelector('#dark-mode-icon');
-      if (darkModeIcon) {
-        darkModeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-      }
-      
-      // Update any other theme icons
-      const allThemeIcons = document.querySelectorAll('.theme-icon');
-      allThemeIcons.forEach(icon => {
-        if (icon.id !== 'theme-icon') { // Avoid double-updating the main icon
-          icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      // Update main theme toggle icons (navbar)
+      const themeIconLight = document.querySelector('#theme-icon-light');
+      const themeIconDark = document.querySelector('#theme-icon-dark');
+      if (themeIconLight && themeIconDark) {
+        if (theme === 'dark') {
+          themeIconLight.style.display = 'inline-block';
+          themeIconDark.style.display = 'none';
+        } else {
+          themeIconLight.style.display = 'none';
+          themeIconDark.style.display = 'inline-block';
         }
-      });
+      }
+      
+      // Update floating dark mode toggle icons
+      const darkModeIconLight = document.querySelector('#dark-mode-icon-light');
+      const darkModeIconDark = document.querySelector('#dark-mode-icon-dark');
+      if (darkModeIconLight && darkModeIconDark) {
+        if (theme === 'dark') {
+          darkModeIconLight.style.display = 'inline-block';
+          darkModeIconDark.style.display = 'none';
+        } else {
+          darkModeIconLight.style.display = 'none';
+          darkModeIconDark.style.display = 'inline-block';
+        }
+      }
       
       // Update aria labels and titles
       this.updateAriaLabels(theme);

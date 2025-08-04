@@ -72,6 +72,7 @@ pagescms:
     - publications
     - research
     - teaching
+    - news
   auto_sync: true
   cache_duration: 3600
   bilingual_support: true
@@ -82,6 +83,7 @@ pagescms:
     - bio
     - abstract
     - excerpt
+    - research_interests
   performance:
     image_optimization: true
     lazy_loading: true
@@ -230,6 +232,16 @@ exclude:
   - "*.log"
   - .DS_Store
   - Thumbs.db
+  - assets/search-data.json
+  - assets/search-data-backup.json
+
+# Performance and regeneration settings
+incremental: false
+future: false
+show_drafts: false
+
+# File watching settings to prevent regeneration loops
+watch: false
 scholar:
   style: apa
   sort_by: year

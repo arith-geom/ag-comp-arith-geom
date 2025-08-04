@@ -34,6 +34,12 @@
           </div>
           <div id="search-results" class="search-results-container"></div>
         </div>
+        <!-- Enhanced Search Shortcut Button -->
+        <button id="search-shortcut" class="header-control-btn ms-2" 
+                title="Search (Ctrl+K)" aria-label="Open search"
+                onclick="SearchSystem.open()">
+          <i class="ti ti-search" aria-hidden="true"></i>
+        </button>
       </div>
 
       <!-- Right side controls -->
@@ -69,23 +75,10 @@
         {% if site.enable_theme_switcher %}
           <button id="theme-toggle" class="header-control-btn" 
                   title="Switch Theme" aria-label="Toggle dark and light mode">
-            <i class="fas fa-moon theme-icon" id="theme-icon" aria-hidden="true"></i>
+            <span class="theme-icon-light" id="theme-icon-light" aria-hidden="true">☀️</span>
+            <span class="theme-icon-dark" id="theme-icon-dark" aria-hidden="true">🌙</span>
           </button>
         {% endif %}
-
-        <!-- Enhanced Search Shortcut Button -->
-        <button id="search-shortcut" class="header-control-btn" 
-                title="Search (Ctrl+K)" aria-label="Open search"
-                onclick="SearchSystem.open()">
-          <i class="ti ti-search" aria-hidden="true"></i>
-        </button>
-
-        <!-- Enhanced Pages CMS Admin Button -->
-        <button id="pagescms-admin-toggle" class="header-control-btn" 
-                title="Pages CMS Admin (Ctrl+Shift+P)" aria-label="Open Pages CMS Admin"
-                onclick="openPagesCMSAdmin()">
-          <i class="fas fa-cog" aria-hidden="true"></i>
-        </button>
 
         <!-- Navbar Toggle for Mobile -->
         <button
@@ -425,7 +418,8 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   box-shadow: 0 0 0 2px var(--white) !important;
 }
 
-.theme-icon {
+.theme-icon-light,
+.theme-icon-dark {
   font-size: 0.9rem;
   transition: all var(--transition-base);
 }
@@ -578,17 +572,20 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 document.addEventListener('DOMContentLoaded', function() {
   // Enhanced theme toggle functionality
   const themeToggle = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
+  const themeIconLight = document.getElementById('theme-icon-light');
+  const themeIconDark = document.getElementById('theme-icon-dark');
   
-  if (themeToggle && themeIcon) {
+  if (themeToggle && themeIconLight && themeIconDark) {
     // Update icon based on current theme
     function updateThemeIcon(theme) {
       if (theme === 'dark') {
-        themeIcon.className = 'fas fa-sun theme-icon';
+        themeIconLight.style.display = 'inline-block';
+        themeIconDark.style.display = 'none';
         themeToggle.setAttribute('aria-label', 'Switch to light mode');
         themeToggle.setAttribute('title', 'Switch to light mode');
       } else {
-        themeIcon.className = 'fas fa-moon theme-icon';
+        themeIconLight.style.display = 'none';
+        themeIconDark.style.display = 'inline-block';
         themeToggle.setAttribute('aria-label', 'Switch to dark mode');
         themeToggle.setAttribute('title', 'Switch to dark mode');
       }

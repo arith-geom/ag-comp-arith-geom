@@ -108,17 +108,31 @@ nav_order: 5
 
 <style>
 .publications-page {
-  background: white;
+  background: var(--bg-primary);
   min-height: 100vh;
   padding-top: 1rem;
 }
 
 .filter-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-bottom: 3px solid #c22032;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  border-bottom: 3px solid var(--primary);
   padding: 1rem 0;
   margin-bottom: 0.5rem;
   border-radius: 0 0 12px 12px;
+}
+
+.section-title {
+  border-bottom: 3px solid var(--primary);
+}
+
+[data-theme="dark"] .filter-section,
+body.dark-mode .filter-section {
+  border-bottom: 3px solid #111 !important;
+}
+
+[data-theme="dark"] .section-title,
+body.dark-mode .section-title {
+  border-bottom: 3px solid #111 !important;
 }
 
 .publications-content {
@@ -137,12 +151,12 @@ nav_order: 5
 .search-results-info {
   margin-top: 0.5rem;
   padding: 0.5rem 1.5rem;
-  background: #e8f4fd;
-  color: #0c5460;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
   border-radius: 2rem;
   font-size: 0.9rem;
   font-weight: 500;
-  border: 1px solid #bee5eb;
+  border: 1px solid var(--border-color);
   animation: fadeIn 0.3s ease;
 }
 
@@ -160,10 +174,10 @@ nav_order: 5
 .search-input {
   width: 100%;
   padding: 1.25rem 4rem 1.25rem 2rem;
-  border: 3px solid #e9ecef;
+  border: 3px solid var(--border-color);
   border-radius: 3rem;
-  background: white;
-  color: #495057;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-size: 1.1rem;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -172,19 +186,19 @@ nav_order: 5
 }
 
 .search-input::placeholder {
-  color: #adb5bd;
+  color: var(--text-muted);
   font-weight: 400;
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #c22032;
+  border-color: var(--primary);
   box-shadow: 0 0 0 4px rgba(194, 32, 50, 0.15), 0 8px 25px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
 .search-input:hover {
-  border-color: #c22032;
+  border-color: var(--primary);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
 }
 
@@ -193,14 +207,14 @@ nav_order: 5
   right: 2rem;
   top: 50%;
   transform: translateY(-50%);
-  color: #c22032;
+  color: var(--primary);
   font-size: 1.3rem;
   pointer-events: none;
   transition: all 0.3s ease;
 }
 
 .search-input:focus + .search-icon {
-  color: #a01828;
+  color: var(--primary-hover);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -209,7 +223,7 @@ nav_order: 5
   right: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  background: #c22032;
+  background: var(--primary);
   color: white;
   border: none;
   border-radius: 50%;
@@ -225,7 +239,7 @@ nav_order: 5
 }
 
 .clear-search-btn:hover {
-  background: #a01828;
+  background: var(--primary-hover);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -261,9 +275,9 @@ nav_order: 5
 
 .quick-filter-btn {
   padding: 0.5rem 1.5rem;
-  border: 2px solid #c22032;
+  border: 2px solid var(--primary);
   border-radius: 2rem;
-  background: #c22032;
+  background: var(--primary);
   color: white;
   font-weight: 500;
   cursor: pointer;
@@ -273,34 +287,34 @@ nav_order: 5
 
 .quick-filter-btn:hover,
 .quick-filter-btn.active {
-  background: #a01828;
+  background: var(--primary-hover);
   color: white;
-  border-color: #a01828;
+  border-color: var(--primary-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(194, 32, 50, 0.3);
 }
 
 .quick-filter-btn:not(.active) {
-  background: white;
-  color: #c22032;
-  border-color: #c22032;
+  background: var(--bg-primary);
+  color: var(--primary);
+  border-color: var(--primary);
 }
 
 .quick-filter-btn:not(.active):hover {
-  background: #f8f9fa;
-  color: #a01828;
-  border-color: #a01828;
+  background: var(--bg-secondary);
+  color: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
 .loading-state {
   text-align: center;
   padding: 3rem;
-  color: #6c757d;
+  color: var(--text-muted);
 }
 
 .spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #c22032;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--primary);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -316,7 +330,7 @@ nav_order: 5
 .empty-state {
   text-align: center;
   padding: 3rem;
-  color: #6c757d;
+  color: var(--text-muted);
 }
 
 .empty-state i {
@@ -326,7 +340,7 @@ nav_order: 5
 }
 
 .empty-state h3 {
-  color: #212529;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -345,9 +359,9 @@ nav_order: 5
 }
 
 .publication-card {
-  background: white;
+  background: var(--bg-primary);
   border-radius: 0.375rem;
-  border: 1px solid #dee2e6;
+  border: 1px solid var(--border-color);
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   transition: all 0.2s ease;
   overflow: hidden;

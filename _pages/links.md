@@ -122,5 +122,39 @@ nav_order: 4
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--primary);
+  color: var(--text-primary);
+}
+
+/* Dark mode enhancements for links page */
+[data-theme="dark"] .list-group-item,
+body.dark-mode .list-group-item {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+[data-theme="dark"] .list-group-item:hover,
+body.dark-mode .list-group-item:hover {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-muted) 100%) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 20px rgba(248, 113, 113, 0.2) !important;
+}
+
+[data-theme="dark"] .list-group-item h5,
+body.dark-mode .list-group-item h5 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .list-group-item small,
+body.dark-mode .list-group-item small {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .list-group-item p,
+body.dark-mode .list-group-item p {
+  color: var(--text-secondary) !important;
 }
 </style> 

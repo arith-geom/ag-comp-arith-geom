@@ -1048,15 +1048,16 @@ scripts:
 
 /* Filter Controls */
 .filter-controls {
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 12px;
+  background: linear-gradient(135deg, $gray-900 0%, $gray-800 100%) !important;
+  border-color: $gray-700 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 12px !important;
+  border-bottom: 3px solid var(--primary);
   padding: 1.5rem;
   margin-bottom: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .filter-group {
@@ -1076,7 +1077,7 @@ scripts:
   border: 1px solid #ced4da;
   border-radius: 6px;
   font-size: 0.9rem;
-  background: white;
+  background: var(--bg-primary);
   transition: all 0.2s ease;
 }
 
@@ -1096,7 +1097,7 @@ scripts:
   font-weight: 600;
   margin-bottom: 1.5rem;
   padding: 1rem 0;
-  border-bottom: 3px solid;
+  border-bottom: 3px solid var(--primary);
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -1126,9 +1127,9 @@ scripts:
 .semester-group {
   margin-bottom: 2rem;
   padding: 1.5rem;
-  background: white;
+  background: var(--bg-primary);
   border-radius: 12px;
-  border: 1px solid #e9ecef;
+  border: 1px solid var(--border-color);
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
 }
@@ -1398,6 +1399,16 @@ scripts:
 /* Hidden class for filtering */
 .semester-group.hidden {
   display: none;
+}
+
+[data-theme="dark"] .filter-controls,
+body.dark-mode .filter-controls {
+  border-bottom: 3px solid #111 !important;
+}
+
+[data-theme="dark"] .section-title,
+body.dark-mode .section-title {
+  border-bottom: 3px solid #111 !important;
 }
 </style>
 

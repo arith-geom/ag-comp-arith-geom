@@ -469,6 +469,45 @@ nav_order: 7
   transition: all var(--transition-base);
 }
 
+/* Dark mode enhancement for Google Forms */
+[data-theme="dark"] .google-form-iframe,
+body.dark-mode .google-form-iframe {
+  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(1.1) !important;
+}
+
+/* Enhanced dark mode for contact page */
+[data-theme="dark"] .location-container,
+body.dark-mode .location-container {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid #374151 !important;
+}
+
+[data-theme="dark"] .contact-card,
+body.dark-mode .contact-card {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+[data-theme="dark"] .contact-card:hover,
+body.dark-mode .contact-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(248, 113, 113, 0.2) !important;
+  border-color: #ff6b6b !important;
+}
+
+[data-theme="dark"] .form-container,
+body.dark-mode .form-container {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .form-container:hover,
+body.dark-mode .form-container:hover {
+  box-shadow: 0 12px 40px rgba(248, 113, 113, 0.15) !important;
+}
+
 .google-form-iframe:hover {
   box-shadow: var(--shadow-md);
 }
