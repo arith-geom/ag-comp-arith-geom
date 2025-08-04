@@ -1,31 +1,14 @@
 ---
-email: alireza.shavali@math.uni-heidelberg.de
-layout: member
+title: Alireza Shavali
 name: Alireza Shavali
-order: 10
-photo: /assets/img/1.jpg
-research_interests: Research interests in modularity, Galois representations, and
-  arithmetic geometry.
+email: arithgeo@iwr.uni-heidelberg.de
+layout: member
 role: PhD Student
 status: active
+order: 1
+photo: /assets/img/alireza-shavali.jpg
 ---
 
-Alireza Shavali is a PhD student in the AG Computational Arithmetic Geometry group. His research focuses on modularity, Galois representations, and arithmetic geometry.
+title: {{ page.name }}
 
-## Research Areas
-
-- **Modularity**: Modularity of Galois representations and elliptic curves
-- **Galois Representations**: Study of continuous representations of Galois groups
-- **Arithmetic Geometry**: Geometric objects defined over number fields
-- **Number Theory**: Classical and modern number theory
-
-## Current Research
-
-- Modularity lifting theorems
-- Galois representations and their deformations
-- Computational aspects of modularity
-- Applications of modularity in number theory
-
-## Education
-
-Alireza is pursuing his PhD in Mathematics at the University of Heidelberg, focusing on modularity and Galois representations.
+Alireza Shavali is a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.

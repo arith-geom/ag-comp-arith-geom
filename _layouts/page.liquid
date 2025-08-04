@@ -10,11 +10,11 @@ layout: default
 
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+    <h1 class="post-title">{% if page.name %}{{ page.name }}{% else %}{{ page.title }}{% endif %}</h1>
     <p class="post-description">{{ page.description }}</p>
   </header>
 
-  <article>
+  <article class="tex2jax_process">
     {{ content }}
   </article>
 

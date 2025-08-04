@@ -33,6 +33,18 @@ nav_order: 5
         <button class="quick-filter-btn" data-filter="Book">Books</button>
         <button class="quick-filter-btn" data-filter="Thesis">Theses</button>
       </div>
+
+      <!-- Author Filter Display -->
+      <div id="author-filter-display" class="author-filter-display" style="display: none;">
+        <div class="author-filter-info">
+          <i class="fas fa-user" aria-hidden="true"></i>
+          <span>Filtering by author: <strong id="author-filter-name"></strong></span>
+          <button type="button" id="clear-author-filter" class="clear-author-filter-btn">
+            <i class="fas fa-times"></i>
+            Clear Filter
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -386,6 +398,49 @@ body.dark-mode .section-title {
   background: var(--bg-secondary);
   color: var(--primary-hover);
   border-color: var(--primary-hover);
+}
+
+/* Author Filter Display */
+.author-filter-display {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-md);
+}
+
+.author-filter-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-primary);
+}
+
+.author-filter-info i {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.clear-author-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: var(--primary-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-base);
+  margin-left: auto;
+}
+
+.clear-author-filter-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .loading-state {
@@ -916,7 +971,8 @@ class PublicationsManager {
     this.filteredPublications = [];
     this.filters = {
       search: '',
-      type: 'all'
+      type: 'all',
+      author: ''
     };
   }
   
@@ -924,6 +980,7 @@ class PublicationsManager {
     console.log('Initializing PublicationsManager for CMS publications...');
     this.loadPublicationsFromDOM();
     this.bindEvents();
+    this.checkAuthorFilter();
     this.applyFilters();
     console.log('PublicationsManager initialized successfully');
   }
@@ -1012,6 +1069,50 @@ class PublicationsManager {
         this.applyQuickFilter(filter);
       });
     });
+    
+    // Clear author filter button
+    const clearAuthorFilterBtn = document.getElementById('clear-author-filter');
+    if (clearAuthorFilterBtn) {
+      clearAuthorFilterBtn.addEventListener('click', () => {
+        this.clearAuthorFilter();
+        this.applyFilters();
+      });
+    }
+  }
+  
+  checkAuthorFilter() {
+    // Check for author parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const authorParam = urlParams.get('author');
+    
+    if (authorParam) {
+      this.filters.author = decodeURIComponent(authorParam);
+      this.showAuthorFilter();
+      console.log('🔍 Author filter applied:', this.filters.author);
+    }
+  }
+  
+  showAuthorFilter() {
+    const authorFilterDisplay = document.getElementById('author-filter-display');
+    const authorFilterName = document.getElementById('author-filter-name');
+    
+    if (authorFilterDisplay && authorFilterName) {
+      authorFilterName.textContent = this.filters.author;
+      authorFilterDisplay.style.display = 'block';
+    }
+  }
+  
+  clearAuthorFilter() {
+    this.filters.author = '';
+    const authorFilterDisplay = document.getElementById('author-filter-display');
+    if (authorFilterDisplay) {
+      authorFilterDisplay.style.display = 'none';
+    }
+    
+    // Remove author parameter from URL
+    const url = new URL(window.location);
+    url.searchParams.delete('author');
+    window.history.replaceState({}, '', url);
   }
   
   applyFilters() {
@@ -1021,6 +1122,16 @@ class PublicationsManager {
       // Type filter
       if (this.filters.type && this.filters.type !== 'all' && pub.type !== this.filters.type) {
         return false;
+      }
+      
+      // Author filter
+      if (this.filters.author && this.filters.author.length > 0) {
+        const authorName = this.filters.author.toLowerCase();
+        const publicationAuthors = pub.authors.toLowerCase();
+        
+        if (!publicationAuthors.includes(authorName)) {
+          return false;
+        }
       }
       
       // Search filter

@@ -1,14 +1,20 @@
 ---
+title: Dr. Rudolph Perkins
 email: perkins@math.uni-heidelberg.de
 layout: member
 name: Dr. Rudolph Perkins
 order: 27
-photo: /assets/img/rudolph-perkins.jpg
-research_interests: Research focuses on Drinfeld modular forms, p-adic automorphic forms, and L-functions.
+photo: /assets/img/dr-rudolph-perkins.jpg
+research_interests: Research focuses on Drinfeld modular forms, p-adic automorphic
+  forms, and L-functions.
 role: Postdoctoral Researcher
 status: active
 website: https://rudolphperkins.wordpress.com/
 ---
+
+title: {{ page.name }}
+
+
 
 Dr. Rudolph Perkins is a postdoctoral researcher in the AG Computational Arithmetic Geometry group at the University of Heidelberg. His research focuses on Drinfeld modular forms, p-adic automorphic forms, and L-functions.
 
@@ -40,4 +46,3 @@ Dr. Perkins has published several papers on Drinfeld modular forms and p-adic au
 - **Email:** perkins@math.uni-heidelberg.de
 - **Website:** [Personal Website](https://rudolphperkins.wordpress.com/)
 - **Office:** Interdisciplinary Center for Scientific Computing (IWR), University of Heidelberg
-

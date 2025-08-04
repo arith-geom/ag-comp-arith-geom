@@ -97,38 +97,16 @@ nav_order: 7
           <small class="text-muted translatable-content" data-translation-key="contact.email_note">Click the email address to open your email client</small>
         </div>
         <div class="contact-options mt-3">
-          <p class="text-muted mb-2"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>Choose your preferred contact method:</p>
+          <p class="text-muted mb-2"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>Contact us directly via email:</p>
           <div class="contact-buttons">
             <a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="btn btn-outline-primary">
               <i class="fas fa-envelope me-2" aria-hidden="true"></i>Send Email
             </a>
-            <span class="contact-divider">or</span>
-            <span class="form-label">Use the contact form</span>
           </div>
         </div>
       </div>
-      <div class="google-form-wrapper">
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfy6sa-CR4aqkB9fG5_VBGudtn0MU4rbOIy5V6NluNDkMwDyQ/viewform?embedded=true" 
-          width="100%" 
-          height="600" 
-          frameborder="0" 
-          marginheight="0" 
-          marginwidth="0"
-          title="Contact Form - AG Computational Arithmetic Geometry"
-          class="google-form-iframe">
-          Loading…
-        </iframe>
-      </div>
     </div>
-    <div class="form-note mt-3">
-      <p class="text-center text-muted">
-        <i class="fas fa-info-circle me-2" aria-hidden="true"></i>
-        <span class="translatable-content" data-translation-key="contact.form_note">
-          This form is powered by Google Forms. Your message will be sent directly to our team.
-        </span>
-      </p>
-    </div>
+
   </div>
 </div>
 
@@ -413,10 +391,7 @@ nav_order: 7
 }
 
 .form-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
+  display: block;
 }
 
 .email-info h4 {
@@ -453,27 +428,7 @@ nav_order: 7
   font-style: italic;
 }
 
-.google-form-wrapper {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-}
 
-.google-form-iframe {
-  border: none;
-  border-radius: var(--radius-md);
-  background: var(--bg-secondary);
-  transition: all var(--transition-base);
-}
-
-/* Dark mode enhancement for Google Forms */
-[data-theme="dark"] .google-form-iframe,
-body.dark-mode .google-form-iframe {
-  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(1.1) !important;
-}
 
 /* Enhanced dark mode for contact page */
 [data-theme="dark"] .location-container,
@@ -508,27 +463,7 @@ body.dark-mode .form-container:hover {
   box-shadow: 0 12px 40px rgba(248, 113, 113, 0.15) !important;
 }
 
-.google-form-iframe:hover {
-  box-shadow: var(--shadow-md);
-}
 
-.form-note {
-  text-align: center;
-  padding: 1rem;
-  background: var(--bg-secondary);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-}
-
-.form-note p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.form-note i {
-  color: var(--primary);
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -588,12 +523,7 @@ body.dark-mode .form-container:hover {
   }
   
   .form-content {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .google-form-iframe {
-    height: 700px;
+    display: block;
   }
 }
 
@@ -622,10 +552,6 @@ body.dark-mode .form-container:hover {
   
   .form-header h3 {
     font-size: 1.3rem;
-  }
-  
-  .google-form-iframe {
-    height: 600px;
   }
 }
 </style> 

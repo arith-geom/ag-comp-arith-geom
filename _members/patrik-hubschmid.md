@@ -1,22 +1,16 @@
 ---
-email: 
+title: Patrik Hubschmid
+name: Patrik Hubschmid
+email: arithgeo@iwr.uni-heidelberg.de
 layout: member
-name: Dr. Patrik Hubschmid
-order: 33
-photo: /assets/images/heidelberg_placeholder.jpg
-research_interests: Research interests in arithmetic geometry and number theory.
-role: Former Member
-status: former
+role: Postdoctoral Researcher
+status: alumni
+order: 1
+photo: /assets/img/patrik-hubschmid.jpg
+graduation_year: 2020
+current_position: Former Member
 ---
 
-Dr. Patrik Hubschmid was a former member of the research group "Computational Arithmetic Geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.
+title: {{ page.name }}
 
-## Research Areas
-
-- Arithmetic Geometry
-- Number Theory
-- Computational Mathematics
-
-## Publications
-
-Please refer to the group's publications section for collaborative work during his time with the research group. 
+Patrik Hubschmid was a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.

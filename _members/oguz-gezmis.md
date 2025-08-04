@@ -1,15 +1,21 @@
 ---
+title: Dr. Oguz Gezmiş
 email: oguz.gezmis@math.uni-heidelberg.de
 layout: member
 name: Dr. Oguz Gezmiş
 order: 32
-photo: /assets/img/oguz-gezmis.jpg
-research_interests: Research focused on arithmetic geometry, modular forms, and Galois representations.
+photo: /assets/img/dr-oguz-gezmiş.jpg
+research_interests: Research focused on arithmetic geometry, modular forms, and Galois
+  representations.
 role: Alumni
 status: alumni
 graduation_year: 2018
-current_position: "Former PhD Student"
+current_position: Former PhD Student
 ---
+
+title: {{ page.name }}
+
+
 
 Dr. Oguz Gezmiş was a PhD student in the AG Computational Arithmetic Geometry group at the University of Heidelberg. His research focused on arithmetic geometry, modular forms, and Galois representations.
 
@@ -44,4 +50,3 @@ Dr. Gezmiş's doctoral research focused on:
 
 For questions about Dr. Gezmiş's research:
 - **Email:** arithgeo@iwr.uni-heidelberg.de
-

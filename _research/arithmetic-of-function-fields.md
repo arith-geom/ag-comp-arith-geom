@@ -23,6 +23,13 @@ It has been observed that questions in number theory often have analogs over glo
 
 Because methods from algebraic geometry can be applied to function fields, many questions over the latter are more tractable than the corresponding questions over number fields. One particular instance of this is Drinfeld's proof of the global Langlands correspondence for GL_2 over function fields. In his proof Drinfeld introduced what are now called Drinfeld modular varieties; these are function field analogs of certain Shimura varieties. Their cohomology gives rise to Galois representations and these varieties have an interesting geometry coming from their moduli interpretation.
 
+<div class="research-image-container">
+  <figure class="research-image">
+    <img src="/assets/img/sl2z_group.gif" alt="SL2Z Group Visualization" width="200" height="200" class="research-img">
+    <figcaption class="research-caption">Visualization of the SL₂(ℤ) group structure</figcaption>
+  </figure>
+</div>
+
 ## Contact
 
 For more information, please contact: arithgeo@iwr.uni-heidelberg.de
