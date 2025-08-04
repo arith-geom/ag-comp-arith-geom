@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: Galoiskohomologie und Galoisdarstellungen - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Winter term 2018/19
 title: Galoiskohomologie und Galoisdarstellungen
 ---
+
 
 # Galoiskohomologie und Galoisdarstellungen
 

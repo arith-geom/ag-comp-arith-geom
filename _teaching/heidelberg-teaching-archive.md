@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: seminar
 description: Heidelberg University Arithmetic Geometry Teaching Archive - Course information
@@ -10,6 +11,7 @@ order: 999
 semester: Unknown
 title: Heidelberg University Arithmetic Geometry Teaching Archive
 ---
+
 
 # Heidelberg University Arithmetic Geometry Teaching Archive
 

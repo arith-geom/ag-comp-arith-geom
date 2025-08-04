@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Derivierte Kategorien und Algebraische Geometrie - Course information
@@ -10,6 +11,7 @@ order: 999
 semester: Summer term 2021
 title: Derivierte Kategorien und Algebraische Geometrie
 ---
+
 
 # Derivierte Kategorien und Algebraische Geometrie
 

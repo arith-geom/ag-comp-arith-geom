@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Proseminar
 description: p-adic numbers - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2023
 title: p-adic numbers
 ---
+
 
 # p-adic numbers
 

@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: Galois representations and their deformations - Course information and
@@ -10,6 +11,7 @@ order: 999
 semester: Summer term 2018
 title: Galois representations and their deformations
 ---
+
 
 # Galois representations and their deformations
 

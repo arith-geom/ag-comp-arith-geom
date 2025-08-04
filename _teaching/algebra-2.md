@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: Algebra 2 - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2017
 title: Algebra 2
 ---
+
 
 # Algebra 2
 

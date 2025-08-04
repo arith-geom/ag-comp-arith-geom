@@ -20,14 +20,7 @@ media:
     categories: [document]
     extensions: [pdf, doc, docx, ppt, pptx, xls, xlsx, txt, md, tex, bib]
     description: "Course materials, announcements, and research documents"
-  - name: media
-    label: Media Files
-    input: assets/media
-    output: /assets/media
-    path: assets/media
-    categories: [video, audio]
-    extensions: [mp4, avi, mov, wmv, mp3, wav, aac, ogg]
-    description: "Video lectures, audio recordings, and multimedia content"
+
 
 # Content Types Configuration
 content:
@@ -109,29 +102,12 @@ content:
           "Accepted": Accepted
         default: "Published"
         description: "Current status of the publication"
-      - name: featured
-        label: Featured Publication
-        type: boolean
-        default: false
-        description: "Highlight this publication on the homepage"
       - name: journal
         label: Journal/Conference/Publisher
         type: string
         description: "Journal name, conference name, or publisher"
         validation:
           max_length: 200
-      - name: volume
-        label: Volume
-        type: string
-        description: "Journal volume or book volume"
-        validation:
-          max_length: 50
-      - name: pages
-        label: Pages
-        type: string
-        description: "Page range or total pages"
-        validation:
-          max_length: 50
       - name: abstract
         label: Abstract
         type: rich-text
@@ -158,47 +134,6 @@ content:
         description: "Link to published version"
         validation:
           pattern: "^https?://.+"
-      - name: pdf
-        label: PDF File
-        type: file
-        options:
-          multiple: false
-          accepted_types: [pdf]
-        description: "Upload PDF version of the publication"
-      - name: arxiv_id
-        label: arXiv ID
-        type: string
-        description: "arXiv identifier"
-        validation:
-          pattern: "^[0-9]{4}\\.[0-9]{4,}$"
-      - name: pubmed_id
-        label: PubMed ID
-        type: string
-        description: "PubMed identifier"
-        validation:
-          pattern: "^[0-9]+$"
-      - name: related_members
-        label: Related Team Members
-        type: reference
-        collection: members
-        list:
-          min: 0
-          max: 10
-        options:
-          multiple: true
-          search_fields: [name, role]
-        description: "Team members associated with this publication"
-      - name: related_research
-        label: Related Research Areas
-        type: reference
-        collection: research
-        list:
-          min: 0
-          max: 5
-        options:
-          multiple: true
-          search_fields: [title, keywords]
-        description: "Research areas related to this publication"
 
   # Team Members - Enhanced and aligned with actual content
   - name: members
@@ -279,88 +214,7 @@ content:
         label: Email Address
         type: email
         description: "Professional email address"
-      - name: website
-        label: Personal Website
-        type: string
-        description: "Full URL including http:// or https://"
-        validation:
-          pattern: "^https?://.+"
-      - name: github
-        label: GitHub Username
-        type: string
-        description: "GitHub username without @"
-      - name: orcid
-        label: ORCID ID
-        type: string
-        description: "ORCID ID in format 0000-0000-0000-0000"
-        validation:
-          pattern: "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
-      - name: research_interests
-        label: Research Interests
-        type: rich-text
-        options:
-          toolbar: ["bold", "italic", "link", "list", "code"]
-          height: 150
-        description: "Areas of research and expertise (e.g., Arithmetic Geometry, Modular Forms)"
-      - name: bio
-        label: Biography
-        type: rich-text
-        options:
-          toolbar: ["bold", "italic", "link", "list", "quote", "code"]
-          height: 200
-        description: "Academic background, achievements, and career highlights"
-      - name: education
-        label: Education
-        type: object
-        list:
-          min: 0
-          max: 10
-          collapsible:
-            collapsed: false
-            summary: "{degree} - {institution} ({year})"
-        fields:
-          - name: degree
-            label: Degree
-            type: string
-            required: true
-            description: "e.g., PhD in Mathematics"
-          - name: institution
-            label: Institution
-            type: string
-            required: true
-            description: "e.g., Heidelberg University"
-          - name: year
-            label: Year
-            type: number
-            required: true
-            description: "Year of completion"
-          - name: field
-            label: Field of Study
-            type: string
-            description: "e.g., Arithmetic Geometry"
-      - name: publications
-        label: Key Publications
-        type: reference
-        collection: publications
-        list:
-          min: 0
-          max: 10
-        options:
-          multiple: true
-          search_fields: [title, authors]
-        description: "Select publications related to this person"
-      - name: languages
-        label: Languages
-        type: select
-        list: true
-        options:
-          en: English
-          de: German
-          fr: French
-          es: Spanish
-          it: Italian
-          other: Other
-        description: "Languages spoken by this person"
+
 
   # Teaching & Courses - Enhanced with better course management
   - name: teaching
@@ -430,13 +284,6 @@ content:
         default: seminar
         required: true
         description: "Type of course"
-      - name: credits
-        label: ECTS Credits
-        type: number
-        description: "ECTS credit points"
-        validation:
-          min: 1
-          max: 30
       - name: language
         label: Language
         type: select
@@ -454,59 +301,11 @@ content:
           toolbar: ["bold", "italic", "link", "list", "code"]
           height: 150
         description: "Course overview and objectives"
-      - name: syllabus
-        label: Syllabus
-        type: rich-text
-        options:
-          toolbar: ["bold", "italic", "link", "list", "table"]
-          height: 200
-        description: "Detailed course content and schedule"
-      - name: materials
-        label: Course Materials
-        type: file
-        list:
-          min: 0
-          max: 20
-        options:
-          multiple: true
-          accepted_types: [pdf, doc, docx, ppt, pptx, zip]
-        description: "Course materials and resources"
-      - name: schedule
-        label: Schedule
-        type: object
-        list:
-          min: 0
-          max: 20
-          collapsible:
-            collapsed: true
-            summary: "{date} - {topic}"
-        fields:
-          - name: date
-            label: Date
-            type: date
-            required: true
-          - name: topic
-            label: Topic
-            type: string
-            required: true
-          - name: description
-            label: Description
-            type: text
       - name: active
         label: Currently Active
         type: boolean
         default: false
         description: "Is this course currently being taught?"
-      - name: enrollment_limit
-        label: Enrollment Limit
-        type: number
-        description: "Maximum number of students"
-        validation:
-          min: 1
-      - name: prerequisites
-        label: Prerequisites
-        type: text
-        description: "Required background knowledge"
 
   # Research Areas - Enhanced with better organization
   - name: research
@@ -559,234 +358,6 @@ content:
         type: boolean
         default: false
         description: "Highlight this research area on the homepage"
-      - name: keywords
-        label: Keywords
-        type: string
-        list:
-          min: 1
-          max: 15
-        description: "Research keywords and tags"
-      - name: related_publications
-        label: Related Publications
-        type: reference
-        collection: publications
-        list:
-          min: 0
-          max: 20
-        options:
-          multiple: true
-          search_fields: [title, authors]
-        description: "Publications related to this research area"
-      - name: team_members
-        label: Team Members
-        type: reference
-        collection: members
-        list:
-          min: 0
-          max: 10
-        options:
-          multiple: true
-          search_fields: [name, role]
-        description: "Team members working in this area"
-      - name: external_collaborators
-        label: External Collaborators
-        type: object
-        list:
-          min: 0
-          max: 10
-        fields:
-          - name: name
-            label: Name
-            type: string
-            required: true
-          - name: institution
-            label: Institution
-            type: string
-            required: true
-          - name: role
-            label: Role
-            type: string
-          - name: website
-            label: Website
-            type: string
-            validation:
-              pattern: "^https?://.+"
 
-  # Site Configuration - Enhanced with better settings
-  - name: config
-    label: Site Configuration
-    path: _config.yml
-    type: file
-    fields:
-      - name: title
-        label: Website Title
-        type: string
-        required: true
-        description: "Main website title"
-        validation:
-          min_length: 3
-          max_length: 100
-      - name: description
-        label: Website Description
-        type: text
-        options:
-          height: 100
-        description: "Brief description of the website"
-      - name: email
-        label: Contact Email
-        type: email
-        description: "Primary contact email"
-      - name: url
-        label: Website URL
-        type: string
-        description: "Full website URL"
-        validation:
-          pattern: "^https?://.+"
-      - name: twitter_username
-        label: Twitter Username
-        type: string
-        description: "Twitter handle without @"
-      - name: github_username
-        label: GitHub Username
-        type: string
-        description: "GitHub username"
-      - name: linkedin_url
-        label: LinkedIn URL
-        type: string
-        description: "LinkedIn profile URL"
-        validation:
-          pattern: "^https?://.+"
-      - name: researchgate_url
-        label: ResearchGate URL
-        type: string
-        description: "ResearchGate profile URL"
-        validation:
-          pattern: "^https?://.+"
 
-# Reusable Components - Enhanced with better organization
-components:
-  contact_info:
-    label: Contact Information
-    description: "Standard contact information component"
-    fields:
-      - name: email
-        label: Email
-        type: email
-      - name: phone
-        label: Phone
-        type: string
-      - name: office
-        label: Office Location
-        type: string
-      - name: office_hours
-        label: Office Hours
-        type: text
-        options:
-          height: 100
-
-  social_links:
-    label: Social Media Links
-    description: "Social media and professional profile links"
-    fields:
-      - name: twitter
-        label: Twitter
-        type: string
-        validation:
-          pattern: "^https?://.+"
-      - name: github
-        label: GitHub
-        type: string
-        validation:
-          pattern: "^https?://.+"
-      - name: linkedin
-        label: LinkedIn
-        type: string
-        validation:
-          pattern: "^https?://.+"
-      - name: researchgate
-        label: ResearchGate
-        type: string
-        validation:
-          pattern: "^https?://.+"
-      - name: orcid
-        label: ORCID
-        type: string
-        validation:
-          pattern: "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
-
-  academic_info:
-    label: Academic Information
-    description: "Academic position and institutional information"
-    fields:
-      - name: position
-        label: Position
-        type: string
-        required: true
-      - name: department
-        label: Department
-        type: string
-      - name: institution
-        label: Institution
-        type: string
-        required: true
-      - name: start_date
-        label: Start Date
-        type: date
-      - name: end_date
-        label: End Date
-        type: date
-
-  publication_metadata:
-    label: Publication Metadata
-    description: "Additional publication identifiers and metadata"
-    fields:
-      - name: doi
-        label: DOI
-        type: string
-        validation:
-          pattern: "^10\\.[0-9]{4,}/.+"
-      - name: arxiv_id
-        label: arXiv ID
-        type: string
-        validation:
-          pattern: "^[0-9]{4}\\.[0-9]{4,}$"
-      - name: pubmed_id
-        label: PubMed ID
-        type: string
-        validation:
-          pattern: "^[0-9]+$"
-      - name: scopus_id
-        label: Scopus ID
-        type: string
-
-# Global Settings - Enhanced with better configuration
-settings:
-  hide: false
-  content:
-    merge: true
-  bilingual:
-    enabled: true
-    default_language: "en"
-    supported_languages: ["en", "de"]
-    language_names:
-      en: "English"
-      de: "Deutsch"
-  webhooks:
-    enabled: true
-    events: ["content.created", "content.updated", "content.deleted"]
-  analytics:
-    enabled: false
-    provider: "google"
-    tracking_id: ""
-  security:
-    max_file_size: 5242880
-    allowed_file_types: ["jpg", "jpeg", "png", "gif", "svg", "webp", "pdf", "doc", "docx"]
-    require_authentication: false
-  notifications:
-    enabled: true
-    email_notifications: false
-    slack_webhook: ""
-  backup:
-    enabled: true
-    auto_backup: true
-    backup_frequency: "daily" 
+ 

@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Boundary Distributions for GL3 over a Local Field and Symmetric Power Coefficients
 authors: Peter Gräf
@@ -6,12 +7,15 @@ year: 2020
 type: Thesis
 status: Published
 journal: Ph.D. Thesis
-url: "https://doi.org/10.11588/heidok.00000000"
-pdf: /assets/uploads/boundary_peter_graef.pdf
-keywords: boundary distributions, GL3, local fields, symmetric power coefficients, automorphic representations
-abstract: This thesis studies boundary distributions for GL3 over local fields and their relationship to symmetric power coefficients.
+url: https://doi.org/10.11588/heidok.00000000
+pdf: "/assets/uploads/boundary_peter_graef.pdf"
+keywords: boundary distributions, GL3, local fields, symmetric power coefficients,
+  automorphic representations
+abstract: This thesis studies boundary distributions for GL3 over local fields and
+  their relationship to symmetric power coefficients.
 doi: 10.11588/heidok.00000000
 ---
+
 
 ## Abstract
 

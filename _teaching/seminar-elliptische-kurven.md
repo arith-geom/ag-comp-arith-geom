@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Elliptische Kurven - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Winter term 2020/21
 title: Elliptische Kurven
 ---
+
 
 # Elliptische Kurven
 

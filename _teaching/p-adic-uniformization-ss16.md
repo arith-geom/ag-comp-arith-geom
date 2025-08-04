@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Hauptseminar
 description: p-adic Uniformization - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2016
 title: p-adic Uniformization
 ---
+
 
 # p-adic Uniformization
 

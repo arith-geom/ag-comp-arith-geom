@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: seminar
 description: Past Teaching at the University Duisburg-Essen - Course information and
@@ -10,6 +11,7 @@ order: 999
 semester: Unknown
 title: Past Teaching at the University Duisburg-Essen
 ---
+
 
 ## Past Teaching at the University Duisburg-Essen
 

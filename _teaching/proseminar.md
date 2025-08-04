@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Proseminar
 description: p-adische Analysis - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2016
 title: p-adische Analysis
 ---
+
 
 # p-adische Analysis
 

@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: p-divisible Gruppen - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2019
 title: p-divisible Gruppen
 ---
+
 
 # p-divisible Gruppen
 

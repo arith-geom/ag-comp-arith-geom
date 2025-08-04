@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: Adische Räume II - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2020
 title: Adische Räume II
 ---
+
 
 # Adische Räume II
 

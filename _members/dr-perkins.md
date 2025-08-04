@@ -1,16 +1,18 @@
 ---
+---
 title: Dr. Rudolph Perkins
 email: perkins@math.uni-heidelberg.de
 layout: member
 name: Dr. Rudolph Perkins
 order: 27
-photo: /assets/img/dr-rudolph-perkins.jpg
+photo: "/assets/img/dr-rudolph-perkins.jpg"
 research_interests: Research focuses on Drinfeld modular forms, p-adic automorphic
   forms, and L-functions.
 role: Postdoctoral Researcher
 status: active
 website: https://rudolphperkins.wordpress.com/
 ---
+
 
 title: {{ page.name }}
 

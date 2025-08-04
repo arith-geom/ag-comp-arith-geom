@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: p-adische Geometrie - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2014
 title: p-adische Geometrie
 ---
+
 
 # p-adische Geometrie
 

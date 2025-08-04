@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Proseminar
 description: Bilinearformen und klassische Gruppen - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2019
 title: Bilinearformen und klassische Gruppen
 ---
+
 
 # Bilinearformen und klassische Gruppen
 

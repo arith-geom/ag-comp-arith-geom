@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Lokale Klassenkörpertheorie nach Lubin-Tate - Course information and
@@ -10,6 +11,7 @@ order: 999
 semester: Summer term 2018
 title: Lokale Klassenkörpertheorie nach Lubin-Tate
 ---
+
 
 # Lokale Klassenkörpertheorie nach Lubin-Tate
 

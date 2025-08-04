@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Torische Varietäten - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2013
 title: Torische Varietäten
 ---
+
 
 # Torische Varietäten
 

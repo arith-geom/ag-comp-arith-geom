@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Hauptseminar
 description: Arithmetik von Zahl- und Funktionenkörpern - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2018
 title: Arithmetik von Zahl- und Funktionenkörpern
 ---
+
 
 # Arithmetik von Zahl- und Funktionenkörpern
 

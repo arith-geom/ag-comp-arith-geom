@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Trans. Amer. Math. Soc. paper on deformation theory
 authors: Gebhard Böckle, H. Hartl
@@ -6,11 +7,13 @@ year: 2015
 type: Journal Article
 status: Published
 journal: Trans. Amer. Math. Soc.
-pdf: /assets/uploads/TAMS_4136_Bockle_Hartl.pdf
+pdf: "/assets/uploads/TAMS_4136_Bockle_Hartl.pdf"
 keywords: deformation theory, Galois representations, American Mathematical Society
-abstract: A paper on deformation theory published in Transactions of the American Mathematical Society.
+abstract: A paper on deformation theory published in Transactions of the American
+  Mathematical Society.
 journal_full: Transactions of the American Mathematical Society
 ---
+
 
 ## Abstract
 

@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: Modularity and Galois Representations - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Winter term 2024/25
 title: Modularity and Galois Representations
 ---
+
 
 # Modularity and Galois Representations
 

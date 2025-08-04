@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: Algebraische Zahlentheorie 2 - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2018
 title: Algebraische Zahlentheorie 2
 ---
+
 
 # Algebraische Zahlentheorie 2
 

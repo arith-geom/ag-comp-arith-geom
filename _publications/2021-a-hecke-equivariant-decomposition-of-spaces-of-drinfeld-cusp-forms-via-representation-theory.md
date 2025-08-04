@@ -1,18 +1,22 @@
 ---
+---
 layout: publication
-title: A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation theory
+title: A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation
+  theory
 authors: Peter Gräf, G. Böckle, R. Perkins
 year: 2021
 type: Journal Article
 status: Published
 journal: Research in Number Theory
 volume: 7
-pages: "Article number: 44"
+pages: 'Article number: 44'
 doi: 10.1007/s40993-021-00254-0
-url: "https://link.springer.com/article/10.1007%2Fs40993-021-00254-0"
+url: https://link.springer.com/article/10.1007%2Fs40993-021-00254-0
 keywords: Drinfeld modular forms, representation theory, Hecke operators, cusp forms
-abstract: This paper develops Hecke-equivariant decomposition methods for spaces of Drinfeld cusp forms using representation theory.
+abstract: This paper develops Hecke-equivariant decomposition methods for spaces of
+  Drinfeld cusp forms using representation theory.
 ---
+
 
 ## Abstract
 

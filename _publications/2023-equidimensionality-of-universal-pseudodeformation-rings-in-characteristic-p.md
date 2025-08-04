@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Equidimensionality of universal pseudodeformation rings in characteristic p
 authors: Gebhard Böckle, A.-K. Juschka
@@ -6,11 +7,13 @@ year: 2023
 type: Preprint
 status: In Preparation
 journal: Preprint
-url: "https://arxiv.org/abs/2301.00000"
-pdf: /assets/uploads/Boeckle-Juschka-Pseudo-20230701.pdf
+url: https://arxiv.org/abs/2301.00000
+pdf: "/assets/uploads/Boeckle-Juschka-Pseudo-20230701.pdf"
 keywords: pseudodeformation rings, Galois groups, p-adic fields
-abstract: This preprint establishes equidimensionality results for universal pseudodeformation rings in characteristic p.
+abstract: This preprint establishes equidimensionality results for universal pseudodeformation
+  rings in characteristic p.
 ---
+
 
 ## Abstract
 

@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Algorithmische Algebra - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Winter term 2018/19
 title: Algorithmische Algebra
 ---
+
 
 # Algorithmische Algebra
 

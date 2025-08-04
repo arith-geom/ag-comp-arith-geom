@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Abelian Varieties - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Winter term 2021/22
 title: Abelian Varieties
 ---
+
 
 # Abelian Varieties
 

@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Hauptseminar
 description: Modularity Lifting - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Winter term 2013/14
 title: Modularity Lifting
 ---
+
 
 # Modularity Lifting
 

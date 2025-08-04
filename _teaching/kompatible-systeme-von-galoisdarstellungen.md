@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: Kompatible Systeme von Galoisdarstellungen - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Summer term 2019
 title: Kompatible Systeme von Galoisdarstellungen
 ---
+
 
 # Kompatible Systeme von Galoisdarstellungen
 

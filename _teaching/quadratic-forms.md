@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Proseminar
 description: Quadratic forms - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Winter term 2023/24
 title: Quadratic forms
 ---
+
 
 # Quadratic forms
 

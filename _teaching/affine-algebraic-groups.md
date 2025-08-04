@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Affine Algebraic Groups - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Winter term 2022/23
 title: Affine Algebraic Groups
 ---
+
 
 # Affine Algebraic Groups
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Bruhat-Tits Buildings Package
 authors: Lutz Hofmann
@@ -6,9 +7,13 @@ year: 2021
 type: Software
 status: Published
 journal: Magma Package
-keywords: Magma, Bruhat-Tits buildings, function fields, Hecke operators, harmonic cocycles
-abstract: Magma package to compute quotients of Bruhat-Tits buildings over function fields modulo congruence subgroups and the action of Hecke operators on harmonic cocycles with coefficients in char. 0
+keywords: Magma, Bruhat-Tits buildings, function fields, Hecke operators, harmonic
+  cocycles
+abstract: Magma package to compute quotients of Bruhat-Tits buildings over function
+  fields modulo congruence subgroups and the action of Hecke operators on harmonic
+  cocycles with coefficients in char. 0
 ---
+
 
 ## Abstract
 

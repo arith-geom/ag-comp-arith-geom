@@ -1,14 +1,17 @@
 ---
+---
 title: Gebhard Böckle
 email: gebhard.boeckle@math.uni-heidelberg.de
 layout: member
 name: Gebhard Böckle
 order: 1
-photo: /assets/img/gebhard-boeckle.jpg
-research_interests: Research interests in arithmetic geometry, modular forms, Galois representations, and computational number theory.
+photo: "/assets/img/gebhard-boeckle.jpg"
+research_interests: Research interests in arithmetic geometry, modular forms, Galois
+  representations, and computational number theory.
 role: Professor & Group Leader
 status: active
 ---
+
 
 Prof. Dr. Gebhard Böckle is the head of the research group "Computational Arithmetic Geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg. His research focuses on arithmetic geometry, modular forms, Galois representations, and computational number theory.
 

@@ -1,10 +1,12 @@
 ---
-layout: page
-title: "Teaching"
-permalink: /teaching/
-scripts:
-  - /assets/js/teaching-page.js
 ---
+layout: page
+title: Teaching
+permalink: "/teaching/"
+scripts:
+- "/assets/js/teaching-page.js"
+---
+
 
 <div class="teaching-page">
   <!-- Filter Controls -->

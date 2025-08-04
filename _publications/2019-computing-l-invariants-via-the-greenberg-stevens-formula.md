@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Computing L-invariants via the Greenberg-Stevens formula
 authors: S. Anni, G. Böckle, Peter Gräf, A. Troya
@@ -9,11 +10,14 @@ journal: Journal de Théorie des Nombres de Bordeaux
 volume: 31
 pages: 727–746
 doi: 10.5802/jtnb.789
-url: "https://jtnb.centre-mersenne.org/article/JTNB_2019__31_3_727_0.pdf"
-pdf: /assets/uploads/JTNB_2019__31_3_727_0.pdf
-keywords: L-invariants, Greenberg-Stevens formula, p-adic L-functions, computational methods
-abstract: This work advances computational methods for computing L-invariants via the Greenberg-Stevens formula.
+url: https://jtnb.centre-mersenne.org/article/JTNB_2019__31_3_727_0.pdf
+pdf: "/assets/uploads/JTNB_2019__31_3_727_0.pdf"
+keywords: L-invariants, Greenberg-Stevens formula, p-adic L-functions, computational
+  methods
+abstract: This work advances computational methods for computing L-invariants via
+  the Greenberg-Stevens formula.
 ---
+
 
 ## Abstract
 

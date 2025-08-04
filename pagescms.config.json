@@ -1,23 +1,21 @@
 {
-  "name": "AG Computational Arithmetic Geometry",
-  "description": "Academic website for the AG Computational Arithmetic Geometry research group at Heidelberg University",
+  "name": "AG Computational Arithmetic Geometry ",
+  "description": "This is the website of the research group \"computational arithmetic geometry\" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.",
   "version": "1.0.0",
   "contentTypes": {
-      "team-members": {
-    "name": "Team Members",
-    "description": "Faculty, staff, and students",
-    "fields": {
-      "name": {
-        "type": "string",
-        "label": "Full Name",
-        "required": true,
-        "validation": {
-          "minLength": 2,
-          "maxLength": 100,
-          "pattern": "^[a-zA-ZÀ-ÿ\\s\\-\\.']+$"
+    "team-members": {
+      "name": "Team Members",
+      "description": "Faculty, staff, and students",
+      "fields": {
+        "name": {
+          "type": "string",
+          "label": "Full Name",
+          "required": true,
+          "validation": {
+            "minLength": 2,
+            "maxLength": 100
+          }
         },
-        "placeholder": "Enter full name (e.g., Dr. John Smith)"
-      },
         "role": {
           "type": "select",
           "label": "Role",
@@ -32,28 +30,19 @@
           ],
           "required": true
         },
-              "email": {
-        "type": "string",
-        "label": "Email Address",
-        "validation": {
-          "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
-        },
-        "placeholder": "name@uni-heidelberg.de"
-      },
-        "website": {
+        "email": {
           "type": "string",
-          "label": "Personal Website",
+          "label": "Email Address",
           "validation": {
-            "pattern": "^https?://.+"
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
           }
         },
-              "photo": {
-        "type": "file",
-        "label": "Profile Photo",
-        "accept": "image/*",
-        "maxSize": "5MB",
-        "help": "Recommended: 400x400px, JPG or PNG format"
-      },
+        "photo": {
+          "type": "file",
+          "label": "Profile Photo",
+          "accept": "image/*",
+          "maxSize": "5MB"
+        },
         "research": {
           "type": "text",
           "label": "Research Interests",
@@ -71,419 +60,69 @@
             "Inactive",
             "Alumni"
           ],
-          "default": "Active",
-          "help": "Active: Currently with the group. Inactive: Temporarily away. Alumni: Former member who has left."
-        },
-        "alumni_info": {
-          "type": "object",
-          "label": "Alumni Information",
-          "fields": {
-            "graduation_year": {
-              "type": "number",
-              "label": "Graduation/Departure Year",
-              "validation": {
-                "min": 1990,
-                "max": 2030
-              }
-            },
-            "current_position": {
-              "type": "string",
-              "label": "Current Position/Institution"
-            },
-            "alumni_website": {
-              "type": "string",
-              "label": "Current Website",
-              "validation": {
-                "pattern": "^https?://.+"
-              }
-            }
-          },
-          "help": "Fill this information for alumni members"
-        }
-      },
-      "views": {
-        "default": {
-          "sort": "name",
-          "groupBy": "status"
-        },
-        "active": {
-          "sort": "name",
-          "groupBy": "role",
-          "filter": {
-            "status": "Active"
-          }
-        },
-        "alumni": {
-          "sort": "name",
-          "filter": {
-            "status": "Alumni"
-          }
-        },
-        "inactive": {
-          "sort": "name",
-          "filter": {
-            "status": "Inactive"
-          }
-        },
-        "by-role": {
-          "sort": "name",
-          "groupBy": "role"
+          "default": "Active"
         }
       }
     },
     "publications": {
       "name": "Publications",
-      "description": "Academic papers, research outputs, and software packages",
+      "description": "Research publications and papers",
       "fields": {
         "title": {
           "type": "string",
           "label": "Publication Title",
-          "required": true,
-          "validation": {
-            "minLength": 5,
-            "maxLength": 500
-          },
-          "placeholder": "Enter the full title of the publication"
+          "required": true
         },
         "authors": {
           "type": "string",
           "label": "Authors",
-          "required": true,
-          "placeholder": "List all authors separated by commas (e.g., John Smith, Jane Doe)"
+          "required": true
         },
         "year": {
           "type": "number",
           "label": "Publication Year",
-          "validation": {
-            "min": 1900,
-            "max": 2030
-          },
-          "default": 2025,
-          "help": "Year when the publication was published or submitted"
-        },
-        "month": {
-          "type": "select",
-          "label": "Publication Month",
-          "options": [
-            "",
-            "January",
-            "February", 
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-          ],
-          "help": "Optional: Month of publication"
-        },
-        "journal": {
-          "type": "string",
-          "label": "Journal/Conference/Publisher",
-          "placeholder": "Journal name, conference name, or publisher"
-        },
-        "volume": {
-          "type": "string",
-          "label": "Volume/Issue",
-          "placeholder": "Volume number, issue number, or proceedings details"
-        },
-        "pages": {
-          "type": "string",
-          "label": "Pages",
-          "placeholder": "Page range (e.g., 123-145) or article number"
-        },
-        "doi": {
-          "type": "string",
-          "label": "DOI",
-          "validation": {
-            "pattern": "^10\\.\\d{4,}/.+"
-          },
-          "placeholder": "10.1000/123456",
-          "help": "Digital Object Identifier (e.g., 10.1000/123456)"
-        },
-        "arxiv": {
-          "type": "string",
-          "label": "arXiv ID",
-          "validation": {
-            "pattern": "^\\d{4}\\.\\d{4,}$"
-          },
-          "placeholder": "2401.12345",
-          "help": "arXiv identifier (e.g., 2401.12345)"
-        },
-        "abstract": {
-          "type": "text",
-          "label": "Abstract",
-          "rows": 6,
-          "placeholder": "Brief description of the publication's content and contributions"
-        },
-        "keywords": {
-          "type": "string",
-          "label": "Keywords",
-          "placeholder": "Comma-separated keywords (e.g., arithmetic geometry, modular forms, Galois representations)"
-        },
-        "url": {
-          "type": "string",
-          "label": "Publication URL",
-          "validation": {
-            "pattern": "^https?://.+"
-          },
-          "placeholder": "https://example.com/paper",
-          "help": "Direct link to the publication"
-        },
-        "pdf": {
-          "type": "file",
-          "label": "PDF File",
-          "accept": ".pdf",
-          "maxSize": "50MB",
-          "help": "Upload the publication PDF if available"
+          "required": true
         },
         "type": {
           "type": "select",
           "label": "Publication Type",
           "options": [
             "Journal Article",
-            "Conference Paper",
-            "Book Chapter",
             "Preprint",
-            "Technical Report",
-            "Software Package",
-            "Thesis",
+            "Conference Paper",
             "Book",
-            "Survey Article",
-            "Other"
+            "Book Chapter",
+            "Thesis",
+            "Software",
+            "Technical Report"
           ],
-          "required": true,
           "default": "Journal Article"
         },
-        "status": {
-          "type": "select",
-          "label": "Publication Status",
-          "options": [
-            "Published",
-            "Submitted",
-            "In Preparation",
-            "Under Review",
-            "Accepted",
-            "In Press"
-          ],
-          "default": "Published"
-        },
-        "impact_factor": {
-          "type": "number",
-          "label": "Journal Impact Factor",
-          "validation": {
-            "min": 0,
-            "max": 100
-          },
-          "help": "Optional: Journal impact factor if available"
-        },
-        "citations": {
-          "type": "number",
-          "label": "Citation Count",
-          "validation": {
-            "min": 0
-          },
-          "help": "Optional: Number of citations (can be updated periodically)"
-        },
-        "team_members": {
-          "type": "reference",
-          "label": "Team Members Involved",
-          "contentType": "team-members",
-          "multiple": true,
-          "help": "Select team members who are authors or contributors"
-        },
-        "research_areas": {
-          "type": "reference",
-          "label": "Related Research Areas",
-          "contentType": "research",
-          "multiple": true,
-          "help": "Select research areas this publication relates to"
-        },
-        "software_info": {
-          "type": "object",
-          "label": "Software Package Information",
-          "fields": {
-            "repository_url": {
-              "type": "string",
-              "label": "Repository URL",
-              "validation": {
-                "pattern": "^https?://.+"
-              },
-              "placeholder": "https://github.com/username/package"
-            },
-            "download_url": {
-              "type": "string",
-              "label": "Download URL",
-              "validation": {
-                "pattern": "^https?://.+"
-              }
-            },
-            "version": {
-              "type": "string",
-              "label": "Version",
-              "placeholder": "1.0.0"
-            },
-            "license": {
-              "type": "string",
-              "label": "License",
-              "placeholder": "MIT, GPL, etc."
-            },
-            "documentation": {
-              "type": "string",
-              "label": "Documentation URL",
-              "validation": {
-                "pattern": "^https?://.+"
-              }
-            }
-          },
-          "help": "Fill this information for software packages"
-        },
-        "featured": {
-          "type": "boolean",
-          "label": "Featured Publication",
-          "default": false,
-          "help": "Mark as featured to highlight on the main publications page"
-        },
-        "order": {
-          "type": "number",
-          "label": "Display Order",
-          "default": 0,
-          "help": "Order for displaying publications (lower numbers appear first)"
-        }
-      },
-      "views": {
-        "default": {
-          "sort": "year",
-          "order": "desc"
-        },
-        "by-type": {
-          "sort": "year",
-          "order": "desc",
-          "groupBy": "type"
-        },
-        "by-status": {
-          "sort": "year",
-          "order": "desc",
-          "groupBy": "status"
-        },
-        "featured": {
-          "sort": "order",
-          "filter": {
-            "featured": true
-          }
-        },
-        "recent": {
-          "sort": "year",
-          "order": "desc",
-          "filter": {
-            "year": {
-              "gte": 2020
-            }
-          }
-        },
-        "software": {
-          "sort": "year",
-          "order": "desc",
-          "filter": {
-            "type": "Software Package"
-          }
-        }
-      }
-    },
-    "teaching": {
-      "name": "Teaching & Courses",
-      "description": "Course information and materials",
-      "fields": {
-        "title": {
-          "type": "string",
-          "label": "Course Title",
-          "required": true
-        },
-              "semester": {
-        "type": "select",
-        "label": "Semester",
-        "options": [
-          "Winter 2025/26",
-          "Summer 2025",
-          "Winter 2024/25",
-          "Summer 2024",
-          "Winter 2023/24",
-          "Summer 2023",
-          "Winter 2022/23",
-          "Summer 2022",
-          "Winter 2021/22",
-          "Summer 2021"
-        ],
-        "default": "Winter 2025/26"
-      },
-        "instructors": {
-          "type": "string",
-          "label": "Instructors"
-        },
-        "type": {
-          "type": "select",
-          "label": "Course Type",
-          "options": [
-            "Vorlesung",
-            "Seminar",
-            "Proseminar",
-            "Hauptseminar"
-          ]
-        },
-        "credits": {
-          "type": "number",
-          "label": "ECTS Credits"
-        },
-        "language": {
-          "type": "select",
-          "label": "Language",
-          "options": [
-            "German",
-            "English"
-          ]
-        },
-        "description": {
+        "abstract": {
           "type": "text",
-          "label": "Course Description",
-          "rows": 4
+          "label": "Abstract",
+          "rows": 5
         },
-        "materials": {
-          "type": "file",
-          "label": "Course Materials",
-          "multiple": true,
-          "accept": ".pdf,.doc,.docx,.ppt,.pptx"
+        "doi": {
+          "type": "string",
+          "label": "DOI"
         },
-        "active": {
-          "type": "boolean",
-          "label": "Currently Active",
-          "default": false
-        }
-      },
-      "views": {
-        "default": {
-          "sort": "semester",
-          "order": "desc"
-        },
-        "current": {
-          "sort": "semester",
-          "order": "desc",
-          "filter": {
-            "active": true
+        "url": {
+          "type": "string",
+          "label": "URL",
+          "validation": {
+            "pattern": "^https?://.+"
           }
         }
       }
     },
     "research": {
       "name": "Research Areas",
-      "description": "Research topics and descriptions",
+      "description": "Research areas and projects",
       "fields": {
         "title": {
           "type": "string",
-          "label": "Research Area",
+          "label": "Research Area Title",
           "required": true
         },
         "description": {
@@ -491,82 +130,42 @@
           "label": "Description"
         },
         "keywords": {
-          "type": "string",
+          "type": "text",
           "label": "Keywords",
           "placeholder": "Comma-separated keywords"
         },
-        "team-members": {
-          "type": "reference",
-          "label": "Team Members",
-          "contentType": "team-members",
-          "multiple": true
-        },
-        "publications": {
-          "type": "reference",
-          "label": "Related Publications",
-          "contentType": "publications",
-          "multiple": true
-        },
-        "order": {
-          "type": "number",
-          "label": "Display Order",
-          "default": 0
-        }
-      },
-      "views": {
-        "default": {
-          "sort": "order"
+        "image": {
+          "type": "file",
+          "label": "Research Area Image",
+          "accept": "image/*"
         }
       }
-    }
-  },
-  "media": {
-    "images": {
-      "name": "Images & Photos",
-      "description": "Images for the website",
-      "accept": "image/*",
-      "maxSize": "10MB",
-      "recommendedFormats": ["jpg", "png", "webp"],
-      "recommendedSizes": {
-        "profile": "400x400px",
-        "banner": "1200x400px",
-        "thumbnail": "300x200px"
+    },
+    "teaching": {
+      "name": "Teaching",
+      "description": "Courses and teaching materials",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Course Title",
+          "required": true
+        },
+        "semester": {
+          "type": "string",
+          "label": "Semester",
+          "required": true
+        },
+        "description": {
+          "type": "rich-text",
+          "label": "Course Description"
+        },
+        "materials": {
+          "type": "file",
+          "label": "Course Materials",
+          "multiple": true,
+          "accept": ".pdf,.doc,.docx,.ppt,.pptx"
+        }
       }
-    },
-    "documents": {
-      "name": "Documents & PDFs",
-      "description": "Academic documents and PDFs",
-      "accept": ".pdf,.doc,.docx,.ppt,.pptx,.txt,.md,.tex,.bib",
-      "maxSize": "50MB",
-      "recommendedFormats": ["pdf", "docx"]
-    },
-    "presentations": {
-      "name": "Presentations & Slides",
-      "description": "Academic presentations and slides",
-      "accept": ".pdf,.ppt,.pptx,.key",
-      "maxSize": "100MB"
-    }
-  },
-  "settings": {
-    "backup": {
-      "enabled": true,
-      "frequency": "daily",
-      "retention": "30 days"
-    },
-    "notifications": {
-      "enabled": true,
-      "email": "admin@mathi.uni-heidelberg.de",
-      "types": ["content_updates", "system_alerts", "backup_reports"]
-    },
-    "security": {
-      "maxLoginAttempts": 5,
-      "sessionTimeout": 3600,
-      "requireTwoFactor": false
-    },
-    "performance": {
-      "cacheEnabled": true,
-      "cacheDuration": 3600,
-      "imageOptimization": true
     }
   }
-} 
+}

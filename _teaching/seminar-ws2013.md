@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Deformationen von (Pseudo-)Darstellungen - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Winter term 2013/14
 title: Deformationen von (Pseudo-)Darstellungen
 ---
+
 
 # Deformationen von (Pseudo-)Darstellungen
 

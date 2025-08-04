@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Affine algebraische Gruppen - Course information and materials.
@@ -9,6 +10,7 @@ order: 999
 semester: Winter term 2019/20
 title: Affine algebraische Gruppen
 ---
+
 
 # Affine algebraische Gruppen
 

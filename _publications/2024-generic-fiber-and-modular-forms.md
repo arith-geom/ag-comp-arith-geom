@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Generic fiber and modular forms
 authors: Gebhard Böckle
@@ -6,10 +7,11 @@ year: 2024
 type: Preprint
 status: Published
 journal: Preprint
-pdf: /assets/uploads/GeneriFiberMM2.pdf
+pdf: "/assets/uploads/GeneriFiberMM2.pdf"
 keywords: generic fiber, modular forms, arithmetic geometry
 abstract: Work on generic fibers and their relationship to modular forms.
 ---
+
 
 ## Abstract
 
