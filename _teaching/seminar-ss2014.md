@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: p-adische Geometrie - Course information and materials.

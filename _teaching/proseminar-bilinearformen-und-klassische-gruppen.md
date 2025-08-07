@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Proseminar
 description: Bilinearformen und klassische Gruppen - Course information and materials.

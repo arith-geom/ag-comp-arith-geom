@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Hauptseminar
 description: p-adic Uniformization - Course information and materials.

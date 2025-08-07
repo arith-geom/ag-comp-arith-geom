@@ -360,4 +360,77 @@ content:
         description: "Highlight this research area on the homepage"
 
 
- 
+  # Links - External/internal resource links
+  - name: links
+    label: Useful Links
+    type: collection
+    path: _links
+    filename: "{title|slugify}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [title, url, category]
+      primary: title
+      sort:
+        field: title
+        direction: asc
+      search: [title, url, description, category]
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: page
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: url
+        label: URL
+        type: string
+        required: true
+        validation:
+          pattern: "^https?://.+"
+      - name: category
+        label: Category
+        type: string
+      - name: description
+        label: Description
+        type: rich-text
+        options:
+          toolbar: ["bold", "italic", "link", "list", "code"]
+          height: 120
+
+  # Static Pages - About, Contact, etc.
+  - name: pages
+    label: Static Pages
+    type: collection
+    path: _pages
+    filename: "{title|slugify}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+      primary: title
+      sort:
+        field: title
+        direction: asc
+      search: [title]
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: page
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: permalink
+        label: Permalink
+        type: string
+        description: "Optional custom permalink"
+      - name: content
+        label: Content
+        type: rich-text
+        options:
+          toolbar: ["bold", "italic", "link", "list", "code", "heading", "quote"]
+          height: 240

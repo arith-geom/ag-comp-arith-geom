@@ -20,6 +20,7 @@ module Jekyll
 
       @site = site
       @config = site.config['pagescms']
+      @auto_fix = !!@config['auto_fix']
       
       # Initialize Pages CMS integration
       setup_pagescms_integration
@@ -30,12 +31,63 @@ module Jekyll
 
     private
 
+    def read_front_matter_and_body(file_path)
+      content = File.read(file_path)
+      # Return empty front matter if no YAML front matter block
+      unless content.lstrip.start_with?("---")
+        return [{}, content]
+      end
+
+      lines = content.lines
+      return [{}, content] unless lines[0].strip == '---'
+
+      # Handle accidental duplicate starting delimiter ("---" on both line 1 and 2)
+      start_index = 1
+      if lines.length > 1 && lines[1].strip == '---'
+        # Treat second delimiter as erroneous; begin front matter after it
+        start_index = 2
+      end
+
+      i = start_index
+      front_matter_lines = []
+      while i < lines.length && lines[i].strip != '---'
+        front_matter_lines << lines[i]
+        i += 1
+      end
+
+      # Skip the closing delimiter at lines[i]
+      i += 1 if i < lines.length && lines[i].strip == '---'
+
+      front_matter_text = front_matter_lines.join
+      body = lines[i..-1]&.join || ''
+
+      begin
+        fm = YAML.safe_load(front_matter_text) || {}
+        fm = {} unless fm.is_a?(Hash)
+      rescue
+        fm = {}
+      end
+
+      [fm, body]
+    end
+
+    def write_front_matter_and_body(file_path, front_matter, body)
+      new_content = "---\n#{front_matter.to_yaml}---\n#{body}"
+      File.write(file_path, new_content)
+    end
+
     def setup_pagescms_integration
       # Create Pages CMS configuration
       create_pagescms_config
       
       # Setup content synchronization
       setup_content_sync
+
+      if @auto_fix
+        Jekyll.logger.info "Pages CMS:", "Auto-fix of front matter is ENABLED (pagescms.auto_fix: true)"
+      else
+        Jekyll.logger.info "Pages CMS:", "Auto-fix of front matter is DISABLED (pagescms.auto_fix: false)"
+      end
     end
 
     def create_pagescms_config
@@ -237,6 +289,8 @@ module Jekyll
       process_publications_content
       process_research_content
       process_teaching_content
+      process_links_content
+      process_pages_content
     end
 
     def sync_pagescms_content
@@ -282,6 +336,10 @@ module Jekyll
         check_new_research
       when 'teaching'
         check_new_teaching
+      when 'links'
+        check_new_links
+      when 'pages'
+        check_new_pages
       else
         []
       end
@@ -332,6 +390,28 @@ module Jekyll
       recent_files.map { |file| { 'file' => file, 'type' => 'teaching' } }
     end
 
+    def check_new_links
+      links_dir = File.join(@site.source, '_links')
+      return [] unless Dir.exist?(links_dir)
+
+      recent_files = Dir.glob(File.join(links_dir, '*.md')).select do |file|
+        File.mtime(file) > Time.now - 3600
+      end
+
+      recent_files.map { |file| { 'file' => file, 'type' => 'link' } }
+    end
+
+    def check_new_pages
+      pages_dir = File.join(@site.source, '_pages')
+      return [] unless Dir.exist?(pages_dir)
+
+      recent_files = Dir.glob(File.join(pages_dir, '*.md')).select do |file|
+        File.mtime(file) > Time.now - 3600
+      end
+
+      recent_files.map { |file| { 'file' => file, 'type' => 'page' } }
+    end
+
     def process_pagescms_item(content_type, item)
       begin
         return unless item && item.is_a?(Hash)
@@ -341,18 +421,14 @@ module Jekyll
         
         return unless file_path && content_type_name
         
-        # Read the file content
-        content = File.read(file_path)
-        front_matter = YAML.load_file(file_path)
-        
-        # Skip if YAML loading failed or returned nil
-        return unless front_matter && front_matter.is_a?(Hash)
-        
+        # Read front matter and body safely
+        front_matter, body = read_front_matter_and_body(file_path)
+
         # Ensure proper front matter structure
         front_matter = ensure_front_matter_structure(content_type_name, front_matter)
-        
+
         # Update the file with proper structure
-        update_file_with_front_matter(file_path, front_matter, content)
+        update_file_with_front_matter(file_path, front_matter, body)
         
         Jekyll.logger.info "Pages CMS: Processed new #{content_type_name} file: #{File.basename(file_path)}"
       rescue => e
@@ -371,26 +447,24 @@ module Jekyll
         front_matter['type'] ||= 'Journal Article'
         front_matter['status'] ||= 'Published'
       when 'research'
-        front_matter['layout'] ||= 'research'
-        front_matter['status'] ||= 'Active'
+        # There is no dedicated research layout; use the generic page layout
+        front_matter['layout'] = 'page'
       when 'teaching'
         front_matter['layout'] ||= 'teaching'
-        front_matter['status'] ||= 'Active'
         front_matter['active'] ||= false
+      when 'link'
+        # Force generic page layout (avoid missing 'link' layout)
+        front_matter['layout'] = 'page'
+      when 'page'
+        front_matter['layout'] = 'page'
       end
       
       front_matter
     end
 
-    def update_file_with_front_matter(file_path, front_matter, original_content)
-      # Extract body content (everything after front matter)
-      body_content = original_content.split('---', 3).last || ''
-      
-      # Create new content with proper front matter
-      new_content = "---\n#{front_matter.to_yaml}---\n#{body_content}"
-      
-      # Write back to file
-      File.write(file_path, new_content)
+    def update_file_with_front_matter(file_path, front_matter, body)
+      return unless @auto_fix
+      write_front_matter_and_body(file_path, front_matter, body)
     end
 
     def process_members_content
@@ -400,17 +474,14 @@ module Jekyll
       begin
         Dir.glob(File.join(members_dir, '*.md')).each do |file|
           begin
-            member_data = YAML.load_file(file)
-            
-            # Skip if YAML loading failed or returned nil
-            next unless member_data && member_data.is_a?(Hash)
+            member_data, body = read_front_matter_and_body(file)
             
             # Ensure member data has required fields for Pages CMS
             member_data['layout'] ||= 'member'
             member_data['status'] ||= 'Active'
             
             # Update file with standardized front matter
-            update_member_file(file, member_data)
+            update_member_file(file, member_data, body)
             
             Jekyll.logger.debug "Pages CMS: Processed member file #{file}"
           rescue => e
@@ -429,17 +500,14 @@ module Jekyll
       begin
         Dir.glob(File.join(publications_dir, '*.md')).each do |file|
           begin
-            pub_data = YAML.load_file(file)
-            
-            # Skip if YAML loading failed or returned nil
-            next unless pub_data && pub_data.is_a?(Hash)
+            pub_data, body = read_front_matter_and_body(file)
             
             # Ensure publication data has required fields for Pages CMS
             pub_data['layout'] ||= 'publication'
             pub_data['type'] ||= 'Journal Article'
             
             # Update file with standardized front matter
-            update_publication_file(file, pub_data)
+            update_publication_file(file, pub_data, body)
             
             Jekyll.logger.debug "Pages CMS: Processed publication file #{file}"
           rescue => e
@@ -458,16 +526,15 @@ module Jekyll
       begin
         Dir.glob(File.join(research_dir, '*.md')).each do |file|
           begin
-            research_data = YAML.load_file(file)
+            research_data, body = read_front_matter_and_body(file)
             
-            # Skip if YAML loading failed or returned nil
-            next unless research_data && research_data.is_a?(Hash)
-            
-            # Ensure research data has required fields for Pages CMS
-            research_data['layout'] ||= 'research'
+            # Normalize layout to generic page
+            if !research_data.key?('layout') || research_data['layout'].to_s.strip.downcase == 'research'
+              research_data['layout'] = 'page'
+            end
             
             # Update file with standardized front matter
-            update_research_file(file, research_data)
+            update_research_file(file, research_data, body)
             
             Jekyll.logger.debug "Pages CMS: Processed research file #{file}"
           rescue => e
@@ -486,16 +553,13 @@ module Jekyll
       begin
         Dir.glob(File.join(teaching_dir, '*.md')).each do |file|
           begin
-            teaching_data = YAML.load_file(file)
-            
-            # Skip if YAML loading failed or returned nil
-            next unless teaching_data && teaching_data.is_a?(Hash)
+            teaching_data, body = read_front_matter_and_body(file)
             
             # Ensure teaching data has required fields for Pages CMS
             teaching_data['layout'] ||= 'teaching'
             
             # Update file with standardized front matter
-            update_teaching_file(file, teaching_data)
+            update_teaching_file(file, teaching_data, body)
             
             Jekyll.logger.debug "Pages CMS: Processed teaching file #{file}"
           rescue => e
@@ -507,40 +571,83 @@ module Jekyll
       end
     end
 
-    def update_member_file(file_path, data)
-      content = File.read(file_path)
-      front_matter = data.to_yaml
-      body = content.split('---', 3).last || ''
-      
-      new_content = "---\n#{front_matter}---\n#{body}"
-      File.write(file_path, new_content)
+    def process_links_content
+      links_dir = File.join(@site.source, '_links')
+      return unless Dir.exist?(links_dir)
+
+      begin
+        Dir.glob(File.join(links_dir, '*.md')).each do |file|
+          begin
+            link_data, body = read_front_matter_and_body(file)
+
+            # Normalize to use generic page layout
+            if !link_data.key?('layout') || link_data['layout'].to_s.strip.downcase == 'link'
+              link_data['layout'] = 'page'
+            end
+
+            update_link_file(file, link_data, body)
+
+            Jekyll.logger.debug "Pages CMS: Processed link file #{file}"
+          rescue => e
+            Jekyll.logger.warn "Pages CMS: Error processing link file #{file}: #{e.message}"
+          end
+        end
+      rescue => e
+        Jekyll.logger.error "Pages CMS: Error processing links directory: #{e.message}"
+      end
     end
 
-    def update_publication_file(file_path, data)
-      content = File.read(file_path)
-      front_matter = data.to_yaml
-      body = content.split('---', 3).last || ''
-      
-      new_content = "---\n#{front_matter}---\n#{body}"
-      File.write(file_path, new_content)
+    def process_pages_content
+      pages_dir = File.join(@site.source, '_pages')
+      return unless Dir.exist?(pages_dir)
+
+      begin
+        Dir.glob(File.join(pages_dir, '*.md')).each do |file|
+          begin
+            page_data, body = read_front_matter_and_body(file)
+
+            page_data['layout'] ||= 'page'
+
+            update_page_file(file, page_data, body)
+
+            Jekyll.logger.debug "Pages CMS: Processed page file #{file}"
+          rescue => e
+            Jekyll.logger.warn "Pages CMS: Error processing page file #{file}: #{e.message}"
+          end
+        end
+      rescue => e
+        Jekyll.logger.error "Pages CMS: Error processing pages directory: #{e.message}"
+      end
     end
 
-    def update_research_file(file_path, data)
-      content = File.read(file_path)
-      front_matter = data.to_yaml
-      body = content.split('---', 3).last || ''
-      
-      new_content = "---\n#{front_matter}---\n#{body}"
-      File.write(file_path, new_content)
+    def update_member_file(file_path, data, body)
+      return unless @auto_fix
+      write_front_matter_and_body(file_path, data, body)
     end
 
-    def update_teaching_file(file_path, data)
-      content = File.read(file_path)
-      front_matter = data.to_yaml
-      body = content.split('---', 3).last || ''
-      
-      new_content = "---\n#{front_matter}---\n#{body}"
-      File.write(file_path, new_content)
+    def update_publication_file(file_path, data, body)
+      return unless @auto_fix
+      write_front_matter_and_body(file_path, data, body)
+    end
+
+    def update_research_file(file_path, data, body)
+      return unless @auto_fix
+      write_front_matter_and_body(file_path, data, body)
+    end
+
+    def update_teaching_file(file_path, data, body)
+      return unless @auto_fix
+      write_front_matter_and_body(file_path, data, body)
+    end
+
+    def update_link_file(file_path, data, body)
+      return unless @auto_fix
+      write_front_matter_and_body(file_path, data, body)
+    end
+
+    def update_page_file(file_path, data, body)
+      return unless @auto_fix
+      write_front_matter_and_body(file_path, data, body)
     end
   end
 end 

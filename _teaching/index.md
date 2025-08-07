@@ -1,5 +1,4 @@
 ---
----
 layout: page
 title: Teaching
 permalink: "/teaching/"
@@ -8,6 +7,7 @@ scripts:
 status: Active
 active: false
 ---
+
 
 
 
@@ -61,6 +61,21 @@ active: false
           </span>
           <a href="/teaching/homological-algebra-seminar" class="course-link">Homological Algebra</a>
           <span class="instructors">(Prof. Dr. Böckle, Dr. Ferraro)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="semester-group" data-period="current">
+      <h4 class="semester-title current-semester">
+        <i class="fas fa-calendar-alt"></i> Winter Semester 2025
+      </h4>
+      <ul class="course-list">
+        <li class="course-item" data-type="vorlesung" data-period="current">
+          <span class="course-badge vorlesung">
+            <i class="fas fa-chalkboard-teacher"></i> Vorlesung
+          </span>
+          <a href="/teaching/test-semester-2025" class="course-link">Test Semester 2025</a>
+          <span class="instructors">(Test Course)</span>
         </li>
       </ul>
     </div>

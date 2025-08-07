@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Affine Algebraic Groups - Course information and materials.

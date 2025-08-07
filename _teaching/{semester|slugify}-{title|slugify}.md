@@ -1,5 +1,4 @@
 ---
----
 layout: teaching
 title: Neues Semester
 semester: WS25

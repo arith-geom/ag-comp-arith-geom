@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Vorlesung
 description: Galoiskohomologie und Galoisdarstellungen - Course information and materials.

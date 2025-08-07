@@ -72,7 +72,10 @@ pagescms:
     - publications
     - research
     - teaching
+    - links
+    - pages
   auto_sync: true
+  auto_fix: true
   cache_duration: 3600
   bilingual_support: true
   language_fields:
@@ -208,6 +211,9 @@ collections:
   research:
     output: true
     permalink: /research/:name/
+  links:
+    output: true
+    permalink: /links/:name/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

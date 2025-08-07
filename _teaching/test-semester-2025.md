@@ -1,5 +1,4 @@
 ---
----
 layout: teaching
 title: Test Semester 2025
 semester: Winter Semester 2025
@@ -9,7 +8,6 @@ description: This is a test course created to verify Pages CMS real-time integra
 active: true
 status: Active
 ---
-
 
 
 

@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Hauptseminar
 description: Arithmetik von Zahl- und Funktionenkörpern - Course information and materials.

@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Proseminar
 description: p-adische Analysis - Course information and materials.

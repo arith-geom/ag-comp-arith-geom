@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Vorlesung
 description: Algebra 2 - Course information and materials.
