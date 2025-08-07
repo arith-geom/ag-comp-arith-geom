@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: Funktionentheorie 2 - Course information and materials.

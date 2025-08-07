@@ -1,6 +1,7 @@
 ---
+---
 category: Journal
-layout: link
+layout: page
 order: 1
 title: Journal of Number Theory
 url: https://www.sciencedirect.com/journal/journal-of-number-theory

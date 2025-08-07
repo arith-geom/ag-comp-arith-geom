@@ -1,6 +1,7 @@
 ---
+---
 category: Institution
-layout: link
+layout: page
 order: 3
 title: Mathematisches Institut
 url: https://www.mathi.uni-heidelberg.de/

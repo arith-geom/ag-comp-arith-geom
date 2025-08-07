@@ -1,6 +1,7 @@
 ---
+---
 category: Institution
-layout: link
+layout: page
 order: 4
 title: Faculty of Mathematics and Computer Science
 url: https://www.mathcomp.uni-heidelberg.de/

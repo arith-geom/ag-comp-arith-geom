@@ -78,6 +78,8 @@ pagescms:
   auto_fix: true
   cache_duration: 3600
   bilingual_support: true
+  repo_url: https://github.com/VictorMerk/ag-comp-arith-geom
+  branch: main
   language_fields:
     - title
     - content

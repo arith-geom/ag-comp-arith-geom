@@ -1,7 +1,8 @@
 ---
+---
 layout: page
 title: About Our Research Group
-permalink: /about/
+permalink: "/about/"
 nav: true
 nav_order: 1
 ---

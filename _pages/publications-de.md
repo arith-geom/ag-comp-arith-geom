@@ -1,7 +1,8 @@
 ---
+---
 layout: page
 title: Publikationen
-permalink: /publications-de/
+permalink: "/publications-de/"
 nav: true
 nav_order: 5
 ---

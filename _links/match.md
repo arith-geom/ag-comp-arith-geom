@@ -1,6 +1,7 @@
 ---
+---
 category: Research Center
-layout: link
+layout: page
 order: 5
 title: MATCH - Mathematics Center Heidelberg
 url: https://www.mathcomp.uni-heidelberg.de/match/

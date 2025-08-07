@@ -1,9 +1,10 @@
 ---
+---
 category: Contact
-layout: link
+layout: page
 order: 1
 title: Contact
-url: '#'
+url: "#"
 ---
 
 **Postal Address:**

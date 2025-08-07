@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Abelian Varieties - Course information and materials.

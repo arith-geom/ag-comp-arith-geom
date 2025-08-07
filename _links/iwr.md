@@ -1,6 +1,7 @@
 ---
+---
 category: Institution
-layout: link
+layout: page
 order: 2
 title: IWR - Interdisciplinary Center for Scientific Computing
 url: https://www.iwr.uni-heidelberg.de/

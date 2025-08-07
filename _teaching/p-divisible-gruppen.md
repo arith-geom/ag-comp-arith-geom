@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: p-divisible Gruppen - Course information and materials.

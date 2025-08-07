@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: seminar
 description: Past Teaching at the University Duisburg-Essen - Course information and

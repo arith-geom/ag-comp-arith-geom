@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Homological Algebra - Course information and materials.

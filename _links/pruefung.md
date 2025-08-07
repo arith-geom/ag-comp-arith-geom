@@ -1,6 +1,7 @@
 ---
+---
 category: Administrative
-layout: link
+layout: page
 order: 9
 title: Prüfungsausschuss
 url: https://www.mathcomp.uni-heidelberg.de/studium/pruefungsausschuss/

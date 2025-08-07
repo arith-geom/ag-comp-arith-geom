@@ -1,6 +1,7 @@
 ---
+---
 category: Research Project
-layout: link
+layout: page
 order: 8
 title: DFG SSP 1489
 url: https://www.dfg.de/en/research_funding/programmes/coordinated_programmes/priority_programmes/
