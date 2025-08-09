@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation
   theory

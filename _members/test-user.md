@@ -1,11 +1,12 @@
 ---
+---
 layout: member
 name: Test User
 role: PhD Student
 status: active
 order: 999
 email: test.user@example.com
-photo: /assets/img/gebhard-boeckle.jpg
+photo: "/assets/img/gebhard-boeckle.jpg"
 research_interests: |
   Testing PagesCMS integration across collections. Interested in verification,
   content workflows, and static site generation pipelines.

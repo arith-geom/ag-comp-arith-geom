@@ -2,6 +2,10 @@
   "name": "AG Computational Arithmetic Geometry ",
   "description": "This is the website of the research group \"computational arithmetic geometry\" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.",
   "version": "1.0.0",
+  "repository": {
+    "repoUrl": "https://github.com/VictorMerk/ag-comp-arith-geom",
+    "branch": "main"
+  },
   "contentTypes": {
     "team-members": {
       "name": "Team Members",

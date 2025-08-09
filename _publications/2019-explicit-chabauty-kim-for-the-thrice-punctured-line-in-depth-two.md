@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Explicit Chabauty-Kim for the thrice-punctured line in depth two
 authors: Barinder S. Banwait, Ishai Dan-Cohen

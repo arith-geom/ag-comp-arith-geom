@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Torische Varietäten - Course information and materials.

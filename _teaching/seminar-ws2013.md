@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Deformationen von (Pseudo-)Darstellungen - Course information and materials.

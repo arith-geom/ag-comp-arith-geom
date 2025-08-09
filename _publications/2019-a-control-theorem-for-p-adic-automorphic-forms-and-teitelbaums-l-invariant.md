@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: A control theorem for p-adic automorphic forms and Teitelbaum's L-invariant
 authors: Peter Gräf

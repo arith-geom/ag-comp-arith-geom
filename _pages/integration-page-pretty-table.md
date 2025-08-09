@@ -1,7 +1,8 @@
 ---
+---
 layout: page
 title: Integration Page - Pretty Table
-permalink: /integration/pretty-table/
+permalink: "/integration/pretty-table/"
 pretty_table: true
 ---
 

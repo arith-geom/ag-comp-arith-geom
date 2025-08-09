@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: Adische Räume II - Course information and materials.

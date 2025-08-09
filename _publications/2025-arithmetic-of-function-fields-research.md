@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Arithmetic of Function Fields
 authors: Gebhard Böckle, Ralf Butenuth

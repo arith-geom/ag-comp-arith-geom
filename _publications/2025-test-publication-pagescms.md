@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: PagesCMS End-to-End Integration Test
 authors: Test User, Gebhard Böckle

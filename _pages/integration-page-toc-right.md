@@ -1,7 +1,8 @@
 ---
+---
 layout: page
 title: Integration Page - TOC Right
-permalink: /integration/toc-right/
+permalink: "/integration/toc-right/"
 toc:
   sidebar: right
 ---

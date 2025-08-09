@@ -1,4 +1,5 @@
 ---
+---
 layout: teaching
 title: Homological Algebra (Integration Test)
 semester: SS2025

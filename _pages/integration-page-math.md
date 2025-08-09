@@ -1,7 +1,8 @@
 ---
+---
 layout: page
 title: Integration Page - MathJax
-permalink: /integration/math/
+permalink: "/integration/math/"
 ---
 
 Inline math: \( e^{i\pi} + 1 = 0 \)

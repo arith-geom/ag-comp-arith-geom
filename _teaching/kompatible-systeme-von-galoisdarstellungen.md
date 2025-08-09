@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Vorlesung
 description: Kompatible Systeme von Galoisdarstellungen - Course information and materials.

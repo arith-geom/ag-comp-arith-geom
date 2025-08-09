@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Irreducibility of versal deformation rings in the (p,p)-case for 2-dimensional
   representations
@@ -10,7 +11,7 @@ journal: J. Algebra
 volume: 444
 pages: 81–123
 url: http://www.sciencedirect.com/science/article/pii/S002186931500352X
-pdf: /assets/uploads/BoeckleJuschka-Irreducibility.pdf
+pdf: "/assets/uploads/BoeckleJuschka-Irreducibility.pdf"
 keywords: deformation theory, Galois representations, irreducibility
 abstract: This paper studies the irreducibility of versal deformation rings in the
   (p,p)-case for 2-dimensional representations.

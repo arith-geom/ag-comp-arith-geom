@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Hauptseminar
 description: Modularity Lifting - Course information and materials.

@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Seminar covering the representation theory of finite groups and its applications.

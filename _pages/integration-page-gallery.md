@@ -1,7 +1,8 @@
 ---
+---
 layout: page
 title: Integration Page - Gallery
-permalink: /integration/gallery/
+permalink: "/integration/gallery/"
 images:
   lightbox2: true
 ---

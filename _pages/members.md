@@ -1,7 +1,8 @@
 ---
+---
 layout: page
 title: Team
-permalink: /members/
+permalink: "/members/"
 nav: true
 nav_order: 3
 ---

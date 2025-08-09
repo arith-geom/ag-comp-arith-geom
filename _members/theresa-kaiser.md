@@ -1,4 +1,5 @@
 ---
+---
 title: Theresa Kaiser
 name: Theresa Kaiser
 email: arithgeo@iwr.uni-heidelberg.de
@@ -6,7 +7,7 @@ layout: member
 role: PhD Student
 status: active
 order: 1
-photo: /assets/img/theresa-kaiser.jpg
+photo: "/assets/img/theresa-kaiser.jpg"
 ---
 
 

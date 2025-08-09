@@ -1,4 +1,5 @@
 ---
+---
 title: Giacomo Hermes Ferraro
 name: Giacomo Hermes Ferraro
 email: arithgeo@iwr.uni-heidelberg.de
@@ -6,7 +7,7 @@ layout: member
 role: Postdoctoral Researcher
 status: active
 order: 1
-photo: /assets/img/giacomo-hermes-ferraro.jpg
+photo: "/assets/img/giacomo-hermes-ferraro.jpg"
 ---
 
 

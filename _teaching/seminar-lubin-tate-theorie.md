@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Lokale Klassenkörpertheorie nach Lubin-Tate - Course information and

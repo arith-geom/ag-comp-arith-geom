@@ -1,7 +1,8 @@
 ---
+---
 layout: page
 title: Publications - Dr. Ralf Butenuth
-permalink: /members/ralf-butenuth/publications/
+permalink: "/members/ralf-butenuth/publications/"
 nav: false
 ---
 

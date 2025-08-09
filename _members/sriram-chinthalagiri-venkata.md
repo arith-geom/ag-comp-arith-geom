@@ -1,4 +1,5 @@
 ---
+---
 title: Sriram Chinthalagiri Venkata
 name: Sriram Chinthalagiri Venkata
 email: arithgeo@iwr.uni-heidelberg.de
@@ -6,7 +7,7 @@ layout: member
 role: PhD Student
 status: active
 order: 1
-photo: /assets/img/sriram-chinthalagiri-venkata.jpg
+photo: "/assets/img/sriram-chinthalagiri-venkata.jpg"
 ---
 
 

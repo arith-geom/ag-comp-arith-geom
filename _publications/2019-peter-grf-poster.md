@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Peter Gräf - Poster
 authors: Peter Gräf
@@ -6,7 +7,7 @@ year: 2019
 type: Poster
 status: Published
 journal: Conference Poster
-pdf: /assets/uploads/Poster_Peter_Graef.pdf
+pdf: "/assets/uploads/Poster_Peter_Graef.pdf"
 keywords: poster, Peter Gräf, conference presentation
 abstract: Poster presentation by Peter Gräf at a mathematical conference.
 ---

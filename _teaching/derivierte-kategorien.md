@@ -1,4 +1,5 @@
 ---
+---
 active: false
 course_type: Seminar
 description: Derivierte Kategorien und Algebraische Geometrie - Course information

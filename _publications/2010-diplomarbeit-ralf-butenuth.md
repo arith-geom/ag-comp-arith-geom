@@ -1,4 +1,5 @@
 ---
+---
 layout: publication
 title: Diplomarbeit - Ralf Butenuth
 authors: Ralf Butenuth
@@ -6,7 +7,7 @@ year: 2010
 type: Thesis
 status: Published
 journal: Master's Thesis
-pdf: /assets/uploads/Diplomarbeit_Ralf-Butenuth.pdf
+pdf: "/assets/uploads/Diplomarbeit_Ralf-Butenuth.pdf"
 keywords: Master's thesis, arithmetic geometry, Butenuth
 abstract: Master's thesis by Ralf Butenuth on arithmetic geometry.
 ---
