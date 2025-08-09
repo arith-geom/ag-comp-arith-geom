@@ -264,18 +264,32 @@ content:
         required: true
         description: "Select semester (add new if missing)"
         options:
-          - SS2022
-          - WS2022
-          - SS2023
-          - WS2023
-          - SS2024
-          - WS2024
-          - SS2025
-          - WS2025
-          - SS2026
-          - WS2026
-          - SS2027
-          - WS2027
+          values:
+            - label: SS2022
+              value: SS2022
+            - label: WS2022
+              value: WS2022
+            - label: SS2023
+              value: SS2023
+            - label: WS2023
+              value: WS2023
+            - label: SS2024
+              value: SS2024
+            - label: WS2024
+              value: WS2024
+            - label: SS2025
+              value: SS2025
+            - label: WS2025
+              value: WS2025
+            - label: SS2026
+              value: SS2026
+            - label: WS2026
+              value: WS2026
+            - label: SS2027
+              value: SS2027
+            - label: WS2027
+              value: WS2027
+          allowCustom: true
         validation:
           pattern: "^(WS|SS)[0-9]{4}$"
       - name: instructor
@@ -287,35 +301,41 @@ content:
         label: Course Type
         type: select
         options:
-          - Vorlesung
-          - Seminar
-          - Proseminar
-          - Hauptseminar
-          - Exercise
-          - Tutorial
-          - Workshop
-          - Laboratory
-          - Colloquium
-        default: seminar
+          values:
+            - { label: Vorlesung, value: Vorlesung }
+            - { label: Seminar, value: Seminar }
+            - { label: Proseminar, value: Proseminar }
+            - { label: Hauptseminar, value: Hauptseminar }
+            - { label: Exercise, value: Exercise }
+            - { label: Tutorial, value: Tutorial }
+            - { label: Workshop, value: Workshop }
+            - { label: Laboratory, value: Laboratory }
+            - { label: Colloquium, value: Colloquium }
+          allowCustom: true
+        default: Seminar
         required: true
         description: "Type of course"
       - name: level
         label: Level
         type: select
         options:
-          - Bachelor
-          - Master
-          - PhD
-          - Mixed
+          values:
+            - { label: Bachelor, value: Bachelor }
+            - { label: Master, value: Master }
+            - { label: PhD, value: PhD }
+            - { label: Mixed, value: Mixed }
+          allowCustom: true
         description: "Intended audience level (optional)"
       - name: language
         label: Language
         type: select
         options:
-          - English
-          - German
-          - Bilingual
-        default: en
+          values:
+            - { label: English, value: English }
+            - { label: German, value: German }
+            - { label: Bilingual, value: Bilingual }
+          allowCustom: true
+        default: English
         required: true
         description: "Primary language of instruction"
       - name: description
