@@ -1,5 +1,4 @@
 ---
----
 layout: teaching
 title: Test Semester 2025
 semester: Winter Semester 2025

@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Vorlesung
 description: Algebraische Zahlentheorie 1 - Course information and materials.

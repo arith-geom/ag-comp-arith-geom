@@ -1,5 +1,4 @@
 ---
----
 description: ''
 featured: false
 layout: page

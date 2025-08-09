@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Proseminar
 description: Quadratic forms - Course information and materials.

@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: DeJong and JNT revision
 authors: Gebhard Böckle
@@ -7,7 +6,7 @@ year: 2021
 type: Preprint
 status: Published
 journal: Preprint
-pdf: "/assets/uploads/DeJongAnJNTbRev2.pdf"
+pdf: /assets/uploads/DeJongAnJNTbRev2.pdf
 keywords: DeJong, Journal of Number Theory, revision
 abstract: A revision of work related to DeJong and Journal of Number Theory.
 ---

@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Gruppenkohomologie - Course information and materials.

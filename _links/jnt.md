@@ -1,5 +1,4 @@
 ---
----
 category: Journal
 layout: page
 order: 1

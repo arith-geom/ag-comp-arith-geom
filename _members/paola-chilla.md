@@ -1,5 +1,4 @@
 ---
----
 title: Paola Chilla
 name: Paola Chilla
 email: arithgeo@iwr.uni-heidelberg.de
@@ -7,7 +6,7 @@ layout: member
 role: PhD Student
 status: active
 order: 1
-photo: "/assets/img/paola-chilla.jpg"
+photo: /assets/img/paola-chilla.jpg
 ---
 
 

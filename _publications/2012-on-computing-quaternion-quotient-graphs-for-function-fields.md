@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: On computing quaternion quotient graphs for function fields
 authors: Gebhard Böckle, Ralf Butenuth
@@ -10,7 +9,7 @@ journal: J. Théor. Nombres Bordeaux
 volume: 24
 pages: 73-99
 url: http://jtnb.cedram.org/jtnb-bin/item?id=JTNB_2012__24_1_73_0
-pdf: "/assets/uploads/Proofs-Boeckle-Butenuth.pdf"
+pdf: /assets/uploads/Proofs-Boeckle-Butenuth.pdf
 keywords: quaternion algebras, function fields, computational methods
 abstract: This work presents computational methods for computing quaternion quotient
   graphs over function fields.

@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Peter Gräf - Rennes Slides
 authors: Peter Gräf
@@ -7,7 +6,7 @@ year: 2019
 type: Presentation
 status: Published
 journal: Conference Presentation
-pdf: "/assets/uploads/slides_rennes.pdf"
+pdf: /assets/uploads/slides_rennes.pdf
 keywords: Rennes, slides, Peter Gräf, conference presentation
 abstract: Slides from Peter Gräf's presentation in Rennes.
 ---

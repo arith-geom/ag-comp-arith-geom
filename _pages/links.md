@@ -1,8 +1,7 @@
 ---
----
 layout: page
 title: Links
-permalink: "/links/"
+permalink: /links/
 nav: true
 nav_order: 4
 ---

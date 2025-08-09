@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Darstellungstheorie - Course information and materials.

@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: The distribution of the zeros of the Goss zeta-function for A=F₂[x,y]/(y²+y+x³+x+1)
 authors: Gebhard Böckle
@@ -10,7 +9,7 @@ journal: Math. Z.
 volume: 275
 pages: 835–861
 url: http://dx.doi.org/10.1007/s00209-013-1162-9
-pdf: "/assets/uploads/ZeroDistribForOneA.pdf"
+pdf: /assets/uploads/ZeroDistribForOneA.pdf
 keywords: Goss zeta-function, function fields, zero distribution
 abstract: This work studies the distribution of zeros of the Goss zeta-function for
   a specific function field.

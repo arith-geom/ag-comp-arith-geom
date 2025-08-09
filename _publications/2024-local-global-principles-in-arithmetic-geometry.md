@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Local-global principles in arithmetic geometry
 authors: Gebhard Böckle
@@ -7,7 +6,7 @@ year: 2024
 type: Preprint
 status: Published
 journal: Preprint
-pdf: "/assets/uploads/LocalGlobalRev3.pdf"
+pdf: /assets/uploads/LocalGlobalRev3.pdf
 keywords: local-global principles, arithmetic geometry, modular forms
 abstract: Work on local-global principles in arithmetic geometry and modular forms.
 ---

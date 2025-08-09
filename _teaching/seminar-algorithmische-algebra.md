@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Algorithmische Algebra - Course information and materials.

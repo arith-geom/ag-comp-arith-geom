@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: An Eichler-Shimura isomorphism over function fields
 authors: Gebhard Böckle
@@ -8,7 +7,7 @@ type: Preprint
 status: In Preparation
 journal: Preprint
 url: https://arxiv.org/abs/2301.00001
-pdf: "/assets/uploads/EiShNew.pdf"
+pdf: /assets/uploads/EiShNew.pdf
 keywords: Eichler-Shimura isomorphism, Drinfeld modular forms, crystals, function
   fields
 abstract: This work establishes an Eichler-Shimura isomorphism over function fields.

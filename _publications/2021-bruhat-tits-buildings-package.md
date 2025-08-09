@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Bruhat-Tits Buildings Package
 authors: Lutz Hofmann

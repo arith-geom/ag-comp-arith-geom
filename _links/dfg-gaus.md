@@ -1,5 +1,4 @@
 ---
----
 category: Research Project
 layout: page
 order: 7

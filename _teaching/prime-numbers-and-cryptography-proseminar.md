@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Proseminar
 description: Prime numbers and Cryptography - Course information and materials.

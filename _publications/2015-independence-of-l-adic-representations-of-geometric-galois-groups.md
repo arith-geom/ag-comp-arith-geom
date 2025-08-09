@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Independence of l-adic representations of geometric Galois groups
 authors: Gebhard Böckle, W. Gajda, S. Petersen
@@ -9,7 +8,7 @@ status: Published
 journal: J. Reine Angew. Math.
 pages: 25 p.
 url: http://dx.doi.org/10.1515/crelle-2015-0024
-pdf: "/assets/uploads/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf"
+pdf: /assets/uploads/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf
 keywords: l-adic representations, Galois groups, independence
 abstract: This work establishes independence results for l-adic representations of
   geometric Galois groups.

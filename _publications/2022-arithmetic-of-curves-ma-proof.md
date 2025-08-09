@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Arithmetic of Curves - MA Proof
 authors: Gebhard Böckle
@@ -7,7 +6,7 @@ year: 2022
 type: Thesis
 status: Published
 journal: Preprint
-pdf: "/assets/uploads/AofC-MAProof.pdf"
+pdf: /assets/uploads/AofC-MAProof.pdf
 keywords: arithmetic of curves, Master's thesis, proof
 abstract: A proof related to the arithmetic of curves for a Master's thesis.
 ---

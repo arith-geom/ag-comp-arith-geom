@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Computations with Modular Forms
 authors: Gebhard Böckle, G. Wiese

@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Rigidity and corrections in deformation theory
 authors: Gebhard Böckle
@@ -7,7 +6,7 @@ year: 2013
 type: Preprint
 status: Published
 journal: Preprint
-pdf: "/assets/uploads/Rigidity-CorrectionsThm8.9.pdf"
+pdf: /assets/uploads/Rigidity-CorrectionsThm8.9.pdf
 keywords: deformation theory, rigidity, corrections
 abstract: This work addresses rigidity issues and corrections in deformation theory.
 ---

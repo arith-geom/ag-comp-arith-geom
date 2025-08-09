@@ -95,6 +95,10 @@ module Jekyll
         'name' => @site.config['title'] || 'AG Computational Arithmetic Geometry',
         'description' => @site.config['description'] || 'Academic website',
         'version' => '1.0.0',
+        'repository' => {
+          'repoUrl' => (@site.config.dig('pagescms', 'repo_url') || @site.config['url'] || ''),
+          'branch' => (@site.config.dig('pagescms', 'branch') || 'main')
+        },
         'contentTypes' => {
           'team-members' => {
             'name' => 'Team Members',

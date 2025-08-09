@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Drinfeld Modular Varieties
 authors: Gebhard Böckle

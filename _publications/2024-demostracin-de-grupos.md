@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Demostración de grupos
 authors: Gebhard Böckle
@@ -7,7 +6,7 @@ year: 2024
 type: Preprint
 status: Published
 journal: Preprint
-pdf: "/assets/uploads/DemGps.pdf"
+pdf: /assets/uploads/DemGps.pdf
 keywords: group theory, demonstration, Galois representations
 abstract: A demonstration related to group theory and Galois representations.
 ---

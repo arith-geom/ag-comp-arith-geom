@@ -1,10 +1,9 @@
 ---
----
 layout: page
 title: Teaching
-permalink: "/teaching/"
+permalink: /teaching/
 scripts:
-- "/assets/js/teaching-page.js"
+- /assets/js/teaching-page.js
 status: Active
 active: false
 ---

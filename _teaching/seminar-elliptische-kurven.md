@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Elliptische Kurven - Course information and materials.

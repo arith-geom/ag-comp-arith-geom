@@ -1,5 +1,4 @@
 ---
----
 title: Alireza Shavali
 name: Alireza Shavali
 email: arithgeo@iwr.uni-heidelberg.de
@@ -7,7 +6,7 @@ layout: member
 role: PhD Student
 status: active
 order: 1
-photo: "/assets/img/alireza-shavali.jpg"
+photo: /assets/img/alireza-shavali.jpg
 ---
 
 

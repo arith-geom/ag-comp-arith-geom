@@ -1,8 +1,7 @@
 ---
----
 layout: page
 title: Former Members
-permalink: "/former-members/"
+permalink: /former-members/
 nav: true
 nav_order: 4
 ---

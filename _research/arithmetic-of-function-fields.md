@@ -1,5 +1,4 @@
 ---
----
 layout: page
 title: Arithmetic of Function Fields
 description: Research in arithmetic geometry and function fields

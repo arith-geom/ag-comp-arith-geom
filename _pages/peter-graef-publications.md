@@ -1,8 +1,7 @@
 ---
----
 layout: page
 title: Publications - Dr. Peter Gräf
-permalink: "/members/peter-graef/publications/"
+permalink: /members/peter-graef/publications/
 nav: false
 ---
 

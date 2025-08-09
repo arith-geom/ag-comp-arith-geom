@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Chabauty-Kim Theory
 authors: Barinder Banwait

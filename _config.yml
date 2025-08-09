@@ -242,6 +242,8 @@ exclude:
   - .DS_Store
   - Thumbs.db
   - assets/search-data-backup.json
+  - assets/search-data.json
+  - assets/json/publications-data.json.old
 
 # Performance and regeneration settings
 incremental: false
