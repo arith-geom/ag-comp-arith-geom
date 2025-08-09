@@ -688,8 +688,15 @@ module Jekyll
       return if File.expand_path(file_path) == File.expand_path(target_path)
 
       if File.exist?(target_path)
-        # If target exists, keep existing to avoid overwriting; just skip rename
-        Jekyll.logger.warn "Pages CMS:", "Target teaching file already exists: #{target_basename}; leaving original #{basename}"
+        # If target already exists, disable the original templated file by
+        # renaming it so Jekyll won't render it again.
+        disabled_path = file_path + ".disabled"
+        begin
+          File.rename(file_path, disabled_path)
+          Jekyll.logger.info "Pages CMS:", "Disabled duplicate templated teaching file #{basename} -> #{File.basename(disabled_path)}"
+        rescue => e
+          Jekyll.logger.warn "Pages CMS:", "Could not disable duplicate teaching file #{basename}: #{e.message}"
+        end
         return
       end
 
