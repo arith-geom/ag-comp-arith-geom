@@ -1,11 +1,13 @@
 ---
+---
+layout: teaching
+active: false
+---
 layout: page
 title: Teaching
-permalink: /teaching/
+permalink: "/teaching/"
 scripts:
-- /assets/js/teaching-page.js
-status: Active
-active: false
+  - "/assets/js/teaching-page.js"
 ---
 
 
@@ -1073,8 +1075,8 @@ active: false
 
 /* Filter Controls */
 .filter-controls {
-  background: linear-gradient(135deg, $gray-900 0%, $gray-800 100%) !important;
-  border-color: $gray-700 !important;
+  background: linear-gradient(135deg, #212529 0%, #343a40 100%) !important;
+  border-color: #495057 !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
   border-radius: 12px !important;
   border-bottom: 3px solid var(--primary);
