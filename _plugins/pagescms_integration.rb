@@ -562,6 +562,16 @@ module Jekyll
             # Ensure teaching data has required fields for Pages CMS
             teaching_data['layout'] ||= 'teaching'
             
+            # Proactively fix accidental template filenames like
+            # "{semester|slugify}-{title|slugify}.md" that may be created by
+            # misconfigured CMS templates. We compute a safe target filename
+            # from front matter and rename the file if needed.
+            begin
+              fix_teaching_filename_if_needed(file, teaching_data)
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not sanitize teaching filename #{File.basename(file)}: #{e.message}"
+            end
+
             # Update file with standardized front matter
             update_teaching_file(file, teaching_data, body)
             
@@ -652,6 +662,39 @@ module Jekyll
     def update_page_file(file_path, data, body)
       return unless @auto_fix
       write_front_matter_and_body(file_path, data, body)
+    end
+
+    # --- Helpers -----------------------------------------------------------
+
+    # If a teaching file name still contains unresolved template tokens
+    # (e.g., "{semester|slugify}-{title|slugify}.md"), rename it to a
+    # sanitized slug derived from front matter fields.
+    def fix_teaching_filename_if_needed(file_path, front_matter)
+      basename = File.basename(file_path)
+      return unless basename.include?('{') || basename.include?('}') || basename.include?('|')
+
+      semester = front_matter['semester'].to_s.strip
+      title    = front_matter['title'].to_s.strip
+      return if semester.empty? || title.empty?
+
+      # Use Jekyll's slugify to form a safe filename
+      sem_slug = Jekyll::Utils.slugify(semester)
+      title_slug = Jekyll::Utils.slugify(title)
+      target_basename = "#{sem_slug}-#{title_slug}.md"
+
+      dir = File.dirname(file_path)
+      target_path = File.join(dir, target_basename)
+
+      return if File.expand_path(file_path) == File.expand_path(target_path)
+
+      if File.exist?(target_path)
+        # If target exists, keep existing to avoid overwriting; just skip rename
+        Jekyll.logger.warn "Pages CMS:", "Target teaching file already exists: #{target_basename}; leaving original #{basename}"
+        return
+      end
+
+      File.rename(file_path, target_path)
+      Jekyll.logger.info "Pages CMS:", "Renamed teaching file #{basename} -> #{target_basename}"
     end
   end
 end 
