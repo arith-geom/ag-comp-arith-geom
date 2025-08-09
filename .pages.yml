@@ -260,9 +260,22 @@ content:
           max_length: 200
       - name: semester
         label: Semester
-        type: string
+        type: select
         required: true
-        description: "Semester (e.g., WS2024, SS2025)"
+        description: "Select semester (add new if missing)"
+        options:
+          SS2022: SS2022
+          WS2022: WS2022
+          SS2023: SS2023
+          WS2023: WS2023
+          SS2024: SS2024
+          WS2024: WS2024
+          SS2025: SS2025
+          WS2025: WS2025
+          SS2026: SS2026
+          WS2026: WS2026
+          SS2027: SS2027
+          WS2027: WS2027
         validation:
           pattern: "^(WS|SS)[0-9]{4}$"
       - name: instructor
@@ -284,6 +297,15 @@ content:
         default: seminar
         required: true
         description: "Type of course"
+      - name: level
+        label: Level
+        type: select
+        options:
+          bachelor: Bachelor
+          master: Master
+          phd: PhD
+          mixed: Mixed
+        description: "Intended audience level (optional)"
       - name: language
         label: Language
         type: select
@@ -392,7 +414,13 @@ content:
           pattern: "^https?://.+"
       - name: category
         label: Category
-        type: string
+        type: select
+        options:
+          Institution: Institution
+          Journal: Journal
+          Research Project: Research Project
+          Administrative: Administrative
+          Tooling: Tooling
       - name: description
         label: Description
         type: rich-text
@@ -430,7 +458,4 @@ content:
         description: "Optional custom permalink"
       - name: content
         label: Content
-        type: rich-text
-        options:
-          toolbar: ["bold", "italic", "link", "list", "code", "heading", "quote"]
-          height: 240
+        type: markdown
