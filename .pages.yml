@@ -264,18 +264,18 @@ content:
         required: true
         description: "Select semester (add new if missing)"
         options:
-          SS2022: SS2022
-          WS2022: WS2022
-          SS2023: SS2023
-          WS2023: WS2023
-          SS2024: SS2024
-          WS2024: WS2024
-          SS2025: SS2025
-          WS2025: WS2025
-          SS2026: SS2026
-          WS2026: WS2026
-          SS2027: SS2027
-          WS2027: WS2027
+          - SS2022
+          - WS2022
+          - SS2023
+          - WS2023
+          - SS2024
+          - WS2024
+          - SS2025
+          - WS2025
+          - SS2026
+          - WS2026
+          - SS2027
+          - WS2027
         validation:
           pattern: "^(WS|SS)[0-9]{4}$"
       - name: instructor
@@ -287,13 +287,15 @@ content:
         label: Course Type
         type: select
         options:
-          lecture: Lecture (Vorlesung)
-          seminar: Seminar
-          exercise: Exercise
-          tutorial: Tutorial
-          workshop: Workshop
-          lab: Laboratory
-          colloquium: Colloquium
+          - Vorlesung
+          - Seminar
+          - Proseminar
+          - Hauptseminar
+          - Exercise
+          - Tutorial
+          - Workshop
+          - Laboratory
+          - Colloquium
         default: seminar
         required: true
         description: "Type of course"
@@ -301,18 +303,18 @@ content:
         label: Level
         type: select
         options:
-          bachelor: Bachelor
-          master: Master
-          phd: PhD
-          mixed: Mixed
+          - Bachelor
+          - Master
+          - PhD
+          - Mixed
         description: "Intended audience level (optional)"
       - name: language
         label: Language
         type: select
         options:
-          en: English
-          de: German
-          bilingual: Bilingual
+          - English
+          - German
+          - Bilingual
         default: en
         required: true
         description: "Primary language of instruction"
