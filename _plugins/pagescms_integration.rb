@@ -117,12 +117,14 @@ module Jekyll
                 'type' => 'select',
                 'label' => 'Role',
                 'options' => [
+                  'Professor & Group Leader',
                   'Professor',
                   'Postdoctoral Researcher',
                   'PhD Student',
                   'Master Student',
                   'Bachelor Student',
                   'Guest Researcher',
+                  'Secretary',
                   'Alumni'
                 ],
                 'required' => true
@@ -140,7 +142,7 @@ module Jekyll
                 'accept' => 'image/*',
                 'maxSize' => '5MB'
               },
-              'research' => {
+              'research_interests' => {
                 'type' => 'text',
                 'label' => 'Research Interests',
                 'rows' => 3
@@ -149,11 +151,37 @@ module Jekyll
                 'type' => 'rich-text',
                 'label' => 'Biography'
               },
+              'website' => {
+                'type' => 'string',
+                'label' => 'Website URL',
+                'validation' => { 'pattern' => '^https?://.+' }
+              },
+              'github' => {
+                'type' => 'string',
+                'label' => 'GitHub Username'
+              },
+              'orcid' => {
+                'type' => 'string',
+                'label' => 'ORCID ID'
+              },
+              'order' => {
+                'type' => 'number',
+                'label' => 'Sort Order',
+                'default' => 100
+              },
+              'graduation_year' => {
+                'type' => 'number',
+                'label' => 'Graduation Year'
+              },
+              'current_position' => {
+                'type' => 'string',
+                'label' => 'Current Position'
+              },
               'status' => {
                 'type' => 'select',
                 'label' => 'Status',
-                'options' => ['Active', 'Inactive', 'Alumni'],
-                'default' => 'Active'
+                'options' => ['active', 'inactive', 'alumni'],
+                'default' => 'active'
               }
             }
           },
@@ -444,7 +472,7 @@ module Jekyll
       case content_type
       when 'member'
         front_matter['layout'] ||= 'member'
-        front_matter['status'] ||= 'Active'
+        front_matter['status'] ||= 'active'
         front_matter['role'] ||= 'Member'
       when 'publication'
         front_matter['layout'] ||= 'publication'
@@ -482,7 +510,7 @@ module Jekyll
             
             # Ensure member data has required fields for Pages CMS
             member_data['layout'] ||= 'member'
-            member_data['status'] ||= 'Active'
+            member_data['status'] ||= 'active'
             
             # Update file with standardized front matter
             update_member_file(file, member_data, body)

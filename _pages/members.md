@@ -10,8 +10,8 @@ nav_order: 3
 <!-- Simple Navigation -->
 <div class="members-nav-simple">
   <div class="container">
-    <button class="nav-btn active" onclick="showSection('current')">Current Members</button>
-    <button class="nav-btn" onclick="showSection('alumni')">Former Members</button>
+    <button id="btn-current" class="nav-btn active" onclick="showSection('current')">Current Members</button>
+    <button id="btn-alumni" class="nav-btn" onclick="showSection('alumni')">Former Members</button>
   </div>
 </div>
 
@@ -489,7 +489,12 @@ function showSection(sectionName) {
   // Show selected section
   document.getElementById(sectionName + '-section').classList.add('active');
   
-  // Add active class to clicked button
-  event.target.classList.add('active');
+  // Update button active states without relying on global event
+  const btnCurrent = document.getElementById('btn-current');
+  const btnAlumni = document.getElementById('btn-alumni');
+  if (btnCurrent && btnAlumni) {
+    btnCurrent.classList.toggle('active', sectionName === 'current');
+    btnAlumni.classList.toggle('active', sectionName === 'alumni');
+  }
 }
 </script> 
