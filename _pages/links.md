@@ -93,7 +93,8 @@ nav_order: 4
 
 <div class="links-list mt-5">
   {% if site.links %}
-    {% assign links_by_category = site.links | group_by: "category" | sort: "name" %}
+    {% assign ordered_links = site.links | sort: 'order' %}
+    {% assign links_by_category = ordered_links | group_by: "category" | sort: "name" %}
     
     {% for category_group in links_by_category %}
       <h2 class="category-heading">{{ category_group.name }}</h2>

@@ -664,6 +664,21 @@ module Jekyll
               Jekyll.logger.warn "Pages CMS:", "Could not sanitize teaching filename #{File.basename(file)}: #{e.message}"
             end
 
+            # Compute normalized semester metadata for reliable sorting/grouping
+            begin
+              if teaching_data['semester']
+                term, sort_year, key = normalize_semester(teaching_data['semester'].to_s)
+                if term && sort_year && key
+                  teaching_data['semester_term'] = term # 'WS' or 'SS'
+                  teaching_data['semester_year'] = sort_year
+                  teaching_data['semester_key']  = key   # e.g., 'WS2026'
+                  teaching_data['semester_sort'] = (sort_year.to_i * 10) + (term == 'WS' ? 2 : 1)
+                end
+              end
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not normalize semester for #{File.basename(file)}: #{e.message}"
+            end
+
             # Update file with standardized front matter
             update_teaching_file(file, teaching_data, body)
             
@@ -794,6 +809,46 @@ module Jekyll
 
       File.rename(file_path, target_path)
       Jekyll.logger.info "Pages CMS:", "Renamed teaching file #{basename} -> #{target_basename}"
+    end
+
+    # Parse various semester formats and return [term, year, key]
+    # Supported examples:
+    # - 'SS2026', 'WS2026', 'SS26', 'WS26'
+    # - 'Summer term 2025', 'Winter term 2023/24', 'Winter Semester 2025'
+    def normalize_semester(semester_str)
+      s = semester_str.strip
+      # Direct SS/WS with 4 or 2 digits
+      if m = s.match(/\A(S[US])\s*(\d{2,4})\z/i)
+        term = m[1].upcase
+        year = m[2].to_i
+        year += 2000 if year < 100
+        return [term, year, "#{term}#{year}"]
+      end
+
+      # Summer/Winter term 2025 or Winter term 2023/24
+      if m = s.match(/\A(Summer|Winter)\s+(?:Semester|term)\s+(\d{4})(?:\/(\d{2}))?\z/i)
+        season = m[1].downcase
+        y1 = m[2].to_i
+        y2 = m[3] ? (2000 + m[3].to_i) : nil
+        term = season.start_with?('summer') ? 'SS' : 'WS'
+        # Winter term spans two years; use second year when given to keep WS later than SS same calendar year
+        year = term == 'WS' ? (y2 || y1) : y1
+        return [term, year, "#{term}#{year}"]
+      end
+
+      # Fallback: detect season keywords and any 4-digit year
+      if s =~ /summer/i || s =~ /ss/i
+        if y = s[/\d{4}/]
+          return ['SS', y.to_i, "SS#{y}"]
+        end
+      elsif s =~ /winter/i || s =~ /ws/i
+        if y = s[/\d{4}/]
+          return ['WS', y.to_i, "WS#{y}"]
+        end
+      end
+
+      # No parse
+      [nil, nil, nil]
     end
   end
 end 
