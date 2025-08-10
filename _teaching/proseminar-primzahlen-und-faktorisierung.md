@@ -11,6 +11,10 @@ order: 999
 semester: Winter term 2016/17
 title: Primzahlen und Faktorisierung für die Kryptographie
 status: Active
+semester_term: WS
+semester_year: 2017
+semester_key: WS2017
+semester_sort: 20172
 ---
 
 

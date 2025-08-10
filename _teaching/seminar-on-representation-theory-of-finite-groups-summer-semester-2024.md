@@ -10,6 +10,10 @@ order: 999
 semester: Summer term 2024
 title: Representation theory of finite groups
 status: Active
+semester_term: SS
+semester_year: 2024
+semester_key: SS2024
+semester_sort: 20241
 ---
 
 

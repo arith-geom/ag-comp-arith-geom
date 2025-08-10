@@ -10,6 +10,10 @@ order: 999
 semester: Summer term 2016
 title: p-adische Analysis
 status: Active
+semester_term: SS
+semester_year: 2016
+semester_key: SS2016
+semester_sort: 20161
 ---
 
 

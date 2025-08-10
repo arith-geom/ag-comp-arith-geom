@@ -10,6 +10,10 @@ order: 999
 semester: Winter term 2024/25
 title: Modularity and Galois Representations
 status: Active
+semester_term: WS
+semester_year: 2025
+semester_key: WS2025
+semester_sort: 20252
 ---
 
 

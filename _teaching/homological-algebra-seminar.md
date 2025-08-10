@@ -10,6 +10,10 @@ order: 999
 semester: Summer term 2025
 title: Homological Algebra
 status: Active
+semester_term: SS
+semester_year: 2025
+semester_key: SS2025
+semester_sort: 20251
 ---
 
 

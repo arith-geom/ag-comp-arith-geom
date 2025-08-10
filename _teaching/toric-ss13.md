@@ -10,6 +10,10 @@ order: 999
 semester: Summer term 2013
 title: Torische Varietäten
 status: Active
+semester_term: SS
+semester_year: 2013
+semester_key: SS2013
+semester_sort: 20131
 ---
 
 

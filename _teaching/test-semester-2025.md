@@ -8,6 +8,10 @@ language: en
 description: This is a test course created to verify Pages CMS real-time integration
 active: true
 status: Active
+semester_term: WS
+semester_year: 2025
+semester_key: WS2025
+semester_sort: 20252
 ---
 
 

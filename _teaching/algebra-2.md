@@ -10,6 +10,10 @@ order: 999
 semester: Summer term 2017
 title: Algebra 2
 status: Active
+semester_term: SS
+semester_year: 2017
+semester_key: SS2017
+semester_sort: 20171
 ---
 
 

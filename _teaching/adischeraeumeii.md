@@ -10,6 +10,10 @@ order: 999
 semester: Summer term 2020
 title: Adische Räume II
 status: Active
+semester_term: SS
+semester_year: 2020
+semester_key: SS2020
+semester_sort: 20201
 ---
 
 

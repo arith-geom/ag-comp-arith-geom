@@ -10,6 +10,10 @@ order: 999
 semester: Winter term 2023/24
 title: Quadratic forms
 status: Active
+semester_term: WS
+semester_year: 2024
+semester_key: WS2024
+semester_sort: 20242
 ---
 
 

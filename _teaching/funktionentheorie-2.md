@@ -10,6 +10,10 @@ order: 999
 semester: Winter term 2018/19
 title: Funktionentheorie 2
 status: Active
+semester_term: WS
+semester_year: 2019
+semester_key: WS2019
+semester_sort: 20192
 ---
 
 

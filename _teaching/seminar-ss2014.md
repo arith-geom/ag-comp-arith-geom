@@ -10,6 +10,10 @@ order: 999
 semester: Summer term 2014
 title: p-adische Geometrie
 status: Active
+semester_term: SS
+semester_year: 2014
+semester_key: SS2014
+semester_sort: 20141
 ---
 
 

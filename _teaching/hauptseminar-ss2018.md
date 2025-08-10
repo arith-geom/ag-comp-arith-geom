@@ -10,6 +10,10 @@ order: 999
 semester: Summer term 2018
 title: Arithmetik von Zahl- und Funktionenkörpern
 status: Active
+semester_term: SS
+semester_year: 2018
+semester_key: SS2018
+semester_sort: 20181
 ---
 
 

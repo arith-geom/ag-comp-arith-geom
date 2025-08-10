@@ -10,6 +10,10 @@ order: 999
 semester: Winter term 2013/14
 title: Modularity Lifting
 status: Active
+semester_term: WS
+semester_year: 2014
+semester_key: WS2014
+semester_sort: 20142
 ---
 
 

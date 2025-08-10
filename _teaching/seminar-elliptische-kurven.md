@@ -10,6 +10,10 @@ order: 999
 semester: Winter term 2020/21
 title: Elliptische Kurven
 status: Active
+semester_term: WS
+semester_year: 2021
+semester_key: WS2021
+semester_sort: 20212
 ---
 
 

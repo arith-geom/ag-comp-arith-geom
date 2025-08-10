@@ -10,6 +10,10 @@ order: 999
 semester: Summer term 2019
 title: Kompatible Systeme von Galoisdarstellungen
 status: Active
+semester_term: SS
+semester_year: 2019
+semester_key: SS2019
+semester_sort: 20191
 ---
 
 

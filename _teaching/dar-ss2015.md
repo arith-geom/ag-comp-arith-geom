@@ -10,6 +10,10 @@ order: 999
 semester: Summer term 2015
 title: Darstellungstheorie
 status: Active
+semester_term: SS
+semester_year: 2015
+semester_key: SS2015
+semester_sort: 20151
 ---
 
 

@@ -11,6 +11,10 @@ order: 999
 semester: Summer term 2021
 title: Derivierte Kategorien und Algebraische Geometrie
 status: Active
+semester_term: SS
+semester_year: 2021
+semester_key: SS2021
+semester_sort: 20211
 ---
 
 

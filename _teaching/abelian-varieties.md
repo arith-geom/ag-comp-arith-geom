@@ -10,6 +10,10 @@ order: 999
 semester: Winter term 2021/22
 title: Abelian Varieties
 status: Active
+semester_term: WS
+semester_year: 2022
+semester_key: WS2022
+semester_sort: 20222
 ---
 
 

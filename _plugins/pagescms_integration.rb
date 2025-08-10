@@ -91,6 +91,9 @@ module Jekyll
     end
 
     def create_pagescms_config
+      # Honor config flag: only generate JSON config if explicitly enabled
+      return unless @site.config.dig('pagescms', 'write_generated_config') == true
+
       # Build dynamic option lists for CMS fields
       # Publication years (descending)
       publication_year_options = (1980..2040).to_a.reverse.map(&:to_s)
