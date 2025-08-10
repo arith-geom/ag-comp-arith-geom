@@ -208,7 +208,7 @@ content:
       fields: [name, role, status, email, order]
       primary: name
       sort:
-        field: order
+        field: role
         direction: asc
       search: [name, role, research_interests]
       filters:
@@ -216,7 +216,7 @@ content:
           label: Status
         - field: role
           label: Role
-      group_by: status
+      group_by: role
     fields:
       - name: layout
         label: Layout
@@ -296,7 +296,7 @@ content:
       fields: [title, semester, instructor, course_type, active]
       primary: title
       sort:
-        field: semester
+        field: semester_year
         direction: desc
       search: [title, instructor, description]
       filters:
@@ -483,7 +483,7 @@ content:
       fields: [title, description, featured, order]
       primary: title
       sort:
-        field: order
+        field: title
         direction: asc
       search: [title, description, keywords]
       filters:
