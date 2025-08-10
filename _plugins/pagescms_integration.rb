@@ -276,6 +276,28 @@ module Jekyll
                 'label' => 'Semester',
                 'required' => true
               },
+              'course_type' => {
+                'type' => 'select',
+                'label' => 'Course Type',
+                'options' => [
+                  'Lecture',
+                  'Vorlesung',
+                  'Seminar',
+                  'Proseminar',
+                  'Hauptseminar',
+                  'Exercise sessions'
+                ]
+              },
+              'language' => {
+                'type' => 'select',
+                'label' => 'Language',
+                'options' => ['en', 'de'],
+                'default' => 'en'
+              },
+              'instructor' => {
+                'type' => 'string',
+                'label' => 'Instructor(s)'
+              },
               'description' => {
                 'type' => 'rich-text',
                 'label' => 'Course Description'
@@ -285,7 +307,49 @@ module Jekyll
                 'label' => 'Course Materials',
                 'multiple' => true,
                 'accept' => '.pdf,.doc,.docx,.ppt,.pptx'
+              },
+              'active' => {
+                'type' => 'select',
+                'label' => 'Active',
+                'options' => ['true', 'false'],
+                'default' => 'false'
               }
+            }
+          },
+          'links' => {
+            'name' => 'Links',
+            'description' => 'Useful external resources and organizations',
+            'fields' => {
+              'title' => { 'type' => 'string', 'label' => 'Title', 'required' => true },
+              'category' => {
+                'type' => 'select',
+                'label' => 'Category',
+                'options' => [
+                  'Tooling',
+                  'Research Project',
+                  'Research Center',
+                  'Institution',
+                  'Journal',
+                  'Administrative',
+                  'Contact'
+                ]
+              },
+              'url' => {
+                'type' => 'string',
+                'label' => 'URL',
+                'validation' => { 'pattern' => '^https?://.+' }
+              },
+              'description' => { 'type' => 'text', 'label' => 'Description' },
+              'order' => { 'type' => 'number', 'label' => 'Sort Order', 'default' => 100 }
+            }
+          },
+          'pages' => {
+            'name' => 'Pages',
+            'description' => 'Static site pages',
+            'fields' => {
+              'title' => { 'type' => 'string', 'label' => 'Title', 'required' => true },
+              'content' => { 'type' => 'rich-text', 'label' => 'Content' },
+              'description' => { 'type' => 'text', 'label' => 'Short Description' }
             }
           }
         }
