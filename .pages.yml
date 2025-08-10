@@ -81,25 +81,27 @@ content:
         type: select
         required: true
         options:
-          "Journal Article": Journal Article
-          "Preprint": Preprint
-          "Conference Paper": Conference Paper
-          "Book": Book
-          "Book Chapter": Book Chapter
-          "Thesis": Thesis
-          "Software": Software
-          "Technical Report": Technical Report
+          values:
+            - { label: Journal Article, value: "Journal Article" }
+            - { label: Preprint, value: "Preprint" }
+            - { label: Conference Paper, value: "Conference Paper" }
+            - { label: Book, value: "Book" }
+            - { label: Book Chapter, value: "Book Chapter" }
+            - { label: Thesis, value: "Thesis" }
+            - { label: Software, value: "Software" }
+            - { label: Technical Report, value: "Technical Report" }
         default: "Journal Article"
         description: "Type of publication"
       - name: status
         label: Publication Status
         type: select
         options:
-          "Published": Published
-          "Submitted": Submitted
-          "Under Review": Under Review
-          "In Preparation": In Preparation
-          "Accepted": Accepted
+          values:
+            - { label: Published, value: "Published" }
+            - { label: Submitted, value: "Submitted" }
+            - { label: Under Review, value: "Under Review" }
+            - { label: In Preparation, value: "In Preparation" }
+            - { label: Accepted, value: "Accepted" }
         default: "Published"
         description: "Current status of the publication"
       - name: journal
@@ -174,25 +176,26 @@ content:
         type: select
         required: true
         options:
-          "Professor & Group Leader": Professor & Group Leader
-          "Postdoctoral Researcher": Postdoctoral Researcher
-          "PhD Student": PhD Student
-          "Master Student": Master Student
-          "Bachelor Student": Bachelor Student
-          "Secretary": Secretary
-          "Former Member": Former Member
-          "Alumni": Alumni
-          "Guest Researcher": Guest Researcher
+          values:
+            - { label: "Professor & Group Leader", value: "Professor & Group Leader" }
+            - { label: "Postdoctoral Researcher", value: "Postdoctoral Researcher" }
+            - { label: "PhD Student", value: "PhD Student" }
+            - { label: "Master Student", value: "Master Student" }
+            - { label: "Bachelor Student", value: "Bachelor Student" }
+            - { label: "Secretary", value: "Secretary" }
+            - { label: "Alumni", value: "Alumni" }
+            - { label: "Guest Researcher", value: "Guest Researcher" }
         description: "Academic or professional role"
       - name: status
         label: Status
         type: select
         options:
-          active: Active Member
-          alumni: Alumni
-          former: Former Member
-          inactive: Inactive
-          visitor: Visitor
+          values:
+            - { label: Active Member, value: active }
+            - { label: Alumni, value: alumni }
+            - { label: Former Member, value: former }
+            - { label: Inactive, value: inactive }
+            - { label: Visitor, value: visitor }
         default: active
         required: true
         description: "Current status of the team member"
@@ -438,11 +441,12 @@ content:
         label: Category
         type: select
         options:
-          Institution: Institution
-          Journal: Journal
-          Research Project: Research Project
-          Administrative: Administrative
-          Tooling: Tooling
+          values:
+            - { label: Institution, value: Institution }
+            - { label: Journal, value: Journal }
+            - { label: Research Project, value: "Research Project" }
+            - { label: Administrative, value: Administrative }
+            - { label: Tooling, value: Tooling }
       - name: description
         label: Description
         type: rich-text
