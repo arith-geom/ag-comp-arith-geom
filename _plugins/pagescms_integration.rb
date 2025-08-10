@@ -91,6 +91,25 @@ module Jekyll
     end
 
     def create_pagescms_config
+      # Build dynamic option lists for CMS fields
+      # Publication years (descending)
+      publication_year_options = (1980..2040).to_a.reverse.map(&:to_s)
+
+      # Teaching semester options up to 2040
+      # Use human-friendly labels that our normalizer understands, e.g.:
+      #  - "Summer Semester 2025"
+      #  - "Winter Semester 2025/26"
+      semester_options = []
+      (2000..2040).each do |y|
+        # Summer semester in same calendar year
+        semester_options << "Summer Semester #{y}"
+        # Winter semester spans years y/y+1 with two-digit second year
+        if y < 2040
+          next_two = ((y + 1) % 100).to_s.rjust(2, '0')
+          semester_options << "Winter Semester #{y}/#{next_two}"
+        end
+      end
+
       config_data = {
         'name' => @site.config['title'] || 'AG Computational Arithmetic Geometry',
         'description' => @site.config['description'] || 'Academic website',
@@ -200,9 +219,10 @@ module Jekyll
                 'required' => true
               },
               'year' => {
-                'type' => 'number',
+                'type' => 'select',
                 'label' => 'Publication Year',
-                'required' => true
+                'required' => true,
+                'options' => publication_year_options
               },
               'type' => {
                 'type' => 'select',
@@ -272,9 +292,10 @@ module Jekyll
                 'required' => true
               },
               'semester' => {
-                'type' => 'string',
+                'type' => 'select',
                 'label' => 'Semester',
-                'required' => true
+                'required' => true,
+                'options' => semester_options
               },
               'course_type' => {
                 'type' => 'select',
