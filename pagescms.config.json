@@ -1,0 +1,444 @@
+{
+  "name": "AG Computational Arithmetic Geometry ",
+  "description": "This is the website of the research group \"computational arithmetic geometry\" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.",
+  "version": "1.0.0",
+  "repository": {
+    "repoUrl": "https://github.com/VictorMerk/ag-comp-arith-geom",
+    "branch": "CMS"
+  },
+  "contentTypes": {
+    "team-members": {
+      "name": "Team Members",
+      "description": "Faculty, staff, and students",
+      "fields": {
+        "name": {
+          "type": "string",
+          "label": "Full Name",
+          "required": true,
+          "validation": {
+            "minLength": 2,
+            "maxLength": 100
+          }
+        },
+        "role": {
+          "type": "select",
+          "label": "Role",
+          "options": [
+            "Professor & Group Leader",
+            "Professor",
+            "Postdoctoral Researcher",
+            "PhD Student",
+            "Master Student",
+            "Bachelor Student",
+            "Guest Researcher",
+            "Secretary",
+            "Alumni"
+          ],
+          "required": true
+        },
+        "email": {
+          "type": "string",
+          "label": "Email Address",
+          "validation": {
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+          }
+        },
+        "photo": {
+          "type": "file",
+          "label": "Profile Photo",
+          "accept": "image/*",
+          "maxSize": "5MB"
+        },
+        "research_interests": {
+          "type": "text",
+          "label": "Research Interests",
+          "rows": 3
+        },
+        "bio": {
+          "type": "rich-text",
+          "label": "Biography"
+        },
+        "website": {
+          "type": "string",
+          "label": "Website URL",
+          "validation": {
+            "pattern": "^https?://.+"
+          }
+        },
+        "github": {
+          "type": "string",
+          "label": "GitHub Username"
+        },
+        "orcid": {
+          "type": "string",
+          "label": "ORCID ID"
+        },
+        "order": {
+          "type": "number",
+          "label": "Sort Order",
+          "default": 100
+        },
+        "graduation_year": {
+          "type": "number",
+          "label": "Graduation Year"
+        },
+        "current_position": {
+          "type": "string",
+          "label": "Current Position"
+        },
+        "status": {
+          "type": "select",
+          "label": "Status",
+          "options": [
+            "active",
+            "inactive",
+            "alumni"
+          ],
+          "default": "active"
+        }
+      }
+    },
+    "publications": {
+      "name": "Publications",
+      "description": "Research publications and papers",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Publication Title",
+          "required": true
+        },
+        "authors": {
+          "type": "string",
+          "label": "Authors",
+          "required": true
+        },
+        "year": {
+          "type": "select",
+          "label": "Publication Year",
+          "required": true,
+          "options": [
+            "2040",
+            "2039",
+            "2038",
+            "2037",
+            "2036",
+            "2035",
+            "2034",
+            "2033",
+            "2032",
+            "2031",
+            "2030",
+            "2029",
+            "2028",
+            "2027",
+            "2026",
+            "2025",
+            "2024",
+            "2023",
+            "2022",
+            "2021",
+            "2020",
+            "2019",
+            "2018",
+            "2017",
+            "2016",
+            "2015",
+            "2014",
+            "2013",
+            "2012",
+            "2011",
+            "2010",
+            "2009",
+            "2008",
+            "2007",
+            "2006",
+            "2005",
+            "2004",
+            "2003",
+            "2002",
+            "2001",
+            "2000",
+            "1999",
+            "1998",
+            "1997",
+            "1996",
+            "1995",
+            "1994",
+            "1993",
+            "1992",
+            "1991",
+            "1990",
+            "1989",
+            "1988",
+            "1987",
+            "1986",
+            "1985",
+            "1984",
+            "1983",
+            "1982",
+            "1981",
+            "1980"
+          ]
+        },
+        "type": {
+          "type": "select",
+          "label": "Publication Type",
+          "options": [
+            "Journal Article",
+            "Preprint",
+            "Conference Paper",
+            "Book",
+            "Book Chapter",
+            "Thesis",
+            "Software",
+            "Technical Report"
+          ],
+          "default": "Journal Article"
+        },
+        "abstract": {
+          "type": "text",
+          "label": "Abstract",
+          "rows": 5
+        },
+        "doi": {
+          "type": "string",
+          "label": "DOI"
+        },
+        "url": {
+          "type": "string",
+          "label": "URL",
+          "validation": {
+            "pattern": "^https?://.+"
+          }
+        }
+      }
+    },
+    "research": {
+      "name": "Research Areas",
+      "description": "Research areas and projects",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Research Area Title",
+          "required": true
+        },
+        "description": {
+          "type": "rich-text",
+          "label": "Description"
+        },
+        "keywords": {
+          "type": "text",
+          "label": "Keywords",
+          "placeholder": "Comma-separated keywords"
+        },
+        "image": {
+          "type": "file",
+          "label": "Research Area Image",
+          "accept": "image/*"
+        }
+      }
+    },
+    "teaching": {
+      "name": "Teaching",
+      "description": "Courses and teaching materials",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Course Title",
+          "required": true
+        },
+        "semester": {
+          "type": "select",
+          "label": "Semester",
+          "required": true,
+          "options": [
+            "Summer Semester 2000",
+            "Winter Semester 2000/01",
+            "Summer Semester 2001",
+            "Winter Semester 2001/02",
+            "Summer Semester 2002",
+            "Winter Semester 2002/03",
+            "Summer Semester 2003",
+            "Winter Semester 2003/04",
+            "Summer Semester 2004",
+            "Winter Semester 2004/05",
+            "Summer Semester 2005",
+            "Winter Semester 2005/06",
+            "Summer Semester 2006",
+            "Winter Semester 2006/07",
+            "Summer Semester 2007",
+            "Winter Semester 2007/08",
+            "Summer Semester 2008",
+            "Winter Semester 2008/09",
+            "Summer Semester 2009",
+            "Winter Semester 2009/10",
+            "Summer Semester 2010",
+            "Winter Semester 2010/11",
+            "Summer Semester 2011",
+            "Winter Semester 2011/12",
+            "Summer Semester 2012",
+            "Winter Semester 2012/13",
+            "Summer Semester 2013",
+            "Winter Semester 2013/14",
+            "Summer Semester 2014",
+            "Winter Semester 2014/15",
+            "Summer Semester 2015",
+            "Winter Semester 2015/16",
+            "Summer Semester 2016",
+            "Winter Semester 2016/17",
+            "Summer Semester 2017",
+            "Winter Semester 2017/18",
+            "Summer Semester 2018",
+            "Winter Semester 2018/19",
+            "Summer Semester 2019",
+            "Winter Semester 2019/20",
+            "Summer Semester 2020",
+            "Winter Semester 2020/21",
+            "Summer Semester 2021",
+            "Winter Semester 2021/22",
+            "Summer Semester 2022",
+            "Winter Semester 2022/23",
+            "Summer Semester 2023",
+            "Winter Semester 2023/24",
+            "Summer Semester 2024",
+            "Winter Semester 2024/25",
+            "Summer Semester 2025",
+            "Winter Semester 2025/26",
+            "Summer Semester 2026",
+            "Winter Semester 2026/27",
+            "Summer Semester 2027",
+            "Winter Semester 2027/28",
+            "Summer Semester 2028",
+            "Winter Semester 2028/29",
+            "Summer Semester 2029",
+            "Winter Semester 2029/30",
+            "Summer Semester 2030",
+            "Winter Semester 2030/31",
+            "Summer Semester 2031",
+            "Winter Semester 2031/32",
+            "Summer Semester 2032",
+            "Winter Semester 2032/33",
+            "Summer Semester 2033",
+            "Winter Semester 2033/34",
+            "Summer Semester 2034",
+            "Winter Semester 2034/35",
+            "Summer Semester 2035",
+            "Winter Semester 2035/36",
+            "Summer Semester 2036",
+            "Winter Semester 2036/37",
+            "Summer Semester 2037",
+            "Winter Semester 2037/38",
+            "Summer Semester 2038",
+            "Winter Semester 2038/39",
+            "Summer Semester 2039",
+            "Winter Semester 2039/40",
+            "Summer Semester 2040"
+          ]
+        },
+        "course_type": {
+          "type": "select",
+          "label": "Course Type",
+          "options": [
+            "Lecture",
+            "Vorlesung",
+            "Seminar",
+            "Proseminar",
+            "Hauptseminar",
+            "Exercise sessions"
+          ]
+        },
+        "language": {
+          "type": "select",
+          "label": "Language",
+          "options": [
+            "en",
+            "de"
+          ],
+          "default": "en"
+        },
+        "instructor": {
+          "type": "string",
+          "label": "Instructor(s)"
+        },
+        "description": {
+          "type": "rich-text",
+          "label": "Course Description"
+        },
+        "materials": {
+          "type": "file",
+          "label": "Course Materials",
+          "multiple": true,
+          "accept": ".pdf,.doc,.docx,.ppt,.pptx"
+        },
+        "active": {
+          "type": "select",
+          "label": "Active",
+          "options": [
+            "true",
+            "false"
+          ],
+          "default": "false"
+        }
+      }
+    },
+    "links": {
+      "name": "Links",
+      "description": "Useful external resources and organizations",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Title",
+          "required": true
+        },
+        "category": {
+          "type": "select",
+          "label": "Category",
+          "options": [
+            "Tooling",
+            "Research Project",
+            "Research Center",
+            "Institution",
+            "Journal",
+            "Administrative",
+            "Contact"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "label": "URL",
+          "validation": {
+            "pattern": "^https?://.+"
+          }
+        },
+        "description": {
+          "type": "text",
+          "label": "Description"
+        },
+        "order": {
+          "type": "number",
+          "label": "Sort Order",
+          "default": 100
+        }
+      }
+    },
+    "pages": {
+      "name": "Pages",
+      "description": "Static site pages",
+      "fields": {
+        "title": {
+          "type": "string",
+          "label": "Title",
+          "required": true
+        },
+        "content": {
+          "type": "rich-text",
+          "label": "Content"
+        },
+        "description": {
+          "type": "text",
+          "label": "Short Description"
+        }
+      }
+    }
+  }
+}

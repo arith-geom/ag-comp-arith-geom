@@ -16,7 +16,7 @@ nav_order: 3
 </div>
 
 <div class="team-sections">
-  {% assign sorted_members = site.members | sort: 'order' %}
+  {% assign sorted_members = site.members | sort: 'role' | sort: 'order' %}
   
   <!-- Current Members Section -->
   <div id="current-section" class="members-content-section active">

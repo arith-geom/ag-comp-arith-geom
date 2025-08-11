@@ -1,13 +1,11 @@
 ---
 ---
-layout: teaching
-active: false
----
 layout: page
 title: Teaching
 permalink: "/teaching/"
 scripts:
-  - "/assets/js/teaching-page.js"
+- "/assets/js/teaching-page.js"
+active: false
 ---
 
 
@@ -83,7 +81,7 @@ scripts:
     <h3 class="section-title recent-title">
       <i class="fas fa-clock"></i> Recent Teaching
     </h3>
-    {% assign recent_courses = teaching_sorted | where_exp: "c", "(c.active != true and c.active != 'true') and c.semester_year >= 2020" %}
+    {% assign recent_courses = teaching_sorted | where_exp: "c", "c.active != true and c.active != 'true' and c.semester_year >= 2020" %}
     {% assign recent_by_semester = recent_courses | group_by: 'semester_key' %}
     {% for sem in recent_by_semester %}
       {% assign sample = sem.items | first %}
@@ -113,7 +111,7 @@ scripts:
       <i class="fas fa-history"></i> Historical Teaching
     </h3>
     <div class="historical-content">
-      {% assign historical_courses = teaching_sorted | where_exp: "c", "(c.active != true and c.active != 'true') and c.semester_year < 2020" %}
+      {% assign historical_courses = teaching_sorted | where_exp: "c", "c.active != true and c.active != 'true' and c.semester_year < 2020" %}
       {% assign historical_by_semester = historical_courses | group_by: 'semester_key' %}
       {% for sem in historical_by_semester %}
         {% assign sample = sem.items | first %}

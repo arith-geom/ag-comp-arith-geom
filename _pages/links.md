@@ -92,14 +92,15 @@ nav_order: 4
 </div>
 
 <div class="links-list mt-5">
-  {% if site.links %}
-    {% assign ordered_links = site.links | sort: 'order' %}
-    {% assign links_by_category = ordered_links | group_by: "category" | sort: "name" %}
+ {% if site.links %}
+   {% assign alpha_links = site.links | sort: 'title' %}
+    {% assign links_by_category = alpha_links | group_by: "category" | sort: "name" %}
     
     {% for category_group in links_by_category %}
       <h2 class="category-heading">{{ category_group.name }}</h2>
       <div class="list-group">
-        {% for link in category_group.items %}
+        {% assign cat_links = category_group.items | sort: 'title' %}
+        {% for link in cat_links %}
           <a href="{{ link.url }}" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{ link.title }}</h5>

@@ -72,7 +72,19 @@ module Jekyll
     end
 
     def write_front_matter_and_body(file_path, front_matter, body)
-      new_content = "---\n#{front_matter.to_yaml}---\n#{body}"
+      # YAML.dump includes the leading '---' line, remove it to avoid duplicates
+      begin
+        yaml_text = YAML.dump(front_matter.is_a?(Hash) ? front_matter : {})
+        yaml_text = yaml_text.sub(/\A---\s*\n/, '')
+      rescue
+        yaml_text = (front_matter || {}).to_yaml.sub(/\A---\s*\n/, '')
+      end
+
+      cleaned_body = body.to_s
+      # Avoid accidental extra front matter markers in body
+      cleaned_body = cleaned_body.lstrip
+
+      new_content = "---\n#{yaml_text}---\n#{cleaned_body}"
       File.write(file_path, new_content)
     end
 
@@ -381,6 +393,11 @@ module Jekyll
 
       # Write Pages CMS configuration
       File.write('pagescms.config.json', JSON.pretty_generate(config_data))
+      begin
+        File.chmod(0644, 'pagescms.config.json')
+      rescue
+        # ignore permissions errors on non-POSIX fs
+      end
     end
 
     def setup_content_sync
@@ -411,6 +428,9 @@ module Jekyll
       process_teaching_content
       process_links_content
       process_pages_content
+
+      # Enrich in-memory docs so Liquid sorts immediately on the same build
+      enrich_documents_for_sorting
     end
 
     def sync_pagescms_content
@@ -595,10 +615,24 @@ module Jekyll
         Dir.glob(File.join(members_dir, '*.md')).each do |file|
           begin
             member_data, body = read_front_matter_and_body(file)
+
+            # Sanitize filenames generated from CMS templates
+            begin
+              fix_member_filename_if_needed(file, member_data)
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not sanitize member filename #{File.basename(file)}: #{e.message}"
+            end
             
             # Ensure member data has required fields for Pages CMS
             member_data['layout'] ||= 'member'
             member_data['status'] ||= 'active'
+
+            # Heuristics to fill missing fields from filename
+            begin
+              ensure_member_fields(file, member_data)
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not enrich member metadata for #{File.basename(file)}: #{e.message}"
+            end
             
             # Update file with standardized front matter
             update_member_file(file, member_data, body)
@@ -621,10 +655,24 @@ module Jekyll
         Dir.glob(File.join(publications_dir, '*.md')).each do |file|
           begin
             pub_data, body = read_front_matter_and_body(file)
+
+            # Sanitize filenames generated from CMS templates
+            begin
+              fix_publication_filename_if_needed(file, pub_data)
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not sanitize publication filename #{File.basename(file)}: #{e.message}"
+            end
             
             # Ensure publication data has required fields for Pages CMS
             pub_data['layout'] ||= 'publication'
             pub_data['type'] ||= 'Journal Article'
+
+            # Heuristics to fill missing fields from filename
+            begin
+              ensure_publication_fields(file, pub_data)
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not enrich publication metadata for #{File.basename(file)}: #{e.message}"
+            end
             
             # Update file with standardized front matter
             update_publication_file(file, pub_data, body)
@@ -653,6 +701,13 @@ module Jekyll
               research_data['layout'] = 'page'
             end
             
+            # Fill missing title from filename when needed
+            begin
+              ensure_title_from_filename(file, research_data, 'title')
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not infer research title for #{File.basename(file)}: #{e.message}"
+            end
+
             # Update file with standardized front matter
             update_research_file(file, research_data, body)
             
@@ -730,6 +785,14 @@ module Jekyll
               link_data['layout'] = 'page'
             end
 
+            # Ensure title/order defaults
+            link_data['order'] ||= 100
+            begin
+              ensure_title_from_filename(file, link_data, 'title')
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not infer link title for #{File.basename(file)}: #{e.message}"
+            end
+
             update_link_file(file, link_data, body)
 
             Jekyll.logger.debug "Pages CMS: Processed link file #{file}"
@@ -752,6 +815,14 @@ module Jekyll
             page_data, body = read_front_matter_and_body(file)
 
             page_data['layout'] ||= 'page'
+            page_data['order'] ||= 100
+
+            # Fill missing title from filename when needed
+            begin
+              ensure_title_from_filename(file, page_data, 'title')
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not infer page title for #{File.basename(file)}: #{e.message}"
+            end
 
             update_page_file(file, page_data, body)
 
@@ -762,6 +833,55 @@ module Jekyll
         end
       rescue => e
         Jekyll.logger.error "Pages CMS: Error processing pages directory: #{e.message}"
+      end
+    end
+
+    # Ensure documents have normalized fields required for correct sorting immediately
+    def enrich_documents_for_sorting
+      begin
+        # Teaching normalization in-memory (semester_* fields)
+        (@site.collections['teaching']&.docs || []).each do |doc|
+          data = doc.data
+          next unless data
+          s = data['semester']
+          next unless s && !s.to_s.strip.empty?
+          term, sort_year, key = normalize_semester(s.to_s)
+          if term && sort_year && key
+            data['semester_term'] ||= term
+            data['semester_year'] ||= sort_year
+            data['semester_key']  ||= key
+            data['semester_sort'] ||= (sort_year.to_i * 10) + (term == 'WS' ? 2 : 1)
+          end
+        end
+
+        # Members role priority for optional use
+        role_priority = {
+          'Professor & Group Leader' => 0,
+          'Professor' => 1,
+          'Postdoctoral Researcher' => 2,
+          'PhD Student' => 3,
+          'Master Student' => 4,
+          'Bachelor Student' => 5,
+          'Secretary' => 6,
+          'Guest Researcher' => 7,
+          'Alumni' => 9
+        }
+        (@site.collections['members']&.docs || []).each do |doc|
+          data = doc.data
+          next unless data
+          role = data['role'].to_s
+          data['role_sort'] ||= role_priority.fetch(role, 99)
+          data['order'] ||= 999
+        end
+
+        # Deterministic default order for links/pages
+        %w[links pages].each do |coll|
+          (@site.collections[coll]&.docs || []).each do |doc|
+            doc.data['order'] ||= 100
+          end
+        end
+      rescue => e
+        Jekyll.logger.warn "Pages CMS:", "Document enrichment failed: #{e.message}"
       end
     end
 
@@ -833,6 +953,116 @@ module Jekyll
 
       File.rename(file_path, target_path)
       Jekyll.logger.info "Pages CMS:", "Renamed teaching file #{basename} -> #{target_basename}"
+    end
+
+    # Sanitize member filename if templated tokens present
+    def fix_member_filename_if_needed(file_path, front_matter)
+      basename = File.basename(file_path)
+      return unless basename.include?('{') || basename.include?('}') || basename.include?('|')
+
+      name = front_matter['name'].to_s.strip
+      # Try to infer from existing filename when name missing
+      if name.empty?
+        slug = File.basename(file_path, '.md')
+        name = slug.split('-').map { |part| part.capitalize }.join(' ')
+      end
+      return if name.empty?
+
+      target_basename = "#{Jekyll::Utils.slugify(name)}.md"
+      dir = File.dirname(file_path)
+      target_path = File.join(dir, target_basename)
+
+      return if File.expand_path(file_path) == File.expand_path(target_path)
+
+      if File.exist?(target_path)
+        disabled_path = file_path + ".disabled"
+        begin
+          File.rename(file_path, disabled_path)
+          Jekyll.logger.info "Pages CMS:", "Disabled duplicate templated member file #{basename} -> #{File.basename(disabled_path)}"
+        rescue => e
+          Jekyll.logger.warn "Pages CMS:", "Could not disable duplicate member file #{basename}: #{e.message}"
+        end
+        return
+      end
+
+      File.rename(file_path, target_path)
+      Jekyll.logger.info "Pages CMS:", "Renamed member file #{basename} -> #{target_basename}"
+    end
+
+    # Sanitize publication filename if templated tokens present
+    def fix_publication_filename_if_needed(file_path, front_matter)
+      basename = File.basename(file_path)
+      return unless basename.include?('{') || basename.include?('}') || basename.include?('|')
+
+      year = front_matter['year']
+      title = front_matter['title'].to_s.strip
+
+      # Try infer year/title from filename when missing
+      if year.to_s.strip.empty?
+        if m = basename.match(/(\d{4})/)
+          year = m[1]
+        end
+      end
+      if title.empty?
+        title = File.basename(file_path, '.md').sub(/^\d{4}-/, '').gsub('-', ' ').strip
+      end
+
+      return if year.to_s.strip.empty? || title.empty?
+
+      target_basename = "#{year}-#{Jekyll::Utils.slugify(title)}.md"
+      dir = File.dirname(file_path)
+      target_path = File.join(dir, target_basename)
+
+      return if File.expand_path(file_path) == File.expand_path(target_path)
+
+      if File.exist?(target_path)
+        disabled_path = file_path + ".disabled"
+        begin
+          File.rename(file_path, disabled_path)
+          Jekyll.logger.info "Pages CMS:", "Disabled duplicate templated publication file #{basename} -> #{File.basename(disabled_path)}"
+        rescue => e
+          Jekyll.logger.warn "Pages CMS:", "Could not disable duplicate publication file #{basename}: #{e.message}"
+        end
+        return
+      end
+
+      File.rename(file_path, target_path)
+      Jekyll.logger.info "Pages CMS:", "Renamed publication file #{basename} -> #{target_basename}"
+    end
+
+    # Heuristic enrichment for members
+    def ensure_member_fields(file_path, front_matter)
+      if front_matter['name'].to_s.strip.empty?
+        slug = File.basename(file_path, '.md')
+        front_matter['name'] = slug.split('-').map { |part| part.capitalize }.join(' ')
+      end
+      front_matter['role'] ||= 'Member'
+      front_matter['order'] ||= 999
+      front_matter
+    end
+
+    # Heuristic enrichment for publications
+    def ensure_publication_fields(file_path, front_matter)
+      if front_matter['title'].to_s.strip.empty?
+        base = File.basename(file_path, '.md').sub(/^\d{4}-/, '')
+        front_matter['title'] = base.split('-').map { |p| p.capitalize }.join(' ')
+      end
+      if front_matter['year'].to_s.strip.empty?
+        if m = File.basename(file_path).match(/(\d{4})/)
+          front_matter['year'] = m[1].to_i
+        end
+      end
+      front_matter
+    end
+
+    # Generic title inference
+    def ensure_title_from_filename(file_path, front_matter, key)
+      if front_matter[key].to_s.strip.empty?
+        base = File.basename(file_path, '.md')
+        base = base.sub(/^\d{4}-/, '')
+        front_matter[key] = base.split('-').map { |p| p.capitalize }.join(' ')
+      end
+      front_matter
     end
 
     # Parse various semester formats and return [term, year, key]

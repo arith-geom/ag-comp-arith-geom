@@ -533,10 +533,10 @@ content:
     filename: "{title|slugify}.md"
     format: yaml-frontmatter
     view:
-      fields: [title, url, category]
+      fields: [title, url, category, order]
       primary: title
       sort:
-        field: title
+        field: order
         direction: asc
       search: [title, url, description, category]
     fields:
@@ -565,6 +565,10 @@ content:
             - { label: Research Project, value: "Research Project" }
             - { label: Administrative, value: Administrative }
             - { label: Tooling, value: Tooling }
+      - name: order
+        label: Sort Order
+        type: number
+        default: 100
       - name: description
         label: Description
         type: rich-text
@@ -580,10 +584,10 @@ content:
     filename: "{title|slugify}.md"
     format: yaml-frontmatter
     view:
-      fields: [title]
+      fields: [title, order]
       primary: title
       sort:
-        field: title
+        field: order
         direction: asc
       search: [title]
     fields:
@@ -596,6 +600,10 @@ content:
         label: Title
         type: string
         required: true
+      - name: order
+        label: Sort Order
+        type: number
+        default: 100
       - name: permalink
         label: Permalink
         type: string

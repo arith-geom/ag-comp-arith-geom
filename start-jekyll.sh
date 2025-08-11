@@ -33,18 +33,23 @@ echo "   - Clean cache (prevents SCSS issues)"
 echo ""
 
 # Start Jekyll with specific settings to avoid issues
+# Note: "--no-incremental" is not a valid flag. We simply omit "--incremental".
 bundle exec jekyll serve \
-    --no-incremental \
-    --no-watch \
-    --no-livereload \
     --host 0.0.0.0 \
     --port 4000 \
     --verbose
 
+# Capture exit status to avoid continuing on failure
+JEKYLL_STATUS=$?
+if [ $JEKYLL_STATUS -ne 0 ]; then
+  echo "❌ Jekyll failed to start (exit code $JEKYLL_STATUS). Aborting post-start steps."
+  exit $JEKYLL_STATUS
+fi
+
 # Copy favicon to _site directory
 echo ""
 echo "📄 Setting up favicon..."
-./scripts/copy_favicon.sh
+./scripts/copy_favicon.sh || true
 
 echo ""
 echo "✅ Jekyll started successfully!"

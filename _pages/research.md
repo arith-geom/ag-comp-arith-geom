@@ -8,7 +8,7 @@ nav_order: 2
 ---
 
 <div class="research-areas">
-  {% assign sorted_research = site.research | sort: 'order' %}
+  {% assign sorted_research = site.research | sort: 'title' %}
   {% for research_area in sorted_research %}
     <div class="research-area-card">
       <div class="research-icon">

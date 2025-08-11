@@ -71,7 +71,7 @@ nav_order: 5
 
       <!-- Publications Grid -->
       <div id="publications-grid" class="publications-grid">
-        {% assign sorted_publications = site.publications | sort: 'order' | sort: 'year' | reverse %}
+        {% assign sorted_publications = site.publications | sort: 'year' | reverse %}
         {% for publication in sorted_publications %}
           <div class="publication-card" data-type="{{ publication.type }}" data-year="{{ publication.year }}">
             <div class="publication-header">
