@@ -1,1 +1,613 @@
-Testing
+# Enhanced Pages CMS Configuration for AG Computational Arithmetic Geometry
+# This file configures the content management interface at https://app.pagescms.org/
+# Updated January 2025 - Fully aligned with latest PagesCMS features and actual content
+
+# Media Configuration
+media:
+  - name: images
+    label: Images & Photos
+    input: assets/img
+    output: /assets/img
+    path: assets/img
+    categories: [image]
+    extensions: [jpg, jpeg, png, gif, svg, webp]
+    description: "Upload images for team members, research areas, and general website content"
+  - name: documents
+    label: Documents & PDFs
+    input: assets/uploads
+    output: /assets/uploads
+    path: assets/uploads
+    categories: [document]
+    extensions: [pdf, doc, docx, ppt, pptx, xls, xlsx, txt, md, tex, bib]
+    description: "Course materials, announcements, and research documents"
+
+
+# Content Types Configuration
+content:
+  # Publications - NEW: Full collection management
+  - name: publications
+    label: Publications
+    type: collection
+    path: _publications
+    filename: "{year}-{title|slugify}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [title, authors, year, type, status, featured]
+      primary: title
+      sort:
+        field: year
+        direction: desc
+      search: [title, authors, abstract, keywords]
+      filters:
+        - field: type
+          label: Publication Type
+        - field: status
+          label: Status
+        - field: featured
+          label: Featured
+      group_by: year
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: publication
+        hidden: true
+      - name: title
+        label: Publication Title
+        type: string
+        required: true
+        description: "Full title of the publication"
+        validation:
+          min_length: 5
+          max_length: 500
+      - name: authors
+        label: Authors
+        type: string
+        required: true
+        description: "Author names separated by commas"
+        validation:
+          min_length: 2
+          max_length: 200
+      - name: year
+        label: Publication Year
+        type: select
+        required: true
+        description: "Year of publication"
+        options:
+          values:
+            - { label: "2040", value: 2040 }
+            - { label: "2039", value: 2039 }
+            - { label: "2038", value: 2038 }
+            - { label: "2037", value: 2037 }
+            - { label: "2036", value: 2036 }
+            - { label: "2035", value: 2035 }
+            - { label: "2034", value: 2034 }
+            - { label: "2033", value: 2033 }
+            - { label: "2032", value: 2032 }
+            - { label: "2031", value: 2031 }
+            - { label: "2030", value: 2030 }
+            - { label: "2029", value: 2029 }
+            - { label: "2028", value: 2028 }
+            - { label: "2027", value: 2027 }
+            - { label: "2026", value: 2026 }
+            - { label: "2025", value: 2025 }
+            - { label: "2024", value: 2024 }
+            - { label: "2023", value: 2023 }
+            - { label: "2022", value: 2022 }
+            - { label: "2021", value: 2021 }
+            - { label: "2020", value: 2020 }
+            - { label: "2019", value: 2019 }
+            - { label: "2018", value: 2018 }
+            - { label: "2017", value: 2017 }
+            - { label: "2016", value: 2016 }
+            - { label: "2015", value: 2015 }
+            - { label: "2014", value: 2014 }
+            - { label: "2013", value: 2013 }
+            - { label: "2012", value: 2012 }
+            - { label: "2011", value: 2011 }
+            - { label: "2010", value: 2010 }
+            - { label: "2009", value: 2009 }
+            - { label: "2008", value: 2008 }
+            - { label: "2007", value: 2007 }
+            - { label: "2006", value: 2006 }
+            - { label: "2005", value: 2005 }
+            - { label: "2004", value: 2004 }
+            - { label: "2003", value: 2003 }
+            - { label: "2002", value: 2002 }
+            - { label: "2001", value: 2001 }
+            - { label: "2000", value: 2000 }
+            - { label: "1999", value: 1999 }
+            - { label: "1998", value: 1998 }
+            - { label: "1997", value: 1997 }
+            - { label: "1996", value: 1996 }
+            - { label: "1995", value: 1995 }
+            - { label: "1994", value: 1994 }
+            - { label: "1993", value: 1993 }
+            - { label: "1992", value: 1992 }
+            - { label: "1991", value: 1991 }
+            - { label: "1990", value: 1990 }
+            - { label: "1989", value: 1989 }
+            - { label: "1988", value: 1988 }
+            - { label: "1987", value: 1987 }
+            - { label: "1986", value: 1986 }
+            - { label: "1985", value: 1985 }
+            - { label: "1984", value: 1984 }
+            - { label: "1983", value: 1983 }
+            - { label: "1982", value: 1982 }
+            - { label: "1981", value: 1981 }
+            - { label: "1980", value: 1980 }
+      - name: type
+        label: Publication Type
+        type: select
+        required: true
+        options:
+          values:
+            - { label: Journal Article, value: "Journal Article" }
+            - { label: Preprint, value: "Preprint" }
+            - { label: Conference Paper, value: "Conference Paper" }
+            - { label: Book, value: "Book" }
+            - { label: Book Chapter, value: "Book Chapter" }
+            - { label: Thesis, value: "Thesis" }
+            - { label: Software, value: "Software" }
+            - { label: Technical Report, value: "Technical Report" }
+        default: "Journal Article"
+        description: "Type of publication"
+      - name: status
+        label: Publication Status
+        type: select
+        options:
+          values:
+            - { label: Published, value: "Published" }
+            - { label: Submitted, value: "Submitted" }
+            - { label: Under Review, value: "Under Review" }
+            - { label: In Preparation, value: "In Preparation" }
+            - { label: Accepted, value: "Accepted" }
+        default: "Published"
+        description: "Current status of the publication"
+      - name: journal
+        label: Journal/Conference/Publisher
+        type: string
+        description: "Journal name, conference name, or publisher"
+        validation:
+          max_length: 200
+      - name: abstract
+        label: Abstract
+        type: rich-text
+        options:
+          toolbar: ["bold", "italic", "link", "list", "code"]
+          height: 200
+        description: "Abstract or summary of the publication"
+      - name: keywords
+        label: Keywords
+        type: string
+        list:
+          min: 1
+          max: 20
+        description: "Research keywords and tags"
+      - name: doi
+        label: DOI
+        type: string
+        description: "Digital Object Identifier"
+        validation:
+          pattern: "^10\\.[0-9]{4,}/.+"
+      - name: url
+        label: External URL
+        type: string
+        description: "Link to published version"
+        validation:
+          pattern: "^https?://.+"
+
+  # Team Members - Enhanced and aligned with actual content
+  - name: members
+    label: Team Members
+    type: collection
+    path: _members
+    filename: "{name|slugify}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [name, role, status, email, order]
+      primary: name
+      sort:
+        field: role
+        direction: asc
+      search: [name, role, research_interests]
+      filters:
+        - field: status
+          label: Status
+        - field: role
+          label: Role
+      group_by: role
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: member
+        hidden: true
+      - name: name
+        label: Full Name
+        type: string
+        required: true
+        description: "Enter the person's full name (e.g., Prof. Dr. Gebhard Böckle)"
+        validation:
+          min_length: 2
+          max_length: 100
+      - name: role
+        label: Role/Position
+        type: select
+        required: true
+        options:
+          values:
+            - { label: "Professor & Group Leader", value: "Professor & Group Leader" }
+            - { label: "Postdoctoral Researcher", value: "Postdoctoral Researcher" }
+            - { label: "PhD Student", value: "PhD Student" }
+            - { label: "Master Student", value: "Master Student" }
+            - { label: "Bachelor Student", value: "Bachelor Student" }
+            - { label: "Secretary", value: "Secretary" }
+            - { label: "Alumni", value: "Alumni" }
+            - { label: "Guest Researcher", value: "Guest Researcher" }
+        description: "Academic or professional role"
+      - name: status
+        label: Status
+        type: select
+        options:
+          values:
+            - { label: Active Member, value: active }
+            - { label: Alumni, value: alumni }
+            - { label: Former Member, value: former }
+            - { label: Inactive, value: inactive }
+            - { label: Visitor, value: visitor }
+        default: active
+        required: true
+        description: "Current status of the team member"
+      - name: photo
+        label: Profile Photo
+        type: image
+        options:
+          multiple: false
+          max_size: 5242880
+          accepted_types: [jpg, jpeg, png, webp]
+        description: "Professional headshot or profile photo (recommended: 400x400px)"
+      - name: order
+        label: Display Order
+        type: number
+        default: 999
+        hidden: true
+        description: "Lower numbers appear first in listings"
+      - name: email
+        label: Email Address
+        type: email
+        description: "Professional email address"
+
+
+  # Teaching & Courses - Enhanced with better course management
+  - name: teaching
+    label: Teaching & Courses
+    type: collection
+    path: _teaching
+    filename: "{semester|slugify}-{title|slugify}.md"
+    format: yaml-frontmatter
+    exclude:
+      - index.md
+      - documents/
+      - pdfs/
+      - heidelberg-teaching-archive.md
+      - past-teaching.md
+    view:
+      fields: [title, semester, instructor, course_type, active]
+      primary: title
+      sort:
+        field: semester_year
+        direction: desc
+      search: [title, instructor, description]
+      filters:
+        - field: course_type
+          label: Course Type
+        - field: language
+          label: Language
+        - field: active
+          label: Active
+      group_by: semester
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: teaching
+        hidden: true
+      - name: title
+        label: Course Title
+        type: string
+        required: true
+        description: "Full course title (e.g., Homological Algebra Seminar)"
+        validation:
+          min_length: 5
+          max_length: 200
+      - name: semester
+        label: Semester
+        type: select
+        required: true
+        description: "Select semester (add new if missing)"
+        options:
+          values:
+            - { label: SS2000, value: SS2000 }
+            - { label: WS2000, value: WS2000 }
+            - { label: SS2001, value: SS2001 }
+            - { label: WS2001, value: WS2001 }
+            - { label: SS2002, value: SS2002 }
+            - { label: WS2002, value: WS2002 }
+            - { label: SS2003, value: SS2003 }
+            - { label: WS2003, value: WS2003 }
+            - { label: SS2004, value: SS2004 }
+            - { label: WS2004, value: WS2004 }
+            - { label: SS2005, value: SS2005 }
+            - { label: WS2005, value: WS2005 }
+            - { label: SS2006, value: SS2006 }
+            - { label: WS2006, value: WS2006 }
+            - { label: SS2007, value: SS2007 }
+            - { label: WS2007, value: WS2007 }
+            - { label: SS2008, value: SS2008 }
+            - { label: WS2008, value: WS2008 }
+            - { label: SS2009, value: SS2009 }
+            - { label: WS2009, value: WS2009 }
+            - { label: SS2010, value: SS2010 }
+            - { label: WS2010, value: WS2010 }
+            - { label: SS2011, value: SS2011 }
+            - { label: WS2011, value: WS2011 }
+            - { label: SS2012, value: SS2012 }
+            - { label: WS2012, value: WS2012 }
+            - { label: SS2013, value: SS2013 }
+            - { label: WS2013, value: WS2013 }
+            - { label: SS2014, value: SS2014 }
+            - { label: WS2014, value: WS2014 }
+            - { label: SS2015, value: SS2015 }
+            - { label: WS2015, value: WS2015 }
+            - { label: SS2016, value: SS2016 }
+            - { label: WS2016, value: WS2016 }
+            - { label: SS2017, value: SS2017 }
+            - { label: WS2017, value: WS2017 }
+            - { label: SS2018, value: SS2018 }
+            - { label: WS2018, value: WS2018 }
+            - { label: SS2019, value: SS2019 }
+            - { label: WS2019, value: WS2019 }
+            - { label: SS2020, value: SS2020 }
+            - { label: WS2020, value: WS2020 }
+            - { label: SS2021, value: SS2021 }
+            - { label: WS2021, value: WS2021 }
+            - { label: SS2022, value: SS2022 }
+            - { label: WS2022, value: WS2022 }
+            - { label: SS2023, value: SS2023 }
+            - { label: WS2023, value: WS2023 }
+            - { label: SS2024, value: SS2024 }
+            - { label: WS2024, value: WS2024 }
+            - { label: SS2025, value: SS2025 }
+            - { label: WS2025, value: WS2025 }
+            - { label: SS2026, value: SS2026 }
+            - { label: WS2026, value: WS2026 }
+            - { label: SS2027, value: SS2027 }
+            - { label: WS2027, value: WS2027 }
+            - { label: SS2028, value: SS2028 }
+            - { label: WS2028, value: WS2028 }
+            - { label: SS2029, value: SS2029 }
+            - { label: WS2029, value: WS2029 }
+            - { label: SS2030, value: SS2030 }
+            - { label: WS2030, value: WS2030 }
+            - { label: SS2031, value: SS2031 }
+            - { label: WS2031, value: WS2031 }
+            - { label: SS2032, value: SS2032 }
+            - { label: WS2032, value: WS2032 }
+            - { label: SS2033, value: SS2033 }
+            - { label: WS2033, value: WS2033 }
+            - { label: SS2034, value: SS2034 }
+            - { label: WS2034, value: WS2034 }
+            - { label: SS2035, value: SS2035 }
+            - { label: WS2035, value: WS2035 }
+            - { label: SS2036, value: SS2036 }
+            - { label: WS2036, value: WS2036 }
+            - { label: SS2037, value: SS2037 }
+            - { label: WS2037, value: WS2037 }
+            - { label: SS2038, value: SS2038 }
+            - { label: WS2038, value: WS2038 }
+            - { label: SS2039, value: SS2039 }
+            - { label: WS2039, value: WS2039 }
+            - { label: SS2040, value: SS2040 }
+            - { label: WS2040, value: WS2040 }
+          allowCustom: true
+        validation:
+          pattern: "^(WS|SS)[0-9]{4}$"
+      - name: instructor
+        label: Instructor(s)
+        type: string
+        required: true
+        description: "Course instructor(s) (e.g., Prof. Dr. Böckle, Dr. Ferraro)"
+      - name: course_type
+        label: Course Type
+        type: select
+        options:
+          values:
+            - { label: Vorlesung, value: Vorlesung }
+            - { label: Seminar, value: Seminar }
+            - { label: Proseminar, value: Proseminar }
+            - { label: Hauptseminar, value: Hauptseminar }
+            - { label: Exercise, value: Exercise }
+            - { label: Tutorial, value: Tutorial }
+            - { label: Workshop, value: Workshop }
+            - { label: Laboratory, value: Laboratory }
+            - { label: Colloquium, value: Colloquium }
+          allowCustom: true
+        default: Seminar
+        required: true
+        description: "Type of course"
+      - name: level
+        label: Level
+        type: select
+        options:
+          values:
+            - { label: Bachelor, value: Bachelor }
+            - { label: Master, value: Master }
+            - { label: PhD, value: PhD }
+            - { label: Mixed, value: Mixed }
+          allowCustom: true
+        description: "Intended audience level (optional)"
+      - name: language
+        label: Language
+        type: select
+        options:
+          values:
+            - { label: English, value: English }
+            - { label: German, value: German }
+            - { label: Bilingual, value: Bilingual }
+          allowCustom: true
+        default: English
+        required: true
+        description: "Primary language of instruction"
+      - name: description
+        label: Course Description
+        type: rich-text
+        options:
+          toolbar: ["bold", "italic", "link", "list", "code"]
+          height: 150
+        description: "Course overview and objectives"
+      - name: active
+        label: Currently Active
+        type: boolean
+        default: false
+        description: "Is this course currently being taught?"
+
+  # Research Areas - Enhanced with better organization
+  - name: research
+    label: Research Areas
+    type: collection
+    path: _research
+    filename: "{title|slugify}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [title, description, featured, order]
+      primary: title
+      sort:
+        field: title
+        direction: asc
+      search: [title, description, keywords]
+      filters:
+        - field: featured
+          label: Featured
+      group_by: featured
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: page
+        hidden: true
+      - name: title
+        label: Research Area Title
+        type: string
+        required: true
+        description: "Name of the research area (e.g., Arithmetic of Function Fields)"
+        validation:
+          min_length: 3
+          max_length: 100
+      - name: description
+        label: Description
+        type: rich-text
+        required: true
+        options:
+          toolbar: ["bold", "italic", "link", "list", "code"]
+          height: 200
+        description: "Detailed description of the research area"
+      - name: order
+        label: Display Order
+        type: number
+        default: 999
+        hidden: true
+        description: "Lower numbers appear first"
+      - name: featured
+        label: Featured Research Area
+        type: boolean
+        default: false
+        description: "Highlight this research area on the homepage"
+
+
+  # Links - External/internal resource links
+  - name: links
+    label: Useful Links
+    type: collection
+    path: _links
+    filename: "{title|slugify}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [title, url, category, order]
+      primary: title
+      sort:
+        field: order
+        direction: asc
+      search: [title, url, description, category]
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: page
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: url
+        label: URL
+        type: string
+        required: true
+        validation:
+          pattern: "^https?://.+"
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - { label: Institution, value: Institution }
+            - { label: Journal, value: Journal }
+            - { label: Research Project, value: "Research Project" }
+            - { label: Administrative, value: Administrative }
+            - { label: Tooling, value: Tooling }
+      - name: order
+        label: Sort Order
+        type: number
+        default: 100
+      - name: description
+        label: Description
+        type: rich-text
+        options:
+          toolbar: ["bold", "italic", "link", "list", "code"]
+          height: 120
+
+  # Static Pages - About, Contact, etc.
+  - name: pages
+    label: Static Pages
+    type: collection
+    path: _pages
+    filename: "{title|slugify}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [title, order]
+      primary: title
+      sort:
+        field: order
+        direction: asc
+      search: [title]
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        default: page
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: order
+        label: Sort Order
+        type: number
+        default: 100
+      - name: permalink
+        label: Permalink
+        type: string
+        description: "Optional custom permalink"
+      - name: content
+        label: Content
+        type: markdown

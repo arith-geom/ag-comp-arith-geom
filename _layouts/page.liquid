@@ -8,13 +8,21 @@ layout: default
   </style>
 {% endif %}
 
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-description">{{ page.description }}</p>
-  </header>
+{% if page.show_title %}
+<div class="page-hero mb-4">
+  <div class="page-hero-overlay">
+    <div class="page-hero-content">
+      <h1 class="page-title">{% if page.name %}{{ page.name }}{% else %}{{ page.title }}{% endif %}</h1>
+      {% if page.description %}
+        <p class="page-subtitle">{{ page.description }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}
 
-  <article>
+<div class="page-container">
+  <article class="page-article tex2jax_process">
     {{ content }}
   </article>
 
@@ -29,3 +37,70 @@ layout: default
     {% include giscus.liquid %}
   {% endif %}
 </div>
+
+<style>
+.page-hero {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.page-hero-content {
+  text-align: center;
+  color: var(--primary-text);
+  padding: 0.5rem 1rem;
+}
+
+.page-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 1.25rem auto 2.5rem auto;
+  padding: 0 1rem;
+}
+
+.page-article {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+}
+
+.page-article h2 {
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+@media (max-width: 768px) {
+  .page-hero { height: 180px; }
+  .page-title { font-size: 1.5rem; }
+  .page-container { margin-top: 1rem; }
+  .page-article { padding: 1rem; }
+}
+</style>

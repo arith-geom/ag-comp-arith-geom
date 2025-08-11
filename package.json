@@ -1,0 +1,32 @@
+{
+  "name": "ag-computational-arithmetic-geometry",
+  "version": "2.0.0",
+  "description": "Website for AG Computational Arithmetic Geometry with modern Pages CMS configuration",
+  "scripts": {
+    "build": "jekyll build",
+    "serve": "jekyll serve",
+    "watch": "jekyll serve --watch",
+    "clean": "jekyll clean",
+    "dev": "jekyll serve --watch --livereload",
+    "production": "JEKYLL_ENV=production jekyll build",
+    "test": "jekyll build --safe",
+    "validate": "jekyll doctor"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "keywords": [
+    "jekyll",
+    "academic",
+    "research",
+    "mathematics",
+    "arithmetic-geometry",
+    "pages-cms"
+  ],
+  "author": "AG Computational Arithmetic Geometry",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/placeholder-ag-comp-arith-geom/placeholder-ag-comp-arith-geom.github.io.git"
+  }
+}

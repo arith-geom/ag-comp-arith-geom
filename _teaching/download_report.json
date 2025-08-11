@@ -1,0 +1,606 @@
+{
+  "downloaded_files": [
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/comm_alg_announcement.pdf",
+      "local_path": "_teaching/pdfs/comm_alg_announcement.pdf",
+      "size": 87455
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/GAUS-AG-WiSe2024-25-IKM-2024-12-11.pdf",
+      "local_path": "_teaching/pdfs/GAUS-AG-WiSe2024-25-IKM-2024-12-11.pdf",
+      "size": 152192
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/Seminar.pdf",
+      "local_path": "_teaching/pdfs/Seminar.pdf",
+      "size": 257940
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/RMCprogram_01.pdf",
+      "local_path": "_teaching/pdfs/RMCprogram_01.pdf",
+      "size": 204159
+    },
+    {
+      "url": "https://crc326gaus.de/wp-content/uploads/2023/03/VectorialDrinfeldModForms.pdf",
+      "local_path": "_teaching/pdfs/VectorialDrinfeldModForms.pdf",
+      "size": 209485
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/program_comp_nt.pdf",
+      "local_path": "_teaching/pdfs/program_comp_nt.pdf",
+      "size": 177765
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/Programm_la-courbe_SoSe19.pdf",
+      "local_path": "_teaching/pdfs/Programm_la-courbe_SoSe19.pdf",
+      "size": 259564
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Programm_GL2_WS1819.pdf",
+      "local_path": "_teaching/pdfs/Programm_GL2_WS1819.pdf",
+      "size": 147305
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/WS1819_lokale_G-shtukas.pdf",
+      "local_path": "_teaching/pdfs/WS1819_lokale_G-shtukas.pdf",
+      "size": 189424
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/Ankuendigung-Modularity.pdf",
+      "local_path": "_teaching/pdfs/Ankuendigung-Modularity.pdf",
+      "size": 144205
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/Bruhat-Tits.pdf",
+      "local_path": "_teaching/pdfs/Bruhat-Tits.pdf",
+      "size": 86394
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/DarstellungenUndInvarianten_II_SS2015.pdf",
+      "local_path": "_teaching/pdfs/DarstellungenUndInvarianten_II_SS2015.pdf",
+      "size": 131575
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/Lenny_Taelman_s_body_of_work_on_Drinfeld_modules.pdf",
+      "local_path": "_teaching/pdfs/Lenny_Taelman_s_body_of_work_on_Drinfeld_modules.pdf",
+      "size": 267199
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/Modulbeschreibung-AutomorpheFormen.pdf",
+      "local_path": "_teaching/pdfs/Modulbeschreibung-AutomorpheFormen.pdf",
+      "size": 92690
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/DarstellungenUndInvarianten_WS201415.pdf",
+      "local_path": "_teaching/pdfs/DarstellungenUndInvarianten_WS201415.pdf",
+      "size": 169515
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/WS201415_RecentBSD.pdf",
+      "local_path": "_teaching/pdfs/WS201415_RecentBSD.pdf",
+      "size": 239516
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/AffineAlgebraischeGruppen_WS2012-13_Programm.pdf",
+      "local_path": "_teaching/pdfs/AffineAlgebraischeGruppen_WS2012-13_Programm.pdf",
+      "size": 93876
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/WS1213_TranscendencePosChar.pdf",
+      "local_path": "_teaching/pdfs/WS1213_TranscendencePosChar.pdf",
+      "size": 56102
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/AutomorphicFormsAndRepresentationsForGL2_CentelegheCervinoChekaru.pdf",
+      "local_path": "_teaching/pdfs/AutomorphicFormsAndRepresentationsForGL2_CentelegheCervinoChekaru.pdf",
+      "size": 127326
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/BorcherdsProducts_SeminarProgram_WS2011-12_G3.pdf",
+      "local_path": "_teaching/pdfs/BorcherdsProducts_SeminarProgram_WS2011-12_G3.pdf",
+      "size": 156607
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/Seminarprogramm_IkedaLift_WS2011-12_BouganisCervinoKasten.pdf",
+      "local_path": "_teaching/pdfs/Seminarprogramm_IkedaLift_WS2011-12_BouganisCervinoKasten.pdf",
+      "size": 297543
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/qF_Programm_SS2011.pdf",
+      "local_path": "_teaching/pdfs/qF_Programm_SS2011.pdf",
+      "size": 89265
+    },
+    {
+      "url": "https://www.uni-heidelberg.de/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "size": 269234
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "size": 15385
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "size": 15385
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members.html",
+      "local_path": "_teaching/documents/members.html",
+      "size": 9024
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/research.html",
+      "local_path": "_teaching/documents/research.html",
+      "size": 11309
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/contact.html",
+      "local_path": "_teaching/documents/contact.html",
+      "size": 8848
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "size": 15385
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/Algebra_2/home_A2.html",
+      "local_path": "_teaching/documents/home_A2.html",
+      "size": 9185
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/Algebra_1/home.html",
+      "local_path": "_teaching/documents/home.html",
+      "size": 10002
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/LA2/home.html",
+      "local_path": "_teaching/documents/home.html",
+      "size": 10776
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/LA1/home.html",
+      "local_path": "_teaching/documents/home.html",
+      "size": 10506
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Julian_Quast/AlgGeo_2/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "size": 5084
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Julian_Quast/AlgGeo_1/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "size": 5273
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/impressum.html",
+      "local_path": "_teaching/documents/impressum.html",
+      "size": 10686
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/comm_alg_announcement.pdf",
+      "local_path": "_teaching/pdfs/comm_alg_announcement.pdf",
+      "size": 87455
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/GAUS-AG-WiSe2024-25-IKM-2024-12-11.pdf",
+      "local_path": "_teaching/pdfs/GAUS-AG-WiSe2024-25-IKM-2024-12-11.pdf",
+      "size": 152192
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/Seminar.pdf",
+      "local_path": "_teaching/pdfs/Seminar.pdf",
+      "size": 257940
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/RMCprogram_01.pdf",
+      "local_path": "_teaching/pdfs/RMCprogram_01.pdf",
+      "size": 204159
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/program_comp_nt.pdf",
+      "local_path": "_teaching/pdfs/program_comp_nt.pdf",
+      "size": 177765
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/Programm_la-courbe_SoSe19.pdf",
+      "local_path": "_teaching/pdfs/Programm_la-courbe_SoSe19.pdf",
+      "size": 259564
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Programm_GL2_WS1819.pdf",
+      "local_path": "_teaching/pdfs/Programm_GL2_WS1819.pdf",
+      "size": 147305
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/WS1819_lokale_G-shtukas.pdf",
+      "local_path": "_teaching/pdfs/WS1819_lokale_G-shtukas.pdf",
+      "size": 189424
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/Ankuendigung-Modularity.pdf",
+      "local_path": "_teaching/pdfs/Ankuendigung-Modularity.pdf",
+      "size": 144205
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/Bruhat-Tits.pdf",
+      "local_path": "_teaching/pdfs/Bruhat-Tits.pdf",
+      "size": 86394
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/DarstellungenUndInvarianten_II_SS2015.pdf",
+      "local_path": "_teaching/pdfs/DarstellungenUndInvarianten_II_SS2015.pdf",
+      "size": 131575
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/Lenny_Taelman_s_body_of_work_on_Drinfeld_modules.pdf",
+      "local_path": "_teaching/pdfs/Lenny_Taelman_s_body_of_work_on_Drinfeld_modules.pdf",
+      "size": 267199
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/Modulbeschreibung-AutomorpheFormen.pdf",
+      "local_path": "_teaching/pdfs/Modulbeschreibung-AutomorpheFormen.pdf",
+      "size": 92690
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/DarstellungenUndInvarianten_WS201415.pdf",
+      "local_path": "_teaching/pdfs/DarstellungenUndInvarianten_WS201415.pdf",
+      "size": 169515
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/WS201415_RecentBSD.pdf",
+      "local_path": "_teaching/pdfs/WS201415_RecentBSD.pdf",
+      "size": 239516
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/AffineAlgebraischeGruppen_WS2012-13_Programm.pdf",
+      "local_path": "_teaching/pdfs/AffineAlgebraischeGruppen_WS2012-13_Programm.pdf",
+      "size": 93876
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/WS1213_TranscendencePosChar.pdf",
+      "local_path": "_teaching/pdfs/WS1213_TranscendencePosChar.pdf",
+      "size": 56102
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/AutomorphicFormsAndRepresentationsForGL2_CentelegheCervinoChekaru.pdf",
+      "local_path": "_teaching/pdfs/AutomorphicFormsAndRepresentationsForGL2_CentelegheCervinoChekaru.pdf",
+      "size": 127326
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/BorcherdsProducts_SeminarProgram_WS2011-12_G3.pdf",
+      "local_path": "_teaching/pdfs/BorcherdsProducts_SeminarProgram_WS2011-12_G3.pdf",
+      "size": 156607
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/Seminarprogramm_IkedaLift_WS2011-12_BouganisCervinoKasten.pdf",
+      "local_path": "_teaching/pdfs/Seminarprogramm_IkedaLift_WS2011-12_BouganisCervinoKasten.pdf",
+      "size": 297543
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/qF_Programm_SS2011.pdf",
+      "local_path": "_teaching/pdfs/qF_Programm_SS2011.pdf",
+      "size": 89265
+    }
+  ],
+  "failed_downloads": [
+    {
+      "url": "https://www.mathematik.uni-heidelberg.de/2015/Modulhandbuch_BA_15-07-15.pdf",
+      "local_path": "_teaching/pdfs/Modulhandbuch_BA_15-07-15.pdf",
+      "error": "HTTPSConnectionPool(host='www.mathematik.uni-heidelberg.de', port=443): Max retries exceeded with url: /2015/Modulhandbuch_BA_15-07-15.pdf (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.mathematik.uni-heidelberg.de'. (_ssl.c:1000)\")))"
+    },
+    {
+      "url": "https://www.mathematik.uni-heidelberg.de/2015/Modulhandbuch_BA_15-07-15.pdf",
+      "local_path": "_teaching/pdfs/Modulhandbuch_BA_15-07-15.pdf",
+      "error": "HTTPSConnectionPool(host='www.mathematik.uni-heidelberg.de', port=443): Max retries exceeded with url: /2015/Modulhandbuch_BA_15-07-15.pdf (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.mathematik.uni-heidelberg.de'. (_ssl.c:1000)\")))"
+    },
+    {
+      "url": "http://www.iwr.uni-heidelberg.de/groups/arith-geom/ForschSem/TriangReps13.pdf",
+      "local_path": "_teaching/pdfs/TriangReps13.pdf",
+      "error": "404 Client Error: Not Found for url: https://web.iwr.uni-heidelberg.de/groups/arith-geom/ForschSem/TriangReps13.pdf"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/publications.html",
+      "local_path": "_teaching/documents/publications.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/publications.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/teaching.html",
+      "local_path": "_teaching/documents/teaching.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/teaching.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/links.html",
+      "local_path": "_teaching/documents/links.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/links.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/teaching.html",
+      "local_path": "_teaching/documents/teaching.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/teaching.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/giacomo-hermes-ferraro/homological-algebra-seminar.html",
+      "local_path": "_teaching/documents/homological-algebra-seminar.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/giacomo-hermes-ferraro/homological-algebra-seminar.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/alireza-shavali/modularity-and-galois-representations.html",
+      "local_path": "_teaching/documents/modularity-and-galois-representations.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/alireza-shavali/modularity-and-galois-representations.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/oguz-gezmis/seminar-on-representation-theory-of-finite-groups-summer-semester-2024.html",
+      "local_path": "_teaching/documents/seminar-on-representation-theory-of-finite-groups-summer-semester-2024.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/oguz-gezmis/seminar-on-representation-theory-of-finite-groups-summer-semester-2024.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/sriramcv/quadratic-forms.html",
+      "local_path": "_teaching/documents/quadratic-forms.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/sriramcv/quadratic-forms.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/sriramcv/p-adic-numbers.html",
+      "local_path": "_teaching/documents/p-adic-numbers.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/sriramcv/p-adic-numbers.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/sriramcv/affine-algebraic-groups.html",
+      "local_path": "_teaching/documents/affine-algebraic-groups.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/sriramcv/affine-algebraic-groups.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/barinder-banwait/prime-numbers-and-cryptography-proseminar.html",
+      "local_path": "_teaching/documents/prime-numbers-and-cryptography-proseminar.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/barinder-banwait/prime-numbers-and-cryptography-proseminar.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/barinder-banwait/abelian-varieties.html",
+      "local_path": "_teaching/documents/abelian-varieties.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/barinder-banwait/abelian-varieties.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/judith-ludwig/derivierte-kategorien.html",
+      "local_path": "_teaching/documents/derivierte-kategorien.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/judith-ludwig/derivierte-kategorien.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/judith-ludwig/seminar-elliptische-kurven.html",
+      "local_path": "_teaching/documents/seminar-elliptische-kurven.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/judith-ludwig/seminar-elliptische-kurven.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/judith-ludwig/adischeraeumeii.html",
+      "local_path": "_teaching/documents/adischeraeumeii.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/judith-ludwig/adischeraeumeii.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/julian-quast/seminar-affine-algebraische-gruppen.html",
+      "local_path": "_teaching/documents/seminar-affine-algebraische-gruppen.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/julian-quast/seminar-affine-algebraische-gruppen.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/julian-quast/proseminar-bilinearformen-und-klassische-gruppen.html",
+      "local_path": "_teaching/documents/proseminar-bilinearformen-und-klassische-gruppen.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/julian-quast/proseminar-bilinearformen-und-klassische-gruppen.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/gebhard-boeckle/kompatible-systeme-von-galoisdarstellungen.html",
+      "local_path": "_teaching/documents/kompatible-systeme-von-galoisdarstellungen.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/gebhard-boeckle/kompatible-systeme-von-galoisdarstellungen.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/judith-ludwig/p-divisible-gruppen.html",
+      "local_path": "_teaching/documents/p-divisible-gruppen.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/judith-ludwig/p-divisible-gruppen.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/andreas-maurischat/seminar-algorithmische-algebra.html",
+      "local_path": "_teaching/documents/seminar-algorithmische-algebra.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/andreas-maurischat/seminar-algorithmische-algebra.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/gebhard-boeckle/galoiskohomologie.html",
+      "local_path": "_teaching/documents/galoiskohomologie.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/gebhard-boeckle/galoiskohomologie.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/julian-quast/funktionentheorie-2.html",
+      "local_path": "_teaching/documents/funktionentheorie-2.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/julian-quast/funktionentheorie-2.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/seminar-lubin-tate-theorie.html#c5925",
+      "local_path": "_teaching/documents/seminar-lubin-tate-theorie.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/seminar-lubin-tate-theorie.html#c5925"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/gebhard-boeckle/algebraische-zahlentheorie-2.html",
+      "local_path": "_teaching/documents/algebraische-zahlentheorie-2.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/gebhard-boeckle/algebraische-zahlentheorie-2.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/andrea-conti/galois-representations-and-their-deformations.html",
+      "local_path": "_teaching/documents/galois-representations-and-their-deformations.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/andrea-conti/galois-representations-and-their-deformations.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/andreas-maurischat/hauptseminar-ss2018.html",
+      "local_path": "_teaching/documents/hauptseminar-ss2018.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/andreas-maurischat/hauptseminar-ss2018.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/david-guiraud/algebraische-zahlentheorie-1.html",
+      "local_path": "_teaching/documents/algebraische-zahlentheorie-1.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/david-guiraud/algebraische-zahlentheorie-1.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/seminar-gruppenkohomologie.html",
+      "local_path": "_teaching/documents/seminar-gruppenkohomologie.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/seminar-gruppenkohomologie.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/david-guiraud/hauptseminar-ws2017/18.html",
+      "local_path": "_teaching/documents/18.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/david-guiraud/hauptseminar-ws2017/18.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/algebra-2.html",
+      "local_path": "_teaching/documents/algebra-2.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/algebra-2.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/proseminar-primzahlen-und-faktorisierung.html",
+      "local_path": "_teaching/documents/proseminar-primzahlen-und-faktorisierung.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/proseminar-primzahlen-und-faktorisierung.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/teaching/group-seminar-ws16/17.html",
+      "local_path": "_teaching/documents/17.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/teaching/group-seminar-ws16/17.html"
+    },
+    {
+      "url": "http://www1.iwr.uni-heidelberg.de/groups/arith-geom/LA2-SS2016/LA2_index.html",
+      "local_path": "_teaching/documents/LA2_index.html",
+      "error": "404 Client Error: Not Found for url: https://web.iwr.uni-heidelberg.de/groups/arith-geom/LA2-SS2016/LA2_index.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/peter-graef/proseminar.html",
+      "local_path": "_teaching/documents/proseminar.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/peter-graef/proseminar.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/p-adic-uniformization-ss16.html",
+      "local_path": "_teaching/documents/p-adic-uniformization-ss16.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/p-adic-uniformization-ss16.html"
+    },
+    {
+      "url": "http://www1.iwr.uni-heidelberg.de/groups/arith-geom/LA1-WS201516/LA1_index.html",
+      "local_path": "_teaching/documents/LA1_index.html",
+      "error": "404 Client Error: Not Found for url: https://web.iwr.uni-heidelberg.de/groups/arith-geom/LA1-WS201516/LA1_index.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/yujia-qiu/dm-ws2014.html",
+      "local_path": "_teaching/documents/dm-ws2014.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/yujia-qiu/dm-ws2014.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/ann-kristin-juschka/seminar-ss2014.html",
+      "local_path": "_teaching/documents/seminar-ss2014.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/ann-kristin-juschka/seminar-ss2014.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/ann-kristin-juschka/seminar-ws2013.html",
+      "local_path": "_teaching/documents/seminar-ws2013.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/ann-kristin-juschka/seminar-ws2013.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/mls-ws13.html",
+      "local_path": "_teaching/documents/mls-ws13.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/mls-ws13.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/toric-ss13.html",
+      "local_path": "_teaching/documents/toric-ss13.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/toric-ss13.html"
+    },
+    {
+      "url": "http://www.rzuser.uni-heidelberg.de/~f25/kvv/ss2013/k-3.htm",
+      "local_path": "_teaching/documents/k-3.htm",
+      "error": "HTTPConnectionPool(host='www.rzuser.uni-heidelberg.de', port=80): Max retries exceeded with url: /~f25/kvv/ss2013/k-3.htm (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x7c30d0da5a60>: Failed to resolve 'www.rzuser.uni-heidelberg.de' ([Errno -2] Name or service not known)\"))"
+    },
+    {
+      "url": "http://www.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/la2-ss2013/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "error": "404 Client Error: Not Found for url: https://web.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/la2-ss2013/index.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/ag1-ws2012.html",
+      "local_path": "_teaching/documents/ag1-ws2012.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/konrad-fischer/ag1-ws2012.html"
+    },
+    {
+      "url": "http://www.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/la1-ws2012/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "error": "404 Client Error: Not Found for url: https://web.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/la1-ws2012/index.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/members/yujia-qiu/az1-ws2012.html",
+      "local_path": "_teaching/documents/az1-ws2012.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/members/yujia-qiu/az1-ws2012.html"
+    },
+    {
+      "url": "http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ss2012/g-9.htm",
+      "local_path": "_teaching/documents/g-9.htm",
+      "error": "404 Client Error: NOT FOUND for url: https://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ss2012/g-9.htm"
+    },
+    {
+      "url": "http://www.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/uebungen/compalg-ss2012/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "error": "404 Client Error: Not Found for url: https://web.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/uebungen/compalg-ss2012/index.html"
+    },
+    {
+      "url": "http://www.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/algebra1-ws2011/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "error": "404 Client Error: Not Found for url: https://web.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/algebra1-ws2011/index.html"
+    },
+    {
+      "url": "http://www.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/uebungen/bilinearformen.html",
+      "local_path": "_teaching/documents/bilinearformen.html",
+      "error": "404 Client Error: Not Found for url: https://web.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/uebungen/bilinearformen.html"
+    },
+    {
+      "url": "http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ss2011/g-3.htm",
+      "local_path": "_teaching/documents/g-3.htm",
+      "error": "404 Client Error: NOT FOUND for url: https://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ss2011/g-3.htm"
+    },
+    {
+      "url": "http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ss2011/v-2.htm",
+      "local_path": "_teaching/documents/v-2.htm",
+      "error": "404 Client Error: NOT FOUND for url: https://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ss2011/v-2.htm"
+    },
+    {
+      "url": "http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ss2011/s-4.htm",
+      "local_path": "_teaching/documents/s-4.htm",
+      "error": "404 Client Error: NOT FOUND for url: https://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ss2011/s-4.htm"
+    },
+    {
+      "url": "http://www.iwr.uni-heidelberg.de/groups/arith-geom/butenuth/zahlentheorie/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "error": "404 Client Error: Not Found for url: https://web.iwr.uni-heidelberg.de/groups/arith-geom/butenuth/zahlentheorie/index.html"
+    },
+    {
+      "url": "http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ws2010/g-5.htm",
+      "local_path": "_teaching/documents/g-5.htm",
+      "error": "404 Client Error: NOT FOUND for url: https://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ws2010/g-5.htm"
+    },
+    {
+      "url": "http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ws2010/x-2.htm",
+      "local_path": "_teaching/documents/x-2.htm",
+      "error": "404 Client Error: NOT FOUND for url: https://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ws2010/x-2.htm"
+    },
+    {
+      "url": "http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ws2010/s-6.htm",
+      "local_path": "_teaching/documents/s-6.htm",
+      "error": "404 Client Error: NOT FOUND for url: https://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ws2010/s-6.htm"
+    },
+    {
+      "url": "http://www.iwr.uni-heidelberg.de/groups/arith-geom/butenuth/geometrie/index.html",
+      "local_path": "_teaching/documents/index.html",
+      "error": "404 Client Error: Not Found for url: https://web.iwr.uni-heidelberg.de/groups/arith-geom/butenuth/geometrie/index.html"
+    },
+    {
+      "url": "https://typo.iwr.uni-heidelberg.de/teaching/past-teaching.html",
+      "local_path": "_teaching/documents/past-teaching.html",
+      "error": "404 Client Error: Not Found for url: https://typo.iwr.uni-heidelberg.de/teaching/past-teaching.html"
+    }
+  ],
+  "summary": {
+    "total_downloaded": 57,
+    "total_failed": 62,
+    "total_size": 7470801
+  }
+}

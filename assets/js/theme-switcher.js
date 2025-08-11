@@ -17,12 +17,16 @@
       
       // Load saved theme or detect system preference
       this.currentTheme = this.getSavedTheme();
+      console.log('Initial theme detected:', this.currentTheme);
+      
       this.applyTheme(this.currentTheme);
       
       // Bind events
       this.bindEvents();
       
       console.log('Enhanced High-Contrast Theme Manager initialized with theme:', this.currentTheme);
+      console.log('Body classes:', this.body.className);
+      console.log('HTML data-theme:', this.html.getAttribute('data-theme'));
     },
 
     getSavedTheme() {
@@ -92,6 +96,8 @@
     },
 
     applyTheme(theme) {
+      console.log('Applying theme:', theme);
+      
       // Remove existing theme classes and attributes
       this.body.classList.remove('dark-mode', 'light-mode');
       this.body.removeAttribute('data-theme');
@@ -105,6 +111,7 @@
         
         // Force high contrast dark theme styles
         this.applyDarkModeStyles();
+        console.log('Dark mode applied');
       } else {
         // Apply light mode with maximum contrast
         this.body.classList.add('light-mode');
@@ -113,10 +120,14 @@
         
         // Force high contrast light theme styles
         this.applyLightModeStyles();
+        console.log('Light mode applied');
       }
       
       // Update all theme toggle icons and labels
       this.updateAllToggleElements(theme);
+      
+      console.log('Final body classes:', this.body.className);
+      console.log('Final HTML data-theme:', this.html.getAttribute('data-theme'));
     },
 
     applyDarkModeStyles() {
@@ -178,25 +189,31 @@
     },
 
     updateAllToggleElements(theme) {
-      // Update main theme toggle icon (navbar)
-      const themeIcon = document.querySelector('#theme-icon');
-      if (themeIcon) {
-        themeIcon.className = theme === 'dark' ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon';
-      }
-      
-      // Update floating dark mode toggle icon
-      const darkModeIcon = document.querySelector('#dark-mode-icon');
-      if (darkModeIcon) {
-        darkModeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-      }
-      
-      // Update any other theme icons
-      const allThemeIcons = document.querySelectorAll('.theme-icon');
-      allThemeIcons.forEach(icon => {
-        if (icon.id !== 'theme-icon') { // Avoid double-updating the main icon
-          icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      // Update main theme toggle icons (navbar)
+      const themeIconLight = document.querySelector('#theme-icon-light');
+      const themeIconDark = document.querySelector('#theme-icon-dark');
+      if (themeIconLight && themeIconDark) {
+        if (theme === 'dark') {
+          themeIconLight.style.display = 'inline-block';
+          themeIconDark.style.display = 'none';
+        } else {
+          themeIconLight.style.display = 'none';
+          themeIconDark.style.display = 'inline-block';
         }
-      });
+      }
+      
+      // Update floating dark mode toggle icons
+      const darkModeIconLight = document.querySelector('#dark-mode-icon-light');
+      const darkModeIconDark = document.querySelector('#dark-mode-icon-dark');
+      if (darkModeIconLight && darkModeIconDark) {
+        if (theme === 'dark') {
+          darkModeIconLight.style.display = 'inline-block';
+          darkModeIconDark.style.display = 'none';
+        } else {
+          darkModeIconLight.style.display = 'none';
+          darkModeIconDark.style.display = 'inline-block';
+        }
+      }
       
       // Update aria labels and titles
       this.updateAriaLabels(theme);
@@ -340,6 +357,12 @@
       document.addEventListener('keydown', (e) => {
         // Handle theme switching with keyboard shortcuts
         if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'T') {
+          e.preventDefault();
+          ThemeManager.toggleTheme();
+        }
+        
+        // Alternative shortcut: Ctrl/Cmd + D
+        if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
           e.preventDefault();
           ThemeManager.toggleTheme();
         }

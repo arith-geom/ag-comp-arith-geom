@@ -1,0 +1,94 @@
+name: Build and Deploy Jekyll site
+
+on:
+  push:
+    branches: [ "main", "CMS" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        run: |
+          bundle config set path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3
+
+      - name: Build site
+        run: |
+          bundle exec jekyll build --trace
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.2'
+        bundler-cache: true
+        
+    - name: Install dependencies
+      run: |
+        bundle install
+        
+    - name: Build site
+      run: |
+        bundle exec jekyll build
+        
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
+        force_orphan: true 

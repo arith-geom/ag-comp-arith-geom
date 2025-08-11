@@ -1,0 +1,312 @@
+---
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="description" content="{{ page.abstract | default: page.description | default: site.description }}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.abstract | default: page.description }}">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="twitter:title" content="{{ page.title }}">
+  <meta property="twitter:description" content="{{ page.abstract | default: page.description }}">
+  
+  <!-- Authors -->
+  {% if page.authors %}
+    <meta name="author" content="{{ page.authors }}">
+    <meta property="article:author" content="{{ page.authors }}">
+  {% endif %}
+  
+  <!-- Publication date -->
+  {% if page.year %}
+    <meta property="article:published_time" content="{{ page.year }}-01-01T00:00:00Z">
+  {% endif %}
+  
+  <!-- DOI -->
+  {% if page.doi %}
+    <meta name="citation_doi" content="{{ page.doi }}">
+  {% endif %}
+  
+  <!-- Include site head -->
+  {% include head.liquid %}
+</head>
+
+<body>
+  {% include header.liquid %}
+  
+  <main class="publication-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <!-- Breadcrumb -->
+          <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{{ '/' | relative_url }}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+            </ol>
+          </nav>
+          
+          <!-- Publication Header -->
+          <div class="publication-header">
+            <div class="publication-meta">
+              {% if page.type %}
+                <span class="badge bg-primary">{{ page.type }}</span>
+              {% endif %}
+              {% if page.status %}
+                <span class="badge bg-secondary">{{ page.status }}</span>
+              {% endif %}
+              {% if page.year %}
+                <span class="badge bg-info">{{ page.year }}</span>
+              {% endif %}
+            </div>
+            
+            <h1 class="publication-title">{{ page.title }}</h1>
+            
+            {% if page.authors %}
+              <div class="publication-authors">
+                <strong>Authors:</strong> {{ page.authors }}
+              </div>
+            {% endif %}
+            
+            {% if page.journal %}
+              <div class="publication-venue">
+                <strong>Journal/Conference:</strong> {{ page.journal }}
+                {% if page.volume %}, Volume {{ page.volume }}{% endif %}
+                {% if page.pages %}, Pages {{ page.pages }}{% endif %}
+              </div>
+            {% endif %}
+          </div>
+          
+          <!-- Publication Links -->
+          <div class="publication-links mb-4">
+            {% if page.doi %}
+              <a href="https://doi.org/{{ page.doi }}" class="btn btn-outline-primary" target="_blank">
+                <i class="fas fa-external-link-alt"></i> DOI
+              </a>
+            {% endif %}
+            
+            {% if page.pdf %}
+              <a href="{{ page.pdf }}" class="btn btn-outline-secondary" target="_blank">
+                <i class="fas fa-file-pdf"></i> PDF
+              </a>
+            {% endif %}
+            
+            {% if page.arxiv %}
+              <a href="https://arxiv.org/abs/{{ page.arxiv }}" class="btn btn-outline-info" target="_blank">
+                <i class="fas fa-external-link-alt"></i> arXiv
+              </a>
+            {% endif %}
+            
+            {% if page.url and page.url != page.pdf %}
+              <a href="{{ page.url }}" class="btn btn-outline-success" target="_blank">
+                <i class="fas fa-external-link-alt"></i> View Online
+              </a>
+            {% endif %}
+          </div>
+          
+          <!-- Abstract -->
+          {% if page.abstract %}
+            <div class="publication-abstract mb-4">
+              <h3>Abstract</h3>
+              <p>{{ page.abstract }}</p>
+            </div>
+          {% endif %}
+          
+          <!-- Keywords -->
+          {% if page.keywords %}
+            <div class="publication-keywords mb-4">
+              <h3>Keywords</h3>
+              <div class="keywords-list">
+                {% for keyword in page.keywords %}
+                  <span class="badge bg-light text-dark me-2 mb-2">{{ keyword }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          
+                    <!-- Publication Content -->
+          {% if page.content %}
+          <div class="publication-content tex2jax_process">
+            {{ page.content }}
+          </div>
+          {% endif %}
+          
+          <!-- Back to Publications -->
+          <div class="text-center mt-5">
+            <a href="{{ '/publications/' | relative_url }}" class="btn btn-primary">
+              <i class="fas fa-arrow-left"></i> Back to Publications
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  {% include footer.liquid %}
+  
+  <style>
+    .publication-page {
+      padding: 2rem 0;
+      min-height: 60vh;
+    }
+    
+    .publication-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+    
+    .publication-meta {
+      margin-bottom: 1rem;
+    }
+    
+    .publication-meta .badge {
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    .publication-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    .publication-authors {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .publication-venue {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    
+    .publication-links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .publication-links .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+    }
+    
+    .publication-abstract {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .publication-abstract h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    
+    .publication-abstract p {
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+    
+    .publication-keywords h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    
+    .keywords-list .badge {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }
+    
+    .publication-content {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .publication-content h1,
+    .publication-content h2,
+    .publication-content h3,
+    .publication-content h4,
+    .publication-content h5,
+    .publication-content h6 {
+      color: var(--text-primary);
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .publication-content p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .publication-content ul,
+    .publication-content ol {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    
+    .publication-content li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .breadcrumb {
+      background: var(--bg-secondary);
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+    }
+    
+    .breadcrumb-item a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .breadcrumb-item a:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+    
+    .breadcrumb-item.active {
+      color: var(--text-muted);
+    }
+    
+    @media (max-width: 768px) {
+      .publication-title {
+        font-size: 1.5rem;
+      }
+      
+      .publication-links {
+        justify-content: center;
+      }
+      
+      .publication-links .btn {
+        flex: 1;
+        min-width: 120px;
+      }
+    }
+  </style>
+</body>
+</html> 

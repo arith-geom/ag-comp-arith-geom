@@ -1,81 +1,83 @@
 ---
-layout: default
-title: About
-permalink: /
+layout: page
+permalink: "/about/"
 nav: true
 nav_order: 1
+order: 100
+show_title: false
+title: About
+---
+# AG Computational Arithmetic Geometry
+
+## Group Leader
+
+**Prof. Dr. Gebhard Böckle**
+
+## Research Focus
+
+Our research group focuses on computational arithmetic geometry at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg. We work on:
+
+### Core Research Areas
+
+- **Galois representations** and their relations to modular forms and elliptic curves
+- **Deformation theory** of Galois representations
+- **Function field arithmetic** including L-functions and Drinfeld modular forms
+- **Computer algebra applications** in arithmetic geometry
+
+### Research Methods
+
+We apply a broad range of methods to tackle problems in arithmetic geometry:
+
+1. **Theoretical approaches** using pure mathematical methods
+2. **Computational experiments** using computer algebra systems
+3. **Software development** extending existing computer algebra packages
+
+## Current Members
+
+### Prof. Dr. Gebhard Böckle
+**Role:** Group Leader
+**Email:** arithgeo@iwr.uni-heidelberg.de
+
+### Dr. Barinder Banwait
+**Role:** Researcher
+**Email:** arithgeo@iwr.uni-heidelberg.de
+
+### Dr. Peter Gräf
+**Role:** Former PhD Student (2015-2020)
+**Email:** arithgeo@iwr.uni-heidelberg.de
+
+## Software Development
+
+Our group has developed several software packages:
+
+### QaQuotGraphs
+- **Author:** Dr. Ralf Butenuth
+- **Description:** Magma package to compute the action by unit groups of maximal orders in quaternion algebras over F_q(T)
+- **Category:** Quaternion Algebras
+
+### Bruhat-Tits Buildings Package
+- **Author:** Lutz Hofmann (Former Master's student)
+- **Description:** Magma package to compute quotients of Bruhat-Tits buildings over function fields modulo congruence subgroups and the action of Hecke operators on harmonic cocycles with coefficients in char. 0
+- **Category:** Bruhat-Tits Buildings
+
+### Hecke Eigensystems Package
+- **Author:** Burak Cakir (Master's student)
+- **Description:** Magma package to compute Hecke eigensystems for harmonic cocycles on the Bruhat-Tits tree for GL_2(F_q(T))
+- **Category:** Hecke Operators
+
+## Contact Information
+
+- **Email:** arithgeo@iwr.uni-heidelberg.de
+- **Institution:** Ruprecht-Karls-Universität Heidelberg
+- **Department:** Interdisciplinary Center for Scientific Computing (IWR)
+- **Group:** AG Computational Arithmetic Geometry
+
+## Location
+
+Interdisciplinary Center for Scientific Computing (IWR)  
+Heidelberg University  
+Germany
+
 ---
 
-# About Our Research Group
-
-## Placeholder Research Group Description
-
-This is placeholder text for the research group description. Our group focuses on placeholder research areas and placeholder methodologies.
-
-### Placeholder Research Areas
-
-- **Placeholder Area 1**: Placeholder description of research area one
-- **Placeholder Area 2**: Placeholder description of research area two  
-- **Placeholder Area 3**: Placeholder description of research area three
-- **Placeholder Area 4**: Placeholder description of research area four
-
-### Placeholder Mission Statement
-
-Placeholder mission statement text describing our goals and objectives in placeholder research.
-
-## Placeholder Group Leader
-
-**Prof. Dr. Placeholder Name**  
-Placeholder Title  
-Placeholder Institution  
-Placeholder Department  
-
-Placeholder biographical information and research interests.
-
-### Placeholder Research Interests
-
-- Placeholder interest 1
-- Placeholder interest 2
-- Placeholder interest 3
-
-## Placeholder Location
-
-Placeholder University  
-Placeholder Department  
-Placeholder Building, Room XXX  
-Placeholder Address  
-Placeholder City, Placeholder Country
-
-## Placeholder Contact Information
-
-**Email:** [Please add a contact email address]  
-**Phone:** +XX XXX XXX XXXX  
-**Office Hours:** Placeholder office hours
-
----
-
-*This is placeholder content for the initial website phase.*
-
----
-
-**Navigation:** [Home]({{ "/" | relative_url }}) | [Research]({{ "/research/" | relative_url }}) | [Publications]({{ "/publications/" | relative_url }}) | [Teaching]({{ "/teaching/" | relative_url }}) | [Members]({{ "/members/" | relative_url }}) | [Links]({{ "/links/" | relative_url }}) | [Contact]({{ "/contact/" | relative_url }}) | [Interna]({{ "/interna/" | relative_url }})
-
----
-
-**Official Website:** Visit our [original website](https://typo.iwr.uni-heidelberg.de/groups/arith-geom/) at typo.iwr.uni-heidelberg.de
-
-**Contact:** For inquiries, please contact [arithgeo@iwr.uni-heidelberg.de](mailto:arithgeo@iwr.uni-heidelberg.de)
-
-For a list of our members, please see the [Members](/members) page.
-
-### Contact Information
-
-For inquiries, please contact [arithgeo@iwr.uni-heidelberg.de](mailto:arithgeo@iwr.uni-heidelberg.de).
-
-### Location
-
-Placeholder University  
-Placeholder Department  
-Placeholder Building, Room XXX  
-Placeholder Address  
-Placeholder City, Placeholder Country 
+*Last updated: 2024-06-04*

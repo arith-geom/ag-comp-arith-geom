@@ -1,63 +1,240 @@
 ---
-layout: default
-title: Research
-permalink: /research/
+layout: page
+permalink: "/research/"
 nav: true
 nav_order: 2
+show_title: false
+order: 100
+title: Research
 ---
+<div class="research-areas">
+  {% assign sorted_research = site.research | sort: 'title' %}
+  {% for research_area in sorted_research %}
+    <div class="research-area-card">
+      <div class="research-icon">
+        <i class="fas fa-microscope" aria-hidden="true"></i>
+      </div>
+      <div class="research-content">
+        <h3>{{ research_area.title }}</h3>
+        <div class="research-text">
+          {{ research_area.content }}
+        </div>
+        {% if research_area.keywords %}
+          <div class="research-keywords">
+            <strong>Keywords:</strong> 
+            {% for keyword in research_area.keywords %}
+              <span class="keyword-tag">{{ keyword }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if research_area.related_publications %}
+          <div class="related-publications">
+            <strong>Related Publications:</strong>
+            <ul>
+              {% for pub_id in research_area.related_publications %}
+                {% assign pub = site.publications | where: "id", pub_id | first %}
+                {% if pub %}
+                  <li><a href="{{ pub.url | default: pub.pdf | default: '#' }}">{{ pub.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
 
-# Research Areas
+<style>
+/* Clean and modern research page styling */
+.research-areas {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 
-## Placeholder Research Overview
+.research-area-card {
+  display: flex;
+  gap: 2rem;
+  padding: 2.5rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
 
-[Please add content to this page.]
+.research-area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
 
-### Placeholder Research Area 1
+.research-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
 
-**Placeholder Topic Name**
+.research-area-card:hover .research-icon {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
 
-Placeholder description of research area one. This area focuses on placeholder methodologies and placeholder applications.
+.research-area-card .research-content h3 {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+}
 
-#### Key Research Questions:
-- Placeholder research question 1?
-- Placeholder research question 2?
-- Placeholder research question 3?
+.research-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
 
-### Placeholder Research Area 2
+.research-text p {
+  margin-bottom: 1rem;
+}
 
-**Placeholder Topic Name**
+.research-text h2, .research-text h3, .research-text h4 {
+  color: var(--text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
 
-Placeholder description of research area two. This involves placeholder techniques and placeholder theoretical frameworks.
+.research-keywords {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
 
-#### Current Projects:
-- **Placeholder Project 1**: Placeholder project description
-- **Placeholder Project 2**: Placeholder project description
-- **Placeholder Project 3**: Placeholder project description
+.keyword-tag {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin: 0.25rem;
+}
 
-### Placeholder Research Area 3
+.related-publications {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
 
-**Placeholder Topic Name**
+.related-publications ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
 
-Placeholder description of research area three. We investigate placeholder phenomena using placeholder computational methods.
+.related-publications li {
+  margin-bottom: 0.5rem;
+}
 
-#### Recent Results:
-- Placeholder result 1
-- Placeholder result 2
-- Placeholder result 3
+.related-publications a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
 
-## Placeholder Collaborations
+.related-publications a:hover {
+  color: var(--heidelberg-red);
+  text-decoration: underline;
+}
 
-We collaborate with placeholder institutions and placeholder researchers worldwide.
+/* Research image styling */
+.research-image-container {
+  margin: 2rem 0;
+  text-align: center;
+}
 
-### Placeholder Partners:
-- Placeholder University 1
-- Placeholder University 2
-- Placeholder Research Institute
+.research-image {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
 
-## Placeholder Funding
+.research-image:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
 
-Our research is supported by placeholder funding agencies and placeholder grants.
+.research-img {
+  border-radius: var(--radius-md);
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
----
+.research-caption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+}
 
-*This is placeholder content for the initial website phase.* 
+/* Responsive design */
+@media (max-width: 768px) {
+  .research-area-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .research-icon {
+    align-self: center;
+  }
+  
+  .research-area-card .research-content h3 {
+    text-align: center;
+    display: block;
+  }
+  
+  .research-image {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .research-areas {
+    gap: 2rem;
+  }
+  
+  .research-area-card {
+    padding: 1.5rem;
+  }
+  
+  .research-area-card .research-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .research-text {
+    font-size: 1rem;
+  }
+}
+</style> 

@@ -1,0 +1,200 @@
+<!-- Pages CMS Admin Interface -->
+<div id="pagescms-admin" style="display: none;">
+  <div class="pagescms-admin-overlay">
+    <div class="pagescms-admin-modal">
+      <div class="pagescms-admin-header">
+        <h3>Pages CMS Admin</h3>
+        <button class="pagescms-admin-close" onclick="closePagesCMSAdmin()">&times;</button>
+      </div>
+      <div class="pagescms-admin-content">
+        <p>This website uses <a href="https://pagescms.org" target="_blank">Pages CMS</a> for content management.</p>
+        <p>To edit content, please visit the official Pages CMS interface:</p>
+        <div class="pagescms-admin-actions">
+          <button onclick="openOfficialPagesCMS()" class="btn btn-primary">
+            Open Pages CMS
+          </button>
+          <button class="btn btn-secondary" onclick="refreshPagesCMSContent()">
+            Refresh Content
+          </button>
+        </div>
+        <div class="pagescms-admin-status">
+          <p><strong>Status:</strong> <span id="pagescms-status-text">Ready</span></p>
+          <p><strong>Repository:</strong> <span id="pagescms-repo-info">Loading...</span></p>
+          <p><strong>Content Types:</strong> <span id="pagescms-content-types">{{ site.pagescms.content_types | size }} configured</span></p>
+          <p><strong>Last Sync:</strong> <span id="pagescms-last-sync">Checking...</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.pagescms-admin-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagescms-admin-modal {
+  background: white;
+  border-radius: 8px;
+  padding: 0;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pagescms-admin-header {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.pagescms-admin-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.pagescms-admin-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagescms-admin-close:hover {
+  color: #333;
+}
+
+.pagescms-admin-content {
+  padding: 20px;
+}
+
+.pagescms-admin-actions {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pagescms-admin-status {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+}
+
+#pagescms-status-text {
+  color: #007bff;
+  font-weight: 500;
+}
+
+#pagescms-repo-info {
+  color: #666;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .pagescms-admin-modal {
+    width: 95%;
+    margin: 10px;
+  }
+  
+  .pagescms-admin-actions {
+    flex-direction: column;
+  }
+  
+  .pagescms-admin-actions .btn {
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+// Pages CMS Admin Functions
+function openPagesCMSAdmin() {
+  document.getElementById('pagescms-admin').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  
+  // Update repository info
+  updateRepoInfo();
+}
+
+function closePagesCMSAdmin() {
+  document.getElementById('pagescms-admin').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function updateRepoInfo() {
+  const repoInfo = document.getElementById('pagescms-repo-info');
+  const lastSync = document.getElementById('pagescms-last-sync');
+  
+  if (window.PagesCMS && window.PagesCMS.config) {
+    const config = window.PagesCMS.config;
+    repoInfo.textContent = `${config.repoUrl} (${config.branch})`;
+  } else {
+    repoInfo.textContent = 'Configuration not available';
+  }
+  
+  // Update last sync time
+  const now = new Date();
+  lastSync.textContent = now.toLocaleString();
+}
+
+function refreshPagesCMSContent() {
+  const statusText = document.getElementById('pagescms-status-text');
+  statusText.textContent = 'Refreshing...';
+  statusText.style.color = '#ffc107';
+  
+  if (window.PagesCMS && window.PagesCMS.refresh) {
+    window.PagesCMS.refresh();
+  }
+  
+  setTimeout(() => {
+    statusText.textContent = 'Content refreshed';
+    statusText.style.color = '#28a745';
+  }, 2000);
+}
+
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+  const overlay = document.querySelector('.pagescms-admin-overlay');
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        closePagesCMSAdmin();
+      }
+    });
+  }
+});
+
+// Keyboard shortcut to open admin (Ctrl+Shift+P)
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && e.shiftKey && e.key === 'P') {
+    e.preventDefault();
+    openPagesCMSAdmin();
+  }
+});
+</script> 

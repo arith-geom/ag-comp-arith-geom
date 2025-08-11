@@ -1,30 +1,305 @@
-{% capture footer_contents %}
-  &copy; Copyright {{ site.time | date: '%Y' }}
-  {{ site.first_name }}
-  {{ site.middle_name }}
-  {{ site.last_name }}. {{ site.footer_text }}
-  {% if site.impressum_path %}
-    <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-  {% endif %}
-  {% if site.last_updated %}
-    Last updated: {{ 'now' | date: '%B %d, %Y' }}.
-  {% endif %}
-{% endcapture %}
-
-{% if site.footer_fixed %}
-  <footer class="fixed-bottom" role="contentinfo">
-    <div class="container mt-0">
-      {{ footer_contents }}
+<footer class="footer mt-auto py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5>AG Computational Arithmetic Geometry</h5>
+        <p class="text-muted">
+          Mathematikon, INF 205<br>
+          69120 Heidelberg, Germany
+        </p>
+      </div>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
+          <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+          <li><a href="{{ '/members/' | relative_url }}">Team</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <a href="https://www.uni-heidelberg.de/en" target="_blank" rel="noopener">
+          <img src="{{ '/assets/img/heidelberg_logo.svg' | relative_url }}" alt="Heidelberg University Logo" height="40" class="mb-2">
+        </a><br>
+        <a href="https://www.iwr.uni-heidelberg.de/en" target="_blank" rel="noopener" class="text-muted">Interdisciplinary Center for Scientific Computing (IWR)</a>
+      </div>
     </div>
-  </footer>
-{% else %}
-  <footer class="sticky-bottom mt-5" role="contentinfo">
-    {% if site.newsletter.enabled %}
-      {% include newsletter.liquid %}
-    {% endif %}
-
-    <div class="container">
-      {{ footer_contents }}
+    <hr class="footer-divider">
+    <div class="text-center text-muted small">
+      &copy; {{ "now" | date: "%Y" }} {{ site.title }}. All Rights Reserved.
+      Last updated: {{ site.time | date: "%B %d, %Y" }}.
+      <br>
+      <span class="website-credits">
+        Website designed and developed by 
+        <a href="https://github.com/VictorMerk" target="_blank" rel="noopener" class="creator-link">
+          Victor Merk
+        </a>
+      </span>
     </div>
-  </footer>
-{% endif %}
+  </div>
+</footer>
+
+<!-- Floating Dark Mode Toggle -->
+<button id="dark-mode-toggle" class="floating-theme-toggle" 
+        title="Switch Theme" aria-label="Toggle dark and light mode">
+  <span class="dark-mode-icon-light" id="dark-mode-icon-light" aria-hidden="true">☀️</span>
+  <span class="dark-mode-icon-dark" id="dark-mode-icon-dark" aria-hidden="true">🌙</span>
+</button>
+
+<style>
+.floating-theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary, #C22032);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.floating-theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: var(--primary-hover, #991B1B);
+}
+
+.floating-theme-toggle:focus {
+  outline: 2px solid var(--link-color, #C22032);
+  outline-offset: 2px;
+}
+
+/* Dark mode adjustments for floating toggle */
+[data-theme="dark"] .floating-theme-toggle,
+body.dark-mode .floating-theme-toggle {
+  background: var(--primary, #DC2626);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .floating-theme-toggle:hover,
+body.dark-mode .floating-theme-toggle:hover {
+  background: var(--primary-hover, #B91C1C);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-theme-toggle {
+    bottom: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Footer Dark Mode Styles */
+.footer {
+  background-color: var(--bg-secondary, #F3F4F6) !important;
+  color: var(--text-primary, #000000) !important;
+  border-top: 1px solid var(--border-color, #E5E7EB) !important;
+}
+
+.footer h5 {
+  color: var(--text-primary, #000000) !important;
+}
+
+.footer .text-muted {
+  color: var(--text-muted, #6B7280) !important;
+}
+
+.footer a {
+  color: var(--link-color, #C22032) !important;
+}
+
+.footer a:hover {
+  color: var(--link-hover, #991B1B) !important;
+}
+
+.footer-divider {
+  border-color: var(--border-color, #E5E7EB) !important;
+  margin: 1.5rem 0;
+}
+
+/* Dark mode footer styles */
+[data-theme="dark"] .footer,
+body.dark-mode .footer,
+html[data-theme="dark"] .footer {
+  background-color: var(--bg-secondary, #0A0A0A) !important;
+  color: var(--text-primary, #FFFFFF) !important;
+  border-top: 1px solid var(--border-color, #374151) !important;
+}
+
+[data-theme="dark"] .footer h5,
+body.dark-mode .footer h5,
+html[data-theme="dark"] .footer h5 {
+  color: var(--text-primary, #FFFFFF) !important;
+}
+
+[data-theme="dark"] .footer .text-muted,
+body.dark-mode .footer .text-muted,
+html[data-theme="dark"] .footer .text-muted {
+  color: var(--text-muted, #9CA3AF) !important;
+}
+
+[data-theme="dark"] .footer a,
+body.dark-mode .footer a,
+html[data-theme="dark"] .footer a {
+  color: var(--link-color, #FF6B6B) !important;
+}
+
+[data-theme="dark"] .footer a:hover,
+body.dark-mode .footer a:hover,
+html[data-theme="dark"] .footer a:hover {
+  color: var(--link-hover, #FF5252) !important;
+}
+
+[data-theme="dark"] .footer-divider,
+body.dark-mode .footer-divider,
+html[data-theme="dark"] .footer-divider {
+  border-color: var(--border-color, #374151) !important;
+}
+
+/* Website credits styling */
+.website-credits {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.creator-link {
+  color: var(--link-color, #C22032) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.creator-link:hover {
+  color: var(--link-hover, #991B1B) !important;
+  text-decoration: underline;
+}
+
+/* Dark mode creator link */
+[data-theme="dark"] .creator-link,
+body.dark-mode .creator-link,
+html[data-theme="dark"] .creator-link {
+  color: var(--link-color, #FF6B6B) !important;
+}
+
+[data-theme="dark"] .creator-link:hover,
+body.dark-mode .creator-link:hover,
+html[data-theme="dark"] .creator-link:hover {
+  color: var(--link-hover, #FF5252) !important;
+}
+
+/* Force dark mode styles with high specificity */
+[data-theme="dark"] body,
+body.dark-mode,
+html[data-theme="dark"] body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] li,
+[data-theme="dark"] td,
+[data-theme="dark"] th,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode td,
+body.dark-mode th,
+html[data-theme="dark"] p,
+html[data-theme="dark"] span,
+html[data-theme="dark"] li,
+html[data-theme="dark"] td,
+html[data-theme="dark"] th {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] a,
+body.dark-mode a,
+html[data-theme="dark"] a {
+  color: #FF6B6B !important;
+}
+
+[data-theme="dark"] a:hover,
+body.dark-mode a:hover,
+html[data-theme="dark"] a:hover {
+  color: #FF5252 !important;
+}
+
+/* Search dark mode styles */
+.search-results-container.dark-theme {
+  background: var(--bg-secondary, #0A0A0A) !important;
+  border: 1px solid var(--border-color, #374151) !important;
+  color: var(--text-primary, #FFFFFF) !important;
+}
+
+.search-results-container.dark-theme .search-result-item {
+  background: var(--bg-tertiary, #111827) !important;
+  border-bottom: 1px solid var(--border-color, #374151) !important;
+  color: var(--text-primary, #FFFFFF) !important;
+}
+
+.search-results-container.dark-theme .search-result-item:hover {
+  background: var(--bg-accent, #450A0A) !important;
+}
+
+.search-results-container.dark-theme .search-result-title {
+  color: var(--text-primary, #FFFFFF) !important;
+}
+
+.search-results-container.dark-theme .search-result-content {
+  color: var(--text-secondary, #F3F4F6) !important;
+}
+
+.search-results-container.dark-theme .search-result-meta {
+  color: var(--text-muted, #9CA3AF) !important;
+}
+
+.search-results-container.dark-theme .search-result-url {
+  color: var(--link-color, #FF6B6B) !important;
+}
+
+.search-results-container.dark-theme mark {
+  background: var(--primary, #DC2626) !important;
+  color: var(--primary-text, #000000) !important;
+}
+
+.search-results-container.dark-theme .search-empty-state {
+  color: var(--text-muted, #9CA3AF) !important;
+}
+</style>
