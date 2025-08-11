@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Hecke characters associated to Drinfeld modular forms
 authors: Gebhard Böckle, T. Centeleghe
@@ -16,8 +15,6 @@ abstract: This paper explores the relationship between Hecke characters and Drin
   modular forms over function fields.
 journal_full: Compositio Mathematica
 ---
-
-
 ## Abstract
 
 This paper explores the relationship between Hecke characters and Drinfeld modular forms over function fields. We investigate the connections between these two important objects in arithmetic geometry and their applications to the theory of function fields.

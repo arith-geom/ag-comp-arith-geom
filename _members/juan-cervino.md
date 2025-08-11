@@ -1,5 +1,4 @@
 ---
----
 title: Juan Cerviño
 email: juan.cervino@math.uni-heidelberg.de
 layout: member
@@ -9,6 +8,4 @@ role: Alumni
 status: alumni
 photo: "/assets/img/juan-cerviño.jpg"
 ---
-
-
 title: {{ page.name }}

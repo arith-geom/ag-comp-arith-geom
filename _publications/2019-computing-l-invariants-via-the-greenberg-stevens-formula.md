@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Computing L-invariants via the Greenberg-Stevens formula
 authors: S. Anni, G. Böckle, Peter Gräf, A. Troya
@@ -17,8 +16,6 @@ keywords: L-invariants, Greenberg-Stevens formula, p-adic L-functions, computati
 abstract: This work advances computational methods for computing L-invariants via
   the Greenberg-Stevens formula.
 ---
-
-
 ## Abstract
 
 This work advances computational methods for computing L-invariants via the Greenberg-Stevens formula.

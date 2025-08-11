@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Derivierte Kategorien und Algebraische Geometrie - Course information
@@ -16,7 +15,5 @@ semester_year: 2021
 semester_key: SS2021
 semester_sort: 20211
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

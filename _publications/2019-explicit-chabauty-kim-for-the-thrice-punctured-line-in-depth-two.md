@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Explicit Chabauty-Kim for the thrice-punctured line in depth two
 authors: Barinder S. Banwait, Ishai Dan-Cohen
@@ -13,8 +12,6 @@ keywords: Chabauty-Kim method, arithmetic geometry, fundamental groups
 abstract: This paper presents explicit computations for the Chabauty-Kim method applied
   to the thrice-punctured line.
 ---
-
-
 ## Abstract
 
 This paper presents explicit computations for the Chabauty-Kim method applied to the thrice-punctured line.

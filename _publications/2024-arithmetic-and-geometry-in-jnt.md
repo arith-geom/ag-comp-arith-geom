@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Arithmetic and geometry in JNT
 authors: Gebhard Böckle
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/AriGebJNTRev2.pdf"
 keywords: arithmetic, geometry, Journal of Number Theory
 abstract: A paper on arithmetic and geometry published in the Journal of Number Theory.
 ---
-
-
 ## Abstract
 
 A paper on arithmetic and geometry published in the Journal of Number Theory.

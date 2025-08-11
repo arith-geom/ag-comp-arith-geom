@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Dissertation - Ralf Butenuth
 authors: Ralf Butenuth
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/Dissertation_Ralf-Butenuth.pdf"
 keywords: PhD thesis, computational arithmetic geometry, Butenuth
 abstract: PhD dissertation by Ralf Butenuth on computational arithmetic geometry.
 ---
-
-
 ## Abstract
 
 PhD dissertation by Ralf Butenuth on computational arithmetic geometry.

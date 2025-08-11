@@ -1,5 +1,4 @@
 ---
----
 layout: teaching
 title: Test Semester 2025
 semester: Winter Semester 2025
@@ -13,10 +12,6 @@ semester_year: 2025
 semester_key: WS2025
 semester_sort: 20252
 ---
-
-
-
-
 This is a test course created to verify that Pages CMS real-time integration is working properly.
 
 ## Course Information

@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Affine Algebraic Groups - Course information and materials.
@@ -15,7 +14,5 @@ semester_year: 2023
 semester_key: WS2023
 semester_sort: 20232
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

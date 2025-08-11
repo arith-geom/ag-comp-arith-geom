@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: On universal deformation presentations
 authors: Gebhard Böckle
@@ -12,8 +11,6 @@ keywords: universal deformations, Galois representations, presentations
 abstract: This work studies universal deformation presentations in Galois representation
   theory.
 ---
-
-
 ## Abstract
 
 This work studies universal deformation presentations in Galois representation theory.

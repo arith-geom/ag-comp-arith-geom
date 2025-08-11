@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Proseminar
 description: Primzahlen und Faktorisierung für die Kryptographie - Course information
@@ -16,7 +15,5 @@ semester_year: 2017
 semester_key: WS2017
 semester_sort: 20172
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

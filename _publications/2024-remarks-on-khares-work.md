@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Remarks on Khare's work
 authors: Gebhard Böckle
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/RemOnKhare.pdf"
 keywords: Khare, remarks, Galois representations
 abstract: Remarks and comments on work by Khare in Galois representation theory.
 ---
-
-
 ## Abstract
 
 Remarks and comments on work by Khare in Galois representation theory.

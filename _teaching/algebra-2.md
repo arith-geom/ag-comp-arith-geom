@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Vorlesung
 description: Algebra 2 - Course information and materials.
@@ -15,7 +14,5 @@ semester_year: 2017
 semester_key: SS2017
 semester_sort: 20171
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

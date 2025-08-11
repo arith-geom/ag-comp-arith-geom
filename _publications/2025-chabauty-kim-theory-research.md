@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Chabauty-Kim Theory
 authors: Barinder Banwait
@@ -10,8 +9,6 @@ journal: Research Topic
 keywords: chabauty-kim theory, arithmetic geometry, research
 abstract: Research on Chabauty-Kim theory and explicit methods
 ---
-
-
 ## Abstract
 
 Research on Chabauty-Kim theory and explicit methods

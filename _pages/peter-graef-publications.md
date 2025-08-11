@@ -1,11 +1,10 @@
 ---
----
 layout: page
 title: Publications - Dr. Peter Gräf
 permalink: "/members/peter-graef/publications/"
 nav: false
+order: 100
 ---
-
 <div class="heidelberg-style-publications">
   <!-- Breadcrumb Navigation -->
   <div class="pathway">

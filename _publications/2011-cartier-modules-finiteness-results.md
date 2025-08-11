@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: 'Cartier Modules: finiteness results'
 authors: M. Blickle, Gebhard Böckle
@@ -15,8 +14,6 @@ keywords: Cartier modules, D-modules, finiteness results
 abstract: This paper establishes finiteness results for Cartier modules.
 journal_full: Journal für die reine und angewandte Mathematik
 ---
-
-
 ## Abstract
 
 This paper establishes finiteness results for Cartier modules.

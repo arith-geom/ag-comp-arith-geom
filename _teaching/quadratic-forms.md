@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Proseminar
 description: Quadratic forms - Course information and materials.
@@ -15,7 +14,5 @@ semester_year: 2024
 semester_key: WS2024
 semester_sort: 20242
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

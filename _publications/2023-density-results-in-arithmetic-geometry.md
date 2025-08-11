@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Density results in arithmetic geometry
 authors: Gebhard Böckle
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/DensityAJMCorr.pdf"
 keywords: density, arithmetic geometry, modular forms
 abstract: Results on density in arithmetic geometry and modular forms.
 ---
-
-
 ## Abstract
 
 Results on density in arithmetic geometry and modular forms.

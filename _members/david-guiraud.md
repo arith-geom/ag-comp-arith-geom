@@ -1,5 +1,4 @@
 ---
----
 title: David Guiraud
 email: david.guiraud@math.uni-heidelberg.de
 layout: member
@@ -9,6 +8,4 @@ role: Alumni
 status: alumni
 photo: "/assets/img/david-guiraud.jpg"
 ---
-
-
 title: {{ page.name }}

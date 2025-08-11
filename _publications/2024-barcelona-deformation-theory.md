@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Barcelona deformation theory
 authors: Gebhard Böckle
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/Boeckle-Barcelona-DefTheory-Rev.pdf"
 keywords: deformation theory, Barcelona, conference
 abstract: A paper on deformation theory presented at a conference in Barcelona.
 ---
-
-
 ## Abstract
 
 A paper on deformation theory presented at a conference in Barcelona.

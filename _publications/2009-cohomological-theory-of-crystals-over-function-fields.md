@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Cohomological Theory of Crystals over Function Fields
 authors: Gebhard Böckle, R. Pink
@@ -12,8 +11,6 @@ keywords: crystals, function fields, cohomology, arithmetic geometry
 abstract: A comprehensive treatment of the cohomological theory of crystals over function
   fields.
 ---
-
-
 ## Abstract
 
 A comprehensive treatment of the cohomological theory of crystals over function fields.

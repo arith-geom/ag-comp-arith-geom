@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Texel proceedings on arithmetic geometry
 authors: Gebhard Böckle
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/TexelProcRev.pdf"
 keywords: arithmetic geometry, conference proceedings, Texel
 abstract: Proceedings from a conference on arithmetic geometry held in Texel.
 ---
-
-
 ## Abstract
 
 Proceedings from a conference on arithmetic geometry held in Texel.

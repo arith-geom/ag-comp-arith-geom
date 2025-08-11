@@ -1,5 +1,4 @@
 ---
----
 layout: teaching
 title: Homological Algebra (Integration Test)
 semester: SS2025
@@ -15,5 +14,4 @@ semester_year: 2025
 semester_key: SS2025
 semester_sort: 20251
 ---
-
 Syllabus TBD. This file simulates a CMS-created course.

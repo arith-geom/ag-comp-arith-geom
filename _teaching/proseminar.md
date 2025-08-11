@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Proseminar
 description: p-adische Analysis - Course information and materials.
@@ -15,7 +14,5 @@ semester_year: 2016
 semester_key: SS2016
 semester_sort: 20161
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

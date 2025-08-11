@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation
   theory
@@ -16,8 +15,6 @@ keywords: Drinfeld modular forms, representation theory, Hecke operators, cusp f
 abstract: This paper develops Hecke-equivariant decomposition methods for spaces of
   Drinfeld cusp forms using representation theory.
 ---
-
-
 ## Abstract
 
 This paper develops Hecke-equivariant decomposition methods for spaces of Drinfeld cusp forms using representation theory.

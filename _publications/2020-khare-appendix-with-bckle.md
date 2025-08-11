@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Khare appendix with Böckle
 authors: K. Khare, Gebhard Böckle
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/KhareAppboeckleNew2.pdf"
 keywords: Khare, Böckle, appendix, Galois representations
 abstract: An appendix to work by Khare with contributions from Böckle.
 ---
-
-
 ## Abstract
 
 An appendix to work by Khare with contributions from Böckle.

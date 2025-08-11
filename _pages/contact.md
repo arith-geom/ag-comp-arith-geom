@@ -1,16 +1,11 @@
 ---
----
 layout: page
 title: Contact
 permalink: "/contact/"
 nav: true
 nav_order: 7
+order: 100
 ---
-
-
-
-
-
 <div class="location-section mt-5">
   <div class="location-container">
     <div class="location-header">

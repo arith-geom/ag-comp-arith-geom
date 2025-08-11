@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Vorlesung
 description: Adische Räume II - Course information and materials.
@@ -15,7 +14,5 @@ semester_year: 2020
 semester_key: SS2020
 semester_sort: 20201
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

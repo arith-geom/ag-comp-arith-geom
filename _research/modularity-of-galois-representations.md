@@ -1,5 +1,4 @@
 ---
----
 description: The modularity theorem, proved by Wiles and Taylor-Wiles, states that
   every semistable elliptic curve over $\mathbb{Q}$ is modular. This means that the
   Galois representation attached to the $p$-adic Tate module of the curve comes from
@@ -12,8 +11,6 @@ layout: page
 order: 999
 title: Modularity of Galois representations
 ---
-
-
 ## Modularity Theorems
 
 ### Wiles-Taylor-Wiles Theorem

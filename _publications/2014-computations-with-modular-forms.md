@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Computations with Modular Forms
 authors: Gebhard Böckle, G. Wiese
@@ -11,8 +10,6 @@ url: http://link.springer.com/book/10.1007/978-3-319-03847-6
 keywords: modular forms, computational methods, textbook
 abstract: A comprehensive textbook on computational aspects of modular forms.
 ---
-
-
 ## Abstract
 
 A comprehensive textbook on computational aspects of modular forms.

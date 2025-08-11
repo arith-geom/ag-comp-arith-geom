@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: BK-Serre paper on modular forms
 authors: Gebhard Böckle, K. Khare
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/BK-Serre-dmj4021.pdf"
 keywords: modular forms, Serre's conjecture, Galois representations
 abstract: A paper on modular forms and Serre's conjecture.
 ---
-
-
 ## Abstract
 
 A paper on modular forms and Serre's conjecture.

@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Arithmetic of Function Fields
 authors: Gebhard Böckle, Ralf Butenuth
@@ -10,8 +9,6 @@ journal: Research Topic
 keywords: arithmetic of function fields, arithmetic geometry, research
 abstract: Research on arithmetic properties of function fields and their applications
 ---
-
-
 ## Abstract
 
 Research on arithmetic properties of function fields and their applications

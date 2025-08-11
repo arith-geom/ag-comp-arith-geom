@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Drinfeld Modular Varieties
 authors: Gebhard Böckle
@@ -10,8 +9,6 @@ journal: Research Topic
 keywords: drinfeld modular varieties, arithmetic geometry, research
 abstract: Research on Drinfeld modular varieties and their geometric properties
 ---
-
-
 ## Abstract
 
 Research on Drinfeld modular varieties and their geometric properties

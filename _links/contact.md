@@ -1,12 +1,10 @@
 ---
----
 category: Contact
 layout: page
 order: 1
 title: Contact
 url: "#"
 ---
-
 **Postal Address:**
 Computational Arithmetic Geometry  
 IWR (Interdisciplinary Center for Scientific Computing)  

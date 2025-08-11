@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: PagesCMS End-to-End Integration Test
 authors: Test User, Gebhard Böckle
@@ -14,5 +13,4 @@ abstract: |
   page "related publications" section.
 url: https://example.org/test-publication
 ---
-
 Content body not required; front matter-driven layout.

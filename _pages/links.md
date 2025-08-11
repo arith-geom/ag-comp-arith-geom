@@ -1,12 +1,12 @@
 ---
----
 layout: page
-title: Links
 permalink: "/links/"
 nav: true
 nav_order: 4
+show_title: false
+order: 100
+title: Links
 ---
-
 <p class="translatable-content" data-translation-key="links.intro">Here are some links that may be of interest to students and researchers, managed from the CMS.</p>
 
 <!-- Heidelberg University Links -->

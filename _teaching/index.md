@@ -1,19 +1,11 @@
 ---
----
 layout: page
-title: Teaching
 permalink: "/teaching/"
 scripts:
 - "/assets/js/teaching-page.js"
 active: false
+show_title: false
 ---
-
-
-
-
-
-
-
 <div class="teaching-page">
   <!-- Filter Controls -->
   <div class="filter-controls">
@@ -46,48 +38,18 @@ active: false
   {% assign teaching_sorted = teaching_all | sort: 'semester_sort' | reverse %}
   {% assign current_courses = teaching_sorted | where_exp: "c", "c.active == true or c.active == 'true'" %}
 
-  <!-- Current Teaching (auto) -->
-  {% if current_courses and current_courses.size > 0 %}
-  <div class="teaching-section current-section">
-    <h3 class="section-title current-title">
-      <i class="fas fa-star"></i> Current Teaching
-    </h3>
-    {% assign current_by_semester = current_courses | group_by: 'semester_key' %}
-    {% for sem in current_by_semester %}
-      {% assign sample = sem.items | first %}
-      <div class="semester-group" data-period="current">
-        <h4 class="semester-title current-semester">
-          <i class="fas fa-calendar-alt"></i> {{ sample.semester }}
-        </h4>
-        <ul class="course-list">
-          {% for course in sem.items %}
-            {% assign type_lower = course.course_type | downcase %}
-            <li class="course-item" data-type="{{ type_lower }}" data-period="current">
-              <span class="course-badge {{ type_lower }}">
-                {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Vorlesung{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Hauptseminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
-              </span>
-              <a href="{{ course.url }}" class="course-link">{{ course.title }}</a>
-              {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endfor %}
-  </div>
-  {% endif %}
-
   <!-- Recent Teaching (auto) -->
   <div class="teaching-section recent-section">
     <h3 class="section-title recent-title">
       <i class="fas fa-clock"></i> Recent Teaching
     </h3>
-    {% assign recent_courses = teaching_sorted | where_exp: "c", "c.active != true and c.active != 'true' and c.semester_year >= 2020" %}
+    {% assign recent_courses = teaching_sorted %}
     {% assign recent_by_semester = recent_courses | group_by: 'semester_key' %}
     {% for sem in recent_by_semester %}
       {% assign sample = sem.items | first %}
       <div class="semester-group" data-period="recent">
         <h4 class="semester-title recent-semester">
-          <i class="fas fa-calendar-alt"></i> {{ sample.semester }}
+          <i class="fas fa-calendar-alt"></i> {{ sample.semester_key }}
         </h4>
         <ul class="course-list">
           {% for course in sem.items %}
@@ -105,36 +67,6 @@ active: false
     {% endfor %}
   </div>
 
-  <!-- Historical Teaching (auto) -->
-  <div class="teaching-section historical-section">
-    <h3 class="section-title historical-title">
-      <i class="fas fa-history"></i> Historical Teaching
-    </h3>
-    <div class="historical-content">
-      {% assign historical_courses = teaching_sorted | where_exp: "c", "c.active != true and c.active != 'true' and c.semester_year < 2020" %}
-      {% assign historical_by_semester = historical_courses | group_by: 'semester_key' %}
-      {% for sem in historical_by_semester %}
-        {% assign sample = sem.items | first %}
-        <div class="semester-group" data-period="historical">
-          <h4 class="semester-title historical-semester">
-            <i class="fas fa-calendar-alt"></i> {{ sample.semester }}
-          </h4>
-          <ul class="course-list">
-            {% for course in sem.items %}
-              {% assign type_lower = course.course_type | downcase %}
-              <li class="course-item" data-type="{{ type_lower }}" data-period="historical">
-                <span class="course-badge {{ type_lower }}">
-                  {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Vorlesung{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Hauptseminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
-                </span>
-                <a href="{{ course.url }}" class="course-link">{{ course.title }}</a>
-                {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
 
   <!-- Contact Section -->
   <div class="teaching-footer">

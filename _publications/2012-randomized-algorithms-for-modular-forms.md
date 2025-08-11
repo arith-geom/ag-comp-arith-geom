@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Randomized algorithms for modular forms
 authors: Gebhard Böckle
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/RandomizedMR.pdf"
 keywords: modular forms, randomized algorithms, computational methods
 abstract: This work presents randomized algorithms for computing with modular forms.
 ---
-
-
 ## Abstract
 
 This work presents randomized algorithms for computing with modular forms.

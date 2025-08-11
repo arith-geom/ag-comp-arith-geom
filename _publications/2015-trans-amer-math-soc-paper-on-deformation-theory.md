@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Trans. Amer. Math. Soc. paper on deformation theory
 authors: Gebhard Böckle, H. Hartl
@@ -13,8 +12,6 @@ abstract: A paper on deformation theory published in Transactions of the America
   Mathematical Society.
 journal_full: Transactions of the American Mathematical Society
 ---
-
-
 ## Abstract
 
 A paper on deformation theory published in Transactions of the American Mathematical Society.

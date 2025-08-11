@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Proseminar
 description: p-adic numbers - Course information and materials.
@@ -15,7 +14,5 @@ semester_year: 2023
 semester_key: SS2023
 semester_sort: 20231
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

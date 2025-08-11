@@ -1,12 +1,12 @@
 ---
----
 layout: page
-title: Team
 permalink: "/members/"
 nav: true
 nav_order: 3
+show_title: false
+order: 100
+title: Members
 ---
-
 <!-- Simple Navigation -->
 <div class="members-nav-simple">
   <div class="container">

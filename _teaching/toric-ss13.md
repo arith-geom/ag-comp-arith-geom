@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Torische Varietäten - Course information and materials.
@@ -15,7 +14,5 @@ semester_year: 2013
 semester_key: SS2013
 semester_sort: 20131
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

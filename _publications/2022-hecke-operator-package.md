@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Hecke Eigensystems Package
 authors: Burak Cakir
@@ -11,8 +10,6 @@ keywords: Magma, Hecke eigensystems, harmonic cocycles, Bruhat-Tits tree, GL2
 abstract: Magma package to compute Hecke eigensystems for harmonic cocycles on the
   Bruhat-Tits tree for GL_2(F_q(T))
 ---
-
-
 ## Abstract
 
 This Magma package provides tools to compute Hecke eigensystems for harmonic cocycles on the Bruhat-Tits tree for GL_2(F_q(T)). It was developed as part of a Master's thesis project.

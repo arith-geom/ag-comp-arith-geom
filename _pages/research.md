@@ -1,12 +1,12 @@
 ---
----
 layout: page
-title: Research
 permalink: "/research/"
 nav: true
 nav_order: 2
+show_title: false
+order: 100
+title: Research
 ---
-
 <div class="research-areas">
   {% assign sorted_research = site.research | sort: 'title' %}
   {% for research_area in sorted_research %}

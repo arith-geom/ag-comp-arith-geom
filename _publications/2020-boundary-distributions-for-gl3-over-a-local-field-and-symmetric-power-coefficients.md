@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Boundary Distributions for GL3 over a Local Field and Symmetric Power Coefficients
 authors: Peter Gräf
@@ -15,8 +14,6 @@ abstract: This thesis studies boundary distributions for GL3 over local fields a
   their relationship to symmetric power coefficients.
 doi: 10.11588/heidok.00000000
 ---
-
-
 ## Abstract
 
 This thesis studies boundary distributions for GL3 over local fields and their relationship to symmetric power coefficients.

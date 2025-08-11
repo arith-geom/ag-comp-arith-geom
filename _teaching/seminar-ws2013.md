@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Deformationen von (Pseudo-)Darstellungen - Course information and materials.
@@ -15,7 +14,5 @@ semester_year: 2014
 semester_key: WS2014
 semester_sort: 20142
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

@@ -1,12 +1,12 @@
 ---
----
 layout: page
-title: About Our Research Group
 permalink: "/about/"
 nav: true
 nav_order: 1
+order: 100
+show_title: false
+title: About
 ---
-
 # AG Computational Arithmetic Geometry
 
 ## Group Leader

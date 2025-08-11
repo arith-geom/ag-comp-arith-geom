@@ -1,5 +1,4 @@
 ---
----
 description: It has been observed that questions in number theory often have analogs
   over global function fields; then the ring of integers $\mathbb{Z}$ is replaced
   by rings like the polynomial ring $\mathbb{F}_p[t]$, and the field of rational numbers
@@ -17,8 +16,6 @@ layout: page
 order: 999
 title: Drinfeld modular varieties and Drinfeld modular forms
 ---
-
-
 ## Mathematical Background
 
 The study of Drinfeld modular varieties involves several key mathematical concepts:

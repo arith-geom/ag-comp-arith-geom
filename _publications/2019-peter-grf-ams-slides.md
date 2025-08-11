@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Peter Gräf - AMS Slides
 authors: Peter Gräf
@@ -12,8 +11,6 @@ keywords: AMS, slides, Peter Gräf, conference presentation
 abstract: Slides from Peter Gräf's presentation at the American Mathematical Society
   meeting.
 ---
-
-
 ## Abstract
 
 Slides from Peter Gräf's presentation at the American Mathematical Society meeting.

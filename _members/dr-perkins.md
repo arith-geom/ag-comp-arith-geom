@@ -1,5 +1,4 @@
 ---
----
 title: Dr. Rudolph Perkins
 email: perkins@math.uni-heidelberg.de
 layout: member
@@ -12,8 +11,6 @@ role: Postdoctoral Researcher
 status: active
 website: https://rudolphperkins.wordpress.com/
 ---
-
-
 title: {{ page.name }}
 
 

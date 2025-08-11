@@ -1,5 +1,4 @@
 ---
----
 layout: teaching
 title: dgfhffdsdgfasd
 semester: SS26

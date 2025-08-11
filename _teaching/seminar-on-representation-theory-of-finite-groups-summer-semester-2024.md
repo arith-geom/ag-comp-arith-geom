@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Seminar covering the representation theory of finite groups and its applications.
@@ -15,11 +14,6 @@ semester_year: 2024
 semester_key: SS2024
 semester_sort: 20241
 ---
-
-
-
-
-
 ## Course Description
 
 Seminar covering the representation theory of finite groups and its applications.

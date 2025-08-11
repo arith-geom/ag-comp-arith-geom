@@ -1,12 +1,12 @@
 ---
----
 layout: page
-title: Publikationen
 permalink: "/publications-de/"
 nav: true
 nav_order: 5
+order: 100
+show_title: false
+title: Publications De
 ---
-
 <div class="heidelberg-style-publications">
   <!-- Breadcrumb Navigation -->
   <div class="pathway">

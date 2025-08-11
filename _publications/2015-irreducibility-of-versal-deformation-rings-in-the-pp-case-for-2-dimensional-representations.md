@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Irreducibility of versal deformation rings in the (p,p)-case for 2-dimensional
   representations
@@ -17,8 +16,6 @@ abstract: This paper studies the irreducibility of versal deformation rings in t
   (p,p)-case for 2-dimensional representations.
 journal_full: Journal of Algebra
 ---
-
-
 ## Abstract
 
 This paper studies the irreducibility of versal deformation rings in the (p,p)-case for 2-dimensional representations.

@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Algebraic Hecke characters and compatible systems of abelian mod p Galois representations
   over global fields
@@ -17,8 +16,6 @@ abstract: This paper establishes connections between algebraic Hecke characters 
   compatible systems of abelian mod p Galois representations.
 journal_full: Manuscripta Mathematica
 ---
-
-
 ## Abstract
 
 This paper establishes connections between algebraic Hecke characters and compatible systems of abelian mod p Galois representations.

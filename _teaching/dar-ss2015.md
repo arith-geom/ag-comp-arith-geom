@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Darstellungstheorie - Course information and materials.
@@ -15,7 +14,5 @@ semester_year: 2015
 semester_key: SS2015
 semester_sort: 20151
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

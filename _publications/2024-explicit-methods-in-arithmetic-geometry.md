@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Explicit methods in arithmetic geometry
 authors: Gebhard Böckle
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/Boeckle-Explicit.pdf"
 keywords: explicit methods, arithmetic geometry, computational methods
 abstract: Explicit computational methods in arithmetic geometry and modular forms.
 ---
-
-
 ## Abstract
 
 Explicit computational methods in arithmetic geometry and modular forms.

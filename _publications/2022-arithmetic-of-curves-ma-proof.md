@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Arithmetic of Curves - MA Proof
 authors: Gebhard Böckle
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/AofC-MAProof.pdf"
 keywords: arithmetic of curves, Master's thesis, proof
 abstract: A proof related to the arithmetic of curves for a Master's thesis.
 ---
-
-
 ## Abstract
 
 A proof related to the arithmetic of curves for a Master's thesis.

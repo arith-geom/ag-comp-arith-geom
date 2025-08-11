@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: QaQuotGraphs Magma Package
 authors: Ralf Butenuth
@@ -12,8 +11,6 @@ keywords: Magma, quaternion algebras, function fields, software
 abstract: Magma package to compute the action by unit groups of maximal orders in
   quaternion algebras over F_q(T)
 ---
-
-
 ## Abstract
 
 QaQuotGraphs is a Magma package to compute the action by unit groups of maximal orders in quaternion algebras over F_q(T). This software provides tools for working with quaternion algebras and their applications in arithmetic geometry.

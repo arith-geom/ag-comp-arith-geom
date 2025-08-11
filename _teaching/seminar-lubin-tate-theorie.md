@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Lokale Klassenkörpertheorie nach Lubin-Tate - Course information and
@@ -16,7 +15,5 @@ semester_year: 2018
 semester_key: SS2018
 semester_sort: 20181
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

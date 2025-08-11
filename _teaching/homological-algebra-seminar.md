@@ -1,5 +1,4 @@
 ---
----
 active: false
 course_type: Seminar
 description: Homological Algebra - Course information and materials.
@@ -15,7 +14,5 @@ semester_year: 2025
 semester_key: SS2025
 semester_sort: 20251
 ---
-
-
 *Course information extracted from the original Heidelberg University teaching program*  
 *Last updated: 2025-08-02*

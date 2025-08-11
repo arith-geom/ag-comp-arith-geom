@@ -1,12 +1,11 @@
 ---
----
 layout: page
 title: Former Members
 permalink: "/former-members/"
 nav: true
 nav_order: 4
+order: 100
 ---
-
 <div class="alumni-intro mb-5">
   <h2 class="text-center mb-4">Our Alumni</h2>
   <p class="lead text-center">Discover the former members of our research group and their contributions to computational arithmetic geometry.</p>

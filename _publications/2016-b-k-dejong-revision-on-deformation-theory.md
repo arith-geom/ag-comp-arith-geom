@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: B-K-deJong revision on deformation theory
 authors: Gebhard Böckle, K. Khare
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/B-K-deJong-Rev2.pdf"
 keywords: deformation theory, Galois representations, Khare
 abstract: A revision of work on deformation theory with K. Khare.
 ---
-
-
 ## Abstract
 
 A revision of work on deformation theory with K. Khare.

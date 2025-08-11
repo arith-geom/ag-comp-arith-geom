@@ -1,5 +1,4 @@
 ---
----
 layout: publication
 title: Lift mod p corrections
 authors: Gebhard Böckle
@@ -11,8 +10,6 @@ pdf: "/assets/uploads/LiftModp2Corr.pdf"
 keywords: Galois representations, lifting, mod p, corrections
 abstract: Corrections to work on lifting mod p Galois representations.
 ---
-
-
 ## Abstract
 
 Corrections to work on lifting mod p Galois representations.
