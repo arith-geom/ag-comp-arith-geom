@@ -25,7 +25,7 @@ Because methods from algebraic geometry can be applied to function fields, many 
 
 <div class="research-image-container">
   <figure class="research-image">
-    <img src="/assets/img/sl2z_group.gif" alt="SL2Z Group Visualization" width="200" height="200" class="research-img">
+    <img src="{{ '/assets/img/sl2z_group.gif' | relative_url }}" alt="SL2Z Group Visualization" width="200" height="200" class="research-img">
     <figcaption class="research-caption">Visualization of the SL₂(ℤ) group structure</figcaption>
   </figure>
 </div>

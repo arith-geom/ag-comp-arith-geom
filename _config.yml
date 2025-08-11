@@ -3,7 +3,9 @@ email: arithgeo@iwr.uni-heidelberg.de
 description: This is the website of the research group "computational arithmetic
   geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in
   Heidelberg.
-url: https://github.com/VictorMerk/ag-comp-arith-geom
+url: https://victormerk.github.io
+# baseurl is provided by Actions during deploy; keep empty for local dev
+baseurl: ""
 twitter_username: placeholder
 github_username: placeholder
 

@@ -12,12 +12,12 @@ title: Publications De
   <div class="pathway">
     <div style="float:left;">
       <a href="https://www.uni-heidelberg.de">Uni Heidelberg</a> &gt; 
-      <a href="/">IWR</a> &gt; 
-      <a href="/">ARITHGEO</a> &gt; 
+      <a href="{{ '/' | relative_url }}">IWR</a> &gt; 
+      <a href="{{ '/' | relative_url }}">ARITHGEO</a> &gt; 
       Publikationen
     </div>
     <div style="float:right;">
-      [<a href="/publications/">english</a>]&nbsp;|&nbsp;[<a href="/publications-de/">deutsch</a>]
+      [<a href="{{ '/publications/' | relative_url }}">english</a>]&nbsp;|&nbsp;[<a href="{{ '/publications-de/' | relative_url }}">deutsch</a>]
     </div>
   </div>
   <br>
@@ -104,9 +104,9 @@ title: Publications De
     <!-- Member Publications Links -->
     <h3>Publikationen nach Mitgliedern:</h3>
     <ul class="member-publications">
-      <li><a href="/members/gebhard-boeckle/publications/" class="internal-link">Prof. Dr. Gebhard Böckle</a></li>
+      <li><a href="{{ '/members/gebhard-boeckle/publications/' | relative_url }}" class="internal-link">Prof. Dr. Gebhard Böckle</a></li>
       <li><a href="https://members.vistaserv.net/barinder" target="_blank" class="external-link">Dr. Barinder Banwait</a></li>
-      <li><a href="/members/peter-graef/publications/" class="internal-link">Dr. Peter Gräf</a></li>
+      <li><a href="{{ '/members/peter-graef/publications/' | relative_url }}" class="internal-link">Dr. Peter Gräf</a></li>
     </ul>
   </div>
 

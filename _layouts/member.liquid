@@ -60,7 +60,7 @@ layout: page
           Publications ({{ member_publications.size }})
         </h3>
         <div class="related-content-links">
-          <a href="/publications/?author={{ member_name | url_encode }}" class="related-content-link">
+          <a href="{{ '/publications/' | relative_url }}?author={{ member_name | url_encode }}" class="related-content-link">
             <i class="fas fa-list" aria-hidden="true"></i>
             View All Publications
           </a>
@@ -77,7 +77,7 @@ layout: page
           Teaching ({{ member_teaching.size }} courses)
         </h3>
         <div class="related-content-links">
-          <a href="/teaching/#{{ member_slug }}" class="related-content-link">
+          <a href="{{ '/teaching/' | relative_url }}#{{ member_slug }}" class="related-content-link">
             <i class="fas fa-list" aria-hidden="true"></i>
             View Teaching Courses
           </a>
@@ -94,7 +94,7 @@ layout: page
           Research Projects ({{ member_research.size }})
         </h3>
         <div class="related-content-links">
-          <a href="/research/#{{ member_slug }}" class="related-content-link">
+          <a href="{{ '/research/' | relative_url }}#{{ member_slug }}" class="related-content-link">
             <i class="fas fa-list" aria-hidden="true"></i>
             View Research Projects
           </a>

@@ -41,13 +41,13 @@ title: Members
           {% endif %}
         </div>
         <div class="member-info">
-                      <h4><a href="/members/{{ group_leader.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '' }}/">{{ group_leader.name }}</a></h4>
+          <h4><a href="{{ '/members/' | append: (group_leader.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}">{{ group_leader.name }}</a></h4>
           <p class="member-role">{{ group_leader.role }}</p>
           {% if group_leader.research_interests %}
             <p class="member-description">{{ group_leader.research_interests }}</p>
           {% endif %}
           <div class="member-links">
-            <a href="/members/{{ group_leader.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '' }}/" class="btn btn-outline-primary btn-sm">
+            <a href="{{ '/members/' | append: (group_leader.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
               <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
             </a>
             {% if group_leader.email %}
@@ -84,13 +84,13 @@ title: Members
               {% endif %}
             </div>
             <div class="member-info">
-              <h4><a href="/members/{{ member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '' }}/">{{ member.name }}</a></h4>
+              <h4><a href="{{ '/members/' | append: (member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}">{{ member.name }}</a></h4>
               <p class="member-role">{{ member.role }}</p>
               {% if member.research_interests %}
                 <p class="member-description">{{ member.research_interests }}</p>
               {% endif %}
               <div class="member-links">
-                <a href="/members/{{ member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '' }}/" class="btn btn-outline-primary btn-sm">
+                <a href="{{ '/members/' | append: (member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
                   <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
                 </a>
                 {% if member.email %}
@@ -129,13 +129,13 @@ title: Members
               {% endif %}
             </div>
             <div class="member-info">
-              <h4><a href="/members/{{ member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '' }}/">{{ member.name }}</a></h4>
+              <h4><a href="{{ '/members/' | append: (member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}">{{ member.name }}</a></h4>
               <p class="member-role">{{ member.role }}</p>
               {% if member.research_interests %}
                 <p class="member-description">{{ member.research_interests }}</p>
               {% endif %}
               <div class="member-links">
-                <a href="/members/{{ member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '' }}/" class="btn btn-outline-primary btn-sm">
+                <a href="{{ '/members/' | append: (member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
                   <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
                 </a>
                 {% if member.email %}

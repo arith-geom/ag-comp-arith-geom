@@ -10,7 +10,7 @@ order: 100
   <h2 class="text-center mb-4">Our Alumni</h2>
   <p class="lead text-center">Discover the former members of our research group and their contributions to computational arithmetic geometry.</p>
   <div class="text-center mt-3">
-    <a href="/members/" class="btn btn-outline-primary">
+   <a href="{{ '/members/' | relative_url }}" class="btn btn-outline-primary">
       <i class="fas fa-arrow-left me-2" aria-hidden="true"></i>Back to Current Members
     </a>
   </div>
@@ -22,10 +22,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/oguz-gezmis/">Dr. Oguz Gezmiş</a></h4>
+      <h4><a href="{{ '/members/oguz-gezmis/' | relative_url }}">Dr. Oguz Gezmiş</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/oguz-gezmis/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/oguz-gezmis/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -52,10 +52,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/julian-quast/">Dr. Julian Quast</a></h4>
+      <h4><a href="{{ '/members/julian-quast/' | relative_url }}">Dr. Julian Quast</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/julian-quast/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/julian-quast/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -67,10 +67,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/peter-graef/">Dr. Peter Gräf</a></h4>
+      <h4><a href="{{ '/members/peter-graef/' | relative_url }}">Dr. Peter Gräf</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/peter-graef/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/peter-graef/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -82,10 +82,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/barinder-banwait/">Dr. Barinder Banwait</a></h4>
+      <h4><a href="{{ '/members/barinder-banwait/' | relative_url }}">Dr. Barinder Banwait</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/barinder-banwait/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/barinder-banwait/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -107,10 +107,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/andreas-maurischat/">Dr. Andreas Maurischat</a></h4>
+      <h4><a href="{{ '/members/andreas-maurischat/' | relative_url }}">Dr. Andreas Maurischat</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/andreas-maurischat/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/andreas-maurischat/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -122,10 +122,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/konrad-fischer/">Konrad Fischer</a></h4>
+      <h4><a href="{{ '/members/konrad-fischer/' | relative_url }}">Konrad Fischer</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/konrad-fischer/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/konrad-fischer/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -152,10 +152,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/david-guiraud/">Dr. David-A. Guiraud</a></h4>
+      <h4><a href="{{ '/members/david-guiraud/' | relative_url }}">Dr. David-A. Guiraud</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/david-guiraud/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/david-guiraud/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -197,10 +197,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/ann-kristin-juschka/">Dr. Ann-Kristin Juschka</a></h4>
+      <h4><a href="{{ '/members/ann-kristin-juschka/' | relative_url }}">Dr. Ann-Kristin Juschka</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/ann-kristin-juschka/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/ann-kristin-juschka/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -212,10 +212,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/juan-cervino/">Dr. Juan Marcos Cerviño</a></h4>
+      <h4><a href="{{ '/members/juan-cervino/' | relative_url }}">Dr. Juan Marcos Cerviño</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/juan-cervino/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/juan-cervino/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -227,10 +227,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/yujia-qiu/">Dr. Yujia Qiu</a></h4>
+      <h4><a href="{{ '/members/yujia-qiu/' | relative_url }}">Dr. Yujia Qiu</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/yujia-qiu/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/yujia-qiu/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -242,10 +242,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/tommaso-centeleghe/">Dr. Tommaso Centeleghe</a></h4>
+      <h4><a href="{{ '/members/tommaso-centeleghe/' | relative_url }}">Dr. Tommaso Centeleghe</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/tommaso-centeleghe/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/tommaso-centeleghe/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -257,10 +257,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/patrik-hubschmid/">Dr. Patrik Hubschmid</a></h4>
+      <h4><a href="{{ '/members/patrik-hubschmid/' | relative_url }}">Dr. Patrik Hubschmid</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/patrik-hubschmid/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/patrik-hubschmid/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -272,10 +272,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/yamidt-bermudez-tobon/">Dr. Yamidt Bermudez Tobon</a></h4>
+      <h4><a href="{{ '/members/yamidt-bermudez-tobon/' | relative_url }}">Dr. Yamidt Bermudez Tobon</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/yamidt-bermudez-tobon/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/yamidt-bermudez-tobon/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -287,10 +287,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/alain-muller/">Dr. Alain Muller</a></h4>
+      <h4><a href="{{ '/members/alain-muller/' | relative_url }}">Dr. Alain Muller</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/alain-muller/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/alain-muller/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -302,10 +302,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/sundeep-balaji/">Dr. Sundeep Balaji</a></h4>
+      <h4><a href="{{ '/members/sundeep-balaji/' | relative_url }}">Dr. Sundeep Balaji</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/sundeep-balaji/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/sundeep-balaji/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -317,10 +317,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/ralf-butenuth/">Dr. Ralf Butenuth</a></h4>
+      <h4><a href="{{ '/members/ralf-butenuth/' | relative_url }}">Dr. Ralf Butenuth</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/ralf-butenuth/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/ralf-butenuth/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>
@@ -347,10 +347,10 @@ order: 100
       <i class="fas fa-user-graduate" aria-hidden="true"></i>
     </div>
     <div class="alumni-info">
-      <h4><a href="/members/archiebold-karumbidza/">Dr. Archiebold Karumbidza</a></h4>
+      <h4><a href="{{ '/members/archiebold-karumbidza/' | relative_url }}">Dr. Archiebold Karumbidza</a></h4>
       <p class="alumni-period">Former Member</p>
       <div class="alumni-links">
-        <a href="/members/archiebold-karumbidza/" class="btn btn-outline-secondary btn-sm">
+        <a href="{{ '/members/archiebold-karumbidza/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
           <i class="fas fa-user me-1" aria-hidden="true"></i>Profile
         </a>
       </div>

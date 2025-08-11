@@ -10,13 +10,13 @@ order: 100
   <div class="pathway">
     <div style="float:left;">
       <a href="https://www.uni-heidelberg.de">Uni Heidelberg</a> &gt; 
-      <a href="/">IWR</a> &gt; 
-      <a href="/">ARITHGEO</a> &gt; 
-      <a href="/publications/">Publications</a> &gt; 
+      <a href="{{ '/' | relative_url }}">IWR</a> &gt; 
+      <a href="{{ '/' | relative_url }}">ARITHGEO</a> &gt; 
+      <a href="{{ '/publications/' | relative_url }}">Publications</a> &gt; 
       Dr. Peter Gräf
     </div>
     <div style="float:right;">
-      [<a href="/members/peter-graef/publications/">english</a>]&nbsp;|&nbsp;[<a href="/members/peter-graef/publications-de/">deutsch</a>]
+      [<a href="{{ '/members/peter-graef/publications/' | relative_url }}">english</a>]&nbsp;|&nbsp;[<a href="{{ '/members/peter-graef/publications-de/' | relative_url }}">deutsch</a>]
     </div>
   </div>
   <br>
@@ -26,7 +26,7 @@ order: 100
     <h2>Publications of Dr. Peter Gräf</h2>
     
     <div class="member-info">
-      <img src="/assets/img/peter-graef.jpg" alt="Dr. Peter Gräf" class="member-photo">
+      <img src="{{ '/assets/img/peter-graef.jpg' | relative_url }}" alt="Dr. Peter Gräf" class="member-photo">
       <div class="member-details">
         <h3>Dr. Peter Gräf</h3>
         <p><strong>Former PhD Student</strong> (2015-2020)</p>

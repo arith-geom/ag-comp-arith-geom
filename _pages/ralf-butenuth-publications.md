@@ -10,13 +10,13 @@ order: 100
   <div class="pathway">
     <div style="float:left;">
       <a href="https://www.uni-heidelberg.de">Uni Heidelberg</a> &gt; 
-      <a href="/">IWR</a> &gt; 
-      <a href="/">ARITHGEO</a> &gt; 
-      <a href="/publications/">Publications</a> &gt; 
+      <a href="{{ '/' | relative_url }}">IWR</a> &gt; 
+      <a href="{{ '/' | relative_url }}">ARITHGEO</a> &gt; 
+      <a href="{{ '/publications/' | relative_url }}">Publications</a> &gt; 
       Dr. Ralf Butenuth
     </div>
     <div style="float:right;">
-      [<a href="/members/ralf-butenuth/publications/">english</a>]&nbsp;|&nbsp;[<a href="/members/ralf-butenuth/publications-de/">deutsch</a>]
+      [<a href="{{ '/members/ralf-butenuth/publications/' | relative_url }}">english</a>]&nbsp;|&nbsp;[<a href="{{ '/members/ralf-butenuth/publications-de/' | relative_url }}">deutsch</a>]
     </div>
   </div>
   <br>
@@ -26,7 +26,7 @@ order: 100
     <h2>Publications of Dr. Ralf Butenuth</h2>
     
     <div class="member-info">
-      <img src="/assets/img/prof.svg" alt="Dr. Ralf Butenuth" class="member-photo">
+      <img src="{{ '/assets/img/prof.svg' | relative_url }}" alt="Dr. Ralf Butenuth" class="member-photo">
       <div class="member-details">
         <h3>Dr. Ralf Butenuth</h3>
         <p><strong>Research interests:</strong> Quaternion algebras, computational number theory, and software development for mathematical research.</p>
@@ -54,7 +54,7 @@ order: 100
     <ul class="software-list">
       <li>
         <strong>QaQuotGraphs Magma Package</strong> - A comprehensive Magma package for computing the action by unit groups of maximal orders in quaternion algebras over F<sub>q</sub>(T).
-        <br><a href="/assets/uploads/qaquotgraph_package.tar.gz" class="download">Download Package</a>
+        <br><a href="{{ '/assets/uploads/qaquotgraph_package.tar.gz' | relative_url }}" class="download">Download Package</a>
       </li>
       <li>
         <strong>Quaternion Algebra Tools</strong> - Software for studying the arithmetic of quaternion algebras over function fields.
@@ -66,7 +66,7 @@ order: 100
       <li>
         <strong>R. Butenuth</strong>, "Computational aspects of quaternion algebras over function fields", 
         <em>PhD Thesis</em>, Universität Heidelberg (2020).
-        <br><a href="/assets/uploads/Diplomarbeit_Ralf-Butenuth.pdf" class="download">Download Thesis</a>
+        <br><a href="{{ '/assets/uploads/Diplomarbeit_Ralf-Butenuth.pdf' | relative_url }}" class="download">Download Thesis</a>
       </li>
     </ul>
   </div>
