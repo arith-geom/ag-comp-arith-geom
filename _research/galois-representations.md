@@ -9,7 +9,7 @@ A modern way to look at algebraic number theory is to study the group G_Q of sym
 
 <div class="research-image-container">
   <figure class="research-image">
-    <img src="/assets/img/research_graph.png" alt="Research Graph Visualization" width="200" height="130" class="research-img">
+    <img src="{{ '/assets/img/research_graph.png' | relative_url }}" alt="Research Graph Visualization" width="200" height="130" class="research-img">
     <figcaption class="research-caption">Graphical representation of research connections</figcaption>
   </figure>
 </div>
