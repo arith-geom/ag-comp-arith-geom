@@ -17,7 +17,7 @@ Explicit computational methods in arithmetic geometry and modular forms.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF](/assets/uploads/Boeckle-Explicit.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/Boeckle-Explicit.pdf\' | relative_url }})
 
 ## Keywords
 

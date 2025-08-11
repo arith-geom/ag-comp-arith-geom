@@ -17,7 +17,7 @@ A paper on deformation theory presented at a conference in Barcelona.
 ## Publication Details
 
 - **Journal:** Conference Paper
-- **PDF:** [Download PDF](/assets/uploads/Boeckle-Barcelona-DefTheory-Rev.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/Boeckle-Barcelona-DefTheory-Rev.pdf\' | relative_url }})
 
 ## Keywords
 

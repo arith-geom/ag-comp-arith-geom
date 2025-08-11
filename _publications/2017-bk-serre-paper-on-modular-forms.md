@@ -17,7 +17,7 @@ A paper on modular forms and Serre's conjecture.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF](/assets/uploads/BK-Serre-dmj4021.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/BK-Serre-dmj4021.pdf\' | relative_url }})
 
 ## Keywords
 

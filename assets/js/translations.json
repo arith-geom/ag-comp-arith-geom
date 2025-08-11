@@ -41,7 +41,7 @@
     "research": {
       "title": "Research",
       "description": "The research of our group is in **arithmetic geometry** and **number theory**. Below are some of our key research areas and topics. For more details, click on any of the topics to see a detailed description, related papers, and resources.",
-      "publications_link": "You can also browse the [publications](/publications) of our group members.",
+      "publications_link": "You can also browse the [publications]({{ '/publications' | relative_url }}) of our group members.",
       "intro_lead": "Our research focuses on the intersection of arithmetic geometry, Galois representations, and computational methods in number theory.",
       "intro_description": "We investigate Galois representations, modular forms, elliptic curves, and their connections to modern number theory. Our work combines theoretical insights with computational experiments to advance understanding in these areas.",
       "areas_title": "Research Areas",
@@ -223,7 +223,7 @@
     "research": {
       "title": "Forschung",
       "description": "Die Forschung unserer Gruppe liegt in der **arithmetischen Geometrie** und **Zahlentheorie**. Nachfolgend finden Sie einige unserer wichtigsten Forschungsbereiche und Themen. Für weitere Details klicken Sie auf eines der Themen, um eine detaillierte Beschreibung, verwandte Arbeiten und Ressourcen zu sehen.",
-      "publications_link": "Sie können auch die [Publikationen](/publications) unserer Gruppenmitglieder durchsuchen.",
+      "publications_link": "Sie können auch die [Publikationen]({{ '/publications' | relative_url }}) unserer Gruppenmitglieder durchsuchen.",
       "intro_lead": "Unsere Forschung konzentriert sich auf die Schnittstelle von arithmetischer Geometrie, Galois-Darstellungen und computergestützten Methoden in der Zahlentheorie.",
       "intro_description": "Wir untersuchen Galois-Darstellungen, Modulformen, elliptische Kurven und deren Verbindungen zur modernen Zahlentheorie. Unsere Arbeit kombiniert theoretische Erkenntnisse mit computergestützten Experimenten, um das Verständnis in diesen Bereichen voranzutreiben.",
       "areas_title": "Forschungsbereiche",

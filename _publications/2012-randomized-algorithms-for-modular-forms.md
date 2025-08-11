@@ -17,7 +17,7 @@ This work presents randomized algorithms for computing with modular forms.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF](/assets/uploads/RandomizedMR.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/RandomizedMR.pdf\' | relative_url }})
 
 ## Keywords
 

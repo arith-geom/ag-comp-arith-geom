@@ -17,7 +17,7 @@ Poster presentation by Peter Gräf at a mathematical conference.
 ## Publication Details
 
 - **Journal:** Conference Poster
-- **PDF:** [Download PDF](/assets/uploads/Poster_Peter_Graef.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/Poster_Peter_Graef.pdf\' | relative_url }})
 
 ## Keywords
 

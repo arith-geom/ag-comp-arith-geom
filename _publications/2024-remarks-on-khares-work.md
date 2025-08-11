@@ -20,7 +20,7 @@ Remarks and comments on work by Khare in Galois representation theory.
 - **Year:** 2024
 - **Type:** Preprint
 - **Status:** Published
-- **PDF:** [Download PDF](/assets/uploads/RemOnKhare.pdf)
+- **PDF:** [Download PDF]({{ '/assets/uploads/RemOnKhare.pdf' | relative_url }})
 
 ## Keywords
 

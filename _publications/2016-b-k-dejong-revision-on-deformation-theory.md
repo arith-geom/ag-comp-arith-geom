@@ -17,7 +17,7 @@ A revision of work on deformation theory with K. Khare.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF](/assets/uploads/B-K-deJong-Rev2.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/B-K-deJong-Rev2.pdf\' | relative_url }})
 
 ## Keywords
 

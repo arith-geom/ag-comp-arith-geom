@@ -24,7 +24,7 @@ This work establishes independence results for l-adic representations of geometr
 - **Journal:** J. Reine Angew. Math.
 - **Pages:** 25 p.
 - **URL:** [View Publication](http://dx.doi.org/10.1515/crelle-2015-0024)
-- **PDF:** [Download PDF](/assets/uploads/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf\' | relative_url }})
 
 ## Keywords
 

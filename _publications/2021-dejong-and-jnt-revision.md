@@ -17,7 +17,7 @@ A revision of work related to DeJong and Journal of Number Theory.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF](/assets/uploads/DeJongAnJNTbRev2.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/DeJongAnJNTbRev2.pdf\' | relative_url }})
 
 ## Keywords
 

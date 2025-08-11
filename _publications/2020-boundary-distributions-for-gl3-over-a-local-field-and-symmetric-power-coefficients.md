@@ -22,7 +22,7 @@ This thesis studies boundary distributions for GL3 over local fields and their r
 
 - **Journal:** Ph.D. Thesis
 - **URL:** [View Publication](https://doi.org/10.11588/heidok.00000000)
-- **PDF:** [Download PDF](/assets/uploads/boundary_peter_graef.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/boundary_peter_graef.pdf\' | relative_url }})
 
 ## Keywords
 

@@ -17,7 +17,7 @@ An appendix to work by Khare with contributions from Böckle.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF](/assets/uploads/KhareAppboeckleNew2.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/KhareAppboeckleNew2.pdf\' | relative_url }})
 
 ## Keywords
 

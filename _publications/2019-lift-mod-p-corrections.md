@@ -17,7 +17,7 @@ Corrections to work on lifting mod p Galois representations.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF](/assets/uploads/LiftModp2Corr.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/LiftModp2Corr.pdf\' | relative_url }})
 
 ## Keywords
 

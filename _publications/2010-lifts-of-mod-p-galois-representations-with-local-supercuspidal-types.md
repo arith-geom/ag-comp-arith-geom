@@ -18,7 +18,7 @@ This work studies lifts of mod p Galois representations with local supercuspidal
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF](/assets/uploads/Boeckle-Mod3DefRings-2010_01_11.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/Boeckle-Mod3DefRings-2010_01_11.pdf\' | relative_url }})
 
 ## Keywords
 

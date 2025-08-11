@@ -26,7 +26,7 @@ This paper studies the irreducibility of versal deformation rings in the (p,p)-c
 - **Volume:** 444
 - **Pages:** 81–123
 - **URL:** [View Publication](http://www.sciencedirect.com/science/article/pii/S002186931500352X)
-- **PDF:** [Download PDF](/assets/uploads/BoeckleJuschka-Irreducibility.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/BoeckleJuschka-Irreducibility.pdf\' | relative_url }})
 
 ## Keywords
 

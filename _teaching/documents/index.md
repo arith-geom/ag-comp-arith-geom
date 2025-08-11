@@ -23,4 +23,4 @@ This page contains course materials, syllabi, and other teaching documents.
 
 ---
 
-*For current teaching activities, please see the main [Teaching](/teaching/) page.*
+*For current teaching activities, please see the main [Teaching]({{ '/teaching/' | relative_url }}) page.*

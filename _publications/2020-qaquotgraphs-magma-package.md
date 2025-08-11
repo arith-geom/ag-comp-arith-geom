@@ -36,7 +36,7 @@ This Magma package provides functionality to compute the action by unit groups o
 
 ## Download
 
-- **PDF Documentation:** [Download PDF](/assets/uploads/qaquotgraphs-magma-package.pdf)
+- **PDF Documentation:** [Download PDF]({{ \'/assets/uploads/qaquotgraphs-magma-package.pdf\' | relative_url }})
 - **Magma Package:** Available through Magma's package system
 
 ## Applications

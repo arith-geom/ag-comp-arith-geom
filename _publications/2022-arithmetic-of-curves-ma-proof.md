@@ -17,7 +17,7 @@ A proof related to the arithmetic of curves for a Master's thesis.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF](/assets/uploads/AofC-MAProof.pdf)
+- **PDF:** [Download PDF]({{ \'/assets/uploads/AofC-MAProof.pdf\' | relative_url }})
 
 ## Keywords
 
