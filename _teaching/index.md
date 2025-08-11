@@ -34,7 +34,7 @@ show_title: false
     </div>
   </div>
 
-  {% assign teaching_all = site.teaching %}
+  {% assign teaching_all = site.teaching | where: 'layout', 'teaching' %}
   {% assign teaching_sorted = teaching_all | sort: 'semester_sort' | reverse %}
   {% assign current_courses = teaching_sorted | where_exp: "c", "c.active == true or c.active == 'true'" %}
 
@@ -43,7 +43,7 @@ show_title: false
     <h3 class="section-title recent-title">
       <i class="fas fa-clock"></i> Recent Teaching
     </h3>
-    {% assign recent_courses = teaching_sorted %}
+    {% assign recent_courses = teaching_sorted | where_exp: "c", "c.semester_key and c.semester_key != ''" %}
     {% assign recent_by_semester = recent_courses | group_by: 'semester_key' %}
     {% for sem in recent_by_semester %}
       {% assign sample = sem.items | first %}

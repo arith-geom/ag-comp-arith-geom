@@ -1,14 +1,14 @@
 ---
 active: false
-course_type: seminar
+course_type: archive
 description: Past Teaching at the University Duisburg-Essen - Course information and
   materials.
-instructor: Unknown
+instructor:
 language: en
-layout: teaching
+layout: page
 order: 999
-semester: Unknown
+semester:
 title: Past Teaching at the University Duisburg-Essen
-status: Active
+status: Archived
 ---
 *For current teaching activities, please see the main [Teaching](/teaching/) page.*
