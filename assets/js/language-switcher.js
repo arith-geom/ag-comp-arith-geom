@@ -10,7 +10,7 @@ class LanguageSwitcher {
     try {
       // Load translations
       console.log('Loading translations...');
-      const response = await fetch('/assets/js/translations.json');
+      const response = await fetch((window.prefixBase ? window.prefixBase('/assets/js/translations.json') : '/assets/js/translations.json'));
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

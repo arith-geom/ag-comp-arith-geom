@@ -96,7 +96,7 @@
             {% endif %}
             
             {% if page.pdf %}
-              <a href="{{ page.pdf }}" class="btn btn-outline-secondary" target="_blank">
+              <a href="{% if page.pdf contains '://' %}{{ page.pdf }}{% else %}{{ page.pdf | relative_url }}{% endif %}" class="btn btn-outline-secondary" target="_blank">
                 <i class="fas fa-file-pdf"></i> PDF
               </a>
             {% endif %}

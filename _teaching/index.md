@@ -58,7 +58,7 @@ show_title: false
               <span class="course-badge {{ type_lower }}">
                 {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Vorlesung{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Hauptseminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
               </span>
-              <a href="{{ course.url }}" class="course-link">{{ course.title }}</a>
+              <a href="{{ course.url | relative_url }}" class="course-link">{{ course.title }}</a>
               {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
             </li>
           {% endfor %}

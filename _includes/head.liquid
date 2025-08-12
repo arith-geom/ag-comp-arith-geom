@@ -78,6 +78,23 @@
 
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
+<script>
+  // Expose baseurl for JS so it can build correct paths on GitHub Pages
+  window.__BASEURL__ = {{ site.baseurl | jsonify }};
+  window.__SITEURL__ = {{ site.url | jsonify }};
+  // Helper to prefix site.baseurl to root-relative paths
+  window.prefixBase = function(path) {
+    if (!path) return path;
+    // External URLs stay as-is
+    if (/^https?:\/\//.test(path)) return path;
+    // Already relative to base? Return as-is
+    if (window.__BASEURL__ && path.startsWith(window.__BASEURL__ + '/')) return path;
+    // If starts with '/', prefix baseurl; otherwise return unchanged
+    if (path.startsWith('/')) return (window.__BASEURL__ || '') + path;
+    return path;
+  };
+</script>
+
 <!-- Theme Color for Mobile Browsers -->
 <meta name="theme-color" content="#C22032" id="theme-color-meta">
 

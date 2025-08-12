@@ -4,8 +4,9 @@ description: This is the website of the research group "computational arithmetic
   geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in
   Heidelberg.
 url: https://victormerk.github.io
-# baseurl is provided by Actions during deploy; keep empty for local dev
-baseurl: ""
+# Base URL for the project site on GitHub Pages (repository name)
+# If you run locally, access the site at http://localhost:4000/ag-comp-arith-geom/
+baseurl: "/ag-comp-arith-geom"
 twitter_username: placeholder
 github_username: placeholder
 

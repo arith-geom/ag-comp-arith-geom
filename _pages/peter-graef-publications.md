@@ -68,7 +68,7 @@ order: 100
                 </a>
               {% endif %}
               {% if publication.pdf %}
-                <a href="{{ publication.pdf }}" class="btn btn-sm btn-outline-secondary" target="_blank">
+                <a href="{% if publication.pdf contains '://' %}{{ publication.pdf }}{% else %}{{ publication.pdf | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank">
                   <i class="fas fa-file-pdf"></i> PDF
                 </a>
               {% endif %}

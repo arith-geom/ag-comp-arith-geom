@@ -90,7 +90,7 @@ title: Publications De
                   <a href="{{ publication.url }}" target="_blank">Repository</a>
                 {% endif %}
                 {% if publication.pdf %}
-                  <a href="{{ publication.pdf }}" target="_blank">PDF</a>
+                  <a href="{% if publication.pdf contains '://' %}{{ publication.pdf }}{% else %}{{ publication.pdf | relative_url }}{% endif %}" target="_blank">PDF</a>
                 {% endif %}
               </div>
             </div>

@@ -168,7 +168,7 @@ layout: page
                 </div>
                 <h3 class="publication-title">
                   {% if publication.pdf %}
-                    <a href="{{ publication.pdf }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
+                    <a href="{% if publication.pdf contains '://' %}{{ publication.pdf }}{% else %}{{ publication.pdf | relative_url }}{% endif %}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
                   {% elsif publication.url %}
                     <a href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
                   {% elsif publication.doi %}

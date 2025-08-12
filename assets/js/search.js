@@ -129,7 +129,7 @@
       searchState.isLoading = true;
       showLoadingState();
       
-      const response = await fetch('/assets/search-data.json');
+      const response = await fetch((window.prefixBase ? window.prefixBase('/assets/search-data.json') : '/assets/search-data.json'));
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
@@ -534,7 +534,8 @@
     if (url.startsWith('http')) {
       window.open(url, '_blank');
     } else {
-      window.location.href = url;
+      const target = (window.prefixBase ? window.prefixBase(url) : url);
+      window.location.href = target;
     }
   }
   
