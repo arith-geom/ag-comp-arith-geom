@@ -10,7 +10,7 @@ title: Publications
 <div class="publications-page">
   <!-- Filter Controls -->
   <div class="filter-section">
-    <div class="container">
+    <div class="container-fluid px-3 px-md-4">
       <!-- Publications Search Bar -->
       <div class="search-container">
         <div class="search-wrapper">
@@ -51,7 +51,7 @@ title: Publications
 
   <!-- Publications Grid -->
   <div class="publications-content">
-    <div class="container">
+    <div class="container-fluid px-3 px-md-4">
       <!-- Loading State -->
       <div id="loading-state" class="loading-state" style="display: none;">
         <div class="spinner"></div>

@@ -87,8 +87,8 @@ show_title: false
 <!-- Enhanced CSS and JavaScript -->
 <style>
 .teaching-page {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: 0 1rem;
 }
 
@@ -275,9 +275,9 @@ show_title: false
 }
 
 .course-badge.vorlesung {
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-  color: #1976d2;
-  border: 1px solid #90caf9;
+  background: linear-gradient(135deg, #eaeef7 0%, #c7d3ea 100%);
+  color: #1b69c9;
+  border: 1px solid #93b3e3;
 }
 
 .course-badge.proseminar {
@@ -342,6 +342,18 @@ show_title: false
   margin: 3rem -2rem -2rem -2rem;
   padding: 2rem;
   border-radius: 15px 15px 0 0;
+}
+
+/* Dark mode cleanup for neutral surfaces */
+[data-theme="dark"] .semester-group,
+body.dark-mode .semester-group {
+  background: #0f1115;
+  border-color: #1f232b;
+}
+
+[data-theme="dark"] .course-item,
+body.dark-mode .course-item {
+  background: #0b0d11;
 }
 
 .footer-content {

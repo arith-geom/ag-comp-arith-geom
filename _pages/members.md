@@ -9,7 +9,7 @@ title: Members
 ---
 <!-- Simple Navigation -->
 <div class="members-nav-simple">
-  <div class="container">
+  <div class="container-fluid px-3 px-md-4">
     <button id="btn-current" class="nav-btn active" onclick="showSection('current')">Current Members</button>
     <button id="btn-alumni" class="nav-btn" onclick="showSection('alumni')">Former Members</button>
   </div>

@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 <div class="hero-header mb-5">
-  <img src="{{ site.baseurl }}/assets/img/heidelberg_castle.jpg" alt="Heidelberg Castle" class="hero-image">
+  <img src="{{ '/assets/img/heidelberg_castle.jpg' | relative_url }}" alt="Heidelberg Castle" class="hero-image">
   <div class="hero-overlay">
     <div class="hero-content">
       <h1 class="hero-title">AG Computational Arithmetic Geometry</h1>
@@ -81,8 +81,10 @@ nav_order: 1
 
 /* Content Sections Styles */
 .content-sections {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .content-section {

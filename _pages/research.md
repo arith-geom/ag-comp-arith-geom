@@ -48,8 +48,10 @@ title: Research
 <style>
 /* Clean and modern research page styling */
 .research-areas {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -183,6 +185,27 @@ title: Research
   box-shadow: var(--shadow-md);
   border-color: var(--primary);
 }
+
+/* Dark mode overrides: remove blue tones and use neutral/dark surfaces */
+[data-theme="dark"] .research-area-card,
+body.dark-mode .research-area-card {
+  background: #0f1115;
+  border-color: #1f232b;
+}
+
+[data-theme="dark"] .research-image,
+body.dark-mode .research-image {
+  background: #0b0d11;
+  border-color: #1a1e24;
+}
+
+[data-theme="dark"] .research-area-card .research-content h3,
+body.dark-mode .research-area-card .research-content h3 {
+  border-bottom-color: #2a2f38;
+}
+
+/* Ensure no icon backgrounds appear as black blocks */
+.research-icon i { background: transparent !important; }
 
 .research-img {
   border-radius: var(--radius-md);
