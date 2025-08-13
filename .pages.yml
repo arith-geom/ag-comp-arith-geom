@@ -168,9 +168,9 @@ content:
         default: "Published"
         description: "Current status of the publication"
       - name: journal
-        label: Journal/Conference/Publisher
+        label: Venue
         type: string
-        description: "Journal name, conference name, or publisher"
+        description: "Where it was published (journal, conference, or publisher)"
         validation:
           max_length: 200
       - name: abstract
