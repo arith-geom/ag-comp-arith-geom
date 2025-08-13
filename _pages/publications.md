@@ -93,26 +93,14 @@ title: Publications
               </h3>
               <div class="publication-authors">{{ publication.authors }}</div>
               {% assign has_external_url = false %}
-              {% if publication.url %}
-                {% assign url_str = publication.url %}
-                {% unless url_str contains site.url or url_str contains site.baseurl or url_str contains '/publications/' %}
-                  {% assign has_external_url = true %}
-                {% endunless %}
-              {% endif %}
 
               {% assign has_links = false %}
               {% if publication.links and publication.links.size > 0 %}
                 {% assign has_links = true %}
               {% endif %}
-              {% if has_external_url or publication.pdf or publication.pdf_file or has_links %}
+              {% if publication.pdf or publication.pdf_file or has_links %}
               <div class="publication-actions">
 
-
-                {% if has_external_url %}
-                  <a href="{{ url_str }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-external-link-alt"></i> URL
-                  </a>
-                {% endif %}
 
                 {% if has_links %}
                   <div class="publication-links-badges">

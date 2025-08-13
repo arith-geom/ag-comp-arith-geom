@@ -199,15 +199,12 @@ content:
         description: "Auto-generated keywords; field hidden in CMS"
       # DOI removed per site policy
       # arXiv removed per site policy
-      - name: url
-        label: External URL
-        type: string
-        description: "Link to published version"
-        validation:
-          pattern: "^https?://.+"
       - name: links
         label: Links
-        type: list
+        type: object
+        list:
+          min: 0
+          max: 100
         description: "Add as many links as you need (label + URL)"
         fields:
           - name: label

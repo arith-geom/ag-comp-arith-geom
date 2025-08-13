@@ -37,11 +37,7 @@ title: Publications De
               <h4><a href="{{ publication.url }}">{{ publication.title }}</a></h4>
               <div class="publication-authors">{{ publication.authors }}</div>
               <div class="publication-venue">{{ publication.journal }}{% if publication.volume %}, {{ publication.volume }}{% endif %}{% if publication.pages %}, {{ publication.pages }}{% endif %}, {{ publication.year }}</div>
-              <div class="publication-links">
-                {% if publication.url %}
-                  <a href="{{ publication.url }}" target="_blank">View</a>
-                {% endif %}
-              </div>
+              <div class="publication-links"></div>
             </div>
           {% endfor %}
         </div>
