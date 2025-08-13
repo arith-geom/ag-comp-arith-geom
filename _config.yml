@@ -209,7 +209,7 @@ collections:
     output: true
     permalink: /:name/
   publications:
-    output: true
+    output: false
     permalink: /publications/:name/
   teaching:
     output: true

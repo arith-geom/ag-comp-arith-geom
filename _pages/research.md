@@ -34,7 +34,8 @@ title: Research
               {% for pub_id in research_area.related_publications %}
                 {% assign pub = site.publications | where: "id", pub_id | first %}
                 {% if pub %}
-                  <li><a href="{{ pub.url | default: pub.pdf | default: '#' }}">{{ pub.title }}</a></li>
+                  {% assign pub_key = pub.title | slugify | append: '-' | append: pub.year %}
+                  <li><a href="{{ '/publications/' | relative_url }}?pub={{ pub_key }}">{{ pub.title }}</a></li>
                 {% endif %}
               {% endfor %}
             </ul>

@@ -69,11 +69,19 @@ title: Publications
       <!-- All software packages from Heidelberg website are included and up to date -->
       <!-- Last updated: 2025-08-04T10:26:31.561Z -->
 
+      <!-- Back from detail view -->
+      <div id="pub-detail-back" class="pub-detail-back" style="display: none;">
+        <button type="button" id="pub-detail-back-btn" class="btn btn-outline-primary">
+          <i class="fas fa-arrow-left"></i> Back to all publications
+        </button>
+      </div>
+
       <!-- Publications Grid -->
       <div id="publications-grid" class="publications-grid">
         {% assign sorted_publications = site.publications | sort: 'year' | reverse %}
         {% for publication in sorted_publications %}
-          <div class="publication-card" data-type="{{ publication.type }}" data-year="{{ publication.year }}">
+          {% assign pub_key = publication.title | slugify | append: '-' | append: publication.year %}
+          <div class="publication-card" data-type="{{ publication.type }}" data-year="{{ publication.year }}" data-pub-key="{{ pub_key }}">
             <div class="publication-header">
               <div class="publication-meta">
                 <span class="publication-type">{{ publication.type }}</span>
@@ -81,19 +89,105 @@ title: Publications
                 <span class="publication-year">{{ publication.year }}</span>
       </div>
               <h3 class="publication-title">
-                {% if publication.pdf %}
-                  <a href="{{ publication.pdf }}" target="_blank">{{ publication.title }}</a>
-                {% elsif publication.url %}
-                  <a href="{{ publication.url }}" target="_blank">{{ publication.title }}</a>
-                {% elsif publication.doi %}
-                  <a href="https://doi.org/{{ publication.doi }}" target="_blank">{{ publication.title }}</a>
-                {% elsif publication.arxiv_id %}
-                  <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" target="_blank">{{ publication.title }}</a>
-                {% else %}
-                  <span>{{ publication.title }}</span>
-                {% endif %}
+                <a href="javascript:void(0)" class="publication-title-link" data-pub-key="{{ pub_key }}">{{ publication.title }}</a>
               </h3>
               <div class="publication-authors">{{ publication.authors }}</div>
+              {% assign has_external_url = false %}
+              {% if publication.url %}
+                {% assign url_str = publication.url %}
+                {% unless url_str contains site.url or url_str contains site.baseurl or url_str contains '/publications/' %}
+                  {% assign has_external_url = true %}
+                {% endunless %}
+              {% endif %}
+
+              {% if publication.doi or publication.arxiv_id or has_external_url or publication.pdf or publication.github_url or publication.repository_url or publication.code_url or publication.dataset_url or publication.slides_url or publication.poster_url or publication.video_url or publication.project_url or publication.publisher_url or publication.book_url or publication.website_url or publication.supplementary_url %}
+              <div class="publication-actions">
+                {% if publication.doi %}
+                  <a href="https://doi.org/{{ publication.doi }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> DOI
+                  </a>
+                {% endif %}
+
+                {% if publication.arxiv_id %}
+                  <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" class="btn btn-sm btn-outline-info" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> arXiv
+                  </a>
+                {% endif %}
+
+                {% if has_external_url %}
+                  <a href="{{ url_str }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> URL
+                  </a>
+                {% endif %}
+
+                {% if publication.github_url %}
+                  <a href="{{ publication.github_url }}" class="btn btn-sm btn-outline-dark" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> GitHub
+                  </a>
+                {% endif %}
+                {% if publication.repository_url %}
+                  <a href="{{ publication.repository_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-code-branch"></i> Repository
+                  </a>
+                {% endif %}
+                {% if publication.code_url %}
+                  <a href="{{ publication.code_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-code"></i> Code
+                  </a>
+                {% endif %}
+                {% if publication.dataset_url %}
+                  <a href="{{ publication.dataset_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-database"></i> Dataset
+                  </a>
+                {% endif %}
+                {% if publication.slides_url %}
+                  <a href="{{ publication.slides_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-chalkboard"></i> Slides
+                  </a>
+                {% endif %}
+                {% if publication.poster_url %}
+                  <a href="{{ publication.poster_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-image"></i> Poster
+                  </a>
+                {% endif %}
+                {% if publication.video_url %}
+                  <a href="{{ publication.video_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-video"></i> Video
+                  </a>
+                {% endif %}
+                {% if publication.project_url %}
+                  <a href="{{ publication.project_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-project-diagram"></i> Project
+                  </a>
+                {% endif %}
+                {% if publication.publisher_url %}
+                  <a href="{{ publication.publisher_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-book"></i> Publisher
+                  </a>
+                {% endif %}
+                {% if publication.book_url %}
+                  <a href="{{ publication.book_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-book-open"></i> Book
+                  </a>
+                {% endif %}
+                {% if publication.website_url %}
+                  <a href="{{ publication.website_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-globe"></i> Website
+                  </a>
+                {% endif %}
+                {% if publication.supplementary_url %}
+                  <a href="{{ publication.supplementary_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-paperclip"></i> Supplementary
+                  </a>
+                {% endif %}
+
+                {% if publication.pdf %}
+                  <a href="{% if publication.pdf contains '://' %}{{ publication.pdf }}{% else %}{{ publication.pdf | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-pdf"></i> PDF
+                  </a>
+                {% endif %}
+              </div>
+              {% endif %}
               {% if publication.journal %}
                 <div class="publication-venue">
                   {% if publication.journal_full %}{{ publication.journal_full }}{% else %}{{ publication.journal }}{% endif %}
@@ -107,8 +201,15 @@ title: Publications
                 <div class="publication-details">
                   {% if publication.volume %}<span class="detail-item">Volume: {{ publication.volume }}</span>{% endif %}
                   {% if publication.pages %}<span class="detail-item">Pages: {{ publication.pages }}</span>{% endif %}
-                 {% if publication.doi %}<span class="detail-item">DOI: {{ publication.doi }}</span>{% endif %}
-                  {% if publication.url and publication.url != publication.pdf %}<span class="detail-item">URL: <a href="{{ publication.url | relative_url }}" target="_blank">View</a></span>{% endif %}
+                  {% if publication.doi %}<span class="detail-item">DOI: {{ publication.doi }}</span>{% endif %}
+                  {% if publication.url and publication.url != publication.pdf %}
+                    {% assign url_str = publication.url %}
+                    {% unless url_str contains site.url or url_str contains site.baseurl or url_str contains '/publications/' %}
+                      {% unless url_str contains 'arxiv.org' or url_str contains 'doi.org' %}
+                        <span class="detail-item">URL: <a href="{{ url_str }}" target="_blank" rel="noopener noreferrer">View</a></span>
+                      {% endunless %}
+                    {% endunless %}
+                  {% endif %}
       </div>
               {% endif %}
     </div>
@@ -142,26 +243,7 @@ title: Publications
               </div>
             {% endif %}
             
-            <div class="publication-footer">
-              <div class="publication-links">
-                {% if publication.doi %}
-                  <a href="https://doi.org/{{ publication.doi }}" class="btn btn-sm btn-outline-primary" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> DOI
-                  </a>
-                {% endif %}
-
-                 {% if publication.pdf %}
-                   <a href="{% if publication.pdf contains '://' %}{{ publication.pdf }}{% else %}{{ publication.pdf | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-file-pdf"></i> PDF
-                  </a>
-                {% endif %}
-                {% if publication.arxiv_id %}
-                  <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" class="btn btn-sm btn-outline-info" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> arXiv
-                  </a>
-                {% endif %}
-              </div>
-            </div>
+            <div class="publication-footer"></div>
           </div>
         {% endfor %}
       </div>
@@ -206,6 +288,16 @@ title: Publications
   background: var(--bg-primary);
   min-height: 100vh;
   padding-top: 1rem;
+}
+
+.pub-detail-back {
+  display: flex;
+  justify-content: center;
+  margin: 0.25rem 0 0.75rem 0;
+}
+
+.pub-detail-back .btn {
+  min-width: 260px;
 }
 
 .filter-section {
@@ -495,6 +587,30 @@ body.dark-mode .section-title {
   }
 }
 
+.publications-page.detail-view-active #publications-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.publications-page.detail-view-active .filter-section {
+  display: none;
+}
+
+.publication-card.detail-view {
+  width: min(1000px, 92vw);
+  max-width: 1000px;
+  transform: translateY(0) scale(1.01);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.publication-card.detail-view .publication-body,
+.publication-card.detail-view .publication-footer {
+  background: var(--bg-primary);
+}
+
 .publication-card {
   background: var(--bg-primary);
   border-radius: 0.375rem;
@@ -556,6 +672,13 @@ body.dark-mode .section-title {
   font-weight: 600;
   margin-bottom: 0.75rem;
   line-height: 1.3;
+}
+
+.publication-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 0.25rem 0;
 }
 
 .publication-title a {
@@ -766,6 +889,13 @@ body.dark-mode .section-title {
   color: white;
 }
 
+/* Ensure expand button text is white in light mode (override global span color) */
+.publication-expand-btn,
+.publication-expand-btn .btn-text,
+.publication-expand-btn .btn-icon {
+  color: #ffffff !important;
+}
+
 .publication-expanded-content {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -972,7 +1102,8 @@ class PublicationsManager {
     this.filters = {
       search: '',
       type: 'all',
-      author: ''
+      author: '',
+      pubKey: ''
     };
   }
   
@@ -981,6 +1112,7 @@ class PublicationsManager {
     this.loadPublicationsFromDOM();
     this.bindEvents();
     this.checkAuthorFilter();
+    this.checkPublicationParam();
     this.applyFilters();
     console.log('PublicationsManager initialized successfully');
   }
@@ -993,9 +1125,10 @@ class PublicationsManager {
         element: card,
         type: card.dataset.type,
         year: parseInt(card.dataset.year),
-        title: card.querySelector('.publication-title a').textContent,
+        title: card.querySelector('.publication-title').textContent,
         authors: card.querySelector('.publication-authors').textContent,
-        abstract: card.querySelector('.publication-abstract')?.textContent || ''
+        abstract: card.querySelector('.publication-abstract')?.textContent || '',
+        key: card.dataset.pubKey
       };
     });
     
@@ -1091,6 +1224,14 @@ class PublicationsManager {
       console.log('🔍 Author filter applied:', this.filters.author);
     }
   }
+
+  checkPublicationParam() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pubParam = urlParams.get('pub');
+    if (pubParam) {
+      this.filters.pubKey = decodeURIComponent(pubParam);
+    }
+  }
   
   showAuthorFilter() {
     const authorFilterDisplay = document.getElementById('author-filter-display');
@@ -1134,6 +1275,13 @@ class PublicationsManager {
         }
       }
       
+      // Publication key filter (single publication detail view)
+      if (this.filters.pubKey && this.filters.pubKey.length > 0) {
+        if (pub.key !== this.filters.pubKey) {
+          return false;
+        }
+      }
+
       // Search filter
       if (this.filters.search && this.filters.search.length > 0) {
         const searchTerm = this.filters.search;
@@ -1153,6 +1301,7 @@ class PublicationsManager {
     
     console.log('Filtered publications count:', this.filteredPublications.length);
     this.renderPublications();
+    this.updateDetailState();
   }
   
   applyQuickFilter(filter) {
@@ -1182,6 +1331,7 @@ class PublicationsManager {
     this.publications.forEach(pub => {
       const isVisible = this.filteredPublications.includes(pub);
       pub.element.style.display = isVisible ? 'block' : 'none';
+      pub.element.classList.toggle('detail-view', this.filteredPublications.length === 1 && isVisible);
     });
     
     // Show/hide empty state
@@ -1193,6 +1343,60 @@ class PublicationsManager {
       }
     }
   }
+
+  updateDetailState() {
+    const page = document.querySelector('.publications-page');
+    const back = document.getElementById('pub-detail-back');
+    if (!page || !back) return;
+    if (this.filteredPublications.length === 1) {
+      page.classList.add('detail-view-active');
+      back.style.display = 'flex';
+      // Ensure expanded details and scroll to top
+      this.ensureExpandedDetail();
+      page.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      page.classList.remove('detail-view-active');
+      back.style.display = 'none';
+      this.collapseAllDetails();
+    }
+  }
+
+  ensureExpandedDetail() {
+    if (this.filteredPublications.length !== 1) return;
+    const card = this.filteredPublications[0].element;
+    if (!card) return;
+    const btn = card.querySelector('.publication-expand-btn');
+    const content = card.querySelector('.publication-expanded-content');
+    if (content) {
+      content.style.display = 'block';
+      content.style.animation = '';
+    }
+    if (btn) {
+      btn.classList.add('expanded');
+      const btnText = btn.querySelector('.btn-text');
+      if (btnText) btnText.textContent = 'Hide details';
+      const btnIcon = btn.querySelector('.btn-icon');
+      if (btnIcon) btnIcon.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  collapseAllDetails() {
+    this.publications.forEach(p => {
+      const btn = p.element.querySelector('.publication-expand-btn');
+      const content = p.element.querySelector('.publication-expanded-content');
+      if (content) {
+        content.style.display = 'none';
+        content.style.animation = '';
+      }
+      if (btn) {
+        btn.classList.remove('expanded');
+        const btnText = btn.querySelector('.btn-text');
+        if (btnText) btnText.textContent = 'Show full details';
+        const btnIcon = btn.querySelector('.btn-icon');
+        if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
 }
 
 // Initialize the publications manager when the page loads
@@ -1203,6 +1407,40 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Make manager globally accessible for debugging
   window.publicationsManager = manager;
+  
+  // Click-to-focus behavior: clicking title or card enters detail view
+  document.getElementById('publications-grid')?.addEventListener('click', (e) => {
+    const titleLink = e.target.closest('.publication-title-link');
+    const card = e.target.closest('.publication-card');
+    // Allow action links inside the card to work normally
+    const actionLink = e.target.closest('.publication-links a, .publication-expand-btn, .publication-details a, .publication-expanded-content a');
+    if (actionLink) return;
+    if (titleLink || card) {
+      const key = (titleLink?.dataset.pubKey) || card?.dataset.pubKey;
+      if (key) {
+        e.preventDefault();
+        manager.filters.pubKey = key;
+        // Reflect in URL without reload
+        const url = new URL(window.location);
+        url.searchParams.set('pub', key);
+        window.history.replaceState({}, '', url);
+        manager.applyFilters();
+        // Ensure we are at the top where the detail view renders nicely
+        document.querySelector('.publications-page')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+
+  // Back button
+  document.getElementById('pub-detail-back-btn')?.addEventListener('click', () => {
+    manager.filters.pubKey = '';
+    const url = new URL(window.location);
+    url.searchParams.delete('pub');
+    window.history.replaceState({}, '', url);
+    manager.applyFilters();
+    // Scroll to top of grid
+    document.getElementById('publications-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 });
 </script>
 

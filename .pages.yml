@@ -170,6 +170,12 @@ content:
         description: "Journal name, conference name, or publisher"
         validation:
           max_length: 200
+      - name: pdf
+        label: PDF URL or Path
+        type: string
+        description: "Link to PDF (absolute URL or /assets/uploads/...)"
+        validation:
+          pattern: "^https?://.+|^/.*\.pdf$"
       - name: abstract
         label: Abstract
         type: rich-text
@@ -190,12 +196,88 @@ content:
         description: "Digital Object Identifier"
         validation:
           pattern: "^10\\.[0-9]{4,}/.+"
+      - name: arxiv_id
+        label: arXiv ID
+        type: string
+        description: "e.g., 2101.01234"
       - name: url
         label: External URL
         type: string
         description: "Link to published version"
         validation:
           pattern: "^https?://.+"
+      - name: github_url
+        label: GitHub Repository
+        type: string
+        description: "Repository URL (if applicable)"
+        validation:
+          pattern: "^https?://.+"
+      - name: repository_url
+        label: Repository URL (alt)
+        type: string
+        description: "Alternative repository URL"
+        validation:
+          pattern: "^https?://.+"
+      - name: code_url
+        label: Code URL (alt)
+        type: string
+        description: "Code or package URL"
+        validation:
+          pattern: "^https?://.+"
+      - name: dataset_url
+        label: Dataset URL
+        type: string
+        description: "Link to datasets"
+        validation:
+          pattern: "^https?://.+"
+      - name: slides_url
+        label: Slides URL
+        type: string
+        description: "Conference or talk slides"
+        validation:
+          pattern: "^https?://.+|^/.*\.pdf$"
+      - name: poster_url
+        label: Poster URL
+        type: string
+        description: "Conference poster"
+        validation:
+          pattern: "^https?://.+|^/.*\.pdf$"
+      - name: video_url
+        label: Video URL
+        type: string
+        description: "Talk or presentation video (YouTube/Vimeo/etc.)"
+        validation:
+          pattern: "^https?://.+"
+      - name: project_url
+        label: Project Website
+        type: string
+        description: "Project landing page"
+        validation:
+          pattern: "^https?://.+"
+      - name: publisher_url
+        label: Publisher Page
+        type: string
+        description: "Publisher book or article page"
+        validation:
+          pattern: "^https?://.+"
+      - name: book_url
+        label: Book Page
+        type: string
+        description: "Book information or purchase page"
+        validation:
+          pattern: "^https?://.+"
+      - name: website_url
+        label: Related Website
+        type: string
+        description: "Any other relevant website"
+        validation:
+          pattern: "^https?://.+"
+      - name: supplementary_url
+        label: Supplementary Material
+        type: string
+        description: "Supplementary files or appendices"
+        validation:
+          pattern: "^https?://.+|^/.*"
 
   # Team Members - Enhanced and aligned with actual content
   - name: members
