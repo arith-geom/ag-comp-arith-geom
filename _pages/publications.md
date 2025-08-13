@@ -120,15 +120,17 @@ title: Publications
                 {% endif %}
 
                 {% if has_links %}
-                  {% for link in publication.links %}
-                    {% assign label = link.label | default: 'Link' %}
-                    {% assign href = link.url %}
-                    {% if href %}
-                      <a href="{{ href }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-link"></i> {{ label }}
-                      </a>
-                    {% endif %}
-                  {% endfor %}
+                  <div class="publication-links-badges">
+                    {% for link in publication.links %}
+                      {% assign label = link.label | default: 'Link' %}
+                      {% assign href = link.url %}
+                      {% if href %}
+                        <a href="{{ href }}" class="link-badge" target="_blank" rel="noopener noreferrer">
+                          <i class="fas fa-link"></i> {{ label }}
+                        </a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
                 {% endif %}
 
                 {% assign pdf_href = publication.pdf_file | default: publication.pdf %}
@@ -629,6 +631,30 @@ body.dark-mode .section-title {
   gap: 0.5rem;
   flex-wrap: wrap;
   margin: 0.5rem 0 0.25rem 0;
+}
+
+.publication-links-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.link-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.link-badge:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-dark);
 }
 
 .publication-title a {
