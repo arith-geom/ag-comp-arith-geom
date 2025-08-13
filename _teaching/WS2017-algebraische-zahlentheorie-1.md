@@ -24,38 +24,57 @@ semester_year: 2017
 semester_key: WS2017
 semester_sort: 20172
 active: false
+content: "Vorlesung \"Algebraische Zahlentheorie 1\" (WS 2017/18)\n\nDozent: Prof.
+  Dr. Gebhard BÃ¶ckle\n\nAssistent: Dr. David-A. Guiraud\n\nDienstags 11-13 Uhr Seminarraum
+  SR 005 INF 230 ( Ausnahme: 17.10.2017 in SR1 INF 327 Erdgeschoss)\n\nFreitags 9-11
+  Uhr Seminarraum C INF 205\n\nEmpfohlene Vorkenntnisse: Algebra 1 und Grundkenntnisse
+  aus Algebra 2 Inhalte: Die Vorlesung Algebraische Zahlentheorie I enthÃ¤lt das         Grundwissen
+  Ã¼ber algebraische ZahlkÃ¶rper. Hauptthemen sind: Ganzheit, Ideale, Dedekindringe,
+  Primidealzerlegung,         Minkowski-Theorie, Klassenzahl, Dirichletscher Einheitensatz,
+  quadratische         ZahlkÃ¶rper, zyklotomische KÃ¶rper, Erweiterungen von Dedekindringen,
+  \        Lokalisierung, Bewertungen, Fortsetzungen von Bewertungen, Galoistheorie
+  der Bewertungen, Hilbertsche Verzweigungstheorie.\n\nLiteratur:\n\nG.J. Janusz:
+  Algebraic Number Fields\n\nS. Lang: Algebraic Number Theory\n\nD.A. Marcus: Algebraic
+  Number Fields\n\nJ. Milne: Algebraic Number Theory ( http://www.jmilne.org/math/CourseNotes/ANT.pdf
+  )\n\nJ. Neukirch: Algebraische Zahlentheorie\n\nÃ\x9Cbungsbetrieb: Organisation
+  Ã¼ber MÃ¼sli und Moodle .\n\nPrÃ¼fung:\n\nHaupttermin: Donnerstag, 15.2.2018, Uhrzeit
+  und Raum werden noch bekannt gegeben.\n\nNachtermin: TBA\n\nImported from legacy
+  teaching listing."
+description: 'Vorlesung "Algebraische Zahlentheorie 1" (WS 2017/18) Dozent: Prof.
+  Dr. Gebhard BÃ¶ckle Assistent: Dr. David-A. Guiraud Dienstags 11-13 Uhr Seminarraum
+  SR 005 INF 230 ( Ausnahme: 17.10.2017 in SR1 INF 327 Erdgeschoss) Freitags 9-11
+  Uhr Seminarraum C INF 205 Empfohlene Vorkenntnis'
 ---
-content: |
-  Vorlesung "Algebraische Zahlentheorie 1" (WS 2017/18)
-  
-  Dozent: Prof. Dr. Gebhard BÃ¶ckle
-  
-  Assistent: Dr. David-A. Guiraud
-  
-  Dienstags 11-13 Uhr Seminarraum SR 005 INF 230 ( Ausnahme: 17.10.2017 in SR1 INF 327 Erdgeschoss)
-  
-  Freitags 9-11 Uhr Seminarraum C INF 205
-  
-  Empfohlene Vorkenntnisse: Algebra 1 und Grundkenntnisse aus Algebra 2 Inhalte: Die Vorlesung Algebraische Zahlentheorie I enthÃ¤lt das         Grundwissen Ã¼ber algebraische ZahlkÃ¶rper. Hauptthemen sind: Ganzheit, Ideale, Dedekindringe, Primidealzerlegung,         Minkowski-Theorie, Klassenzahl, Dirichletscher Einheitensatz, quadratische         ZahlkÃ¶rper, zyklotomische KÃ¶rper, Erweiterungen von Dedekindringen,         Lokalisierung, Bewertungen, Fortsetzungen von Bewertungen, Galoistheorie der Bewertungen, Hilbertsche Verzweigungstheorie.
-  
-  Literatur:
-  
-  G.J. Janusz: Algebraic Number Fields
-  
-  S. Lang: Algebraic Number Theory
-  
-  D.A. Marcus: Algebraic Number Fields
-  
-  J. Milne: Algebraic Number Theory ( http://www.jmilne.org/math/CourseNotes/ANT.pdf )
-  
-  J. Neukirch: Algebraische Zahlentheorie
-  
-  Ãbungsbetrieb: Organisation Ã¼ber MÃ¼sli und Moodle .
-  
-  PrÃ¼fung:
-  
-  Haupttermin: Donnerstag, 15.2.2018, Uhrzeit und Raum werden noch bekannt gegeben.
-  
-  Nachtermin: TBA
+Vorlesung "Algebraische Zahlentheorie 1" (WS 2017/18)
+
+Dozent: Prof. Dr. Gebhard BÃ¶ckle
+
+Assistent: Dr. David-A. Guiraud
+
+Dienstags 11-13 Uhr Seminarraum SR 005 INF 230 ( Ausnahme: 17.10.2017 in SR1 INF 327 Erdgeschoss)
+
+Freitags 9-11 Uhr Seminarraum C INF 205
+
+Empfohlene Vorkenntnisse: Algebra 1 und Grundkenntnisse aus Algebra 2 Inhalte: Die Vorlesung Algebraische Zahlentheorie I enthÃ¤lt das         Grundwissen Ã¼ber algebraische ZahlkÃ¶rper. Hauptthemen sind: Ganzheit, Ideale, Dedekindringe, Primidealzerlegung,         Minkowski-Theorie, Klassenzahl, Dirichletscher Einheitensatz, quadratische         ZahlkÃ¶rper, zyklotomische KÃ¶rper, Erweiterungen von Dedekindringen,         Lokalisierung, Bewertungen, Fortsetzungen von Bewertungen, Galoistheorie der Bewertungen, Hilbertsche Verzweigungstheorie.
+
+Literatur:
+
+G.J. Janusz: Algebraic Number Fields
+
+S. Lang: Algebraic Number Theory
+
+D.A. Marcus: Algebraic Number Fields
+
+J. Milne: Algebraic Number Theory ( http://www.jmilne.org/math/CourseNotes/ANT.pdf )
+
+J. Neukirch: Algebraische Zahlentheorie
+
+Ãbungsbetrieb: Organisation Ã¼ber MÃ¼sli und Moodle .
+
+PrÃ¼fung:
+
+Haupttermin: Donnerstag, 15.2.2018, Uhrzeit und Raum werden noch bekannt gegeben.
+
+Nachtermin: TBA
 
 Imported from legacy teaching listing.

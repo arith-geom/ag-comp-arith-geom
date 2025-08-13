@@ -9,5 +9,8 @@ semester_year: 2021
 semester_key: WS2021
 semester_sort: 20212
 active: false
+instructors: Prof. Dr. BÃ¶ckle, Dr. GrÃ¤f
+content: Imported from legacy teaching listing.
+description: Imported from legacy teaching listing.
 ---
 Imported from legacy teaching listing.

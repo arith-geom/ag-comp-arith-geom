@@ -5,6 +5,185 @@ scripts:
 - "/assets/js/teaching-page.js"
 active: false
 show_title: false
+content: "<div class=\"teaching-page\">\n  <div id=\"courseFocusBar\" class=\"course-focus-bar\"
+  style=\"display: none;\">\n    <button id=\"backToAllCourses\" class=\"back-to-all-btn\">\n
+  \     <i class=\"fas fa-arrow-left\"></i> Back to all courses\n    </button>\n  </div>\n
+  \ \n  <!-- Filter Controls -->\n  <div class=\"filter-controls\">\n    <div class=\"filter-group\">\n
+  \     <label for=\"courseTypeFilter\">Filter by Type:</label>\n      <select id=\"courseTypeFilter\"
+  class=\"filter-select\">\n        <option value=\"all\">All Courses</option>\n        <option
+  value=\"vorlesung\">Lectures</option>\n        <option value=\"seminar\">Seminars</option>\n
+  \       <option value=\"proseminar\">Proseminars</option>\n        <option value=\"hauptseminar\">Hauptseminars</option>\n
+  \     </select>\n    </div>\n    <div class=\"filter-group\">\n      <label for=\"yearFilter\">Filter
+  by Year:</label>\n      <select id=\"yearFilter\" class=\"filter-select\">\n        <option
+  value=\"all\">All Years</option>\n        {% assign teaching_all = site.teaching
+  | where: 'layout', 'teaching' %}\n        {% assign years = teaching_all | map:
+  'semester_year' | compact | uniq | sort | reverse %}\n        {% for y in years
+  %}\n        {% if y %}<option value=\"{{ y }}\">{{ y }}</option>{% endif %}\n        {%
+  endfor %}\n      </select>\n    </div>\n    <div class=\"filter-group\">\n      <label
+  for=\"searchFilter\">Search Courses:</label>\n      <input type=\"text\" id=\"searchFilter\"
+  class=\"filter-input\" placeholder=\"Search course titles...\">\n    </div>\n  </div>\n\n
+  \ {% assign teaching_all = site.teaching | where: 'layout', 'teaching' %}\n  {%
+  assign teaching_sorted = teaching_all | sort: 'semester_sort' | reverse %}\n  {%
+  assign current_courses = teaching_sorted | where_exp: \"c\", \"c.active == true
+  or c.active == 'true'\" %}\n\n  <!-- Recent Teaching (auto) -->\n  <div class=\"teaching-section
+  recent-section\">\n    <h3 class=\"section-title recent-title\">\n      <i class=\"fas
+  fa-clock\"></i> Recent Teaching\n    </h3>\n    {% assign recent_courses = teaching_sorted
+  | where_exp: \"c\", \"c.semester_key and c.semester_key != ''\" %}\n    {% assign
+  recent_by_semester = recent_courses | group_by: 'semester_key' %}\n    {% for sem
+  in recent_by_semester %}\n      {% assign sample = sem.items | first %}\n      <div
+  class=\"semester-group\" data-period=\"recent\" data-semester=\"{{ sample.semester_key
+  }}\">\n        <h4 class=\"semester-title recent-semester\">\n          <i class=\"fas
+  fa-calendar-alt\"></i> {{ sample.semester_key }}\n        </h4>\n        <ul class=\"course-list\">\n
+  \         {% for course in sem.items %}\n            {% assign type_lower = course.course_type
+  | downcase %}\n            <li class=\"course-item\" data-type=\"{{ type_lower }}\"
+  data-year=\"{{ course.semester_year }}\" {% if course.external_url %}data-course-url=\"{{
+  course.external_url }}\" data-external=\"true\"{% endif %}>\n              <span
+  class=\"course-badge {{ type_lower }}\">\n                {% if type_lower == 'vorlesung'
+  %}<i class=\"fas fa-chalkboard-teacher\"></i> Lecture{% elsif type_lower == 'hauptseminar'
+  %}<i class=\"fas fa-graduation-cap\"></i> Advanced Seminar{% elsif type_lower ==
+  'proseminar' %}<i class=\"fas fa-book-open\"></i> Proseminar{% else %}<i class=\"fas
+  fa-users\"></i> {{ course.course_type }}{% endif %}\n              </span>\n              <span
+  class=\"course-title\">{{ course.title }}</span>\n              {% if course.instructor
+  %}<span class=\"instructors\">({{ course.instructor }})</span>{% endif %}\n              <button
+  class=\"course-expand-btn\" aria-expanded=\"false\" title=\"Show details\" tabindex=\"-1\"
+  disabled aria-disabled=\"true\">\n                <i class=\"fas fa-chevron-down\"></i>\n
+  \             </button>\n              <div class=\"course-details\" style=\"display:
+  none;\">\n                <div class=\"course-details-inner\">\n                  <div
+  class=\"course-meta\">\n                    <span class=\"meta-item\"><i class=\"fas
+  fa-tag\"></i> {{ course.course_type }}</span>\n                    {% if course.semester_key
+  %}<span class=\"meta-item\"><i class=\"fas fa-calendar\"></i> {{ course.semester_key
+  }}</span>{% endif %}\n                    {% if course.language %}<span class=\"meta-item\"><i
+  class=\"fas fa-language\"></i> {{ course.language }}</span>{% endif %}\n                    {%
+  if course.level %}<span class=\"meta-item\"><i class=\"fas fa-signal\"></i> {{ course.level
+  }}</span>{% endif %}\n                  </div>\n                  {% if course.description
+  %}\n                  <div class=\"course-description\">{{ course.description }}</div>\n
+  \                 {% endif %}\n                  {% if course.content %}\n                  <div
+  class=\"course-full-content\">{{ course.content }}</div>\n                  {% endif
+  %}\n                  {% assign has_links = course.links and course.links.size >
+  0 %}\n                  {% assign has_pdfs  = course.pdfs and course.pdfs.size >
+  0 %}\n                  {% if has_links or has_pdfs %}\n                  <div class=\"course-links\">\n
+  \                   <div class=\"links-title\"><i class=\"fas fa-paperclip\"></i>
+  Resources</div>\n                    <ul>\n                      {% if has_links
+  %}\n                        {% for link in course.links %}\n                          {%
+  if link.url %}\n                          <li>\n                            <a href=\"{{
+  link.url }}\" target=\"_blank\" rel=\"noopener\">\n                              {%
+  if link.label %}{{ link.label }}{% else %}{{ link.url }}{% endif %}\n                            </a>\n
+  \                         </li>\n                          {% endif %}\n                        {%
+  endfor %}\n                      {% endif %}\n                      {% if has_pdfs
+  %}\n                        {% for pdf in course.pdfs %}\n                          {%
+  if pdf.file %}\n                          <li>\n                            <a href=\"{{
+  pdf.file | relative_url }}\" target=\"_blank\" rel=\"noopener\">\n                              {%
+  if pdf.label %}{{ pdf.label }}{% else %}PDF{% endif %}\n                            </a>\n
+  \                         </li>\n                          {% endif %}\n                        {%
+  endfor %}\n                      {% endif %}\n                    </ul>\n                  </div>\n
+  \                 {% endif %}\n                </div>\n              </div>\n            </li>\n
+  \         {% endfor %}\n        </ul>\n      </div>\n    {% endfor %}\n  </div>\n\n\n
+  \ \n</div>\n\n<!-- Enhanced CSS and JavaScript -->\n<style>\n.teaching-page {\n
+  \ width: 100%;\n  margin: 0;\n  padding: 0 1rem;\n}\n\n  .semester-filter-bar {\n
+  \   margin: 0 0 1rem 0;\n  }\n\n  .back-to-all-btn {\n    display: inline-flex;\n
+  \   align-items: center;\n    gap: 0.5rem;\n    padding: 0.5rem 0.9rem;\n    background:
+  var(--bg-primary);\n    border: 1px solid var(--border-color);\n    border-radius:
+  6px;\n    cursor: pointer;\n  }\n\n/* Filter Controls */\n.filter-controls {\n  background:
+  var(--bg-primary) !important;\n  border: 1px solid var(--border-color) !important;\n
+  \ box-shadow: var(--shadow-sm) !important;\n  border-radius: 12px !important;\n
+  \ border-bottom: 0 !important;\n  padding: 1.5rem;\n  margin-bottom: 2rem;\n  display:
+  grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 1rem;\n}\n\n.filter-group
+  {\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n}\n\n.filter-group
+  label {\n  font-weight: 600;\n  color: #495057;\n  font-size: 0.9rem;\n}\n\n.filter-select,
+  .filter-input {\n  padding: 0.75rem;\n  border: 1px solid #ced4da;\n  border-radius:
+  6px;\n  font-size: 0.9rem;\n  background: var(--bg-primary);\n  transition: all
+  0.2s ease;\n}\n\n.filter-select:focus, .filter-input:focus {\n  outline: none;\n
+  \ border-color: #667eea;\n  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n}\n\n/*
+  Section Styles */\n.teaching-section {\n  margin-bottom: 3rem;\n}\n\n.section-title
+  {\n  font-size: 1.8rem;\n  font-weight: 600;\n  margin-bottom: 1.5rem;\n  padding:
+  1rem 0;\n  border-bottom: 3px solid var(--primary);\n  display: flex;\n  align-items:
+  center;\n  gap: 0.75rem;\n  transition: all 0.3s ease;\n}\n\n.section-title i {\n
+  \ font-size: 1.2rem;\n}\n\n.current-title {\n  color: #28a745;\n  border-bottom-color:
+  #28a745;\n}\n\n.recent-title {\n  color: #17a2b8;\n  border-bottom-color: #17a2b8;\n}\n\n.historical-title
+  {\n  color: #6c757d;\n  border-bottom-color: #6c757d;\n}\n\n/* Semester Groups */\n.semester-group
+  {\n  margin-bottom: 2rem;\n  padding: 1.5rem;\n  background: var(--bg-primary);\n
+  \ border-radius: 12px;\n  border: 1px solid var(--border-color);\n  box-shadow:
+  0 2px 8px rgba(0,0,0,0.05);\n  transition: all 0.3s ease;\n}\n\n.semester-group:hover
+  {\n  box-shadow: 0 4px 16px rgba(0,0,0,0.1);\n  transform: translateY(-2px);\n}\n\n.semester-title
+  {\n  font-size: 1.3rem;\n  font-weight: 600;\n  margin-bottom: 1rem;\n  padding:
+  0.75rem 0;\n  border-bottom: 2px solid;\n  display: flex;\n  align-items: center;\n
+  \ gap: 0.5rem;\n  cursor: pointer;\n}\n\n.current-semester {\n  color: #28a745;\n
+  \ border-bottom-color: #28a745;\n}\n\n.recent-semester {\n  color: #17a2b8;\n  border-bottom-color:
+  #17a2b8;\n}\n\n.historical-semester {\n  color: #6c757d;\n  border-bottom-color:
+  #6c757d;\n}\n\n/* Course Lists */\n.course-list {\n  list-style: none;\n  padding:
+  0;\n  margin: 0;\n}\n\n.course-item {\n  background: #f8f9fa;\n  margin: 0.75rem
+  0;\n  padding: 1rem 1.5rem;\n  border-radius: 8px;\n  border-left: 4px solid #667eea;\n
+  \ transition: all 0.3s ease;\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n
+  \ flex-wrap: wrap;\n  animation: fadeInUp 0.6s ease forwards;\n  opacity: 0;\n  transform:
+  translateY(20px);\n  cursor: pointer;\n}\n\n.course-item:hover {\n  background:
+  #e3f2fd;\n  transform: translateX(5px);\n  box-shadow: 0 4px 12px rgba(102, 126,
+  234, 0.15);\n}\n\n.course-item:nth-child(1) { animation-delay: 0.1s; }\n.course-item:nth-child(2)
+  { animation-delay: 0.2s; }\n.course-item:nth-child(3) { animation-delay: 0.3s; }\n.course-item:nth-child(4)
+  { animation-delay: 0.4s; }\n\n.course-item.hidden {\n  display: none;\n}\n\n/* Focus-mode
+  visibility control (kept separate from filter .hidden) */\n.course-item.focus-hidden,\n.semester-group.focus-hidden
+  {\n  display: none;\n}\n\n/* Course Badges */\n.course-badge {\n  display: inline-flex;\n
+  \ align-items: center;\n  gap: 0.5rem;\n  padding: 0.4rem 0.8rem;\n  border-radius:
+  20px;\n  font-size: 0.8rem;\n  font-weight: 600;\n  white-space: nowrap;\n  box-shadow:
+  0 2px 4px rgba(0,0,0,0.1);\n  cursor: pointer;\n  transition: transform 0.2s ease;\n}\n\n.course-badge:hover
+  {\n  transform: scale(1.05);\n}\n\n.course-badge.seminar { background: #e8f5e8;
+  color: #1b5e20; border: 1px solid #a5d6a7; }\n.course-badge.vorlesung { background:
+  #eaeef7; color: #0d47a1; border: 1px solid #93b3e3; }\n.course-badge.proseminar
+  { background: #fff3e0; color: #e65100; border: 1px solid #ffb74d; }\n.course-badge.hauptseminar
+  { background: #fce4ec; color: #880e4f; border: 1px solid #f48fb1; }\n\n/* Course
+  Links */\n.course-link {\n  color: #111;\n  text-decoration: none;\n  font-weight:
+  500;\n  flex: 1;\n  min-width: 200px;\n  transition: color 0.2s ease;\n}\n\n.course-link:hover
+  {\n  color: #000;\n  text-decoration: underline;\n}\n\n/* Non-clickable course title
+  */\n.course-title {\n  color: #111;\n  font-weight: 500;\n  flex: 1;\n  min-width:
+  200px;\n}\n\n  .course-expand-btn {\n    margin-left: auto;\n    background: transparent;\n
+  \   border: 1px dashed var(--border-color);\n    border-radius: 6px;\n    padding:
+  0.3rem 0.55rem;\n    cursor: default;\n    pointer-events: none;\n  }\n\n  .course-details
+  {\n    flex-basis: 100%;\n    background: var(--bg-primary);\n    border: 1px solid
+  var(--border-color);\n    border-radius: 8px;\n    margin-top: 0.75rem;\n    padding:
+  0.9rem 1rem;\n  }\n\n  .course-meta {\n    display: flex;\n    gap: 0.75rem;\n    flex-wrap:
+  wrap;\n    color: #6c757d;\n    font-size: 0.9rem;\n    margin-bottom: 0.4rem;\n
+  \ }\n\n  .course-actions {\n    margin-top: 0.5rem;\n  }\n\n  .open-course-page
+  {\n    display: inline-flex;\n    align-items: center;\n    gap: 0.4rem;\n    text-decoration:
+  none;\n    color: #2980b9;\n    font-weight: 500;\n  }\n\n.instructors {\n  color:
+  #6c757d;\n  font-size: 0.9rem;\n  font-style: italic;\n  white-space: nowrap;\n}\n\n/*
+  Historical Content - Always Visible */\n.historical-content {\n  /* Remove max-height
+  and overflow restrictions */\n}\n\n.historical-note {\n  background: #fff3cd;\n
+  \ border: 1px solid #ffeaa7;\n  border-radius: 8px;\n  padding: 1rem;\n  margin-top:
+  1rem;\n  color: #856404;\n}\n\n.historical-note p {\n  margin: 0;\n  display: flex;\n
+  \ align-items: center;\n  gap: 0.5rem;\n}\n\n/* Footer */\n.teaching-footer {\n
+  \ background: #f8f9fa;\n  border-top: 3px solid #667eea;\n  margin: 3rem -2rem -2rem
+  -2rem;\n  padding: 2rem;\n  border-radius: 15px 15px 0 0;\n}\n\n/* Dark mode cleanup
+  for neutral surfaces */\n[data-theme=\"dark\"] .semester-group,\nbody.dark-mode
+  .semester-group {\n  background: #0f1115;\n  border-color: #1f232b;\n}\n\n[data-theme=\"dark\"]
+  .course-item,\nbody.dark-mode .course-item {\n  background: #0b0d11;\n}\n\n.footer-content
+  {\n  max-width: 800px;\n  margin: 0 auto;\n  display: grid;\n  grid-template-columns:
+  2fr 1fr;\n  gap: 2rem;\n  align-items: start;\n}\n\n.contact-info h3 {\n  color:
+  #2c3e50;\n  margin-bottom: 1rem;\n  font-size: 1.2rem;\n  display: flex;\n  align-items:
+  center;\n  gap: 0.5rem;\n}\n\n.contact-info p {\n  margin: 0.5rem 0;\n  color: #555;\n}\n\n.contact-info
+  a {\n  color: #3498db;\n  text-decoration: none;\n}\n\n.contact-info a:hover {\n
+  \ text-decoration: underline;\n}\n\n.last-update {\n  text-align: right;\n  color:
+  #7f8c8d;\n  font-size: 0.9rem;\n}\n\n.last-update p {\n  display: flex;\n  align-items:
+  center;\n  gap: 0.5rem;\n  justify-content: flex-end;\n}\n\n/* Responsive Design
+  */\n@media (max-width: 768px) {\n  .teaching-intro h2 {\n    font-size: 2rem;\n
+  \ }\n  \n  .filter-controls {\n    grid-template-columns: 1fr;\n  }\n  \n  .course-item
+  {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 0.5rem;\n
+  \ }\n  \n  .course-badge {\n    align-self: flex-start;\n  }\n  \n  .footer-content
+  {\n    grid-template-columns: 1fr;\n    text-align: center;\n  }\n  \n  .last-update
+  {\n    text-align: center;\n  }\n  \n  .last-update p {\n    justify-content: center;\n
+  \ }\n}\n\n@media (max-width: 480px) {\n  .course-badge {\n    font-size: 0.7rem;\n
+  \   padding: 0.3rem 0.6rem;\n  }\n  \n  .course-link, .course-title {\n    min-width:
+  auto;\n  }\n    .course-expand-btn {\n      align-self: flex-start;\n      margin-left:
+  0;\n    }\n}\n\n/* Animation for course items */\n@keyframes fadeInUp {\n  to {\n
+  \   opacity: 1;\n    transform: translateY(0);\n  }\n}\n\n/* Hidden class for filtering
+  */\n.semester-group.hidden {\n  display: none;\n}\n\n.course-focus-bar {\n  margin:
+  0 0 1rem 0;\n}\n\n[data-theme=\"dark\"] .filter-controls,\nbody.dark-mode .filter-controls
+  {\n  border-bottom: 0 !important;\n}\n\n[data-theme=\"dark\"] .section-title,\nbody.dark-mode
+  .section-title {\n  border-bottom: 3px solid #111 !important;\n}\n</style>\n\n<!--
+  page-level inline script removed to avoid conflicts; global assets/js/teaching-page.js
+  handles behavior -->"
+description: '<div class="teaching-page"> <div id="courseFocusBar" class="course-focus-bar"
+  style="display: none;"> <button id="backToAllCourses" class="back-to-all-btn"> <i
+  class="fas fa-arrow-left"></i> Back to all courses </button> </div> <!-- Filter
+  Controls --> <div class="filter-controls'
 ---
 <div class="teaching-page">
   <div id="courseFocusBar" class="course-focus-bar" style="display: none;">

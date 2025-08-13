@@ -9,5 +9,8 @@ semester_year: 2014
 semester_key: WS2014
 semester_sort: 20142
 active: false
+instructors: Prof. Dr. BÃ¶ckle, Dr. CerviÃ±o, Dr. Hubschmid
+content: Imported from legacy teaching listing.
+description: Imported from legacy teaching listing.
 ---
 Imported from legacy teaching listing.

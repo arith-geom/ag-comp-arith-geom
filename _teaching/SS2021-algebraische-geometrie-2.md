@@ -18,34 +18,68 @@ semester_year: 2021
 semester_key: SS2021
 semester_sort: 20211
 active: false
----
-content: |
+instructors: Prof. Dr. BÃ¶ckle, Chilla, Quast
+content: |-
   Algebraische Geometrie 2
-  
+
   Sommersemester 2021
-  
+
   Organisation
-  
+
   Dozent: Prof. Dr. Gebhard Böckle
-  
+
   Dozent: Prof. Dr. Gebhard Böckle
-  
+
   Assistent: Paola Chilla , Julian Quast
-  
+
   Vorlesung
-  
+
   Dienstag 09-11 Uhr asynchron via Moodle
-  
+
   Donnerstag 11-13 Uhr asynchron via Moodle
-  
+
   Sprechstunde
-  
+
   Donnerstag 12:00-13:00 Uhr synchron via Heiconf
-  
+
   Übungsbetrieb
-  
+
   Organisation über MÜSLI . Bitte dort anmelden.
-  
+
   Montag 14:00-16:00 Uhr, synchron via Webex
+
+  Imported from legacy teaching listing.
+description: 'Algebraische Geometrie 2 Sommersemester 2021 Organisation Dozent: Prof.
+  Dr. Gebhard Böckle Dozent: Prof. Dr. Gebhard Böckle Assistent: Paola Chilla , Julian
+  Quast Vorlesung Dienstag 09-11 Uhr asynchron via Moodle Donnerstag 11-13 Uhr asynchron
+  via Moodle Sprechstunde Donnerstag 1'
+---
+Algebraische Geometrie 2
+
+Sommersemester 2021
+
+Organisation
+
+Dozent: Prof. Dr. Gebhard Böckle
+
+Dozent: Prof. Dr. Gebhard Böckle
+
+Assistent: Paola Chilla , Julian Quast
+
+Vorlesung
+
+Dienstag 09-11 Uhr asynchron via Moodle
+
+Donnerstag 11-13 Uhr asynchron via Moodle
+
+Sprechstunde
+
+Donnerstag 12:00-13:00 Uhr synchron via Heiconf
+
+Übungsbetrieb
+
+Organisation über MÜSLI . Bitte dort anmelden.
+
+Montag 14:00-16:00 Uhr, synchron via Webex
 
 Imported from legacy teaching listing.

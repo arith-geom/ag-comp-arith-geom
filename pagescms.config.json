@@ -248,92 +248,9 @@
           "required": true
         },
         "semester": {
-          "type": "select",
+          "type": "string",
           "label": "Semester",
-          "required": true,
-          "options": [
-            "Summer Semester 2000",
-            "Winter Semester 2000/01",
-            "Summer Semester 2001",
-            "Winter Semester 2001/02",
-            "Summer Semester 2002",
-            "Winter Semester 2002/03",
-            "Summer Semester 2003",
-            "Winter Semester 2003/04",
-            "Summer Semester 2004",
-            "Winter Semester 2004/05",
-            "Summer Semester 2005",
-            "Winter Semester 2005/06",
-            "Summer Semester 2006",
-            "Winter Semester 2006/07",
-            "Summer Semester 2007",
-            "Winter Semester 2007/08",
-            "Summer Semester 2008",
-            "Winter Semester 2008/09",
-            "Summer Semester 2009",
-            "Winter Semester 2009/10",
-            "Summer Semester 2010",
-            "Winter Semester 2010/11",
-            "Summer Semester 2011",
-            "Winter Semester 2011/12",
-            "Summer Semester 2012",
-            "Winter Semester 2012/13",
-            "Summer Semester 2013",
-            "Winter Semester 2013/14",
-            "Summer Semester 2014",
-            "Winter Semester 2014/15",
-            "Summer Semester 2015",
-            "Winter Semester 2015/16",
-            "Summer Semester 2016",
-            "Winter Semester 2016/17",
-            "Summer Semester 2017",
-            "Winter Semester 2017/18",
-            "Summer Semester 2018",
-            "Winter Semester 2018/19",
-            "Summer Semester 2019",
-            "Winter Semester 2019/20",
-            "Summer Semester 2020",
-            "Winter Semester 2020/21",
-            "Summer Semester 2021",
-            "Winter Semester 2021/22",
-            "Summer Semester 2022",
-            "Winter Semester 2022/23",
-            "Summer Semester 2023",
-            "Winter Semester 2023/24",
-            "Summer Semester 2024",
-            "Winter Semester 2024/25",
-            "Summer Semester 2025",
-            "Winter Semester 2025/26",
-            "Summer Semester 2026",
-            "Winter Semester 2026/27",
-            "Summer Semester 2027",
-            "Winter Semester 2027/28",
-            "Summer Semester 2028",
-            "Winter Semester 2028/29",
-            "Summer Semester 2029",
-            "Winter Semester 2029/30",
-            "Summer Semester 2030",
-            "Winter Semester 2030/31",
-            "Summer Semester 2031",
-            "Winter Semester 2031/32",
-            "Summer Semester 2032",
-            "Winter Semester 2032/33",
-            "Summer Semester 2033",
-            "Winter Semester 2033/34",
-            "Summer Semester 2034",
-            "Winter Semester 2034/35",
-            "Summer Semester 2035",
-            "Winter Semester 2035/36",
-            "Summer Semester 2036",
-            "Winter Semester 2036/37",
-            "Summer Semester 2037",
-            "Winter Semester 2037/38",
-            "Summer Semester 2038",
-            "Winter Semester 2038/39",
-            "Summer Semester 2039",
-            "Winter Semester 2039/40",
-            "Summer Semester 2040"
-          ]
+          "required": true
         },
         "course_type": {
           "type": "select",
@@ -360,15 +277,57 @@
           "type": "string",
           "label": "Instructor(s)"
         },
+        "level": {
+          "type": "string",
+          "label": "Level (optional)"
+        },
         "description": {
           "type": "rich-text",
-          "label": "Course Description"
+          "label": "Short Description"
         },
-        "materials": {
-          "type": "file",
-          "label": "Course Materials",
-          "multiple": true,
-          "accept": ".pdf,.doc,.docx,.ppt,.pptx"
+        "content": {
+          "type": "rich-text",
+          "label": "Full Content"
+        },
+        "external_url": {
+          "type": "string",
+          "label": "External URL",
+          "validation": {
+            "pattern": "^https?://.+"
+          }
+        },
+        "links": {
+          "type": "list",
+          "label": "Links",
+          "itemLabel": "Link",
+          "fields": {
+            "label": {
+              "type": "string",
+              "label": "Label"
+            },
+            "url": {
+              "type": "string",
+              "label": "URL",
+              "validation": {
+                "pattern": "^https?://.+"
+              }
+            }
+          }
+        },
+        "pdfs": {
+          "type": "list",
+          "label": "PDFs",
+          "itemLabel": "PDF",
+          "fields": {
+            "label": {
+              "type": "string",
+              "label": "Label"
+            },
+            "file": {
+              "type": "string",
+              "label": "File (relative path or URL)"
+            }
+          }
         },
         "active": {
           "type": "select",

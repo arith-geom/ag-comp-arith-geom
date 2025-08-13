@@ -8,10 +8,16 @@ semester_year: 2014
 semester_key: WS2014
 semester_sort: 20142
 active: false
----
-content: |
+content: |-
   WiSe 2024/25
-  
+
   Automorphe Formen
+
+  Imported from legacy teaching listing.
+description: WiSe 2024/25 Automorphe Formen Imported from legacy teaching listing.
+---
+WiSe 2024/25
+
+Automorphe Formen
 
 Imported from legacy teaching listing.

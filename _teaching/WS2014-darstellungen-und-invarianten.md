@@ -21,20 +21,38 @@ semester_year: 2014
 semester_key: WS2014
 semester_sort: 20142
 active: false
----
-content: |
+content: |-
   Darstellungen und Invarianten, WS2014/15
-  
+
   S. Beschreibung .
-  
+
   Übungsblatt [ pdf ]
-  
+
   Übungsblatt [ pdf ]
-  
+
   Übungsblatt [ pdf ]
-  
+
   Übungsblatt [ pdf ]
-  
+
   Übungsblatt [ pdf ]
+
+  Imported from legacy teaching listing.
+description: Darstellungen und Invarianten, WS2014/15 S. Beschreibung . Übungsblatt
+  [ pdf ] Übungsblatt [ pdf ] Übungsblatt [ pdf ] Übungsblatt [ pdf ] Übungsblatt
+  [ pdf ] Imported from legacy teaching listing.
+---
+Darstellungen und Invarianten, WS2014/15
+
+S. Beschreibung .
+
+Übungsblatt [ pdf ]
+
+Übungsblatt [ pdf ]
+
+Übungsblatt [ pdf ]
+
+Übungsblatt [ pdf ]
+
+Übungsblatt [ pdf ]
 
 Imported from legacy teaching listing.

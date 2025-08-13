@@ -24,28 +24,55 @@ semester_year: 2017
 semester_key: WS2017
 semester_sort: 20172
 active: false
----
-content: |
+content: |-
   Seminar "Gruppenkohomologie" im Wintersemester 2017
-  
+
   Prof. Dr. Gebhard BÃ¶ckle, Konrad Fischer
-  
+
   Ziel : Das Seminar wird die (Ko-)Homologie von (diskreten) Gruppen  behandeln. Im spÃ¤teren Verlauf werden Anwendungen in der Zahlentheorie (etwa auf die Brauergruppe eines KÃ¶rpers) thematisiert.
-  
+
   Eine AnkÃ¼ndigung findet sich hier . Die detaillierte Vortragsliste gibt es hier: Programm .
-  
+
   Zeit & Ort : Dienstag 14-16 Uhr im kleinen HÃ¶rsaal des COS (INF 230); Raumnummer 00.001/kHS (kleiner HÃ¶rsaal im Untergeschoss).
-  
+
   Erwartete Vorkenntnisse : Kenntnisse aus der Algebra 2: Ringe, Moduln, (exakte) Folgen, AuflÃ¶sungen, Tensorprodukte etc. FÃ¼r spÃ¤tere VortrÃ¤ge kann der Besuch der Alg. Zahlentheorie nÃ¼tzlich sein, ist aber nicht zwingend.
-  
+
   Anmeldung: Bitte melden Sie sich in MÃ¼sli an. Einige VortrÃ¤ge wurden bei der Vorbesprechung bereits vergeben.
-  
+
   Literatur :
-  
+
   Hauptquelle: R. Sharifi - Skript "Group and Galois Cohomology" online
-  
+
   ErgÃ¤nzend: Jacobson - Basic Algebra 2 und ggf. weitere
-  
+
   Vorbesprechung: Wenn Sie Interesse an einem Vortrag haben, kommen  Sie bitte zur Vorbesprechung am 27.7. um 16 s.t Uhr im Konferenzraum 5.OG (INF 205) oder schreiben Sie Konrad Fischer eine Email.
+
+  Imported from legacy teaching listing.
+description: 'Seminar "Gruppenkohomologie" im Wintersemester 2017 Prof. Dr. Gebhard
+  BÃ¶ckle, Konrad Fischer Ziel : Das Seminar wird die (Ko-)Homologie von (diskreten)
+  Gruppen behandeln. Im spÃ¤teren Verlauf werden Anwendungen in der Zahlentheorie
+  (etwa auf die Brauergruppe eines KÃ¶rpers) them'
+---
+Seminar "Gruppenkohomologie" im Wintersemester 2017
+
+Prof. Dr. Gebhard BÃ¶ckle, Konrad Fischer
+
+Ziel : Das Seminar wird die (Ko-)Homologie von (diskreten) Gruppen  behandeln. Im spÃ¤teren Verlauf werden Anwendungen in der Zahlentheorie (etwa auf die Brauergruppe eines KÃ¶rpers) thematisiert.
+
+Eine AnkÃ¼ndigung findet sich hier . Die detaillierte Vortragsliste gibt es hier: Programm .
+
+Zeit & Ort : Dienstag 14-16 Uhr im kleinen HÃ¶rsaal des COS (INF 230); Raumnummer 00.001/kHS (kleiner HÃ¶rsaal im Untergeschoss).
+
+Erwartete Vorkenntnisse : Kenntnisse aus der Algebra 2: Ringe, Moduln, (exakte) Folgen, AuflÃ¶sungen, Tensorprodukte etc. FÃ¼r spÃ¤tere VortrÃ¤ge kann der Besuch der Alg. Zahlentheorie nÃ¼tzlich sein, ist aber nicht zwingend.
+
+Anmeldung: Bitte melden Sie sich in MÃ¼sli an. Einige VortrÃ¤ge wurden bei der Vorbesprechung bereits vergeben.
+
+Literatur :
+
+Hauptquelle: R. Sharifi - Skript "Group and Galois Cohomology" online
+
+ErgÃ¤nzend: Jacobson - Basic Algebra 2 und ggf. weitere
+
+Vorbesprechung: Wenn Sie Interesse an einem Vortrag haben, kommen  Sie bitte zur Vorbesprechung am 27.7. um 16 s.t Uhr im Konferenzraum 5.OG (INF 205) oder schreiben Sie Konrad Fischer eine Email.
 
 Imported from legacy teaching listing.

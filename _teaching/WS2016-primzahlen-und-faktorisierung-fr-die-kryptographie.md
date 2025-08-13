@@ -22,28 +22,55 @@ semester_year: 2016
 semester_key: WS2016
 semester_sort: 20162
 active: false
----
-content: |
+content: |-
   Proseminar "Primzahlen und Faktorisierung fÃ¼r die Kryptographie" im Wintersemester 2016
-  
+
   Prof. Dr. Gebhard BÃ¶ckle, Konrad Fischer
-  
+
   Ziel : Das Seminar wird sich nach dem Buch von Crandall und Pomerance richten und unter anderem folgende Themen behandeln: Schnelle Arithmetik, Pseudoprimzahlen, Primzahlentests, Faktorisierungsverfahren, Public-Key-Kryptographie.
-  
+
   Eine AnkÃ¼ndigung findet sich hier .
-  
+
   Update : Die detaillierte Vortragsliste findet sich hier.
-  
+
   Zeit & Ort : Das Seminar findet in Blockform anfang der Semesterferien im Februar 2017 statt.
-  
+
   Vorkenntnisse : notwendig: Lineare Algebra 2, nÃ¼tzlich: Algebra, elementare Zahlentheorie
-  
+
   Literatur : R. Crandall, C. Pomerance; Prime numbers - a computational perspective ; Springer 2005
-  
+
   Wenn Sie Interesse an einem Vortrag haben, melden Sie sich bitte in MÃ¼sli an und kommen Sie zur
-  
+
   Vorbesprechung: Dienstag, 18.10.2016 um 13:00 in SR3
-  
+
   Bei Fragen schreiben sie mir bitte eine Email .
+
+  Imported from legacy teaching listing.
+description: 'Proseminar "Primzahlen und Faktorisierung fÃ¼r die Kryptographie" im
+  Wintersemester 2016 Prof. Dr. Gebhard BÃ¶ckle, Konrad Fischer Ziel : Das Seminar
+  wird sich nach dem Buch von Crandall und Pomerance richten und unter anderem folgende
+  Themen behandeln: Schnelle Arithmetik, Pseud'
+---
+Proseminar "Primzahlen und Faktorisierung fÃ¼r die Kryptographie" im Wintersemester 2016
+
+Prof. Dr. Gebhard BÃ¶ckle, Konrad Fischer
+
+Ziel : Das Seminar wird sich nach dem Buch von Crandall und Pomerance richten und unter anderem folgende Themen behandeln: Schnelle Arithmetik, Pseudoprimzahlen, Primzahlentests, Faktorisierungsverfahren, Public-Key-Kryptographie.
+
+Eine AnkÃ¼ndigung findet sich hier .
+
+Update : Die detaillierte Vortragsliste findet sich hier.
+
+Zeit & Ort : Das Seminar findet in Blockform anfang der Semesterferien im Februar 2017 statt.
+
+Vorkenntnisse : notwendig: Lineare Algebra 2, nÃ¼tzlich: Algebra, elementare Zahlentheorie
+
+Literatur : R. Crandall, C. Pomerance; Prime numbers - a computational perspective ; Springer 2005
+
+Wenn Sie Interesse an einem Vortrag haben, melden Sie sich bitte in MÃ¼sli an und kommen Sie zur
+
+Vorbesprechung: Dienstag, 18.10.2016 um 13:00 in SR3
+
+Bei Fragen schreiben sie mir bitte eine Email .
 
 Imported from legacy teaching listing.

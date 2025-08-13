@@ -39,32 +39,64 @@ semester_year: 2022
 semester_key: SS2022
 semester_sort: 20221
 active: false
----
-content: |
+instructors: Dr. Banwait, C. V. Sriram
+content: |-
   Prime numbers and cryptography (Proseminar/Seminar SS 2022)
-  
+
   Dozent: Dr. Barinder Banwait , C. V. Sriram
-  
+
   Termine : April 11-14 2022
-  
+
   Wo : SR8 and online
-  
+
   Format : Block Seminar
-  
+
   Announcement : click here
-  
+
   Program : click here
-  
+
   Vorbesprechung slides : click here
-  
+
   Thema :
-  
+
   This seminar will develop some of the theory that lies behind these real-world applications, via a hands-on, algorithmic approach: Fast arithmetic in Z/nZ , complexity analysis, and probabilistic methods will be treated along with the number field sieve, a technique arising from algebraic number theory. The analogues of these in the elliptic curve setting will also be seen.
-  
+
   See the course announcement and program (linked above) for more information.
-  
+
   Talks
-  
+
   Grey indicates that the talk is also suitable for a Seminar talk.
+
+  Imported from legacy teaching listing.
+description: 'Prime numbers and cryptography (Proseminar/Seminar SS 2022) Dozent:
+  Dr. Barinder Banwait , C. V. Sriram Termine : April 11-14 2022 Wo : SR8 and online
+  Format : Block Seminar Announcement : click here Program : click here Vorbesprechung
+  slides : click here Thema : This seminar wil'
+---
+Prime numbers and cryptography (Proseminar/Seminar SS 2022)
+
+Dozent: Dr. Barinder Banwait , C. V. Sriram
+
+Termine : April 11-14 2022
+
+Wo : SR8 and online
+
+Format : Block Seminar
+
+Announcement : click here
+
+Program : click here
+
+Vorbesprechung slides : click here
+
+Thema :
+
+This seminar will develop some of the theory that lies behind these real-world applications, via a hands-on, algorithmic approach: Fast arithmetic in Z/nZ , complexity analysis, and probabilistic methods will be treated along with the number field sieve, a technique arising from algebraic number theory. The analogues of these in the elliptic curve setting will also be seen.
+
+See the course announcement and program (linked above) for more information.
+
+Talks
+
+Grey indicates that the talk is also suitable for a Seminar talk.
 
 Imported from legacy teaching listing.

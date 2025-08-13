@@ -43,64 +43,99 @@ semester_year: 2012
 semester_key: WS2012
 semester_sort: 20122
 active: false
+instructors: Prof. Dr. BÃ¶ckle
+content: "Algebraische Geometrie 1\n\nUpdates :\n\nNÃ¤chstes Semester wird es ein
+  Seminar zur Algebraischen Geometrie 2 geben. Beachten Sie die entsprechende AnkÃ¼ndigung
+  .\n\nDie AbschlussprÃ¼fung des Moduls wird eine mÃ¼ndliche PrÃ¼fung am Montag, den
+  11. Februar sein. Sollten Sie im Zweifel sein, ob ihre Ã\x9Cbungspunkte ausreichend
+  fÃ¼r eine Zulassung sind, schreiben Sie uns bitte eine Email . FÃ¼r die Terminvergabe
+  und alles Weitere beachten Sie den entsprechenden moodle-Kurs .\n\nIn der Woche
+  26.-30.11. ist keine Vorlesung. Ã\x9Cbung und ZentralÃ¼bung finden statt. Es wird
+  aber kein Ã\x9Cbungsblatt und folglich keine Ã\x9Cbungsgruppe am 10.12. geben. Die
+  ZentralÃ¼bung am 11.12. findet statt.\n\nIn Moodle wurden die ersten Kursmaterialien
+  verfÃ¼gbar gemacht.\n\nDie Zettel-Abgabe erfolgt neben dem Seifertraum in INF 288.\n\nDie
+  Ã\x9Cbung findet Montags, 9-11 Uhr in HS2 von INF288 statt.\n\nErster Vorlesungstermin
+  ist Mittwoch, 17. Oktober. Sobald der Dozent Ihnen das Passwort mitgeteilt hat,
+  kÃ¶nnen Sie sich im elearning-Portal Moodle2 der UniversitÃ¤t fÃ¼r den Kurs eintragen.
+  Dort werden Fragen beantwortet und weitere Materialien zur VerfÃ¼gung gestellt.\n\nEine
+  Ã\x9Cbersicht der Themen und Literatur findet sich in der KVV-AnkÃ¼ndigung der Vorlesung.\n\nÃ\x9Cbungsbetrieb
+  :\n\nDer Ã\x9Cbungsgruppenleiter ist Nithi Rungtanapirom. Bitte melden Sie sich
+  in MÃ¼sli fÃ¼r seine Ã\x9Cbungsgruppe an. Die Ã\x9Cbungsaufgaben kommen jeden Freitag
+  auf dieser Seite online und mÃ¼ssen bis 9:15 Uhr am Freitag der darauffolgenden
+  Woche abgegeben werden.\n\nZulassungsbedingung zur AbschlussprÃ¼fung fÃ¼r das Modul
+  ist der Erwerb von 50% der Zettelpunkte (ohne Zusatzaufgaben).\n\nAuÃ\x9Ferdem sind
+  Extraaufgaben geplant, die in einer ZentralÃ¼bung besprochen werden. Diese wird
+  Dienstags 16-18h im GebÃ¤ude INF 288, HS 2, stattfinden.\n\nFÃ¼r symbolische Berechnungen
+  am Computer gibt es verschiedene Programme: SAGE ist ein freies, MAGMA ein kommerzielles
+  Paket. Die Links fÃ¼hren zu Online-Versionen der Tools, die auch ohne Installation
+  benutzbar sind. Bei Fragen zur Syntax der Pakete sei auf die aufÃ¼hrlichen Dokumentationen
+  zu SAGE (Link funktioniert nur mit eingeloggtem SAGE Account)/ MAGMA verwiesen.\n\nÃ\x9CbungsblÃ¤tter:\n\nBlatt
+  1 (pdf)\n\nBlatt 2 (pdf) - In 8(c) und (d) korrigierte Version\n\nBlatt 3 (pdf)\n\nBlatt
+  4 (pdf) - Korrektur: In 20 war die falsche Projektionsebene angegeben.\n\nBlatt
+  5 (pdf)\n\nBlatt 6 (pdf)\n\nBlatt 7 (pdf)\n\nWeihnachtsblatt (pdf), nicht abzugeben\n\nBlatt
+  8 (pdf)\n\nBlatt 9 (pdf)\n\nBlatt 10 (pdf)\n\nBlatt 11 (pdf)\n\nLetzte Aktualisierung
+  der Seite: 25.01.\n\nImported from legacy teaching listing."
+description: 'Algebraische Geometrie 1 Updates : NÃ¤chstes Semester wird es ein Seminar
+  zur Algebraischen Geometrie 2 geben. Beachten Sie die entsprechende AnkÃ¼ndigung
+  . Die AbschlussprÃ¼fung des Moduls wird eine mÃ¼ndliche PrÃ¼fung am Montag, den
+  11. Februar sein. Sollten Sie im Zweifel sein'
 ---
-content: |
-  Algebraische Geometrie 1
-  
-  Updates :
-  
-  NÃ¤chstes Semester wird es ein Seminar zur Algebraischen Geometrie 2 geben. Beachten Sie die entsprechende AnkÃ¼ndigung .
-  
-  Die AbschlussprÃ¼fung des Moduls wird eine mÃ¼ndliche PrÃ¼fung am Montag, den 11. Februar sein. Sollten Sie im Zweifel sein, ob ihre Ãbungspunkte ausreichend fÃ¼r eine Zulassung sind, schreiben Sie uns bitte eine Email . FÃ¼r die Terminvergabe und alles Weitere beachten Sie den entsprechenden moodle-Kurs .
-  
-  In der Woche 26.-30.11. ist keine Vorlesung. Ãbung und ZentralÃ¼bung finden statt. Es wird aber kein Ãbungsblatt und folglich keine Ãbungsgruppe am 10.12. geben. Die ZentralÃ¼bung am 11.12. findet statt.
-  
-  In Moodle wurden die ersten Kursmaterialien verfÃ¼gbar gemacht.
-  
-  Die Zettel-Abgabe erfolgt neben dem Seifertraum in INF 288.
-  
-  Die Ãbung findet Montags, 9-11 Uhr in HS2 von INF288 statt.
-  
-  Erster Vorlesungstermin ist Mittwoch, 17. Oktober. Sobald der Dozent Ihnen das Passwort mitgeteilt hat, kÃ¶nnen Sie sich im elearning-Portal Moodle2 der UniversitÃ¤t fÃ¼r den Kurs eintragen. Dort werden Fragen beantwortet und weitere Materialien zur VerfÃ¼gung gestellt.
-  
-  Eine Ãbersicht der Themen und Literatur findet sich in der KVV-AnkÃ¼ndigung der Vorlesung.
-  
-  Ãbungsbetrieb :
-  
-  Der Ãbungsgruppenleiter ist Nithi Rungtanapirom. Bitte melden Sie sich in MÃ¼sli fÃ¼r seine Ãbungsgruppe an. Die Ãbungsaufgaben kommen jeden Freitag auf dieser Seite online und mÃ¼ssen bis 9:15 Uhr am Freitag der darauffolgenden Woche abgegeben werden.
-  
-  Zulassungsbedingung zur AbschlussprÃ¼fung fÃ¼r das Modul ist der Erwerb von 50% der Zettelpunkte (ohne Zusatzaufgaben).
-  
-  AuÃerdem sind Extraaufgaben geplant, die in einer ZentralÃ¼bung besprochen werden. Diese wird Dienstags 16-18h im GebÃ¤ude INF 288, HS 2, stattfinden.
-  
-  FÃ¼r symbolische Berechnungen am Computer gibt es verschiedene Programme: SAGE ist ein freies, MAGMA ein kommerzielles Paket. Die Links fÃ¼hren zu Online-Versionen der Tools, die auch ohne Installation benutzbar sind. Bei Fragen zur Syntax der Pakete sei auf die aufÃ¼hrlichen Dokumentationen zu SAGE (Link funktioniert nur mit eingeloggtem SAGE Account)/ MAGMA verwiesen.
-  
-  ÃbungsblÃ¤tter:
-  
-  Blatt 1 (pdf)
-  
-  Blatt 2 (pdf) - In 8(c) und (d) korrigierte Version
-  
-  Blatt 3 (pdf)
-  
-  Blatt 4 (pdf) - Korrektur: In 20 war die falsche Projektionsebene angegeben.
-  
-  Blatt 5 (pdf)
-  
-  Blatt 6 (pdf)
-  
-  Blatt 7 (pdf)
-  
-  Weihnachtsblatt (pdf), nicht abzugeben
-  
-  Blatt 8 (pdf)
-  
-  Blatt 9 (pdf)
-  
-  Blatt 10 (pdf)
-  
-  Blatt 11 (pdf)
-  
-  Letzte Aktualisierung der Seite: 25.01.
+Algebraische Geometrie 1
+
+Updates :
+
+NÃ¤chstes Semester wird es ein Seminar zur Algebraischen Geometrie 2 geben. Beachten Sie die entsprechende AnkÃ¼ndigung .
+
+Die AbschlussprÃ¼fung des Moduls wird eine mÃ¼ndliche PrÃ¼fung am Montag, den 11. Februar sein. Sollten Sie im Zweifel sein, ob ihre Ãbungspunkte ausreichend fÃ¼r eine Zulassung sind, schreiben Sie uns bitte eine Email . FÃ¼r die Terminvergabe und alles Weitere beachten Sie den entsprechenden moodle-Kurs .
+
+In der Woche 26.-30.11. ist keine Vorlesung. Ãbung und ZentralÃ¼bung finden statt. Es wird aber kein Ãbungsblatt und folglich keine Ãbungsgruppe am 10.12. geben. Die ZentralÃ¼bung am 11.12. findet statt.
+
+In Moodle wurden die ersten Kursmaterialien verfÃ¼gbar gemacht.
+
+Die Zettel-Abgabe erfolgt neben dem Seifertraum in INF 288.
+
+Die Ãbung findet Montags, 9-11 Uhr in HS2 von INF288 statt.
+
+Erster Vorlesungstermin ist Mittwoch, 17. Oktober. Sobald der Dozent Ihnen das Passwort mitgeteilt hat, kÃ¶nnen Sie sich im elearning-Portal Moodle2 der UniversitÃ¤t fÃ¼r den Kurs eintragen. Dort werden Fragen beantwortet und weitere Materialien zur VerfÃ¼gung gestellt.
+
+Eine Ãbersicht der Themen und Literatur findet sich in der KVV-AnkÃ¼ndigung der Vorlesung.
+
+Ãbungsbetrieb :
+
+Der Ãbungsgruppenleiter ist Nithi Rungtanapirom. Bitte melden Sie sich in MÃ¼sli fÃ¼r seine Ãbungsgruppe an. Die Ãbungsaufgaben kommen jeden Freitag auf dieser Seite online und mÃ¼ssen bis 9:15 Uhr am Freitag der darauffolgenden Woche abgegeben werden.
+
+Zulassungsbedingung zur AbschlussprÃ¼fung fÃ¼r das Modul ist der Erwerb von 50% der Zettelpunkte (ohne Zusatzaufgaben).
+
+AuÃerdem sind Extraaufgaben geplant, die in einer ZentralÃ¼bung besprochen werden. Diese wird Dienstags 16-18h im GebÃ¤ude INF 288, HS 2, stattfinden.
+
+FÃ¼r symbolische Berechnungen am Computer gibt es verschiedene Programme: SAGE ist ein freies, MAGMA ein kommerzielles Paket. Die Links fÃ¼hren zu Online-Versionen der Tools, die auch ohne Installation benutzbar sind. Bei Fragen zur Syntax der Pakete sei auf die aufÃ¼hrlichen Dokumentationen zu SAGE (Link funktioniert nur mit eingeloggtem SAGE Account)/ MAGMA verwiesen.
+
+ÃbungsblÃ¤tter:
+
+Blatt 1 (pdf)
+
+Blatt 2 (pdf) - In 8(c) und (d) korrigierte Version
+
+Blatt 3 (pdf)
+
+Blatt 4 (pdf) - Korrektur: In 20 war die falsche Projektionsebene angegeben.
+
+Blatt 5 (pdf)
+
+Blatt 6 (pdf)
+
+Blatt 7 (pdf)
+
+Weihnachtsblatt (pdf), nicht abzugeben
+
+Blatt 8 (pdf)
+
+Blatt 9 (pdf)
+
+Blatt 10 (pdf)
+
+Blatt 11 (pdf)
+
+Letzte Aktualisierung der Seite: 25.01.
 
 Imported from legacy teaching listing.

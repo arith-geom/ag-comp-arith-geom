@@ -22,14 +22,28 @@ semester_year: 2018
 semester_key: SS2018
 semester_sort: 20181
 active: false
----
-content: |
+instructors: Prof. Dr. BÃ¶ckle, Dr. Maurischat, Gazda
+content: |-
   Hauptseminar "Arithmetik von Zahl- und FunktionenkÃ¶rpern" (SS 2018)
-  
+
   Topic: Shtuka cohomology and special values of Goss L-functions
-  
+
   We meet thursdays 9-11 in Seminarraum 2. The first talk will take place on April 19.
-  
+
   Seminar program
+
+  Imported from legacy teaching listing.
+description: 'Hauptseminar "Arithmetik von Zahl- und FunktionenkÃ¶rpern" (SS 2018)
+  Topic: Shtuka cohomology and special values of Goss L-functions We meet thursdays
+  9-11 in Seminarraum 2. The first talk will take place on April 19. Seminar program
+  Imported from legacy teaching listing.'
+---
+Hauptseminar "Arithmetik von Zahl- und FunktionenkÃ¶rpern" (SS 2018)
+
+Topic: Shtuka cohomology and special values of Goss L-functions
+
+We meet thursdays 9-11 in Seminarraum 2. The first talk will take place on April 19.
+
+Seminar program
 
 Imported from legacy teaching listing.

@@ -8,10 +8,17 @@ semester_year: 2015
 semester_key: SS2015
 semester_sort: 20151
 active: false
----
-content: |
+content: |-
   WiSe 2024/25
-  
+
   Darstellungen und Invarianten 2
+
+  Imported from legacy teaching listing.
+description: WiSe 2024/25 Darstellungen und Invarianten 2 Imported from legacy teaching
+  listing.
+---
+WiSe 2024/25
+
+Darstellungen und Invarianten 2
 
 Imported from legacy teaching listing.

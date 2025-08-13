@@ -26,30 +26,43 @@ semester_year: 2018
 semester_key: SS2018
 semester_sort: 20181
 active: false
+content: "Vorlesung \"Galois representations and their deformations\" (SS 2018)\n\nDozent:
+  Dr. Andrea Conti\n\nDie Hauptwebseite fÃ¼r die Vorlesung ist hier .\n\nHier ist
+  der Course Outline .\n\nVorlesungen: Mittwochs 14-16 Uhr, Seminarraum 11\n\nSprechstunde:
+  Donnerstags 15:30-16:30, INF 205 / Raum 3/225\n\nEmpfohlene Vorkenntnisse: Algebraische
+  Zahlentheorie 1\n\nLiteratur:\n\nF. GoÃ»vea, Lecture notes for the course \"Deformations
+  of Galois Representations\", PDF\n\nA. Mezard, Lecture notes for the course \"Deformations
+  de representations galoisiennes\", in French, PDF\n\nG. BÃ¶\x7Fckle, Lecture notes
+  for the course \"Deformations of Galois Representations\", PDF\n\nB. Mazur, \"Deforming
+  Galois representations\", in \"Galois groups over Q\", M.S.R.I. Publications. Springer-Verlag,
+  1989, PDF\n\nImported from legacy teaching listing."
+description: 'Vorlesung "Galois representations and their deformations" (SS 2018)
+  Dozent: Dr. Andrea Conti Die Hauptwebseite fÃ¼r die Vorlesung ist hier . Hier ist
+  der Course Outline . Vorlesungen: Mittwochs 14-16 Uhr, Seminarraum 11 Sprechstunde:
+  Donnerstags 15:30-16:30, INF 205 / Raum 3/225 '
 ---
-content: |
-  Vorlesung "Galois representations and their deformations" (SS 2018)
-  
-  Dozent: Dr. Andrea Conti
-  
-  Die Hauptwebseite fÃ¼r die Vorlesung ist hier .
-  
-  Hier ist der Course Outline .
-  
-  Vorlesungen: Mittwochs 14-16 Uhr, Seminarraum 11
-  
-  Sprechstunde: Donnerstags 15:30-16:30, INF 205 / Raum 3/225
-  
-  Empfohlene Vorkenntnisse: Algebraische Zahlentheorie 1
-  
-  Literatur:
-  
-  F. GoÃ»vea, Lecture notes for the course "Deformations of Galois Representations", PDF
-  
-  A. Mezard, Lecture notes for the course "Deformations de representations galoisiennes", in French, PDF
-  
-  G. BÃ¶ckle, Lecture notes for the course "Deformations of Galois Representations", PDF
-  
-  B. Mazur, "Deforming Galois representations", in "Galois groups over Q", M.S.R.I. Publications. Springer-Verlag, 1989, PDF
+Vorlesung "Galois representations and their deformations" (SS 2018)
+
+Dozent: Dr. Andrea Conti
+
+Die Hauptwebseite fÃ¼r die Vorlesung ist hier .
+
+Hier ist der Course Outline .
+
+Vorlesungen: Mittwochs 14-16 Uhr, Seminarraum 11
+
+Sprechstunde: Donnerstags 15:30-16:30, INF 205 / Raum 3/225
+
+Empfohlene Vorkenntnisse: Algebraische Zahlentheorie 1
+
+Literatur:
+
+F. GoÃ»vea, Lecture notes for the course "Deformations of Galois Representations", PDF
+
+A. Mezard, Lecture notes for the course "Deformations de representations galoisiennes", in French, PDF
+
+G. BÃ¶ckle, Lecture notes for the course "Deformations of Galois Representations", PDF
+
+B. Mazur, "Deforming Galois representations", in "Galois groups over Q", M.S.R.I. Publications. Springer-Verlag, 1989, PDF
 
 Imported from legacy teaching listing.

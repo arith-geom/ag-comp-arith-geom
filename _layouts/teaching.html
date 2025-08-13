@@ -8,10 +8,11 @@ layout: page
 
 {{ content }}
 
-{% if page.instructors or page.semester %}
+{% assign _instr = page.instructors | default: page.instructor %}
+{% if _instr or page.semester %}
   <div class="course-info mt-4">
-    {% if page.instructors %}
-      <p><strong>Instructors:</strong> {{ page.instructors }}</p>
+    {% if _instr %}
+      <p><strong>Instructors:</strong> {{ _instr }}</p>
     {% endif %}
     {% if page.semester %}
       <p><strong>Semester:</strong> {{ page.semester }}</p>

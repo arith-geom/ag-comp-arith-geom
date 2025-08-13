@@ -33,38 +33,71 @@ semester_year: 2021
 semester_key: SS2021
 semester_sort: 20211
 active: false
+instructors: Prof. Dr. BÃ¶ckle, Dr. Ludwig
+content: "Seminar Derivierte Kategorien und Algebraische Geometrie (SoSe 2021)\n\nDozent:
+  Prof. Dr. BÃ¶ckle , Dr. Judith Ludwig\n\nBeginn : 13.04.21\n\nZeit : Dienstags 14-16
+  Uhr\n\nFormat : Online, via Webex.\n\nZur besseren Organisation bitten wir alle
+  Interessenten sich bald mÃ¶glichst im MÃ¼sli in die Sammelgruppe des Seminars einzutragen
+  oder sich per E-Mail an Dr. Ludwig zu wenden. Am 22.02. um 10:00 Uhr (s.t.) wird
+  es online eine Vorbesprechung geben, die Koordinaten werden Ã¼ber die MÃ¼sli-Gruppe
+  bekannt gegeben.\n\nThema :\n\nDas Seminar bietet eine EinfÃ¼hrung in das Thema
+  Derivierte Kategorien mit Anwendungen in der Algebraischen Geometrie .\n\nDerivierte
+  Kategorien sind ein wichtiges Konzept der modernen Mathematik, genauer der Kategorientheorie.
+  EingefÃ¼hrt von Grothendieck und Verdier in den 60er Jahren fanden sie zunÃ¤chst
+  in der algebraischen Geometrie ihre Anwendung. Mittlerweile sind sie aber auch in
+  vielen anderen Bereichen der Mathematik, beispielsweise der Darstellungstheorie
+  oder der Homotopietheorie, sowie in der mathematischen Physik zu finden.\n\nIn diesem
+  Seminar lernen wir das Konzept der Derivierten Kategorie einer abelschen Kategorie
+  kennen. Unser Ziel ist es zunÃ¤chst den abstrakten Formalismus zu erlernen und anschlieÃ\x9Fend
+  in einem konkreten Beispiel aus der algebraischen Geometrie anzuwenden. Genauer
+  wollen wir die derivierte Kategorie der Kategorie der kohÃ¤renten Garben auf einer
+  glatten projektiven VarietÃ¤t verstehen. Diese bildet eine wichtige Invariante der
+  VarietÃ¤t und wir werden unter anderem studieren inwieweit die derivierte Kategorie
+  die VarietÃ¤t schon festlegt.\n\nProgramm\n\nTipps fÃ¼r gute SeminarvortrÃ¤ge\n\nErforlderliche
+  Vorkenntnisse: FÃ¼r den ersten Teil sollten Sie Grundkenntnisse der Kategorientheorie
+  haben und etwas homologische Algebra kennen. FÃ¼r den zweiten Teil sollten Sie bereits
+  Grundlagen der Algebraischen Geometrie studiert haben. Falls Sie die Theorie der
+  Garbenkohomologie, insbesondere fÃ¼r quasi-kohÃ¤rente Garben, noch nicht kennen,
+  kÃ¶nnen Sie parallel die Vorlesung Algebraische Geometrie 2 hÃ¶ren, das Thema wird
+  dort behandelt.\n\nLiteratur:\n\n[H] Huybrechts, Daniel , Fourier-Mukai transforms
+  in Algebraic Geometry, Oxford Mathematical Monographs, Oxford University Press,
+  2006.\n\n[M] Morel, Sophie, Homological Algebra, Lecture notes, 2019. Link .\n\nImported
+  from legacy teaching listing."
+description: 'Seminar Derivierte Kategorien und Algebraische Geometrie (SoSe 2021)
+  Dozent: Prof. Dr. BÃ¶ckle , Dr. Judith Ludwig Beginn : 13.04.21 Zeit : Dienstags
+  14-16 Uhr Format : Online, via Webex. Zur besseren Organisation bitten wir alle
+  Interessenten sich bald mÃ¶glichst im MÃ¼sli in di'
 ---
-content: |
-  Seminar Derivierte Kategorien und Algebraische Geometrie (SoSe 2021)
-  
-  Dozent: Prof. Dr. BÃ¶ckle , Dr. Judith Ludwig
-  
-  Beginn : 13.04.21
-  
-  Zeit : Dienstags 14-16 Uhr
-  
-  Format : Online, via Webex.
-  
-  Zur besseren Organisation bitten wir alle Interessenten sich bald mÃ¶glichst im MÃ¼sli in die Sammelgruppe des Seminars einzutragen oder sich per E-Mail an Dr. Ludwig zu wenden. Am 22.02. um 10:00 Uhr (s.t.) wird es online eine Vorbesprechung geben, die Koordinaten werden Ã¼ber die MÃ¼sli-Gruppe bekannt gegeben.
-  
-  Thema :
-  
-  Das Seminar bietet eine EinfÃ¼hrung in das Thema Derivierte Kategorien mit Anwendungen in der Algebraischen Geometrie .
-  
-  Derivierte Kategorien sind ein wichtiges Konzept der modernen Mathematik, genauer der Kategorientheorie. EingefÃ¼hrt von Grothendieck und Verdier in den 60er Jahren fanden sie zunÃ¤chst in der algebraischen Geometrie ihre Anwendung. Mittlerweile sind sie aber auch in vielen anderen Bereichen der Mathematik, beispielsweise der Darstellungstheorie oder der Homotopietheorie, sowie in der mathematischen Physik zu finden.
-  
-  In diesem Seminar lernen wir das Konzept der Derivierten Kategorie einer abelschen Kategorie kennen. Unser Ziel ist es zunÃ¤chst den abstrakten Formalismus zu erlernen und anschlieÃend in einem konkreten Beispiel aus der algebraischen Geometrie anzuwenden. Genauer wollen wir die derivierte Kategorie der Kategorie der kohÃ¤renten Garben auf einer glatten projektiven VarietÃ¤t verstehen. Diese bildet eine wichtige Invariante der VarietÃ¤t und wir werden unter anderem studieren inwieweit die derivierte Kategorie die VarietÃ¤t schon festlegt.
-  
-  Programm
-  
-  Tipps fÃ¼r gute SeminarvortrÃ¤ge
-  
-  Erforlderliche Vorkenntnisse: FÃ¼r den ersten Teil sollten Sie Grundkenntnisse der Kategorientheorie haben und etwas homologische Algebra kennen. FÃ¼r den zweiten Teil sollten Sie bereits Grundlagen der Algebraischen Geometrie studiert haben. Falls Sie die Theorie der Garbenkohomologie, insbesondere fÃ¼r quasi-kohÃ¤rente Garben, noch nicht kennen, kÃ¶nnen Sie parallel die Vorlesung Algebraische Geometrie 2 hÃ¶ren, das Thema wird dort behandelt.
-  
-  Literatur:
-  
-  [H] Huybrechts, Daniel , Fourier-Mukai transforms in Algebraic Geometry, Oxford Mathematical Monographs, Oxford University Press, 2006.
-  
-  [M] Morel, Sophie, Homological Algebra, Lecture notes, 2019. Link .
+Seminar Derivierte Kategorien und Algebraische Geometrie (SoSe 2021)
+
+Dozent: Prof. Dr. BÃ¶ckle , Dr. Judith Ludwig
+
+Beginn : 13.04.21
+
+Zeit : Dienstags 14-16 Uhr
+
+Format : Online, via Webex.
+
+Zur besseren Organisation bitten wir alle Interessenten sich bald mÃ¶glichst im MÃ¼sli in die Sammelgruppe des Seminars einzutragen oder sich per E-Mail an Dr. Ludwig zu wenden. Am 22.02. um 10:00 Uhr (s.t.) wird es online eine Vorbesprechung geben, die Koordinaten werden Ã¼ber die MÃ¼sli-Gruppe bekannt gegeben.
+
+Thema :
+
+Das Seminar bietet eine EinfÃ¼hrung in das Thema Derivierte Kategorien mit Anwendungen in der Algebraischen Geometrie .
+
+Derivierte Kategorien sind ein wichtiges Konzept der modernen Mathematik, genauer der Kategorientheorie. EingefÃ¼hrt von Grothendieck und Verdier in den 60er Jahren fanden sie zunÃ¤chst in der algebraischen Geometrie ihre Anwendung. Mittlerweile sind sie aber auch in vielen anderen Bereichen der Mathematik, beispielsweise der Darstellungstheorie oder der Homotopietheorie, sowie in der mathematischen Physik zu finden.
+
+In diesem Seminar lernen wir das Konzept der Derivierten Kategorie einer abelschen Kategorie kennen. Unser Ziel ist es zunÃ¤chst den abstrakten Formalismus zu erlernen und anschlieÃend in einem konkreten Beispiel aus der algebraischen Geometrie anzuwenden. Genauer wollen wir die derivierte Kategorie der Kategorie der kohÃ¤renten Garben auf einer glatten projektiven VarietÃ¤t verstehen. Diese bildet eine wichtige Invariante der VarietÃ¤t und wir werden unter anderem studieren inwieweit die derivierte Kategorie die VarietÃ¤t schon festlegt.
+
+Programm
+
+Tipps fÃ¼r gute SeminarvortrÃ¤ge
+
+Erforlderliche Vorkenntnisse: FÃ¼r den ersten Teil sollten Sie Grundkenntnisse der Kategorientheorie haben und etwas homologische Algebra kennen. FÃ¼r den zweiten Teil sollten Sie bereits Grundlagen der Algebraischen Geometrie studiert haben. Falls Sie die Theorie der Garbenkohomologie, insbesondere fÃ¼r quasi-kohÃ¤rente Garben, noch nicht kennen, kÃ¶nnen Sie parallel die Vorlesung Algebraische Geometrie 2 hÃ¶ren, das Thema wird dort behandelt.
+
+Literatur:
+
+[H] Huybrechts, Daniel , Fourier-Mukai transforms in Algebraic Geometry, Oxford Mathematical Monographs, Oxford University Press, 2006.
+
+[M] Morel, Sophie, Homological Algebra, Lecture notes, 2019. Link .
 
 Imported from legacy teaching listing.

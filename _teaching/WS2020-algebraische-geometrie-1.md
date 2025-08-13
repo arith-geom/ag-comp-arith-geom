@@ -18,36 +18,72 @@ semester_year: 2020
 semester_key: WS2020
 semester_sort: 20202
 active: false
----
-content: |
+instructors: Prof. Dr. BÃ¶ckle, Chilla, Quast
+content: |-
   Algebraische Geometrie 1
-  
+
   Wintersemester 2020/21
-  
+
   Organisation
-  
+
   Dozent: Prof. Dr. Gebhard Böckle
-  
+
   Dozent: Prof. Dr. Gebhard Böckle
-  
+
   Assistent: Paola Chilla , Julian Quast
-  
+
   Vorlesung
-  
+
   Dienstag 09-11 Uhr asynchron via Moodle
-  
+
   Donnerstag 09-11 Uhr asynchron via Moodle
-  
+
   Sprechstunde
-  
+
   Donnerstag 10:00-11:00 Uhr synchron via HeiConf
-  
+
   Übungsbetrieb
-  
+
   Organisation über MÜSLI . Bitte dort anmelden.
-  
+
   Montag 14:15-15:45 Uhr synchron via Webex
-  
+
   Mittwoch 14:15-15:45 Uhr synchron via Webex
+
+  Imported from legacy teaching listing.
+description: 'Algebraische Geometrie 1 Wintersemester 2020/21 Organisation Dozent:
+  Prof. Dr. Gebhard Böckle Dozent: Prof. Dr. Gebhard Böckle Assistent: Paola Chilla
+  , Julian Quast Vorlesung Dienstag 09-11 Uhr asynchron via Moodle Donnerstag 09-11
+  Uhr asynchron via Moodle Sprechstunde Donnersta'
+---
+Algebraische Geometrie 1
+
+Wintersemester 2020/21
+
+Organisation
+
+Dozent: Prof. Dr. Gebhard Böckle
+
+Dozent: Prof. Dr. Gebhard Böckle
+
+Assistent: Paola Chilla , Julian Quast
+
+Vorlesung
+
+Dienstag 09-11 Uhr asynchron via Moodle
+
+Donnerstag 09-11 Uhr asynchron via Moodle
+
+Sprechstunde
+
+Donnerstag 10:00-11:00 Uhr synchron via HeiConf
+
+Übungsbetrieb
+
+Organisation über MÜSLI . Bitte dort anmelden.
+
+Montag 14:15-15:45 Uhr synchron via Webex
+
+Mittwoch 14:15-15:45 Uhr synchron via Webex
 
 Imported from legacy teaching listing.

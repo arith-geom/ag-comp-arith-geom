@@ -23,14 +23,29 @@ semester_year: 2025
 semester_key: SS2025
 semester_sort: 20251
 active: false
+instructors: Prof. Dr. BÃ¶ckle, Dr. Ferraro
+content: "Seminar on Homological Algebra (Summer Semester 2025)\n\nHomological algebra
+  is the study of a certain kind of algebraic invariants associated to algebraic or
+  topological objects; it finds applications in several branches of mathematics, including
+  algebraic topology, differential geometry, complex analysis, algebraic geometry,
+  number theory, and commutative algebra. In this seminar, we introduce the language
+  of (abelian) categories and focus on the simplest examples of (co)homology groups
+  appearing in the context of abelian groups andâ\x80\x94more generallyâ\x80\x94modules
+  over a ring R.\n\nPlease refer to the seminar program for further details.\n\nParticipants
+  are also expected to prepare a handout for their talks. Regarding a sample format
+  of an handout, please refer to here (or feel free to make your own format).\n\nImported
+  from legacy teaching listing."
+description: Seminar on Homological Algebra (Summer Semester 2025) Homological algebra
+  is the study of a certain kind of algebraic invariants associated to algebraic or
+  topological objects; it finds applications in several branches of mathematics, including
+  algebraic topology, differential ge
 ---
-content: |
-  Seminar on Homological Algebra (Summer Semester 2025)
-  
-  Homological algebra is the study of a certain kind of algebraic invariants associated to algebraic or topological objects; it finds applications in several branches of mathematics, including algebraic topology, differential geometry, complex analysis, algebraic geometry, number theory, and commutative algebra. In this seminar, we introduce the language of (abelian) categories and focus on the simplest examples of (co)homology groups appearing in the context of abelian groups andâmore generallyâmodules over a ring R.
-  
-  Please refer to the seminar program for further details.
-  
-  Participants are also expected to prepare a handout for their talks. Regarding a sample format of an handout, please refer to here (or feel free to make your own format).
+Seminar on Homological Algebra (Summer Semester 2025)
+
+Homological algebra is the study of a certain kind of algebraic invariants associated to algebraic or topological objects; it finds applications in several branches of mathematics, including algebraic topology, differential geometry, complex analysis, algebraic geometry, number theory, and commutative algebra. In this seminar, we introduce the language of (abelian) categories and focus on the simplest examples of (co)homology groups appearing in the context of abelian groups andâmore generallyâmodules over a ring R.
+
+Please refer to the seminar program for further details.
+
+Participants are also expected to prepare a handout for their talks. Regarding a sample format of an handout, please refer to here (or feel free to make your own format).
 
 Imported from legacy teaching listing.

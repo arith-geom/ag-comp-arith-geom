@@ -8,5 +8,7 @@ semester_year: 2016
 semester_key: SS2016
 semester_sort: 20161
 active: false
+content: Imported from legacy teaching listing.
+description: Imported from legacy teaching listing.
 ---
 Imported from legacy teaching listing.

@@ -9,5 +9,8 @@ semester_year: 2010
 semester_key: WS2010
 semester_sort: 20102
 active: false
+instructors: Prof. Dr. BÃ¶ckle, Dr. CerviÃ±o
+content: Imported from legacy teaching listing.
+description: Imported from legacy teaching listing.
 ---
 Imported from legacy teaching listing.

@@ -39,58 +39,71 @@ semester_year: 2012
 semester_key: WS2012
 semester_sort: 20122
 active: false
+instructors: Qiu
+content: "Analytische Zahlentheorie I\n\nbei Prof. Dr. BÃ¶ge, WS 2012/2013\n\nBitte
+  melden Sie sich in Muesli an!\n\nVorlesung: Di, Fr 11:00-13:00; Beginn: Di, 16.10.12;\n\nab
+  jetzt (bis auf weiteres) im Hoersaal 4ï¼\x81ï¼\x81ï¼\x81\n\nÃ\x9Cbungen : Mittwochs
+  14-16 Uhr\n\nin den Hoersaal 1 im Mathematischen Institut.\n\nSkript fÃ¼r den Kurs\n\nhier\n\nupdated:
+  21.03.2013\n\nAufgaben\n\nAufgaben 12\n\nWiederholungszettel zu eroertern in der
+  Uebungsstunde am 30.01.\n\nAufgaben 11\n\nAufgaben 10\n\nAufgaben 9\n\nAufgaben 
+  8\n\nAufgaben 7\n\nAufgaben 6\n\nAufgaben 5\n\nAufgaben 4\n\nAufgaben 3\n\nAufgaben
+  2\n\nAufgaben 1\n\nBitte geben vor 13 Uhr Freitags ins Postfach neben Hoersaal 2
+  ab!\n\nupdated: 25.01.2013\n\nImported from legacy teaching listing."
+description: "Analytische Zahlentheorie I bei Prof. Dr. BÃ¶ge, WS 2012/2013 Bitte
+  melden Sie sich in Muesli an! Vorlesung: Di, Fr 11:00-13:00; Beginn: Di, 16.10.12;
+  ab jetzt (bis auf weiteres) im Hoersaal 4ï¼\x81ï¼\x81ï¼\x81 Ã\x9Cbungen : Mittwochs
+  14-16 Uhr in den Hoersaal 1 im Mathematischen Institut. S"
 ---
-content: |
-  Analytische Zahlentheorie I
-  
-  bei Prof. Dr. BÃ¶ge, WS 2012/2013
-  
-  Bitte melden Sie sich in Muesli an!
-  
-  Vorlesung: Di, Fr 11:00-13:00; Beginn: Di, 16.10.12;
-  
-  ab jetzt (bis auf weiteres) im Hoersaal 4ï¼ï¼ï¼
-  
-  Ãbungen : Mittwochs 14-16 Uhr
-  
-  in den Hoersaal 1 im Mathematischen Institut.
-  
-  Skript fÃ¼r den Kurs
-  
-  hier
-  
-  updated: 21.03.2013
-  
-  Aufgaben
-  
-  Aufgaben 12
-  
-  Wiederholungszettel zu eroertern in der Uebungsstunde am 30.01.
-  
-  Aufgaben 11
-  
-  Aufgaben 10
-  
-  Aufgaben 9
-  
-  Aufgaben  8
-  
-  Aufgaben 7
-  
-  Aufgaben 6
-  
-  Aufgaben 5
-  
-  Aufgaben 4
-  
-  Aufgaben 3
-  
-  Aufgaben 2
-  
-  Aufgaben 1
-  
-  Bitte geben vor 13 Uhr Freitags ins Postfach neben Hoersaal 2 ab!
-  
-  updated: 25.01.2013
+Analytische Zahlentheorie I
+
+bei Prof. Dr. BÃ¶ge, WS 2012/2013
+
+Bitte melden Sie sich in Muesli an!
+
+Vorlesung: Di, Fr 11:00-13:00; Beginn: Di, 16.10.12;
+
+ab jetzt (bis auf weiteres) im Hoersaal 4ï¼ï¼ï¼
+
+Ãbungen : Mittwochs 14-16 Uhr
+
+in den Hoersaal 1 im Mathematischen Institut.
+
+Skript fÃ¼r den Kurs
+
+hier
+
+updated: 21.03.2013
+
+Aufgaben
+
+Aufgaben 12
+
+Wiederholungszettel zu eroertern in der Uebungsstunde am 30.01.
+
+Aufgaben 11
+
+Aufgaben 10
+
+Aufgaben 9
+
+Aufgaben  8
+
+Aufgaben 7
+
+Aufgaben 6
+
+Aufgaben 5
+
+Aufgaben 4
+
+Aufgaben 3
+
+Aufgaben 2
+
+Aufgaben 1
+
+Bitte geben vor 13 Uhr Freitags ins Postfach neben Hoersaal 2 ab!
+
+updated: 25.01.2013
 
 Imported from legacy teaching listing.

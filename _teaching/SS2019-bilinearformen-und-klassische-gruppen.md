@@ -29,50 +29,74 @@ semester_year: 2019
 semester_key: SS2019
 semester_sort: 20191
 active: false
+instructors: Prof. Dr. BÃ¶ckle, Quast
+content: "Proseminar \"Bilinearformen und Klassische Gruppen\" (SS 2019)\n\nDozent:
+  Prof. Dr. Gebhard BÃ¶ckle\n\nAssistent: Julian Quast\n\nAnkÃ¼ndigung\n\nProgramm\n\nVorlage
+  fÃ¼rs Handout: Latex-Vorlage\n\nAnmeldung: Eine MÃ\x9CSLI-Seite ist vorhanden: Bitte
+  melden Sie sich dort fÃ¼r Ihren Vortrag an, falls Sie in der Vorbesprechung waren.
+  Falls Sie nicht in der Vorbesprechung waren, melden Sie sich bitte als NachrÃ¼cker
+  an und teilen mir per Mail Ihren Vortragswunsch mit.\n\nAbmeldefrist: Abmeldungen
+  vom Proseminar sind nur bis Dienstag, den 19. MÃ¤rz 2019 mÃ¶glich. SpÃ¤tere Abmeldungen
+  werden als \"nicht bestanden\" gewertet.\n\nAnmeldungen wie Abmeldungen sind nur
+  dann gÃ¼ltig, wenn sie mir per Mail mitgeteilt werden und im MÃ\x9CSLI eingetragen
+  werden.\n\nFreie VortrÃ¤ge: Aktuell sind noch die folgenden VortrÃ¤ge zu vergeben
+  :\n\n(6) Satz von Cartan-DieudonnÃ© (7) Struktur der speziellen linearen Gruppe
+  (8) Struktur der allgemeinen linearen Gruppe (13) Struktur der orthogonalen Gruppe
+  (15) Ordnungen der klassischen Gruppen Ã¼ber endlichen KÃ¶rpern\n\nProseminarsitzungen:\n\nDienstag
+  14-16 Uhr, SR 1\n\nSprechstunde fÃ¼r Vorbesprechungen:\n\nNach Vereinbarung:\n\nMontag,
+  14-16 Uhr bei Julian Quast in Raum 3/222\n\nVoraussetzungen:\n\nLineare Algebra
+  1, Analysis 1\n\nBitte beachten Sie, dass eine Teilnahme nur mÃ¶glich ist, falls
+  Sie diese Vorlesungen besucht und die zugehÃ¶rigen PrÃ¼fungen bestanden haben. Kurz
+  vor Semesterbeginn kÃ¶nnen RestplÃ¤tze an Studenten vergeben werden, die zumindest
+  eine der beiden PrÃ¼fungen bestanden haben.\n\nLiteratur:\n\n[J] Nathan Jacobson:
+  Basic Algebra 1\n\n[L] Serge Lang: Algebra\n\nImported from legacy teaching listing."
+description: "Proseminar \"Bilinearformen und Klassische Gruppen\" (SS 2019) Dozent:
+  Prof. Dr. Gebhard BÃ¶ckle Assistent: Julian Quast AnkÃ¼ndigung Programm Vorlage
+  fÃ¼rs Handout: Latex-Vorlage Anmeldung: Eine MÃ\x9CSLI-Seite ist vorhanden: Bitte
+  melden Sie sich dort fÃ¼r Ihren Vortrag an, falls Si"
 ---
-content: |
-  Proseminar "Bilinearformen und Klassische Gruppen" (SS 2019)
-  
-  Dozent: Prof. Dr. Gebhard BÃ¶ckle
-  
-  Assistent: Julian Quast
-  
-  AnkÃ¼ndigung
-  
-  Programm
-  
-  Vorlage fÃ¼rs Handout: Latex-Vorlage
-  
-  Anmeldung: Eine MÃSLI-Seite ist vorhanden: Bitte melden Sie sich dort fÃ¼r Ihren Vortrag an, falls Sie in der Vorbesprechung waren. Falls Sie nicht in der Vorbesprechung waren, melden Sie sich bitte als NachrÃ¼cker an und teilen mir per Mail Ihren Vortragswunsch mit.
-  
-  Abmeldefrist: Abmeldungen vom Proseminar sind nur bis Dienstag, den 19. MÃ¤rz 2019 mÃ¶glich. SpÃ¤tere Abmeldungen werden als "nicht bestanden" gewertet.
-  
-  Anmeldungen wie Abmeldungen sind nur dann gÃ¼ltig, wenn sie mir per Mail mitgeteilt werden und im MÃSLI eingetragen werden.
-  
-  Freie VortrÃ¤ge: Aktuell sind noch die folgenden VortrÃ¤ge zu vergeben :
-  
-  (6) Satz von Cartan-DieudonnÃ© (7) Struktur der speziellen linearen Gruppe (8) Struktur der allgemeinen linearen Gruppe (13) Struktur der orthogonalen Gruppe (15) Ordnungen der klassischen Gruppen Ã¼ber endlichen KÃ¶rpern
-  
-  Proseminarsitzungen:
-  
-  Dienstag 14-16 Uhr, SR 1
-  
-  Sprechstunde fÃ¼r Vorbesprechungen:
-  
-  Nach Vereinbarung:
-  
-  Montag, 14-16 Uhr bei Julian Quast in Raum 3/222
-  
-  Voraussetzungen:
-  
-  Lineare Algebra 1, Analysis 1
-  
-  Bitte beachten Sie, dass eine Teilnahme nur mÃ¶glich ist, falls Sie diese Vorlesungen besucht und die zugehÃ¶rigen PrÃ¼fungen bestanden haben. Kurz vor Semesterbeginn kÃ¶nnen RestplÃ¤tze an Studenten vergeben werden, die zumindest eine der beiden PrÃ¼fungen bestanden haben.
-  
-  Literatur:
-  
-  [J] Nathan Jacobson: Basic Algebra 1
-  
-  [L] Serge Lang: Algebra
+Proseminar "Bilinearformen und Klassische Gruppen" (SS 2019)
+
+Dozent: Prof. Dr. Gebhard BÃ¶ckle
+
+Assistent: Julian Quast
+
+AnkÃ¼ndigung
+
+Programm
+
+Vorlage fÃ¼rs Handout: Latex-Vorlage
+
+Anmeldung: Eine MÃSLI-Seite ist vorhanden: Bitte melden Sie sich dort fÃ¼r Ihren Vortrag an, falls Sie in der Vorbesprechung waren. Falls Sie nicht in der Vorbesprechung waren, melden Sie sich bitte als NachrÃ¼cker an und teilen mir per Mail Ihren Vortragswunsch mit.
+
+Abmeldefrist: Abmeldungen vom Proseminar sind nur bis Dienstag, den 19. MÃ¤rz 2019 mÃ¶glich. SpÃ¤tere Abmeldungen werden als "nicht bestanden" gewertet.
+
+Anmeldungen wie Abmeldungen sind nur dann gÃ¼ltig, wenn sie mir per Mail mitgeteilt werden und im MÃSLI eingetragen werden.
+
+Freie VortrÃ¤ge: Aktuell sind noch die folgenden VortrÃ¤ge zu vergeben :
+
+(6) Satz von Cartan-DieudonnÃ© (7) Struktur der speziellen linearen Gruppe (8) Struktur der allgemeinen linearen Gruppe (13) Struktur der orthogonalen Gruppe (15) Ordnungen der klassischen Gruppen Ã¼ber endlichen KÃ¶rpern
+
+Proseminarsitzungen:
+
+Dienstag 14-16 Uhr, SR 1
+
+Sprechstunde fÃ¼r Vorbesprechungen:
+
+Nach Vereinbarung:
+
+Montag, 14-16 Uhr bei Julian Quast in Raum 3/222
+
+Voraussetzungen:
+
+Lineare Algebra 1, Analysis 1
+
+Bitte beachten Sie, dass eine Teilnahme nur mÃ¶glich ist, falls Sie diese Vorlesungen besucht und die zugehÃ¶rigen PrÃ¼fungen bestanden haben. Kurz vor Semesterbeginn kÃ¶nnen RestplÃ¤tze an Studenten vergeben werden, die zumindest eine der beiden PrÃ¼fungen bestanden haben.
+
+Literatur:
+
+[J] Nathan Jacobson: Basic Algebra 1
+
+[L] Serge Lang: Algebra
 
 Imported from legacy teaching listing.

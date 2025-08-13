@@ -16,32 +16,64 @@ semester_year: 2020
 semester_key: SS2020
 semester_sort: 20201
 active: false
----
-content: |
+instructors: Prof. Dr. BÃ¶ckle, Quast
+content: |-
   Algebra 2
-  
+
   Sommersemester 2020
-  
+
   Organisation
-  
+
   Dozent: Prof. Dr. Gebhard Böckle
-  
+
   Dozent: Prof. Dr. Gebhard Böckle
-  
+
   Assistent: Julian Quast
-  
+
   Vorlesung
-  
+
   Dienstag 09-11 Uhr in INF 205 / SR B
-  
+
   Donnerstag 09-11 Uhr in INF 205 / SR B
-  
+
   Übungsbetrieb
-  
+
   Organisation über MÜSLI . Bitte dort anmelden.
-  
+
   Donnerstag 16-18 Uhr in INF 205 / SR 3, zur Zeit nur online
-  
+
   Freitag 11-13 Uhr in INF 205 / SR 3, zur Zeit nur online
+
+  Imported from legacy teaching listing.
+description: 'Algebra 2 Sommersemester 2020 Organisation Dozent: Prof. Dr. Gebhard
+  Böckle Dozent: Prof. Dr. Gebhard Böckle Assistent: Julian Quast Vorlesung Dienstag
+  09-11 Uhr in INF 205 / SR B Donnerstag 09-11 Uhr in INF 205 / SR B Übungsbetrieb
+  Organisation über MÜSLI . Bitte dort anmelden. '
+---
+Algebra 2
+
+Sommersemester 2020
+
+Organisation
+
+Dozent: Prof. Dr. Gebhard Böckle
+
+Dozent: Prof. Dr. Gebhard Böckle
+
+Assistent: Julian Quast
+
+Vorlesung
+
+Dienstag 09-11 Uhr in INF 205 / SR B
+
+Donnerstag 09-11 Uhr in INF 205 / SR B
+
+Übungsbetrieb
+
+Organisation über MÜSLI . Bitte dort anmelden.
+
+Donnerstag 16-18 Uhr in INF 205 / SR 3, zur Zeit nur online
+
+Freitag 11-13 Uhr in INF 205 / SR 3, zur Zeit nur online
 
 Imported from legacy teaching listing.

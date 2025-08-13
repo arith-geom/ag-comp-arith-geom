@@ -31,26 +31,52 @@ semester_year: 2021
 semester_key: WS2021
 semester_sort: 20212
 active: false
----
-content: |
+instructors: Dr. Banwait, Prof. Dr. BÃ¶ckle
+content: |-
   Seminar on Abelian Varieties (WiSe 2021/22)
-  
+
   Dozent: Dr. Barinder Banwait , Prof. Dr. BÃ¶ckle
-  
+
   Beginn : 19.10.21
-  
+
   Zeit : Tuesdays 14-16 Uhr
-  
+
   Format : Hybrid Seminar in SR8 and on Zoom
-  
+
   Thema :
-  
+
   Das Seminar bietet eine EinfÃ¼hrung in das Thema Abelian Varieties mit Anwendungen in der Algebraischen Geometrie .
-  
+
   Bitte sehen Sie die Programm des Kurses.
-  
+
   Programm
-  
+
   Talks
+
+  Imported from legacy teaching listing.
+description: 'Seminar on Abelian Varieties (WiSe 2021/22) Dozent: Dr. Barinder Banwait
+  , Prof. Dr. BÃ¶ckle Beginn : 19.10.21 Zeit : Tuesdays 14-16 Uhr Format : Hybrid
+  Seminar in SR8 and on Zoom Thema : Das Seminar bietet eine EinfÃ¼hrung in das Thema
+  Abelian Varieties mit Anwendungen in der Al'
+---
+Seminar on Abelian Varieties (WiSe 2021/22)
+
+Dozent: Dr. Barinder Banwait , Prof. Dr. BÃ¶ckle
+
+Beginn : 19.10.21
+
+Zeit : Tuesdays 14-16 Uhr
+
+Format : Hybrid Seminar in SR8 and on Zoom
+
+Thema :
+
+Das Seminar bietet eine EinfÃ¼hrung in das Thema Abelian Varieties mit Anwendungen in der Algebraischen Geometrie .
+
+Bitte sehen Sie die Programm des Kurses.
+
+Programm
+
+Talks
 
 Imported from legacy teaching listing.
