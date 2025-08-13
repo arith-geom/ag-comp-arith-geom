@@ -1385,7 +1385,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const titleLink = e.target.closest('.publication-title-link');
     const card = e.target.closest('.publication-card');
     // Allow action links inside the card to work normally
-    const actionLink = e.target.closest('.publication-links a, .publication-expand-btn, .publication-details a, .publication-expanded-content a');
+    const actionLink = e.target.closest(
+      '.publication-actions a, .publication-links-badges a, .publication-pdfs a, .publication-links a, .publication-expand-btn, .publication-details a, .publication-expanded-content a'
+    );
     if (actionLink) return;
     if (titleLink || card) {
       const key = (titleLink?.dataset.pubKey) || card?.dataset.pubKey;
