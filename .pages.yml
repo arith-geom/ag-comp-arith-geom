@@ -192,12 +192,7 @@ content:
           min: 1
           max: 20
         description: "Research keywords and tags"
-      - name: doi
-        label: DOI
-        type: string
-        description: "Digital Object Identifier"
-        validation:
-          pattern: "^10\\.[0-9]{4,}/.+"
+      # DOI removed per site policy
       - name: arxiv_id
         label: arXiv ID
         type: string

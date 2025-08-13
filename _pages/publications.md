@@ -104,13 +104,8 @@ title: Publications
               {% if publication.links and publication.links.size > 0 %}
                 {% assign has_links = true %}
               {% endif %}
-              {% if publication.doi or publication.arxiv_id or has_external_url or publication.pdf or publication.pdf_file or has_links %}
+              {% if publication.arxiv_id or has_external_url or publication.pdf or publication.pdf_file or has_links %}
               <div class="publication-actions">
-                {% if publication.doi %}
-                  <a href="https://doi.org/{{ publication.doi }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-external-link-alt"></i> DOI
-                  </a>
-                {% endif %}
 
                 {% if publication.arxiv_id %}
                   <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" class="btn btn-sm btn-outline-info" target="_blank" rel="noopener noreferrer">
@@ -153,15 +148,14 @@ title: Publications
                 </div>
               {% endif %}
               
-              {% if publication.volume or publication.pages or publication.doi or publication.url %}
+              {% if publication.volume or publication.pages or publication.url %}
                 <div class="publication-details">
                   {% if publication.volume %}<span class="detail-item">Volume: {{ publication.volume }}</span>{% endif %}
                   {% if publication.pages %}<span class="detail-item">Pages: {{ publication.pages }}</span>{% endif %}
-                  {% if publication.doi %}<span class="detail-item">DOI: {{ publication.doi }}</span>{% endif %}
                   {% if publication.url and publication.url != publication.pdf %}
                     {% assign url_str = publication.url %}
                     {% unless url_str contains site.url or url_str contains site.baseurl or url_str contains '/publications/' %}
-                      {% unless url_str contains 'arxiv.org' or url_str contains 'doi.org' %}
+                      {% unless url_str contains 'arxiv.org' %}
                         <span class="detail-item">URL: <a href="{{ url_str }}" target="_blank" rel="noopener noreferrer">View</a></span>
                       {% endunless %}
                     {% endunless %}

@@ -61,7 +61,7 @@ bilingual_cms:
         - abstract
         - journal
         - year
-        - doi
+        # DOI removed
         - url
     - name: news
       fields:

@@ -38,9 +38,6 @@ title: Publications De
               <div class="publication-authors">{{ publication.authors }}</div>
               <div class="publication-venue">{{ publication.journal }}{% if publication.volume %}, {{ publication.volume }}{% endif %}{% if publication.pages %}, {{ publication.pages }}{% endif %}, {{ publication.year }}</div>
               <div class="publication-links">
-                {% if publication.doi %}
-                  <a href="https://doi.org/{{ publication.doi }}" target="_blank">DOI</a>
-                {% endif %}
                 {% if publication.url %}
                   <a href="{{ publication.url }}" target="_blank">View</a>
                 {% endif %}
