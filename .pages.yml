@@ -32,7 +32,7 @@ content:
     filename: "{year}-{title|slugify}.md"
     format: yaml-frontmatter
     view:
-      fields: [title, authors, year, type, status, featured]
+      fields: [title, authors, year, type, status]
       primary: title
       sort:
         field: year
@@ -43,8 +43,6 @@ content:
           label: Publication Type
         - field: status
           label: Status
-        - field: featured
-          label: Featured
       group_by: year
     fields:
       - name: layout
@@ -231,11 +229,7 @@ content:
               max_size: 20971520
               accepted_types: [pdf]
             required: true
-      - name: featured
-        label: Featured
-        type: boolean
-        default: false
-        description: "Highlight this publication"
+      # featured removed per request
 
   # Team Members - Enhanced and aligned with actual content
   - name: members
@@ -520,16 +514,12 @@ content:
     filename: "{title|slugify}.md"
     format: yaml-frontmatter
     view:
-      fields: [title, description, featured, order]
+      fields: [title, description, order]
       primary: title
       sort:
         field: title
         direction: asc
       search: [title, description, keywords]
-      filters:
-        - field: featured
-          label: Featured
-      group_by: featured
     fields:
       - name: layout
         label: Layout
@@ -558,11 +548,6 @@ content:
         default: 999
         hidden: true
         description: "Lower numbers appear first"
-      - name: featured
-        label: Featured Research Area
-        type: boolean
-        default: false
-        description: "Highlight this research area on the homepage"
 
 
   # Links - External/internal resource links
