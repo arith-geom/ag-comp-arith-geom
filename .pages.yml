@@ -194,9 +194,7 @@ content:
       - name: links
         label: Links
         type: object
-        list:
-          min: 0
-          max: 100
+        list: true
         description: "Add as many links as you need (label + URL)"
         fields:
           - name: label
@@ -215,9 +213,7 @@ content:
       - name: pdfs
         label: PDFs
         type: object
-        list:
-          min: 0
-          max: 50
+        list: true
         description: "Add one or more PDFs"
         fields:
           - name: label
@@ -235,6 +231,11 @@ content:
               max_size: 20971520
               accepted_types: [pdf]
             required: true
+      - name: featured
+        label: Featured
+        type: boolean
+        default: false
+        description: "Highlight this publication"
 
   # Team Members - Enhanced and aligned with actual content
   - name: members
