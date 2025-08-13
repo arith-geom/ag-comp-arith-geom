@@ -56,15 +56,17 @@ function animateStatistics() {
 function initFilters() {
   const courseTypeFilter = document.getElementById('courseTypeFilter');
   const timeFilter = document.getElementById('timeFilter');
+  const yearFilter = document.getElementById('yearFilter');
   const searchFilter = document.getElementById('searchFilter');
   const courseItems = document.querySelectorAll('.course-item');
   const semesterGroups = document.querySelectorAll('.semester-group');
 
-  if (!courseTypeFilter || !timeFilter || !searchFilter) return;
+  if (!courseTypeFilter || (!timeFilter && !yearFilter) || !searchFilter) return;
 
   function applyFilters() {
     const selectedType = courseTypeFilter.value;
-    const selectedPeriod = timeFilter.value;
+    const selectedPeriod = timeFilter ? timeFilter.value : 'all';
+    const selectedYear = yearFilter ? yearFilter.value : 'all';
     const searchTerm = searchFilter.value.toLowerCase();
 
     let visibleCount = 0;
@@ -73,16 +75,18 @@ function initFilters() {
     courseItems.forEach(item => {
       const type = item.dataset.type;
       const period = item.dataset.period;
+      const year = item.dataset.year;
       const title = item.querySelector('.course-link')?.textContent.toLowerCase() || '';
       const instructors = item.querySelector('.instructors')?.textContent.toLowerCase() || '';
       
       const typeMatch = selectedType === 'all' || type === selectedType;
       const periodMatch = selectedPeriod === 'all' || period === selectedPeriod;
+      const yearMatch = selectedYear === 'all' || (year && year === selectedYear);
       const searchMatch = searchTerm === '' || 
                          title.includes(searchTerm) || 
                          instructors.includes(searchTerm);
       
-      if (typeMatch && periodMatch && searchMatch) {
+      if (typeMatch && periodMatch && yearMatch && searchMatch) {
         item.classList.remove('hidden');
         visibleCount++;
         if (period === 'current') currentCount++;
@@ -110,7 +114,8 @@ function initFilters() {
 
   // Event listeners for filters
   courseTypeFilter.addEventListener('change', applyFilters);
-  timeFilter.addEventListener('change', applyFilters);
+  if (timeFilter) timeFilter.addEventListener('change', applyFilters);
+  if (yearFilter) yearFilter.addEventListener('change', applyFilters);
   searchFilter.addEventListener('input', debounce(applyFilters, 300));
 
   // Initialize filters

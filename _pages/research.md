@@ -17,7 +17,7 @@ title: Research
       <div class="research-content">
         <h3>{{ research_area.title }}</h3>
         <div class="research-text">
-          {{ research_area.content }}
+          {{ research_area.content | markdownify }}
         </div>
         {% if research_area.keywords %}
           <div class="research-keywords">

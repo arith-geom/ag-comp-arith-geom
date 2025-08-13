@@ -207,9 +207,9 @@ title: Members
 }
 
 .nav-btn {
-  background: var(--bg-primary);
+  background: var(--primary);
   border: 2px solid var(--primary);
-  color: var(--primary);
+  color: var(--primary-text);
   padding: 0.75rem 2rem;
   margin: 0 0.5rem;
   border-radius: var(--radius-md);
@@ -220,7 +220,7 @@ title: Members
 }
 
 .nav-btn:hover {
-  background: var(--primary);
+  background: var(--heidelberg-red);
   color: var(--primary-text);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);

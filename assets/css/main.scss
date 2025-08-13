@@ -186,9 +186,9 @@ html.dark-mode {
   }
   
   .filter-controls {
-    background: linear-gradient(135deg, $gray-900 0%, $gray-800 100%) !important;
-    border-color: $gray-700 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-sm) !important;
     border-radius: 12px !important;
   }
   
@@ -1727,6 +1727,7 @@ tbody td {
 .section-icon,
 .publication-type,
 .course-badge {
+  background: var(--primary) !important;
   color: var(--primary-text) !important;
 }
 

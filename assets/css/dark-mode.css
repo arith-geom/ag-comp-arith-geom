@@ -555,11 +555,7 @@ body.dark-mode .text-center {
   color: #ffffff !important;
 }
 
-/* Force dark backgrounds for all elements */
-[data-theme="dark"] *,
-body.dark-mode * {
-  background-color: inherit !important;
-}
+/* Avoid forcing background on all elements; preserve media/overlays */
 
 /* Ensure images are not affected by global filters in dark mode */
 [data-theme="dark"] img,

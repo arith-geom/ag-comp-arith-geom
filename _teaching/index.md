@@ -20,12 +20,14 @@ show_title: false
       </select>
     </div>
     <div class="filter-group">
-      <label for="timeFilter">Filter by Period:</label>
-      <select id="timeFilter" class="filter-select">
-        <option value="all">All Time</option>
-        <option value="current">Current & Recent (2023-2025)</option>
-        <option value="recent">Recent (2020-2022)</option>
-        <option value="historical">Historical (2010-2019)</option>
+      <label for="yearFilter">Filter by Year:</label>
+      <select id="yearFilter" class="filter-select">
+        <option value="all">All Years</option>
+        {% assign teaching_all = site.teaching | where: 'layout', 'teaching' %}
+        {% assign years = teaching_all | map: 'semester_year' | compact | uniq | sort | reverse %}
+        {% for y in years %}
+        {% if y %}<option value="{{ y }}">{{ y }}</option>{% endif %}
+        {% endfor %}
       </select>
     </div>
     <div class="filter-group">
@@ -54,7 +56,7 @@ show_title: false
         <ul class="course-list">
           {% for course in sem.items %}
             {% assign type_lower = course.course_type | downcase %}
-            <li class="course-item" data-type="{{ type_lower }}" data-period="recent">
+            <li class="course-item" data-type="{{ type_lower }}" data-year="{{ course.semester_year }}">
               <span class="course-badge {{ type_lower }}">
                 {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Vorlesung{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Hauptseminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
               </span>
@@ -94,11 +96,11 @@ show_title: false
 
 /* Filter Controls */
 .filter-controls {
-  background: linear-gradient(135deg, #212529 0%, #343a40 100%) !important;
-  border-color: #495057 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-sm) !important;
   border-radius: 12px !important;
-  border-bottom: 3px solid var(--primary);
+  border-bottom: 0 !important;
   padding: 1.5rem;
   margin-bottom: 2rem;
   display: grid;
@@ -461,7 +463,7 @@ body.dark-mode .course-item {
 
 [data-theme="dark"] .filter-controls,
 body.dark-mode .filter-controls {
-  border-bottom: 3px solid #111 !important;
+  border-bottom: 0 !important;
 }
 
 [data-theme="dark"] .section-title,
@@ -474,26 +476,26 @@ body.dark-mode .section-title {
 document.addEventListener('DOMContentLoaded', function() {
   // Filtering functionality
   const courseTypeFilter = document.getElementById('courseTypeFilter');
-  const timeFilter = document.getElementById('timeFilter');
+  const yearFilter = document.getElementById('yearFilter');
   const searchFilter = document.getElementById('searchFilter');
   const courseItems = document.querySelectorAll('.course-item');
   const semesterGroups = document.querySelectorAll('.semester-group');
 
   function applyFilters() {
     const selectedType = courseTypeFilter.value;
-    const selectedPeriod = timeFilter.value;
+    const selectedYear = yearFilter.value;
     const searchTerm = searchFilter.value.toLowerCase();
 
     courseItems.forEach(item => {
       const type = item.dataset.type;
-      const period = item.dataset.period;
+      const year = item.dataset.year;
       const title = item.querySelector('.course-link').textContent.toLowerCase();
       
       const typeMatch = selectedType === 'all' || type === selectedType;
-      const periodMatch = selectedPeriod === 'all' || period === selectedPeriod;
+      const yearMatch = selectedYear === 'all' || year === selectedYear;
       const searchMatch = searchTerm === '' || title.includes(searchTerm);
       
-      if (typeMatch && periodMatch && searchMatch) {
+      if (typeMatch && yearMatch && searchMatch) {
         item.classList.remove('hidden');
       } else {
         item.classList.add('hidden');
@@ -513,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Event listeners for filters
   courseTypeFilter.addEventListener('change', applyFilters);
-  timeFilter.addEventListener('change', applyFilters);
+  yearFilter.addEventListener('change', applyFilters);
   searchFilter.addEventListener('input', applyFilters);
 
   // Add smooth scrolling for anchor links

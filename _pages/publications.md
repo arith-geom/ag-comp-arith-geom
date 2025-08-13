@@ -12,9 +12,9 @@ title: Publications
   <div class="filter-section">
     <div class="container-fluid px-3 px-md-4">
       <!-- Publications Search Bar -->
-      <div class="search-container">
-        <div class="search-wrapper">
-          <input type="text" id="publications-search-input" class="search-input" placeholder="Search titles, authors, keywords...">
+      <div class="pub-search-container">
+        <div class="pub-search-wrapper">
+          <input type="text" id="publications-search-input" class="pub-search-input" placeholder="Search titles, authors, keywords...">
           <i class="fas fa-search search-icon"></i>
           <button type="button" id="publications-clear-search" class="clear-search-btn" style="display: none;">
             <i class="fas fa-times"></i>
@@ -209,11 +209,10 @@ title: Publications
 }
 
 .filter-section {
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-  border-bottom: 3px solid var(--primary);
-  padding: 1rem 0;
-  margin-bottom: 0.5rem;
-  border-radius: 0 0 12px 12px;
+  background: var(--bg-primary);
+  border-bottom: 0;
+  padding: 1rem 0 0.25rem 0;
+  margin-bottom: 0.25rem;
 }
 
 .section-title {
@@ -222,7 +221,7 @@ title: Publications
 
 [data-theme="dark"] .filter-section,
 body.dark-mode .filter-section {
-  border-bottom: 3px solid #111 !important;
+  border-bottom: 0 !important;
 }
 
 [data-theme="dark"] .section-title,
@@ -235,7 +234,7 @@ body.dark-mode .section-title {
   padding-top: 0;
 }
 
-.search-container {
+.pub-search-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -260,13 +259,13 @@ body.dark-mode .section-title {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.search-wrapper {
+.pub-search-wrapper {
   position: relative;
   max-width: 600px;
   width: 100%;
 }
 
-.search-input {
+.pub-search-input {
   width: 100%;
   padding: 1.25rem 4rem 1.25rem 2rem;
   border: 3px solid var(--border-color);
@@ -280,19 +279,19 @@ body.dark-mode .section-title {
   letter-spacing: 0.5px;
 }
 
-.search-input::placeholder {
+.pub-search-input::placeholder {
   color: var(--text-muted);
   font-weight: 400;
 }
 
-.search-input:focus {
+.pub-search-input:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 4px rgba(194, 32, 50, 0.15), 0 8px 25px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
-.search-input:hover {
+.pub-search-input:hover {
   border-color: var(--primary);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
 }
@@ -308,7 +307,7 @@ body.dark-mode .section-title {
   transition: all 0.3s ease;
 }
 
-.search-input:focus + .search-icon {
+.pub-search-input:focus + .search-icon {
   color: var(--primary-hover);
   transform: translateY(-50%) scale(1.1);
 }
