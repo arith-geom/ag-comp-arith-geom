@@ -173,14 +173,6 @@ content:
         description: "Journal name, conference name, or publisher"
         validation:
           max_length: 200
-      - name: pdf_file
-        label: PDF Upload
-        type: file
-        options:
-          multiple: false
-          max_size: 20971520
-          accepted_types: [pdf]
-        description: "Upload a PDF (linked automatically)"
       - name: abstract
         label: Abstract
         type: rich-text
