@@ -515,14 +515,17 @@ content:
           height: 150
         description: "Course overview and objectives"
       - name: links
-        label: Resources / Links
-        type: list
-        description: "Add links to syllabi, PDFs, Moodle, etc."
-        item:
-          type: object
-          fields:
-            - { name: label, label: Label, type: string }
-            - { name: url, label: URL, type: string }
+        label: Links
+        type: object
+        list: true
+        description: "Add as many links as you need (label + URL)"
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: url
+            label: URL
+            type: string
       - name: pdfs
         label: PDFs
         type: object
