@@ -76,7 +76,7 @@
       {% elsif site.lazy_loading_images %}
         loading="lazy"
       {% endif %}
-      onerror="this.onerror=null; $('.responsive-img-srcset').remove();"
+      onerror="this.onerror=null; this.style.visibility='visible'; this.style.opacity='1'; this.style.filter='none'; $('.responsive-img-srcset').remove();"
     >
   </picture>
 

@@ -107,8 +107,8 @@ title: Publications
                 <div class="publication-details">
                   {% if publication.volume %}<span class="detail-item">Volume: {{ publication.volume }}</span>{% endif %}
                   {% if publication.pages %}<span class="detail-item">Pages: {{ publication.pages }}</span>{% endif %}
-                {% if publication.doi %}<span class="detail-item">DOI: {{ publication.doi }}</span>{% endif %}
-                  {% if publication.url and publication.url != publication.pdf %}<span class="detail-item">URL: <a href="{{ publication.url }}" target="_blank">View</a></span>{% endif %}
+                 {% if publication.doi %}<span class="detail-item">DOI: {{ publication.doi }}</span>{% endif %}
+                  {% if publication.url and publication.url != publication.pdf %}<span class="detail-item">URL: <a href="{{ publication.url | relative_url }}" target="_blank">View</a></span>{% endif %}
       </div>
               {% endif %}
     </div>
@@ -150,8 +150,8 @@ title: Publications
                   </a>
                 {% endif %}
 
-                {% if publication.pdf %}
-                  <a href="{% if publication.pdf contains '://' %}{{ publication.pdf }}{% else %}{{ publication.pdf | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank">
+                 {% if publication.pdf %}
+                   <a href="{% if publication.pdf contains '://' %}{{ publication.pdf }}{% else %}{{ publication.pdf | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-file-pdf"></i> PDF
                   </a>
                 {% endif %}

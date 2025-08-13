@@ -17,7 +17,7 @@ Work on generic fibers and their relationship to modular forms.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF]({{ \'/assets/uploads/GeneriFiberMM2.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/GeneriFiberMM2.pdf' | relative_url }})
 
 ## Keywords
 

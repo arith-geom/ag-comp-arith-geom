@@ -3,9 +3,12 @@ email: arithgeo@iwr.uni-heidelberg.de
 description: This is the website of the research group "computational arithmetic
   geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in
   Heidelberg.
+# Always set the canonical site URL; downstream code will prefix with baseurl for GH Pages.
 url: https://victormerk.github.io
 # Base URL for the project site on GitHub Pages (repository name)
 # If you run locally, access the site at http://localhost:4000/ag-comp-arith-geom/
+# Base URL used for GitHub Pages. All internal links and assets are prefixed at runtime
+# using relative_url or JS prefixBase so the site continues to work if this path changes.
 baseurl: "/ag-comp-arith-geom"
 twitter_username: placeholder
 github_username: placeholder
@@ -82,7 +85,7 @@ pagescms:
   cache_duration: 3600
   bilingual_support: true
   repo_url: https://github.com/VictorMerk/ag-comp-arith-geom
-  branch: CMS
+  branch: main
   write_generated_config: true
   language_fields:
     - title

@@ -81,3 +81,18 @@ Germany
 ---
 
 *Last updated: 2024-06-04*
+
+<style>
+/* Improve title/subtitle visibility in dark mode on About and Links */
+[data-theme="dark"] .page-article h1,
+body.dark-mode .page-article h1,
+[data-theme="dark"] .page-article h2,
+body.dark-mode .page-article h2 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .page-article .desc,
+body.dark-mode .page-article .desc {
+  color: var(--text-muted) !important;
+}
+</style>

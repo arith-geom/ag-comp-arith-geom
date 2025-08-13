@@ -156,7 +156,9 @@
       
       root.style.setProperty('--primary', '#DC2626');
       root.style.setProperty('--primary-hover', '#B91C1C');
-      root.style.setProperty('--primary-text', '#000000');
+      // Text that sits on top of "primary" backgrounds (e.g., red badges/buttons)
+      // must remain white in dark mode for contrast.
+      root.style.setProperty('--primary-text', '#FFFFFF');
     },
 
     applyLightModeStyles() {

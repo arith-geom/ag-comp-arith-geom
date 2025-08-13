@@ -226,6 +226,12 @@ $grey-900: $gray-900 !default;
 $white-color: #FFFFFF !default;
 $black-color: #000000 !default;
 
+// CSS variable fallbacks
+:root {
+  // Text color to render on top of primary (red) backgrounds
+  --primary-text: #FFFFFF;
+}
+
 // Background colors
 $body-bg: $bg-primary !default;
 $body-bg-dark: $bg-primary-dark !default;

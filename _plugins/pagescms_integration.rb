@@ -107,8 +107,8 @@ module Jekyll
       return unless @site.config.dig('pagescms', 'write_generated_config') == true
 
       # Build dynamic option lists for CMS fields
-      # Publication years (descending)
-      publication_year_options = (1980..2040).to_a.reverse.map(&:to_s)
+      # Publication years (descending) as integers to avoid CMS type mismatch
+      publication_year_options = (1980..2040).to_a.reverse
 
       # Teaching semester options up to 2040
       # Use human-friendly labels that our normalizer understands, e.g.:

@@ -564,9 +564,22 @@ body.dark-mode * {
 /* Ensure images are not affected by global filters in dark mode */
 [data-theme="dark"] img,
 body.dark-mode img {
+  /* Prevent inversions/filters that hide images in dark mode */
   filter: none !important;
   opacity: 1 !important;
   visibility: visible !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Ensure font/icon SVGs remain visible on red backgrounds in dark mode */
+[data-theme="dark"] .section-icon i,
+body.dark-mode .section-icon i,
+[data-theme="dark"] .publication-type,
+body.dark-mode .publication-type,
+[data-theme="dark"] .course-badge,
+body.dark-mode .course-badge {
+  color: var(--primary-text) !important; /* use white in dark mode */
+  background: var(--primary) !important; /* keep red background */
 }
 
 [data-theme="dark"] body,

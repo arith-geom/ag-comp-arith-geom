@@ -115,7 +115,7 @@ nav_order: 1
   width: 50px;
   height: 50px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
-  color: white;
+  color: var(--primary-text);
   border-radius: 50%;
   display: flex;
   align-items: center;
