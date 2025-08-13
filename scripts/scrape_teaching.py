@@ -75,8 +75,6 @@ def write_course_md(course: dict):
         fm.append(f"course_type: {course['course_type']}")
     if course.get("language"):
         fm.append(f"language: {course['language']}")
-    if course.get("external_url"):
-        fm.append(f"external_url: {course['external_url']}")
     if course.get("links"):
         fm.append("links:")
         for link in course["links"]:
@@ -86,6 +84,15 @@ def write_course_md(course: dict):
                 continue
             fm.append(f"  - label: \"{label}\"")
             fm.append(f"    url: \"{url}\"")
+    if course.get("pdfs"):
+        fm.append("pdfs:")
+        for pdf in course["pdfs"]:
+            label = pdf.get("label") or "PDF"
+            file_url = pdf.get("file")
+            if not file_url:
+                continue
+            fm.append(f"  - label: \"{label}\"")
+            fm.append(f"    file: \"{file_url}\"")
     if course.get("semester_term"):
         fm.append(f"semester_term: {course['semester_term']}")
     if course.get("semester_year"):
@@ -96,7 +103,15 @@ def write_course_md(course: dict):
         fm.append(f"semester_sort: {course['semester_sort']}")
     fm.append("active: false")
     fm.append("---")
-    body = course.get("content_md") or course.get("description") or "Imported from legacy teaching listing."
+    # Store main content into front matter 'content' for CMS visibility
+    if course.get("content_md"):
+        content_text = course["content_md"].strip()
+        # Escape YAML triple-dash if present
+        # Use block scalar style would be nicer, but PagesCMS expects markdown field; we store plain string
+        fm.append(f"content: |\n  {content_text.replace('\n', '\n  ')}")
+        body = "Imported from legacy teaching listing."
+    else:
+        body = course.get("description") or "Imported from legacy teaching listing."
 
     path.write_text("\n".join(fm) + "\n\n" + body + "\n", encoding="utf-8")
     return path
@@ -135,17 +150,34 @@ def extract_main_content(soup: BeautifulSoup, base_url: str) -> tuple[str | None
     links: list[dict] = []
     if candidates:
         container = candidates[0]
-        # Collect links (pdfs prioritized)
+        # Collect important links only (PDFs and likely course materials)
         seen = set()
+        def keep_link(url: str, label: str) -> bool:
+            u = url.lower()
+            if u.endswith('.pdf'):
+                return True
+            keywords = ['program', 'syllabus', 'slides', 'script', 'notes', 'material', 'handout', 'moodle', 'announcement', 'description']
+            if any(k in label.lower() for k in keywords):
+                return True
+            hosts_allow = ['iwr.uni-heidelberg.de', 'mathi.uni-heidelberg.de', 'ub.uni-heidelberg.de']
+            try:
+                host = urlparse(url).netloc
+            except Exception:
+                host = ''
+            if any(h in host for h in hosts_allow):
+                return True
+            return False
+
         for a in container.find_all("a", href=True):
             absu = fetch_absolute(a.get("href"), base_url)
             if not absu:
                 continue
-            # de-duplicate by URL
+            label = a.get_text(strip=True) or absu
+            if not keep_link(absu, label):
+                continue
             if absu in seen:
                 continue
             seen.add(absu)
-            label = a.get_text(strip=True) or absu
             links.append({"label": label, "url": absu})
         # Extract a readable text (limit length)
         parts = []
@@ -246,11 +278,17 @@ def scrape():
                     course["description"] = content_text.split("\n\n")[0][:600]
                     course["content_md"] = content_text
                 if ext_links:
-                    # Keep a few useful links
-                    # prioritize PDFs
-                    pdfs = [l for l in ext_links if l["url"].lower().endswith(".pdf")]
-                    others = [l for l in ext_links if not l["url"].lower().endswith(".pdf")]
-                    course["links"] = (pdfs + others)[:12]
+                    # Separate PDFs from other links, limit total
+                    pdfs = []
+                    links = []
+                    for l in ext_links:
+                        u = l.get('url','').lower()
+                        if u.endswith('.pdf'):
+                            pdfs.append({"label": l.get('label') or 'PDF', "file": l.get('url')})
+                        else:
+                            links.append({"label": l.get('label') or l.get('url'), "url": l.get('url')})
+                    course["pdfs"] = pdfs[:8]
+                    course["links"] = links[:8]
             results.append(course)
 
     print(f"Found {len(results)} courses")

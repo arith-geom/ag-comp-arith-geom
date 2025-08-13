@@ -1,9 +1,9 @@
 ---
 layout: teaching
-title: Algebra 1
+title: Hauptseminar Arithmetik von Zahl- und FunktionenkÃ¶rpern (Prof. Dr. BÃ¶ckle)
 semester: WS2019
-instructor: Prof. Dr. BÃ¶ckle, Dr. Ludwig
-course_type: Vorlesung
+instructor: Prof. Dr. BÃ¶ckle
+course_type: Hauptseminar
 semester_term: WS
 semester_year: 2019
 semester_key: WS2019

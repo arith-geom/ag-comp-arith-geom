@@ -1,7 +1,9 @@
 ---
 layout: teaching
-active: false
 ---
-WiSe 2024/25
+content: |
+  WiSe 2024/25
+  
+  Arithmetik von Zahl- und Funktionenkörpern
 
-Arithmetik von Zahl- und Funktionenkörpern
+Imported from legacy teaching listing.

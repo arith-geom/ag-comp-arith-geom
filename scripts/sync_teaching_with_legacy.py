@@ -98,6 +98,35 @@ def key_of(fm: dict) -> str:
     return f"{sem}__{title}" if sem and title else ""
 
 
+def dedupe_by_key(legacy_keys: set[str]):
+    """Remove duplicate files that share the same (semester,title) key, keeping the newest file.
+    Prefer files that are not simple legacy imports when mtimes tie.
+    """
+    files = list_teaching_files()
+    buckets: dict[str, list[Path]] = {}
+    for p in files:
+        fm = read_front_matter(p)
+        k = key_of(fm)
+        if not k:
+            continue
+        buckets.setdefault(k, []).append(p)
+
+    removed = []
+    for k, paths in buckets.items():
+        if len(paths) <= 1:
+            continue
+        # Sort newest first
+        paths_sorted = sorted(paths, key=lambda q: q.stat().st_mtime, reverse=True)
+        keep = paths_sorted[0]
+        for rm in paths_sorted[1:]:
+            try:
+                rm.unlink(missing_ok=True)
+                removed.append(rm.name)
+            except Exception:
+                pass
+    return removed
+
+
 def main():
     print("Building legacy keyset from:", LEGACY_URL)
     legacy_keys = build_legacy_keyset()
@@ -124,6 +153,13 @@ def main():
     print("Removed non-legacy courses:", len(removed))
     for n in removed[:50]:
         print(" -", n)
+
+    # Dedupe keys to ensure single course per semester+title
+    dups_removed = dedupe_by_key(legacy_keys)
+    if dups_removed:
+        print("Removed duplicates:", len(dups_removed))
+        for n in dups_removed[:50]:
+            print(" -", n)
 
 
 if __name__ == "__main__":
