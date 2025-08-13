@@ -327,7 +327,7 @@ content:
       - heidelberg-teaching-archive.md
       - past-teaching.md
     view:
-      fields: [title, semester, instructor, course_type, active]
+      fields: [title, semester, instructor, course_type]
       primary: title
       sort:
         field: semester_year
@@ -338,8 +338,6 @@ content:
           label: Course Type
         - field: language
           label: Language
-        - field: active
-          label: Active
       group_by: semester
     fields:
       - name: layout
@@ -556,11 +554,7 @@ content:
         label: Full Content (imported)
         type: markdown
         description: "Optional: Detailed content imported from legacy site"
-      - name: active
-        label: Currently Active
-        type: boolean
-        default: false
-        description: "Is this course currently being taught?"
+      # 'active' field removed per request
 
   # Research Areas - Enhanced with better organization
   - name: research
