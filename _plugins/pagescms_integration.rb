@@ -591,7 +591,6 @@ module Jekyll
         front_matter['layout'] = 'page'
       when 'teaching'
         front_matter['layout'] ||= 'teaching'
-        front_matter['active'] ||= false
       when 'link'
         # Force generic page layout (avoid missing 'link' layout)
         front_matter['layout'] = 'page'

@@ -547,12 +547,6 @@ content:
               max_size: 20971520
               accepted_types: [pdf]
             required: false
-      - name: external_url
-        label: External URL (optional)
-        type: string
-        description: "If set, the course link will open this external website instead of the internal page"
-        validation:
-          pattern: "^https?://.+"
       - name: content
         label: Full Content (imported)
         type: markdown
