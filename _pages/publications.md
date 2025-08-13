@@ -100,7 +100,11 @@ title: Publications
                 {% endunless %}
               {% endif %}
 
-              {% if publication.doi or publication.arxiv_id or has_external_url or publication.pdf or publication.github_url or publication.repository_url or publication.code_url or publication.dataset_url or publication.slides_url or publication.poster_url or publication.video_url or publication.project_url or publication.publisher_url or publication.book_url or publication.website_url or publication.supplementary_url %}
+              {% assign has_links = false %}
+              {% if publication.links and publication.links.size > 0 %}
+                {% assign has_links = true %}
+              {% endif %}
+              {% if publication.doi or publication.arxiv_id or has_external_url or publication.pdf or publication.pdf_file or has_links %}
               <div class="publication-actions">
                 {% if publication.doi %}
                   <a href="https://doi.org/{{ publication.doi }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer">
@@ -120,69 +124,21 @@ title: Publications
                   </a>
                 {% endif %}
 
-                {% if publication.github_url %}
-                  <a href="{{ publication.github_url }}" class="btn btn-sm btn-outline-dark" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> GitHub
-                  </a>
-                {% endif %}
-                {% if publication.repository_url %}
-                  <a href="{{ publication.repository_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-code-branch"></i> Repository
-                  </a>
-                {% endif %}
-                {% if publication.code_url %}
-                  <a href="{{ publication.code_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-code"></i> Code
-                  </a>
-                {% endif %}
-                {% if publication.dataset_url %}
-                  <a href="{{ publication.dataset_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-database"></i> Dataset
-                  </a>
-                {% endif %}
-                {% if publication.slides_url %}
-                  <a href="{{ publication.slides_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-chalkboard"></i> Slides
-                  </a>
-                {% endif %}
-                {% if publication.poster_url %}
-                  <a href="{{ publication.poster_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-image"></i> Poster
-                  </a>
-                {% endif %}
-                {% if publication.video_url %}
-                  <a href="{{ publication.video_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-video"></i> Video
-                  </a>
-                {% endif %}
-                {% if publication.project_url %}
-                  <a href="{{ publication.project_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-project-diagram"></i> Project
-                  </a>
-                {% endif %}
-                {% if publication.publisher_url %}
-                  <a href="{{ publication.publisher_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-book"></i> Publisher
-                  </a>
-                {% endif %}
-                {% if publication.book_url %}
-                  <a href="{{ publication.book_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-book-open"></i> Book
-                  </a>
-                {% endif %}
-                {% if publication.website_url %}
-                  <a href="{{ publication.website_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-globe"></i> Website
-                  </a>
-                {% endif %}
-                {% if publication.supplementary_url %}
-                  <a href="{{ publication.supplementary_url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-paperclip"></i> Supplementary
-                  </a>
+                {% if has_links %}
+                  {% for link in publication.links %}
+                    {% assign label = link.label | default: 'Link' %}
+                    {% assign href = link.url %}
+                    {% if href %}
+                      <a href="{{ href }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-link"></i> {{ label }}
+                      </a>
+                    {% endif %}
+                  {% endfor %}
                 {% endif %}
 
-                {% if publication.pdf %}
-                  <a href="{% if publication.pdf contains '://' %}{{ publication.pdf }}{% else %}{{ publication.pdf | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                {% assign pdf_href = publication.pdf_file | default: publication.pdf %}
+                {% if pdf_href %}
+                  <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-file-pdf"></i> PDF
                   </a>
                 {% endif %}
