@@ -7,7 +7,7 @@ order: 100
 show_title: false
 title: About
 ---
-# AG Computational Arithmetic Geometry
+<h1 class="about-page-title">AG Computational Arithmetic Geometry</h1>
 
 ## Group Leader
 
@@ -84,7 +84,8 @@ Germany
 
 <style>
 /* Light mode About page title and leader name colors */
-.page-article h1 {
+.page-article h1,
+.about-page-title {
   color: var(--white) !important;
 }
 

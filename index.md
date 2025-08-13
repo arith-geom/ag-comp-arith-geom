@@ -51,6 +51,12 @@ nav_order: 1
   padding: 2rem;
 }
 
+/* Ensure hero text stays white even with global heading overrides */
+.hero-title,
+.hero-subtitle {
+  color: var(--white) !important;
+}
+
 .hero-title {
   font-size: 3rem;
   font-weight: 700;

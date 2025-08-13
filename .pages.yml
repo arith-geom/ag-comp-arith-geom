@@ -447,6 +447,22 @@ content:
           allowCustom: true
         validation:
           pattern: "^(WS|SS)[0-9]{4}$"
+      - name: semester_term
+        label: Semester Term (auto)
+        type: string
+        hidden: true
+      - name: semester_year
+        label: Semester Year (auto)
+        type: number
+        hidden: true
+      - name: semester_key
+        label: Semester Key (auto)
+        type: string
+        hidden: true
+      - name: semester_sort
+        label: Semester Sort (auto)
+        type: number
+        hidden: true
       - name: instructor
         label: Instructor(s)
         type: string
@@ -500,6 +516,25 @@ content:
           toolbar: ["bold", "italic", "link", "list", "code"]
           height: 150
         description: "Course overview and objectives"
+      - name: links
+        label: Resources / Links
+        type: list
+        description: "Add links to syllabi, PDFs, Moodle, etc."
+        item:
+          type: object
+          fields:
+            - { name: label, label: Label, type: string }
+            - { name: url, label: URL, type: string }
+      - name: external_url
+        label: External URL (optional)
+        type: string
+        description: "If set, the course link will open this external website instead of the internal page"
+        validation:
+          pattern: "^https?://.+"
+      - name: content
+        label: Full Content (imported)
+        type: markdown
+        description: "Optional: Detailed content imported from legacy site"
       - name: active
         label: Currently Active
         type: boolean

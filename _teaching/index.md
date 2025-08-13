@@ -7,6 +7,12 @@ active: false
 show_title: false
 ---
 <div class="teaching-page">
+  <div id="courseFocusBar" class="course-focus-bar" style="display: none;">
+    <button id="backToAllCourses" class="back-to-all-btn">
+      <i class="fas fa-arrow-left"></i> Back to all courses
+    </button>
+  </div>
+  
   <!-- Filter Controls -->
   <div class="filter-controls">
     <div class="filter-group">
@@ -49,19 +55,65 @@ show_title: false
     {% assign recent_by_semester = recent_courses | group_by: 'semester_key' %}
     {% for sem in recent_by_semester %}
       {% assign sample = sem.items | first %}
-      <div class="semester-group" data-period="recent">
+      <div class="semester-group" data-period="recent" data-semester="{{ sample.semester_key }}">
         <h4 class="semester-title recent-semester">
           <i class="fas fa-calendar-alt"></i> {{ sample.semester_key }}
         </h4>
         <ul class="course-list">
           {% for course in sem.items %}
             {% assign type_lower = course.course_type | downcase %}
-            <li class="course-item" data-type="{{ type_lower }}" data-year="{{ course.semester_year }}">
+            <li class="course-item" data-type="{{ type_lower }}" data-year="{{ course.semester_year }}" {% if course.external_url %}data-course-url="{{ course.external_url }}" data-external="true"{% endif %}>
               <span class="course-badge {{ type_lower }}">
                 {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Vorlesung{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Hauptseminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
               </span>
-              <a href="{{ course.url | relative_url }}" class="course-link">{{ course.title }}</a>
+              <span class="course-title">{{ course.title }}</span>
               {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
+              {% if course.external_url %}
+                <a class="external-link-btn" href="{{ course.external_url }}" target="_blank" rel="noopener" title="Open external site" aria-label="Open external site">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              {% endif %}
+              <button class="course-expand-btn" aria-expanded="false" title="Show details" tabindex="-1" disabled aria-disabled="true">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="course-details" style="display: none;">
+                <div class="course-details-inner">
+                  <div class="course-meta">
+                    <span class="meta-item"><i class="fas fa-tag"></i> {{ course.course_type }}</span>
+                    {% if course.semester_key %}<span class="meta-item"><i class="fas fa-calendar"></i> {{ course.semester_key }}</span>{% endif %}
+                    {% if course.language %}<span class="meta-item"><i class="fas fa-language"></i> {{ course.language }}</span>{% endif %}
+                  </div>
+                  {% if course.description %}
+                  <div class="course-description">{{ course.description }}</div>
+                  {% endif %}
+                  {% if course.content %}
+                  <div class="course-full-content">{{ course.content }}</div>
+                  {% endif %}
+                  {% if course.links and course.links.size > 0 %}
+                  <div class="course-links">
+                    <div class="links-title"><i class="fas fa-paperclip"></i> Resources</div>
+                    <ul>
+                      {% for link in course.links %}
+                        {% if link.url %}
+                        <li>
+                          <a href="{{ link.url }}" target="_blank" rel="noopener">
+                            {% if link.label %}{{ link.label }}{% else %}{{ link.url }}{% endif %}
+                          </a>
+                        </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  {% endif %}
+                  <div class="course-actions">
+                    {% if course.external_url %}
+                      <a class="open-course-page" href="{{ course.external_url }}" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> Open external site
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
             </li>
           {% endfor %}
         </ul>
@@ -70,20 +122,7 @@ show_title: false
   </div>
 
 
-  <!-- Contact Section -->
-  <div class="teaching-footer">
-    <div class="footer-content">
-      <div class="contact-info">
-        <h3><i class="fas fa-envelope"></i> Contact Information</h3>
-        <p><strong>For course inquiries:</strong> <a href="mailto:boeckle@mathi.uni-heidelberg.de">boeckle@mathi.uni-heidelberg.de</a></p>
-        <p><strong>Office hours:</strong> By appointment</p>
-        <p><strong>Location:</strong> Mathematisches Institut, Heidelberg University</p>
-      </div>
-      <div class="last-update">
-        <p><i class="fas fa-clock"></i> Last updated: January 2025</p>
-      </div>
-    </div>
-  </div>
+  
 </div>
 
 <!-- Enhanced CSS and JavaScript -->
@@ -93,6 +132,21 @@ show_title: false
   margin: 0;
   padding: 0 1rem;
 }
+
+  .semester-filter-bar {
+    margin: 0 0 1rem 0;
+  }
+
+  .back-to-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+  }
 
 /* Filter Controls */
 .filter-controls {
@@ -196,6 +250,7 @@ show_title: false
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 }
 
 .current-semester {
@@ -234,6 +289,7 @@ show_title: false
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
   transform: translateY(20px);
+  cursor: pointer;
 }
 
 .course-item:hover {
@@ -248,6 +304,12 @@ show_title: false
 .course-item:nth-child(4) { animation-delay: 0.4s; }
 
 .course-item.hidden {
+  display: none;
+}
+
+/* Focus-mode visibility control (kept separate from filter .hidden) */
+.course-item.focus-hidden,
+.semester-group.focus-hidden {
   display: none;
 }
 
@@ -270,33 +332,14 @@ show_title: false
   transform: scale(1.05);
 }
 
-.course-badge.seminar {
-  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
-  color: #27ae60;
-  border: 1px solid #a5d6a7;
-}
-
-.course-badge.vorlesung {
-  background: linear-gradient(135deg, #eaeef7 0%, #c7d3ea 100%);
-  color: #1b69c9;
-  border: 1px solid #93b3e3;
-}
-
-.course-badge.proseminar {
-  background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 100%);
-  color: #f57c00;
-  border: 1px solid #ffb74d;
-}
-
-.course-badge.hauptseminar {
-  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
-  color: #c2185b;
-  border: 1px solid #f48fb1;
-}
+.course-badge.seminar { background: #e8f5e8; color: #1b5e20; border: 1px solid #a5d6a7; }
+.course-badge.vorlesung { background: #eaeef7; color: #0d47a1; border: 1px solid #93b3e3; }
+.course-badge.proseminar { background: #fff3e0; color: #e65100; border: 1px solid #ffb74d; }
+.course-badge.hauptseminar { background: #fce4ec; color: #880e4f; border: 1px solid #f48fb1; }
 
 /* Course Links */
 .course-link {
-  color: #2980b9;
+  color: #111;
   text-decoration: none;
   font-weight: 500;
   flex: 1;
@@ -305,9 +348,58 @@ show_title: false
 }
 
 .course-link:hover {
-  color: #1f5f8b;
+  color: #000;
   text-decoration: underline;
 }
+
+/* Non-clickable course title */
+.course-title {
+  color: #111;
+  font-weight: 500;
+  flex: 1;
+  min-width: 200px;
+}
+
+  .course-expand-btn {
+    margin-left: auto;
+    background: transparent;
+    border: 1px dashed var(--border-color);
+    border-radius: 6px;
+    padding: 0.3rem 0.55rem;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .course-details {
+    flex-basis: 100%;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-top: 0.75rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .course-meta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .course-actions {
+    margin-top: 0.5rem;
+  }
+
+  .open-course-page {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: 500;
+  }
 
 .instructors {
   color: #6c757d;
@@ -443,9 +535,13 @@ body.dark-mode .course-item {
     padding: 0.3rem 0.6rem;
   }
   
-  .course-link {
+  .course-link, .course-title {
     min-width: auto;
   }
+    .course-expand-btn {
+      align-self: flex-start;
+      margin-left: 0;
+    }
 }
 
 /* Animation for course items */
@@ -461,6 +557,10 @@ body.dark-mode .course-item {
   display: none;
 }
 
+.course-focus-bar {
+  margin: 0 0 1rem 0;
+}
+
 [data-theme="dark"] .filter-controls,
 body.dark-mode .filter-controls {
   border-bottom: 0 !important;
@@ -472,64 +572,4 @@ body.dark-mode .section-title {
 }
 </style>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Filtering functionality
-  const courseTypeFilter = document.getElementById('courseTypeFilter');
-  const yearFilter = document.getElementById('yearFilter');
-  const searchFilter = document.getElementById('searchFilter');
-  const courseItems = document.querySelectorAll('.course-item');
-  const semesterGroups = document.querySelectorAll('.semester-group');
-
-  function applyFilters() {
-    const selectedType = courseTypeFilter.value;
-    const selectedYear = yearFilter.value;
-    const searchTerm = searchFilter.value.toLowerCase();
-
-    courseItems.forEach(item => {
-      const type = item.dataset.type;
-      const year = item.dataset.year;
-      const title = item.querySelector('.course-link').textContent.toLowerCase();
-      
-      const typeMatch = selectedType === 'all' || type === selectedType;
-      const yearMatch = selectedYear === 'all' || year === selectedYear;
-      const searchMatch = searchTerm === '' || title.includes(searchTerm);
-      
-      if (typeMatch && yearMatch && searchMatch) {
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
-      }
-    });
-
-    // Hide empty semester groups
-    semesterGroups.forEach(group => {
-      const visibleItems = group.querySelectorAll('.course-item:not(.hidden)');
-      if (visibleItems.length === 0) {
-        group.classList.add('hidden');
-      } else {
-        group.classList.remove('hidden');
-      }
-    });
-  }
-
-  // Event listeners for filters
-  courseTypeFilter.addEventListener('change', applyFilters);
-  yearFilter.addEventListener('change', applyFilters);
-  searchFilter.addEventListener('input', applyFilters);
-
-  // Add smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-});
-</script>
+<!-- page-level inline script removed to avoid conflicts; global assets/js/teaching-page.js handles behavior -->
