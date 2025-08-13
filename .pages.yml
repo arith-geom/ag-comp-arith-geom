@@ -188,18 +188,17 @@ content:
           toolbar: ["bold", "italic", "link", "list", "code"]
           height: 200
         description: "Abstract or summary of the publication"
+      # Keywords are no longer manually edited; generated automatically
       - name: keywords
-        label: Keywords
+        label: Keywords (auto)
         type: string
         list:
-          min: 1
-          max: 20
-        description: "Research keywords and tags"
+          min: 0
+          max: 0
+        hidden: true
+        description: "Auto-generated keywords; field hidden in CMS"
       # DOI removed per site policy
-      - name: arxiv_id
-        label: arXiv ID (optional)
-        type: string
-        description: "e.g., 2101.01234 (leave blank if none)"
+      # arXiv removed per site policy
       - name: url
         label: External URL
         type: string

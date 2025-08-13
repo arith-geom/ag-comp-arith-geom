@@ -173,8 +173,6 @@ layout: page
                     <a href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
                   {% elsif publication.doi %}
                     <a href="https://doi.org/{{ publication.doi }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
-                  {% elsif publication.arxiv_id %}
-                    <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
                   {% else %}
                     {{ publication.title }}
                   {% endif %}

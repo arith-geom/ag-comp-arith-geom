@@ -59,9 +59,6 @@ title: Publications De
               <div class="publication-authors">{{ publication.authors }}</div>
               <div class="publication-venue">{{ publication.year }}</div>
               <div class="publication-links">
-                {% if publication.arxiv_id %}
-                  <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" target="_blank">arXiv</a>
-                {% endif %}
                 {% if publication.url %}
                   <a href="{{ publication.url }}" target="_blank">View</a>
                 {% endif %}

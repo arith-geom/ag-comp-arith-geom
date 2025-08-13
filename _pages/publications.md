@@ -104,14 +104,9 @@ title: Publications
               {% if publication.links and publication.links.size > 0 %}
                 {% assign has_links = true %}
               {% endif %}
-              {% if publication.arxiv_id or has_external_url or publication.pdf or publication.pdf_file or has_links %}
+              {% if has_external_url or publication.pdf or publication.pdf_file or has_links %}
               <div class="publication-actions">
 
-                {% if publication.arxiv_id %}
-                  <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" class="btn btn-sm btn-outline-info" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-external-link-alt"></i> arXiv
-                  </a>
-                {% endif %}
 
                 {% if has_external_url %}
                   <a href="{{ url_str }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
@@ -187,13 +182,7 @@ title: Publications
               </div>
             {% endif %}
             
-            {% if publication.keywords %}
-              <div class="publication-keywords">
-                {% for keyword in publication.keywords %}
-                  <span class="keyword-tag">{{ keyword }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
+              
             
             <div class="publication-footer"></div>
           </div>
