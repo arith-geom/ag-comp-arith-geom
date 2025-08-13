@@ -201,7 +201,10 @@ content:
       # arXiv removed per site policy
       - name: links
         label: Links
-        type: list
+        type: object
+        list:
+          min: 0
+          max: 100
         description: "Add as many links as you need (label + URL)"
         fields:
           - name: label
@@ -219,7 +222,10 @@ content:
               pattern: "^https?://.+|^/.*"
       - name: pdfs
         label: PDFs
-        type: list
+        type: object
+        list:
+          min: 0
+          max: 50
         description: "Add one or more PDFs"
         fields:
           - name: label
