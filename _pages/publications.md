@@ -115,12 +115,25 @@ title: Publications
                     {% endfor %}
                   </div>
                 {% endif %}
-
-                {% assign pdf_href = publication.pdf_file | default: publication.pdf %}
-                {% if pdf_href %}
-                  <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-file-pdf"></i> PDF
-                  </a>
+                {% if publication.pdfs and publication.pdfs.size > 0 %}
+                  <div class="publication-pdfs">
+                    {% for item in publication.pdfs %}
+                      {% assign pdf_href = item.file %}
+                      {% assign pdf_label = item.label | default: 'PDF' %}
+                      {% if pdf_href %}
+                        <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                          <i class="fas fa-file-pdf"></i> {{ pdf_label }}
+                        </a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  {% assign pdf_href = publication.pdf_file | default: publication.pdf %}
+                  {% if pdf_href %}
+                    <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                      <i class="fas fa-file-pdf"></i> PDF
+                    </a>
+                  {% endif %}
                 {% endif %}
               </div>
               {% endif %}
@@ -632,6 +645,12 @@ body.dark-mode .section-title {
 .link-badge:hover {
   background: var(--bg-tertiary);
   border-color: var(--border-dark);
+}
+
+.publication-pdfs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
 .publication-title a {

@@ -201,10 +201,7 @@ content:
       # arXiv removed per site policy
       - name: links
         label: Links
-        type: object
-        list:
-          min: 0
-          max: 100
+        type: list
         description: "Add as many links as you need (label + URL)"
         fields:
           - name: label
@@ -220,6 +217,26 @@ content:
             required: true
             validation:
               pattern: "^https?://.+|^/.*"
+      - name: pdfs
+        label: PDFs
+        type: list
+        description: "Add one or more PDFs"
+        fields:
+          - name: label
+            label: Label (optional)
+            type: string
+            required: false
+            validation:
+              min_length: 2
+              max_length: 100
+          - name: file
+            label: PDF File
+            type: file
+            options:
+              multiple: false
+              max_size: 20971520
+              accepted_types: [pdf]
+            required: true
 
   # Team Members - Enhanced and aligned with actual content
   - name: members
