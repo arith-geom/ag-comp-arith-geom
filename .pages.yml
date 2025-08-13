@@ -198,16 +198,16 @@ content:
           - name: label
             label: Label
             type: string
-            required: true
+            required: false
             validation:
               min_length: 2
               max_length: 50
           - name: url
             label: URL
             type: string
-            required: true
+            required: false
             validation:
-              pattern: "^https?://.+|^/.*"
+              pattern: "^$|^https?://.+|^/.*"
       - name: pdfs
         label: PDFs
         type: object
@@ -228,7 +228,7 @@ content:
               multiple: false
               max_size: 20971520
               accepted_types: [pdf]
-            required: true
+            required: false
       # featured removed per request
 
   # Team Members - Enhanced and aligned with actual content
