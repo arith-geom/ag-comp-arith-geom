@@ -525,6 +525,27 @@ content:
           fields:
             - { name: label, label: Label, type: string }
             - { name: url, label: URL, type: string }
+      - name: pdfs
+        label: PDFs
+        type: object
+        list: true
+        description: "Add one or more PDFs"
+        fields:
+          - name: label
+            label: Label (optional)
+            type: string
+            required: false
+            validation:
+              min_length: 2
+              max_length: 100
+          - name: file
+            label: PDF File
+            type: file
+            options:
+              multiple: false
+              max_size: 20971520
+              accepted_types: [pdf]
+            required: false
       - name: external_url
         label: External URL (optional)
         type: string
