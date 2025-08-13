@@ -471,10 +471,10 @@ content:
         type: select
         options:
           values:
-            - { label: Vorlesung, value: Vorlesung }
+            - { label: Lecture, value: Vorlesung }
             - { label: Seminar, value: Seminar }
             - { label: Proseminar, value: Proseminar }
-            - { label: Hauptseminar, value: Hauptseminar }
+            - { label: Advanced Seminar, value: Hauptseminar }
             - { label: Exercise, value: Exercise }
             - { label: Tutorial, value: Tutorial }
             - { label: Workshop, value: Workshop }
