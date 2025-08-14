@@ -120,11 +120,8 @@ function initFilters() {
     const fc = document.querySelector('.filter-controls');
     if (fc) fc.style.display = '';
 
-    // Update statistics
+    // Update statistics (filter status UI removed)
     updateStatistics(visibleCount, currentCount);
-    
-    // Update filter status
-    updateFilterStatus(visibleCount, courseItems.length);
   }
 
   // Event listeners for filters
@@ -227,33 +224,7 @@ function updateStatistics(visibleCount, currentCount) {
 /**
  * Update filter status display
  */
-function updateFilterStatus(visibleCount, totalCount) {
-  let statusElement = document.getElementById('filterStatus');
-  
-  if (!statusElement) {
-    statusElement = document.createElement('div');
-    statusElement.id = 'filterStatus';
-    statusElement.className = 'filter-status';
-    const filterControls = document.querySelector('.filter-controls');
-    if (filterControls) {
-      filterControls.appendChild(statusElement);
-    }
-  }
-
-  if (visibleCount === totalCount) {
-    statusElement.style.display = 'none';
-  } else {
-    statusElement.style.display = 'block';
-    statusElement.innerHTML = `
-      <div class="status-message">
-        Showing ${visibleCount} of ${totalCount} courses
-        <button class="clear-filters" onclick="clearAllFilters()">
-          Clear filters
-        </button>
-      </div>
-    `;
-  }
-}
+// Removed filter status UI per request
 
 /**
  * Clear all filters

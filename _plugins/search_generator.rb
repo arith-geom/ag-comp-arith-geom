@@ -164,7 +164,13 @@ module Jekyll
         }
       end
       
-      # Write only to _site/assets for immediate access (avoid writing into source to prevent watch loops)
+      # Write JSON to source and destination to ensure it is served and survives clean
+      # 1) Source: allows Jekyll to treat it as a static file and copy to dest
+      source_assets_path = File.join(site.source, 'assets')
+      FileUtils.mkdir_p(source_assets_path)
+      File.write(File.join(source_assets_path, 'search-data.json'), search_data.to_json)
+
+      # 2) Destination: make it immediately available during the same build
       site_assets_path = File.join(site.dest, 'assets')
       FileUtils.mkdir_p(site_assets_path)
       File.write(File.join(site_assets_path, 'search-data.json'), search_data.to_json)

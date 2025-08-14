@@ -5,7 +5,7 @@
 .search-container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
@@ -108,7 +108,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   max-height: 600px;
   overflow-y: auto;
-  z-index: 1000;
+  z-index: 5000;
   opacity: 0;
   transform: translateY(-10px) scale(0.95);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
