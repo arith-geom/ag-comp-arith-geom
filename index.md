@@ -19,7 +19,7 @@ nav_order: 1
 .hero-header {
   position: relative;
   width: 100%;
-  height: 520px;
+  height: 500px; /* smaller height */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
@@ -29,9 +29,9 @@ nav_order: 1
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
-  background: #ffffff;
+  object-fit: cover; /* fill width, crop bottom */
+  object-position: 50% 0%; /* focus the top area (show logos) */
+  background: transparent;
 }
 
 .hero-overlay {
@@ -74,7 +74,7 @@ nav_order: 1
 
 @media (max-width: 768px) {
   .hero-header {
-    height: 380px;
+    height: 360px; /* smaller on mobile too */
   }
   
   .hero-title {

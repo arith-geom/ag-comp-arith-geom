@@ -564,3 +564,45 @@
     text-align: center;
   }
 } 
+
+/* Focus mode visibility */
+.course-item.focus-hidden,
+.semester-group.focus-hidden {
+  display: none !important;
+}
+
+/* Back to all courses button and bar */
+.course-focus-bar {
+  margin: 0 0 1rem 0;
+}
+
+.back-to-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-to-all-btn:hover {
+  background: var(--primary);
+  color: var(--primary-text);
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.back-to-all-btn i {
+  color: inherit;
+}
+
+/* Hide decorative expand button inside course items */
+.course-expand-btn {
+  display: none !important;
+}

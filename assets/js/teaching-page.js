@@ -198,13 +198,13 @@ function initQuickFilters() {
       // Apply filter
       if (filter === 'all') {
         courseTypeFilter.value = 'all';
-        timeFilter.value = 'all';
+        if (timeFilter) timeFilter.value = 'all';
       } else if (filter === 'current') {
         courseTypeFilter.value = 'all';
-        timeFilter.value = 'current';
+        if (timeFilter) timeFilter.value = 'current';
       } else {
         courseTypeFilter.value = filter;
-        timeFilter.value = 'all';
+        if (timeFilter) timeFilter.value = 'all';
       }
       
       // Trigger filter change
@@ -274,8 +274,10 @@ function clearAllFilters() {
   searchFilter.value = '';
 
   // Reset quick filter buttons
-  quickFilterBtns.forEach(btn => btn.classList.remove('active'));
-  quickFilterBtns[0].classList.add('active'); // "All" button
+  if (quickFilterBtns.length > 0) {
+    quickFilterBtns.forEach(btn => btn.classList.remove('active'));
+    quickFilterBtns[0].classList.add('active'); // "All" button
+  }
 
   // Trigger filter update
   courseTypeFilter.dispatchEvent(new Event('change'));
