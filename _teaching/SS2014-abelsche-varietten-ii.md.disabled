@@ -9,10 +9,17 @@ semester_year: 2014
 semester_key: SS2014
 semester_sort: 20141
 active: false
----
-content: |
+instructors: Prof. Dr. BÃ¶ckle, Dr. Centeleghe
+content: |-
   WiSe 2024/25
-  
+
   Abelsche Varietäten II
+
+  Imported from legacy teaching listing.
+description: WiSe 2024/25 Abelsche Varietäten II Imported from legacy teaching listing.
+---
+WiSe 2024/25
+
+Abelsche Varietäten II
 
 Imported from legacy teaching listing.

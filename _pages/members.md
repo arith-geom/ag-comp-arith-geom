@@ -500,4 +500,17 @@ function showSection(sectionName) {
     btnAlumni.classList.toggle('active', sectionName === 'alumni');
   }
 }
+
+// Apply initial section from URL (?section=alumni|current)
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const section = (params.get('section') || '').toLowerCase();
+    if (section === 'alumni' || section === 'former') {
+      showSection('alumni');
+    } else if (section === 'current') {
+      showSection('current');
+    }
+  } catch (_) {}
+});
 </script> 

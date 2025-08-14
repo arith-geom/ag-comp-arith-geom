@@ -80,13 +80,13 @@ pagescms:
     - teaching
     - links
     - pages
-  auto_sync: true
-  auto_fix: true
+  auto_sync: false
+  auto_fix: false
   cache_duration: 3600
   bilingual_support: true
   repo_url: https://github.com/VictorMerk/ag-comp-arith-geom
   branch: main
-  write_generated_config: true
+  write_generated_config: false
   language_fields:
     - title
     - content
@@ -252,6 +252,7 @@ exclude:
   - assets/search-data-backup.json
   - assets/search-data.json
   - assets/json/publications-data.json.old
+  - pagescms.config.json
 
 # Performance and regeneration settings
 incremental: false

@@ -1025,34 +1025,57 @@ body.dark-mode .publication-expand-btn.expanded {
 </style>
 
 <script>
-// Toggle publication details
+// Toggle publication details (detail view aware)
 function togglePublicationDetails(button) {
-  const expandable = button.closest('.publication-expandable');
-  const content = expandable.querySelector('.publication-expanded-content');
+  const manager = window.publicationsManager;
+  const card = button.closest('.publication-card');
+  const key = card?.dataset.pubKey;
   const btnText = button.querySelector('.btn-text');
   const btnIcon = button.querySelector('.btn-icon');
-  
-  // Add smooth animation
+  const page = document.querySelector('.publications-page');
+  const isDetailViewActive = page?.classList.contains('detail-view-active');
+  const isCurrentDetailCard = isDetailViewActive && manager?.filters?.pubKey === key;
+
+  // If we have the manager and a card key, use the single-card detail view as the toggle target
+  if (manager && key) {
+    // If we are already showing this card in detail view, hide it (return to list)
+    if (isCurrentDetailCard) {
+      manager.filters.pubKey = '';
+      const url = new URL(window.location);
+      url.searchParams.delete('pub');
+      window.history.replaceState({}, '', url);
+      manager.applyFilters();
+      return;
+    }
+
+    // Otherwise, show this card in detail view
+    manager.filters.pubKey = key;
+    const url = new URL(window.location);
+    url.searchParams.set('pub', key);
+    window.history.replaceState({}, '', url);
+    manager.applyFilters();
+    return;
+  }
+
+  // Fallback: if manager not present, just toggle inline content
+  const expandable = button.closest('.publication-expandable');
+  const content = expandable?.querySelector('.publication-expanded-content');
+  if (!content) return;
   if (content.style.display === 'block' || content.style.display === '') {
-    // Hide content
-    content.style.display = 'block'; // Ensure it's visible for animation
+    content.style.display = 'block';
     content.style.animation = 'slideUp 0.3s ease-out forwards';
-    
     setTimeout(() => {
       content.style.display = 'none';
       content.style.animation = '';
     }, 300);
-    
-    btnText.textContent = 'Show full details';
-    btnIcon.style.transform = 'rotate(0deg)';
+    if (btnText) btnText.textContent = 'Show full details';
+    if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
     button.classList.remove('expanded');
   } else {
-    // Show content
     content.style.display = 'block';
     content.style.animation = 'slideDown 0.3s ease-out';
-    
-    btnText.textContent = 'Hide details';
-    btnIcon.style.transform = 'rotate(180deg)';
+    if (btnText) btnText.textContent = 'Hide details';
+    if (btnIcon) btnIcon.style.transform = 'rotate(180deg)';
     button.classList.add('expanded');
   }
 }
@@ -1380,30 +1403,40 @@ document.addEventListener('DOMContentLoaded', () => {
   // Make manager globally accessible for debugging
   window.publicationsManager = manager;
   
-  // Click-to-focus behavior: clicking title or card enters detail view
-  document.getElementById('publications-grid')?.addEventListener('click', (e) => {
-    const titleLink = e.target.closest('.publication-title-link');
-    const card = e.target.closest('.publication-card');
-    // Allow action links inside the card to work normally
-    const actionLink = e.target.closest(
-      '.publication-actions a, .publication-links-badges a, .publication-pdfs a, .publication-links a, .publication-expand-btn, .publication-details a, .publication-expanded-content a'
-    );
-    if (actionLink) return;
-    if (titleLink || card) {
+  // Click-to-focus behavior: clicking title or card toggles single-card detail view
+  const publicationsGrid = document.getElementById('publications-grid');
+  if (publicationsGrid) {
+    publicationsGrid.addEventListener('click', (e) => {
+      const titleLink = e.target.closest('.publication-title-link');
+      const card = e.target.closest('.publication-card');
+      // Allow action links/buttons inside the card to work normally
+      const actionOrExpand = e.target.closest(
+        '.publication-actions a, .publication-links-badges a, .publication-pdfs a, .publication-links a, .publication-details a, .publication-expanded-content a, .publication-expand-btn'
+      );
+      if (actionOrExpand) return;
+      if (!titleLink && !card) return;
+
       const key = (titleLink?.dataset.pubKey) || card?.dataset.pubKey;
-      if (key) {
-        e.preventDefault();
+      if (!key) return;
+
+      e.preventDefault();
+      // Toggle: if already focused on this card, clear; otherwise focus this card
+      if (manager.filters.pubKey === key) {
+        manager.filters.pubKey = '';
+        const url = new URL(window.location);
+        url.searchParams.delete('pub');
+        window.history.replaceState({}, '', url);
+        manager.applyFilters();
+      } else {
         manager.filters.pubKey = key;
-        // Reflect in URL without reload
         const url = new URL(window.location);
         url.searchParams.set('pub', key);
         window.history.replaceState({}, '', url);
         manager.applyFilters();
-        // Ensure we are at the top where the detail view renders nicely
         document.querySelector('.publications-page')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }
-  });
+    });
+  }
 
   // Back button
   document.getElementById('pub-detail-back-btn')?.addEventListener('click', () => {

@@ -298,6 +298,15 @@ body.dark-mode .publication-card {
   color: #ffffff !important;
 }
 
+[data-theme="dark"] .publications-page .publication-status,
+body.dark-mode .publications-page .publication-status,
+[data-theme="dark"] .publications-page .publication-year,
+body.dark-mode .publications-page .publication-year {
+  background: var(--bg-tertiary) !important; /* dark gray pill */
+  color: var(--text-primary) !important;     /* white text */
+  border: 1px solid var(--border-color) !important;
+}
+
 [data-theme="dark"] .publication-card:hover,
 body.dark-mode .publication-card:hover {
   background: #1f2937 !important;

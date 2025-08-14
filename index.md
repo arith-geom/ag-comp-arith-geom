@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 <div class="hero-header mb-5">
-  <img src="{{ '/assets/img/heidelberg_castle.jpg' | relative_url }}" alt="Heidelberg Castle" class="hero-image">
+  <img src="{{ '/assets/img/Design ohne Titel.png' | relative_url }}" alt="Heidelberg Castle with IWR/University logos" class="hero-image">
   <div class="hero-overlay">
     <div class="hero-content">
       <h1 class="hero-title">AG Computational Arithmetic Geometry</h1>
@@ -19,7 +19,7 @@ nav_order: 1
 .hero-header {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 520px;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
@@ -29,8 +29,9 @@ nav_order: 1
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: #ffffff;
 }
 
 .hero-overlay {
@@ -73,7 +74,7 @@ nav_order: 1
 
 @media (max-width: 768px) {
   .hero-header {
-    height: 300px;
+    height: 380px;
   }
   
   .hero-title {

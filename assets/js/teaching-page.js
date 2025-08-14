@@ -136,6 +136,33 @@ function initFilters() {
   // Initialize filters
   applyFilters();
 
+  // Apply initial filters from URL query parameters (q, type, year)
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const qParam = params.get('q');
+    const typeParam = params.get('type');
+    const yearParam = params.get('year');
+
+    let needsApply = false;
+    if (qParam) {
+      searchFilter.value = qParam;
+      needsApply = true;
+    }
+    if (typeParam && courseTypeFilter.querySelector(`option[value="${typeParam}"]`)) {
+      courseTypeFilter.value = typeParam;
+      needsApply = true;
+    }
+    if (yearParam && yearFilter && yearFilter.querySelector(`option[value="${yearParam}"]`)) {
+      yearFilter.value = yearParam;
+      needsApply = true;
+    }
+    if (needsApply) {
+      applyFilters();
+      // Scroll into view for better UX
+      document.querySelector('.teaching-page')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  } catch (_) {}
+
   // Expose helpers for semester filter UI
   window.__teachingFilters = {
     showSemesterBar: function(show) {
