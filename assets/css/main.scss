@@ -186,9 +186,9 @@ html.dark-mode {
   }
   
   .filter-controls {
-    background: linear-gradient(135deg, $gray-900 0%, $gray-800 100%) !important;
-    border-color: $gray-700 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-sm) !important;
     border-radius: 12px !important;
   }
   
@@ -719,9 +719,10 @@ textarea {
 }
 
 .search-container-center {
-  flex: 1;
+  flex: 1 1 auto;
   justify-content: center;
-  max-width: 450px;
+  max-width: none;
+  width: 100%;
   margin: 0 1.5rem;
 }
 
@@ -838,14 +839,15 @@ textarea {
   position: absolute;
   top: calc(100% + 0.75rem);
   left: 0;
-  width: 500px;
+  width: 100%;
   background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 1rem;
+  border: 2px solid var(--border-dark);
+  border-radius: 0;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
   z-index: var(--z-dropdown);
   max-height: 600px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   backdrop-filter: blur(20px);
   animation: searchResultsSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -855,23 +857,13 @@ textarea {
 }
 
 .search-results-container::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: 20px;
-  width: 16px;
-  height: 16px;
-  background: var(--bg-primary);
-  border-left: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
-  transform: rotate(45deg);
-  z-index: -1;
+  display: none;
 }
 
 // Enhanced search result items - Bigger and more prominent
 .search-result-item {
   padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-dark);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -1364,6 +1356,32 @@ tbody td {
   }
 }
 
+/* Search Results Box Overrides (ensure square corners and visible separators) */
+.heidelberg-navbar .search-results-container {
+  border-radius: 0 !important;
+  border: 2px solid rgba(0, 0, 0, 0.5) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.heidelberg-navbar .search-results-container::before {
+  display: none !important;
+}
+
+.heidelberg-navbar .search-result-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .heidelberg-navbar .search-results-container,
+body.dark-mode .heidelberg-navbar .search-results-container {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .heidelberg-navbar .search-result-item,
+body.dark-mode .heidelberg-navbar .search-result-item {
+  border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+}
+
 // Additional search enhancements
 .search-shortcut-triggered {
   animation: searchShortcutPulse 0.3s ease;
@@ -1723,6 +1741,14 @@ tbody td {
   }
 }
 
+/* Ensure red circular icons render white glyphs in both themes */
+.section-icon,
+.publication-type,
+.course-badge {
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
+}
+
 // Pages CMS Admin button specific styles
 .header-control-btn#pagescms-admin-toggle {
   .fa-cog {
@@ -1903,18 +1929,8 @@ tbody td {
 
 
 
-.search-result-icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-  font-size: 1.1rem;
-  transition: all 0.2s ease;
-}
+/* Hide category icon bubble in results for a cleaner UI */
+.search-result-icon { display: none; }
 
 .search-result-content {
   flex: 1;

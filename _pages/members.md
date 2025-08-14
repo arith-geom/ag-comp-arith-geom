@@ -9,7 +9,7 @@ title: Members
 ---
 <!-- Simple Navigation -->
 <div class="members-nav-simple">
-  <div class="container">
+  <div class="container-fluid px-3 px-md-4">
     <button id="btn-current" class="nav-btn active" onclick="showSection('current')">Current Members</button>
     <button id="btn-alumni" class="nav-btn" onclick="showSection('alumni')">Former Members</button>
   </div>
@@ -26,7 +26,7 @@ title: Members
     <div class="team-section">
       <div class="section-header">
         <div class="section-icon">
-          <i class="fas fa-crown" aria-hidden="true"></i>
+           <i class="fas fa-crown" aria-hidden="true"></i>
         </div>
         <h3>Head of Research Group</h3>
       </div>
@@ -41,13 +41,14 @@ title: Members
           {% endif %}
         </div>
         <div class="member-info">
-          <h4><a href="{{ '/members/' | append: (group_leader.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}">{{ group_leader.name }}</a></h4>
+          {% assign group_leader_slug = group_leader.name | slugify %}
+          <h4><a href="{{ '/members/' | append: group_leader_slug | append: '/' | relative_url }}">{{ group_leader.name }}</a></h4>
           <p class="member-role">{{ group_leader.role }}</p>
           {% if group_leader.research_interests %}
             <p class="member-description">{{ group_leader.research_interests }}</p>
           {% endif %}
           <div class="member-links">
-            <a href="{{ '/members/' | append: (group_leader.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+            <a href="{{ '/members/' | append: group_leader_slug | append: '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
               <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
             </a>
             {% if group_leader.email %}
@@ -84,13 +85,14 @@ title: Members
               {% endif %}
             </div>
             <div class="member-info">
-              <h4><a href="{{ '/members/' | append: (member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}">{{ member.name }}</a></h4>
+              {% assign member_slug = member.name | slugify %}
+              <h4><a href="{{ '/members/' | append: member_slug | append: '/' | relative_url }}">{{ member.name }}</a></h4>
               <p class="member-role">{{ member.role }}</p>
               {% if member.research_interests %}
                 <p class="member-description">{{ member.research_interests }}</p>
               {% endif %}
               <div class="member-links">
-                <a href="{{ '/members/' | append: (member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+                <a href="{{ '/members/' | append: member_slug | append: '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
                   <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
                 </a>
                 {% if member.email %}
@@ -129,13 +131,14 @@ title: Members
               {% endif %}
             </div>
             <div class="member-info">
-              <h4><a href="{{ '/members/' | append: (member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}">{{ member.name }}</a></h4>
+              {% assign member_slug = member.name | slugify %}
+              <h4><a href="{{ '/members/' | append: member_slug | append: '/' | relative_url }}">{{ member.name }}</a></h4>
               <p class="member-role">{{ member.role }}</p>
               {% if member.research_interests %}
                 <p class="member-description">{{ member.research_interests }}</p>
               {% endif %}
               <div class="member-links">
-                <a href="{{ '/members/' | append: (member.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '') | append: '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+                <a href="{{ '/members/' | append: member_slug | append: '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
                   <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
                 </a>
                 {% if member.email %}
@@ -204,9 +207,9 @@ title: Members
 }
 
 .nav-btn {
-  background: var(--bg-primary);
+  background: var(--primary);
   border: 2px solid var(--primary);
-  color: var(--primary);
+  color: var(--primary-text);
   padding: 0.75rem 2rem;
   margin: 0 0.5rem;
   border-radius: var(--radius-md);
@@ -217,7 +220,7 @@ title: Members
 }
 
 .nav-btn:hover {
-  background: var(--primary);
+  background: var(--heidelberg-red);
   color: var(--primary-text);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
@@ -497,4 +500,17 @@ function showSection(sectionName) {
     btnAlumni.classList.toggle('active', sectionName === 'alumni');
   }
 }
+
+// Apply initial section from URL (?section=alumni|current)
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const section = (params.get('section') || '').toLowerCase();
+    if (section === 'alumni' || section === 'former') {
+      showSection('alumni');
+    } else if (section === 'current') {
+      showSection('current');
+    }
+  } catch (_) {}
+});
 </script> 

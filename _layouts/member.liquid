@@ -173,8 +173,6 @@ layout: page
                     <a href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
                   {% elsif publication.doi %}
                     <a href="https://doi.org/{{ publication.doi }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
-                  {% elsif publication.arxiv_id %}
-                    <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
                   {% else %}
                     {{ publication.title }}
                   {% endif %}
@@ -344,7 +342,7 @@ layout: page
   flex-wrap: wrap;
 }
 
-.member-link {
+  .member-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -514,13 +512,13 @@ layout: page
   font-size: 0.85rem;
 }
 
-.publication-type {
-  background: var(--primary);
-  color: var(--primary-text);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius-sm);
-  font-weight: 500;
-}
+  .publication-type {
+    background: var(--primary);
+    color: var(--primary-text);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+  }
 
 .publication-year {
   color: var(--text-secondary);

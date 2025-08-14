@@ -1,6 +1,8 @@
 # Jekyll Search Data Generator
 # Generates comprehensive search data from all content types
 
+require 'cgi'
+
 module Jekyll
   class SearchGenerator < Generator
     safe true
@@ -9,6 +11,9 @@ module Jekyll
     def generate(site)
       search_data = []
       
+      # Use Jekyll's own slugify for consistency with Liquid
+      slugify = lambda { |str| Jekyll::Utils.slugify(str.to_s) }
+
       # Add pages
       site.pages.each do |page|
         next if page.data['layout'] == 'none' || page.data['layout'] == 'redirect'
@@ -51,18 +56,27 @@ module Jekyll
       site.collections['members']&.docs&.each do |member|
         content = extract_content(member)
         next if content.strip.empty?
+        status = (member.data['status'] || '').to_s.downcase
+        # Navigation rule: alumni/former -> Members page, active -> individual page
+        target_url = if status == 'alumni' || status == 'former'
+          '/members/?section=alumni'
+        else
+          member.url
+        end
         
         search_data << {
           'id' => "member-#{member.data['name'] || member.basename}",
           'title' => member.data['name'] || member.data['title'] || member.name,
           'content' => content,
-          'url' => member.url,
+          'url' => target_url,
           'category' => 'member',
           'description' => member.data['description'] || member.data['bio'] || '',
           'tags' => Array(member.data['tags']).join(', '),
           'position' => member.data['position'] || '',
           'email' => member.data['email'] || '',
-          'research_interests' => member.data['research_interests'] || ''
+          'research_interests' => member.data['research_interests'] || '',
+          'status' => status,
+          'role' => member.data['role'] || ''
         }
       end
       
@@ -70,18 +84,23 @@ module Jekyll
       site.collections['teaching']&.docs&.each do |teaching|
         content = extract_content(teaching)
         next if content.strip.empty?
+        q = CGI.escape(teaching.data['title'].to_s)
+        # Always route to teaching page with a filter query
+        target_url = "/teaching/?q=#{q}"
         
         search_data << {
           'id' => "teaching-#{teaching.data['title'] || teaching.basename}",
           'title' => teaching.data['title'] || teaching.name,
           'content' => content,
-          'url' => teaching.url,
+          'url' => target_url,
           'category' => 'teaching',
           'description' => teaching.data['description'] || '',
           'tags' => Array(teaching.data['tags']).join(', '),
           'semester' => teaching.data['semester'] || '',
           'instructor' => teaching.data['instructor'] || '',
-          'course_type' => teaching.data['course_type'] || ''
+          'course_type' => teaching.data['course_type'] || '',
+          'semester_year' => teaching.data['semester_year'] || '',
+          'semester_key' => teaching.data['semester_key'] || ''
         }
       end
       
@@ -103,8 +122,31 @@ module Jekyll
         }
       end
       
-      # Add publications (skip since they don't have URLs when output: false)
-      # Publications are displayed directly on the publications page, not as individual pages
+      # Add publications: open via Publications page filter/detail
+      site.collections['publications']&.docs&.each do |pub|
+        content = extract_content(pub)
+        next if content.strip.empty?
+
+        title = pub.data['title'] || pub.name
+        year = pub.data['year'] || ''
+        key = [slugify.call(title), year].reject { |v| v.to_s.empty? }.join('-')
+        pub_url = "/publications/?pub=#{CGI.escape(key)}"
+
+        search_data << {
+          'id' => "publication-#{key}",
+          'title' => title,
+          'content' => content,
+          'url' => pub_url,
+          'category' => 'publication',
+          'description' => pub.data['abstract'] || pub.data['description'] || '',
+          'tags' => Array(pub.data['keywords']).join(', '),
+          'authors' => pub.data['authors'] || '',
+          'year' => year,
+          'journal' => pub.data['journal'] || '',
+          'type' => pub.data['type'] || '',
+          'status' => pub.data['status'] || ''
+        }
+      end
       
       # Add links
       site.collections['links']&.docs&.each do |link|
@@ -122,12 +164,13 @@ module Jekyll
         }
       end
       
-      # Write search data to source assets directory
-      FileUtils.mkdir_p(File.join(site.source, 'assets'))
-      search_data_path = File.join(site.source, 'assets', 'search-data.json')
-      File.write(search_data_path, search_data.to_json)
-      
-      # Also write to _site/assets for immediate access
+      # Write JSON to source and destination to ensure it is served and survives clean
+      # 1) Source: allows Jekyll to treat it as a static file and copy to dest
+      source_assets_path = File.join(site.source, 'assets')
+      FileUtils.mkdir_p(source_assets_path)
+      File.write(File.join(source_assets_path, 'search-data.json'), search_data.to_json)
+
+      # 2) Destination: make it immediately available during the same build
       site_assets_path = File.join(site.dest, 'assets')
       FileUtils.mkdir_p(site_assets_path)
       File.write(File.join(site_assets_path, 'search-data.json'), search_data.to_json)

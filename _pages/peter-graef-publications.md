@@ -57,11 +57,6 @@ order: 100
               <div class="publication-abstract">{{ publication.abstract | truncate: 300 }}</div>
             {% endif %}
             <div class="publication-links">
-              {% if publication.doi %}
-                <a href="https://doi.org/{{ publication.doi }}" class="btn btn-sm btn-outline-primary" target="_blank">
-                  <i class="fas fa-external-link-alt"></i> DOI
-                </a>
-              {% endif %}
               {% if publication.url %}
                 <a href="{{ publication.url }}" class="btn btn-sm btn-outline-primary" target="_blank">
                   <i class="fas fa-external-link-alt"></i> View

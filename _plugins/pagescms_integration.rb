@@ -107,8 +107,8 @@ module Jekyll
       return unless @site.config.dig('pagescms', 'write_generated_config') == true
 
       # Build dynamic option lists for CMS fields
-      # Publication years (descending)
-      publication_year_options = (1980..2040).to_a.reverse.map(&:to_s)
+      # Publication years (descending) as integers to avoid CMS type mismatch
+      publication_year_options = (1980..2040).to_a.reverse
 
       # Teaching semester options up to 2040
       # Use human-friendly labels that our normalizer understands, e.g.:
@@ -306,11 +306,11 @@ module Jekyll
                 'label' => 'Course Title',
                 'required' => true
               },
+              # Use free-text to preserve existing values like "SS2025" or "WS2024"
               'semester' => {
-                'type' => 'select',
+                'type' => 'string',
                 'label' => 'Semester',
-                'required' => true,
-                'options' => semester_options
+                'required' => true
               },
               'course_type' => {
                 'type' => 'select',
@@ -334,15 +334,42 @@ module Jekyll
                 'type' => 'string',
                 'label' => 'Instructor(s)'
               },
+              'level' => {
+                'type' => 'string',
+                'label' => 'Level (optional)'
+              },
               'description' => {
                 'type' => 'rich-text',
-                'label' => 'Course Description'
+                'label' => 'Short Description'
               },
-              'materials' => {
-                'type' => 'file',
-                'label' => 'Course Materials',
-                'multiple' => true,
-                'accept' => '.pdf,.doc,.docx,.ppt,.pptx'
+              'content' => {
+                'type' => 'rich-text',
+                'label' => 'Full Content'
+              },
+              'external_url' => {
+                'type' => 'string',
+                'label' => 'External URL',
+                'validation' => { 'pattern' => '^https?://.+' }
+              },
+              # Represent links as a list of label+url objects so existing YAML arrays render in the CMS
+              'links' => {
+                'type' => 'list',
+                'label' => 'Links',
+                'itemLabel' => 'Link',
+                'fields' => {
+                  'label' => { 'type' => 'string', 'label' => 'Label' },
+                  'url' => { 'type' => 'string', 'label' => 'URL', 'validation' => { 'pattern' => '^https?://.+' } }
+                }
+              },
+              # PDFs as a list of objects with label + file
+              'pdfs' => {
+                'type' => 'list',
+                'label' => 'PDFs',
+                'itemLabel' => 'PDF',
+                'fields' => {
+                  'label' => { 'type' => 'string', 'label' => 'Label' },
+                  'file' => { 'type' => 'string', 'label' => 'File (relative path or URL)' }
+                }
               },
               'active' => {
                 'type' => 'select',
@@ -591,7 +618,6 @@ module Jekyll
         front_matter['layout'] = 'page'
       when 'teaching'
         front_matter['layout'] ||= 'teaching'
-        front_matter['active'] ||= false
       when 'link'
         # Force generic page layout (avoid missing 'link' layout)
         front_matter['layout'] = 'page'
@@ -732,17 +758,39 @@ module Jekyll
             
             # Ensure teaching data has required fields for Pages CMS
             teaching_data['layout'] ||= 'teaching'
-            
-            # Proactively fix accidental template filenames like
-            # "{semester|slugify}-{title|slugify}.md" that may be created by
-            # misconfigured CMS templates. We compute a safe target filename
-            # from front matter and rename the file if needed.
-            begin
-              fix_teaching_filename_if_needed(file, teaching_data)
-            rescue => e
-              Jekyll.logger.warn "Pages CMS:", "Could not sanitize teaching filename #{File.basename(file)}: #{e.message}"
+
+            # Normalize instructor(s) key for both list and detail templates
+            if teaching_data['instructors'] && !teaching_data['instructor']
+              teaching_data['instructor'] = teaching_data['instructors']
+            elsif teaching_data['instructor'] && !teaching_data['instructors']
+              teaching_data['instructors'] = teaching_data['instructor']
             end
 
+            # Migrate body content into CMS-friendly fields if missing
+            begin
+              body_str = body.to_s
+              if body_str.strip.start_with?("content:")
+                # Extract block scalar after 'content:' and dedent
+                # Matches optional '|' and consumes following newline
+                body_after = body_str.sub(/\Acontent:\s*\|?\s*\n/i, '')
+                # Dedent up to two spaces to be safe
+                body_after = body_after.gsub(/^\s{2}/, '')
+                teaching_data['content'] ||= body_after.strip
+                # Replace body so detail page renders clean text (no 'content:' label)
+                body = body_after
+              elsif (teaching_data['content'].to_s.strip.empty?) && !body_str.strip.empty?
+                # Copy plain body into front matter 'content' for list page rendering
+                teaching_data['content'] = body_str.strip
+              end
+              # Derive a short description if absent
+              if teaching_data['description'].to_s.strip.empty? && teaching_data['content'].to_s.strip != ''
+                snippet = teaching_data['content'].to_s.strip.gsub(/\s+/, ' ')
+                teaching_data['description'] = snippet[0, 280]
+              end
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not migrate teaching body to front matter for #{File.basename(file)}: #{e.message}"
+            end
+            
             # Compute normalized semester metadata for reliable sorting/grouping
             begin
               if teaching_data['semester']
@@ -756,6 +804,13 @@ module Jekyll
               end
             rescue => e
               Jekyll.logger.warn "Pages CMS:", "Could not normalize semester for #{File.basename(file)}: #{e.message}"
+            end
+
+            # After semester normalization, canonicalize filename to avoid duplicates
+            begin
+              fix_teaching_filename_if_needed(file, teaching_data)
+            rescue => e
+              Jekyll.logger.warn "Pages CMS:", "Could not sanitize teaching filename #{File.basename(file)}: #{e.message}"
             end
 
             # Update file with standardized front matter
@@ -922,14 +977,14 @@ module Jekyll
     # sanitized slug derived from front matter fields.
     def fix_teaching_filename_if_needed(file_path, front_matter)
       basename = File.basename(file_path)
-      return unless basename.include?('{') || basename.include?('}') || basename.include?('|')
 
       semester = front_matter['semester'].to_s.strip
       title    = front_matter['title'].to_s.strip
       return if semester.empty? || title.empty?
 
-      # Use Jekyll's slugify to form a safe filename
-      sem_slug = Jekyll::Utils.slugify(semester)
+      # Prefer normalized key when present to avoid WS2025 vs Winter-term variants
+      sem_norm = front_matter['semester_key'].to_s.strip
+      sem_slug = sem_norm.empty? ? Jekyll::Utils.slugify(semester) : sem_norm
       title_slug = Jekyll::Utils.slugify(title)
       target_basename = "#{sem_slug}-#{title_slug}.md"
 

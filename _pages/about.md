@@ -7,11 +7,11 @@ order: 100
 show_title: false
 title: About
 ---
-# AG Computational Arithmetic Geometry
+<h1 class="about-page-title">AG Computational Arithmetic Geometry</h1>
 
 ## Group Leader
 
-**Prof. Dr. Gebhard Böckle**
+<span class="leader-name">Prof. Dr. Gebhard Böckle</span>
 
 ## Research Focus
 
@@ -81,3 +81,38 @@ Germany
 ---
 
 *Last updated: 2024-06-04*
+
+<style>
+/* Light mode About page title and leader name colors */
+.page-article h1,
+.about-page-title {
+  color: var(--white) !important;
+}
+
+.page-article .leader-name {
+  color: var(--heidelberg-red);
+}
+
+/* Improve title/subtitle visibility in dark mode on About and Links */
+[data-theme="dark"] .page-article h1,
+body.dark-mode .page-article h1,
+[data-theme="dark"] .page-article h2,
+body.dark-mode .page-article h2 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .page-article .desc,
+body.dark-mode .page-article .desc {
+  color: var(--text-muted) !important;
+}
+
+/* Ensure profile/image blocks on About stay visible in dark mode */
+[data-theme="dark"] .profile img,
+body.dark-mode .profile img,
+[data-theme="dark"] .profile .more-info,
+body.dark-mode .profile .more-info {
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+</style>

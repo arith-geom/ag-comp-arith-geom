@@ -32,7 +32,7 @@ content:
     filename: "{year}-{title|slugify}.md"
     format: yaml-frontmatter
     view:
-      fields: [title, authors, year, type, status, featured]
+      fields: [title, authors, year, type, status]
       primary: title
       sort:
         field: year
@@ -43,8 +43,6 @@ content:
           label: Publication Type
         - field: status
           label: Status
-        - field: featured
-          label: Featured
       group_by: year
     fields:
       - name: layout
@@ -75,67 +73,70 @@ content:
         description: "Year of publication"
         options:
           values:
-            - { label: "2040", value: 2040 }
-            - { label: "2039", value: 2039 }
-            - { label: "2038", value: 2038 }
-            - { label: "2037", value: 2037 }
-            - { label: "2036", value: 2036 }
-            - { label: "2035", value: 2035 }
-            - { label: "2034", value: 2034 }
-            - { label: "2033", value: 2033 }
-            - { label: "2032", value: 2032 }
-            - { label: "2031", value: 2031 }
-            - { label: "2030", value: 2030 }
-            - { label: "2029", value: 2029 }
-            - { label: "2028", value: 2028 }
-            - { label: "2027", value: 2027 }
-            - { label: "2026", value: 2026 }
-            - { label: "2025", value: 2025 }
-            - { label: "2024", value: 2024 }
-            - { label: "2023", value: 2023 }
-            - { label: "2022", value: 2022 }
-            - { label: "2021", value: 2021 }
-            - { label: "2020", value: 2020 }
-            - { label: "2019", value: 2019 }
-            - { label: "2018", value: 2018 }
-            - { label: "2017", value: 2017 }
-            - { label: "2016", value: 2016 }
-            - { label: "2015", value: 2015 }
-            - { label: "2014", value: 2014 }
-            - { label: "2013", value: 2013 }
-            - { label: "2012", value: 2012 }
-            - { label: "2011", value: 2011 }
-            - { label: "2010", value: 2010 }
-            - { label: "2009", value: 2009 }
-            - { label: "2008", value: 2008 }
-            - { label: "2007", value: 2007 }
-            - { label: "2006", value: 2006 }
-            - { label: "2005", value: 2005 }
-            - { label: "2004", value: 2004 }
-            - { label: "2003", value: 2003 }
-            - { label: "2002", value: 2002 }
-            - { label: "2001", value: 2001 }
-            - { label: "2000", value: 2000 }
-            - { label: "1999", value: 1999 }
-            - { label: "1998", value: 1998 }
-            - { label: "1997", value: 1997 }
-            - { label: "1996", value: 1996 }
-            - { label: "1995", value: 1995 }
-            - { label: "1994", value: 1994 }
-            - { label: "1993", value: 1993 }
-            - { label: "1992", value: 1992 }
-            - { label: "1991", value: 1991 }
-            - { label: "1990", value: 1990 }
-            - { label: "1989", value: 1989 }
-            - { label: "1988", value: 1988 }
-            - { label: "1987", value: 1987 }
-            - { label: "1986", value: 1986 }
-            - { label: "1985", value: 1985 }
-            - { label: "1984", value: 1984 }
-            - { label: "1983", value: 1983 }
-            - { label: "1982", value: 1982 }
-            - { label: "1981", value: 1981 }
-            - { label: "1980", value: 1980 }
+            - { label: "2040", value: "2040" }
+            - { label: "2039", value: "2039" }
+            - { label: "2038", value: "2038" }
+            - { label: "2037", value: "2037" }
+            - { label: "2036", value: "2036" }
+            - { label: "2035", value: "2035" }
+            - { label: "2034", value: "2034" }
+            - { label: "2033", value: "2033" }
+            - { label: "2032", value: "2032" }
+            - { label: "2031", value: "2031" }
+            - { label: "2030", value: "2030" }
+            - { label: "2029", value: "2029" }
+            - { label: "2028", value: "2028" }
+            - { label: "2027", value: "2027" }
+            - { label: "2026", value: "2026" }
+            - { label: "2025", value: "2025" }
+            - { label: "2024", value: "2024" }
+            - { label: "2023", value: "2023" }
+            - { label: "2022", value: "2022" }
+            - { label: "2021", value: "2021" }
+            - { label: "2020", value: "2020" }
+            - { label: "2019", value: "2019" }
+            - { label: "2018", value: "2018" }
+            - { label: "2017", value: "2017" }
+            - { label: "2016", value: "2016" }
+            - { label: "2015", value: "2015" }
+            - { label: "2014", value: "2014" }
+            - { label: "2013", value: "2013" }
+            - { label: "2012", value: "2012" }
+            - { label: "2011", value: "2011" }
+            - { label: "2010", value: "2010" }
+            - { label: "2009", value: "2009" }
+            - { label: "2008", value: "2008" }
+            - { label: "2007", value: "2007" }
+            - { label: "2006", value: "2006" }
+            - { label: "2005", value: "2005" }
+            - { label: "2004", value: "2004" }
+            - { label: "2003", value: "2003" }
+            - { label: "2002", value: "2002" }
+            - { label: "2001", value: "2001" }
+            - { label: "2000", value: "2000" }
+            - { label: "1999", value: "1999" }
+            - { label: "1998", value: "1998" }
+            - { label: "1997", value: "1997" }
+            - { label: "1996", value: "1996" }
+            - { label: "1995", value: "1995" }
+            - { label: "1994", value: "1994" }
+            - { label: "1993", value: "1993" }
+            - { label: "1992", value: "1992" }
+            - { label: "1991", value: "1991" }
+            - { label: "1990", value: "1990" }
+            - { label: "1989", value: "1989" }
+            - { label: "1988", value: "1988" }
+            - { label: "1987", value: "1987" }
+            - { label: "1986", value: "1986" }
+            - { label: "1985", value: "1985" }
+            - { label: "1984", value: "1984" }
+            - { label: "1983", value: "1983" }
+            - { label: "1982", value: "1982" }
+            - { label: "1981", value: "1981" }
+            - { label: "1980", value: "1980" }
+        allowCustom: true
+        validation:
+          pattern: "^[0-9]{4}$"
       - name: type
         label: Publication Type
         type: select
@@ -165,9 +166,9 @@ content:
         default: "Published"
         description: "Current status of the publication"
       - name: journal
-        label: Journal/Conference/Publisher
+        label: Venue
         type: string
-        description: "Journal name, conference name, or publisher"
+        description: "Where it was published (journal, conference, or publisher)"
         validation:
           max_length: 200
       - name: abstract
@@ -177,25 +178,58 @@ content:
           toolbar: ["bold", "italic", "link", "list", "code"]
           height: 200
         description: "Abstract or summary of the publication"
+      # Keywords are no longer manually edited; generated automatically
       - name: keywords
-        label: Keywords
+        label: Keywords (auto)
         type: string
         list:
-          min: 1
-          max: 20
-        description: "Research keywords and tags"
-      - name: doi
-        label: DOI
-        type: string
-        description: "Digital Object Identifier"
-        validation:
-          pattern: "^10\\.[0-9]{4,}/.+"
-      - name: url
-        label: External URL
-        type: string
-        description: "Link to published version"
-        validation:
-          pattern: "^https?://.+"
+          min: 0
+          max: 0
+        hidden: true
+        description: "Auto-generated keywords; field hidden in CMS"
+      # DOI removed per site policy
+      # arXiv removed per site policy
+      - name: links
+        label: Links
+        type: object
+        list: true
+        description: "Add as many links as you need (label + URL)"
+        fields:
+          - name: label
+            label: Label
+            type: string
+            required: false
+            validation:
+              min_length: 2
+              max_length: 50
+          - name: url
+            label: URL
+            type: string
+            required: false
+            validation:
+              pattern: "^$|^https?://.+|^/.*"
+      - name: pdfs
+        label: PDFs
+        type: object
+        list: true
+        description: "Add one or more PDFs"
+        fields:
+          - name: label
+            label: Label (optional)
+            type: string
+            required: false
+            validation:
+              min_length: 2
+              max_length: 100
+          - name: file
+            label: PDF File
+            type: file
+            options:
+              multiple: false
+              max_size: 20971520
+              accepted_types: [pdf]
+            required: false
+      # featured removed per request
 
   # Team Members - Enhanced and aligned with actual content
   - name: members
@@ -293,7 +327,7 @@ content:
       - heidelberg-teaching-archive.md
       - past-teaching.md
     view:
-      fields: [title, semester, instructor, course_type, active]
+      fields: [title, semester, instructor, course_type]
       primary: title
       sort:
         field: semester_year
@@ -304,8 +338,6 @@ content:
           label: Course Type
         - field: language
           label: Language
-        - field: active
-          label: Active
       group_by: semester
     fields:
       - name: layout
@@ -413,6 +445,22 @@ content:
           allowCustom: true
         validation:
           pattern: "^(WS|SS)[0-9]{4}$"
+      - name: semester_term
+        label: Semester Term (auto)
+        type: string
+        hidden: true
+      - name: semester_year
+        label: Semester Year (auto)
+        type: number
+        hidden: true
+      - name: semester_key
+        label: Semester Key (auto)
+        type: string
+        hidden: true
+      - name: semester_sort
+        label: Semester Sort (auto)
+        type: number
+        hidden: true
       - name: instructor
         label: Instructor(s)
         type: string
@@ -423,10 +471,10 @@ content:
         type: select
         options:
           values:
-            - { label: Vorlesung, value: Vorlesung }
+            - { label: Lecture, value: Vorlesung }
             - { label: Seminar, value: Seminar }
             - { label: Proseminar, value: Proseminar }
-            - { label: Hauptseminar, value: Hauptseminar }
+            - { label: Advanced Seminar, value: Hauptseminar }
             - { label: Exercise, value: Exercise }
             - { label: Tutorial, value: Tutorial }
             - { label: Workshop, value: Workshop }
@@ -466,11 +514,44 @@ content:
           toolbar: ["bold", "italic", "link", "list", "code"]
           height: 150
         description: "Course overview and objectives"
-      - name: active
-        label: Currently Active
-        type: boolean
-        default: false
-        description: "Is this course currently being taught?"
+      - name: links
+        label: Links
+        type: object
+        list: true
+        description: "Add as many links as you need (label + URL)"
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: url
+            label: URL
+            type: string
+      - name: pdfs
+        label: PDFs
+        type: object
+        list: true
+        description: "Add one or more PDFs"
+        fields:
+          - name: label
+            label: Label (optional)
+            type: string
+            required: false
+            validation:
+              min_length: 2
+              max_length: 100
+          - name: file
+            label: PDF File
+            type: file
+            options:
+              multiple: false
+              max_size: 20971520
+              accepted_types: [pdf]
+            required: false
+      - name: content
+        label: Full Content (imported)
+        type: markdown
+        description: "Optional: Detailed content imported from legacy site"
+      # 'active' field removed per request
 
   # Research Areas - Enhanced with better organization
   - name: research
@@ -480,16 +561,12 @@ content:
     filename: "{title|slugify}.md"
     format: yaml-frontmatter
     view:
-      fields: [title, description, featured, order]
+      fields: [title, description, order]
       primary: title
       sort:
         field: title
         direction: asc
       search: [title, description, keywords]
-      filters:
-        - field: featured
-          label: Featured
-      group_by: featured
     fields:
       - name: layout
         label: Layout
@@ -518,11 +595,6 @@ content:
         default: 999
         hidden: true
         description: "Lower numbers appear first"
-      - name: featured
-        label: Featured Research Area
-        type: boolean
-        default: false
-        description: "Highlight this research area on the homepage"
 
 
   # Links - External/internal resource links

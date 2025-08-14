@@ -123,30 +123,54 @@
     });
   }
   
-  // Optimized async data loading
+  // Optimized async data loading with robust fallbacks
   async function loadSearchDataAsync() {
     try {
       searchState.isLoading = true;
       showLoadingState();
-      
-      const response = await fetch((window.prefixBase ? window.prefixBase('/assets/search-data.json') : '/assets/search-data.json'));
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+
+      const buildUrl = (p) => (window.prefixBase ? window.prefixBase(p) : p);
+      const baseurl = (typeof window.__BASEURL__ !== 'undefined' && window.__BASEURL__) ? window.__BASEURL__ : '';
+      const candidates = [
+        buildUrl('/assets/search-data.json'),
+        buildUrl('assets/search-data.json'),
+        `${baseurl}/assets/search-data.json`,
+        '/assets/search-data.json',
+        'assets/search-data.json'
+      ].filter(Boolean);
+
+      let loaded = false;
+      let lastError = null;
+      for (const url of candidates) {
+        try {
+          const res = await fetch(url, { cache: 'no-store' });
+          if (res.ok) {
+            searchState.data = await res.json();
+            loaded = true;
+            break;
+          }
+        } catch (e) {
+          lastError = e;
+          continue;
+        }
       }
-      
-      searchState.data = await response.json();
-      
+
+      if (!loaded || !Array.isArray(searchState.data)) {
+        throw lastError || new Error('Search data not found');
+      }
+
       // Build search index in background
       setTimeout(() => {
         buildSearchIndex();
         searchState.isLoading = false;
         hideLoadingState();
-      }, 100);
-      
+      }, 50);
+
     } catch (error) {
       searchState.isLoading = false;
       hideLoadingState();
-      showErrorMessage('Failed to load search data. Please refresh the page.');
+      console.error('Search data load failed:', error);
+      showErrorMessage('Search is temporarily unavailable. Please reload the page.');
     }
   }
   

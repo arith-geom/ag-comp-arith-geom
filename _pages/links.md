@@ -41,6 +41,12 @@ title: Links
   </a>
 </div>
 
+<!-- Partner Logos -->
+<h2>Partners</h2>
+<div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+  <img src="{{ '/assets/img/heidelberg_logo.svg' | relative_url }}" alt="Heidelberg University" height="40">
+</div>
+
 <!-- DFG Research Projects -->
 <h2>DFG Research Projects</h2>
 <div class="list-group mb-4">
@@ -159,5 +165,12 @@ body.dark-mode .list-group-item small {
 [data-theme="dark"] .list-group-item p,
 body.dark-mode .list-group-item p {
   color: var(--text-secondary) !important;
+}
+
+/* Ensure the list-group icon/text contrast is correct on red badges */
+[data-theme="dark"] .list-group-item .badge,
+body.dark-mode .list-group-item .badge {
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
 }
 </style> 

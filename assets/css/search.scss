@@ -5,7 +5,7 @@
 .search-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
@@ -15,8 +15,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
+  flex: 1 1 auto;
   margin: 0 2rem;
+  max-width: none;
+  width: 100%;
 }
 
 // Enhanced Search Input Wrapper
@@ -103,12 +105,12 @@
   left: 0;
   right: 0;
   background: var(--white);
-  border-radius: 1.25rem;
+  border-radius: 0;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.5);
   max-height: 600px;
   overflow-y: auto;
-  z-index: 1000;
+  z-index: 5000;
   opacity: 0;
   transform: translateY(-10px) scale(0.95);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -145,7 +147,7 @@
   display: flex;
   align-items: flex-start;
   padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   animation: searchResultSlideIn 0.4s ease forwards;
@@ -189,19 +191,8 @@
 }
 
 // Enhanced Search Result Icon
-.search-result-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1.25rem;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+/* Hide category icon bubble in results for a cleaner UI */
+.search-result-icon { display: none; }
 
 // Enhanced Search Result Content
 .search-result-content {

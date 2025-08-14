@@ -298,6 +298,15 @@ body.dark-mode .publication-card {
   color: #ffffff !important;
 }
 
+[data-theme="dark"] .publications-page .publication-status,
+body.dark-mode .publications-page .publication-status,
+[data-theme="dark"] .publications-page .publication-year,
+body.dark-mode .publications-page .publication-year {
+  background: var(--bg-tertiary) !important; /* dark gray pill */
+  color: var(--text-primary) !important;     /* white text */
+  border: 1px solid var(--border-color) !important;
+}
+
 [data-theme="dark"] .publication-card:hover,
 body.dark-mode .publication-card:hover {
   background: #1f2937 !important;
@@ -555,18 +564,27 @@ body.dark-mode .text-center {
   color: #ffffff !important;
 }
 
-/* Force dark backgrounds for all elements */
-[data-theme="dark"] *,
-body.dark-mode * {
-  background-color: inherit !important;
-}
+/* Avoid forcing background on all elements; preserve media/overlays */
 
 /* Ensure images are not affected by global filters in dark mode */
 [data-theme="dark"] img,
 body.dark-mode img {
+  /* Prevent inversions/filters that hide images in dark mode */
   filter: none !important;
   opacity: 1 !important;
   visibility: visible !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Ensure font/icon SVGs remain visible on red backgrounds in dark mode */
+[data-theme="dark"] .section-icon i,
+body.dark-mode .section-icon i,
+[data-theme="dark"] .publication-type,
+body.dark-mode .publication-type,
+[data-theme="dark"] .course-badge,
+body.dark-mode .course-badge {
+  color: var(--primary-text) !important; /* use white in dark mode */
+  background: var(--primary) !important; /* keep red background */
 }
 
 [data-theme="dark"] body,

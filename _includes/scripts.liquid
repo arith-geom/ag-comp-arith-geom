@@ -40,9 +40,10 @@
         el.setAttribute(attr, window.prefixBase(v));
       }
     };
-    document.querySelectorAll('img[src^="/"], script[src^="/"], link[href^="/"], a[href^="/"]').forEach(el => {
+    document.querySelectorAll('img[src^="/"], script[src^="/"], link[href^="/"], a[href^="/"], source[srcset^="/"]').forEach(el => {
       const tag = el.tagName;
       if (tag === 'A' || tag === 'LINK') fixAttr(el, 'href');
+      else if (tag === 'SOURCE') fixAttr(el, 'srcset');
       else fixAttr(el, 'src');
     });
   });

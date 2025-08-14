@@ -10,11 +10,11 @@ title: Publications
 <div class="publications-page">
   <!-- Filter Controls -->
   <div class="filter-section">
-    <div class="container">
+    <div class="container-fluid px-3 px-md-4">
       <!-- Publications Search Bar -->
-      <div class="search-container">
-        <div class="search-wrapper">
-          <input type="text" id="publications-search-input" class="search-input" placeholder="Search titles, authors, keywords...">
+      <div class="pub-search-container">
+        <div class="pub-search-wrapper">
+          <input type="text" id="publications-search-input" class="pub-search-input" placeholder="Search titles, authors, keywords...">
           <i class="fas fa-search search-icon"></i>
           <button type="button" id="publications-clear-search" class="clear-search-btn" style="display: none;">
             <i class="fas fa-times"></i>
@@ -51,7 +51,7 @@ title: Publications
 
   <!-- Publications Grid -->
   <div class="publications-content">
-    <div class="container">
+    <div class="container-fluid px-3 px-md-4">
       <!-- Loading State -->
       <div id="loading-state" class="loading-state" style="display: none;">
         <div class="spinner"></div>
@@ -69,11 +69,19 @@ title: Publications
       <!-- All software packages from Heidelberg website are included and up to date -->
       <!-- Last updated: 2025-08-04T10:26:31.561Z -->
 
+      <!-- Back from detail view -->
+      <div id="pub-detail-back" class="pub-detail-back" style="display: none;">
+        <button type="button" id="pub-detail-back-btn" class="btn btn-outline-primary">
+          <i class="fas fa-arrow-left"></i> Back to all publications
+        </button>
+      </div>
+
       <!-- Publications Grid -->
       <div id="publications-grid" class="publications-grid">
         {% assign sorted_publications = site.publications | sort: 'year' | reverse %}
         {% for publication in sorted_publications %}
-          <div class="publication-card" data-type="{{ publication.type }}" data-year="{{ publication.year }}">
+          {% assign pub_key = publication.title | slugify | append: '-' | append: publication.year %}
+          <div class="publication-card" data-type="{{ publication.type }}" data-year="{{ publication.year }}" data-pub-key="{{ pub_key }}">
             <div class="publication-header">
               <div class="publication-meta">
                 <span class="publication-type">{{ publication.type }}</span>
@@ -81,19 +89,54 @@ title: Publications
                 <span class="publication-year">{{ publication.year }}</span>
       </div>
               <h3 class="publication-title">
-                {% if publication.pdf %}
-                  <a href="{{ publication.pdf }}" target="_blank">{{ publication.title }}</a>
-                {% elsif publication.url %}
-                  <a href="{{ publication.url }}" target="_blank">{{ publication.title }}</a>
-                {% elsif publication.doi %}
-                  <a href="https://doi.org/{{ publication.doi }}" target="_blank">{{ publication.title }}</a>
-                {% elsif publication.arxiv_id %}
-                  <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" target="_blank">{{ publication.title }}</a>
-                {% else %}
-                  <span>{{ publication.title }}</span>
-                {% endif %}
+                <a href="javascript:void(0)" class="publication-title-link" data-pub-key="{{ pub_key }}">{{ publication.title }}</a>
               </h3>
               <div class="publication-authors">{{ publication.authors }}</div>
+              {% assign has_external_url = false %}
+
+              {% assign has_links = false %}
+              {% if publication.links and publication.links.size > 0 %}
+                {% assign has_links = true %}
+              {% endif %}
+              {% if publication.pdf or publication.pdf_file or has_links %}
+              <div class="publication-actions">
+
+
+                {% if has_links %}
+                  <div class="publication-links-badges">
+                    {% for link in publication.links %}
+                      {% assign label = link.label | default: 'Link' %}
+                      {% assign href = link.url %}
+                      {% if href %}
+                        <a href="{{ href }}" class="link-badge" target="_blank" rel="noopener noreferrer">
+                          <i class="fas fa-link"></i> {{ label }}
+                        </a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                {% if publication.pdfs and publication.pdfs.size > 0 %}
+                  <div class="publication-pdfs">
+                    {% for item in publication.pdfs %}
+                      {% assign pdf_href = item.file %}
+                      {% assign pdf_label = item.label | default: 'PDF' %}
+                      {% if pdf_href %}
+                        <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                          <i class="fas fa-file-pdf"></i> {{ pdf_label }}
+                        </a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  {% assign pdf_href = publication.pdf_file | default: publication.pdf %}
+                  {% if pdf_href %}
+                    <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                      <i class="fas fa-file-pdf"></i> PDF
+                    </a>
+                  {% endif %}
+                {% endif %}
+              </div>
+              {% endif %}
               {% if publication.journal %}
                 <div class="publication-venue">
                   {% if publication.journal_full %}{{ publication.journal_full }}{% else %}{{ publication.journal }}{% endif %}
@@ -103,12 +146,18 @@ title: Publications
                 </div>
               {% endif %}
               
-              {% if publication.volume or publication.pages or publication.doi or publication.url %}
+              {% if publication.volume or publication.pages or publication.url %}
                 <div class="publication-details">
                   {% if publication.volume %}<span class="detail-item">Volume: {{ publication.volume }}</span>{% endif %}
                   {% if publication.pages %}<span class="detail-item">Pages: {{ publication.pages }}</span>{% endif %}
-                {% if publication.doi %}<span class="detail-item">DOI: {{ publication.doi }}</span>{% endif %}
-                  {% if publication.url and publication.url != publication.pdf %}<span class="detail-item">URL: <a href="{{ publication.url }}" target="_blank">View</a></span>{% endif %}
+                  {% if publication.url and publication.url != publication.pdf %}
+                    {% assign url_str = publication.url %}
+                    {% unless url_str contains site.url or url_str contains site.baseurl or url_str contains '/publications/' %}
+                      {% unless url_str contains 'arxiv.org' %}
+                        <span class="detail-item">URL: <a href="{{ url_str }}" target="_blank" rel="noopener noreferrer">View</a></span>
+                      {% endunless %}
+                    {% endunless %}
+                  {% endif %}
       </div>
               {% endif %}
     </div>
@@ -134,34 +183,9 @@ title: Publications
               </div>
             {% endif %}
             
-            {% if publication.keywords %}
-              <div class="publication-keywords">
-                {% for keyword in publication.keywords %}
-                  <span class="keyword-tag">{{ keyword }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
+              
             
-            <div class="publication-footer">
-              <div class="publication-links">
-                {% if publication.doi %}
-                  <a href="https://doi.org/{{ publication.doi }}" class="btn btn-sm btn-outline-primary" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> DOI
-                  </a>
-                {% endif %}
-
-                {% if publication.pdf %}
-                  <a href="{% if publication.pdf contains '://' %}{{ publication.pdf }}{% else %}{{ publication.pdf | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank">
-                    <i class="fas fa-file-pdf"></i> PDF
-                  </a>
-                {% endif %}
-                {% if publication.arxiv_id %}
-                  <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" class="btn btn-sm btn-outline-info" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> arXiv
-                  </a>
-                {% endif %}
-              </div>
-            </div>
+            <div class="publication-footer"></div>
           </div>
         {% endfor %}
       </div>
@@ -208,12 +232,21 @@ title: Publications
   padding-top: 1rem;
 }
 
+.pub-detail-back {
+  display: flex;
+  justify-content: center;
+  margin: 0.25rem 0 0.75rem 0;
+}
+
+.pub-detail-back .btn {
+  min-width: 260px;
+}
+
 .filter-section {
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-  border-bottom: 3px solid var(--primary);
-  padding: 1rem 0;
-  margin-bottom: 0.5rem;
-  border-radius: 0 0 12px 12px;
+  background: var(--bg-primary);
+  border-bottom: 0;
+  padding: 1rem 0 0.25rem 0;
+  margin-bottom: 0.25rem;
 }
 
 .section-title {
@@ -222,7 +255,7 @@ title: Publications
 
 [data-theme="dark"] .filter-section,
 body.dark-mode .filter-section {
-  border-bottom: 3px solid #111 !important;
+  border-bottom: 0 !important;
 }
 
 [data-theme="dark"] .section-title,
@@ -235,7 +268,7 @@ body.dark-mode .section-title {
   padding-top: 0;
 }
 
-.search-container {
+.pub-search-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -260,13 +293,13 @@ body.dark-mode .section-title {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.search-wrapper {
+.pub-search-wrapper {
   position: relative;
   max-width: 600px;
   width: 100%;
 }
 
-.search-input {
+.pub-search-input {
   width: 100%;
   padding: 1.25rem 4rem 1.25rem 2rem;
   border: 3px solid var(--border-color);
@@ -280,19 +313,19 @@ body.dark-mode .section-title {
   letter-spacing: 0.5px;
 }
 
-.search-input::placeholder {
+.pub-search-input::placeholder {
   color: var(--text-muted);
   font-weight: 400;
 }
 
-.search-input:focus {
+.pub-search-input:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 4px rgba(194, 32, 50, 0.15), 0 8px 25px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
-.search-input:hover {
+.pub-search-input:hover {
   border-color: var(--primary);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
 }
@@ -308,7 +341,7 @@ body.dark-mode .section-title {
   transition: all 0.3s ease;
 }
 
-.search-input:focus + .search-icon {
+.pub-search-input:focus + .search-icon {
   color: var(--primary-hover);
   transform: translateY(-50%) scale(1.1);
 }
@@ -496,6 +529,30 @@ body.dark-mode .section-title {
   }
 }
 
+.publications-page.detail-view-active #publications-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.publications-page.detail-view-active .filter-section {
+  display: none;
+}
+
+.publication-card.detail-view {
+  width: min(1000px, 92vw);
+  max-width: 1000px;
+  transform: translateY(0) scale(1.01);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.publication-card.detail-view .publication-body,
+.publication-card.detail-view .publication-footer {
+  background: var(--bg-primary);
+}
+
 .publication-card {
   background: var(--bg-primary);
   border-radius: 0.375rem;
@@ -557,6 +614,43 @@ body.dark-mode .section-title {
   font-weight: 600;
   margin-bottom: 0.75rem;
   line-height: 1.3;
+}
+
+.publication-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+.publication-links-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.link-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.link-badge:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-dark);
+}
+
+.publication-pdfs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
 .publication-title a {
@@ -767,6 +861,13 @@ body.dark-mode .section-title {
   color: white;
 }
 
+/* Ensure expand button text is white in light mode (override global span color) */
+.publication-expand-btn,
+.publication-expand-btn .btn-text,
+.publication-expand-btn .btn-icon {
+  color: #ffffff !important;
+}
+
 .publication-expanded-content {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -924,34 +1025,57 @@ body.dark-mode .publication-expand-btn.expanded {
 </style>
 
 <script>
-// Toggle publication details
+// Toggle publication details (detail view aware)
 function togglePublicationDetails(button) {
-  const expandable = button.closest('.publication-expandable');
-  const content = expandable.querySelector('.publication-expanded-content');
+  const manager = window.publicationsManager;
+  const card = button.closest('.publication-card');
+  const key = card?.dataset.pubKey;
   const btnText = button.querySelector('.btn-text');
   const btnIcon = button.querySelector('.btn-icon');
-  
-  // Add smooth animation
+  const page = document.querySelector('.publications-page');
+  const isDetailViewActive = page?.classList.contains('detail-view-active');
+  const isCurrentDetailCard = isDetailViewActive && manager?.filters?.pubKey === key;
+
+  // If we have the manager and a card key, use the single-card detail view as the toggle target
+  if (manager && key) {
+    // If we are already showing this card in detail view, hide it (return to list)
+    if (isCurrentDetailCard) {
+      manager.filters.pubKey = '';
+      const url = new URL(window.location);
+      url.searchParams.delete('pub');
+      window.history.replaceState({}, '', url);
+      manager.applyFilters();
+      return;
+    }
+
+    // Otherwise, show this card in detail view
+    manager.filters.pubKey = key;
+    const url = new URL(window.location);
+    url.searchParams.set('pub', key);
+    window.history.replaceState({}, '', url);
+    manager.applyFilters();
+    return;
+  }
+
+  // Fallback: if manager not present, just toggle inline content
+  const expandable = button.closest('.publication-expandable');
+  const content = expandable?.querySelector('.publication-expanded-content');
+  if (!content) return;
   if (content.style.display === 'block' || content.style.display === '') {
-    // Hide content
-    content.style.display = 'block'; // Ensure it's visible for animation
+    content.style.display = 'block';
     content.style.animation = 'slideUp 0.3s ease-out forwards';
-    
     setTimeout(() => {
       content.style.display = 'none';
       content.style.animation = '';
     }, 300);
-    
-    btnText.textContent = 'Show full details';
-    btnIcon.style.transform = 'rotate(0deg)';
+    if (btnText) btnText.textContent = 'Show full details';
+    if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
     button.classList.remove('expanded');
   } else {
-    // Show content
     content.style.display = 'block';
     content.style.animation = 'slideDown 0.3s ease-out';
-    
-    btnText.textContent = 'Hide details';
-    btnIcon.style.transform = 'rotate(180deg)';
+    if (btnText) btnText.textContent = 'Hide details';
+    if (btnIcon) btnIcon.style.transform = 'rotate(180deg)';
     button.classList.add('expanded');
   }
 }
@@ -973,7 +1097,8 @@ class PublicationsManager {
     this.filters = {
       search: '',
       type: 'all',
-      author: ''
+      author: '',
+      pubKey: ''
     };
   }
   
@@ -982,6 +1107,7 @@ class PublicationsManager {
     this.loadPublicationsFromDOM();
     this.bindEvents();
     this.checkAuthorFilter();
+    this.checkPublicationParam();
     this.applyFilters();
     console.log('PublicationsManager initialized successfully');
   }
@@ -994,9 +1120,10 @@ class PublicationsManager {
         element: card,
         type: card.dataset.type,
         year: parseInt(card.dataset.year),
-        title: card.querySelector('.publication-title a').textContent,
+        title: card.querySelector('.publication-title').textContent,
         authors: card.querySelector('.publication-authors').textContent,
-        abstract: card.querySelector('.publication-abstract')?.textContent || ''
+        abstract: card.querySelector('.publication-abstract')?.textContent || '',
+        key: card.dataset.pubKey
       };
     });
     
@@ -1092,6 +1219,14 @@ class PublicationsManager {
       console.log('🔍 Author filter applied:', this.filters.author);
     }
   }
+
+  checkPublicationParam() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pubParam = urlParams.get('pub');
+    if (pubParam) {
+      this.filters.pubKey = decodeURIComponent(pubParam);
+    }
+  }
   
   showAuthorFilter() {
     const authorFilterDisplay = document.getElementById('author-filter-display');
@@ -1135,6 +1270,13 @@ class PublicationsManager {
         }
       }
       
+      // Publication key filter (single publication detail view)
+      if (this.filters.pubKey && this.filters.pubKey.length > 0) {
+        if (pub.key !== this.filters.pubKey) {
+          return false;
+        }
+      }
+
       // Search filter
       if (this.filters.search && this.filters.search.length > 0) {
         const searchTerm = this.filters.search;
@@ -1154,6 +1296,7 @@ class PublicationsManager {
     
     console.log('Filtered publications count:', this.filteredPublications.length);
     this.renderPublications();
+    this.updateDetailState();
   }
   
   applyQuickFilter(filter) {
@@ -1183,6 +1326,7 @@ class PublicationsManager {
     this.publications.forEach(pub => {
       const isVisible = this.filteredPublications.includes(pub);
       pub.element.style.display = isVisible ? 'block' : 'none';
+      pub.element.classList.toggle('detail-view', this.filteredPublications.length === 1 && isVisible);
     });
     
     // Show/hide empty state
@@ -1194,6 +1338,60 @@ class PublicationsManager {
       }
     }
   }
+
+  updateDetailState() {
+    const page = document.querySelector('.publications-page');
+    const back = document.getElementById('pub-detail-back');
+    if (!page || !back) return;
+    if (this.filteredPublications.length === 1) {
+      page.classList.add('detail-view-active');
+      back.style.display = 'flex';
+      // Ensure expanded details and scroll to top
+      this.ensureExpandedDetail();
+      page.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      page.classList.remove('detail-view-active');
+      back.style.display = 'none';
+      this.collapseAllDetails();
+    }
+  }
+
+  ensureExpandedDetail() {
+    if (this.filteredPublications.length !== 1) return;
+    const card = this.filteredPublications[0].element;
+    if (!card) return;
+    const btn = card.querySelector('.publication-expand-btn');
+    const content = card.querySelector('.publication-expanded-content');
+    if (content) {
+      content.style.display = 'block';
+      content.style.animation = '';
+    }
+    if (btn) {
+      btn.classList.add('expanded');
+      const btnText = btn.querySelector('.btn-text');
+      if (btnText) btnText.textContent = 'Hide details';
+      const btnIcon = btn.querySelector('.btn-icon');
+      if (btnIcon) btnIcon.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  collapseAllDetails() {
+    this.publications.forEach(p => {
+      const btn = p.element.querySelector('.publication-expand-btn');
+      const content = p.element.querySelector('.publication-expanded-content');
+      if (content) {
+        content.style.display = 'none';
+        content.style.animation = '';
+      }
+      if (btn) {
+        btn.classList.remove('expanded');
+        const btnText = btn.querySelector('.btn-text');
+        if (btnText) btnText.textContent = 'Show full details';
+        const btnIcon = btn.querySelector('.btn-icon');
+        if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
 }
 
 // Initialize the publications manager when the page loads
@@ -1204,6 +1402,52 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Make manager globally accessible for debugging
   window.publicationsManager = manager;
+  
+  // Click-to-focus behavior: clicking title or card toggles single-card detail view
+  const publicationsGrid = document.getElementById('publications-grid');
+  if (publicationsGrid) {
+    publicationsGrid.addEventListener('click', (e) => {
+      const titleLink = e.target.closest('.publication-title-link');
+      const card = e.target.closest('.publication-card');
+      // Allow action links/buttons inside the card to work normally
+      const actionOrExpand = e.target.closest(
+        '.publication-actions a, .publication-links-badges a, .publication-pdfs a, .publication-links a, .publication-details a, .publication-expanded-content a, .publication-expand-btn'
+      );
+      if (actionOrExpand) return;
+      if (!titleLink && !card) return;
+
+      const key = (titleLink?.dataset.pubKey) || card?.dataset.pubKey;
+      if (!key) return;
+
+      e.preventDefault();
+      // Toggle: if already focused on this card, clear; otherwise focus this card
+      if (manager.filters.pubKey === key) {
+        manager.filters.pubKey = '';
+        const url = new URL(window.location);
+        url.searchParams.delete('pub');
+        window.history.replaceState({}, '', url);
+        manager.applyFilters();
+      } else {
+        manager.filters.pubKey = key;
+        const url = new URL(window.location);
+        url.searchParams.set('pub', key);
+        window.history.replaceState({}, '', url);
+        manager.applyFilters();
+        document.querySelector('.publications-page')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  // Back button
+  document.getElementById('pub-detail-back-btn')?.addEventListener('click', () => {
+    manager.filters.pubKey = '';
+    const url = new URL(window.location);
+    url.searchParams.delete('pub');
+    window.history.replaceState({}, '', url);
+    manager.applyFilters();
+    // Scroll to top of grid
+    document.getElementById('publications-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 });
 </script>
 

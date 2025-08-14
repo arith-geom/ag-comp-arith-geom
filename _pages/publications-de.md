@@ -37,14 +37,7 @@ title: Publications De
               <h4><a href="{{ publication.url }}">{{ publication.title }}</a></h4>
               <div class="publication-authors">{{ publication.authors }}</div>
               <div class="publication-venue">{{ publication.journal }}{% if publication.volume %}, {{ publication.volume }}{% endif %}{% if publication.pages %}, {{ publication.pages }}{% endif %}, {{ publication.year }}</div>
-              <div class="publication-links">
-                {% if publication.doi %}
-                  <a href="https://doi.org/{{ publication.doi }}" target="_blank">DOI</a>
-                {% endif %}
-                {% if publication.url %}
-                  <a href="{{ publication.url }}" target="_blank">View</a>
-                {% endif %}
-              </div>
+              <div class="publication-links"></div>
             </div>
           {% endfor %}
         </div>
@@ -62,9 +55,6 @@ title: Publications De
               <div class="publication-authors">{{ publication.authors }}</div>
               <div class="publication-venue">{{ publication.year }}</div>
               <div class="publication-links">
-                {% if publication.arxiv_id %}
-                  <a href="https://arxiv.org/abs/{{ publication.arxiv_id }}" target="_blank">arXiv</a>
-                {% endif %}
                 {% if publication.url %}
                   <a href="{{ publication.url }}" target="_blank">View</a>
                 {% endif %}

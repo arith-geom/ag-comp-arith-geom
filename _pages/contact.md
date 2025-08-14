@@ -29,7 +29,7 @@ order: 100
           <a href="https://maps.google.com/?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany" 
              target="_blank" 
              rel="noopener" 
-             class="btn btn-primary">
+             class="btn btn-primary map-btn">
             <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="contact.open_in_google_maps">Open in Google Maps</span>
           </a>
         </div>
@@ -331,6 +331,19 @@ order: 100
   box-shadow: var(--shadow-md);
 }
 
+/* Match theme for map button */
+.map-actions .map-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%) !important;
+  color: var(--primary-text) !important;
+  border-color: var(--primary) !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+
+.map-actions .map-btn:hover {
+  background: linear-gradient(135deg, var(--heidelberg-red) 0%, var(--heidelberg-red-darker) 100%) !important;
+  border-color: var(--heidelberg-red-dark) !important;
+}
+
 /* Contact Form Styles */
 .contact-form-section {
   max-width: 1000px;
@@ -452,6 +465,20 @@ body.dark-mode .contact-card:hover {
 body.dark-mode .form-container {
   background: linear-gradient(135deg, #111827 0%, #1f2937 100%) !important;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Ensure the map button keeps strong contrast in dark mode */
+[data-theme="dark"] .map-actions .map-btn,
+body.dark-mode .map-actions .map-btn {
+  background: linear-gradient(135deg, var(--heidelberg-red) 0%, var(--heidelberg-red-darker) 100%) !important;
+  color: var(--primary-text) !important;
+  border-color: var(--heidelberg-red-dark) !important;
+}
+
+[data-theme="dark"] .map-actions .map-btn:hover,
+body.dark-mode .map-actions .map-btn:hover {
+  background: linear-gradient(135deg, var(--heidelberg-red-dark) 0%, var(--heidelberg-red-darkest) 100%) !important;
+  border-color: var(--heidelberg-red-darkest) !important;
 }
 
 [data-theme="dark"] .form-container:hover,
