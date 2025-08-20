@@ -1714,21 +1714,7 @@ body.dark-mode .heidelberg-navbar .search-result-item {
   transform: scale(1.1);
 }
 
-// Language switcher specific styles
-.header-control-btn .flag-icon {
-  width: 1.2rem;
-  height: 1.2rem;
-  margin-right: 0.25rem;
-  position: relative;
-  z-index: 1;
-}
 
-.header-control-btn .language-code {
-  font-size: 0.8rem;
-  font-weight: 600;
-  position: relative;
-  z-index: 1;
-}
 
 // Theme toggle specific styles
 .header-control-btn#theme-toggle {

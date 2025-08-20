@@ -20,56 +20,7 @@ creator:
   github_url: "https://github.com/VictorMerk"
   role: "Website Designer & Developer"
   year: "2024"
-bilingual_cms:
-  enabled: true
-  default_language: en
-  supported_languages:
-    - en
-    - de
-  language_names:
-    en: English
-    de: Deutsch
-  content_structure:
-    - name: pages
-      types:
-        - about
-        - research
-        - publications
-        - teaching
-        - members
-        - contact
-        - links
-      fields:
-        - title
-        - content
-        - description
-        - meta_description
-    - name: members
-      fields:
-        - name
-        - role
-        - bio
-        - research_interests
-        - email
-        - website
-        - github
-        - orcid
-    - name: publications
-      fields:
-        - title
-        - authors
-        - abstract
-        - journal
-        - year
-        # DOI removed
-        - url
-    - name: news
-      fields:
-        - title
-        - content
-        - excerpt
-        - date
-        - author
+# Bilingual support removed - keeping English only
 pagescms:
   enabled: true
   api_url: https://app.pagescms.org
@@ -83,18 +34,10 @@ pagescms:
   auto_sync: false
   auto_fix: false
   cache_duration: 3600
-  bilingual_support: true
+  bilingual_support: false
   repo_url: https://github.com/VictorMerk/ag-comp-arith-geom
   branch: main
   write_generated_config: false
-  language_fields:
-    - title
-    - content
-    - description
-    - bio
-    - abstract
-    - excerpt
-    - research_interests
   performance:
     image_optimization: true
     lazy_loading: true

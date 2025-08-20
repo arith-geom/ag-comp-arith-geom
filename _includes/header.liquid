@@ -21,14 +21,9 @@
         <div class="search-container">
           <div class="search-input-wrapper">
             
-            <input type="text" id="search-input" class="search-input" 
-                   placeholder="Search articles, publications, research..." 
-                   aria-label="Search this site" autocomplete="off" 
-                   data-placeholder-en="Search articles, publications, research..." 
-                   data-placeholder-de="Artikel, Publikationen, Forschung suchen..." 
-                   data-placeholder-fr="Rechercher articles, publications, recherche..." 
-                   data-placeholder-es="Buscar artículos, publicaciones, investigación..." 
-                   data-placeholder-it="Cerca articoli, pubblicazioni, ricerca...">
+            <input type="text" id="search-input" class="search-input"
+                   placeholder="Search articles, publications, research..."
+                   aria-label="Search this site" autocomplete="off">
           </div>
           <div id="search-results" class="search-results-container"></div>
         </div>
@@ -37,32 +32,7 @@
 
       <!-- Right side controls -->
       <div class="d-flex align-items-center gap-2">
-        <!-- Enhanced Language Switcher -->
-        <div class="dropdown">
-          <button class="header-control-btn dropdown-toggle" 
-                  type="button" 
-                  id="language-switcher" 
-                  data-bs-toggle="dropdown" 
-                  aria-expanded="false"
-                  title="Switch Language">
-            <span class="flag-icon flag-icon-us"></span>
-            <span class="language-code">EN</span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="language-switcher">
-            <li>
-              <button class="dropdown-item language-option" data-lang="en" type="button">
-                <span class="flag-icon flag-icon-us me-2"></span>
-                English
-              </button>
-            </li>
-            <li>
-              <button class="dropdown-item language-option" data-lang="de" type="button">
-                <span class="flag-icon flag-icon-de me-2"></span>
-                Deutsch
-              </button>
-            </li>
-          </ul>
-        </div>
+
 
         <!-- Enhanced Theme Switcher -->
         {% if site.enable_theme_switcher %}
@@ -347,77 +317,7 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
 
-/* Language switcher button styling */
-.language-switcher-btn {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  color: var(--white) !important;
-  transition: all var(--transition-base);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 60px;
-  height: 36px;
-  border-radius: var(--radius-lg);
-  padding: 0.5rem 0.75rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
 
-.language-switcher-btn:hover,
-.language-switcher-btn:focus {
-  background: rgba(255, 255, 255, 0.2) !important;
-  border-color: rgba(255, 255, 255, 0.5) !important;
-  color: var(--white) !important;
-  transform: scale(1.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-  outline: none;
-}
-
-.language-switcher-btn:focus {
-  box-shadow: 0 0 0 2px var(--white) !important;
-}
-
-.language-switcher-btn .flag-icon {
-  font-size: 0.9rem;
-  margin-right: 0.25rem;
-}
-
-.language-switcher-btn .language-code {
-  font-weight: 600;
-  font-size: 0.8rem;
-}
-
-/* Language switcher dropdown styling */
-.language-switcher-btn + .dropdown-menu {
-  background: var(--bg-primary) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  min-width: 140px;
-  padding: 0.5rem 0;
-}
-
-.language-switcher-btn + .dropdown-menu .dropdown-item {
-  color: var(--text-primary) !important;
-  padding: 0.5rem 1rem;
-  transition: all var(--transition-fast);
-  display: flex;
-  align-items: center;
-  font-size: 0.9rem;
-}
-
-.language-switcher-btn + .dropdown-menu .dropdown-item:hover,
-.language-switcher-btn + .dropdown-menu .dropdown-item:focus {
-  background: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
-  transform: translateX(2px);
-}
-
-.language-switcher-btn + .dropdown-menu .dropdown-item .flag-icon {
-  font-size: 1rem;
-  margin-right: 0.5rem;
-}
 
 /* Theme toggle button with enhanced styling */
 .theme-toggle-btn {
