@@ -13,43 +13,66 @@
       this.html = document.documentElement;
       this.themeToggle = document.querySelector('#theme-toggle');
       this.darkModeToggle = document.querySelector('#dark-mode-toggle');
-      this.floatingToggle = document.querySelector('#floating-theme-toggle');
-      
+      // Floating toggle removed
+
       // Load saved theme or detect system preference
       this.currentTheme = this.getSavedTheme();
       console.log('Initial theme detected:', this.currentTheme);
-      
+
       this.applyTheme(this.currentTheme);
-      
+
       // Bind events
       this.bindEvents();
-      
+
       console.log('Enhanced High-Contrast Theme Manager initialized with theme:', this.currentTheme);
       console.log('Body classes:', this.body.className);
       console.log('HTML data-theme:', this.html.getAttribute('data-theme'));
     },
 
+        initWithoutTheme() {
+      this.body = document.body;
+      this.html = document.documentElement;
+
+      // Load saved theme but don't apply it (head script already did)
+      this.currentTheme = this.getSavedTheme();
+      console.log('Theme detected (already applied by head script):', this.currentTheme);
+
+      // Don't bind events yet - wait for DOM to be ready
+      console.log('Theme Manager initialized without applying theme');
+    },
+
     getSavedTheme() {
       const saved = localStorage.getItem('theme');
+      console.log('Saved theme in localStorage:', saved);
+
       if (saved && (saved === 'light' || saved === 'dark')) {
+        console.log('Using saved theme:', saved);
         return saved;
       }
-      
+
       // Detect system preference
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        console.log('System prefers dark theme');
         return 'dark';
       }
-      
+
+      console.log('Defaulting to light theme');
       return 'light';
     },
 
     bindEvents() {
+      console.log('Binding events. Theme toggle element found:', !!this.themeToggle);
+
       // Main theme toggle (in navbar)
       if (this.themeToggle) {
+        console.log('Adding click event to theme toggle');
         this.themeToggle.addEventListener('click', (e) => {
+          console.log('Theme toggle clicked!');
           e.preventDefault();
           this.toggleTheme();
         });
+      } else {
+        console.error('Theme toggle element not found!');
       }
       
       // Dark mode toggle (floating)
@@ -82,42 +105,54 @@
     },
 
     toggleTheme() {
+      console.log('=== THEME TOGGLE START ===');
+      console.log('Toggle theme called. Current theme:', this.currentTheme);
+      console.log('localStorage theme before:', localStorage.getItem('theme'));
+
       this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+      console.log('New theme will be:', this.currentTheme);
+
       this.applyTheme(this.currentTheme);
       localStorage.setItem('theme', this.currentTheme);
-      
+      console.log('Theme saved to localStorage:', this.currentTheme);
+      console.log('localStorage theme after:', localStorage.getItem('theme'));
+
       // Dispatch custom event for other components
       document.dispatchEvent(new CustomEvent('themeChanged', {
         detail: { theme: this.currentTheme }
       }));
-      
+
       // Announce theme change for accessibility
       this.announceThemeChange();
+      console.log('=== THEME TOGGLE END ===');
     },
 
     applyTheme(theme) {
-      console.log('Applying theme:', theme);
+      console.log('Applying theme:', theme, '- Current localStorage:', localStorage.getItem('theme'));
       
+      console.log('Removing existing theme classes and attributes');
       // Remove existing theme classes and attributes
       this.body.classList.remove('dark-mode', 'light-mode');
       this.body.removeAttribute('data-theme');
       this.html.removeAttribute('data-theme');
       
       if (theme === 'dark') {
+        console.log('Setting dark mode classes and attributes');
         // Apply dark mode with maximum contrast
         this.body.classList.add('dark-mode');
         this.body.setAttribute('data-theme', 'dark');
         this.html.setAttribute('data-theme', 'dark');
-        
+
         // Force high contrast dark theme styles
         this.applyDarkModeStyles();
         console.log('Dark mode applied');
       } else {
+        console.log('Setting light mode classes and attributes');
         // Apply light mode with maximum contrast
         this.body.classList.add('light-mode');
         this.body.setAttribute('data-theme', 'light');
         this.html.setAttribute('data-theme', 'light');
-        
+
         // Force high contrast light theme styles
         this.applyLightModeStyles();
         console.log('Light mode applied');
@@ -131,63 +166,37 @@
     },
 
     applyDarkModeStyles() {
-      // Set CSS custom properties for maximum dark mode contrast
+      console.log('Applying dark mode CSS variables - matching head script exactly');
+      // Set CSS custom properties - must match head script exactly
       const root = document.documentElement;
-      
-      // High contrast dark mode colors
-      root.style.setProperty('--bg-primary', '#000000');
-      root.style.setProperty('--bg-secondary', '#0A0A0A');
-      root.style.setProperty('--bg-tertiary', '#111827');
-      root.style.setProperty('--bg-muted', '#111827');
-      root.style.setProperty('--bg-accent', '#450A0A');
-      
-      root.style.setProperty('--text-primary', '#FFFFFF');
-      root.style.setProperty('--text-secondary', '#F3F4F6');
-      root.style.setProperty('--text-tertiary', '#E5E7EB');
-      root.style.setProperty('--text-muted', '#9CA3AF');
-      root.style.setProperty('--text-inverse', '#000000');
-      
-      root.style.setProperty('--border-color', '#374151');
-      root.style.setProperty('--border-dark', '#4B5563');
-      root.style.setProperty('--border-light', '#1F2937');
-      
-      root.style.setProperty('--link-color', '#FF6B6B');
-      root.style.setProperty('--link-hover', '#FF5252');
-      
+
+      // Set the same variables that the head script sets
       root.style.setProperty('--primary', '#DC2626');
       root.style.setProperty('--primary-hover', '#B91C1C');
-      // Text that sits on top of "primary" backgrounds (e.g., red badges/buttons)
-      // must remain white in dark mode for contrast.
-      root.style.setProperty('--primary-text', '#FFFFFF');
+      root.style.setProperty('--primary-text', '#000000');
+      root.style.setProperty('--bg-primary', '#000000');
+      root.style.setProperty('--text-primary', '#FFFFFF');
+      root.style.setProperty('--bg-secondary', '#0A0A0A');
+      root.style.setProperty('--text-secondary', '#F3F4F6');
+
+      console.log('Dark mode CSS variables applied - matches head script');
     },
 
     applyLightModeStyles() {
-      // Set CSS custom properties for maximum light mode contrast
+      console.log('Applying light mode CSS variables - matching head script exactly');
+      // Set CSS custom properties - must match head script exactly
       const root = document.documentElement;
-      
-      // High contrast light mode colors
-      root.style.setProperty('--bg-primary', '#FFFFFF');
-      root.style.setProperty('--bg-secondary', '#F9FAFB');
-      root.style.setProperty('--bg-tertiary', '#F3F4F6');
-      root.style.setProperty('--bg-muted', '#F3F4F6');
-      root.style.setProperty('--bg-accent', '#FEF2F2');
-      
-      root.style.setProperty('--text-primary', '#000000');
-      root.style.setProperty('--text-secondary', '#111827');
-      root.style.setProperty('--text-tertiary', '#1F2937');
-      root.style.setProperty('--text-muted', '#4B5563');
-      root.style.setProperty('--text-inverse', '#FFFFFF');
-      
-      root.style.setProperty('--border-color', '#E5E7EB');
-      root.style.setProperty('--border-dark', '#D1D5DB');
-      root.style.setProperty('--border-light', '#F3F4F6');
-      
-      root.style.setProperty('--link-color', '#C22032');
-      root.style.setProperty('--link-hover', '#991B1B');
-      
+
+      // Set the same variables that the head script sets
       root.style.setProperty('--primary', '#C22032');
       root.style.setProperty('--primary-hover', '#991B1B');
       root.style.setProperty('--primary-text', '#FFFFFF');
+      root.style.setProperty('--bg-primary', '#FFFFFF');
+      root.style.setProperty('--text-primary', '#000000');
+      root.style.setProperty('--bg-secondary', '#F9FAFB');
+      root.style.setProperty('--text-secondary', '#111827');
+
+      console.log('Light mode CSS variables applied - matches head script');
     },
 
     updateAllToggleElements(theme) {
@@ -421,24 +430,45 @@
     }
   };
 
-  // Initialize all managers when DOM is ready
+  // Initialize immediately to prevent flash
   function initializeApp() {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initializeApp);
-      return;
-    }
+    // Don't apply theme immediately - let the head script handle that
+    ThemeManager.initWithoutTheme();
 
-    // Initialize all components
-    ThemeManager.init();
-    MobileMenuManager.init();
-    AccessibilityManager.init();
-    PerformanceManager.init();
-    
-    console.log('Theme Switcher: All components initialized successfully');
+    // Initialize all components and bind events when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        // Find and bind theme toggle elements
+        ThemeManager.themeToggle = document.querySelector('#theme-toggle');
+        ThemeManager.darkModeToggle = document.querySelector('#dark-mode-toggle');
+        ThemeManager.floatingToggle = document.querySelector('#floating-theme-toggle');
+
+        // Now bind events
+        ThemeManager.bindEvents();
+
+        MobileMenuManager.init();
+        AccessibilityManager.init();
+        PerformanceManager.init();
+        console.log('Theme Switcher: All components initialized successfully');
+      });
+    } else {
+      // Find and bind theme toggle elements
+      ThemeManager.themeToggle = document.querySelector('#theme-toggle');
+      ThemeManager.darkModeToggle = document.querySelector('#dark-mode-toggle');
+      ThemeManager.floatingToggle = document.querySelector('#floating-theme-toggle');
+
+      // Now bind events
+      ThemeManager.bindEvents();
+
+      MobileMenuManager.init();
+      AccessibilityManager.init();
+      PerformanceManager.init();
+      console.log('Theme Switcher: All components initialized successfully');
+    }
   }
 
-  // Start initialization
-    initializeApp();
+  // Start initialization immediately
+  initializeApp();
 
   // Expose ThemeManager globally for external access
   window.ThemeManager = ThemeManager;

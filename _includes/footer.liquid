@@ -39,68 +39,10 @@
   </div>
 </footer>
 
-<!-- Floating Dark Mode Toggle -->
-<button id="dark-mode-toggle" class="floating-theme-toggle" 
-        title="Switch Theme" aria-label="Toggle dark and light mode">
-  <span class="dark-mode-icon-light" id="dark-mode-icon-light" aria-hidden="true">☀️</span>
-  <span class="dark-mode-icon-dark" id="dark-mode-icon-dark" aria-hidden="true">🌙</span>
-</button>
+<!-- Floating theme toggle removed -->
 
 <style>
-.floating-theme-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--primary, #C22032);
-  color: white;
-  border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-}
-
-.floating-theme-toggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  background: var(--primary-hover, #991B1B);
-}
-
-.floating-theme-toggle:focus {
-  outline: 2px solid var(--link-color, #C22032);
-  outline-offset: 2px;
-}
-
-/* Dark mode adjustments for floating toggle */
-[data-theme="dark"] .floating-theme-toggle,
-body.dark-mode .floating-theme-toggle {
-  background: var(--primary, #DC2626);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .floating-theme-toggle:hover,
-body.dark-mode .floating-theme-toggle:hover {
-  background: var(--primary-hover, #B91C1C);
-  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .floating-theme-toggle {
-    bottom: 15px;
-    right: 15px;
-    width: 45px;
-    height: 45px;
-    font-size: 1.1rem;
-  }
-}
+/* Floating theme toggle styles removed */
 
 /* Footer Dark Mode Styles */
 .footer {

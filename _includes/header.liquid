@@ -1,4 +1,4 @@
-<header style="background: #C22032 !important;">
+<header>
   <!-- Skip navigation link for accessibility -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -165,8 +165,8 @@
 }
 
 .heidelberg-navbar {
-  background-color: var(--heidelberg-red) !important;
-  border-bottom: 2px solid var(--heidelberg-red-dark) !important;
+  background-color: var(--primary) !important;
+  border-bottom: 2px solid var(--primary-hover) !important;
   box-shadow: var(--shadow-lg) !important;
   padding: 0.5rem 0 !important;
   transition: all var(--transition-base);
@@ -177,8 +177,8 @@
 /* Dark mode navbar - different shade for visibility */
 [data-theme="dark"] .heidelberg-navbar,
 body.dark-mode .heidelberg-navbar {
-  background-color: var(--heidelberg-red-darker) !important;
-  border-bottom: 2px solid var(--heidelberg-red-darkest) !important;
+  background-color: var(--primary) !important;
+  border-bottom: 2px solid var(--primary-hover) !important;
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -278,14 +278,14 @@ body.dark-mode .heidelberg-navbar {
 
 .heidelberg-navbar .nav-item.active .nav-link {
   color: var(--white) !important;
-  background-color: var(--heidelberg-red-dark) !important;
+  background-color: var(--primary-hover) !important;
   font-weight: 600 !important;
 }
 
 /* Dark mode active link adjustment */
 [data-theme="dark"] .heidelberg-navbar .nav-item.active .nav-link,
 body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
-  background-color: var(--heidelberg-red-darkest) !important;
+  background-color: var(--primary-hover) !important;
 }
 
 /* Mobile navbar toggle */
@@ -471,17 +471,17 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 
 @media (max-width: 991.98px) {
   .navbar-collapse {
-    background: var(--heidelberg-red) !important;
+    background: var(--primary) !important;
     border-radius: var(--radius-lg);
     margin-top: 0.5rem;
     padding: 1rem;
     box-shadow: var(--shadow-md);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   [data-theme="dark"] .navbar-collapse,
   body.dark-mode .navbar-collapse {
-    background: var(--heidelberg-red-darker) !important;
+    background: var(--primary) !important;
   }
   
   .navbar-nav {

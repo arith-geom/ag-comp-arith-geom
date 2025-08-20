@@ -282,17 +282,36 @@ let initTheme = () => {
 
   setThemeSetting(themeSetting);
 
-  // Add event listener to the theme toggle button.
-  document.addEventListener("DOMContentLoaded", function () {
-    const mode_toggle = document.getElementById("light-toggle");
-
-    mode_toggle.addEventListener("click", function () {
-      toggleThemeSetting();
-    });
-  });
-
   // Add event listener to the system theme preference change.
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
     applyTheme();
   });
 };
+
+// Initialize theme immediately when script loads
+initTheme();
+
+// Apply theme immediately to prevent flash
+if (document.documentElement) {
+  const currentTheme = determineComputedTheme();
+  document.documentElement.setAttribute("data-theme", currentTheme);
+}
+
+// Add event listener to the theme toggle button when DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
+  const mode_toggle = document.getElementById("light-toggle");
+  if (mode_toggle) {
+    mode_toggle.addEventListener("click", function () {
+      toggleThemeSetting();
+    });
+  }
+
+  // Also check for theme-toggle button
+  const theme_toggle = document.getElementById("theme-toggle");
+  if (theme_toggle) {
+    theme_toggle.addEventListener("click", function () {
+      toggleThemeSetting();
+    });
+  }
+});
+

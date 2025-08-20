@@ -58,7 +58,6 @@ order: 100
       <h3 class="translatable-content" data-translation-key="contact.phone">Phone</h3>
       <div class="contact-detail">
         <p><strong>+49-6221-54-14734</strong></p>
-        <small class="text-muted translatable-content" data-translation-key="contact.phone_hours">Monday - Friday, 9:00 AM - 5:00 PM (CET)</small>
       </div>
     </div>
   </div>
@@ -71,7 +70,6 @@ order: 100
       <h3 class="translatable-content" data-translation-key="contact.fax">Fax</h3>
       <div class="contact-detail">
         <p><strong>+49-6221-54-14737</strong></p>
-        <small class="text-muted translatable-content" data-translation-key="contact.fax_note">Available 24/7</small>
       </div>
     </div>
   </div>
@@ -87,17 +85,14 @@ order: 100
     </div>
     <div class="form-content">
       <div class="email-info">
-        <h4 class="translatable-content" data-translation-key="common.email">Direct Email</h4>
-        <div class="contact-detail">
-          <p><a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="email-link"><strong>sekretariat.boeckle@iwr.uni-heidelberg.de</strong></a></p>
-          <small class="text-muted translatable-content" data-translation-key="contact.email_note">Click the email address to open your email client</small>
-        </div>
-        <div class="contact-options mt-3">
-          <p class="text-muted mb-2"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>Contact us directly via email:</p>
-          <div class="contact-buttons">
+        <div class="contact-options">
+          <div class="contact-buttons" style="display: inline-block; margin-right: 1rem; vertical-align: middle;">
             <a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="btn btn-outline-primary">
               <i class="fas fa-envelope me-2" aria-hidden="true"></i>Send Email
             </a>
+          </div>
+          <div class="contact-detail" style="display: inline-block; vertical-align: middle;">
+            <p><a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="email-link"><strong>sekretariat.boeckle@iwr.uni-heidelberg.de</strong></a></p>
           </div>
         </div>
       </div>

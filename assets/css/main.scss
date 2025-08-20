@@ -1192,16 +1192,16 @@ tbody td {
 // Enhanced navbar mobile responsiveness
 @media (max-width: 991.98px) {
   .navbar-collapse {
-    background: var(--heidelberg-red) !important;
+    background: var(--primary) !important;
     border-radius: var(--radius-lg);
     margin-top: 0.5rem;
     padding: 1rem;
     box-shadow: var(--shadow-md);
   }
-  
+
   [data-theme="dark"] .navbar-collapse,
   body.dark-mode .navbar-collapse {
-    background: var(--heidelberg-red-darker) !important;
+    background: var(--primary) !important;
   }
   
   .navbar-nav {
@@ -2299,10 +2299,7 @@ body.dark-mode .modal {
   z-index: 50 !important;
 }
 
-[data-theme="dark"] .floating-theme-toggle,
-body.dark-mode .floating-theme-toggle {
-  z-index: 100 !important;
-}
+/* Floating theme toggle styles removed */
 
 // Animations
 @keyframes searchResultSlideIn {

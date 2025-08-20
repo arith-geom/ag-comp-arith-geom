@@ -125,8 +125,115 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="{{ '/assets/js/mathjax-setup.js' | relative_url | bust_file_cache }}"></script>
 
-<!-- Dark Mode -->
-<script src="{{ '/assets/js/theme.js' | relative_url | bust_file_cache }}"></script>
+<!-- Simple, direct theme management -->
+<script>
+(function() {
+  'use strict';
+
+  // Get saved theme or detect system preference
+  function getInitialTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') {
+      return saved;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  // Apply theme immediately
+  function applyTheme(theme) {
+    const root = document.documentElement;
+
+    // Remove existing theme classes
+    root.classList.remove('light-mode', 'dark-mode');
+    root.removeAttribute('data-theme');
+
+    // Apply new theme
+    if (theme === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+      root.classList.add('dark-mode');
+
+      // Set all necessary CSS variables for dark mode
+      root.style.setProperty('--primary', '#DC2626');
+      root.style.setProperty('--primary-hover', '#B91C1C');
+      root.style.setProperty('--primary-text', '#000000');
+      root.style.setProperty('--bg-primary', '#000000');
+      root.style.setProperty('--text-primary', '#FFFFFF');
+      root.style.setProperty('--bg-secondary', '#0A0A0A');
+      root.style.setProperty('--text-secondary', '#F3F4F6');
+    } else {
+      root.setAttribute('data-theme', 'light');
+      root.classList.add('light-mode');
+
+      // Set all necessary CSS variables for light mode
+      root.style.setProperty('--primary', '#C22032');
+      root.style.setProperty('--primary-hover', '#991B1B');
+      root.style.setProperty('--primary-text', '#FFFFFF');
+      root.style.setProperty('--bg-primary', '#FFFFFF');
+      root.style.setProperty('--text-primary', '#000000');
+      root.style.setProperty('--bg-secondary', '#F9FAFB');
+      root.style.setProperty('--text-secondary', '#111827');
+    }
+
+    // Update theme toggle icons
+    updateThemeIcons(theme);
+  }
+
+  // Update theme toggle icons
+  function updateThemeIcons(theme) {
+    const lightIcon = document.getElementById('theme-icon-light');
+    const darkIcon = document.getElementById('theme-icon-dark');
+
+    if (lightIcon && darkIcon) {
+      if (theme === 'dark') {
+        lightIcon.style.display = 'inline-block';
+        darkIcon.style.display = 'none';
+      } else {
+        lightIcon.style.display = 'none';
+        darkIcon.style.display = 'inline-block';
+      }
+    }
+  }
+
+  // Initialize theme immediately
+  const initialTheme = getInitialTheme();
+  applyTheme(initialTheme);
+
+  // Simple theme toggle function
+  window.toggleTheme = function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+    // Apply the theme
+    applyTheme(newTheme);
+
+    // Save to localStorage
+    localStorage.setItem('theme', newTheme);
+
+    console.log('Theme switched to:', newTheme);
+  };
+
+  // Also update icons on DOMContentLoaded for initial state
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentTheme = getInitialTheme();
+    updateThemeIcons(currentTheme);
+  });
+
+  // Bind toggle when DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.toggleTheme();
+      });
+      console.log('Theme toggle bound successfully');
+    } else {
+      console.error('Theme toggle button not found');
+    }
+  });
+
+})();
+</script>
 {% if site.enable_darkmode %}
   <link
     defer
@@ -135,9 +242,7 @@
     media="none"
     id="highlight_theme_dark"
   >
-  <script>
-    initTheme();
-  </script>
+
 {% endif %}
 
 {% if page.map %}
