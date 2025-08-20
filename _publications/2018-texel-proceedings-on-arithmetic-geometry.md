@@ -17,7 +17,7 @@ Proceedings from a conference on arithmetic geometry held in Texel.
 ## Publication Details
 
 - **Journal:** Conference Proceedings
-- **PDF:** [Download PDF]({{ \'/assets/uploads/TexelProcRev.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/TexelProcRev.pdf' | relative_url }})
 
 ## Keywords
 

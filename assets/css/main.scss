@@ -1,6 +1,10 @@
 ---
 ---
-@import "forward";
+// Use modern @use syntax instead of deprecated @import
+@use "forward";
+
+// Import variables directly for backward compatibility
+@use "variables";
 
 // Enhanced High-Contrast Academic Theme
 // Optimized for performance and accessibility
@@ -120,7 +124,7 @@ html.dark-mode a:focus {
 body.dark-mode,
 html.dark-mode {
   // Force dark backgrounds
-  background-color: $black-color !important;
+  background-color: #000000 !important;
   
   // Enhanced dark mode for all containers
   .container,
@@ -132,8 +136,8 @@ html.dark-mode {
   article,
   .content,
   .page-content {
-    background-color: $black-color !important;
-    color: $white-color !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
   }
   
   // Additional dark mode fixes for specific pages
@@ -141,43 +145,43 @@ html.dark-mode {
   .publications-page,
   .links-list,
   .contact-form-section {
-    background-color: $black-color !important;
-    color: $white-color !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
   }
   
   // Fix for list group items in links page
   .list-group-item {
-    background-color: $gray-900 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
     transition: all 0.3s ease !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
   }
   
   .list-group-item:hover {
-    background-color: $gray-800 !important;
-    border-color: $red-400 !important;
+    background-color: #1f2937 !important;
+    border-color: #f87171 !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 4px 12px rgba(248, 113, 113, 0.2) !important;
   }
   
   .list-group-item h5 {
-    color: $white-color !important;
+    color: #ffffff !important;
   }
   
   .list-group-item small,
   .list-group-item p {
-    color: $gray-300 !important;
+    color: #d1d5db !important;
   }
   
   // Teaching page specific fixes
   .teaching-page {
-    background-color: $black-color !important;
+    background-color: #000000 !important;
   }
   
   .teaching-header {
-    background: linear-gradient(135deg, $gray-800 0%, $gray-900 100%) !important;
-    border-bottom: 3px solid $red-400 !important;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
+    border-bottom: 3px solid #f87171 !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
   }
   
@@ -194,122 +198,122 @@ html.dark-mode {
   
   .filter-select,
   .filter-input {
-    background: linear-gradient(135deg, $gray-800 0%, $gray-700 100%) !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%) !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
     transition: all 0.3s ease !important;
   }
   
   .filter-select:focus,
   .filter-input:focus {
-    border-color: $red-400 !important;
+    border-color: #f87171 !important;
     box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2), 0 4px 12px rgba(0, 0, 0, 0.2) !important;
     transform: translateY(-1px) !important;
   }
   
   .semester-group {
-    background-color: $gray-900 !important;
-    border-color: $gray-700 !important;
+    background-color: #111827 !important;
+    border-color: #374151 !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
   }
   
   .semester-group:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
-    border-color: $red-400 !important;
+    border-color: #f87171 !important;
   }
   
   .course-item {
-    background-color: $gray-800 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
     transition: all 0.3s ease !important;
   }
   
   .course-item:hover {
-    background-color: $gray-700 !important;
-    border-color: $red-400 !important;
+    background-color: #374151 !important;
+    border-color: #f87171 !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 4px 12px rgba(248, 113, 113, 0.2) !important;
   }
   
   .course-badge {
-    background: linear-gradient(135deg, $red-400 0%, $red-500 100%) !important;
-    color: $black-color !important;
+    background: linear-gradient(135deg, #f87171 0%, #ef4444 100%) !important;
+    color: #000000 !important;
     box-shadow: 0 2px 8px rgba(248, 113, 113, 0.3) !important;
     border-radius: 20px !important;
     padding: 0.25rem 0.75rem !important;
   }
   
   .course-link {
-    color: $red-400 !important;
+    color: #f87171 !important;
   }
   
   .course-link:hover {
-    color: $red-300 !important;
+    color: #fca5a5 !important;
   }
   
   .instructors {
-    color: $gray-400 !important;
+    color: #9ca3af !important;
   }
   
   // Research page specific fixes
   .research-areas {
-    background-color: $black-color !important;
+    background-color: #000000 !important;
   }
   
   .research-area-card {
-    background-color: $gray-900 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
   }
   
   .research-area-card:hover {
-    background-color: $gray-800 !important;
-    border-color: $red-400 !important;
+    background-color: #1f2937 !important;
+    border-color: #f87171 !important;
   }
   
   .research-content h3 {
-    color: $white-color !important;
-    border-bottom-color: $red-400 !important;
+    color: #ffffff !important;
+    border-bottom-color: #f87171 !important;
   }
   
   .research-text p {
-    color: $gray-300 !important;
+    color: #d1d5db !important;
   }
   
   .highlight-box {
-    background: linear-gradient(135deg, $gray-800 0%, $gray-700 100%) !important;
-    border-left-color: $red-400 !important;
-    color: $white-color !important;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%) !important;
+    border-left-color: #f87171 !important;
+    color: #ffffff !important;
   }
   
   .highlight-box p {
-    color: $white-color !important;
+    color: #ffffff !important;
   }
   
   // Enhanced dark mode for cards
   .card {
-    background-color: $gray-900 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
   }
   
   .card-header {
-    background-color: $gray-800 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
   }
   
   .card-body {
-    background-color: $gray-900 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    color: #ffffff !important;
   }
   
   .card-footer {
-    background-color: $gray-800 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
   }
   
   // Enhanced dark mode for forms
@@ -318,9 +322,9 @@ html.dark-mode {
   input,
   textarea,
   select {
-    background-color: $gray-900 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
   }
   
   .form-control:focus,
@@ -328,94 +332,94 @@ html.dark-mode {
   input:focus,
   textarea:focus,
   select:focus {
-    background-color: $gray-900 !important;
-    border-color: $red-400 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
     box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2) !important;
   }
   
   // Enhanced dark mode for tables
   table {
-    background-color: $gray-900 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    color: #ffffff !important;
   }
   
   thead th {
-    background-color: $gray-800 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
   }
   
   tbody tr {
-    border-color: $gray-700 !important;
+    border-color: #374151 !important;
   }
   
   tbody tr:hover {
-    background-color: $gray-800 !important;
+    background-color: #1f2937 !important;
   }
   
   tbody tr:nth-child(even) {
-    background-color: $gray-800 !important;
+    background-color: #1f2937 !important;
   }
   
   tbody tr:nth-child(even):hover {
-    background-color: $gray-700 !important;
+    background-color: #374151 !important;
   }
   
   tbody td {
-    color: $white-color !important;
+    color: #ffffff !important;
   }
   
   // Enhanced dark mode for buttons
   .btn-secondary {
-    background-color: $gray-700 !important;
-    border-color: $gray-600 !important;
-    color: $white-color !important;
+    background-color: #374151 !important;
+    border-color: #4b5563 !important;
+    color: #ffffff !important;
   }
   
   .btn-secondary:hover,
   .btn-secondary:focus {
-    background-color: $gray-600 !important;
-    border-color: $gray-500 !important;
-    color: $white-color !important;
+    background-color: #4b5563 !important;
+    border-color: #6b7280 !important;
+    color: #ffffff !important;
   }
   
   // Enhanced dark mode for dropdowns
   .dropdown-menu {
-    background-color: $gray-900 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
   }
   
   .dropdown-item {
-    color: $white-color !important;
+    color: #ffffff !important;
   }
   
   .dropdown-item:hover,
   .dropdown-item:focus {
-    background-color: $gray-800 !important;
-    color: $white-color !important;
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
   }
   
   // Enhanced dark mode for search
   .search-input {
-    background-color: $gray-900 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
   }
   
   .search-input:focus {
-    background-color: $gray-900 !important;
-    border-color: $red-400 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
     box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.15), 0 8px 25px rgba(0, 0, 0, 0.3) !important;
     transform: translateY(-2px) !important;
   }
   
   // Publications page specific fixes
   .publications-page {
-    background-color: $black-color !important;
+    background-color: #000000 !important;
   }
   
   .filter-section {
@@ -426,14 +430,14 @@ html.dark-mode {
   
   // Fix for publication cards to ensure proper dark backgrounds
   .publication-card {
-    background-color: $gray-900 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
   }
   
   .publication-card:hover {
-    background-color: $gray-800 !important;
-    border-color: $red-400 !important;
+    background-color: #1f2937 !important;
+    border-color: #f87171 !important;
   }
   
   // Fix for publication card elements
@@ -441,45 +445,45 @@ html.dark-mode {
   .publication-body,
   .publication-footer {
     background-color: transparent !important;
-    color: $white-color !important;
+    color: #ffffff !important;
   }
   
   .publication-title a {
-    color: $red-400 !important;
+    color: #f87171 !important;
   }
   
   .publication-title a:hover {
-    color: $red-300 !important;
+    color: #fca5a5 !important;
   }
   
   .publication-authors {
-    color: $gray-300 !important;
+    color: #d1d5db !important;
   }
   
   .publication-venue {
-    color: $gray-400 !important;
+    color: #9ca3af !important;
   }
   
   .publication-abstract {
-    color: $gray-300 !important;
+    color: #d1d5db !important;
   }
   
   .publication-keywords {
-    color: $gray-400 !important;
+    color: #9ca3af !important;
   }
   
   .search-results-info {
-    background: linear-gradient(135deg, $gray-800 0%, $gray-700 100%) !important;
-    color: $gray-300 !important;
-    border-color: $gray-700 !important;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%) !important;
+    color: #d1d5db !important;
+    border-color: #374151 !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
     border-radius: 20px !important;
   }
   
   .quick-filter-btn {
-    background: linear-gradient(135deg, $red-400 0%, $red-500 100%) !important;
-    border-color: $red-400 !important;
-    color: $black-color !important;
+    background: linear-gradient(135deg, #f87171 0%, #ef4444 100%) !important;
+    border-color: #f87171 !important;
+    color: #000000 !important;
     box-shadow: 0 2px 8px rgba(248, 113, 113, 0.3) !important;
     transition: all 0.3s ease !important;
   }
@@ -490,52 +494,52 @@ html.dark-mode {
   }
   
   .quick-filter-btn:not(.active) {
-    background: linear-gradient(135deg, $gray-800 0%, $gray-700 100%) !important;
-    color: $red-400 !important;
-    border-color: $red-400 !important;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%) !important;
+    color: #f87171 !important;
+    border-color: #f87171 !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
   }
   
   .quick-filter-btn:not(.active):hover {
-    background: linear-gradient(135deg, $gray-700 0%, $gray-600 100%) !important;
-    color: $red-300 !important;
-    border-color: $red-300 !important;
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%) !important;
+    color: #fca5a5 !important;
+    border-color: #fca5a5 !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 4px 12px rgba(248, 113, 113, 0.3) !important;
   }
   
   .search-results-container {
-    background-color: $gray-900 !important;
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
   }
   
   .search-result-item {
-    border-color: $gray-700 !important;
-    color: $white-color !important;
+    border-color: #374151 !important;
+    color: #ffffff !important;
   }
   
   .search-result-item:hover,
   .search-result-item.active {
-    background-color: $gray-800 !important;
-    color: $white-color !important;
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
   }
   
   .search-result-title {
-    color: $white-color !important;
+    color: #ffffff !important;
   }
   
   .search-result-content {
-    color: $gray-300 !important;
+    color: #d1d5db !important;
   }
   
   .search-result-url {
-    color: $gray-400 !important;
+    color: #9ca3af !important;
   }
   
   .search-result-category {
-    background-color: $gray-700 !important;
-    color: $gray-400 !important;
+    background-color: #374151 !important;
+    color: #9ca3af !important;
   }
 }
 

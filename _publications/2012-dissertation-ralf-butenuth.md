@@ -17,7 +17,7 @@ PhD dissertation by Ralf Butenuth on computational arithmetic geometry.
 ## Publication Details
 
 - **Journal:** Ph.D. Thesis
-- **PDF:** [Download PDF]({{ \'/assets/uploads/Dissertation_Ralf-Butenuth.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/Dissertation_Ralf-Butenuth.pdf' | relative_url }})
 
 ## Keywords
 

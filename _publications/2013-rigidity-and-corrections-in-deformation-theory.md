@@ -17,7 +17,7 @@ This work addresses rigidity issues and corrections in deformation theory.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF]({{ \'/assets/uploads/Rigidity-CorrectionsThm8.9.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/Rigidity-CorrectionsThm8.9.pdf' | relative_url }})
 
 ## Keywords
 

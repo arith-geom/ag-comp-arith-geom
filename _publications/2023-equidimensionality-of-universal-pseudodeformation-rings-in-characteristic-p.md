@@ -20,7 +20,7 @@ This preprint establishes equidimensionality results for universal pseudodeforma
 
 - **Journal:** Preprint
 - **URL:** [View Publication](https://arxiv.org/abs/2301.00000)
-- **PDF:** [Download PDF]({{ \'/assets/uploads/Boeckle-Juschka-Pseudo-20230701.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/Boeckle-Juschka-Pseudo-20230701.pdf' | relative_url }})
 
 ## Keywords
 

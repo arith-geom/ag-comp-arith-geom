@@ -17,7 +17,7 @@ Master's thesis by Ralf Butenuth on arithmetic geometry.
 ## Publication Details
 
 - **Journal:** Master's Thesis
-- **PDF:** [Download PDF]({{ \'/assets/uploads/Diplomarbeit_Ralf-Butenuth.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/Diplomarbeit_Ralf-Butenuth.pdf' | relative_url }})
 
 ## Keywords
 

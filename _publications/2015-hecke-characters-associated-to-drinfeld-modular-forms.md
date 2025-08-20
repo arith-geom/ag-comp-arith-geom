@@ -25,7 +25,7 @@ This paper explores the relationship between Hecke characters and Drinfeld modul
 - **Year:** 2015
 - **Pages:** 53 pages
 - **DOI:** [10.1112/S0010437X15007290](http://dx.doi.org/10.1112/S0010437X15007290)
-- **PDF:** [Download PDF]({{ \'/assets/uploads/Boeckle-Centeleghe-HeckeCharactersAssociatedToDrinfeldModularForms.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/Boeckle-Centeleghe-HeckeCharactersAssociatedToDrinfeldModularForms.pdf' | relative_url }})
 
 ## Keywords
 

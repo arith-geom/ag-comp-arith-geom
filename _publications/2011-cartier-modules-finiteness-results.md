@@ -24,7 +24,7 @@ This paper establishes finiteness results for Cartier modules.
 - **Volume:** 661
 - **Pages:** 85-123
 - **URL:** [View Publication](https://mathscinet.ams.org/mathscinet-getitem?mr=2863904)
-- **PDF:** [Download PDF]({{ \'/assets/uploads/BlickleBoeckle-CartierModulesFinitenessResults.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/BlickleBoeckle-CartierModulesFinitenessResults.pdf' | relative_url }})
 
 ## Keywords
 

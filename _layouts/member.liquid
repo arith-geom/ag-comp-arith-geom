@@ -2,7 +2,11 @@
 layout: page
 ---
 {% assign page_title = page.name %}
-<div class="member-profile">
+<script>
+// Redirect to main members page with member parameter
+window.location.href = '/members/?member={{ page.name | slugify | append: '-' | append: page.role | slugify }}';
+</script>
+<div class="member-profile" style="display: none;">
   <div class="member-header" style="background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%); border-radius: 0.75rem; border: 1px solid var(--border-color); color: var(--primary-text);">
     <div class="member-photo-container">
       {% if page.photo %}

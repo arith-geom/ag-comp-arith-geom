@@ -1,0 +1,11 @@
+// Forward file for SCSS modules
+// This file forwards variables and styles to be used by other files
+
+// Forward theme variables and mixins
+@forward "variables";
+
+// Forward theme styles
+@forward "themes";
+
+// Forward teaching page styles
+@forward "_teaching-page";

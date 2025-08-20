@@ -17,7 +17,7 @@ Results on density in arithmetic geometry and modular forms.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF]({{ \'/assets/uploads/DensityAJMCorr.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/DensityAJMCorr.pdf' | relative_url }})
 
 ## Keywords
 

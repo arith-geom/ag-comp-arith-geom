@@ -18,7 +18,7 @@ Slides from Peter Gräf's presentation at the American Mathematical Society meet
 ## Publication Details
 
 - **Journal:** Conference Presentation
-- **PDF:** [Download PDF]({{ \'/assets/uploads/Slides_AMS.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/Slides_AMS.pdf' | relative_url }})
 
 ## Keywords
 

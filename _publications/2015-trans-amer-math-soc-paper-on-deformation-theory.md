@@ -19,7 +19,7 @@ A paper on deformation theory published in Transactions of the American Mathemat
 ## Publication Details
 
 - **Journal:** Trans. Amer. Math. Soc.
-- **PDF:** [Download PDF]({{ \'/assets/uploads/TAMS_4136_Bockle_Hartl.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/TAMS_4136_Bockle_Hartl.pdf' | relative_url }})
 
 ## Keywords
 

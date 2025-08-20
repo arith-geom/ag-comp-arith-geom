@@ -17,7 +17,7 @@ Slides from Peter Gräf's presentation in Rennes.
 ## Publication Details
 
 - **Journal:** Conference Presentation
-- **PDF:** [Download PDF]({{ \'/assets/uploads/slides_rennes.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/slides_rennes.pdf' | relative_url }})
 
 ## Keywords
 

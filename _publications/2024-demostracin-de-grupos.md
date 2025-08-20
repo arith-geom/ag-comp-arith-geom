@@ -17,7 +17,7 @@ A demonstration related to group theory and Galois representations.
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF]({{ \'/assets/uploads/DemGps.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/DemGps.pdf' | relative_url }})
 
 ## Keywords
 

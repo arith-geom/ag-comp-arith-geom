@@ -20,7 +20,7 @@ This work establishes an Eichler-Shimura isomorphism over function fields.
 
 - **Journal:** Preprint
 - **URL:** [View Publication](https://arxiv.org/abs/2301.00001)
-- **PDF:** [Download PDF]({{ \'/assets/uploads/EiShNew.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/EiShNew.pdf' | relative_url }})
 
 ## Keywords
 

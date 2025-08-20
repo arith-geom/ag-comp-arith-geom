@@ -27,7 +27,7 @@ This work advances computational methods for computing L-invariants via the Gree
 - **Pages:** 727–746
 - **DOI:** [10.5802/jtnb.789](10.5802/jtnb.789)
 - **URL:** [View Publication](https://jtnb.centre-mersenne.org/article/JTNB_2019__31_3_727_0.pdf)
-- **PDF:** [Download PDF]({{ \'/assets/uploads/JTNB_2019__31_3_727_0.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/JTNB_2019__31_3_727_0.pdf' | relative_url }})
 
 ## Keywords
 

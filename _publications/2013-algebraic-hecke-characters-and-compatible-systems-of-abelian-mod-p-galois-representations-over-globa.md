@@ -26,7 +26,7 @@ This paper establishes connections between algebraic Hecke characters and compat
 - **Volume:** 140
 - **Pages:** 303-331
 - **URL:** [View Publication](https://link.springer.com/article/10.1007/s00229-013-0598-x)
-- **PDF:** [Download PDF]({{ \'/assets/uploads/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf' | relative_url }})
 
 ## Keywords
 

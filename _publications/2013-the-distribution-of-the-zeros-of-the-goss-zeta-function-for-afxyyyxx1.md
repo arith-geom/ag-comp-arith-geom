@@ -26,7 +26,7 @@ This work studies the distribution of zeros of the Goss zeta-function for a spec
 - **Volume:** 275
 - **Pages:** 835–861
 - **URL:** [View Publication](http://dx.doi.org/10.1007/s00209-013-1162-9)
-- **PDF:** [Download PDF]({{ \'/assets/uploads/ZeroDistribForOneA.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/ZeroDistribForOneA.pdf' | relative_url }})
 
 ## Keywords
 

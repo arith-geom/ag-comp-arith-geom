@@ -25,7 +25,7 @@ This work presents computational methods for computing quaternion quotient graph
 - **Volume:** 24
 - **Pages:** 73-99
 - **URL:** [View Publication](http://jtnb.cedram.org/jtnb-bin/item?id=JTNB_2012__24_1_73_0)
-- **PDF:** [Download PDF]({{ \'/assets/uploads/Proofs-Boeckle-Butenuth.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/Proofs-Boeckle-Butenuth.pdf' | relative_url }})
 
 ## Keywords
 

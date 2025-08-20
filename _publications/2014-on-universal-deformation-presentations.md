@@ -18,7 +18,7 @@ This work studies universal deformation presentations in Galois representation t
 ## Publication Details
 
 - **Journal:** Preprint
-- **PDF:** [Download PDF]({{ \'/assets/uploads/OnUDefPres9.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/OnUDefPres9.pdf' | relative_url }})
 
 ## Keywords
 

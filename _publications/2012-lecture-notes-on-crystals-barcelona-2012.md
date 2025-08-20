@@ -17,7 +17,7 @@ Lecture notes on crystals presented in Barcelona in 2012.
 ## Publication Details
 
 - **Journal:** Lecture Notes
-- **PDF:** [Download PDF]({{ \'/assets/uploads/LectureNotesOnCrystals-Barcelona2012-01-24.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/LectureNotesOnCrystals-Barcelona2012-01-24.pdf' | relative_url }})
 
 ## Keywords
 

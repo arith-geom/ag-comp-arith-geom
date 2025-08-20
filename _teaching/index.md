@@ -84,8 +84,8 @@ description: Teaching overview with filters and recent courses
                   {% if course.content %}
                   <div class="course-full-content">{{ course.content }}</div>
                   {% endif %}
-                  {% assign has_links = course.links and course.links.size > 0 %}
-                  {% assign has_pdfs  = course.pdfs and course.pdfs.size > 0 %}
+                  {% assign has_links = course.links.size %}
+                  {% assign has_pdfs  = course.pdfs.size %}
                   {% if has_links or has_pdfs %}
                   <div class="course-links">
                     <div class="links-title"><i class="fas fa-paperclip"></i> Resources</div>

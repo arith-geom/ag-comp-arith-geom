@@ -17,7 +17,7 @@ A paper on arithmetic and geometry published in the Journal of Number Theory.
 ## Publication Details
 
 - **Journal:** Journal of Number Theory
-- **PDF:** [Download PDF]({{ \'/assets/uploads/AriGebJNTRev2.pdf\' | relative_url }})
+- **PDF:** [Download PDF]({{ '/assets/uploads/AriGebJNTRev2.pdf' | relative_url }})
 
 ## Keywords
 
