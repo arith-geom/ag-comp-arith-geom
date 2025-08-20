@@ -1739,25 +1739,7 @@ body.dark-mode .heidelberg-navbar .search-result-item {
   color: var(--primary-text) !important;
 }
 
-// Pages CMS Admin button specific styles
-.header-control-btn#pagescms-admin-toggle {
-  .fa-cog {
-    transition: transform 0.3s ease;
-  }
-  
-  &:hover .fa-cog {
-    transform: rotate(90deg) scale(1.1);
-  }
-  
-  &.active {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: var(--primary);
-    
-    .fa-cog {
-      color: var(--primary);
-    }
-  }
-}
+
 
 // Mobile responsive adjustments for header controls
 @media (max-width: 768px) {

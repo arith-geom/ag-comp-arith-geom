@@ -21,30 +21,6 @@ creator:
   role: "Website Designer & Developer"
   year: "2024"
 # Bilingual support removed - keeping English only
-pagescms:
-  enabled: true
-  api_url: https://app.pagescms.org
-  content_types:
-    - members
-    - publications
-    - research
-    - teaching
-    - links
-    - pages
-  auto_sync: false
-  auto_fix: false
-  cache_duration: 3600
-  bilingual_support: false
-  repo_url: https://github.com/VictorMerk/ag-comp-arith-geom
-  branch: main
-  write_generated_config: false
-  performance:
-    image_optimization: true
-    lazy_loading: true
-    compression: true
-  security:
-    content_validation: true
-    sanitization: true
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
@@ -194,7 +170,6 @@ exclude:
   - Thumbs.db
   - assets/search-data-backup.json
   - assets/json/publications-data.json.old
-  - pagescms.config.json
 
 # Performance and regeneration settings
 incremental: false
