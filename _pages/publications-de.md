@@ -128,9 +128,9 @@ title: Publications De
 
 /* Breadcrumb Navigation */
 .pathway {
-  background: #f5f5f5;
+  background: var(--bg-secondary);
   padding: 10px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -153,20 +153,20 @@ title: Publications De
 
 /* Main Content */
 .publications-content {
-  background: white;
+  background: var(--bg-primary);
   padding: 30px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .publications-content h2 {
-  color: #333;
+  color: var(--text-primary);
   font-size: 1.5em;
   font-weight: bold;
   margin: 30px 0 15px 0;
   padding-bottom: 8px;
-  border-bottom: 2px solid #0066cc;
+  border-bottom: 2px solid var(--primary);
 }
 
 .publications-content h2:first-child {
@@ -196,7 +196,7 @@ title: Publications De
 }
 
 .member-publications a:hover {
-  background: #f0f8ff;
+  background: var(--bg-accent);
   text-decoration: underline;
 }
 
@@ -210,14 +210,14 @@ title: Publications De
 .software-packages li {
   margin-bottom: 20px;
   padding: 15px;
-  background: #f9f9f9;
+  background: var(--bg-secondary);
   border-left: 4px solid #0066cc;
   border-radius: 4px;
   transition: all 0.2s ease;
 }
 
 .software-packages li:hover {
-  background: #f0f8ff;
+  background: var(--bg-accent);
   transform: translateX(5px);
 }
 
@@ -267,7 +267,7 @@ title: Publications De
 .ce-div {
   border: none;
   height: 1px;
-  background: #ddd;
+  background: var(--bg-tertiary);
   margin: 30px 0;
 }
 

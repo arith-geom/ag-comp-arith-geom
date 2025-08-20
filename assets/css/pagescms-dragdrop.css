@@ -18,7 +18,7 @@
 
 .drag-handle:hover {
   color: #007bff;
-  background-color: #f8f9fa;
+  background-color: var(--bg-secondary);
   opacity: 1;
   transform: scale(1.1);
   border-color: #007bff;
@@ -41,13 +41,13 @@
 
 /* Drop Zone Styles */
 .drop-zone {
-  background-color: #f8f9fa;
+  background-color: var(--bg-secondary);
   border-top: 2px solid #007bff;
   transition: all 0.2s ease;
 }
 
 .drop-zone:hover {
-  background-color: #e9ecef;
+  background-color: var(--bg-tertiary);
 }
 
 /* Table Row Improvements */
@@ -57,7 +57,7 @@ tr[data-id], .collection-item, .cms-item {
 }
 
 tr[data-id]:hover, .collection-item:hover, .cms-item:hover {
-  background-color: #f8f9fa;
+  background-color: var(--bg-secondary);
 }
 
 /* Drag Handle Container */
@@ -122,22 +122,22 @@ tr[data-id]:hover, .collection-item:hover, .cms-item:hover {
 }
 
 .pagescms-table th {
-  background-color: #f8f9fa;
-  border-bottom: 2px solid #dee2e6;
+  background-color: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-dark);
   padding: 12px 8px;
   text-align: left;
   font-weight: 600;
-  color: #495057;
+  color: var(--text-primary);
 }
 
 .pagescms-table td {
   padding: 12px 8px;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid var(--border-color);
   vertical-align: middle;
 }
 
 .pagescms-table tr:hover {
-  background-color: #f8f9fa;
+  background-color: var(--bg-tertiary);
 }
 
 /* Drag and Drop Visual Feedback */

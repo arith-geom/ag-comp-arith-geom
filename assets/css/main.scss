@@ -419,9 +419,9 @@ html.dark-mode {
   }
   
   .filter-section {
-    background: linear-gradient(135deg, $gray-800 0%, $gray-900 100%) !important;
-    border-bottom: 3px solid $red-400 !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
   
   // Fix for publication cards to ensure proper dark backgrounds
