@@ -78,7 +78,7 @@ def extract_members_from_text(text):
             current_members = []
         elif current_section and line:
             # Extract names from the line
-            # Look for patterns like "Prof. Dr. Gebhard Böckle", "Dr. Andrea Conti", etc.
+            # Look for patterns like "Prof. Dr. Gebhard Boeckle", "Dr. Andrea Conti", etc.
             names = re.findall(r'(?:Prof\.\s*)?(?:Dr\.\s*)?([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)', line)
             for name in names:
                 if len(name.split()) >= 2:  # At least first and last name

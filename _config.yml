@@ -216,7 +216,7 @@ collections:
     permalink: /teaching/:name/
   members:
     output: true
-    permalink: /members/:name/
+    permalink: /members/:slug/
   research:
     output: true
     permalink: /research/:name/

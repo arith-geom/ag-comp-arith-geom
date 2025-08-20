@@ -3,6 +3,7 @@ title: Gebhard Böckle
 email: gebhard.boeckle@math.uni-heidelberg.de
 layout: member
 name: Gebhard Böckle
+slug: gebhard-boeckle
 order: 1
 photo: "/assets/img/gebhard-boeckle.jpg"
 research_interests: Research interests in arithmetic geometry, modular forms, Galois

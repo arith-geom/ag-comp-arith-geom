@@ -7,8 +7,6 @@ show_title: false
 order: 100
 title: Links
 ---
-<p class="translatable-content" data-translation-key="links.intro">Here are some links that may be of interest to students and researchers, managed from the CMS.</p>
-
 <!-- Heidelberg University Links -->
 <h2>Heidelberg University</h2>
 <div class="list-group mb-4">
@@ -41,11 +39,7 @@ title: Links
   </a>
 </div>
 
-<!-- Partner Logos -->
-<h2>Partners</h2>
-<div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
-  <img src="{{ '/assets/img/heidelberg_logo.svg' | relative_url }}" alt="Heidelberg University" height="40">
-</div>
+
 
 <!-- DFG Research Projects -->
 <h2>DFG Research Projects</h2>

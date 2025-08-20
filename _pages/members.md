@@ -41,7 +41,7 @@ title: Members
           {% endif %}
         </div>
         <div class="member-info">
-          {% assign group_leader_slug = group_leader.name | slugify %}
+          {% assign group_leader_slug = group_leader.slug | default: (group_leader.name | slugify) %}
           <h4><a href="{{ '/members/' | append: group_leader_slug | append: '/' | relative_url }}">{{ group_leader.name }}</a></h4>
           <p class="member-role">{{ group_leader.role }}</p>
           {% if group_leader.research_interests %}
@@ -85,7 +85,7 @@ title: Members
               {% endif %}
             </div>
             <div class="member-info">
-              {% assign member_slug = member.name | slugify %}
+              {% assign member_slug = member.slug | default: (member.name | slugify) %}
               <h4><a href="{{ '/members/' | append: member_slug | append: '/' | relative_url }}">{{ member.name }}</a></h4>
               <p class="member-role">{{ member.role }}</p>
               {% if member.research_interests %}
@@ -131,7 +131,7 @@ title: Members
               {% endif %}
             </div>
             <div class="member-info">
-              {% assign member_slug = member.name | slugify %}
+              {% assign member_slug = member.slug | default: (member.name | slugify) %}
               <h4><a href="{{ '/members/' | append: member_slug | append: '/' | relative_url }}">{{ member.name }}</a></h4>
               <p class="member-role">{{ member.role }}</p>
               {% if member.research_interests %}

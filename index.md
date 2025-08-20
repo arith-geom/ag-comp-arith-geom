@@ -276,7 +276,7 @@ nav_order: 1
     </div>
     <p>A more detailed survey of our activities can be found in the research section and in the publications of our members.</p>
     <div class="cta-buttons">
-      <a href="{{ '/research/' | relative_url }}" class="btn btn-primary">
+      <a href="{{ '/research/' | relative_url }}" class="btn btn-outline-primary">
         <i class="fas fa-search me-2" aria-hidden="true"></i>Research Areas
       </a>
       <a href="{{ '/publications/' | relative_url }}" class="btn btn-outline-primary">

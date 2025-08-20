@@ -111,13 +111,13 @@ def extract_members_from_page(url, is_former=False):
                 content = soup.get_text()
                 
                 # Extract Head (Professor)
-                if "Prof. Dr. Gebhard Böckle" in content:
+                if "Prof. Dr. Gebhard Boeckle" in content:
                     members.append({
-                        'name': 'Gebhard Böckle',
+                        'name': 'Gebhard Boeckle',
                         'role': 'Professor & Group Leader',
                         'status': 'active',
                         'email': 'gebhard.boeckle@math.uni-heidelberg.de',
-                        'photo': get_stock_photo_path('Gebhard Böckle', 'Professor'),
+                        'photo': get_stock_photo_path('Gebhard Boeckle', 'Professor'),
                         'bio': '',
                         'research': ''
                     })

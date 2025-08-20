@@ -1,7 +1,7 @@
 ---
 layout: publication
 title: On universal deformation presentations
-authors: Gebhard Böckle
+authors: Gebhard Boeckle
 year: 2014
 type: Preprint
 status: Published
