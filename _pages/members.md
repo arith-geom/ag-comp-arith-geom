@@ -193,7 +193,7 @@ title: Members
 <style>
 /* Simple Navigation - Heidelberg Theme */
 .members-nav-simple {
-  background: var(--bg-primary);
+  background: transparent;
   border-bottom: 2px solid var(--border-color);
   padding: 1.5rem 0;
   margin-bottom: 2rem;
@@ -251,11 +251,98 @@ title: Members
 }
 
 .team-section {
-  background: var(--bg-primary);
-  border: 2px solid var(--border-color);
+  background: transparent;
+  border: none;
   border-radius: var(--radius-lg);
-  padding: 2rem;
-  box-shadow: var(--shadow-sm);
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Enhanced dark mode styling for members cards */
+
+[data-theme="dark"] .member-card,
+body.dark-mode .member-card {
+  background: var(--bg-tertiary) !important;
+  border-color: var(--border-dark) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+[data-theme="dark"] .member-card:hover,
+body.dark-mode .member-card:hover {
+  background: var(--bg-secondary) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] .member-card.former,
+body.dark-mode .member-card.former {
+  background: var(--bg-secondary) !important;
+  opacity: 0.9;
+}
+
+[data-theme="dark"] .member-card.former:hover,
+body.dark-mode .member-card.former:hover {
+  background: var(--bg-tertiary) !important;
+  opacity: 1;
+  border-color: var(--primary) !important;
+}
+
+/* Dark mode styling for section headers */
+[data-theme="dark"] .section-header,
+body.dark-mode .section-header {
+  background: transparent !important;
+  border-radius: 8px !important;
+  padding: 0 !important;
+  margin-bottom: 2rem !important;
+  border-left: none !important;
+}
+
+[data-theme="dark"] .section-icon,
+body.dark-mode .section-icon {
+  background: var(--primary) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Enhanced member info styling for dark mode */
+[data-theme="dark"] .member-info h4,
+body.dark-mode .member-info h4 {
+  color: var(--text-primary) !important;
+  border-bottom: 2px solid var(--primary) !important;
+  padding-bottom: 0.5rem !important;
+}
+
+[data-theme="dark"] .member-description,
+[data-theme="dark"] .member-graduation,
+[data-theme="dark"] .member-current,
+body.dark-mode .member-description,
+body.dark-mode .member-graduation,
+body.dark-mode .member-current {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin: 0.5rem 0 !important;
+}
+
+/* Dark mode navigation styling */
+[data-theme="dark"] .members-nav-simple,
+body.dark-mode .members-nav-simple {
+  background: transparent !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .nav-btn,
+body.dark-mode .nav-btn {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+[data-theme="dark"] .nav-btn:hover,
+body.dark-mode .nav-btn:hover {
+  background: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+  box-shadow: var(--shadow-lg) !important;
 }
 
 .section-header {

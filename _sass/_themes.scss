@@ -125,7 +125,7 @@ body {
 
 /* Typography - FORCED CONTRAST */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text-primary) !important;
+  color: #DC2626 !important; /* Bright red for all headers */
   font-weight: 600;
   margin: 0.5em 0;
 }
