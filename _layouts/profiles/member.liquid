@@ -1,0 +1,757 @@
+---
+layout: page
+---
+{% assign page_title = page.name %}
+<script>
+// Redirect to main members page with member parameter
+window.location.href = '/members/?member={{ page.name | slugify | append: '-' | append: page.role | slugify }}';
+</script>
+<div class="member-profile" style="display: none;">
+  <div class="member-header" style="background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%); border-radius: 0.75rem; border: 1px solid var(--border-color); color: var(--primary-text);">
+    <div class="member-photo-container">
+      {% if page.photo %}
+        <img src="{{ page.photo | relative_url }}" alt="Photo of {{ page.name }}" class="member-photo">
+      {% else %}
+        <img src="{{ '/assets/images/heidelberg_placeholder.jpg' | relative_url }}" alt="Placeholder photo for {{ page.name }}" class="member-photo">
+      {% endif %}
+    </div>
+    <div class="member-info">
+      <h1 class="member-name">{{ page.name }}</h1>
+      {% if page.role %}
+        <p class="member-role">{{ page.role }}</p>
+      {% endif %}
+      {% if page.email %}
+        <div class="member-contact">
+          <a href="mailto:{{ page.email }}" class="member-email">
+            <i class="fas fa-envelope me-2" aria-hidden="true"></i>{{ page.email }}
+          </a>
+        </div>
+      {% endif %}
+      <div class="member-links">
+        {% if page.website %}
+          <a href="{{ page.website }}" target="_blank" rel="noopener noreferrer" class="member-link" aria-label="Personal Website of {{ page.name }}">
+            <i class="fas fa-globe" aria-hidden="true"></i>
+            <span>Website</span>
+          </a>
+        {% endif %}
+        {% if page.github %}
+          <a href="https://github.com/{{ page.github }}" target="_blank" rel="noopener noreferrer" class="member-link" aria-label="GitHub Profile of {{ page.name }}">
+            <i class="fab fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+          </a>
+        {% endif %}
+        {% if page.orcid %}
+          <a href="https://orcid.org/{{ page.orcid }}" target="_blank" rel="noopener noreferrer" class="member-link" aria-label="ORCID Profile of {{ page.name }}">
+            <i class="ai ai-orcid" aria-hidden="true"></i>
+            <span>ORCID</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Content Links -->
+  <div class="member-related-content">
+    {% assign member_name = page.name %}
+    {% assign member_slug = page.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '' %}
+    
+    <!-- Publications -->
+    {% assign member_publications = site.publications | where_exp: "pub", "pub.authors contains member_name" %}
+    {% if member_publications.size > 0 %}
+      <div class="related-content-section">
+        <h3 class="related-content-title">
+          <i class="fas fa-book" aria-hidden="true"></i>
+          Publications ({{ member_publications.size }})
+        </h3>
+        <div class="related-content-links">
+          <a href="{{ '/publications/' | relative_url }}?author={{ member_name | url_encode }}" class="related-content-link">
+            <i class="fas fa-list" aria-hidden="true"></i>
+            View All Publications
+          </a>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Teaching -->
+    {% assign member_teaching = site.teaching | where_exp: "course", "course.instructor contains member_name" %}
+    {% if member_teaching.size > 0 %}
+      <div class="related-content-section">
+        <h3 class="related-content-title">
+          <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+          Teaching ({{ member_teaching.size }} courses)
+        </h3>
+        <div class="related-content-links">
+          <a href="{{ '/teaching/' | relative_url }}#{{ member_slug }}" class="related-content-link">
+            <i class="fas fa-list" aria-hidden="true"></i>
+            View Teaching Courses
+          </a>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Research Projects -->
+    {% assign member_research = site.research | where_exp: "project", "project.members contains member_name" %}
+    {% if member_research.size > 0 %}
+      <div class="related-content-section">
+        <h3 class="related-content-title">
+          <i class="fas fa-microscope" aria-hidden="true"></i>
+          Research Projects ({{ member_research.size }})
+        </h3>
+        <div class="related-content-links">
+          <a href="{{ '/research/' | relative_url }}#{{ member_slug }}" class="related-content-link">
+            <i class="fas fa-list" aria-hidden="true"></i>
+            View Research Projects
+          </a>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- External Links -->
+    {% if page.website or page.github or page.orcid %}
+      <div class="related-content-section">
+        <h3 class="related-content-title">
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          External Links
+        </h3>
+        <div class="related-content-links">
+          {% if page.website %}
+            <a href="{{ page.website }}" target="_blank" rel="noopener noreferrer" class="related-content-link">
+              <i class="fas fa-globe" aria-hidden="true"></i>
+              Personal Website
+            </a>
+          {% endif %}
+          {% if page.github %}
+            <a href="https://github.com/{{ page.github }}" target="_blank" rel="noopener noreferrer" class="related-content-link">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              GitHub Profile
+            </a>
+          {% endif %}
+          {% if page.orcid %}
+            <a href="https://orcid.org/{{ page.orcid }}" target="_blank" rel="noopener noreferrer" class="related-content-link">
+              <i class="ai ai-orcid" aria-hidden="true"></i>
+              ORCID Profile
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="member-content">
+    {% if page.research_interests %}
+      <div class="member-section">
+        <h2 class="member-section-title">Research Interests</h2>
+        <div class="member-section-content tex2jax_process">
+          {{ page.research_interests | markdownify }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="member-section">
+      <h2 class="member-section-title">About</h2>
+      <div class="member-section-content tex2jax_process">
+        {{ content }}
+      </div>
+    </div>
+
+    <!-- Publications Section -->
+    {% assign member_publications = site.publications | where_exp: "pub", "pub.authors contains member_name" | sort: 'year' | reverse %}
+    {% if member_publications.size > 0 %}
+      <div class="member-section">
+        <h2 class="member-section-title">
+          <i class="fas fa-book" aria-hidden="true"></i>
+          Publications ({{ member_publications.size }})
+        </h2>
+        <div class="member-publications tex2jax_process">
+          {% for publication in member_publications %}
+            <div class="publication-item">
+              <div class="publication-header">
+                <div class="publication-meta">
+                  <span class="publication-type">{{ publication.type }}</span>
+                  <span class="publication-year">{{ publication.year }}</span>
+                </div>
+                <h3 class="publication-title">
+                  {% if publication.pdf %}
+                    <a href="{% if publication.pdf contains '://' %}{{ publication.pdf }}{% else %}{{ publication.pdf | relative_url }}{% endif %}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
+                  {% elsif publication.url %}
+                    <a href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
+                  {% elsif publication.doi %}
+                    <a href="https://doi.org/{{ publication.doi }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
+                  {% else %}
+                    {{ publication.title }}
+                  {% endif %}
+                </h3>
+              </div>
+              <div class="publication-authors">{{ publication.authors }}</div>
+              {% if publication.journal %}
+                <div class="publication-venue">
+                  {% if publication.journal_full %}{{ publication.journal_full }}{% else %}{{ publication.journal }}{% endif %}
+                  {% if publication.volume %}, Volume {{ publication.volume }}{% endif %}
+                  {% if publication.pages %}, {{ publication.pages }}{% endif %}
+                  {% if publication.year %}, {{ publication.year }}{% endif %}
+                </div>
+              {% endif %}
+              {% if publication.abstract %}
+                <div class="publication-abstract">
+                  {{ publication.abstract | truncate: 200 }}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Teaching Section -->
+    {% assign member_teaching = site.teaching | where_exp: "course", "course.instructor contains member_name" | sort: 'semester' | reverse %}
+    {% if member_teaching.size > 0 %}
+      <div class="member-section">
+        <h2 class="member-section-title">
+          <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+          Teaching ({{ member_teaching.size }} courses)
+        </h2>
+        <div class="member-teaching tex2jax_process">
+          {% for course in member_teaching %}
+            <div class="teaching-item">
+              <div class="teaching-header">
+                <h3 class="teaching-title">{{ course.title }}</h3>
+                <div class="teaching-meta">
+                  <span class="teaching-type">{{ course.course_type }}</span>
+                  <span class="teaching-semester">{{ course.semester_key }}</span>
+                </div>
+              </div>
+              <div class="teaching-description">{{ course.description }}</div>
+              {% if course.language %}
+                <div class="teaching-language">Language: {{ course.language }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Research Projects Section -->
+    {% assign member_research = site.research | where_exp: "project", "project.members contains member_name" %}
+    {% if member_research.size > 0 %}
+      <div class="member-section">
+        <h2 class="member-section-title">
+          <i class="fas fa-microscope" aria-hidden="true"></i>
+          Research Projects ({{ member_research.size }})
+        </h2>
+        <div class="member-research tex2jax_process">
+          {% for project in member_research %}
+            <div class="research-item">
+              <div class="research-header">
+                <h3 class="research-title">{{ project.title }}</h3>
+                {% if project.status %}
+                  <span class="research-status">{{ project.status }}</span>
+                {% endif %}
+              </div>
+              <div class="research-description">{{ project.description }}</div>
+              {% if project.members %}
+                <div class="research-members">
+                  <strong>Team:</strong> {{ project.members }}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.member-profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.member-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+}
+
+.member-photo-container {
+  flex-shrink: 0;
+}
+
+.member-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-color);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.member-photo:hover {
+  border-color: #C22032;
+  transform: scale(1.05);
+}
+
+.member-info {
+  flex: 1;
+}
+
+.member-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.member-role {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary-text);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.member-contact {
+  margin-bottom: 1.5rem;
+}
+
+.member-email {
+  display: inline-flex;
+  align-items: center;
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-base);
+}
+
+.member-email:hover {
+  color: var(--link-hover);
+  background: var(--bg-tertiary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.member-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+  .member-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.member-link:hover {
+  color: var(--primary);
+  background: var(--bg-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.member-link i {
+  font-size: 1.1rem;
+}
+
+/* Related Content Styles */
+.member-related-content {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.related-content-section {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.related-content-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.related-content-title i {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.related-content-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.related-content-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.related-content-link:hover {
+  color: var(--primary);
+  background: var(--bg-tertiary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.related-content-link i {
+  font-size: 1rem;
+}
+
+.member-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.member-section {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.member-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.member-section-content {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.member-section-content h3,
+.member-section-content h4 {
+  color: var(--text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-section-content ul {
+  margin-left: 1.5rem;
+}
+
+.member-section-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Member Publications Styles */
+.member-publications {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.publication-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition-base);
+}
+
+.publication-item:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.publication-header {
+  margin-bottom: 0.75rem;
+}
+
+.publication-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+  .publication-type {
+    background: var(--primary);
+    color: var(--primary-text);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+  }
+
+.publication-year {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.publication-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.publication-title a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.publication-title a:hover {
+  color: var(--primary);
+}
+
+.publication-authors {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.publication-venue {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.publication-abstract {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Member Teaching Styles */
+.member-teaching {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.teaching-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition-base);
+}
+
+.teaching-item:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.teaching-header {
+  margin-bottom: 0.75rem;
+}
+
+.teaching-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.teaching-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.teaching-type {
+  background: var(--primary);
+  color: var(--primary-text);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.teaching-semester {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.teaching-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.teaching-language {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Member Research Styles */
+.member-research {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.research-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition-base);
+}
+
+.research-item:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.research-header {
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.research-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.research-status {
+  background: var(--primary);
+  color: var(--primary-text);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.research-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.research-members {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .member-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .member-photo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .member-name {
+    font-size: 2rem;
+  }
+  
+  .member-role {
+    font-size: 1.1rem;
+  }
+  
+  .member-links {
+    justify-content: center;
+  }
+  
+  .related-content-links {
+    justify-content: center;
+  }
+  
+  .related-content-section {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .member-profile {
+    padding: 1rem 0;
+  }
+  
+  .member-header {
+    padding: 1.5rem;
+  }
+  
+  .member-photo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .member-name {
+    font-size: 1.75rem;
+  }
+  
+  .member-section {
+    padding: 1.5rem;
+  }
+  
+  .related-content-section {
+    padding: 1rem;
+  }
+  
+  .related-content-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style> 

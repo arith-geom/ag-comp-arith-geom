@@ -516,11 +516,13 @@ footer.sticky-bottom {
 // CV
 
 .cv {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   .card {
-    background-color: var(--global-card-bg-color);
-    border: 1px solid var(--global-divider-color);
+    background-color: transparent;
+    border: none;
+    padding: 0.75rem 0;
+    margin-top: 1rem;
 
     .list-group-item {
       background-color: inherit;
@@ -558,19 +560,20 @@ footer.sticky-bottom {
 .header-bar {
   border-bottom: 1px solid var(--global-divider-color);
   text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
 
   h1 {
     color: var(--global-theme-color);
-    font-size: 5rem;
+    font-size: 3rem;
   }
 }
 
 .tag-category-list {
   border-bottom: 1px solid var(--global-divider-color);
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 
   ul {
     justify-content: center;
@@ -580,7 +583,7 @@ footer.sticky-bottom {
     li {
       list-style: none;
       display: inline-block;
-      padding: 1rem 0.5rem;
+      padding: 0.5rem 0.25rem;
       color: var(--global-text-color-light);
     }
   }
@@ -594,14 +597,14 @@ footer.sticky-bottom {
 
 .post-list {
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 0;
 
   li {
     border-bottom: 1px solid var(--global-divider-color);
     list-style: none;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     .post-meta {
       color: var(--global-text-color-light);
@@ -612,7 +615,7 @@ footer.sticky-bottom {
     .post-tags {
       color: var(--global-text-color-light);
       font-size: 0.875rem;
-      padding-top: 0.25rem;
+      padding-top: 0.125rem;
       padding-bottom: 0;
     }
 
@@ -927,8 +930,8 @@ html.transition *:after {
   .post-tags {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
-    padding-top: 0.25rem;
-    padding-bottom: 1rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.5rem;
 
     a {
       color: var(--global-text-color-light);

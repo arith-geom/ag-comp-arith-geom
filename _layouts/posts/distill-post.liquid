@@ -54,7 +54,7 @@
 
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     <!-- Header -->
-    {% include layout/header.liquid %}
+    {% include header.liquid %}
 
     <!-- Content -->
     <div class="post distill">
@@ -98,16 +98,16 @@
 
       <d-bibliography src="{{ page.bibliography | prepend: '/assets/bibliography/' | relative_url }}"></d-bibliography>
 
-      {% if site.disqus_shortname and page.disqus_comments %}{% include content/disqus.liquid %}{% endif %}
+      {% if site.disqus_shortname and page.disqus_comments %}{% include disqus.liquid %}{% endif %}
       {% if site.giscus.repo and page.giscus_comments %}
-        {% include content/giscus.liquid %}
+        {% include giscus.liquid %}
       {% endif %}
     </div>
 
     <!-- Footer -->
-    {% include layout/footer.liquid %}
+    {% include footer.liquid %}
 
     <!-- JavaScripts -->
-    {% include scripts/distill_scripts.liquid %}
+    {% include distill_scripts.liquid %}
   </body>
 </html>
