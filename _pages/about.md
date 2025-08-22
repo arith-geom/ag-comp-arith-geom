@@ -32,7 +32,7 @@ title: About
 <div class="about-card">
   <h2>Contact Us</h2>
   <p><strong>Email:</strong> arithgeo@iwr.uni-heidelberg.de</p>
-  <p><strong>Location:</strong> Interdisciplinary Center for Scientific Computing (IWR), University of Heidelberg</p>
+  <p><strong>Location:</strong> Interdisciplinary Center for Scientific Computing (IWR), Heidelberg University</p>
 </div>
 
 <div class="about-card">

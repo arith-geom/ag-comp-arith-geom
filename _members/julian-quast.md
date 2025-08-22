@@ -12,4 +12,4 @@ current_position: Former Member
 ---
 title: {{ page.name }}
 
-Julian Quast was a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.
+Julian Quast was a member of the AG Computational Arithmetic Geometry research group at the Heidelberg University.

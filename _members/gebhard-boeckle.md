@@ -29,4 +29,4 @@ Prof. Dr. Gebhard Böckle is the head of the research group "Computational Arith
 
 ## Teaching
 
-Prof. Böckle teaches various courses in arithmetic geometry, number theory, and related topics at the University of Heidelberg.
+Prof. Böckle teaches various courses in arithmetic geometry, number theory, and related topics at Heidelberg University.

@@ -10,4 +10,4 @@ photo: "/assets/img/astrid-cederbaum.jpg"
 ---
 title: {{ page.name }}
 
-Astrid Cederbaum is a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.
+Astrid Cederbaum is a member of the AG Computational Arithmetic Geometry research group at the Heidelberg University.

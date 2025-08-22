@@ -17,11 +17,11 @@ title: Links
     <small class="text-muted">https://www.iwr.uni-heidelberg.de/</small>
   </a>
   
-  <a href="https://www.mathi.uni-heidelberg.de/" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
+  <a href="https://www.math.uni-heidelberg.de/en" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Mathematisches Institut</h5>
+      <h5 class="mb-1">Institute of Mathematics Heidelberg</h5>
     </div>
-    <small class="text-muted">https://www.mathi.uni-heidelberg.de/</small>
+    <small class="text-muted">https://www.math.uni-heidelberg.de/en</small>
   </a>
   
   <a href="https://www.mathinf.uni-heidelberg.de/" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
@@ -69,25 +69,11 @@ title: Links
 <!-- Academic Resources -->
 <h2>Academic Resources</h2>
 <div class="list-group mb-4">
-  <a href="https://www.mathinf.uni-heidelberg.de/pruefausschuss.html" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Prüfungsausschuss und Prüfungssekretariat</h5>
-    </div>
-    <small class="text-muted">https://www.mathinf.uni-heidelberg.de/pruefausschuss.html</small>
-  </a>
-  
   <a href="http://www.journals.elsevier.com/journal-of-number-theory/" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Journal of Number Theory</h5>
     </div>
     <small class="text-muted">http://www.journals.elsevier.com/journal-of-number-theory/</small>
-  </a>
-  
-  <a href="https://www.iwr.uni-heidelberg.de/groupswikiarithgeo/" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Internal Matters</h5>
-    </div>
-    <small class="text-muted">https://www.iwr.uni-heidelberg.de/groupswikiarithgeo/</small>
   </a>
 </div>
 

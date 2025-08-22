@@ -20,7 +20,7 @@ order: 100
         <div class="address-block">
           <p><strong>Computational Arithmetic Geometry</strong></p>
           <p>IWR (Interdisciplinary Center for Scientific Computing)</p>
-          <p>University of Heidelberg</p>
+          <p>Heidelberg University</p>
           <p>Im Neuenheimer Feld 205</p>
           <p>69120 Heidelberg</p>
           <p>Germany</p>
@@ -41,7 +41,7 @@ order: 100
           style="border:0; border-radius: var(--radius-lg);"
           loading="lazy"
           allowfullscreen
-          title="Map showing the location of AG Computational Arithmetic Geometry at University of Heidelberg"
+          title="Map showing the location of AG Computational Arithmetic Geometry at Heidelberg University"
           src="https://www.google.com/maps/embed/v1/place?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
         </iframe>
       </div>

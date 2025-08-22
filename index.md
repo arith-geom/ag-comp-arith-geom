@@ -297,7 +297,7 @@ nav_order: 1
     </div>
     <div class="contact-info">
       <p><strong>Email:</strong> <a href="mailto:arithgeo@iwr.uni-heidelberg.de">arithgeo@iwr.uni-heidelberg.de</a></p>
-      <p><strong>Location:</strong> Interdisciplinary Center for Scientific Computing (IWR), University of Heidelberg</p>
+      <p><strong>Location:</strong> Interdisciplinary Center for Scientific Computing (IWR), Heidelberg University</p>
     </div>
   </div>
 </div>

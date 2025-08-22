@@ -10,4 +10,4 @@ photo: "/assets/img/paola-chilla.jpg"
 ---
 title: {{ page.name }}
 
-Paola Chilla is a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.
+Paola Chilla is a member of the AG Computational Arithmetic Geometry research group at the Heidelberg University.

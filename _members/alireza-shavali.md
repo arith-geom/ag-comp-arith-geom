@@ -10,4 +10,4 @@ photo: "/assets/img/alireza-shavali.jpg"
 ---
 title: {{ page.name }}
 
-Alireza Shavali is a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.
+Alireza Shavali is a member of the AG Computational Arithmetic Geometry research group at the Heidelberg University.

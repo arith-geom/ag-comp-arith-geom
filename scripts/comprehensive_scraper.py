@@ -213,9 +213,9 @@ def create_member_file(member):
             if member["role"] == "Professor & Group Leader":
                 f.write(f"{member['name']} is the head of the research group \"Computational Arithmetic Geometry\" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.\n\n")
             elif member["status"] == "alumni":
-                f.write(f"{member['name']} was a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.\n\n")
+                f.write(f"{member['name']} was a member of the AG Computational Arithmetic Geometry research group at Heidelberg University.\n\n")
             else:
-                f.write(f"{member['name']} is a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.\n\n")
+                f.write(f"{member['name']} is a member of the AG Computational Arithmetic Geometry research group at Heidelberg University.\n\n")
 
 def main():
     """Main scraping and update function."""
