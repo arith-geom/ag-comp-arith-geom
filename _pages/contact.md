@@ -26,10 +26,10 @@ order: 100
           <p>Germany</p>
         </div>
         <div class="map-actions mt-3">
-          <a href="https://maps.google.com/?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany" 
-             target="_blank" 
-             rel="noopener" 
-             class="btn btn-primary map-btn">
+          <a href="https://maps.google.com/?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany"
+             target="_blank"
+             rel="noopener"
+             class="btn btn-outline-primary map-btn">
             <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="contact.open_in_google_maps">Open in Google Maps</span>
           </a>
         </div>
@@ -326,17 +326,22 @@ order: 100
   box-shadow: var(--shadow-md);
 }
 
-/* Match theme for map button */
+/* Match theme for map button - outline style for better visibility */
 .map-actions .map-btn {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%) !important;
-  color: var(--primary-text) !important;
-  border-color: var(--primary) !important;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+  background: transparent !important;
+  color: var(--primary) !important;
+  border: 2px solid var(--primary) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all var(--transition-base) !important;
 }
 
 .map-actions .map-btn:hover {
-  background: linear-gradient(135deg, var(--heidelberg-red) 0%, var(--heidelberg-red-darker) 100%) !important;
-  border-color: var(--heidelberg-red-dark) !important;
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
 }
 
 /* Contact Form Styles */
@@ -465,15 +470,16 @@ body.dark-mode .form-container {
 /* Ensure the map button keeps strong contrast in dark mode */
 [data-theme="dark"] .map-actions .map-btn,
 body.dark-mode .map-actions .map-btn {
-  background: linear-gradient(135deg, var(--heidelberg-red) 0%, var(--heidelberg-red-darker) 100%) !important;
-  color: var(--primary-text) !important;
-  border-color: var(--heidelberg-red-dark) !important;
+  background: transparent !important;
+  color: var(--link-color) !important;
+  border-color: var(--link-color) !important;
 }
 
 [data-theme="dark"] .map-actions .map-btn:hover,
 body.dark-mode .map-actions .map-btn:hover {
-  background: linear-gradient(135deg, var(--heidelberg-red-dark) 0%, var(--heidelberg-red-darkest) 100%) !important;
-  border-color: var(--heidelberg-red-darkest) !important;
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
+  border-color: var(--primary) !important;
 }
 
 [data-theme="dark"] .form-container:hover,

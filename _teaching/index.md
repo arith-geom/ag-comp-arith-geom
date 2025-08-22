@@ -9,7 +9,10 @@ description: Teaching overview with filters and recent courses
 <div class="teaching-page">
   <div id="courseFocusBar" class="course-focus-bar" style="display: none;">
     <button id="backToAllCourses" class="back-to-all-btn" aria-label="Back to all courses">
-      <i class="fas fa-circle-arrow-left"></i> Back to all courses
+      <span>
+        <i class="fas fa-circle-arrow-left"></i>
+        Back to All Courses
+      </span>
     </button>
   </div>
   

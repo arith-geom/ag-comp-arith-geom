@@ -324,12 +324,14 @@ function initCourseFocusMode() {
     if (previousScrollY === null) {
       previousScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
     }
+    // Add focused class for styling
+    li.classList.add('focused');
     // Expand selected card
     const toggleBtn = li.querySelector('.course-expand-btn');
     const details = li.querySelector('.course-details');
     if (toggleBtn) {
       toggleBtn.setAttribute('aria-expanded', 'true');
-      toggleBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+      toggleBtn.innerHTML = '<i class="fas fa-chevron-down"></i>';
     }
     if (details) details.style.display = 'block';
     // Scroll the page to the very top so the user sees the full content area
@@ -355,7 +357,10 @@ function initCourseFocusMode() {
   }
 
   function exitFocus() {
-    courseItems.forEach(item => item.classList.remove('focus-hidden'));
+    courseItems.forEach(item => {
+      item.classList.remove('focus-hidden');
+      item.classList.remove('focused');
+    });
     groups.forEach(group => group.classList.remove('focus-hidden'));
     if (focusBar) focusBar.style.display = 'none';
     if (filterControls) filterControls.style.display = '';
@@ -389,14 +394,28 @@ function initCourseFocusMode() {
       const isLink = target.closest && target.closest('a');
       const isExpandBtn = target.closest && target.closest('.course-expand-btn');
       if (isLink) return;
+
       // Toggle: if this is already focused, exit focus; otherwise enter focus
       if (focusedItem && focusedItem === li) {
         exitFocus();
       } else {
         enterFocus(li);
       }
-      // If chevron specifically was clicked, we already handled inside its listener
     });
+
+    // Handle expand button specifically for better UX
+    const expandBtn = li.querySelector('.course-expand-btn');
+    if (expandBtn) {
+      expandBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent triggering the parent click
+        // Toggle: if this is already focused, exit focus; otherwise enter focus
+        if (focusedItem && focusedItem === li) {
+          exitFocus();
+        } else {
+          enterFocus(li);
+        }
+      });
+    }
   });
 
   if (backBtn) backBtn.addEventListener('click', exitFocus);

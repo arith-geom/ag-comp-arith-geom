@@ -91,7 +91,7 @@ html[data-theme="dark"] {
   --primary-hover: #B91C1C;
   --primary-dark: #7F1D1D;
   --primary-darker: #450A0A;
-  --primary-text: var(--black);         /* Black text on bright red */
+  --primary-text: var(--white);         /* White text on bright red */
   
   /* Dark mode shadows - use white for visibility */
   --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.1);

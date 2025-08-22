@@ -194,6 +194,7 @@ html.dark-mode {
     border: 1px solid var(--border-color) !important;
     box-shadow: var(--shadow-sm) !important;
     border-radius: 12px !important;
+    display: flex;
   }
   
   .filter-select,

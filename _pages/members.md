@@ -9,7 +9,7 @@ title: Members
 ---
 <!-- Simple Navigation -->
 <div class="members-nav-simple">
-  <div class="container-fluid px-3 px-md-4">
+  <div class="nav-buttons-container">
     <button id="btn-current" class="nav-btn active" onclick="showSection('current')">Current Members</button>
     <button id="btn-alumni" class="nav-btn" onclick="showSection('alumni')">Former Members</button>
   </div>
@@ -691,17 +691,31 @@ title: Members
 <style>
 /* Simple Navigation - Heidelberg Theme */
 .members-nav-simple {
-  background: transparent;
-  border-bottom: 2px solid var(--border-color);
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.container {
+.members-nav-simple::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%, rgba(255, 255, 255, 0.02) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.nav-buttons-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .nav-btn {
@@ -710,27 +724,55 @@ title: Members
   color: var(--primary);
   padding: 0.75rem 2rem;
   margin: 0 0.5rem;
-  border-radius: var(--radius-md);
+  border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition-base);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.nav-btn:hover::before {
+  left: 100%;
 }
 
 .nav-btn:hover {
-  background: var(--heidelberg-red);
+  background: var(--primary);
   color: var(--primary-text);
-  border-color: var(--heidelberg-red);
+  border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .nav-btn.active {
   background: var(--primary);
   color: var(--primary-text);
   border-color: var(--primary);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
   transform: translateY(-1px);
+}
+
+.nav-btn:active {
+  transform: translateY(-1px) scale(1.02);
 }
 
 /* Content Sections */
@@ -753,33 +795,23 @@ title: Members
 
 /* Expanded team sections for centered detail display */
 .team-sections.expanded {
-  max-width: none !important;
+  max-width: 100% !important;
   width: 100% !important;
   padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* Additional rules to ensure proper expansion */
 .members-content-section:has(.member-card.expanded) {
   width: 100% !important;
-  max-width: none !important;
-}
-
-/* Force member detail content to use correct styles */
-.member-card.expanded .member-detail-content {
-  width: min(1200px, 92vw) !important;
-  max-width: 1200px !important;
-  min-width: min(1200px, 92vw) !important;
-  margin: 2rem auto !important;
-  display: block !important;
-}
-
-/* Ensure team sections expanded works */
-.team-sections.expanded {
-  max-width: none !important;
-  width: 100% !important;
-  padding: 0 !important;
+  max-width: 100% !important;
   margin: 0 !important;
+  padding: 0 !important;
 }
+
+
+
+
 
 /* Debug styles to verify expansion is working */
 .member-card.expanded {
@@ -870,15 +902,15 @@ body.dark-mode .member-current {
 [data-theme="dark"] .members-nav-simple,
 body.dark-mode .members-nav-simple {
   background: transparent !important;
-  border-bottom-color: var(--border-color) !important;
 }
 
 [data-theme="dark"] .nav-btn,
 body.dark-mode .nav-btn {
-  background: transparent !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   border-color: var(--primary) !important;
   color: var(--primary) !important;
-  box-shadow: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(15px) !important;
 }
 
 [data-theme="dark"] .nav-btn:hover,
@@ -886,7 +918,7 @@ body.dark-mode .nav-btn:hover {
   background: var(--primary) !important;
   color: var(--primary-text) !important;
   border-color: var(--primary) !important;
-  box-shadow: var(--shadow-lg) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
 [data-theme="dark"] .nav-btn.active,
@@ -894,58 +926,132 @@ body.dark-mode .nav-btn.active {
   background: var(--primary) !important;
   color: var(--primary-text) !important;
   border-color: var(--primary) !important;
-  box-shadow: var(--shadow-sm) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35) !important;
 }
 
 .section-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 3px solid var(--primary);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.section-header::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--heidelberg-red));
+  border-radius: 2px;
 }
 
 .section-icon {
-  width: 50px;
-  height: 50px;
-  background: var(--primary);
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary), var(--heidelberg-red));
   color: var(--primary-text);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  box-shadow: var(--shadow-sm);
+  font-size: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.section-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
 
 .section-header h3 {
   margin: 0;
   color: var(--text-primary);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--text-primary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
 }
 
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem 0;
+}
+
+.team-sections {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.team-section {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Ensure grid container allows full width for expanded cards */
+.members-grid:has(.member-card.expanded) {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  gap: 0 !important;
 }
 
 .member-card {
   background: var(--bg-primary);
-  border: 2px solid var(--border-color);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
   padding: 1.5rem;
-  transition: var(--transition-base);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.member-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--heidelberg-red));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .member-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.1);
   border-color: var(--primary);
+  background: var(--bg-secondary);
+}
+
+.member-card:hover::before {
+  opacity: 1;
 }
 
 .member-card.featured {
@@ -954,60 +1060,149 @@ body.dark-mode .nav-btn.active {
 }
 
 .member-card.former {
-  opacity: 0.8;
+  opacity: 0.9;
   background: var(--bg-secondary);
   flex-direction: column;
   text-align: center;
+  border: 2px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.member-card.former::before {
+  content: 'FORMER';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--text-secondary);
+  color: var(--bg-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .member-card.former:hover {
   opacity: 1;
   background: var(--bg-primary);
+  border-color: var(--primary);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.member-card.former:hover::before {
+  background: var(--primary);
+  color: var(--primary-text);
 }
 
 .member-card.former .member-info {
   width: 100%;
 }
 
-/* Expanded member card styles for full width display */
+/* Unified expanded member card styles */
 .member-card.expanded {
   width: 100% !important;
-  max-width: none !important;
-  margin: 0 -2rem !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  margin: 0 !important;
   padding: 0 !important;
   display: block !important;
   gap: 0 !important;
   flex-direction: column !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  box-sizing: border-box !important;
+  position: relative;
+  overflow: visible !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+/* Dark mode expanded card background - MINIMAL */
+[data-theme="dark"] .member-card.expanded,
+body.dark-mode .member-card.expanded {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Transform the member detail content into a unified card */
+.member-card.expanded .member-detail-content {
+  border-radius: var(--radius-lg) !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  min-width: auto !important;
+  margin: 0 auto !important;
 }
 
 .member-avatar {
   flex-shrink: 0;
 }
 
+.member-avatar {
+  position: relative;
+}
+
 .member-photo {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   border: 3px solid var(--primary);
-  box-shadow: var(--shadow-sm);
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+  background-color: var(--bg-secondary);
+}
+
+.member-card:hover .member-photo {
+  transform: scale(1.1);
+  border-color: var(--heidelberg-red);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .member-photo-placeholder {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--heidelberg-red));
   border: 3px solid var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary-text);
   font-size: 2rem;
-  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.member-photo-placeholder i {
+  font-size: 2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.member-card:hover .member-photo-placeholder {
+  transform: scale(1.1);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .member-info {
@@ -1015,50 +1210,88 @@ body.dark-mode .nav-btn.active {
 }
 
 .member-info h4 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.6rem 0;
   color: var(--text-primary);
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  position: relative;
 }
 
 .member-info h4 a {
   color: inherit;
   text-decoration: none;
-  transition: var(--transition-base);
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.member-info h4 a:hover {
-  color: var(--primary);
+.member-info h4 a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--heidelberg-red));
+  transition: width 0.3s ease;
+}
+
+.member-info h4 a:hover::after {
+  width: 100%;
 }
 
 .member-role {
   color: var(--primary);
-  font-weight: 600;
-  margin: 0 0 0.75rem 0;
-  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.member-role::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 30%;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 1px;
 }
 
 .member-graduation {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.75rem 0;
   font-style: italic;
+  background: var(--bg-tertiary);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  display: inline-block;
+  border-left: 3px solid var(--primary);
 }
 
 .member-current {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 1rem 0;
   font-weight: 500;
+  background: var(--bg-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
 }
 
 .member-description {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
   line-height: 1.5;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.25rem 0;
+  font-weight: 400;
 }
 
 .member-links {
@@ -1068,41 +1301,48 @@ body.dark-mode .nav-btn.active {
 }
 
 .member-links .btn {
-  font-size: 0.8rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius-sm);
-  transition: var(--transition-base);
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .btn-outline-primary {
-  background: transparent;
+  background: var(--bg-primary);
   color: var(--primary);
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline-primary:hover {
   background: var(--primary);
   color: var(--primary-text);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary);
 }
 
 .btn-outline-secondary {
-  background: transparent;
+  background: var(--bg-primary);
   color: var(--text-secondary);
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline-secondary:hover {
   background: var(--bg-secondary);
   color: var(--text-primary);
-  border-color: var(--border-dark);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -1113,10 +1353,20 @@ body.dark-mode .nav-btn.active {
   .member-card {
     flex-direction: column;
     text-align: center;
+    padding: 1.25rem;
+    gap: 1rem;
   }
 
   .member-avatar {
     align-self: center;
+  }
+
+  .member-info h4 {
+    font-size: 1.15rem;
+  }
+
+  .member-description {
+    font-size: 0.9rem;
   }
 
   .member-links {
@@ -1127,23 +1377,80 @@ body.dark-mode .nav-btn.active {
     flex-direction: column;
     text-align: center;
   }
+
+  /* Responsive navigation */
+  .nav-buttons-container {
+    padding: 0 0.5rem;
+  }
+
+  .nav-btn {
+    padding: 0.6rem 1.5rem;
+    margin: 0 0.25rem;
+    font-size: 0.8rem;
+  }
 }
 
 /* Member Detail Content Styles */
 .member-detail-content {
-  width: min(1200px, 92vw) !important;
-  max-width: 1200px !important;
-  min-width: min(1200px, 92vw) !important;
+  width: 100% !important;
+  max-width: min(1200px, 95vw) !important;
+  min-width: min(400px, 90vw) !important;
   margin: 2rem auto !important;
   padding: 0;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background: var(--bg-primary);
   border: 3px solid var(--primary);
   border-radius: var(--radius-xl);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   position: relative;
   z-index: 10;
+}
+
+/* Dark mode styles for member detail content - SOLID BACKGROUND */
+[data-theme="dark"] .member-detail-content,
+body.dark-mode .member-detail-content {
+  background: var(--bg-primary) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Specific styles for expanded member cards */
+.member-card.expanded .member-detail-content {
+  width: 100% !important;
+  max-width: min(1200px, 95vw) !important;
+  min-width: min(400px, 90vw) !important;
+  margin: 0 !important;
+  background: var(--bg-primary) !important;
+  border: 3px solid var(--primary) !important;
+  border-radius: var(--radius-xl) !important;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Dark mode expanded card background */
+[data-theme="dark"] .member-card.expanded .member-detail-content,
+body.dark-mode .member-card.expanded .member-detail-content {
+  background: var(--bg-primary) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4) !important;
+}
+
+.member-detail-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dark mode overlay gradients - REMOVED for readability */
+[data-theme="dark"] .member-detail-content::before,
+body.dark-mode .member-detail-content::before {
+  display: none !important;
 }
 
 /* Ensure member detail content is properly displayed */
@@ -1151,9 +1458,24 @@ body.dark-mode .nav-btn.active {
 .member-detail-content[style*="display: block"] {
   display: block !important;
   width: 100% !important;
-  max-width: none !important;
-  min-width: 100% !important;
+  max-width: min(1200px, 95vw) !important;
+  min-width: min(400px, 90vw) !important;
   box-sizing: border-box !important;
+}
+
+/* Ensure profile images maintain proper aspect ratio and don't stretch */
+.member-photo,
+.member-photo-placeholder {
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.member-card.expanded .member-photo,
+.member-card.expanded .member-photo-placeholder {
+  max-width: 90px;
+  max-height: 90px;
+  aspect-ratio: 1 / 1;
 }
 
 /* Force full width for all member detail elements */
@@ -1161,6 +1483,126 @@ body.dark-mode .nav-btn.active {
 .member-detail-content * {
   box-sizing: border-box !important;
 }
+
+/* MAXIMUM PRIORITY: Ensure ALL text in expanded member cards is readable */
+.member-card.expanded,
+.member-card.expanded *,
+.member-card.expanded .member-detail-content,
+.member-card.expanded .member-detail-content *,
+.member-card.expanded .member-detail-section,
+.member-card.expanded .member-detail-section *,
+.member-card.expanded .member-detail-body,
+.member-card.expanded .member-detail-body *,
+.member-card.expanded h1,
+.member-card.expanded h2,
+.member-card.expanded h3,
+.member-card.expanded h4,
+.member-card.expanded h5,
+.member-card.expanded h6,
+.member-card.expanded p,
+.member-card.expanded span,
+.member-card.expanded div,
+.member-card.expanded strong,
+.member-card.expanded b,
+.member-card.expanded em,
+.member-card.expanded i,
+.member-card.expanded a,
+.member-card.expanded ul,
+.member-card.expanded ol,
+.member-card.expanded li {
+  color: var(--text-primary) !important;
+  border-color: var(--text-primary) !important;
+}
+
+/* Specific text color overrides for different elements */
+.member-card.expanded h3 {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--primary) !important;
+}
+
+.member-card.expanded a {
+  color: var(--link-color) !important;
+}
+
+.member-card.expanded a:hover {
+  color: var(--link-hover) !important;
+}
+
+/* Ensure all elements inside expanded member card use full width and have proper colors */
+.member-card.expanded .member-detail-content,
+.member-card.expanded .member-detail-content *,
+.member-card.expanded .member-detail-body,
+.member-card.expanded .member-detail-section {
+  width: 100% !important;
+  max-width: min(1200px, 95vw) !important;
+  min-width: min(400px, 90vw) !important;
+  box-sizing: border-box !important;
+  color: var(--text-primary) !important;
+}
+
+/* Specific styling for member-detail-section within expanded cards */
+.member-card.expanded .member-detail-section {
+  background: var(--bg-primary) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 2rem !important;
+  margin-bottom: 2.5rem !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  text-align: left !important;
+}
+
+/* Ensure all content within expanded member sections is left-aligned */
+.member-card.expanded .member-detail-section *,
+.member-card.expanded .member-detail-section h3,
+.member-card.expanded .member-detail-section p,
+.member-card.expanded .member-detail-section div,
+.member-card.expanded .member-detail-section span {
+  text-align: left !important;
+}
+
+/* Dark mode for expanded card sections */
+[data-theme="dark"] .member-card.expanded .member-detail-section,
+body.dark-mode .member-card.expanded .member-detail-section {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Ensure member detail sections and their content are always readable */
+.member-detail-section,
+.member-detail-section * {
+  color: var(--text-primary);
+}
+
+.member-detail-section p,
+.member-detail-section div,
+.member-detail-section span {
+  color: var(--text-primary);
+}
+
+.member-detail-section ul,
+.member-detail-section ol,
+.member-detail-section li {
+  color: var(--text-primary);
+}
+
+/* Ensure expanded member card is properly visible and positioned */
+.member-card.expanded {
+  position: relative !important;
+  z-index: 100 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 0 0 2rem 0 !important;
+}
+
+/* Hide the view profile button when member detail is expanded */
+.member-card.expanded .member-profile-btn,
+.member-card.expanded .btn {
+  display: none !important;
+}
+
+/* Debug styles removed - expansion is working correctly */
 
 .member-detail-content.show {
   display: block !important;
@@ -1182,6 +1624,9 @@ body.dark-mode .nav-btn.active {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  position: relative;
+  z-index: 4;
+  width: 100%;
 }
 
 .member-detail-back-btn {
@@ -1196,6 +1641,10 @@ body.dark-mode .nav-btn.active {
   transition: var(--transition-base);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
 .member-detail-back-btn:hover {
@@ -1205,12 +1654,177 @@ body.dark-mode .nav-btn.active {
   box-shadow: var(--shadow-md);
 }
 
-/* Center member name and role in header */
+/* Enhanced member detail header with integrated member info */
+.member-detail-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  color: var(--primary-text);
+  padding: 2rem 3rem !important;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+  flex-wrap: wrap;
+}
+
+/* Member info section within expanded header */
+.member-card.expanded .member-detail-header {
+  flex-direction: row;
+  text-align: left;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem !important;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 5;
+  flex-wrap: wrap;
+}
+
+/* Member avatar styling in expanded header */
+.member-card.expanded .member-detail-header .member-avatar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+.member-card.expanded .member-detail-header .member-avatar .member-photo {
+  width: 80px !important;
+  height: 80px !important;
+  border: 3px solid var(--primary-text) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Member info styling in expanded header */
+.member-card.expanded .member-detail-header .member-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  min-width: 0;
+  max-width: calc(100% - 200px);
+}
+
+/* Back button styling in expanded header */
+.member-card.expanded .member-detail-header .member-detail-back-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* Member info text styling in expanded header */
+.member-card.expanded .member-detail-header .member-info h4 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--primary-text) !important;
+}
+
+.member-card.expanded .member-detail-header .member-info .member-role {
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.75rem !important;
+  color: var(--primary-text) !important;
+  opacity: 0.95 !important;
+}
+
+.member-card.expanded .member-detail-header .member-info .member-description {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1rem !important;
+  color: var(--primary-text) !important;
+  opacity: 0.9 !important;
+}
+
+/* Member links styling in expanded header */
+.member-card.expanded .member-detail-header .member-info .member-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.member-card.expanded .member-detail-header .member-info .member-links .btn {
+  font-size: 0.85rem !important;
+  padding: 0.4rem 0.8rem !important;
+}
+
+.member-card.expanded .member-detail-header .member-photo {
+  width: 90px;
+  height: 90px;
+  border: 3px solid var(--primary-text);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: block !important;
+  visibility: visible !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background-color: var(--bg-secondary) !important;
+}
+
+.member-card.expanded .member-detail-header .member-photo-placeholder {
+  width: 70px !important;
+  height: 70px !important;
+  font-size: 2rem !important;
+}
+
+.member-card.expanded .member-detail-header .member-photo-placeholder i {
+  font-size: 2rem !important;
+  line-height: 1 !important;
+}
+
+.member-card.expanded .member-detail-header .member-info {
+  flex: 1;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  visibility: visible !important;
+}
+
+.member-card.expanded .member-detail-header .member-name-link {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--primary-text) !important;
+  text-decoration: none;
+  line-height: 1.1;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.member-card.expanded .member-detail-header .member-role {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-text) !important;
+  opacity: 0.95;
+  margin-bottom: 0.5rem;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.member-card.expanded .member-detail-header .member-description {
+  font-size: 1.1rem;
+  color: var(--primary-text) !important;
+  opacity: 0.9;
+  line-height: 1.5;
+  margin-bottom: 0;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Center member name and role in header for non-expanded view */
 .member-detail-header .member-name-link,
 .member-detail-header .member-role {
   text-align: center;
   display: block;
   width: 100%;
+  margin: 0 auto;
 }
 
 .member-detail-header .member-name-link {
@@ -1230,25 +1844,350 @@ body.dark-mode .nav-btn.active {
 
 .member-detail-body {
   padding: 3rem 4rem;
-  max-width: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
+  max-width: 100% !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .member-detail-section {
   margin-bottom: 2.5rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-primary);
   backdrop-filter: blur(10px);
-  border: 2px solid var(--primary);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100% !important;
+  max-width: min(1200px, 95vw) !important;
+  min-width: min(400px, 90vw) !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: var(--transition-base);
   text-align: left;
+  position: relative;
+  z-index: 3;
+}
+
+/* Dark mode styles for member detail sections - IMPROVED READABILITY */
+[data-theme="dark"] .member-detail-section,
+body.dark-mode .member-detail-section {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(15px) !important;
+}
+
+[data-theme="dark"] .member-detail-section h3,
+body.dark-mode .member-detail-section h3 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .member-detail-content-text,
+body.dark-mode .member-detail-content-text {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .member-detail-contact .contact-item,
+body.dark-mode .member-detail-contact .contact-item {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .member-detail-contact .contact-item a,
+body.dark-mode .member-detail-contact .contact-item a {
+  color: var(--primary) !important;
+}
+
+/* Light mode member detail sections for better visibility */
+.member-detail-section {
+  background: var(--bg-primary) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Dark mode styles for modern member cards */
+[data-theme="dark"] .member-card,
+body.dark-mode .member-card {
+  background: rgba(20, 20, 30, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+[data-theme="dark"] .member-card:hover,
+body.dark-mode .member-card:hover {
+  background: rgba(30, 30, 40, 0.98) !important;
+  border-color: var(--primary) !important;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 8px 20px rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(25px) !important;
+}
+
+[data-theme="dark"] .member-card::before,
+body.dark-mode .member-card::before {
+  background: linear-gradient(90deg, var(--primary), var(--heidelberg-red)) !important;
+}
+
+/* Dark mode styles for member info and typography */
+[data-theme="dark"] .member-info h4,
+body.dark-mode .member-info h4 {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .member-role,
+body.dark-mode .member-role {
+  color: var(--primary) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .member-description,
+body.dark-mode .member-description {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .member-graduation,
+body.dark-mode .member-graduation {
+  background: rgba(10, 10, 20, 0.8) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-left-color: var(--primary) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+[data-theme="dark"] .member-current,
+body.dark-mode .member-current {
+  background: rgba(15, 15, 25, 0.8) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Dark mode styles for buttons */
+[data-theme="dark"] .btn-outline-primary,
+body.dark-mode .btn-outline-primary {
+  background: var(--bg-tertiary) !important;
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-outline-primary:hover,
+body.dark-mode .btn-outline-primary:hover {
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .btn-outline-secondary,
+body.dark-mode .btn-outline-secondary {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-secondary) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-outline-secondary:hover,
+body.dark-mode .btn-outline-secondary:hover {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Improved email button contrast for member cards */
+.member-links .btn-outline-secondary {
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.member-links .btn-outline-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.member-links .btn-outline-secondary:hover::before {
+  left: 100%;
+}
+
+/* Light mode email button improvements */
+[data-theme="light"] .member-links .btn-outline-secondary,
+:root .member-links .btn-outline-secondary {
+  background: #F8F9FA !important;
+  color: #6B7280 !important;
+  border: 2px solid #D1D5DB !important;
+  box-shadow: 0 2px 8px rgba(107, 114, 128, 0.15) !important;
+}
+
+[data-theme="light"] .member-links .btn-outline-secondary:hover,
+:root .member-links .btn-outline-secondary:hover {
+  background: #6B7280 !important;
+  color: #FFFFFF !important;
+  border-color: #6B7280 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 114, 128, 0.3) !important;
+}
+
+/* Dark mode email button improvements */
+[data-theme="dark"] .member-links .btn-outline-secondary,
+body.dark-mode .member-links .btn-outline-secondary {
+  background: rgba(30, 30, 40, 0.9) !important;
+  color: #9CA3AF !important;
+  border: 2px solid #9CA3AF !important;
+  box-shadow: 0 2px 8px rgba(156, 163, 175, 0.2) !important;
+}
+
+[data-theme="dark"] .member-links .btn-outline-secondary:hover,
+body.dark-mode .member-links .btn-outline-secondary:hover {
+  background: #9CA3AF !important;
+  color: #000000 !important;
+  border-color: #9CA3AF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(156, 163, 175, 0.4) !important;
+}
+
+/* Improved button contrast for member profile buttons */
+.member-links .btn-outline-primary {
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.member-links .btn-outline-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.member-links .btn-outline-primary:hover::before {
+  left: 100%;
+}
+
+/* Light mode member profile button improvements */
+[data-theme="light"] .member-links .btn-outline-primary,
+:root .member-links .btn-outline-primary {
+  background: #FFFFFF !important;
+  color: #C22032 !important;
+  border: 2px solid #C22032 !important;
+  box-shadow: 0 2px 8px rgba(194, 32, 50, 0.15) !important;
+}
+
+[data-theme="light"] .member-links .btn-outline-primary:hover,
+:root .member-links .btn-outline-primary:hover {
+  background: #C22032 !important;
+  color: #FFFFFF !important;
+  border-color: #C22032 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(194, 32, 50, 0.3) !important;
+}
+
+/* Dark mode member profile button improvements */
+[data-theme="dark"] .member-links .btn-outline-primary,
+body.dark-mode .member-links .btn-outline-primary {
+  background: rgba(30, 30, 40, 0.9) !important;
+  color: #FF6B6B !important;
+  border: 2px solid #FF6B6B !important;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2) !important;
+}
+
+[data-theme="dark"] .member-links .btn-outline-primary:hover,
+body.dark-mode .member-links .btn-outline-primary:hover {
+  background: #FF6B6B !important;
+  color: #000000 !important;
+  border-color: #FF6B6B !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4) !important;
+}
+
+/* Dark mode styles for navigation */
+[data-theme="dark"] .members-nav-simple,
+body.dark-mode .members-nav-simple {
+  background: rgba(15, 15, 25, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+[data-theme="dark"] .nav-btn,
+body.dark-mode .nav-btn {
+  background: rgba(20, 20, 30, 0.8) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(15px) !important;
+}
+
+[data-theme="dark"] .nav-btn:hover,
+body.dark-mode .nav-btn:hover {
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .nav-btn.active,
+body.dark-mode .nav-btn.active {
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Dark mode styles for section headers */
+[data-theme="dark"] .section-header h3,
+body.dark-mode .section-header h3 {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), var(--primary)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Dark mode styles for former member cards */
+[data-theme="dark"] .member-card.former,
+body.dark-mode .member-card.former {
+  background: rgba(25, 25, 35, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+[data-theme="dark"] .member-card.former:hover,
+body.dark-mode .member-card.former:hover {
+  background: rgba(35, 35, 45, 0.95) !important;
+  border-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .member-card.former::before,
+body.dark-mode .member-card.former::before {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .member-card.former:hover::before,
+body.dark-mode .member-card.former:hover::before {
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
+  border-color: var(--primary) !important;
 }
 
 .member-detail-section:hover {
@@ -1291,8 +2230,8 @@ body.dark-mode .nav-btn.active {
 }
 
 .member-detail-content-text {
-  color: var(--text-secondary);
-  line-height: 1.7;
+  color: var(--text-primary);
+  line-height: 1.6;
   font-size: 1rem;
   text-align: left;
 }
@@ -1323,14 +2262,24 @@ body.dark-mode .nav-btn.active {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
 .member-detail-publications .publication-item {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 1rem;
+  padding: 1.25rem;
   transition: var(--transition-base);
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .member-detail-publications .publication-item:hover {
@@ -1340,28 +2289,54 @@ body.dark-mode .nav-btn.active {
 
 .member-detail-publications .publication-header {
   margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .member-detail-publications .publication-meta {
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 0.5rem;
+  align-items: center;
   font-size: 0.85rem;
+  flex-wrap: wrap;
 }
 
 .member-detail-publications .publication-type {
   background: var(--primary);
   color: var(--primary-text);
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   border-radius: var(--radius-sm);
   font-weight: 500;
   font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .member-detail-publications .publication-year {
   color: var(--text-secondary);
   font-weight: 500;
   font-size: 0.8rem;
+}
+
+/* Ensure all publication elements have proper text colors */
+.member-detail-publications .publication-item {
+  color: var(--text-primary);
+}
+
+.member-detail-publications .publication-item * {
+  color: inherit;
+}
+
+.member-detail-publications .publication-meta span {
+  color: var(--text-secondary);
+}
+
+.member-detail-publications .publication-authors {
+  color: var(--text-primary) !important;
+}
+
+.member-detail-publications .publication-venue {
+  color: var(--text-secondary) !important;
 }
 
 .member-detail-publications .publication-title {
@@ -1387,6 +2362,228 @@ body.dark-mode .nav-btn.active {
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
   font-style: italic;
+}
+
+/* Dark mode styling for publications */
+[data-theme="dark"] .member-detail-publications .publication-item,
+body.dark-mode .member-detail-publications .publication-item {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .member-detail-publications .publication-title,
+body.dark-mode .member-detail-publications .publication-title {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .member-detail-publications .publication-authors,
+body.dark-mode .member-detail-publications .publication-authors {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .member-detail-publications .publication-venue,
+body.dark-mode .member-detail-publications .publication-venue {
+  color: var(--text-secondary) !important;
+}
+
+/* Force publications to stay within bounds */
+.member-detail-publications {
+  max-width: 100%;
+  overflow: hidden;
+  contain: layout style paint;
+}
+
+.member-detail-publications .publication-item {
+  max-width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ensure publication content doesn't overflow horizontally */
+.member-detail-publications .publication-title,
+.member-detail-publications .publication-authors,
+.member-detail-publications .publication-venue {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Allow wrapping for long titles */
+.member-detail-publications .publication-title {
+  white-space: normal;
+  line-height: 1.3;
+}
+
+/* Ensure publications in expanded cards have proper styling and left alignment */
+.member-card.expanded .member-detail-publications .publication-item {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1.25rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  color: var(--text-primary) !important;
+}
+
+.member-card.expanded .member-detail-publications .publication-header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  width: 100% !important;
+}
+
+.member-card.expanded .member-detail-publications .publication-meta {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  width: 100% !important;
+  flex-wrap: wrap !important;
+}
+
+.member-card.expanded .member-detail-publications .publication-title {
+  text-align: left !important;
+  width: 100% !important;
+}
+
+.member-card.expanded .member-detail-publications .publication-authors {
+  text-align: left !important;
+  width: 100% !important;
+}
+
+.member-card.expanded .member-detail-publications .publication-venue {
+  text-align: left !important;
+  width: 100% !important;
+}
+
+/* Dark mode for expanded card publications */
+[data-theme="dark"] .member-card.expanded .member-detail-publications .publication-item,
+body.dark-mode .member-card.expanded .member-detail-publications .publication-item {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Ensure all publication text in expanded cards is readable */
+.member-card.expanded .member-detail-publications .publication-item * {
+  color: var(--text-primary) !important;
+}
+
+.member-card.expanded .member-detail-publications .publication-title {
+  color: var(--text-primary) !important;
+}
+
+.member-card.expanded .member-detail-publications .publication-authors {
+  color: var(--text-primary) !important;
+}
+
+.member-card.expanded .member-detail-publications .publication-venue {
+  color: var(--text-secondary) !important;
+}
+
+.member-card.expanded .member-detail-publications .publication-meta span {
+  color: var(--text-secondary) !important;
+}
+
+/* Dark mode text colors for expanded card publications */
+[data-theme="dark"] .member-card.expanded .member-detail-publications .publication-title,
+body.dark-mode .member-card.expanded .member-detail-publications .publication-title {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .member-card.expanded .member-detail-publications .publication-authors,
+body.dark-mode .member-card.expanded .member-detail-publications .publication-authors {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .member-card.expanded .member-detail-publications .publication-venue,
+body.dark-mode .member-card.expanded .member-detail-publications .publication-venue {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .member-card.expanded .member-detail-publications .publication-meta span,
+body.dark-mode .member-card.expanded .member-detail-publications .publication-meta span {
+  color: var(--text-secondary) !important;
+}
+
+/* Mobile responsive styling for publications */
+@media (max-width: 768px) {
+  .member-detail-publications .publication-item {
+    padding: 1rem;
+    text-align: left !important;
+  }
+
+  .member-detail-publications .publication-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    text-align: left !important;
+  }
+
+  .member-detail-publications .publication-authors,
+  .member-detail-publications .publication-venue {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    text-align: left !important;
+  }
+
+  .member-card.expanded .member-detail-publications .publication-meta {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .member-detail-publications .publication-item {
+    padding: 0.75rem;
+  }
+
+  .member-detail-publications .publication-title {
+    font-size: 0.9rem;
+  }
+
+  /* Mobile responsive styling for member detail header */
+  .member-detail-header,
+  .member-card.expanded .member-detail-header {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 1.5rem 2rem !important;
+    gap: 1rem !important;
+  }
+
+  .member-card.expanded .member-detail-header .member-avatar {
+    margin: 0 auto !important;
+  }
+
+  .member-card.expanded .member-detail-header .member-info {
+    text-align: center !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .member-card.expanded .member-detail-header .member-detail-back-btn {
+    margin: 1rem auto 0 !important;
+    width: 100% !important;
+    max-width: 200px !important;
+  }
+
+  .member-card.expanded .member-detail-header .member-avatar .member-photo {
+    width: 70px !important;
+    height: 70px !important;
+  }
 }
 
 .member-detail-publications .publication-venue {
@@ -1536,6 +2733,38 @@ body.dark-mode .nav-btn.active {
   color: var(--primary);
 }
 
+/* Ensure contact information is readable */
+.member-detail-contact .contact-item {
+  color: var(--text-primary);
+}
+
+.member-detail-contact .contact-item a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.member-detail-contact .contact-item a:hover {
+  color: var(--link-hover);
+}
+
+/* Ensure all text in member detail sections is readable */
+.member-detail-section h4,
+.member-detail-section h5,
+.member-detail-section h6 {
+  color: var(--text-primary);
+}
+
+.member-detail-section strong,
+.member-detail-section b {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.member-detail-section em,
+.member-detail-section i {
+  color: var(--text-primary);
+}
+
 /* View All Links */
 .view-all-link {
   text-align: center;
@@ -1553,7 +2782,7 @@ body.dark-mode .nav-btn.active {
   .member-detail-content {
     width: min(100%, calc(100vw - 2rem)) !important;
     max-width: min(100%, calc(100vw - 2rem)) !important;
-    min-width: min(100%, calc(100vw - 2rem)) !important;
+    min-width: min(300px, calc(100vw - 2rem)) !important;
     margin: 1rem auto !important;
     border-radius: var(--radius-md);
   }
@@ -1573,6 +2802,7 @@ body.dark-mode .nav-btn.active {
 
   .member-detail-body {
     padding: 2rem 2.5rem;
+    align-items: stretch;
   }
 
   .member-detail-section {
@@ -1590,7 +2820,7 @@ body.dark-mode .nav-btn.active {
   .member-detail-content {
     width: min(100%, calc(100vw - 1rem)) !important;
     max-width: min(100%, calc(100vw - 1rem)) !important;
-    min-width: min(100%, calc(100vw - 1rem)) !important;
+    min-width: min(280px, calc(100vw - 1rem)) !important;
     margin: 0.5rem auto !important;
     border-radius: var(--radius-sm);
   }
@@ -1610,6 +2840,7 @@ body.dark-mode .nav-btn.active {
 
   .member-detail-body {
     padding: 1.5rem 2rem;
+    align-items: stretch;
   }
 
   .member-detail-section {
@@ -1748,59 +2979,93 @@ class MembersManager {
       teamSections.classList.remove('expanded');
     }
 
-    // Show detail view for filtered member
-    if (this.filters.memberKey) {
-      const targetMember = this.members.find(m => m.key === this.filters.memberKey);
-      if (targetMember) {
-        const detailContent = targetMember.element.querySelector('.member-detail-content');
-        if (detailContent) {
-          // Use both style and class for maximum compatibility
-          detailContent.style.display = 'block';
-          detailContent.classList.add('show');
+            // Show detail view for filtered member
+        if (this.filters.memberKey) {
+          const targetMember = this.members.find(m => m.key === this.filters.memberKey);
+          if (targetMember) {
+            // First, make sure the target member card is visible and properly positioned
+            targetMember.element.style.display = 'block';
+            targetMember.element.style.visibility = 'visible';
+            targetMember.element.style.zIndex = '100';
 
-          // Add expanded class to the member card for full width styling
-          targetMember.element.classList.add('expanded');
+            const detailContent = targetMember.element.querySelector('.member-detail-content');
+            if (detailContent) {
+              // Use both style and class for maximum compatibility
+              detailContent.style.display = 'block';
+              detailContent.style.visibility = 'visible';
+              detailContent.classList.add('show');
 
-          // Add expanded class to team sections for full width container
-          const teamSections = document.querySelector('.team-sections');
-          if (teamSections) {
-            teamSections.classList.add('expanded');
-          }
+              // Add expanded class to the member card for full width styling
+              targetMember.element.classList.add('expanded');
 
-          // Hide other member cards
-          this.members.forEach(member => {
-            if (member.key !== this.filters.memberKey) {
-              member.element.style.display = 'none';
-              // Also hide any detail content that might be showing
-              const otherDetail = member.element.querySelector('.member-detail-content');
-              if (otherDetail) {
-                otherDetail.style.display = 'none';
-                otherDetail.classList.remove('show');
+              // Add expanded class to team sections for full width container
+              const teamSections = document.querySelector('.team-sections');
+              if (teamSections) {
+                teamSections.classList.add('expanded');
               }
+
+              // Move member info to the expanded header for unified experience
+              this.integrateMemberInfo(targetMember.element, detailContent);
+
+              // Hide the "View Profile" button in the expanded card
+              const viewProfileBtn = targetMember.element.querySelector('.member-profile-btn');
+              if (viewProfileBtn) {
+                viewProfileBtn.style.display = 'none';
+              }
+
+              // Hide other member cards
+              this.members.forEach(member => {
+                if (member.key !== this.filters.memberKey) {
+                  member.element.style.display = 'none';
+                  // Also hide any detail content that might be showing
+                  const otherDetail = member.element.querySelector('.member-detail-content');
+                  if (otherDetail) {
+                    otherDetail.style.display = 'none';
+                    otherDetail.classList.remove('show');
+                  }
+                }
+              });
+
+              // Hide navigation buttons and section headers
+              this.hideNavigationElements();
+
+              // Show global "Show All Members" button
+              this.showGlobalBackButton();
+
+              // Scroll to the member detail
+              targetMember.element.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-          });
-
-          // Hide navigation buttons and section headers
-          this.hideNavigationElements();
-
-          // Show global "Show All Members" button
-          this.showGlobalBackButton();
-
-          // Scroll to the member detail
-          targetMember.element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    } else {
+          }
+        } else {
       // Show all members
       this.members.forEach(member => {
         member.element.style.display = 'block';
+        member.element.style.visibility = 'visible';
+        member.element.style.zIndex = 'auto';
+
         // Hide any detail content that might be showing
         const detailContent = member.element.querySelector('.member-detail-content');
         if (detailContent) {
           detailContent.style.display = 'none';
           detailContent.classList.remove('show');
         }
+
+        // Remove expanded class and show the "View Profile" button again
+        member.element.classList.remove('expanded');
+        const viewProfileBtn = member.element.querySelector('.member-profile-btn');
+        if (viewProfileBtn) {
+          viewProfileBtn.style.display = 'inline-flex';
+        }
+
+        // Restore member info visibility
+        this.restoreMemberInfo(member.element);
       });
+
+      // Remove expanded class from team sections
+      const teamSections = document.querySelector('.team-sections');
+      if (teamSections) {
+        teamSections.classList.remove('expanded');
+      }
 
       // Show navigation buttons and section headers
       this.showNavigationElements();
@@ -1827,11 +3092,55 @@ class MembersManager {
     this.applyFilters();
   }
 
+  restoreMemberInfo(memberCard) {
+    // Restore member info visibility when collapsing expanded view
+    const memberAvatar = memberCard.querySelector('.member-avatar');
+    const memberInfo = memberCard.querySelector('.member-info');
+
+    if (memberAvatar) {
+      memberAvatar.style.display = 'flex';
+    }
+    if (memberInfo) {
+      memberInfo.style.display = 'flex';
+    }
+  }
+
   hideAllDetails() {
     this.filters.memberKey = '';
     const url = new URL(window.location);
     url.hash = '';
     window.history.replaceState({}, '', url);
+
+    // Reset all member cards
+    this.members.forEach(member => {
+      member.element.style.display = 'block';
+      member.element.style.visibility = 'visible';
+      member.element.style.zIndex = 'auto';
+      member.element.classList.remove('expanded');
+
+      // Show the "View Profile" button again
+      const viewProfileBtn = member.element.querySelector('.member-profile-btn');
+      if (viewProfileBtn) {
+        viewProfileBtn.style.display = 'inline-flex';
+      }
+
+      // Hide any detail content
+      const detailContent = member.element.querySelector('.member-detail-content');
+      if (detailContent) {
+        detailContent.style.display = 'none';
+        detailContent.classList.remove('show');
+      }
+
+      // Restore member info visibility
+      this.restoreMemberInfo(member.element);
+    });
+
+    // Remove expanded class from team sections
+    const teamSections = document.querySelector('.team-sections');
+    if (teamSections) {
+      teamSections.classList.remove('expanded');
+    }
+
     this.applyFilters();
   }
 
@@ -1861,6 +3170,37 @@ class MembersManager {
     sectionHeaders.forEach(header => {
       header.style.display = 'block';
     });
+  }
+
+  integrateMemberInfo(memberCard, detailContent) {
+    // Create a unified experience by moving member info to the expanded header
+    const memberAvatar = memberCard.querySelector('.member-avatar');
+    const memberInfo = memberCard.querySelector('.member-info');
+    const detailHeader = detailContent.querySelector('.member-detail-header');
+
+    if (memberAvatar && memberInfo && detailHeader) {
+      // Clone and move member avatar and info to the detail header
+      const avatarClone = memberAvatar.cloneNode(true);
+      const infoClone = memberInfo.cloneNode(true);
+
+      // Clear the existing header content and add the member info
+      detailHeader.innerHTML = '';
+
+      // Add the cloned elements to the header
+      detailHeader.appendChild(avatarClone);
+      detailHeader.appendChild(infoClone);
+
+      // Add the back button to the header
+      const backButton = document.createElement('button');
+      backButton.type = 'button';
+      backButton.className = 'btn btn-outline-primary member-detail-back-btn';
+      backButton.innerHTML = '<i class="fas fa-arrow-left"></i> Back to all members';
+      detailHeader.appendChild(backButton);
+
+      // Hide the original member avatar and info in the card
+      memberAvatar.style.display = 'none';
+      memberInfo.style.display = 'none';
+    }
   }
 
   showGlobalBackButton() {
@@ -1925,6 +3265,15 @@ class MembersManager {
       this.style.transform = 'translateY(0)';
       this.style.boxShadow = 'var(--shadow-md)';
     });
+
+    // Apply dark mode styles if needed
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark' ||
+                      document.body.classList.contains('dark-mode');
+    if (isDarkMode) {
+      backButton.querySelector('.global-back-container').style.background = 'var(--primary)';
+      backButton.querySelector('.global-back-container').style.color = 'var(--primary-text)';
+      backButton.querySelector('.global-back-container').style.borderColor = 'var(--primary-text)';
+    }
 
     // Insert the button at the beginning of the team sections
     teamSections.insertBefore(backButton, teamSections.firstChild);

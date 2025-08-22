@@ -5,29 +5,37 @@
   <!-- Enhanced Navigation Bar with High Contrast Theme -->
   <nav id="navbar" class="navbar heidelberg-navbar navbar-expand-lg sticky-top" role="navigation" aria-label="Main navigation">
     <div class="container-fluid px-3">
-      <!-- Brand/Logo - More compact -->
+      <!-- Brand/Logo - Responsive -->
       <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ site.baseurl }}/" aria-label="AG Computational Arithmetic Geometry - Home">
         <div class="me-2">
-          <img src="{{ '/assets/img/group_logo_201x211_new.png' | relative_url }}" alt="Group logo" class="brand-logo-img">
+          <picture class="brand-logo-img">
+            <source srcset="{{ '/assets/img/group_logo.webp' | relative_url }}" type="image/webp">
+            <img src="{{ '/assets/img/group_logo_optimized.png' | relative_url }}"
+                 alt="AG Computational Arithmetic Geometry Group Logo"
+                 width="201" height="211"
+                 loading="eager"
+                 decoding="async"
+                 fetchpriority="high">
+          </picture>
         </div>
         <div class="brand-text">
-          <div class="fw-bold brand-title">AG Computational Arithmetic Geometry</div>
-          <small class="d-none d-lg-block university-name">University of Heidelberg</small>
+          <div class="fw-bold brand-title d-none d-md-inline">AG Computational Arithmetic Geometry</div>
+          <small class="university-name d-none d-lg-inline">University of Heidelberg</small>
         </div>
       </a>
 
-      <!-- Enhanced Search Bar - Center position for larger screens -->
-      <div class="d-none d-lg-flex search-container-center">
+            <!-- Enhanced Search Bar - Center position for medium+ screens -->
+      <div class="d-none d-md-flex search-container-center">
         <div class="search-container">
           <div class="search-input-wrapper">
-            
+
             <input type="text" id="search-input" class="search-input"
                    placeholder="Search articles, publications, research..."
                    aria-label="Search this site" autocomplete="off">
           </div>
           <div id="search-results" class="search-results-container"></div>
         </div>
-        
+
       </div>
 
       <!-- Right side controls -->
@@ -36,12 +44,20 @@
 
         <!-- Enhanced Theme Switcher -->
         {% if site.enable_theme_switcher %}
-          <button id="theme-toggle" class="header-control-btn" 
+          <button id="theme-toggle" class="header-control-btn"
                   title="Switch Theme" aria-label="Toggle dark and light mode">
              <span class="theme-icon-light" id="theme-icon-light" aria-hidden="true">☀️</span>
              <span class="theme-icon-dark" id="theme-icon-dark" aria-hidden="true">🌙</span>
           </button>
         {% endif %}
+
+        <!-- Compact Search Button - Extra small screens only -->
+        <div class="d-md-none">
+          <button id="compact-search-toggle" class="header-control-btn compact-search-btn"
+                  title="Search" aria-label="Open search">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
 
         <!-- Navbar Toggle for Mobile -->
         <button
@@ -62,56 +78,56 @@
           <!-- Home/About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/' | relative_url }}" role="menuitem" aria-current="{% if page.permalink == '/' %}page{% endif %}">
-              <i class="fas fa-home me-1" aria-hidden="true"></i>
-              About
+              <i class="fas fa-home nav-icon" aria-hidden="true"></i>
+              <span class="nav-text d-none d-xl-inline">About</span>
             </a>
           </li>
-          
+
           <li class="nav-item {% if page.url == '/research/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/research/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/research/' %}page{% endif %}">
-              <i class="fas fa-microscope me-1" aria-hidden="true"></i>
-              Research
+              <i class="fas fa-microscope nav-icon" aria-hidden="true"></i>
+              <span class="nav-text d-none d-xl-inline">Research</span>
             </a>
           </li>
-          
+
           <li class="nav-item {% if page.url == '/publications/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/publications/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/publications/' %}page{% endif %}">
-              <i class="fas fa-file-alt me-1" aria-hidden="true"></i>
-              Publications
+              <i class="fas fa-file-alt nav-icon" aria-hidden="true"></i>
+              <span class="nav-text d-none d-xl-inline">Publications</span>
             </a>
           </li>
-          
+
           <li class="nav-item {% if page.url == '/teaching/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/teaching/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/teaching/' %}page{% endif %}">
-              <i class="fas fa-chalkboard-teacher me-1" aria-hidden="true"></i>
-              Teaching
+              <i class="fas fa-chalkboard-teacher nav-icon" aria-hidden="true"></i>
+              <span class="nav-text d-none d-xl-inline">Teaching</span>
             </a>
           </li>
-          
+
           <!-- Members - positioned before Links -->
           <li class="nav-item {% if page.url == '/members/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/members/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/members/' %}page{% endif %}">
-              <i class="fas fa-users me-1" aria-hidden="true"></i>
-              Members
+              <i class="fas fa-users nav-icon" aria-hidden="true"></i>
+              <span class="nav-text d-none d-xl-inline">Members</span>
             </a>
           </li>
-          
+
           <li class="nav-item {% if page.url == '/links/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/links/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/links/' %}page{% endif %}">
-              <i class="fas fa-link me-1" aria-hidden="true"></i>
-              Links
+              <i class="fas fa-link nav-icon" aria-hidden="true"></i>
+              <span class="nav-text d-none d-xl-inline">Links</span>
             </a>
           </li>
-          
+
           <li class="nav-item {% if page.url == '/contact/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/contact/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/contact/' %}page{% endif %}">
-              <i class="fas fa-envelope me-1" aria-hidden="true"></i>
-              Contact
+              <i class="fas fa-envelope nav-icon" aria-hidden="true"></i>
+              <span class="nav-text d-none d-xl-inline">Contact</span>
             </a>
           </li>
 
           <!-- Enhanced Search Bar - Mobile version -->
-          <li class="nav-item d-lg-none" role="none">
+          <li class="nav-item d-md-none" role="none">
             <div class="search-container">
               <div class="search-input-wrapper">
                 
@@ -213,6 +229,91 @@ body.dark-mode .heidelberg-navbar {
   position: relative;
   text-decoration: none;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Icon-only styles for medium screens */
+.nav-icon {
+  font-size: 1rem;
+  transition: all var(--transition-base);
+}
+
+.nav-text {
+  margin-left: 0.375rem;
+  white-space: nowrap;
+}
+
+/* Compact search button for medium screens */
+.compact-search-btn {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: var(--white) !important;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all var(--transition-base);
+}
+
+.compact-search-btn:hover,
+.compact-search-btn:focus {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--white) !important;
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  outline: none;
+}
+
+.compact-search-btn:focus {
+  box-shadow: 0 0 0 2px var(--white) !important;
+}
+
+.compact-search-btn i {
+  font-size: 0.9rem;
+}
+
+/* Icon-only mode: center icons when text is hidden */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .heidelberg-navbar .nav-link {
+    padding: 0.5rem !important;
+    justify-content: center;
+    min-width: 48px;
+    transition: all var(--transition-base);
+  }
+
+  .nav-icon {
+    font-size: 1.1rem;
+    margin: 0;
+    transition: all var(--transition-base);
+  }
+
+  .nav-text {
+    display: none !important;
+  }
+
+  /* Ensure navbar doesn't wrap in icon-only mode */
+  .navbar-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .navbar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    flex-shrink: 0;
+  }
 }
 
 .heidelberg-navbar .nav-link::before {
@@ -293,6 +394,13 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
+  .brand-logo-img img {
+    height: 100%;
+    width: auto;
+    display: block;
+    border-radius: 4px;
+  }
+
   .brand-logo-img:hover,
   .brand-logo-img:focus {
     transform: translateY(-1px) scale(1.03);
@@ -359,17 +467,122 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   .search-container-center {
     display: none !important;
   }
-  
+
   .brand-title {
     font-size: 0.9rem;
   }
-  
+
   .university-name {
     font-size: 0.75rem;
   }
 }
 
-@media (max-width: 991.98px) {
+/* Medium screens: Full search bar with icon-only navigation */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Hide navigation text but keep icons */
+  .nav-text {
+    display: none !important;
+  }
+
+  .heidelberg-navbar .nav-link {
+    padding: 0.5rem !important;
+    justify-content: center;
+    min-width: 44px;
+    transition: all var(--transition-base);
+  }
+
+  .nav-icon {
+    font-size: 1rem;
+    margin: 0;
+    transition: all var(--transition-base);
+  }
+
+  /* Full search bar takes center position */
+  .search-container {
+    max-width: 300px;
+    transform: none;
+  }
+
+  .search-input {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Hide brand text to maximize search space */
+  .brand-title {
+    display: none !important;
+  }
+
+  /* Ensure navbar doesn't wrap */
+  .navbar-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .navbar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Give more space to search bar, hide nav text */
+  .search-container {
+    max-width: 400px;
+    transform: none;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Icon-only navigation mode to save space */
+  .heidelberg-navbar .nav-link {
+    padding: 0.5rem !important;
+    justify-content: center;
+    min-width: 44px;
+    transition: all var(--transition-base);
+  }
+
+  .nav-icon {
+    font-size: 1.1rem;
+    margin: 0;
+    transition: all var(--transition-base);
+  }
+
+  .nav-text {
+    display: none !important;
+  }
+
+  /* Ensure navbar doesn't wrap in icon-only mode */
+  .navbar-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .navbar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    flex-shrink: 0;
+  }
+
+  /* Hide university name to give more space */
+  .university-name {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767.98px) {
   .navbar-collapse {
     background: var(--primary) !important;
     border-radius: var(--radius-lg);
@@ -383,33 +596,44 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   body.dark-mode .navbar-collapse {
     background: var(--primary) !important;
   }
-  
+
   .navbar-nav {
     gap: 0.25rem;
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .navbar-nav .nav-link {
     padding: 0.75rem 1rem !important;
     border-radius: var(--radius-md);
     margin: 0.125rem 0;
     text-align: left;
+    justify-content: flex-start !important;
   }
-  
+
+  /* Ensure nav-text is visible in mobile dropdown */
+  .nav-text {
+    display: inline !important;
+  }
+
+  .nav-icon {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+
   .brand-title {
     font-size: 0.85rem;
   }
-  
+
   .university-name {
     font-size: 0.7rem;
   }
-  
+
   .brand-icon .bg-white {
     width: 32px !important;
     height: 32px !important;
   }
-  
+
   .theme-toggle-btn {
     width: 32px;
     height: 32px;
@@ -579,11 +803,191 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
-  
+
+  // Progressive responsive navbar functionality
+  function updateNavbarForScreenSize() {
+    const width = window.innerWidth;
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      const icon = link.querySelector('.nav-icon');
+      const text = link.querySelector('.nav-text');
+
+      if (width >= 1200) {
+        // Large screens: show both icons and text
+        link.setAttribute('aria-label', text ? text.textContent : '');
+        icon.style.marginRight = '';
+      } else if (width >= 992 && width < 1200) {
+        // Medium screens: icons only
+        const textContent = text ? text.textContent : '';
+        link.setAttribute('aria-label', textContent);
+        link.setAttribute('title', textContent);
+      } else {
+        // Small screens: dropdown menu
+        link.setAttribute('aria-label', text ? text.textContent : '');
+        link.removeAttribute('title');
+      }
+    });
+  }
+
+  // Debug indicator for responsive states (can be removed later)
+  function addDebugIndicator() {
+    const existing = document.getElementById('responsive-debug');
+    if (existing) existing.remove();
+
+    const indicator = document.createElement('div');
+    indicator.id = 'responsive-debug';
+    indicator.style.cssText = `
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      z-index: 9999;
+      pointer-events: none;
+    `;
+
+    const width = window.innerWidth;
+    let mode = 'Mobile';
+    let searchMode = 'Mobile';
+
+    if (width >= 1200) {
+      mode = 'Full Mode';
+      searchMode = 'Center Bar';
+    } else if (width >= 768) {
+      mode = 'Icons Only + Search';
+      searchMode = 'Center Bar';
+    }
+
+    indicator.innerHTML = `${mode}<br>Search: ${searchMode}<br>(${width}px)`;
+    document.body.appendChild(indicator);
+  }
+
+  // Update navbar on page load and window resize
+  updateNavbarForScreenSize();
+  addDebugIndicator();
+  window.addEventListener('resize', function() {
+    updateNavbarForScreenSize();
+    addDebugIndicator();
+  });
+
+  // Compact search button functionality (medium screens)
+  const compactSearchToggle = document.getElementById('compact-search-toggle');
+
+  if (compactSearchToggle) {
+    compactSearchToggle.addEventListener('click', function() {
+      // Create or toggle compact search overlay
+      let compactSearchOverlay = document.getElementById('compact-search-overlay');
+
+      if (!compactSearchOverlay) {
+        // Create overlay
+        compactSearchOverlay = document.createElement('div');
+        compactSearchOverlay.id = 'compact-search-overlay';
+        compactSearchOverlay.style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.8);
+          z-index: 9998;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity var(--transition-base);
+        `;
+
+        const searchContainer = document.createElement('div');
+        searchContainer.style.cssText = `
+          background: var(--primary);
+          padding: 2rem;
+          border-radius: var(--radius-lg);
+          width: 90%;
+          max-width: 500px;
+          position: relative;
+        `;
+
+        const closeButton = document.createElement('button');
+        closeButton.innerHTML = '×';
+        closeButton.style.cssText = `
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: none;
+          border: none;
+          color: var(--white);
+          font-size: 2rem;
+          cursor: pointer;
+          padding: 0;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: var(--radius-md);
+          transition: all var(--transition-base);
+        `;
+        closeButton.setAttribute('aria-label', 'Close search');
+
+        const searchWrapper = document.createElement('div');
+        searchWrapper.className = 'search-container';
+        searchWrapper.innerHTML = `
+          <div class="search-input-wrapper">
+            <input type="text" id="search-input-compact" class="search-input"
+                   placeholder="Search articles, publications, research..."
+                   aria-label="Search this site" autocomplete="off">
+          </div>
+          <div id="search-results-compact" class="search-results-container"></div>
+        `;
+
+        closeButton.addEventListener('click', function() {
+          compactSearchOverlay.style.opacity = '0';
+          setTimeout(() => {
+            document.body.removeChild(compactSearchOverlay);
+          }, 300);
+        });
+
+        searchContainer.appendChild(closeButton);
+        searchContainer.appendChild(searchWrapper);
+        compactSearchOverlay.appendChild(searchContainer);
+        document.body.appendChild(compactSearchOverlay);
+
+        // Focus the search input after a short delay
+        setTimeout(() => {
+          const searchInput = document.getElementById('search-input-compact');
+          if (searchInput) searchInput.focus();
+        }, 100);
+      }
+
+      // Show overlay
+      setTimeout(() => {
+        compactSearchOverlay.style.opacity = '1';
+      }, 10);
+
+      // Close on escape key
+      const handleEscape = function(e) {
+        if (e.key === 'Escape') {
+          compactSearchOverlay.style.opacity = '0';
+          setTimeout(() => {
+            if (document.body.contains(compactSearchOverlay)) {
+              document.body.removeChild(compactSearchOverlay);
+            }
+          }, 300);
+          document.removeEventListener('keydown', handleEscape);
+        }
+      };
+      document.addEventListener('keydown', handleEscape);
+    });
+  }
+
   // Mobile search toggle functionality
   const searchToggleMobile = document.getElementById('search-toggle-mobile');
   const searchInputMobile = document.getElementById('search-input-mobile');
-  
+
   if (searchToggleMobile && searchInputMobile) {
     searchToggleMobile.addEventListener('click', function() {
       searchInputMobile.focus();
