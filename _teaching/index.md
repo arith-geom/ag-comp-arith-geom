@@ -2,7 +2,7 @@
 layout: page
 permalink: "/teaching/"
 scripts:
-- "/assets/js/teaching-page.js"
+- "/assets/js/components/teaching-page.js"
 show_title: false
 description: Teaching overview with filters and recent courses
 ---
@@ -65,14 +65,16 @@ description: Teaching overview with filters and recent courses
           {% for course in sem.items %}
             {% assign type_lower = course.course_type | downcase %}
             <li class="course-item" data-type="{{ type_lower }}" data-year="{{ course.semester_year }}" data-period="recent" {% if course.external_url %}data-course-url="{{ course.external_url }}" data-external="true"{% endif %}>
-              <span class="course-badge {{ type_lower }}">
-                {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Lecture{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Advanced Seminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
-              </span>
-              <span class="course-title">{{ course.title }}</span>
-              {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
-              <button class="course-expand-btn" aria-expanded="false" title="Show details" tabindex="-1" disabled aria-disabled="true">
-                <i class="fas fa-chevron-down"></i>
-              </button>
+              <div class="course-item-header">
+                <span class="course-badge {{ type_lower }}">
+                  {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Lecture{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Advanced Seminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
+                </span>
+                <span class="course-title">{{ course.title }}</span>
+                {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
+                <button class="course-expand-btn" aria-expanded="false" title="Show details">
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+              </div>
               <div class="course-details" style="display: none;">
                 <div class="course-details-inner">
                   <div class="course-meta">

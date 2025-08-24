@@ -305,7 +305,30 @@ window.clearAllFilters = clearAllFilters;
  * Expandable per-course details
  */
 function initCourseExpanders() {
-  // Chevron is a visual indicator only; no interactive listeners here.
+  const courseItems = document.querySelectorAll('.course-item');
+
+  courseItems.forEach(item => {
+    const expandBtn = item.querySelector('.course-expand-btn');
+    const details = item.querySelector('.course-details');
+
+    if (expandBtn && details) {
+      expandBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent triggering focus mode
+
+        const isExpanded = expandBtn.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+          // Collapse
+          expandBtn.setAttribute('aria-expanded', 'false');
+          details.style.display = 'none';
+        } else {
+          // Expand
+          expandBtn.setAttribute('aria-expanded', 'true');
+          details.style.display = 'block';
+        }
+      });
+    }
+  });
 }
 
 /**
@@ -331,7 +354,6 @@ function initCourseFocusMode() {
     const details = li.querySelector('.course-details');
     if (toggleBtn) {
       toggleBtn.setAttribute('aria-expanded', 'true');
-      toggleBtn.innerHTML = '<i class="fas fa-chevron-down"></i>';
     }
     if (details) details.style.display = 'block';
     // Scroll the page to the very top so the user sees the full content area
@@ -368,10 +390,9 @@ function initCourseFocusMode() {
     if (focusedItem) {
       const toggleBtn = focusedItem.querySelector('.course-expand-btn');
       const details = focusedItem.querySelector('.course-details');
-      if (toggleBtn && details && details.style.display !== 'none') {
+      if (toggleBtn && details) {
         toggleBtn.setAttribute('aria-expanded', 'false');
         details.style.display = 'none';
-        toggleBtn.innerHTML = '<i class="fas fa-chevron-down"></i>';
       }
     }
     focusedItem = null;
@@ -393,7 +414,7 @@ function initCourseFocusMode() {
       const target = e.target;
       const isLink = target.closest && target.closest('a');
       const isExpandBtn = target.closest && target.closest('.course-expand-btn');
-      if (isLink) return;
+      if (isLink || isExpandBtn) return;
 
       // Toggle: if this is already focused, exit focus; otherwise enter focus
       if (focusedItem && focusedItem === li) {
@@ -402,20 +423,6 @@ function initCourseFocusMode() {
         enterFocus(li);
       }
     });
-
-    // Handle expand button specifically for better UX
-    const expandBtn = li.querySelector('.course-expand-btn');
-    if (expandBtn) {
-      expandBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent triggering the parent click
-        // Toggle: if this is already focused, exit focus; otherwise enter focus
-        if (focusedItem && focusedItem === li) {
-          exitFocus();
-        } else {
-          enterFocus(li);
-        }
-      });
-    }
   });
 
   if (backBtn) backBtn.addEventListener('click', exitFocus);

@@ -117,10 +117,6 @@
   position: relative;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.5rem;
   min-height: 1.8rem;
   height: auto;
 
@@ -159,6 +155,15 @@
   &:hover::before {
     transform: scaleY(1);
   }
+}
+
+// Course item header content wrapper
+.course-item-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .course-header {
@@ -294,6 +299,8 @@
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   animation: slideDown 0.3s ease-out;
+  width: 100%;
+  clear: both;
 }
 
 @keyframes slideDown {
