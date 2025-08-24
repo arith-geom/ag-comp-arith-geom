@@ -95,7 +95,7 @@ nav_order: 1
 }
 
 .content-section {
-  margin-bottom: 3rem;
+  margin-bottom: 0.25rem;
   padding: 2rem;
   background: var(--bg-primary);
   border-radius: var(--radius-lg);
@@ -113,7 +113,7 @@ nav_order: 1
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.125rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--primary);
 }

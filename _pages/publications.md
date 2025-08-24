@@ -10,7 +10,7 @@ title: Publications
 <div class="publications-page">
   <!-- Filter Controls -->
   <div class="filter-section">
-    <div class="container-fluid px-3 px-md-4">
+    <div class="container-fluid px-3 px-md-4 publications-filter-container">
       <!-- Publications Search Bar -->
       <div class="pub-search-container">
         <div class="pub-search-wrapper">
@@ -51,7 +51,7 @@ title: Publications
 
   <!-- Publications Grid -->
   <div class="publications-content">
-    <div class="container-fluid px-3 px-md-4">
+    <div class="container-fluid px-3 px-md-4 publications-content-container">
       <!-- Loading State -->
       <div id="loading-state" class="loading-state" style="display: none;">
         <div class="spinner"></div>
@@ -83,109 +83,97 @@ title: Publications
           {% assign pub_key = publication.title | slugify | append: '-' | append: publication.year %}
           <div class="publication-card" data-type="{{ publication.type }}" data-year="{{ publication.year }}" data-pub-key="{{ pub_key }}">
             <div class="publication-header">
-              <div class="publication-meta">
-                <span class="publication-type">{{ publication.type }}</span>
-                <span class="publication-status">{{ publication.status }}</span>
-                <span class="publication-year">{{ publication.year }}</span>
-      </div>
-              <h3 class="publication-title">
-                <a href="javascript:void(0)" class="publication-title-link" data-pub-key="{{ pub_key }}">{{ publication.title }}</a>
-              </h3>
-              <div class="publication-authors">{{ publication.authors }}</div>
-              {% assign has_external_url = false %}
-
-              {% assign has_links = false %}
-              {% if publication.links and publication.links.size > 0 %}
-                {% assign has_links = true %}
-              {% endif %}
-              {% if publication.pdf or publication.pdf_file or has_links %}
-              <div class="publication-actions">
-
-
-                {% if has_links %}
-                  <div class="publication-links-badges">
-                    {% for link in publication.links %}
-                      {% assign label = link.label | default: 'Link' %}
-                      {% assign href = link.url %}
-                      {% if href %}
-                        <a href="{{ href }}" class="link-badge" target="_blank" rel="noopener noreferrer">
-                          <i class="fas fa-link"></i> {{ label }}
-                        </a>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                {% endif %}
-                {% if publication.pdfs and publication.pdfs.size > 0 %}
-                  <div class="publication-pdfs">
-                    {% for item in publication.pdfs %}
-                      {% assign pdf_href = item.file %}
-                      {% assign pdf_label = item.label | default: 'PDF' %}
-                      {% if pdf_href %}
-                        <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                          <i class="fas fa-file-pdf"></i> {{ pdf_label }}
-                        </a>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                {% else %}
-                  {% assign pdf_href = publication.pdf_file | default: publication.pdf %}
-                  {% if pdf_href %}
-                    <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                      <i class="fas fa-file-pdf"></i> PDF
-                    </a>
-                  {% endif %}
-                {% endif %}
-              </div>
-              {% endif %}
-              {% if publication.journal %}
-                <div class="publication-venue">
-                  {% if publication.journal_full %}{{ publication.journal_full }}{% else %}{{ publication.journal }}{% endif %}
-                  {% if publication.volume %}, Volume {{ publication.volume }}{% endif %}
-                  {% if publication.pages %}, {{ publication.pages }}{% endif %}
-                  {% if publication.year %}, {{ publication.year }}{% endif %}
+              <div class="publication-main-content">
+                <div class="publication-meta">
+                  <span class="publication-type">{{ publication.type }}</span>
+                  <span class="publication-year">{{ publication.year }}</span>
                 </div>
-              {% endif %}
-              
-              {% if publication.volume or publication.pages or publication.url %}
-                <div class="publication-details">
-                  {% if publication.volume %}<span class="detail-item">Volume: {{ publication.volume }}</span>{% endif %}
-                  {% if publication.pages %}<span class="detail-item">Pages: {{ publication.pages }}</span>{% endif %}
-                  {% if publication.url and publication.url != publication.pdf %}
-                    {% assign url_str = publication.url %}
-                    {% unless url_str contains site.url or url_str contains site.baseurl or url_str contains '/publications/' %}
-                      {% unless url_str contains 'arxiv.org' %}
-                        <span class="detail-item">URL: <a href="{{ url_str }}" target="_blank" rel="noopener noreferrer">View</a></span>
-                      {% endunless %}
-                    {% endunless %}
-                  {% endif %}
-      </div>
-              {% endif %}
-    </div>
-            
-            {% if publication.abstract or publication.content %}
-              <div class="publication-body">
+                <h3 class="publication-title">
+                  <a href="javascript:void(0)" class="publication-title-link" data-pub-key="{{ pub_key }}">{{ publication.title }}</a>
+                </h3>
+                <div class="publication-authors">{{ publication.authors }}</div>
+
                 {% if publication.abstract %}
                   <div class="publication-abstract">{{ publication.abstract }}</div>
                 {% endif %}
-                                {% if publication.content and publication.content != publication.abstract %}
-                  <div class="publication-content">
-                    <div class="publication-expandable">
-                      <button class="publication-expand-btn" onclick="togglePublicationDetails(this)">
-                        <span class="btn-text">Show full details</span>
-                        <i class="fas fa-chevron-down btn-icon"></i>
-                      </button>
-                      <div class="publication-expanded-content" style="display: none;">
-                        {{ publication.content | markdownify }}
-                      </div>
+
+                {% assign has_external_url = false %}
+                {% assign has_links = false %}
+                {% if publication.links and publication.links.size > 0 %}
+                  {% assign has_links = true %}
+                {% endif %}
+                {% if publication.pdf or publication.pdf_file or has_links %}
+                <div class="publication-actions">
+                  {% if has_links %}
+                    <div class="publication-links-badges">
+                      {% for link in publication.links %}
+                        {% assign label = link.label | default: 'Link' %}
+                        {% assign href = link.url %}
+                        {% if href %}
+                          <a href="{{ href }}" class="link-badge" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-link"></i> {{ label }}
+                          </a>
+                        {% endif %}
+                      {% endfor %}
                     </div>
+                  {% endif %}
+                  {% if publication.pdfs and publication.pdfs.size > 0 %}
+                    <div class="publication-pdfs">
+                      {% for item in publication.pdfs %}
+                        {% assign pdf_href = item.file %}
+                        {% assign pdf_label = item.label | default: 'PDF' %}
+                        {% if pdf_href %}
+                          <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-pdf"></i> {{ pdf_label }}
+                          </a>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {% assign pdf_href = publication.pdf_file | default: publication.pdf %}
+                    {% if pdf_href %}
+                      <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-file-pdf"></i> PDF
+                      </a>
+                    {% endif %}
+                  {% endif %}
+                </div>
+                {% endif %}
+
+
+
+                {% if publication.volume or publication.pages or publication.url %}
+                  <div class="publication-details">
+                    {% if publication.volume %}<span class="detail-item">Volume: {{ publication.volume }}</span>{% endif %}
+                    {% if publication.pages %}<span class="detail-item">Pages: {{ publication.pages }}</span>{% endif %}
+                    {% if publication.url and publication.url != publication.pdf %}
+                      {% assign url_str = publication.url %}
+                      {% unless url_str contains site.url or url_str contains site.baseurl or url_str contains '/publications/' %}
+                        {% unless url_str contains 'arxiv.org' %}
+                          <span class="detail-item">URL: <a href="{{ url_str }}" target="_blank" rel="noopener noreferrer">View</a></span>
+                        {% endunless %}
+                      {% endunless %}
+                    {% endif %}
                   </div>
                 {% endif %}
               </div>
+
+              {% if publication.content and publication.content != publication.abstract %}
+                <div class="publication-expand-section">
+                  <button class="publication-expand-btn" onclick="togglePublicationDetails(this)">
+                    <span class="btn-text">Show full details</span>
+                    <i class="fas fa-chevron-down btn-icon"></i>
+                  </button>
+                </div>
+              {% endif %}
+            </div>
+
+            {% if publication.content and publication.content != publication.abstract %}
+              <div class="publication-expanded-content" style="display: none;">
+                {{ publication.content | markdownify }}
+              </div>
             {% endif %}
-            
-              
-            
-            <div class="publication-footer"></div>
+
           </div>
         {% endfor %}
       </div>
@@ -506,35 +494,65 @@ title: Publications
 
 .publications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
   margin-bottom: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .publications-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
 }
 
 .publications-page.detail-view-active #publications-grid {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
 }
 
 .publications-page.detail-view-active .filter-section {
   display: none;
 }
 
+.publications-page.detail-view-active .publications-content-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.publications-page.detail-view-active .publications-filter-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Full-screen width for detail view */
 .publication-card.detail-view {
-  width: min(1000px, 92vw);
-  max-width: 1000px;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
   transform: translateY(0) scale(1.01);
   box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
   position: relative;
   z-index: 2;
+  margin: 0 !important;
+}
+
+/* Ensure expanded content uses full width */
+.publication-card.detail-view .publication-expanded-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+}
+
+/* Responsive adjustments for full-screen detail view */
+@media (max-width: 768px) {
+  .publication-card.detail-view {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    margin: 0 !important;
+  }
+
+  .publication-card.detail-view .publication-expanded-content {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+  }
 }
 
 .publication-card.detail-view .publication-body,
@@ -559,19 +577,34 @@ title: Publications
 }
 
 .publication-header {
-  padding: 1.25rem;
+  padding: 1rem;
   border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.publication-main-content {
+  flex: 1;
+  min-width: 0; /* Allow flex item to shrink below its content size */
+}
+
+.publication-expand-section {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .publication-meta {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
   flex-wrap: wrap;
 }
 
 .publication-type,
-.publication-status,
 .publication-year {
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
@@ -584,11 +617,7 @@ title: Publications
   color: white;
 }
 
-.publication-status {
-  background: var(--bg-secondary);
-  color: var(--text-muted);
-  border: 1px solid var(--border-color);
-}
+
 
 .publication-year {
   background: var(--bg-secondary);
@@ -599,9 +628,9 @@ title: Publications
 
 
 .publication-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   line-height: 1.3;
 }
 
@@ -609,7 +638,7 @@ title: Publications
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin: 0.5rem 0 0.25rem 0;
+  margin: 0.4rem 0 0.2rem 0;
 }
 
 .publication-links-badges {
@@ -667,8 +696,8 @@ title: Publications
 .publication-authors {
   color: var(--text-muted);
   font-style: italic;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
 }
 
 .publication-venue {
@@ -676,15 +705,16 @@ title: Publications
   font-size: 0.9rem;
 }
 
-.publication-body {
-  padding: 1.25rem;
-}
-
 .publication-abstract {
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  max-height: 3.2rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .publication-keywords {
@@ -701,11 +731,7 @@ title: Publications
   font-size: 0.8rem;
 }
 
-.publication-footer {
-  padding: 1.25rem;
-  border-top: 1px solid var(--border-color);
-  background: var(--bg-secondary);
-}
+
 
 .publication-links {
   display: flex;
@@ -781,31 +807,27 @@ title: Publications
 }
 
 /* Expandable Content Styles */
-.publication-expandable {
-  margin-top: 1rem;
-  border-top: 1px solid var(--border-color);
-  padding-top: 1rem;
-}
 
 .publication-expand-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  width: 100%;
-  padding: 0.75rem 1.5rem;
+  gap: 0.25rem;
+  width: fit-content;
+  padding: 0.4rem 1rem;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
   color: var(--primary-text);
   border: none;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(194, 32, 50, 0.3);
+  box-shadow: 0 1px 4px rgba(194, 32, 50, 0.3);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .publication-expand-btn::before {
@@ -825,18 +847,18 @@ title: Publications
 
 .publication-expand-btn:hover {
   background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-dark) 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(194, 32, 50, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(194, 32, 50, 0.4);
 }
 
 .publication-expand-btn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(194, 32, 50, 0.3);
+  box-shadow: 0 1px 4px rgba(194, 32, 50, 0.3);
 }
 
 .publication-expand-btn.expanded {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .publication-expand-btn .btn-text {
@@ -845,7 +867,7 @@ title: Publications
 }
 
 .publication-expand-btn .btn-icon {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   transition: transform 0.3s ease;
   color: white;
 }
@@ -858,14 +880,14 @@ title: Publications
 }
 
 .publication-expanded-content {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-top: none;
-  border-radius: 0 0 0.5rem 0.5rem;
-  padding: 1.5rem;
-  margin-top: -1px;
+  border-radius: 0 0 0.375rem 0.375rem;
+  padding: 1rem;
+  margin-top: 0.25rem;
   animation: slideDown 0.3s ease-out;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
 @keyframes slideDown {

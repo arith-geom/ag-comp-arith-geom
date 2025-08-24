@@ -150,10 +150,10 @@ body.dark-mode .page-article {
 /* Light mode styling for about cards */
 .about-card {
   background: var(--bg-primary);
-  border: 1px solid var(--border-color);
+  border: 3px solid red !important;
   border-radius: var(--radius-lg);
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.25rem;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
 }
@@ -168,7 +168,7 @@ body.dark-mode .page-article {
   color: var(--text-primary);
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--primary);
 }
@@ -207,7 +207,7 @@ body.dark-mode .about-card h2 {
   color: var(--text-primary) !important;
   border-bottom-color: var(--primary) !important;
   padding-bottom: 0.5rem !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 0 !important;
   font-weight: 600 !important;
 }
 

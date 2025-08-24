@@ -6,7 +6,8 @@ nav: true
 nav_order: 7
 order: 100
 ---
-<div class="location-section mt-5">
+<div class="contact-sections">
+  <div class="location-section mt-5">
   <div class="location-container">
     <div class="location-header">
       <div class="location-icon">
@@ -100,10 +101,17 @@ order: 100
 
   </div>
 </div>
-
-
+</div>
 
 <style>
+/* Contact Sections - Full Screen Layout */
+.contact-sections {
+  width: 100%;
+  margin: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .contact-intro {
   text-align: center;
   max-width: 800px;
@@ -133,8 +141,8 @@ order: 100
 }
 
 .contact-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 2rem;
@@ -236,8 +244,8 @@ order: 100
 }
 
 .location-section {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .location-container {
@@ -346,8 +354,8 @@ order: 100
 
 /* Contact Form Styles */
 .contact-form-section {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .form-container {
@@ -491,14 +499,19 @@ body.dark-mode .form-container:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .contact-sections {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .contact-intro h2 {
     font-size: 2rem;
   }
-  
+
   .contact-intro .lead {
     font-size: 1.1rem;
   }
-  
+
   .contact-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -552,28 +565,33 @@ body.dark-mode .form-container:hover {
 }
 
 @media (max-width: 480px) {
+  .contact-sections {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
   .contact-card {
     padding: 1rem;
   }
-  
+
   .contact-icon {
     width: 40px;
     height: 40px;
     font-size: 1rem;
   }
-  
+
   .contact-content h3 {
     font-size: 1.2rem;
   }
-  
+
   .location-container {
     padding: 1rem;
   }
-  
+
   .form-container {
     padding: 1rem;
   }
-  
+
   .form-header h3 {
     font-size: 1.3rem;
   }
