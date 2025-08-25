@@ -1,22 +1,18 @@
 ---
-layout: publication
-title: Algebraic Hecke characters and compatible systems of abelian mod p Galois representations
-  over global fields.
+abstract: no. 3-4, 303-331
 authors: Gebhard Böckle
-year: '2013'
-type: Journal Article
-status: Published
-order: 201396
+layout: publication
 links:
 - label: Journal Link
   url: http://www.springerlink.com/content/ll5v246782212835/
+order: 201396
 pdfs:
-- label: PDF
-  file: /assets/uploads/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf
+- file: /assets/uploads/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf
+status: Published
+title: Algebraic Hecke characters and compatible systems of abelian mod p Galois representations
+  over global fields
+type: Journal Article
+year: '2013'
 ---
-
-## Publication Details
-
-Algebraic Hecke characters and compatible systems of abelian mod p Galois representations over global fields.. Manuscripta Math. , no. 3-4, 303-331.
-

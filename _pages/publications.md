@@ -111,19 +111,14 @@ title: Publications
                   </div>
                 {% endif %}
 
-                {% if publication.links %}
-                  <div class="publication-links">
-                    {% for link in publication.links %}
-                      <a href="{{ link.url }}" target="_blank" class="publication-link-item">{{ link.label }}</a>
-                    {% endfor %}
-                  </div>
-                {% endif %}
-
-                {% if publication.pdfs %}
-                  <div class="publication-pdfs">
-                    {% for pdf in publication.pdfs %}
-                      <a href="{{ pdf.url }}" target="_blank" class="publication-pdf-item">{{ pdf.label }}</a>
-                    {% endfor %}
+                {% if publication.links or publication.pdfs %}
+                  <div class="publication-actions">
+                    {% if publication.links %}
+                      {% for link in publication.links %}<a href="{{ link.url }}" target="_blank" class="publication-link-item">{{ link.label }}</a>{% endfor %}
+                    {% endif %}
+                    {% if publication.pdfs %}
+                      {% for pdf in publication.pdfs %}<a href="{{ pdf.url }}" target="_blank" class="publication-pdf-item">{{ pdf.label }}</a>{% endfor %}
+                    {% endif %}
                   </div>
                 {% endif %}
 
@@ -548,8 +543,8 @@ title: Publications
 
 /* Publication content styling */
 .publication-content {
-  padding: 0.25rem 0;
-  margin: 0.25rem 0;
+  padding: 0.125rem 0;
+  margin: 0.125rem 0;
 }
 
 
@@ -557,20 +552,23 @@ title: Publications
 
 
 .publication-keywords {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
 
-.publication-links, .publication-pdfs {
+.publication-actions {
   margin-bottom: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .publication-link-item, .publication-pdf-item {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 0.25rem 0.5rem;
   background-color: var(--bg-secondary);
   border-radius: 0.25rem;
@@ -609,7 +607,7 @@ title: Publications
 .publication-meta {
   display: flex;
   gap: 0.4rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -639,7 +637,7 @@ title: Publications
 .publication-title {
   font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   line-height: 1.3;
 }
 
@@ -647,7 +645,7 @@ title: Publications
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin: 0.4rem 0 0.2rem 0;
+  margin: 0.2rem 0 0.1rem 0;
 }
 
 .publication-links-badges {
@@ -705,7 +703,7 @@ title: Publications
 .publication-authors {
   color: var(--text-muted);
   font-style: italic;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
   font-size: 0.9rem;
 }
 
@@ -717,7 +715,7 @@ title: Publications
 .publication-abstract {
   color: var(--text-secondary);
   line-height: 1.4;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   font-size: 0.85rem;
   max-height: 3.2rem;
   overflow: hidden;

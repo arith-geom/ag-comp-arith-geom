@@ -1,21 +1,17 @@
 ---
-layout: publication
-title: 'Cartier Modules: finiteness results.'
+abstract: 85-123
 authors: Gebhard Böckle, M. Blickle
-year: '2011'
-type: Journal Article
-status: Published
-order: 201194
+layout: publication
 links:
 - label: Journal Link
   url: http://www.ams.org/mathscinet-getitem?mr=2863904
+order: 201194
 pdfs:
-- label: PDF
-  file: /assets/uploads/BlickleBoeckle-CartierModulesFinitenessResults.pdf
+- file: /assets/uploads/BlickleBoeckle-CartierModulesFinitenessResults.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BlickleBoeckle-CartierModulesFinitenessResults.pdf
+status: Published
+title: 'Cartier Modules: finiteness results'
+type: Journal Article
+year: '2011'
 ---
-
-## Publication Details
-
-Cartier Modules: finiteness results..  , 85-123
-

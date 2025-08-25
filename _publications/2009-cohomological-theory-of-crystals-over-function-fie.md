@@ -1,17 +1,13 @@
 ---
-layout: publication
-title: Cohomological Theory of Crystals over Function Fields
+abstract: Cohomological Theory of Crystals over Function Fields.
 authors: Gebhard Böckle, R. Pink
-year: '2009'
-type: Journal Article
-status: Published
-order: 200970
+layout: publication
 links:
 - label: Journal Link
   url: http://www.ams.org/mathscinet-getitem?mr=2561048
+order: 200970
+status: Published
+title: Cohomological Theory of Crystals over Function Fields
+type: Journal Article
+year: '2009'
 ---
-
-## Publication Details
-
-Cohomological Theory of Crystals over Function Fields.  .
-

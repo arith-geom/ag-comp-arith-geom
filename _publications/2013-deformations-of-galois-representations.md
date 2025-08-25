@@ -1,21 +1,18 @@
 ---
-layout: publication
-title: Deformations of Galois representations
+abstract: Deformations of Galois representations. Elliptic curves, Hilbert modular
+  forms and Galois deformations,
 authors: Gebhard Böckle
-year: '2013'
-type: Journal Article
-status: Published
-order: 201374
+layout: publication
 links:
 - label: Journal Link
   url: http://link.springer.com/chapter/10.1007%2F978-3-0348-0618-3_2
+order: 201374
 pdfs:
-- label: PDF
-  file: /assets/uploads/Boeckle-Barcelona-DefTheory-Rev.pdf
+- file: /assets/uploads/Boeckle-Barcelona-DefTheory-Rev.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Barcelona-DefTheory-Rev.pdf
+status: Published
+title: Deformations of Galois representations
+type: Journal Article
+year: '2013'
 ---
-
-## Publication Details
-
-Deformations of Galois representations. Elliptic curves, Hilbert modular forms and Galois deformations, .
-

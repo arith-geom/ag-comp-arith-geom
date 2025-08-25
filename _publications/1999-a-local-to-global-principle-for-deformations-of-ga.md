@@ -1,21 +1,17 @@
 ---
-layout: publication
-title: A local-to-global principle for deformations of Galois representations.
+abstract: 199-236
 authors: Gebhard Böckle
-year: '1999'
-type: Journal Article
-status: Published
-order: 199977
+layout: publication
 links:
 - label: Journal Link
   url: http://www.ams.org/mathscinet-getitem?mr=1679172
+order: 199977
 pdfs:
-- label: PDF
-  file: /assets/uploads/LocalGlobalRev3.pdf
+- file: /assets/uploads/LocalGlobalRev3.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/LocalGlobalRev3.pdf
+status: Published
+title: A local-to-global principle for deformations of Galois representations
+type: Journal Article
+year: '1999'
 ---
-
-## Publication Details
-
-A local-to-global principle for deformations of Galois representations.. J. Reine Angew. Math. , 199-236.
-

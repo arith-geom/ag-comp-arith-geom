@@ -1,21 +1,17 @@
 ---
-layout: publication
-title: The Miller-Rabin test with randomized exponents.
+abstract: no. 4, 307-319
 authors: Gebhard Böckle
-year: '2009'
-type: Journal Article
-status: Published
-order: 200992
+layout: publication
 links:
 - label: Journal Link
   url: http://www.ams.org/mathscinet-getitem?mr=2608598
+order: 200992
 pdfs:
-- label: PDF
-  file: /assets/uploads/RandomizedMR.pdf
+- file: /assets/uploads/RandomizedMR.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/RandomizedMR.pdf
+status: Published
+title: The Miller-Rabin test with randomized exponents
+type: Journal Article
+year: '2009'
 ---
-
-## Publication Details
-
-The Miller-Rabin test with randomized exponents.. J. Math. Cryptol. , no. 4, 307-319
-

@@ -1,18 +1,14 @@
 ---
-layout: publication
-title: Galois representations.Travaux mathématiques. Vol. XXIII
+abstract: Galois representations.Travaux mathématiques. Vol. XXIII. Travaux mathématiques.
 authors: Gebhard Böckle
-year: '2013'
-type: Journal Article
-status: Published
+layout: publication
 order: 201372
 pdfs:
-- label: PDF
-  file: /assets/uploads/Boeckle.pdf
+- file: /assets/uploads/Boeckle.pdf
+  label: PDF
   url: http://wwwfr.uni.lu/content/download/75430/940982/file/Boeckle.pdf
+status: Published
+title: Galois representations.Travaux mathématiques. Vol. XXIII
+type: Journal Article
+year: '2013'
 ---
-
-## Publication Details
-
-Galois representations.Travaux mathématiques. Vol. XXIII. Travaux mathématiques. .
-

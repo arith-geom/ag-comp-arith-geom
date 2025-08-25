@@ -1,22 +1,18 @@
 ---
-layout: publication
-title: Mod l representations of arithmetic fundamental groups. I. An analog of Serre's
-  conjecture for function fields.
+abstract: no. 2, 337-369
 authors: Gebhard Böckle, C. Khare
-year: '2005'
-type: Journal Article
-status: Published
-order: 200587
+layout: publication
 links:
 - label: Journal Link
   url: http://www.ams.org/mathscinet-getitem?mr=2165545
+order: 200587
 pdfs:
-- label: PDF
-  file: /assets/uploads/BK-Serre-dmj4021.pdf
+- file: /assets/uploads/BK-Serre-dmj4021.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BK-Serre-dmj4021.pdf
+status: Published
+title: Mod l representations of arithmetic fundamental groups. I. An analog of Serre's
+  conjecture for function fields
+type: Journal Article
+year: '2005'
 ---
-
-## Publication Details
-
-Mod l representations of arithmetic fundamental groups. I. An analog of Serre's conjecture for function fields.. Duke Math. J. , no. 2, 337-369.
-

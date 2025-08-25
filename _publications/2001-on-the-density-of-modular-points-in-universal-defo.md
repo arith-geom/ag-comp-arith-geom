@@ -1,21 +1,17 @@
 ---
-layout: publication
-title: On the density of modular points in universal deformation spaces.
+abstract: no. 5, 985-1007
 authors: Gebhard Böckle
-year: '2001'
-type: Journal Article
-status: Published
-order: 200181
+layout: publication
 links:
 - label: Journal Link
   url: http://www.ams.org/mathscinet-getitem?mr=1854117
+order: 200181
 pdfs:
-- label: PDF
-  file: /assets/uploads/DensityAJMCorr.pdf
+- file: /assets/uploads/DensityAJMCorr.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DensityAJMCorr.pdf
+status: Published
+title: On the density of modular points in universal deformation spaces
+type: Journal Article
+year: '2001'
 ---
-
-## Publication Details
-
-On the density of modular points in universal deformation spaces.. Amer. J. Math. , no. 5, 985-1007.
-

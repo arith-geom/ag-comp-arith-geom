@@ -1,18 +1,15 @@
 ---
-layout: publication
-title: A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation
+abstract: A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation
   theory, and an investigation of its subfactors (joint with G. Böckle, R. Perkins
 authors: Peter Gräf
-year: '2021'
-type: Journal Article
-status: Published
-order: 202164
+layout: publication
 links:
 - label: Journal Link
   url: https://link.springer.com/article/10.1007%2Fs40993-021-00254-0
+order: 202164
+status: Published
+title: A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation
+  theory, and an investigation of its subfactors (joint with G. Böckle, R. Perkins
+type: Journal Article
+year: '2021'
 ---
-
-## Publication Details
-
-A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation theory, and an investigation of its subfactors (joint with G. Böckle, R. Perkins
-

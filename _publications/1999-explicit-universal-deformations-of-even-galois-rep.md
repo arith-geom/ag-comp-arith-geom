@@ -1,21 +1,17 @@
 ---
-layout: publication
-title: Explicit universal deformations of even Galois representations.
+abstract: 85-110
 authors: Gebhard Böckle
-year: '1999'
-type: Journal Article
-status: Published
-order: 199976
+layout: publication
 links:
 - label: Journal Link
   url: http://www.ams.org/mathscinet-getitem?mr=1711558
+order: 199976
 pdfs:
-- label: PDF
-  file: /assets/uploads/Boeckle-Explicit.pdf
+- file: /assets/uploads/Boeckle-Explicit.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Explicit.pdf
+status: Published
+title: Explicit universal deformations of even Galois representations
+type: Journal Article
+year: '1999'
 ---
-
-## Publication Details
-
-Explicit universal deformations of even Galois representations.. Math. Nachr. , 85-110.
-

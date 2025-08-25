@@ -1,21 +1,17 @@
 ---
-layout: publication
-title: Uniformizable families of t-motives.
+abstract: no. 8, 3933-3972
 authors: Gebhard Böckle, U. Hartl
-year: '2007'
-type: Journal Article
-status: Published
-order: 200789
+layout: publication
 links:
 - label: Journal Link
   url: http://www.ams.org/mathscinet-getitem?mr=2302519
+order: 200789
 pdfs:
-- label: PDF
-  file: /assets/uploads/TAMS_4136_Bockle_Hartl.pdf
+- file: /assets/uploads/TAMS_4136_Bockle_Hartl.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/TAMS_4136_Bockle_Hartl.pdf
+status: Published
+title: Uniformizable families of t-motives
+type: Journal Article
+year: '2007'
 ---
-
-## Publication Details
-
-Uniformizable families of t-motives.. Trans. Amer. Math. Soc. , no. 8, 3933-3972.
-

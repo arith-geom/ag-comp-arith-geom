@@ -1,14 +1,10 @@
 ---
-layout: publication
-title: Lifts of mod p Galois representations with local supercuspidal types.
+abstract: Lifts of mod p Galois representations with local supercuspidal types.
 authors: Gebhard Böckle
-year: '2024'
-type: Journal Article
-status: Published
+layout: publication
 order: 202465
+status: Published
+title: Lifts of mod p Galois representations with local supercuspidal types
+type: Journal Article
+year: '2024'
 ---
-
-## Publication Details
-
-Lifts of mod p Galois representations with local supercuspidal types..
-

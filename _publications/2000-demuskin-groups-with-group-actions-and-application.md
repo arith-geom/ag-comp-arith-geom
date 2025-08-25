@@ -1,22 +1,18 @@
 ---
-layout: publication
-title: Demuskin groups with group actions and applications to deformations of Galois
-  representations.
+abstract: no. 2, 109-154
 authors: Gebhard Böckle
-year: '2000'
-type: Journal Article
-status: Published
-order: 200079
+layout: publication
 links:
 - label: Journal Link
   url: http://www.ams.org/mathscinet-getitem?mr=1757878
+order: 200079
 pdfs:
-- label: PDF
-  file: /assets/uploads/DemGps.pdf
+- file: /assets/uploads/DemGps.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DemGps.pdf
+status: Published
+title: Demuskin groups with group actions and applications to deformations of Galois
+  representations
+type: Journal Article
+year: '2000'
 ---
-
-## Publication Details
-
-Demuskin groups with group actions and applications to deformations of Galois representations.. Compositio Math. , no. 2, 109-154.
-

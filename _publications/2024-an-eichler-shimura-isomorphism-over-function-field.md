@@ -1,19 +1,15 @@
 ---
-layout: publication
-title: An Eichler-Shimura isomorphism over function fields between Drinfeld modular
-  forms and cohomology cl
+abstract: 183 pages
 authors: Gebhard Böckle
-year: '2024'
-type: Journal Article
-status: Published
+layout: publication
 order: 202468
 pdfs:
-- label: PDF
-  file: /assets/uploads/EiShNew.pdf
+- file: /assets/uploads/EiShNew.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/EiShNew.pdf
+status: Published
+title: An Eichler-Shimura isomorphism over function fields between Drinfeld modular
+  forms and cohomology cl
+type: Journal Article
+year: '2024'
 ---
-
-## Publication Details
-
-An Eichler-Shimura isomorphism over function fields between Drinfeld modular forms and cohomology cl.  , 183 pages.
-

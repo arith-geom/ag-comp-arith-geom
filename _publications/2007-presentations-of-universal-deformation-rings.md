@@ -1,21 +1,17 @@
 ---
-layout: publication
-title: Presentations of universal deformation rings.
+abstract: Presentations of universal deformation rings..
 authors: Gebhard Böckle
-year: '2007'
-type: Journal Article
-status: Published
-order: 200790
+layout: publication
 links:
 - label: Journal Link
   url: http://www.ams.org/mathscinet-getitem?mr=2392352
+order: 200790
 pdfs:
-- label: PDF
-  file: /assets/uploads/OnUDefPres9.pdf
+- file: /assets/uploads/OnUDefPres9.pdf
+  label: PDF
   url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/OnUDefPres9.pdf
+status: Published
+title: Presentations of universal deformation rings
+type: Journal Article
+year: '2007'
 ---
-
-## Publication Details
-
-Presentations of universal deformation rings..  .
-
