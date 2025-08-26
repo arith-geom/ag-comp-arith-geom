@@ -3128,12 +3128,10 @@ class MembersManager {
   }
 
   init() {
-    console.log('Initializing MembersManager for accordion-style member views...');
     this.loadMembersFromDOM();
     this.bindEvents();
     this.checkMemberParam();
     this.applyFilters();
-    console.log('MembersManager initialized successfully');
   }
 
   loadMembersFromDOM() {
@@ -3148,8 +3146,6 @@ class MembersManager {
         role: card.querySelector('.member-role')?.textContent || ''
       };
     });
-
-    console.log(`👥 Loaded ${this.members.length} members from DOM`);
   }
 
   bindEvents() {
@@ -3193,7 +3189,6 @@ class MembersManager {
   }
 
   applyFilters() {
-    console.log('Applying member filters:', this.filters);
 
     // Hide all detail views first
     this.members.forEach(member => {
@@ -3522,33 +3517,8 @@ class MembersManager {
 
 // Initialize the members manager when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('🚀 Initializing Members Manager...');
   const membersManager = new MembersManager();
-
-  // Add retry mechanism for URL parameter handling
-  const initWithRetry = (retries = 10) => {
-    try {
-      membersManager.init();
-
-      // Check if we need to show a member from URL parameter
-      const urlParams = new URLSearchParams(window.location.search);
-      const memberParam = urlParams.get('member');
-      if (memberParam) {
-        // Give a small delay to ensure DOM is fully ready
-        setTimeout(() => {
-          membersManager.checkMemberParam();
-          membersManager.applyFilters();
-        }, 100);
-      }
-    } catch (error) {
-      console.warn('MembersManager init failed, retrying...', error);
-      if (retries > 0) {
-        setTimeout(() => initWithRetry(retries - 1), 100);
-      }
-    }
-  };
-
-  initWithRetry();
+  membersManager.init();
 
   // Make manager globally accessible for debugging
   window.membersManager = membersManager;
@@ -3560,71 +3530,9 @@ document.addEventListener('DOMContentLoaded', () => {
       window.membersManager.applyFilters();
     }
   });
-
-  // Add mutation observer to ensure proper initialization
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.type === 'childList' && window.membersManager) {
-        // Check if we need to show a member from hash
-        const hash = window.location.hash.substring(1);
-        if (hash.startsWith('member-') && !window.membersManager.filters.memberKey) {
-          const memberKey = hash.substring(7);
-          if (window.membersManager.members.find(m => m.key === memberKey)) {
-            window.membersManager.filters.memberKey = memberKey;
-            window.membersManager.applyFilters();
-          }
-        }
-      }
-    });
-  });
-
-  // Observe the entire document for changes
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-
-  // Immediate initialization check
-  const hash = window.location.hash.substring(1);
-  if (hash.startsWith('member-')) {
-    setTimeout(() => {
-      if (window.membersManager && window.membersManager.members.length > 0) {
-        window.membersManager.checkMemberParam();
-        window.membersManager.applyFilters();
-      }
-    }, 50);
-  }
 });
 
-// Fallback initialization on window load
-window.addEventListener('load', () => {
-  // If membersManager is not initialized or not working properly, retry
-  if (!window.membersManager || !window.membersManager.members || window.membersManager.members.length === 0) {
-    console.log('🔄 Fallback initialization triggered...');
-    setTimeout(() => {
-      if (window.membersManager) {
-        try {
-          window.membersManager.init();
-          // Check for hash-based member parameter
-          const hash = window.location.hash.substring(1);
-          if (hash.startsWith('member-')) {
-            window.membersManager.filters.memberKey = hash.substring(7);
-            window.membersManager.applyFilters();
-          }
-          // Also check for query parameter as fallback
-          const urlParams = new URLSearchParams(window.location.search);
-          const memberParam = urlParams.get('member');
-          if (memberParam && !window.membersManager.filters.memberKey) {
-            window.membersManager.filters.memberKey = memberParam;
-            window.membersManager.applyFilters();
-          }
-        } catch (error) {
-          console.warn('Fallback initialization failed:', error);
-        }
-      }
-    }, 200);
-  }
-});
+
 
 // Apply initial section from URL (?section=alumni|current)
 document.addEventListener('DOMContentLoaded', function() {
