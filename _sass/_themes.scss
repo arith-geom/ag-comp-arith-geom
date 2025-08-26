@@ -27,10 +27,10 @@
   --gray-950: #0A0A0A;
   
   /* Light Mode - MAXIMUM CONTRAST */
-  --bg-primary: var(--white);
-  --bg-secondary: var(--gray-50);
-  --bg-tertiary: var(--gray-100);
-  --bg-muted: var(--gray-100);
+  --bg-primary: var(--gray-50);
+  --bg-secondary: var(--gray-100);
+  --bg-tertiary: var(--gray-200);
+  --bg-muted: var(--gray-200);
   --bg-accent: #FEF2F2;
   
   --text-primary: var(--black);         /* Pure black text */
@@ -115,7 +115,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg-primary) !important;
+  background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%) !important;
+  background-attachment: fixed !important;
   color: var(--text-primary) !important;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;

@@ -1,137 +1,427 @@
-<footer class="footer mt-auto py-4">
+<footer class="footer mt-auto py-5">
   <div class="container-fluid px-3 px-md-4">
-    <div class="row">
-      <div class="col-md-4 mb-3 mb-md-0">
-        <h5>AG Computational Arithmetic Geometry</h5>
-        <p class="text-muted">
-          Mathematikon, INF 205<br>
-          69120 Heidelberg, Germany
-        </p>
+    <!-- Main Footer Content -->
+    <div class="row g-4">
+      <!-- Organization Info & Contact -->
+      <div class="col-lg-5 col-md-6 mb-4">
+        <div class="footer-section">
+          <h5 class="footer-heading mb-3">
+            <i class="fas fa-university me-2" aria-hidden="true"></i>
+            AG Computational Arithmetic Geometry
+          </h5>
+          <p class="footer-description mb-3">
+            Research group specializing in computational arithmetic geometry, Galois representations, and modular forms at Heidelberg University.
+          </p>
+          <div class="contact-details">
+            <div class="contact-item mb-2">
+              <i class="fas fa-map-marker-alt me-2 contact-icon" aria-hidden="true"></i>
+              <span>Mathematikon, INF 205<br>69120 Heidelberg, Germany</span>
+            </div>
+            <div class="contact-item mb-2">
+              <i class="fas fa-phone me-2 contact-icon" aria-hidden="true"></i>
+              <span>+49-6221-54-14734</span>
+            </div>
+            <div class="contact-item mb-2">
+              <i class="fas fa-fax me-2 contact-icon" aria-hidden="true"></i>
+              <span>+49-6221-54-14737</span>
+            </div>
+            <div class="contact-item mb-2">
+              <i class="fas fa-envelope me-2 contact-icon" aria-hidden="true"></i>
+              <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="contact-link">arithgeo@iwr.uni-heidelberg.de</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4 mb-3 mb-md-0">
-        <h5>Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
-          <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
-          <li><a href="{{ '/members/' | relative_url }}">Team</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-        </ul>
+
+      <!-- Research & Academic Links -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="footer-section">
+          <h5 class="footer-heading mb-3">Research & Publications</h5>
+          <ul class="footer-links list-unstyled">
+            <li class="mb-2">
+              <a href="{{ '/research/' | relative_url }}" class="footer-link">
+                <i class="fas fa-microscope me-2" aria-hidden="true"></i>Research Areas
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="{{ '/publications/' | relative_url }}" class="footer-link">
+                <i class="fas fa-file-alt me-2" aria-hidden="true"></i>Publications
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="{{ '/teaching/' | relative_url }}" class="footer-link">
+                <i class="fas fa-chalkboard-teacher me-2" aria-hidden="true"></i>Teaching
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="{{ '/members/' | relative_url }}" class="footer-link">
+                <i class="fas fa-users me-2" aria-hidden="true"></i>Team Members
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-md-4">
-        <a href="https://www.uni-heidelberg.de/en" target="_blank" rel="noopener">
-          <img src="{{ '/assets/img/heidelberg_logo.svg' | relative_url }}" alt="Heidelberg University Logo" height="40" class="mb-2">
-        </a><br>
-        <a href="https://www.iwr.uni-heidelberg.de/en" target="_blank" rel="noopener" class="text-muted">Interdisciplinary Center for Scientific Computing (IWR)</a>
+
+      <!-- Resources & External Links -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="footer-section">
+          <h5 class="footer-heading mb-3">Resources & Links</h5>
+          <div class="row">
+            <div class="col-6">
+              <ul class="footer-links list-unstyled">
+                <li class="mb-2">
+                  <a href="{{ '/links/' | relative_url }}" class="footer-link">
+                    <i class="fas fa-link me-2" aria-hidden="true"></i>Useful Links
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="{{ '/contact/' | relative_url }}" class="footer-link">
+                    <i class="fas fa-envelope me-2" aria-hidden="true"></i>Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <ul class="footer-links list-unstyled">
+                <li class="mb-2">
+                  <a href="https://www.iwr.uni-heidelberg.de/en" target="_blank" rel="noopener" class="footer-link">
+                    <i class="fas fa-building me-2" aria-hidden="true"></i>IWR
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="https://www.uni-heidelberg.de/en" target="_blank" rel="noopener" class="footer-link">
+                    <i class="fas fa-graduation-cap me-2" aria-hidden="true"></i>University
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <hr class="footer-divider">
-    <div class="text-center text-muted small">
-      &copy; {{ "now" | date: "%Y" }} {{ site.title }}. All Rights Reserved.
-      Last updated: {{ site.time | date: "%B %d, %Y" }}.
-      <br>
-      <span class="website-credits">
-        Website designed and developed by 
-        <a href="https://github.com/VictorMerk" target="_blank" rel="noopener" class="creator-link">
-          Victor Merk
-        </a>
-      </span>
+
+    <!-- Footer Bottom Section -->
+    <hr class="footer-divider my-4">
+
+        <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-8 mb-3 mb-md-0">
+          <div class="copyright-info">
+            <p class="mb-1">
+              &copy; {{ "now" | date: "%Y" }} {{ site.title }}.
+              <span class="d-block d-sm-inline">All rights reserved.</span>
+            </p>
+            <p class="last-updated mb-0">
+              <small>Last updated: {{ site.time | date: "%B %d, %Y" }}</small>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-4 text-md-end">
+          <div class="website-credits">
+            <p class="mb-0">
+              Website by
+              <a href="{{ site.creator.github_url }}" target="_blank" rel="noopener" class="creator-link">
+                {{ site.creator.name }}
+              </a>
+              <span class="creator-role">{{ site.creator.role }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal Links -->
+      <div class="legal-links mt-3 pt-3 border-top border-secondary">
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="https://web.iwr.uni-heidelberg.de/impressum.html" target="_blank" rel="noopener" class="legal-link">Legal Notice</a>
+          <span class="separator">|</span>
+          <a href="{{ '/sitemap.xml' | relative_url }}" class="legal-link">Sitemap</a>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
 </footer>
 
 <!-- Floating theme toggle removed -->
 
 <style>
-/* Floating theme toggle styles removed */
-
-/* Footer Dark Mode Styles */
+/* Enhanced Footer Styles */
 .footer {
-  background-color: var(--bg-secondary, #F3F4F6) !important;
+  background: linear-gradient(135deg, var(--bg-secondary, #F8F9FA) 0%, var(--bg-primary, #FFFFFF) 100%) !important;
   color: var(--text-primary, #000000) !important;
-  border-top: 1px solid var(--border-color, #E5E7EB) !important;
+  border-top: 3px solid var(--primary, #C22032) !important;
+  position: relative;
+  overflow: hidden;
 }
 
-.footer h5 {
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary, #C22032), var(--heidelberg-red, #FF6B6B), var(--primary, #C22032));
+}
+
+/* Footer Section Styles */
+.footer-section {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-heading {
   color: var(--text-primary, #000000) !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 1rem !important;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.footer .text-muted {
-  color: var(--text-muted, #6B7280) !important;
+.footer-heading i {
+  color: var(--primary, #C22032) !important;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
 }
 
-.footer a {
+.footer-description {
+  color: var(--text-secondary, #6B7280) !important;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Contact Details */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.contact-icon {
+  color: white !important;
+  margin-top: 0.125rem;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.contact-link {
   color: var(--link-color, #C22032) !important;
-}
-
-.footer a:hover {
-  color: var(--link-hover, #991B1B) !important;
-}
-
-.footer-divider {
-  border-color: var(--border-color, #E5E7EB) !important;
-  margin: 1.5rem 0;
-}
-
-/* Dark mode footer styles */
-[data-theme="dark"] .footer,
-body.dark-mode .footer,
-html[data-theme="dark"] .footer {
-  background-color: var(--bg-secondary, #0A0A0A) !important;
-  color: var(--text-primary, #FFFFFF) !important;
-  border-top: 1px solid var(--border-color, #374151) !important;
-}
-
-[data-theme="dark"] .footer h5,
-body.dark-mode .footer h5,
-html[data-theme="dark"] .footer h5 {
-  color: var(--text-primary, #FFFFFF) !important;
-}
-
-[data-theme="dark"] .footer .text-muted,
-body.dark-mode .footer .text-muted,
-html[data-theme="dark"] .footer .text-muted {
-  color: var(--text-muted, #9CA3AF) !important;
-}
-
-[data-theme="dark"] .footer a,
-body.dark-mode .footer a,
-html[data-theme="dark"] .footer a {
-  color: var(--link-color, #FF6B6B) !important;
-}
-
-[data-theme="dark"] .footer a:hover,
-body.dark-mode .footer a:hover,
-html[data-theme="dark"] .footer a:hover {
-  color: var(--link-hover, #FF5252) !important;
-}
-
-[data-theme="dark"] .footer-divider,
-body.dark-mode .footer-divider,
-html[data-theme="dark"] .footer-divider {
-  border-color: var(--border-color, #374151) !important;
-}
-
-/* Website credits styling */
-.website-credits {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  margin-top: 0.5rem;
-  display: inline-block;
-}
-
-.creator-link {
-  color: var(--link-color, #C22032) !important;
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: 500;
   transition: all 0.2s ease;
 }
 
-.creator-link:hover {
+.contact-link:hover {
   color: var(--link-hover, #991B1B) !important;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
-/* Dark mode creator link */
+/* Footer Links */
+.footer-links {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-link {
+  color: var(--text-secondary, #6B7280) !important;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0;
+  border-radius: 4px;
+  position: relative;
+}
+
+.footer-link:hover {
+  color: var(--link-color, #C22032) !important;
+  text-decoration: none !important;
+  transform: translateX(4px);
+}
+
+.footer-link i {
+  color: var(--primary, #C22032) !important;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.footer-link:hover i {
+  transform: scale(1.1);
+}
+
+
+
+/* Footer Bottom */
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+.copyright-info p {
+  color: var(--text-muted, #6B7280) !important;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.last-updated {
+  opacity: 0.8;
+}
+
+.website-credits {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.creator-link {
+  color: var(--link-color, #C22032) !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.creator-link:hover {
+  color: var(--link-hover, #991B1B) !important;
+  text-decoration: underline !important;
+}
+
+.creator-role {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted, #6B7280) !important;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+/* Legal Links */
+.legal-links {
+  border-top: 1px solid var(--border-color, #E5E7EB) !important;
+}
+
+.legal-link {
+  color: var(--text-muted, #6B7280) !important;
+  text-decoration: none !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 0.25rem 0;
+}
+
+.legal-link:hover {
+  color: var(--link-color, #C22032) !important;
+  text-decoration: underline !important;
+}
+
+.separator {
+  color: var(--text-muted, #6B7280) !important;
+  font-weight: 300;
+  user-select: none;
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--primary, #C22032);
+  color: white !important;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(194, 32, 50, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.back-to-top-btn:hover {
+  background: var(--primary-hover, #991B1B);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(194, 32, 50, 0.4);
+}
+
+.back-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Footer Divider */
+.footer-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color, #E5E7EB), transparent);
+  margin: 2rem 0;
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] .footer,
+body.dark-mode .footer,
+html[data-theme="dark"] .footer {
+  background: linear-gradient(135deg, var(--bg-secondary, #1F2937) 0%, var(--bg-primary, #111827) 100%) !important;
+  color: var(--text-primary, #FFFFFF) !important;
+  border-top-color: var(--primary, #FF6B6B) !important;
+}
+
+[data-theme="dark"] .footer-heading,
+body.dark-mode .footer-heading,
+html[data-theme="dark"] .footer-heading {
+  color: var(--text-primary, #FFFFFF) !important;
+}
+
+[data-theme="dark"] .footer-description,
+body.dark-mode .footer-description,
+html[data-theme="dark"] .footer-description {
+  color: var(--text-secondary, #D1D5DB) !important;
+}
+
+[data-theme="dark"] .footer-link,
+body.dark-mode .footer-link,
+html[data-theme="dark"] .footer-link {
+  color: var(--text-secondary, #D1D5DB) !important;
+}
+
+[data-theme="dark"] .footer-link:hover,
+body.dark-mode .footer-link:hover,
+html[data-theme="dark"] .footer-link:hover {
+  color: var(--link-color, #FF6B6B) !important;
+}
+
+[data-theme="dark"] .contact-link,
+body.dark-mode .contact-link,
+html[data-theme="dark"] .contact-link {
+  color: var(--link-color, #FF6B6B) !important;
+}
+
+[data-theme="dark"] .contact-link:hover,
+body.dark-mode .contact-link:hover,
+html[data-theme="dark"] .contact-link:hover {
+  color: var(--link-hover, #FF5252) !important;
+}
+
+
+
+[data-theme="dark"] .copyright-info p,
+body.dark-mode .copyright-info p,
+html[data-theme="dark"] .copyright-info p {
+  color: var(--text-muted, #9CA3AF) !important;
+}
+
 [data-theme="dark"] .creator-link,
 body.dark-mode .creator-link,
 html[data-theme="dark"] .creator-link {
@@ -144,104 +434,161 @@ html[data-theme="dark"] .creator-link:hover {
   color: var(--link-hover, #FF5252) !important;
 }
 
-/* Force dark mode styles with high specificity */
-[data-theme="dark"] body,
-body.dark-mode,
-html[data-theme="dark"] body {
-  background-color: #000000 !important;
-  color: #FFFFFF !important;
-}
-
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4,
-[data-theme="dark"] h5,
-[data-theme="dark"] h6,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6,
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] h4,
-html[data-theme="dark"] h5,
-html[data-theme="dark"] h6 {
-  color: #FFFFFF !important;
-}
-
-[data-theme="dark"] p,
-[data-theme="dark"] span,
-[data-theme="dark"] li,
-[data-theme="dark"] td,
-[data-theme="dark"] th,
-body.dark-mode p,
-body.dark-mode span,
-body.dark-mode li,
-body.dark-mode td,
-body.dark-mode th,
-html[data-theme="dark"] p,
-html[data-theme="dark"] span,
-html[data-theme="dark"] li,
-html[data-theme="dark"] td,
-html[data-theme="dark"] th {
-  color: #FFFFFF !important;
-}
-
-[data-theme="dark"] a,
-body.dark-mode a,
-html[data-theme="dark"] a {
-  color: #FF6B6B !important;
-}
-
-[data-theme="dark"] a:hover,
-body.dark-mode a:hover,
-html[data-theme="dark"] a:hover {
-  color: #FF5252 !important;
-}
-
-/* Search dark mode styles */
-.search-results-container.dark-theme {
-  background: var(--bg-secondary, #0A0A0A) !important;
-  border: 1px solid var(--border-color, #374151) !important;
-  color: var(--text-primary, #FFFFFF) !important;
-}
-
-.search-results-container.dark-theme .search-result-item {
-  background: var(--bg-tertiary, #111827) !important;
-  border-bottom: 1px solid var(--border-color, #374151) !important;
-  color: var(--text-primary, #FFFFFF) !important;
-}
-
-.search-results-container.dark-theme .search-result-item:hover {
-  background: var(--bg-accent, #450A0A) !important;
-}
-
-.search-results-container.dark-theme .search-result-title {
-  color: var(--text-primary, #FFFFFF) !important;
-}
-
-.search-results-container.dark-theme .search-result-content {
-  color: var(--text-secondary, #F3F4F6) !important;
-}
-
-.search-results-container.dark-theme .search-result-meta {
+[data-theme="dark"] .creator-role,
+body.dark-mode .creator-role,
+html[data-theme="dark"] .creator-role {
   color: var(--text-muted, #9CA3AF) !important;
 }
 
-.search-results-container.dark-theme .search-result-url {
+[data-theme="dark"] .legal-link,
+body.dark-mode .legal-link,
+html[data-theme="dark"] .legal-link {
+  color: var(--text-muted, #9CA3AF) !important;
+}
+
+[data-theme="dark"] .legal-link:hover,
+body.dark-mode .legal-link:hover,
+html[data-theme="dark"] .legal-link:hover {
   color: var(--link-color, #FF6B6B) !important;
 }
 
-.search-results-container.dark-theme mark {
-  background: var(--primary, #DC2626) !important;
-  color: var(--primary-text, #000000) !important;
-}
-
-.search-results-container.dark-theme .search-empty-state {
+[data-theme="dark"] .separator,
+body.dark-mode .separator,
+html[data-theme="dark"] .separator {
   color: var(--text-muted, #9CA3AF) !important;
 }
+
+[data-theme="dark"] .footer-divider,
+body.dark-mode .footer-divider,
+html[data-theme="dark"] .footer-divider {
+  background: linear-gradient(90deg, transparent, var(--border-color, #374151), transparent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1rem !important;
+  }
+
+  .back-to-top-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .footer-bottom .row {
+    text-align: center !important;
+  }
+
+  .footer-bottom .col-md-6.text-md-end {
+    text-align: center !important;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-heading {
+    font-size: 1rem !important;
+  }
+
+  .footer-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .footer-link,
+  .back-to-top-btn,
+  .creator-link,
+  .legal-link,
+  .contact-link {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .footer-link:hover,
+  .back-to-top-btn:hover {
+    transform: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .footer {
+    border-top-width: 4px !important;
+  }
+
+  .footer-link {
+    border-width: 2px !important;
+  }
+
+  .back-to-top-btn {
+    border: 2px solid white !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .footer {
+    background: white !important;
+    color: black !important;
+    border-top: 2px solid black !important;
+  }
+
+  .back-to-top-btn {
+    display: none !important;
+  }
+
+  .footer a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+}
 </style>
+
+<script>
+// Back to Top Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const backToTopBtn = document.getElementById('back-to-top');
+
+  if (backToTopBtn) {
+    // Show/hide button based on scroll position
+    function toggleBackToTop() {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    }
+
+    // Smooth scroll to top
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Event listeners
+    window.addEventListener('scroll', toggleBackToTop);
+    backToTopBtn.addEventListener('click', scrollToTop);
+
+    // Initial check
+    toggleBackToTop();
+  }
+
+  // Enhanced accessibility for footer links
+  const footerLinks = document.querySelectorAll('.footer-link, .social-link, .legal-link');
+  footerLinks.forEach(link => {
+    link.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+});
+</script>
