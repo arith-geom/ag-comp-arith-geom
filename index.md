@@ -131,6 +131,23 @@ nav_order: 1
   box-shadow: var(--shadow-sm);
 }
 
+/* Ensure section icons are always white */
+.section-icon,
+.section-icon i,
+.section-icon .fas {
+  color: #ffffff !important;
+}
+
+/* Dark mode specific override for section icons */
+[data-theme="dark"] .section-icon,
+[data-theme="dark"] .section-icon i,
+[data-theme="dark"] .section-icon .fas,
+body.dark-mode .section-icon,
+body.dark-mode .section-icon i,
+body.dark-mode .section-icon .fas {
+  color: #ffffff !important;
+}
+
 .section-header h3 {
   color: var(--text-primary);
   font-size: 1.8rem;

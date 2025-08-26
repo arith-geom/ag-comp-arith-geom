@@ -79,7 +79,7 @@ title: Research
   width: 80px;
   height: 80px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
-  color: white;
+  color: var(--primary-text);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -207,6 +207,23 @@ body.dark-mode .research-area-card .research-content h3 {
 
 /* Ensure no icon backgrounds appear as black blocks */
 .research-icon i { background: transparent !important; }
+
+/* Ensure research icons are always white */
+.research-icon,
+.research-icon i,
+.research-icon .fas {
+  color: #ffffff !important;
+}
+
+/* Dark mode specific override for research icons */
+[data-theme="dark"] .research-icon,
+[data-theme="dark"] .research-icon i,
+[data-theme="dark"] .research-icon .fas,
+body.dark-mode .research-icon,
+body.dark-mode .research-icon i,
+body.dark-mode .research-icon .fas {
+  color: #ffffff !important;
+}
 
 .research-img {
   border-radius: var(--radius-md);

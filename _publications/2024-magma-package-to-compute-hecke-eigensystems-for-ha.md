@@ -9,7 +9,7 @@ links:
 order: 202459
 status: Published
 title: Magma package to compute Hecke eigensystems for harmonic cocycles on the Bruhat-Tits
-  tree for GL_2(F_q(T)) by Master's student Burak Cakir, thesis available here
+  tree for $\mathrm{GL}_2(\mathbb{F}_q(T))$ by Master's student Burak Cakir, thesis available here
 type: Software
 year: '2024'
 ---

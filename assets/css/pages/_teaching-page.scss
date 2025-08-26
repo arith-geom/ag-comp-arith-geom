@@ -119,6 +119,15 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   min-height: 1.8rem;
   height: auto;
+  width: 100%;
+  box-sizing: border-box; // Include padding and border in width calculation
+  overflow: hidden; // Prevent content from overflowing
+
+  // Adaptive layout for very narrow containers
+  @media (max-width: 320px) {
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+  }
 
   &:hover {
     border-color: var(--primary);
@@ -160,10 +169,67 @@
 // Course item header content wrapper
 .course-item-header {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
   gap: 0.5rem;
   width: 100%;
+}
+
+.course-info-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  order: 1; // Title section comes first
+}
+
+.course-resources-preview {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  order: 2; // Resources come below the title
+  margin-top: 0.25rem;
+
+  .resource-link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    max-width: 120px;
+
+    i {
+      flex-shrink: 0;
+      font-size: 0.8em;
+    }
+
+    .resource-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    &:hover {
+      background: var(--primary);
+      color: var(--primary-text);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+
 }
 
 .course-header {
@@ -179,13 +245,32 @@
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
+  min-width: 0; // Allow flex item to shrink below content size
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+
+  // Style the title span directly
+  & {
+    color: var(--text-primary);
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: normal; // Allow text to wrap
+    word-break: break-word; // Break long words if necessary
+    overflow-wrap: anywhere; // Allow breaking anywhere for very narrow containers
+    text-align: left; // Ensure left alignment
+  }
 
   h3 {
     color: var(--text-primary);
     margin: 0;
     font-size: 0.95rem;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.3;
+    white-space: normal;
+    word-break: break-word;
   }
 
   a {
@@ -231,6 +316,15 @@
   padding: 1rem;
   border-radius: 12px;
   border-left: 4px solid var(--primary);
+
+  // Remove box styling when inside expanded course details
+  .course-details & {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border-left: none;
+    margin: 0;
+  }
 }
 
 /* Expand Button Styling */
@@ -291,17 +385,23 @@
 }
 
 /* Course Details (Expanded Content) */
-.course-details {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  margin-top: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  animation: slideDown 0.3s ease-out;
-  width: 100%;
-  clear: both;
-}
+  .course-details {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    animation: slideDown 0.3s ease-out;
+    width: 100%;
+    clear: both;
+    font-size: 0.85rem; // Smaller text on mobile
+    line-height: 1.4;
+  }
+
+  .course-details-inner {
+    gap: 0.75rem; // Tighter spacing on mobile
+  }
 
 @keyframes slideDown {
   from {
@@ -342,10 +442,27 @@
 }
 
 .course-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
   margin-top: 1rem;
+
+  .links-title {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+  }
 
   a {
     display: inline-flex;
@@ -359,6 +476,7 @@
     border-radius: var(--radius-md);
     font-size: 0.875rem;
     transition: all var(--transition-fast);
+    white-space: nowrap;
 
     &:hover {
       background: var(--primary);
@@ -370,6 +488,7 @@
 
     i {
       font-size: 0.75rem;
+      flex-shrink: 0;
     }
   }
 }
@@ -415,20 +534,54 @@
   }
 
   .course-item {
-    padding: 0.4rem 0.6rem;
-    margin: 0.2rem 0;
-    min-height: 1.6rem;
+    padding: 0.75rem 0.8rem; // More padding on mobile for touch targets
+    margin: 0.3rem 0;
+    min-height: auto; // Let content determine height
   }
 
   .course-header {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 0.4rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
   }
 
   .course-meta {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .course-info-section {
+    width: 100%;
+  }
+
+  .course-title {
+    line-height: 1.4; // Better line height on mobile
+    font-size: 0.9rem; // Slightly smaller on mobile
+    font-weight: 500; // Slightly lighter for mobile readability
+  }
+
+  .course-resources-preview {
+    gap: 0.4rem;
+    width: 100%;
+    justify-content: flex-start; // Left-align resources on mobile
+
+    .resource-link {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      max-width: 120px; // Larger touch targets on mobile
+      flex: 0 0 auto; // Don't shrink
+
+      .resource-text {
+        font-size: 0.75rem;
+        max-width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      i {
+        font-size: 0.8em;
+      }
+    }
   }
 
   .course-expand-btn {
@@ -457,19 +610,251 @@
   }
 
   .course-item {
-    padding: 0.875rem;
-    margin: 0.5rem 0;
+    padding: 0.75rem;
+    margin: 0.4rem 0;
+    min-height: unset; // Allow cards to be smaller
+  }
+
+  .course-item-header {
+    gap: 0.4rem; // Tighter spacing on small screens
+    flex-direction: column; // Ensure vertical layout
+    align-items: stretch;
+  }
+
+  .course-title {
+    font-size: 0.8rem; // Smaller font for very narrow screens
+    line-height: 1.2; // Tighter line height
+    margin-bottom: 0.25rem;
+  }
+
+  .instructors {
+    font-size: 0.75rem; // Smaller instructor text
+    margin-bottom: 0.5rem;
+  }
+
+  .course-expand-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 16px; // Larger touch target
+    margin-top: 0.25rem;
+    align-self: flex-end; // Position at end of resources
+    flex-shrink: 0;
+  }
+
+  .course-badge {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.7rem;
+    align-self: flex-start;
+  }
+
+  .course-info-section {
+    width: 100%;
+  }
+
+  .course-title {
+    font-size: 0.85rem; // Even smaller for very small screens
+    line-height: 1.3;
+  }
+
+  .course-resources-preview {
+    gap: 0.3rem;
+    width: 100%;
+
+    .resource-link {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.7rem;
+      max-width: 100px; // Smaller but still usable
+      min-width: 70px; // Ensure minimum usable size
+
+      .resource-text {
+        font-size: 0.7rem;
+        max-width: 60px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      i {
+        font-size: 0.75em;
+      }
+    }
+  }
+
+  .course-details {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .course-details-inner {
+    gap: 0.5rem;
+  }
+}
+
+// Extra small screens (400px and below)
+@media (max-width: 400px) {
+  .teaching-header h1 {
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .filter-controls {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .filter-group {
+    min-width: 120px;
+  }
+
+  .course-item {
+    padding: 0.6rem;
+    margin: 0.3rem 0;
+    border-radius: 6px;
+  }
+
+  .course-item-header {
+    gap: 0.3rem;
+  }
+
+  .course-info-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .course-badge {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.4rem;
+    flex-shrink: 0; // Don't shrink the badge
+    max-width: 100px; // Limit badge width on very small screens
+  }
+
+  .course-title {
+    font-size: 0.75rem;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+
+  .instructors {
+    font-size: 0.7rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .course-resources-preview {
+    gap: 0.2rem;
+
+    .resource-link {
+      padding: 0.2rem 0.4rem;
+      font-size: 0.65rem;
+      max-width: 80px;
+      min-width: 60px;
+
+      .resource-text {
+        font-size: 0.65rem;
+        max-width: 50px;
+      }
+
+      i {
+        font-size: 0.7em;
+      }
+    }
   }
 
   .course-expand-btn {
     width: 40px;
     height: 40px;
-    font-size: 12px;
+    font-size: 14px;
+  }
+
+  .course-details {
+    margin-top: 0.4rem;
+    padding: 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 6px;
+  }
+
+  .course-details-inner {
+    gap: 0.4rem;
+  }
+}
+
+// Extremely narrow containers (280px and below) - for very constrained layouts
+@media (max-width: 280px) {
+  .course-item {
+    padding: 0.5rem 0.4rem;
+    margin: 0.2rem 0;
+    border-radius: 4px;
+  }
+
+  .course-item-header {
+    gap: 0.2rem;
+  }
+
+  .course-info-section {
+    gap: 0.2rem;
   }
 
   .course-badge {
-    padding: 0.3rem 0.8rem;
-    font-size: 0.75rem;
+    font-size: 0.55rem;
+    padding: 0.1rem 0.3rem;
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .course-title {
+    font-size: 0.7rem;
+    line-height: 1.0;
+    font-weight: 600;
+    word-break: break-all; // Allow breaking anywhere for extremely narrow screens
+    overflow-wrap: anywhere;
+  }
+
+  .instructors {
+    font-size: 0.65rem;
+    margin-bottom: 0.15rem;
+    display: none; // Hide instructors on extremely narrow screens to save space
+  }
+
+  .course-resources-preview {
+    gap: 0.15rem;
+
+    .resource-link {
+      padding: 0.15rem 0.3rem;
+      font-size: 0.6rem;
+      max-width: 65px;
+      min-width: 50px;
+
+      .resource-text {
+        font-size: 0.6rem;
+        max-width: 40px;
+      }
+
+      i {
+        font-size: 0.65em;
+      }
+    }
+  }
+
+  .course-expand-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    margin-top: 0.1rem;
+  }
+
+  .course-details {
+    margin-top: 0.3rem;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 4px;
+  }
+
+  .course-details-inner {
+    gap: 0.3rem;
   }
 }
 
@@ -516,6 +901,27 @@ body.dark-mode .teaching-page {
 
   .course-meta {
     color: var(--dark-text-muted);
+  }
+
+  .course-resources-preview {
+    .resource-link {
+      background: var(--dark-bg-secondary);
+      border-color: var(--dark-border);
+      color: var(--primary);
+
+      .resource-text {
+        color: inherit;
+      }
+
+      &:hover {
+        background: var(--primary);
+        color: var(--primary-text);
+
+        .resource-text {
+          color: inherit;
+        }
+      }
+    }
   }
 
   .course-links a {
@@ -604,3 +1010,4 @@ body.dark-mode .teaching-page {
     gap: 0.5rem;
   }
 }
+

@@ -339,13 +339,13 @@ ul.task-list input[type="checkbox"] {
       }
 
       i::before {
-        color: var(--global-text-color);
+        color: var(--white) !important;
         transition-property: all 0.2s ease-in-out;
       }
 
       &:hover {
         i::before {
-          color: var(--global-theme-color);
+          color: var(--white) !important;
         }
       }
     }
@@ -431,7 +431,7 @@ ul.task-list input[type="checkbox"] {
       }
 
       i::before {
-        color: var(--global-text-color);
+        color: var(--white) !important;
         transition-property: all 0.2s ease-in-out;
       }
 
@@ -439,7 +439,7 @@ ul.task-list input[type="checkbox"] {
         text-decoration: none;
 
         i::before {
-          color: var(--global-theme-color);
+          color: var(--white) !important;
         }
       }
     }

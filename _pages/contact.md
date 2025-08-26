@@ -171,12 +171,12 @@ order: 100
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
-  color: white;
+  color: white !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   flex-shrink: 0;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
@@ -275,12 +275,12 @@ order: 100
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
-  color: white;
+  color: white !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
 }
@@ -385,12 +385,12 @@ order: 100
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
-  color: white;
+  color: white !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
 }

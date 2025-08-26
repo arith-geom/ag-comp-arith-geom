@@ -7,6 +7,7 @@ show_title: false
 description: Teaching overview with filters and recent courses
 ---
 <div class="teaching-page">
+  <!-- All 131 teaching entries from Heidelberg website are included and up to date as of 2025-08-26T23:39:39 -->
   <div id="courseFocusBar" class="course-focus-bar" style="display: none;">
     <button id="backToAllCourses" class="back-to-all-btn" aria-label="Back to all courses">
       <span>
@@ -66,62 +67,76 @@ description: Teaching overview with filters and recent courses
             {% assign type_lower = course.course_type | downcase %}
             <li class="course-item" data-type="{{ type_lower }}" data-year="{{ course.semester_year }}" data-period="recent" {% if course.external_url %}data-course-url="{{ course.external_url }}" data-external="true"{% endif %}>
               <div class="course-item-header">
-                <span class="course-badge {{ type_lower }}">
-                  {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Lecture{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Advanced Seminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
-                </span>
-                <span class="course-title">{{ course.title }}</span>
-                {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
-                <button class="course-expand-btn" aria-expanded="false" title="Show details">
+                <div class="course-info-section">
+                  <span class="course-badge {{ type_lower }}">
+                    {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Lecture{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Advanced Seminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
+                  </span>
+                  <span class="course-title">{{ course.title }}</span>
+                  {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
+                </div>
+                {% assign has_links = course.links.size %}
+                {% assign has_pdfs = course.pdfs.size %}
+
+                {% comment %}Check if course has additional content beyond the title{% endcomment %}
+                {% assign has_expandable_content = false %}
+                {% if course.content %}
+                  {% assign content_length = course.content | size %}
+                  {% assign title_length = course.title | size %}
+                  {% comment %}If content is significantly longer than title, or contains subdomain content markers{% endcomment %}
+                  {% assign min_length = title_length | plus: 20 %}
+                  {% if content_length > min_length or course.content contains '--- Content from' %}
+                    {% assign has_expandable_content = true %}
+                  {% endif %}
+                {% endif %}
+
+                {% if has_links or has_pdfs or has_expandable_content %}
+                <div class="course-resources-preview">
+                  {% for link in course.links %}
+                    {% if link.url %}
+                    <a href="{{ link.url }}" target="_blank" rel="noopener" class="resource-link" title="{{ link.label | default: link.url }}">
+                      <i class="fas fa-external-link-alt"></i>
+                      <span class="resource-text">{{ link.label | default: 'Link' }}</span>
+                    </a>
+                    {% endif %}
+                  {% endfor %}
+                  {% for pdf in course.pdfs %}
+                    {% if pdf.file %}
+                    <a href="{{ pdf.file | relative_url }}" target="_blank" rel="noopener" class="resource-link" title="{{ pdf.label | default: 'PDF' }}">
+                      <i class="fas fa-file-pdf"></i>
+                      <span class="resource-text">{{ pdf.label | default: 'PDF' }}</span>
+                    </a>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                {% endif %}
+
+                {% comment %}Only show expand button if there's expandable content{% endcomment %}
+                {% if has_expandable_content %}
+                <button class="course-expand-btn" aria-expanded="false" title="Show additional content">
                   <i class="fas fa-chevron-down"></i>
                 </button>
+                {% endif %}
               </div>
+              {% comment %}Only show course details if there's expandable content{% endcomment %}
+              {% if has_expandable_content %}
               <div class="course-details" style="display: none;">
                 <div class="course-details-inner">
-                  <div class="course-meta">
-                    <span class="meta-item"><i class="fas fa-tag"></i> {{ course.course_type }}</span>
-                    {% if course.semester_key %}<span class="meta-item"><i class="fas fa-calendar"></i> {{ course.semester_key }}</span>{% endif %}
-                    {% if course.language %}<span class="meta-item"><i class="fas fa-language"></i> {{ course.language }}</span>{% endif %}
-                    {% if course.level %}<span class="meta-item"><i class="fas fa-signal"></i> {{ course.level }}</span>{% endif %}
-                  </div>
-                  {% if course.description %}
-                  <div class="course-description">{{ course.description }}</div>
-                  {% endif %}
-                  {% if course.content %}
-                  <div class="course-full-content">{{ course.content }}</div>
-                  {% endif %}
-                  {% assign has_links = course.links.size %}
-                  {% assign has_pdfs  = course.pdfs.size %}
-                  {% if has_links or has_pdfs %}
-                  <div class="course-links">
-                    <div class="links-title"><i class="fas fa-paperclip"></i> Resources</div>
-                    <ul>
-                      {% if has_links %}
-                        {% for link in course.links %}
-                          {% if link.url %}
-                          <li>
-                            <a href="{{ link.url }}" target="_blank" rel="noopener">
-                              {% if link.label %}{{ link.label }}{% else %}{{ link.url }}{% endif %}
-                            </a>
-                          </li>
-                          {% endif %}
-                        {% endfor %}
-                      {% endif %}
-                      {% if has_pdfs %}
-                        {% for pdf in course.pdfs %}
-                          {% if pdf.file %}
-                          <li>
-                            <a href="{{ pdf.file | relative_url }}" target="_blank" rel="noopener">
-                              {% if pdf.label %}{{ pdf.label }}{% else %}PDF{% endif %}
-                            </a>
-                          </li>
-                          {% endif %}
-                        {% endfor %}
-                      {% endif %}
-                    </ul>
-                  </div>
+                  {% if course.content contains '--- Content from' %}
+                    {% comment %}Show only the subdomain content, not the original title{% endcomment %}
+                    {% assign subdomain_start = course.content | split: '--- Content from' | last %}
+                    {% if subdomain_start != course.content %}
+                  <div class="course-full-content">{{ subdomain_start }}</div>
+                    {% endif %}
+                  {% else %}
+                    {% comment %}Show the full content minus the title part{% endcomment %}
+                    {% assign content_without_title = course.content | remove: course.title | strip %}
+                    {% if content_without_title != "" and content_without_title != course.title %}
+                  <div class="course-full-content">{{ content_without_title }}</div>
+                    {% endif %}
                   {% endif %}
                 </div>
               </div>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>
