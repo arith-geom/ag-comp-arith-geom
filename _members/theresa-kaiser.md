@@ -10,4 +10,4 @@ photo: "/assets/img/theresa-kaiser.jpg"
 ---
 title: {{ page.name }}
 
-Theresa Kaiser is a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.
+Theresa Kaiser is a member of the AG Computational Arithmetic Geometry research group at Heidelberg University.

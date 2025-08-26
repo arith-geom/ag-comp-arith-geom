@@ -13,7 +13,7 @@
       <meta http-equiv="refresh" content="3; url={{ redirect }}">
     {% endif %}
     <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
-    {% include head.liquid %}
+    {% include layout/head.liquid %}
   </head>
 
   <!-- Body -->
@@ -22,10 +22,10 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <!-- Header -->
-    {% include header.liquid %}
+    {% include layout/header.liquid %}
 
     <!-- Content -->
-    <div class="container-fluid mt-5 p-0" role="main" id="main-content">
+    <div class="container-fluid mt-0 p-0" role="main" id="main-content">
       <div class="content-wrapper page-content">
         {% if page.toc and page.toc.sidebar %}
           {% if page.toc.sidebar == 'right' %}
@@ -54,12 +54,9 @@
     </div>
 
     <!-- Footer -->
-    {% include footer.liquid %}
-
-    <!-- Pages CMS Admin Interface -->
-    {% include pagescms-admin.liquid %}
+    {% include layout/footer.liquid %}
 
     <!-- JavaScripts -->
-    {% include scripts.liquid %}
+    {% include scripts/scripts.liquid %}
   </body>
 </html>

@@ -12,4 +12,4 @@ current_position: Former Member
 ---
 title: {{ page.name }}
 
-Judith Ludwig was a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.
+Judith Ludwig was a member of the AG Computational Arithmetic Geometry research group at the Heidelberg University.

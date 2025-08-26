@@ -20,88 +20,7 @@ creator:
   github_url: "https://github.com/VictorMerk"
   role: "Website Designer & Developer"
   year: "2024"
-bilingual_cms:
-  enabled: true
-  default_language: en
-  supported_languages:
-    - en
-    - de
-  language_names:
-    en: English
-    de: Deutsch
-  content_structure:
-    - name: pages
-      types:
-        - about
-        - research
-        - publications
-        - teaching
-        - members
-        - contact
-        - links
-      fields:
-        - title
-        - content
-        - description
-        - meta_description
-    - name: members
-      fields:
-        - name
-        - role
-        - bio
-        - research_interests
-        - email
-        - website
-        - github
-        - orcid
-    - name: publications
-      fields:
-        - title
-        - authors
-        - abstract
-        - journal
-        - year
-        # DOI removed
-        - url
-    - name: news
-      fields:
-        - title
-        - content
-        - excerpt
-        - date
-        - author
-pagescms:
-  enabled: true
-  api_url: https://app.pagescms.org
-  content_types:
-    - members
-    - publications
-    - research
-    - teaching
-    - links
-    - pages
-  auto_sync: false
-  auto_fix: false
-  cache_duration: 3600
-  bilingual_support: true
-  repo_url: https://github.com/VictorMerk/ag-comp-arith-geom
-  branch: main
-  write_generated_config: false
-  language_fields:
-    - title
-    - content
-    - description
-    - bio
-    - abstract
-    - excerpt
-    - research_interests
-  performance:
-    image_optimization: true
-    lazy_loading: true
-    compression: true
-  security:
-    content_validation: true
-    sanitization: true
+# Bilingual support removed - keeping English only
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
@@ -216,7 +135,7 @@ collections:
     permalink: /teaching/:name/
   members:
     output: true
-    permalink: /members/:name/
+    permalink: /members/:slug/
   research:
     output: true
     permalink: /research/:name/
@@ -251,7 +170,6 @@ exclude:
   - Thumbs.db
   - assets/search-data-backup.json
   - assets/json/publications-data.json.old
-  - pagescms.config.json
 
 # Performance and regeneration settings
 incremental: false

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    {% include head.liquid %}
+    {% include layout/head.liquid %}
 
     <!-- Distill js -->
     <script src="{{ '/assets/js/distillpub/template.v2.js' | relative_url }}"></script>
@@ -54,7 +54,7 @@
 
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     <!-- Header -->
-    {% include header.liquid %}
+    {% include layout/header.liquid %}
 
     <!-- Content -->
     <div class="post distill">
@@ -98,16 +98,16 @@
 
       <d-bibliography src="{{ page.bibliography | prepend: '/assets/bibliography/' | relative_url }}"></d-bibliography>
 
-      {% if site.disqus_shortname and page.disqus_comments %}{% include disqus.liquid %}{% endif %}
+      {% if site.disqus_shortname and page.disqus_comments %}{% include content/disqus.liquid %}{% endif %}
       {% if site.giscus.repo and page.giscus_comments %}
-        {% include giscus.liquid %}
+        {% include content/giscus.liquid %}
       {% endif %}
     </div>
 
     <!-- Footer -->
-    {% include footer.liquid %}
+    {% include layout/footer.liquid %}
 
     <!-- JavaScripts -->
-    {% include distill_scripts.liquid %}
+    {% include scripts/distill_scripts.liquid %}
   </body>
 </html>

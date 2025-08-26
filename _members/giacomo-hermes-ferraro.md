@@ -10,4 +10,4 @@ photo: "/assets/img/giacomo-hermes-ferraro.jpg"
 ---
 title: {{ page.name }}
 
-Giacomo Hermes Ferraro is a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.
+Giacomo Hermes Ferraro is a member of the AG Computational Arithmetic Geometry research group at Heidelberg University.

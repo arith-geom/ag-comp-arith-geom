@@ -6,7 +6,8 @@ nav: true
 nav_order: 7
 order: 100
 ---
-<div class="location-section mt-5">
+<div class="contact-sections">
+  <div class="location-section mt-5">
   <div class="location-container">
     <div class="location-header">
       <div class="location-icon">
@@ -20,16 +21,16 @@ order: 100
         <div class="address-block">
           <p><strong>Computational Arithmetic Geometry</strong></p>
           <p>IWR (Interdisciplinary Center for Scientific Computing)</p>
-          <p>University of Heidelberg</p>
+          <p>Heidelberg University</p>
           <p>Im Neuenheimer Feld 205</p>
           <p>69120 Heidelberg</p>
           <p>Germany</p>
         </div>
         <div class="map-actions mt-3">
-          <a href="https://maps.google.com/?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany" 
-             target="_blank" 
-             rel="noopener" 
-             class="btn btn-primary map-btn">
+          <a href="https://maps.google.com/?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany"
+             target="_blank"
+             rel="noopener"
+             class="btn btn-outline-primary map-btn">
             <i class="fas fa-external-link-alt me-2" aria-hidden="true"></i><span class="translatable-content" data-translation-key="contact.open_in_google_maps">Open in Google Maps</span>
           </a>
         </div>
@@ -41,7 +42,7 @@ order: 100
           style="border:0; border-radius: var(--radius-lg);"
           loading="lazy"
           allowfullscreen
-          title="Map showing the location of AG Computational Arithmetic Geometry at University of Heidelberg"
+          title="Map showing the location of AG Computational Arithmetic Geometry at Heidelberg University"
           src="https://www.google.com/maps/embed/v1/place?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
         </iframe>
       </div>
@@ -58,7 +59,6 @@ order: 100
       <h3 class="translatable-content" data-translation-key="contact.phone">Phone</h3>
       <div class="contact-detail">
         <p><strong>+49-6221-54-14734</strong></p>
-        <small class="text-muted translatable-content" data-translation-key="contact.phone_hours">Monday - Friday, 9:00 AM - 5:00 PM (CET)</small>
       </div>
     </div>
   </div>
@@ -71,7 +71,6 @@ order: 100
       <h3 class="translatable-content" data-translation-key="contact.fax">Fax</h3>
       <div class="contact-detail">
         <p><strong>+49-6221-54-14737</strong></p>
-        <small class="text-muted translatable-content" data-translation-key="contact.fax_note">Available 24/7</small>
       </div>
     </div>
   </div>
@@ -87,17 +86,14 @@ order: 100
     </div>
     <div class="form-content">
       <div class="email-info">
-        <h4 class="translatable-content" data-translation-key="common.email">Direct Email</h4>
-        <div class="contact-detail">
-          <p><a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="email-link"><strong>sekretariat.boeckle@iwr.uni-heidelberg.de</strong></a></p>
-          <small class="text-muted translatable-content" data-translation-key="contact.email_note">Click the email address to open your email client</small>
-        </div>
-        <div class="contact-options mt-3">
-          <p class="text-muted mb-2"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>Contact us directly via email:</p>
-          <div class="contact-buttons">
+        <div class="contact-options">
+          <div class="contact-buttons" style="display: inline-block; margin-right: 1rem; vertical-align: middle;">
             <a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="btn btn-outline-primary">
               <i class="fas fa-envelope me-2" aria-hidden="true"></i>Send Email
             </a>
+          </div>
+          <div class="contact-detail" style="display: inline-block; vertical-align: middle;">
+            <p><a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="email-link"><strong>sekretariat.boeckle@iwr.uni-heidelberg.de</strong></a></p>
           </div>
         </div>
       </div>
@@ -105,10 +101,17 @@ order: 100
 
   </div>
 </div>
-
-
+</div>
 
 <style>
+/* Contact Sections - Full Screen Layout */
+.contact-sections {
+  width: 100%;
+  margin: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .contact-intro {
   text-align: center;
   max-width: 800px;
@@ -138,8 +141,8 @@ order: 100
 }
 
 .contact-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 2rem;
@@ -241,8 +244,8 @@ order: 100
 }
 
 .location-section {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .location-container {
@@ -331,23 +334,28 @@ order: 100
   box-shadow: var(--shadow-md);
 }
 
-/* Match theme for map button */
+/* Match theme for map button - outline style for better visibility */
 .map-actions .map-btn {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%) !important;
-  color: var(--primary-text) !important;
-  border-color: var(--primary) !important;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+  background: transparent !important;
+  color: var(--primary) !important;
+  border: 2px solid var(--primary) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all var(--transition-base) !important;
 }
 
 .map-actions .map-btn:hover {
-  background: linear-gradient(135deg, var(--heidelberg-red) 0%, var(--heidelberg-red-darker) 100%) !important;
-  border-color: var(--heidelberg-red-dark) !important;
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
 }
 
 /* Contact Form Styles */
 .contact-form-section {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .form-container {
@@ -470,15 +478,16 @@ body.dark-mode .form-container {
 /* Ensure the map button keeps strong contrast in dark mode */
 [data-theme="dark"] .map-actions .map-btn,
 body.dark-mode .map-actions .map-btn {
-  background: linear-gradient(135deg, var(--heidelberg-red) 0%, var(--heidelberg-red-darker) 100%) !important;
-  color: var(--primary-text) !important;
-  border-color: var(--heidelberg-red-dark) !important;
+  background: transparent !important;
+  color: var(--link-color) !important;
+  border-color: var(--link-color) !important;
 }
 
 [data-theme="dark"] .map-actions .map-btn:hover,
 body.dark-mode .map-actions .map-btn:hover {
-  background: linear-gradient(135deg, var(--heidelberg-red-dark) 0%, var(--heidelberg-red-darkest) 100%) !important;
-  border-color: var(--heidelberg-red-darkest) !important;
+  background: var(--primary) !important;
+  color: var(--primary-text) !important;
+  border-color: var(--primary) !important;
 }
 
 [data-theme="dark"] .form-container:hover,
@@ -490,14 +499,19 @@ body.dark-mode .form-container:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .contact-sections {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .contact-intro h2 {
     font-size: 2rem;
   }
-  
+
   .contact-intro .lead {
     font-size: 1.1rem;
   }
-  
+
   .contact-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -551,28 +565,33 @@ body.dark-mode .form-container:hover {
 }
 
 @media (max-width: 480px) {
+  .contact-sections {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
   .contact-card {
     padding: 1rem;
   }
-  
+
   .contact-icon {
     width: 40px;
     height: 40px;
     font-size: 1rem;
   }
-  
+
   .contact-content h3 {
     font-size: 1.2rem;
   }
-  
+
   .location-container {
     padding: 1rem;
   }
-  
+
   .form-container {
     padding: 1rem;
   }
-  
+
   .form-header h3 {
     font-size: 1.3rem;
   }

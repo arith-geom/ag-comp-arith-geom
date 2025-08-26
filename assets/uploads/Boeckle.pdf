@@ -1,0 +1,2506 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+	<meta charset="UTF-8" />
+	<script type="text/javascript"
+		id="Cookiebot"
+		src="https://consent.cookiebot.com/uc.js"
+		data-cbid="5049db26-ccc3-468f-ad53-8aec9cb61a0c"
+								></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("consent", "default", {
+		ad_storage: "denied",
+		analytics_storage: "denied",
+		functionality_storage: "denied",
+		personalization_storage: "denied",
+		security_storage: "granted",
+		wait_for_update: 500,
+	});
+	gtag("set", "ads_data_redaction", true);
+	gtag("set", "url_passthrough", true);
+</script>
+<!-- Show breadcrumbs if View breadcrumbs button clicked -->
+<script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function () {
+        var btn_breadcrumb = document.querySelector('.breadcrumb__button');
+
+        function switch_aria_expande(target, ariaType, isFalse, isTrue) {
+            var ariaValue = target.getAttribute(ariaType);
+
+            if (ariaValue === isTrue) {
+                target.setAttribute(ariaType, isFalse);
+            } else {
+                target.setAttribute(ariaType, isTrue);
+            }
+        }
+
+        if (btn_breadcrumb) {
+            btn_breadcrumb.addEventListener('click', function () {
+                switch_aria_expande(this, 'aria-expanded', 'true', 'false');
+            });
+        }
+    });
+</script>
+<!-- end Show breadcrumbs /--><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v22.3 (Yoast SEO v22.3) - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Page d&#039;accueil de l&#039;Université du Luxembourg, une université de recherche internationale à caractère multilingue et interdisciplinaire." />
+	<link rel="canonical" href="https://www.uni.lu/fr/" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Accueil" />
+	<meta property="og:description" content="Page d&#039;accueil de l&#039;Université du Luxembourg, une université de recherche internationale à caractère multilingue et interdisciplinaire." />
+	<meta property="og:url" content="https://www.uni.lu/fr/" />
+	<meta property="og:site_name" content="UNI FR" />
+	<meta property="article:publisher" content="https://www.facebook.com/uni.lu" />
+	<meta property="article:modified_time" content="2025-08-22T15:02:13+00:00" />
+	<meta property="og:image" content="https://www.uni.lu/wp-content/uploads/sites/11/2023/07/UNI_logo_transparent_260.png" />
+	<meta property="og:image:width" content="260" />
+	<meta property="og:image:height" content="260" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.uni.lu/fr/","url":"https://www.uni.lu/fr/","name":"Accueil - Université du Luxembourg I Uni.lu","isPartOf":{"@id":"https://www.uni.lu/fr/#website"},"about":{"@id":"https://www.uni.lu/fr/#organization"},"datePublished":"2023-07-17T14:40:49+00:00","dateModified":"2025-08-22T15:02:13+00:00","description":"Page d'accueil de l'Université du Luxembourg, une université de recherche internationale à caractère multilingue et interdisciplinaire.","breadcrumb":{"@id":"https://www.uni.lu/fr/#breadcrumb"},"inLanguage":"fr-FR","potentialAction":[{"@type":"ReadAction","target":["https://www.uni.lu/fr/"]}]},{"@type":"BreadcrumbList","@id":"https://www.uni.lu/fr/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.uni.lu/fr/#website","url":"https://www.uni.lu/fr/","name":"Uni.lu","description":"Université du Luxembourg","publisher":{"@id":"https://www.uni.lu/fr/#organization"},"alternateName":"Université du Luxembourg","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.uni.lu/fr/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"fr-FR"},{"@type":"Organization","@id":"https://www.uni.lu/fr/#organization","name":"Université du Luxembourg","alternateName":"Uni.lu","url":"https://www.uni.lu/fr/","logo":{"@type":"ImageObject","inLanguage":"fr-FR","@id":"https://www.uni.lu/fr/#/schema/logo/image/","url":"https://www.uni.lu/wp-content/uploads/sites/11/2023/07/UNI_logo_transparent_260.png","contentUrl":"https://www.uni.lu/wp-content/uploads/sites/11/2023/07/UNI_logo_transparent_260.png","width":260,"height":260,"caption":"Université du Luxembourg"},"image":{"@id":"https://www.uni.lu/fr/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/uni.lu","https://www.linkedin.com/school/university-of-luxembourg/","https://www.instagram.com/uni.lu","https://www.youtube.com/@uni_lu","https://en.wikipedia.org/wiki/University_of_Luxembourg"]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<title>Accueil - Université du Luxembourg I Uni.lu</title>
+<link rel="alternate" type="application/rss+xml" title="UNI FR &raquo; Flux" href="https://www.uni.lu/fr/feed/" />
+<link rel="alternate" type="application/rss+xml" title="UNI FR &raquo; Flux des commentaires" href="https://www.uni.lu/fr/comments/feed/" />
+<link rel='stylesheet' id='unilux-blocks-wrapper-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/WrapperBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='unilux-blocks-plain-text-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/PlainTextBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='unilux-blocks-heading-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/HeadingBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<style id='unilux-blocks-custom-button-style-inline-css'>
+.wp-block-unilux-blocks-button{background-color:#21759b;color:#fff;padding:2px}
+</style>
+<style id='unilux-blocks-custom-buttons-style-inline-css'>
+.wp-block-unilux-blocks-buttons{background-color:#21759b;color:#fff;padding:2px}
+</style>
+<link rel='stylesheet' id='unilux-blocks-hero-carousel-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/HeroCarouselBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='unilux-blocks-button-highlight-rounded-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/ButtonHighlightRoundedBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='unilux-blocks-content-card-visual-area-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/ContentCardVisualAreaBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<style id='wp-block-paragraph-inline-css'>
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}p.has-background{padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}
+</style>
+<link rel='stylesheet' id='unilux-blocks-content-card-free-area-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/ContentCardFreeAreaBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='unilux-blocks-content-card-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/ContentCardBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='unilux-blocks-quick-link-highlight-item-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/QuickLinkHighlightItemBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='unilux-blocks-quick-link-highlight-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/QuickLinkHighlightBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='unilux-blocks-content-card-and-quick-links-section-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/ContentCardAndQuickLinksSectionBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='unilux-blocks-free-section-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/FreeSectionBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='unilux-blocks-footer-style-css' href='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/FooterBlock/resources/scss/style.css?ver=0.1.0' media='all' />
+<link rel='stylesheet' id='menu-icon-font-awesome-css' href='https://www.uni.lu/wp-content/plugins/menu-icons/css/fontawesome/css/all.min.css?ver=5.15.4' media='all' />
+<link rel='stylesheet' id='menu-icons-extra-css' href='https://www.uni.lu/wp-content/plugins/menu-icons/css/extra.min.css?ver=0.13.16' media='all' />
+<style id='wp-block-library-inline-css'>
+:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px;--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{clip:rect(1px,1px,1px,1px);word-wrap:normal!important;border:0;-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{clip:auto!important;background-color:#ddd;-webkit-clip-path:none;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+</style>
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #0d6efd;--wp--preset--color--secondary: #6c757d;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 0.875rem;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 1.125rem;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--base: 1rem;--wp--preset--font-size--font-heading-small: 1.25rem;--wp--preset--font-size--font-heading-medium: 1.5rem;--wp--preset--font-size--font-heading-large: 1.875rem;--wp--preset--font-size--font-heading-extra-large: 2.25rem;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}body { margin: 0;--wp--style--global--content-size: 1174px;--wp--style--global--wide-size: 1504px; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}.wp-element-button, .wp-block-button__link{background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-color{color: var(--wp--preset--color--primary) !important;}.has-secondary-color{color: var(--wp--preset--color--secondary) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-background-color{background-color: var(--wp--preset--color--primary) !important;}.has-secondary-background-color{background-color: var(--wp--preset--color--secondary) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-border-color{border-color: var(--wp--preset--color--primary) !important;}.has-secondary-border-color{border-color: var(--wp--preset--color--secondary) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-base-font-size{font-size: var(--wp--preset--font-size--base) !important;}.has-font-heading-small-font-size{font-size: var(--wp--preset--font-size--font-heading-small) !important;}.has-font-heading-medium-font-size{font-size: var(--wp--preset--font-size--font-heading-medium) !important;}.has-font-heading-large-font-size{font-size: var(--wp--preset--font-size--font-heading-large) !important;}.has-font-heading-extra-large-font-size{font-size: var(--wp--preset--font-size--font-heading-extra-large) !important;}
+</style>
+<link rel='stylesheet' id='dashicons-css' href='https://www.uni.lu/fr/wp-includes/css/dashicons.min.css?ver=6.3.3' media='all' />
+<link rel='stylesheet' id='tec-variables-skeleton-css' href='https://www.uni.lu/wp-content/plugins/event-tickets/common/src/resources/css/variables-skeleton.min.css?ver=5.2.3' media='all' />
+<link rel='stylesheet' id='tec-variables-full-css' href='https://www.uni.lu/wp-content/plugins/event-tickets/common/src/resources/css/variables-full.min.css?ver=5.2.3' media='all' />
+<link rel='stylesheet' id='tribe-common-skeleton-style-css' href='https://www.uni.lu/wp-content/plugins/event-tickets/common/src/resources/css/common-skeleton.min.css?ver=5.2.3' media='all' />
+<link rel='stylesheet' id='tribe-common-full-style-css' href='https://www.uni.lu/wp-content/plugins/event-tickets/common/src/resources/css/common-full.min.css?ver=5.2.3' media='all' />
+<link rel='stylesheet' id='event-tickets-tickets-css-css' href='https://www.uni.lu/wp-content/plugins/event-tickets/src/resources/css/tickets.min.css?ver=5.8.4' media='all' />
+<link rel='stylesheet' id='event-tickets-tickets-rsvp-css-css' href='https://www.uni.lu/wp-content/plugins/event-tickets/src/resources/css/rsvp-v1.min.css?ver=5.8.4' media='all' />
+<link rel='stylesheet' id='theme-common-css' href='https://www.uni.lu/wp-content/themes/unilux-theme/assets/theme-common.css?ver=5124421a1312726fa9eb' media='all' />
+<link rel='stylesheet' id='theme-uni-css' href='https://www.uni.lu/wp-content/themes/unilux-theme/assets/theme-uni.css?ver=6f5cf5425c4890a9a66d' media='all' />
+<link rel='stylesheet' id='frontend-css' href='https://www.uni.lu/wp-content/themes/unilux-theme/assets/frontend.css?ver=d78c1ef4ac0817bbbbfb' media='all' />
+<link rel='stylesheet' id='event-tickets-rsvp-css' href='https://www.uni.lu/wp-content/plugins/event-tickets/src/resources/css/rsvp.min.css?ver=5.8.4' media='all' />
+<script src='https://www.uni.lu/fr/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script src='https://www.uni.lu/fr/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script src='https://www.uni.lu/fr/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script src='https://www.uni.lu/fr/wp-includes/js/dist/dom-ready.min.js?ver=392bdd43726760d1f3ca' id='wp-dom-ready-js'></script>
+<script src='https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/HeroCarouselBlock/resources/ts/frontend-provider.js?ver=039ee135956cad251f11' id='unilux-blocks-hero-carousel-view-script-js'></script>
+<script src='https://www.uni.lu/fr/wp-includes/js/jquery/jquery.min.js?ver=3.7.0' id='jquery-core-js'></script>
+<script src='https://www.uni.lu/fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="https://www.uni.lu/fr/wp-json/" /><link rel="alternate" type="application/json" href="https://www.uni.lu/fr/wp-json/wp/v2/pages/2324" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.uni.lu/fr/xmlrpc.php?rsd" />
+
+<link rel='shortlink' href='https://www.uni.lu/fr/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.uni.lu/fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.uni.lu%2Ffr%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.uni.lu/fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.uni.lu%2Ffr%2F&#038;format=xml" />
+<link rel="alternate" hreflang="en-GB" href="https://www.uni.lu/en/"><link rel="alternate" hreflang="de-DE" href="https://www.uni.lu/de/"><link rel="alternate" hreflang="fr-FR" href="https://www.uni.lu/fr/"><meta name="et-api-version" content="v1"><meta name="et-api-origin" content="https://www.uni.lu/fr"><link rel="https://theeventscalendar.com/" href="https://www.uni.lu/fr/wp-json/tribe/tickets/v1/" /><!-- Matomo noscript -->
+<noscript>
+    <p>
+        <img referrerpolicy="no-referrer-when-downgrade" src="https://unilu.matomo.cloud/matomo.php?idsite=22&amp;rec=1" style="border:0" alt="" />
+    </p>
+</noscript>
+<!-- End Matomo noscript Code -->
+
+<!-- Matomo -->
+<script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['requireCookieConsent']);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="https://unilu.matomo.cloud/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '22']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src='//cdn.matomo.cloud/unilu.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<!-- End Matomo Code -->
+
+<!-- Connect Matomo and Cookiebot -->
+<script>
+    var waitForTrackerCount = 0;
+    function matomoWaitForTracker() {
+        if (typeof _paq === 'undefined' || typeof Cookiebot === 'undefined') {
+            if (waitForTrackerCount < 40) {
+                setTimeout(matomoWaitForTracker, 250);
+                waitForTrackerCount++;
+                return;
+            }
+        } else {
+            window.addEventListener('CookiebotOnAccept', function (e) {
+                consentSet();
+            });
+            window.addEventListener('CookiebotOnDecline', function (e) {
+                consentSet();
+            })
+        }
+    }
+    function consentSet() {
+        if (Cookiebot.consent.statistics) {
+            _paq.push(['setCookieConsentGiven']);
+            _paq.push(['setConsentGiven']);
+        } else {
+            _paq.push(['forgetCookieConsentGiven']);
+            _paq.push(['forgetConsentGiven']);
+        }
+    }
+    document.addEventListener('DOMContentLoaded', matomoWaitForTracker);
+</script>
+<!-- End connect Matomo and Cookiebot -->
+
+<!-- Matomo Tag Manager -->
+<script>
+    function matomoTagEvents() {
+        window.addEventListener('CookiebotOnAccept', function (e) {
+            registerScript();
+        });
+        window.addEventListener('CookiebotOnDecline', function (e) {
+            registerScript();
+        })
+    }
+    function registerScript() {
+        if (!Cookiebot.consent.statistics) {
+            return true;
+        }
+        var d=document;
+        if (d.getElementById('matomoTagManager')) {
+            return true;
+        }
+        var _mtm = window._mtm = window._mtm || [];
+        _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+        var g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.id='matomoTagManager'; g.src='https://cdn.matomo.cloud/unilu.matomo.cloud/container_tmMkaooE.js'; s.parentNode.insertBefore(g,s);
+    }
+    document.addEventListener('DOMContentLoaded', matomoTagEvents);
+</script>
+<!-- End Matomo Tag Manager -->
+<script async="true" data-browser-key="b6afc74b2271e056800f63c596080cd77af640efef3f369d74e6056d4f76ad02" data-sample-rate="1.000000" data-parent-trace-id="b0661366666b70667585d152ca596421" data-transaction-name="front-page" data-collector="https://ingest.blackfire.io" src="https://admin.pipeline.blackfire.io/js/probe.js"></script></head>
+
+<body class="home page-template-default page page-id-2324 wp-embed-responsive tribe-no-js theme-uni tribe-theme-unilux-theme">
+
+<div class="wp-site-blocks"><nav id="skiplinks-navigation" class="skiplinks-nav" role="navigation" aria-label="Quick access">
+    <ul class="skiplinks-nav__list">
+        <li class="skiplinks-nav__item">
+            <a class="skiplinks-nav__link" href="#content-page">
+                Go to main content            </a>
+        </li>
+        <li class="skiplinks-nav__item">
+            <a class="skiplinks-nav__link" href="#main-navigation">
+                Go to the menu            </a>
+        </li>
+        <li class="skiplinks-nav__item">
+            <a class="skiplinks-nav__link" href="#search-page">
+                Go to search engine            </a>
+        </li>
+        <li class="skiplinks-nav__item">
+            <a class="skiplinks-nav__link" href="#footer-page">
+                Go to footer            </a>
+        </li>
+    </ul>
+</nav>
+<header id="header-page" class="header" role="banner">
+    <!-- Template SiteLogoField: Header -->
+    <a class="header-logo" href="https://www.uni.lu/fr">
+        <picture>
+            <source
+                    srcset="https://www.uni.lu/wp-content/uploads/sites/9/2024/06/university-of-luxembourg.svg"
+                    media="(min-width: 36em)"
+            />
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/9/2024/06/university-luxembourg-nobseline.svg"
+                 aria-hidden="true"
+                 alt="UNI EN"
+            />
+        </picture>
+        <span class="sr-only">UNI EN</span>
+    </a>
+
+    <div id="mega-menu-parent" class="header-menu-bar" data-current-depth-level-is="0">
+        <ul class="header-menu-bar__listing" aria-label="Barre de menu">
+            <li class="header-menu-bar__item">
+                <!-- Burger Menu -->
+                <button class="header-menu-bar__button header-menu-bar__button--burger collapsed" type="button" id="burger-page" data-bs-toggle="collapse" data-bs-target="#header-menu-bar-main" aria-expanded="false" aria-controls="header-menu-bar-main" aria-current="false">
+                    
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon-- ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--burger-menu"></use>
+</svg>
+                    <span class="header-menu-bar__button__label">Menu</span>
+                </button>
+                <!-- Main Menu -->
+                <div id="header-menu-bar-main" class="header-menu-bar__main collapse" data-bs-parent="#mega-menu-parent">
+                    <div class="header-menu-bar__top">
+    <!-- main navigation -->
+    <span class="main-nav-mobile-heading" role="heading" aria-level="2">Menu principal</span>
+    <nav id="main-navigation" class="main-nav" role="navigation" aria-label="Menu principal">
+        <ul class="main-nav__list"><li class="main-nav__item"><!-- Button Template: Menu Item -->
+<button data-bs-target="#mega-menu-etudes" aria-controls="mega-menu-etudes" class="main-nav__link" type="button" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" aria-current="false">
+    <span class="main-nav__link__name">Études</span>
+    
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+</button>
+<!-- Mega Menu | Études | 10252 --><div id="mega-menu-etudes" class="mega-menu dropdown-menu" data-bs-parent="#main-navigation"><!-- Button Template: Back button -->
+<button data-bs-target="#mega-menu-etudes" aria-controls="mega-menu-etudes" class="mega-menu__back-button" type="button" data-bs-toggle="collapse" aria-expanded="false">
+    
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-left"></use>
+</svg>
+    Back Main Menu</button>
+<ul class="flex flex-wrap -mx-16"><!-- Template Mega Menu -->
+<li class="w-full px-16">
+    <!-- Three columns -->
+    <ul class="flex flex-wrap -mx-16">
+        <!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-graduate.svg" alt="" style="height:20px" class="mb-0 pr-4" />Études        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/" aria-current="" target="">
+        <span class="quick-link-underline__name">Notre éducation en un coup d’oeil</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/vue-d-ensemble-des-programmes-d-etudes/" aria-current="" target="">
+        <span class="quick-link-underline__name">Programmes de Bachelor et de Master</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/etudes-doctorales/" aria-current="" target="">
+        <span class="quick-link-underline__name">Études doctorales</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/vue-d-ensemble-des-programmes-d-etudes/#cped" aria-current="" target="">
+        <span class="quick-link-underline__name">Formation continue</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/vue-d-ensemble-des-programmes-d-etudes/#des" aria-current="" target="">
+        <span class="quick-link-underline__name">Diplômes d&#039;études spécialisés en médecine</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/admissions/auditeurs-libres/" aria-current="" target="">
+        <span class="quick-link-underline__name">Auditeurs libres</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/en/mobility/" aria-current="" target="">
+        <span class="quick-link-underline__name">Mobilité des étudiants et du personnel  (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li><!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/icon-admissions.svg" alt="" style="height:20px" class="mb-0 pr-4" />Admissions et réinscriptions        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/admissions/bachelor-master/" aria-current="" target="">
+        <span class="quick-link-underline__name">Bachelors et masters</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/admissions/etudiants-en-doctorat/" aria-current="" target="">
+        <span class="quick-link-underline__name">Étudiants en doctorat</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/admissions/formation-continue/" aria-current="" target="">
+        <span class="quick-link-underline__name">Formation continue</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/admissions/des/" aria-current="" target="">
+        <span class="quick-link-underline__name">Diplômes d’Études Spécialisées en Médecine</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/admissions/auditeurs-libres/" aria-current="" target="">
+        <span class="quick-link-underline__name">Auditeurs libres</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/admissions/etudiants-invites-a-l-unigr/" aria-current="" target="">
+        <span class="quick-link-underline__name">Étudiants invités à l’UniGR</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/admissions/reinscription/" aria-current="" target="">
+        <span class="quick-link-underline__name">Réinscription</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li><!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-support.svg" alt="" style="height:20px" class="mb-0 pr-4" />Plus d&#039;informations        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/contacts/" aria-current="" target="">
+        <span class="quick-link-underline__name">Contacts pour les étudiants</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/questions-academiques/" aria-current="" target="">
+        <span class="quick-link-underline__name">Questions académiques</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/calendrier-academique/" aria-current="" target="">
+        <span class="quick-link-underline__name">Calendrier académique</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/llc-fr/" aria-current="" target="">
+        <span class="quick-link-underline__name">Luxembourg Learning Centre / Bibliothèque</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/centre-de-langues/" aria-current="" target="">
+        <span class="quick-link-underline__name">Centre de langues</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/competence-centre/" aria-current="" target="">
+        <span class="quick-link-underline__name">Competence Centre</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/representation-des-etudiants/" aria-current="" target="">
+        <span class="quick-link-underline__name">Représentation des étudiants</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/decouvrir-l-universite/" aria-current="" target="">
+        <span class="quick-link-underline__name">Découvrir l’Université</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li>    </ul>
+</li>
+<li class="w-full px-16">
+    <!-- Bottom Navigation -->
+    <ul class="flex flex-wrap -mx-16"><!-- Buttons Call to action -->
+<li class="w-full px-16">
+    <div class="mega-menu__block-cta">
+        <span class="mega-menu__title sr-only" role="heading" aria-level="2">
+            Études        </span>
+        <ul class="btn-list">
+                    </ul>
+    </div>
+</li>
+<!-- Column: First --><!-- Column: Second --><!-- Column: Third --></ul></li>
+<li class="w-full lg:w-1/3 px-16">
+    <!-- Featured Card -->
+    </li>
+</ul></div></li><li class="main-nav__item"><!-- Button Template: Menu Item -->
+<button data-bs-target="#mega-menu-recherche" aria-controls="mega-menu-recherche" class="main-nav__link" type="button" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" aria-current="false">
+    <span class="main-nav__link__name">Recherche</span>
+    
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+</button>
+<!-- Mega Menu | Recherche | 3873 --><div id="mega-menu-recherche" class="mega-menu dropdown-menu" data-bs-parent="#main-navigation"><!-- Button Template: Back button -->
+<button data-bs-target="#mega-menu-recherche" aria-controls="mega-menu-recherche" class="mega-menu__back-button" type="button" data-bs-toggle="collapse" aria-expanded="false">
+    
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-left"></use>
+</svg>
+    Back Main Menu</button>
+<ul class="flex flex-wrap -mx-16"><!-- Template Mega Menu -->
+<li class="w-full px-16">
+    <!-- Three columns -->
+    <ul class="flex flex-wrap -mx-16">
+        <!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-research.svg" alt="" style="height:20px" class="mb-0 pr-4" />Recherche        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/" aria-current="" target="">
+        <span class="quick-link-underline__name">Notre recherche en un coup d&#039;œil</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-en/research-areas-overview/" aria-current="" target="">
+        <span class="quick-link-underline__name">Domaines de recherche (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/installations-et-laboratoires/" aria-current="" target="">
+        <span class="quick-link-underline__name">Installations et laboratoires</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/organisation/les-centres-interdisciplinaires/" aria-current="" target="">
+        <span class="quick-link-underline__name">Centres interdisciplinaires</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/organisation/facultes-departements/" aria-current="" target="">
+        <span class="quick-link-underline__name">Facultés &amp; Départements</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-en/research-groups-overview/" aria-current="" target="">
+        <span class="quick-link-underline__name">Groupes de recherche (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-en/research-projects-overview/" aria-current="" target="">
+        <span class="quick-link-underline__name">Projets de recherche (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/financements-et-subventions-majeures-de-l-ue/" aria-current="" target="">
+        <span class="quick-link-underline__name">Financements et subventions majeures de l’UE</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li><!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-partnership.svg" alt="" style="height:20px" class="mb-0 pr-4" />Collaboration et engagement        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-en/ias/" aria-current="" target="">
+        <span class="quick-link-underline__name">Interdisciplinarité à Uni.lu (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/collaboration-et-engagement/ktt/" aria-current="" target="">
+        <span class="quick-link-underline__name">Transfert de connaissances et de technologies</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/collaboration-et-engagement/partenaires-publics-et-prives/" aria-current="" target="">
+        <span class="quick-link-underline__name">Partenaires publics et privés</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/collaboration-et-engagement/chaires-avec-dotation/" aria-current="" target="">
+        <span class="quick-link-underline__name">Chaires avec dotation</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/collaboration-et-engagement/spin-offs/" aria-current="" target="">
+        <span class="quick-link-underline__name">Spin-offs</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/collaboration-et-engagement/rayonnement/" aria-current="" target="">
+        <span class="quick-link-underline__name">Rayonnement</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-en/incubator-and-entrepreneurship-programme/" aria-current="" target="">
+        <span class="quick-link-underline__name">Incubator &amp; Entrepreneurship Programme (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li><!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-support.svg" alt="" style="height:20px" class="mb-0 pr-4" />Plus d&#039;informations        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/actualites/?fq_news-taxonomies-news-category%5B%5D=recherche%7CRecherche%7CCategory" aria-current="" target="">
+        <span class="quick-link-underline__name">Actualités de la recherche</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/etudes-doctorales/" aria-current="" target="">
+        <span class="quick-link-underline__name">Études doctorales</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-en/ncer/" aria-current="" target="">
+        <span class="quick-link-underline__name">National Centres of Excellence in Research (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/llc-fr/" aria-current="" target="">
+        <span class="quick-link-underline__name">Luxembourg Learning Centre / Bibliothèque</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/travailler-a-l-universite/#euraxess" aria-current="" target="">
+        <span class="quick-link-underline__name">Mobilité des chercheurs</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li>    </ul>
+</li>
+<li class="w-full px-16">
+    <!-- Bottom Navigation -->
+    <ul class="flex flex-wrap -mx-16"><!-- Buttons Call to action -->
+<li class="w-full px-16">
+    <div class="mega-menu__block-cta">
+        <span class="mega-menu__title sr-only" role="heading" aria-level="2">
+            Recherche        </span>
+        <ul class="btn-list">
+            <!-- Template Link: As button link -->
+<li>
+    <a class="btn btn--secondary" href="https://orbilu.uni.lu/" target="_blank">
+        Publications    </a>
+</li>
+<!-- Template Link: As button link -->
+<li>
+    <a class="btn btn--primary" href="https://recruitment.uni.lu/fr/index.html?Resultsperpage=50" target="_blank">
+        Postes vacants    </a>
+</li>
+        </ul>
+    </div>
+</li>
+<!-- Column: First --><!-- Column: Second --><!-- Column: Third --></ul></li>
+<li class="w-full lg:w-1/3 px-16">
+    <!-- Featured Card -->
+    </li>
+</ul></div></li><li class="main-nav__item"><!-- Button Template: Menu Item -->
+<button data-bs-target="#mega-menu-vie-sur-campus" aria-controls="mega-menu-vie-sur-campus" class="main-nav__link" type="button" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" aria-current="false">
+    <span class="main-nav__link__name">Vie sur campus</span>
+    
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+</button>
+<!-- Mega Menu | Vie sur campus | 11376 --><div id="mega-menu-vie-sur-campus" class="mega-menu dropdown-menu" data-bs-parent="#main-navigation"><!-- Button Template: Back button -->
+<button data-bs-target="#mega-menu-vie-sur-campus" aria-controls="mega-menu-vie-sur-campus" class="mega-menu__back-button" type="button" data-bs-toggle="collapse" aria-expanded="false">
+    
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-left"></use>
+</svg>
+    Back Main Menu</button>
+<ul class="flex flex-wrap -mx-16"><!-- Template Mega Menu -->
+<li class="w-full px-16">
+    <!-- Three columns -->
+    <ul class="flex flex-wrap -mx-16">
+        <!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-group.svg" alt="" style="height:20px" class="mb-0 pr-4" />Au-delà des études        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/cours-et-ateliers/" aria-current="" target="">
+        <span class="quick-link-underline__name">Cours et ateliers</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/vie-sociale/" aria-current="" target="">
+        <span class="quick-link-underline__name">Vie sociale</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/culture/" aria-current="" target="">
+        <span class="quick-link-underline__name">Culture</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/career-centre/" aria-current="" target="">
+        <span class="quick-link-underline__name">Career Centre</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-en/incubator-and-entrepreneurship-programme/" aria-current="" target="">
+        <span class="quick-link-underline__name">Incubator &amp; Entrepreneurship Programme (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/en/mobility/" aria-current="" target="">
+        <span class="quick-link-underline__name">Mobilité des étudiants et du personnel (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-fr/collaboration-et-engagement/rayonnement/" aria-current="" target="">
+        <span class="quick-link-underline__name">Rayonnement</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li><!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-winner.svg" alt="" style="height:20px" class="mb-0 pr-4" />UMatter        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/sante-mentale-bien-etre/" aria-current="" target="">
+        <span class="quick-link-underline__name">Santé mentale et bien-être</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/egalite-diversite-et-inclusion/" aria-current="" target="">
+        <span class="quick-link-underline__name">Égalité, diversité et inclusion</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/ombuds/" aria-current="" target="">
+        <span class="quick-link-underline__name">Ombuds</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/soutien-par-les-pairs/" aria-current="" target="">
+        <span class="quick-link-underline__name">Soutien par les pairs</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/aide-financiere/" aria-current="" target="">
+        <span class="quick-link-underline__name">Aide financière</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/contacts/" aria-current="" target="">
+        <span class="quick-link-underline__name">Contacts pour les étudiants</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li><!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-support.svg" alt="" style="height:20px" class="mb-0 pr-4" />Plus d&#039;informations        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/actualites/?fq_news-taxonomies-news-category%5B%5D=la-vie-sur-le-campus%7CLa+vie+sur+le+campus%7CCategory" aria-current="" target="">
+        <span class="quick-link-underline__name">Actualités du campus</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/en/events-overview/?fq_events-taxonomies-events-topic%5B%5D=campus-life%7CCampus+Life%7CTopic&#038;fq_events-taxonomies-date%5B%5D=date-in-the-future%7CIn+the+future%7CDate" aria-current="" target="">
+        <span class="quick-link-underline__name">Événements du campus (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/s-installer-au-luxembourg/" aria-current="" target="">
+        <span class="quick-link-underline__name">S’installer au Luxembourg &#8211; informations pratiques</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/logement/" aria-current="" target="">
+        <span class="quick-link-underline__name">Logement</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/installations/" aria-current="" target="">
+        <span class="quick-link-underline__name">Campus et installations</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/life-fr/informatique-technologie/" aria-current="" target="">
+        <span class="quick-link-underline__name">Informatique et technologie</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/en/about/sustainability/" aria-current="" target="">
+        <span class="quick-link-underline__name">Développement durable à l&#039;université (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li>    </ul>
+</li>
+<li class="w-full px-16">
+    <!-- Bottom Navigation -->
+    <ul class="flex flex-wrap -mx-16"><!-- Buttons Call to action -->
+<li class="w-full px-16">
+    <div class="mega-menu__block-cta">
+        <span class="mega-menu__title sr-only" role="heading" aria-level="2">
+            Vie sur campus        </span>
+        <ul class="btn-list">
+            <!-- Template Link: As button link -->
+<li>
+    <a class="btn btn--secondary" href="https://studentparticipation.uni.lu/" target="_blank">
+        Événements pour les étudiants par les étudiants    </a>
+</li>
+<!-- Template Link: As button link -->
+<li>
+    <a class="btn btn--primary" href="https://teamline.lu/clubs/schools/uni-lu/" target="_blank">
+        Online shop    </a>
+</li>
+        </ul>
+    </div>
+</li>
+<!-- Column: First --><!-- Column: Second --><!-- Column: Third --></ul></li>
+<li class="w-full lg:w-1/3 px-16">
+    <!-- Featured Card -->
+    </li>
+</ul></div></li><li class="main-nav__item"><!-- Button Template: Menu Item -->
+<button data-bs-target="#mega-menu-a-propos" aria-controls="mega-menu-a-propos" class="main-nav__link" type="button" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" aria-current="false">
+    <span class="main-nav__link__name">À propos</span>
+    
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+</button>
+<!-- Mega Menu | À propos | 2887 --><div id="mega-menu-a-propos" class="mega-menu dropdown-menu" data-bs-parent="#main-navigation"><!-- Button Template: Back button -->
+<button data-bs-target="#mega-menu-a-propos" aria-controls="mega-menu-a-propos" class="mega-menu__back-button" type="button" data-bs-toggle="collapse" aria-expanded="false">
+    
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-left"></use>
+</svg>
+    Back Main Menu</button>
+<ul class="flex flex-wrap -mx-16"><!-- Template Mega Menu -->
+<li class="w-full px-16">
+    <!-- Three columns -->
+    <ul class="flex flex-wrap -mx-16">
+        <!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-campus.svg" alt="" style="height:20px" class="mb-0 pr-4" />À propos de l&#039;Université        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/profil/mission-strategie-valeurs/" aria-current="" target="">
+        <span class="quick-link-underline__name">Mission, stratégie &amp; valeurs</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/actualites/?fq_news-taxonomies-news-category%5B%5D=prix-classements%7CPrix+%26+classements%7CCategory&#038;fq_news-taxonomies-news-category%5B%5D=universite%7CUniversit%C3%A9%7CCategory&#038;fq_news-taxonomies-news-category%5B%5D=relations-avec-le-public%7CRelations+avec+le+public%7CCategory&#038;fq_news-taxonomies-news-category%5B%5D=communiques-de-presse%7CCommuniqu%C3%A9s+de+presse%7CCategory&#038;fq_news-taxonomies-news-category%5B%5D=education%7CEducation%7CCategory" aria-current="" target="">
+        <span class="quick-link-underline__name">Actualités</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/vue-d-ensemble-des-evenements/?fq_events-taxonomies-date%5B%5D=date-in-the-future%7CIn+the+future%7CDate" aria-current="" target="">
+        <span class="quick-link-underline__name">Événements</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/gouvernance/" aria-current="" target="">
+        <span class="quick-link-underline__name">Gouvernance</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/organisation/administration/" aria-current="" target="">
+        <span class="quick-link-underline__name">Administration</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/partenaires-et-reseaux-internationaux/" aria-current="" target="">
+        <span class="quick-link-underline__name">Partenaires et réseaux internationaux</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/documents-officiels/" aria-current="" target="">
+        <span class="quick-link-underline__name">Documents officiels</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/travailler-a-l-universite/" aria-current="" target="">
+        <span class="quick-link-underline__name">Travailler à l&#039;Université</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/a-propos/soutenir-l-universite/" aria-current="" target="">
+        <span class="quick-link-underline__name">Donner à l&#039;Université</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li><!-- Template Featured: facultiesAndCentres -->
+<div class="w-full lg:w-1/3 px-16 mega-menu__block-links">
+    <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+        <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-classification.svg" alt="" style="height:20px" class="mb-0 pr-4" />Nos Facultés et Centres    </span>
+    <ul>
+                                    <li>
+                    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fstm-fr">
+                        <img decoding="async" class="quick-link__img w-32" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-faculty-fstm-symbol-only.svg" alt="Faculté des Sciences, des Technologies et de Médecine" />
+                        <span class="quick-link-underline__name">Faculté des Sciences, des Technologies et de Médecine</span>
+                    </a>
+                </li>
+                                                <li>
+                    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fdef-fr">
+                        <img decoding="async" class="quick-link__img w-32" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-faculty-fdef-symbol-only.svg" alt="Faculté de Droit, d’Économie et de Finance" />
+                        <span class="quick-link-underline__name">Faculté de Droit, d’Économie et de Finance</span>
+                    </a>
+                </li>
+                                                <li>
+                    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fhse-fr">
+                        <img decoding="async" class="quick-link__img w-32" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-faculty-fhse-symbol-only.svg" alt="Faculté des Sciences Humaines, des Sciences de l’Éducation et des Sciences Sociales​" />
+                        <span class="quick-link-underline__name">Faculté des Sciences Humaines, des Sciences de l’Éducation et des Sciences Sociales​</span>
+                    </a>
+                </li>
+                                                <li>
+                    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/snt-fr">
+                        <img decoding="async" class="quick-link__img w-32" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-snt-symbol-only.svg" alt="Interdisciplinary Centre for Security, Reliability and Trust" />
+                        <span class="quick-link-underline__name">Interdisciplinary Centre for Security, Reliability and Trust</span>
+                    </a>
+                </li>
+                                                <li>
+                    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/lcsb-fr">
+                        <img decoding="async" class="quick-link__img w-32" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-lcsb-symbol-only.svg" alt="Luxembourg Centre for Systems Biomedicine" />
+                        <span class="quick-link-underline__name">Luxembourg Centre for Systems Biomedicine</span>
+                    </a>
+                </li>
+                                                <li>
+                    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/c2dh-fr">
+                        <img decoding="async" class="quick-link__img w-32" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-c2dh-symbol-only.svg" alt="Luxembourg Centre for Contemporary and Digital History" />
+                        <span class="quick-link-underline__name">Luxembourg Centre for Contemporary and Digital History</span>
+                    </a>
+                </li>
+                                                <li>
+                    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/lcel-fr">
+                        <img decoding="async" class="quick-link__img w-32" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-lcel-symbol-only.svg" alt="Luxembourg Centre for European Law" />
+                        <span class="quick-link-underline__name">Luxembourg Centre for European Law</span>
+                    </a>
+                </li>
+                                                <li>
+                    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/lcses-fr">
+                        <img decoding="async" class="quick-link__img w-32" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/06/19150217/uni-centre-lcses-no-baseline4.svg" alt="Luxembourg Centre for Socio-Environmental Systems" />
+                        <span class="quick-link-underline__name">Luxembourg Centre for Socio-Environmental Systems</span>
+                    </a>
+                </li>
+                        </ul>
+</div><!-- Template Mega Menu: Sub Menu Column -->
+<li class="w-full lg:w-1/3 px-16">
+    <div class="mega-menu__block-links">
+        <span class="mega-menu__title flex items-center" role="heading" aria-level="2">
+            <img decoding="async" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/05/Icons-_-outline-_-bicolor-_-support.svg" alt="" style="height:20px" class="mb-0 pr-4" />Plus d&#039;informations        </span>
+        <ul>
+            <!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/llc-fr/" aria-current="" target="">
+        <span class="quick-link-underline__name">Luxembourg Learning Centre / Bibliothèque</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/centre-de-langues/" aria-current="" target="">
+        <span class="quick-link-underline__name">Centre de langues</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fr/etudes/competence-centre/" aria-current="" target="">
+        <span class="quick-link-underline__name">Competence Centre</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/research-en/ulide/" aria-current="" target="">
+        <span class="quick-link-underline__name">University of Luxembourg Institute for Digital Ethics (ULIDE) (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+<!-- Template Link: Quick -->
+<li>
+    <a class="quick-link-underline quick-link-underline--primary" href="https://www.uni.lu/fhse-en/research-groups/luxembourg-centre-for-educational-testing-lucet/" aria-current="" target="">
+        <span class="quick-link-underline__name">Luxembourg Centre for Educational Testing (LUCET) (EN)</span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+    </a>
+</li>
+        </ul>
+    </div>
+</li>    </ul>
+</li>
+<li class="w-full px-16">
+    <!-- Bottom Navigation -->
+    <ul class="flex flex-wrap -mx-16"><!-- Buttons Call to action -->
+<li class="w-full px-16">
+    <div class="mega-menu__block-cta">
+        <span class="mega-menu__title sr-only" role="heading" aria-level="2">
+            À propos        </span>
+        <ul class="btn-list">
+            <!-- Template Link: As button link -->
+<li>
+    <a class="btn btn--secondary" href="https://www.uni.lu/en/search/?sq_post_types=people" target="">
+        Trouver une personne    </a>
+</li>
+<!-- Template Link: As button link -->
+<li>
+    <a class="btn btn--primary" href="https://recruitment.uni.lu/fr/index.html?Resultsperpage=50" target="">
+        Postes vacants    </a>
+</li>
+        </ul>
+    </div>
+</li>
+<!-- Column: First --><!-- Column: Second --><!-- Column: Third --></ul></li>
+<li class="w-full lg:w-1/3 px-16">
+    <!-- Featured Card -->
+    </li>
+</ul></div></li></ul>    </nav>
+</div>
+                    <div class="header-menu-bar__bottom">
+                        <!-- lang menu -->
+                        <div class="header-dropdown header-dropdown-langue">
+    <button class="header-dropdown-toggle" type="button" id="langue-selections-toggle" data-bs-display="static" data-bs-auto-close="outside" data-bs-toggle="dropdown" data-bs-target="#language-selection" aria-controls="language-selection" aria-expanded="false">
+        <span class="sr-only">
+            Choose language, currently selected language is : Français         </span>
+        <span class="header-dropdown-toogle__label">
+            Français         </span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-down"></use>
+</svg>
+    </button>
+    <div id="language-selection" class="header-dropdown-menu">
+        <span class="header-dropdown-menu__heading" role="heading" aria-level="3">
+            Choose language        </span>
+        <ul class="header-dropdown-menu__listing dropdown-menu" aria-labelledby="langue-selections-toggle">
+            <!-- Template LanguageSwitcher: ListItem --><li class="header-dropdown-menu__item"><a class="header-dropdown-menu__link" lang="de-DE" title="Deutsch " aria-current="" href="https://www.uni.lu/de/">Deutsch </a></li><!-- Template LanguageSwitcher: ListItem --><li class="header-dropdown-menu__item"><a class="header-dropdown-menu__link" lang="en-GB" title="English " aria-current="" href="https://www.uni.lu/en/">English </a></li><!-- Template LanguageSwitcher: ListItem --><li class="header-dropdown-menu__item"><a class="header-dropdown-menu__link" lang="fr-FR" title="Français " aria-current="true" href="https://www.uni.lu/fr/">Français </a></li>        </ul>
+    </div>
+</div>
+                        <!-- faculties and centres menu -->
+                        <div class="header-dropdown header-dropdown-faculties-and-centres-menu">
+    <button class="header-dropdown-toggle" type="button" id="faculties-and-centres-menu-toggle" data-bs-display="static" data-bs-auto-close="outside" data-bs-toggle="dropdown" data-bs-target="#faculties-and-centres-menu" aria-controls="faculties-and-centres-menu" aria-expanded="false">
+        <span class="header-dropdown-toogle__label">
+            Facultés &amp; Centres        </span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-down"></use>
+</svg>
+    </button>
+    <div id="faculties-and-centres-menu" class="header-dropdown-menu custom-width_450">
+        <span class="header-dropdown-menu__heading" role="heading" aria-level="3">
+            Facultés &amp; Centres        </span>
+        <ul class="header-dropdown-menu__listing grid dropdown-menu" aria-labelledby="faculties-and-centres-menu-toggle"><li class="header-dropdown-menu__item-faculties_and_centres"><div class="inline-flex md:flex flex-row w-full items-center"><a class="header-dropdown-menu__link no_background items-center w-full flex" href="https://www.uni.lu/fstm-fr" title="Faculté des Sciences, des Technologies et de Médecine" aria-current="Faculté des Sciences, des Technologies et de Médecine"><img decoding="async" class="quick-link__img" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-faculty-fstm-symbol-only.svg" />Faculté des Sciences, des Technologies et de Médecine</a></div></li><li class="header-dropdown-menu__item-faculties_and_centres"><div class="inline-flex md:flex flex-row w-full items-center"><a class="header-dropdown-menu__link no_background items-center w-full flex" href="https://www.uni.lu/fdef-fr" title="Faculté de Droit, d’Économie et de Finance" aria-current="Faculté de Droit, d’Économie et de Finance"><img decoding="async" class="quick-link__img" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-faculty-fdef-symbol-only.svg" />Faculté de Droit, d’Économie et de Finance</a></div></li><li class="header-dropdown-menu__item-faculties_and_centres"><div class="inline-flex md:flex flex-row w-full items-center"><a class="header-dropdown-menu__link no_background items-center w-full flex" href="https://www.uni.lu/fhse-fr" title="Faculté des Sciences Humaines, des Sciences de l’Éducation et des Sciences Sociales​" aria-current="Faculté des Sciences Humaines, des Sciences de l’Éducation et des Sciences Sociales​"><img decoding="async" class="quick-link__img" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-faculty-fhse-symbol-only.svg" />Faculté des Sciences Humaines, des Sciences de l’Éducation et des Sciences Sociales​</a></div></li><li class="header-dropdown-menu__item-faculties_and_centres"><div class="inline-flex md:flex flex-row w-full items-center"><a class="header-dropdown-menu__link no_background items-center w-full flex" href="https://www.uni.lu/snt-fr" title="Interdisciplinary Centre for Security, Reliability and Trust" aria-current="Interdisciplinary Centre for Security, Reliability and Trust"><img decoding="async" class="quick-link__img" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-snt-symbol-only.svg" />Interdisciplinary Centre for Security, Reliability and Trust</a></div></li><li class="header-dropdown-menu__item-faculties_and_centres"><div class="inline-flex md:flex flex-row w-full items-center"><a class="header-dropdown-menu__link no_background items-center w-full flex" href="https://www.uni.lu/lcsb-fr" title="Luxembourg Centre for Systems Biomedicine" aria-current="Luxembourg Centre for Systems Biomedicine"><img decoding="async" class="quick-link__img" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-lcsb-symbol-only.svg" />Luxembourg Centre for Systems Biomedicine</a></div></li><li class="header-dropdown-menu__item-faculties_and_centres"><div class="inline-flex md:flex flex-row w-full items-center"><a class="header-dropdown-menu__link no_background items-center w-full flex" href="https://www.uni.lu/c2dh-fr" title="Luxembourg Centre for Contemporary and Digital History" aria-current="Luxembourg Centre for Contemporary and Digital History"><img decoding="async" class="quick-link__img" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-c2dh-symbol-only.svg" />Luxembourg Centre for Contemporary and Digital History</a></div></li><li class="header-dropdown-menu__item-faculties_and_centres"><div class="inline-flex md:flex flex-row w-full items-center"><a class="header-dropdown-menu__link no_background items-center w-full flex" href="https://www.uni.lu/lcel-fr" title="Luxembourg Centre for European Law" aria-current="Luxembourg Centre for European Law"><img decoding="async" class="quick-link__img" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-lcel-symbol-only.svg" />Luxembourg Centre for European Law</a></div></li><li class="header-dropdown-menu__item-faculties_and_centres"><div class="inline-flex md:flex flex-row w-full items-center"><a class="header-dropdown-menu__link no_background items-center w-full flex" href="https://www.uni.lu/lcses-fr" title="Luxembourg Centre for Socio-Environmental Systems" aria-current="Luxembourg Centre for Socio-Environmental Systems"><img decoding="async" class="quick-link__img" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/06/19150217/uni-centre-lcses-no-baseline4.svg" />Luxembourg Centre for Socio-Environmental Systems</a></div></li></ul>    </div>
+</div>
+                        <!-- profile menu -->
+                        <div class="header-dropdown header-dropdown-profile-menu">
+    <button class="header-dropdown-toggle" type="button" id="profile-menu-toggle" data-bs-display="static" data-bs-auto-close="outside" data-bs-toggle="dropdown" data-bs-target="#profile-menu" aria-controls="profile-menu" aria-expanded="false">
+        <span class="header-dropdown-toogle__label">
+            Informations pour        </span>
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-down"></use>
+</svg>
+    </button>
+    <div id="profile-menu" class="header-dropdown-menu">
+        <span class="header-dropdown-menu__heading" role="heading" aria-level="3">
+            Informations pour        </span>
+        <ul class="header-dropdown-menu__listing dropdown-menu" aria-labelledby="profile-menu-toggle"><li class="header-dropdown-menu__item"><a class="header-dropdown-menu__link" href="https://www.uni.lu/fr/pour-les-futurs-etudiants-et-doctorants/" rel="" target="" title="les futurs étudiants" aria-current="false">les futurs étudiants</a></li><li class="header-dropdown-menu__item"><a class="header-dropdown-menu__link" href="https://www.uni.lu/fr/pour-les-etudiants/" rel="" target="" title="les étudiants" aria-current="false">les étudiants</a></li><li class="header-dropdown-menu__item"><a class="header-dropdown-menu__link" href="https://www.uni.lu/fr/pour-les-chercheurs/" rel="" target="" title="les chercheurs" aria-current="false">les chercheurs</a></li><li class="header-dropdown-menu__item"><a class="header-dropdown-menu__link" href="https://www.uni.lu/life-fr/alumni/" rel="" target="" title="les anciens étudiants" aria-current="false">les anciens étudiants</a></li><li class="header-dropdown-menu__item"><a class="header-dropdown-menu__link" href="https://www.uni.lu/fr/pour-le-personnel/" rel="" target="" title="le personnel" aria-current="false">le personnel</a></li></ul>    </div>
+</div>
+                    </div>
+                </div>
+            </li>
+            <li class="header-menu-bar__item">
+    <button class="header-menu-bar__button header-menu-bar__button--search" type="button" id="search-page" data-bs-display="static" data-bs-auto-close="outside" data-bs-toggle="dropdown" data-bs-target="#quick-search-engine" aria-controls="quick-search-engine" aria-expanded="false" onclick="document.getElementById('quick-search-engine-combobox-input').focus();">
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon-- ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--search"></use>
+</svg>
+        <span class="header-menu-bar__button__label">Chercher</span>
+    </button>
+    <!-- Quick Search Engine -->
+    <div id="quick-search-engine" class="mega-menu mega-menu-search dropdown-menu" aria-labelledby="search-page" data-bs-parent="#mega-menu-parent">
+        <form
+            class="search-bar dark-mode"
+            data-search-url="https://www.uni.lu/fr/chercher/"
+            data-search-query-param-prefix="sq_"
+        >
+            <fieldset>
+                <legend class="form-label">Select a category</legend>
+                <ul class="flex flex-wrap -mx-8">
+                                                                                                                    <li class="px-8"><input type="checkbox" id="articles" class="btn-check s-category-check"><label for="articles" class="btn btn--outline-white btn--sm">Articles</label></li>                                                                                                <li class="px-8"><input type="checkbox" id="chairs" class="btn-check s-category-check"><label for="chairs" class="btn btn--outline-white btn--sm">Chairs</label></li>                                                                                                                                            <li class="px-8"><input type="checkbox" id="events" class="btn-check s-category-check"><label for="events" class="btn btn--outline-white btn--sm">Events</label></li>                                                                                                <li class="px-8"><input type="checkbox" id="news" class="btn-check s-category-check"><label for="news" class="btn btn--outline-white btn--sm">News</label></li>                                                                                                <li class="px-8"><input type="checkbox" id="people" class="btn-check s-category-check"><label for="people" class="btn btn--outline-white btn--sm">People</label></li>                                                                                                <li class="px-8"><input type="checkbox" id="research-areas" class="btn-check s-category-check"><label for="research-areas" class="btn btn--outline-white btn--sm">Research Areas</label></li>                                                                                                <li class="px-8"><input type="checkbox" id="research-departments" class="btn-check s-category-check"><label for="research-departments" class="btn btn--outline-white btn--sm">Research Departments</label></li>                                                                                                <li class="px-8"><input type="checkbox" id="research-groups" class="btn-check s-category-check"><label for="research-groups" class="btn btn--outline-white btn--sm">Research Groups</label></li>                                                                                                <li class="px-8"><input type="checkbox" id="research-projects" class="btn-check s-category-check"><label for="research-projects" class="btn btn--outline-white btn--sm">Research Projects Pages</label></li>                                                                                                <li class="px-8"><input type="checkbox" id="study-programs" class="btn-check s-category-check"><label for="study-programs" class="btn btn--outline-white btn--sm">Study Programmes</label></li>                                                                                                                                                                                        <li class="px-8"><input type="checkbox" id="jobs" class="btn-check s-category-check"><label for="jobs" class="btn btn--outline-white btn--sm">Jobs</label></li>                                                            </ul>
+            </fieldset>
+            <div class="search-engine" role="search">
+                <label id="quick-search-engine-label" class="form-label" for="quick-search-engine-combobox-input">
+                    <span class="form-label__name">Recherche sur le site web de l&#039;université</span>
+                </label>
+                <div class="search-engine-combobox combobox-list">
+                    <!-- input field -->
+                    <input
+                        type="text"
+                        id="quick-search-engine-combobox-input"
+                        class="search-engine-combobox__input form-text-field"
+                        name="search-box"
+                        role="combobox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        aria-controls="quick-search-engine-listbox-listing"
+                        aria-describedby="quick-search-engine-feedback"
+                        aria-required="true"
+                        aria-invalid="false"
+                    >
+
+                    <button id="cb2-button" class="hidden" tabindex="-1" aria-label="States" aria-expanded="false" aria-controls="quick-search-engine-listbox-listing">
+                    </button>
+
+                    <!-- error message -->
+                    <div id="quick-search-engine-feedback" class="form-feedback">Please provide a keyword.</div>
+
+                    <!-- listbox -->
+                    <div id="quick-search-engine-listbox" class="search-engine-listbox" aria-labelledby="quick-search-engine-label">
+                        <ul id="quick-search-engine-listbox-listing" class="search-engine-listbox__listing" role="listbox" aria-label="List of search suggestions">
+                            <li id="lb1-ap" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Applied Information Technology</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb2-ap" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Applied Digital Technology</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb3-ap" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Applied Cloud Technology</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb1-cu" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Cultures Europeennes</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb1-co" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Computer Science</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb2-co" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Computer &amp; Infrastructure</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb1-ec" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Economics &amp; Manager</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb2-ec" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Economics &amp; Investisments</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb1-fi" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Finance and Economics</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb1-mo" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Moble Application</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb1-so" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Software engineering</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                            <li id="lb2-so" class="search-engine-listbox__option" role="option"><span class="search-engine-listbox__keyword">Software Developments</span> <span class="search-engine-listbox__category">In study programmes</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn--outline-white btn--icon" title="Search">
+                    
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--icon--white icon--lg icon--white">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--search"></use>
+</svg>
+                    <span class="btn__name">Chercher</span>
+                </button>
+            </div>
+            <button type="button" class="flex link-text link-text--icon link-text--white my-16 reset-button">
+                <span class="link-text__body text-16">
+                    <span class="link-text__name pb-4">Reset filter</span>
+                </span>
+                
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-outline icon--icon--white icon--2xs ">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use>
+</svg>
+            </button>
+        </form>
+    </div>
+</li>
+                    </ul>
+    </div>
+</header>
+
+<main id="content-page" class="main" role="main">
+    
+    <div class="entry-content wp-block-post-content is-layout-flow wp-block-post-content-is-layout-flow">
+<section class="section no-padding-y wp-block-unilux-blocks-hero-carousel">
+    <div class="swiper swiper-hero" aria-roledescription="carousel" aria-label="Discover the University of Luxembourg">
+        <!-- Swiper button Next & Prev -->
+        <div class="swiper-nav">
+            <div class="swiper-nav__container">
+                <div class="swiper-nav__grid">
+                    <button type="button" class="swiper-button-next">
+                        <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right "><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>                    </button>
+                    <button type="button" class="swiper-button-prev">
+                        <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-left "><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-left"></use></svg>                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- swiper slides -->
+        <ul class="swiper-wrapper">
+            
+<li class="swiper-slide" aria-roledescription="slide">
+    
+<div class="wp-block-unilux-blocks-wrapper swiper-slide__bg"><figure class="wp-block-dev4-reusable-blocks-image image-bg object-fit--cover">
+    
+<img decoding="async" class="wp-block-image unilux-custom-image-block"
+                alt="Des gens dans un stand, un panneau en arrière-plan indiquant « Spectacle en noir et blanc »"
+            src="https://www.uni.lu/wp-content/uploads/sites/11/2025/08/14150421/Aschman-Pol-1959-3630-neg-176-4_3_Schueberfouer.jpg"
+                srcset="https://www.uni.lu/wp-content/uploads/sites/11/2025/08/14150421/Aschman-Pol-1959-3630-neg-176-4_3_Schueberfouer-300x225.jpg 300w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/14150421/Aschman-Pol-1959-3630-neg-176-4_3_Schueberfouer-1024x768.jpg 1024w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/14150421/Aschman-Pol-1959-3630-neg-176-4_3_Schueberfouer-768x576.jpg 768w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/14150421/Aschman-Pol-1959-3630-neg-176-4_3_Schueberfouer.jpg 1500w"
+                style="object-position: 24.00% 43.00%; font-family: &quot;object-fit: cover; object-position: 24.00% 43.00%;&quot;; aspect-ratio: 16/9; object-fit: cover; width: 100%;"
+        loading="lazy"
+/>            <p class="wp-block-dev4-reusable-blocks-image-caption">
+            © Photothèque de la Ville de Luxembourg, Collection Pol Aschman (1959)        </p>
+    </figure></div>
+
+<div class="wp-block-unilux-blocks-wrapper container xl:max-w-screen-lg 2xl:max-w-screen-xl">
+<div class="wp-block-unilux-blocks-wrapper w-full xl:w-7/12">
+<div class="wp-block-unilux-blocks-wrapper swiper-slide__content">
+<div class="wp-block-unilux-blocks-wrapper mb-12 hero-carousel-subline">
+<p class="text-primary text-xs font-medium mb-0 wp-block-unilux-blocks-plain-text">Recherche</p>
+
+
+<p class="text-dark text-xs font-medium mb-0 wp-block-unilux-blocks-plain-text">14 août 2025</p></div>
+
+
+
+<h1 class="has-text-align-left wp-block-unilux-blocks-heading"        id="echos-de-la-schueberfouer-les-voix-de-la-fete-foraine"
+    >
+Échos de la Schueberfouer : les voix de la fête foraine</h1>
+
+
+
+<p class="excerpt-text wp-block-unilux-blocks-plain-text">Alors que la Schueberfouer s’apprête à rouvrir ses portes, les sons familiers de la plus grande foire du Luxembourg vont bientôt résonner sur le Glacis. Entre les sifflements hydrauliques, les mélodies concurrentes et les cris des amateurs de sensations fortes, les voix qui interpellent les passants sont sans doute les plus remarquables. Comment était-ce durant les années 1960 ?</p>
+
+
+<ul class="wp-block-unilux-blocks-custom-buttons btn-list"><li class="wp-block-unilux-blocks-custom-button"    aria-disabled="false"
+    >
+    <a
+        role="link"
+        aria-disabled="false"
+                    href="https://www.uni.lu/c2dh-fr/news/echos-de-la-schueberfouer-les-voix-de-la-fete-foraine/"
+                target="_self"
+        class="btn btn--primary"
+    >Lire plus</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="swiper-slide" aria-roledescription="slide">
+    
+<div class="wp-block-unilux-blocks-wrapper swiper-slide__bg"><figure class="wp-block-dev4-reusable-blocks-image image-bg object-fit--cover">
+    
+<img decoding="async" class="wp-block-image unilux-custom-image-block"
+                alt="Femme souriante, portant des lunettes. Cheveux foncés, peau claire."
+            src="https://www.uni.lu/wp-content/uploads/sites/11/2025/08/05153901/Tara-Trauthwein_2025-scaled.jpeg"
+                srcset="https://www.uni.lu/wp-content/uploads/sites/11/2025/08/05153901/Tara-Trauthwein_2025-300x202.jpeg 300w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/05153901/Tara-Trauthwein_2025-1024x688.jpeg 1024w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/05153901/Tara-Trauthwein_2025-768x516.jpeg 768w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/05153901/Tara-Trauthwein_2025-1536x1033.jpeg 1536w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/05153901/Tara-Trauthwein_2025-2048x1377.jpeg 2048w"
+                style="object-position: 20.00% 45.00%; font-family: &quot;object-fit: cover; object-position: 20.00% 45.00%;&quot;; aspect-ratio: 16/9; object-fit: cover; width: 100%;"
+        loading="lazy"
+/>            <p class="wp-block-dev4-reusable-blocks-image-caption">
+            Tara Trauthwein        </p>
+    </figure></div>
+
+<div class="wp-block-unilux-blocks-wrapper container xl:max-w-screen-lg 2xl:max-w-screen-xl">
+<div class="wp-block-unilux-blocks-wrapper w-full xl:w-7/12">
+<div class="wp-block-unilux-blocks-wrapper swiper-slide__content">
+<div class="wp-block-unilux-blocks-wrapper mb-12 hero-carousel-subline">
+<p class="text-primary text-xs font-medium mb-0 wp-block-unilux-blocks-plain-text">Alumni</p>
+
+
+<p class="text-dark text-xs font-medium mb-0 wp-block-unilux-blocks-plain-text">5 août 2025</p></div>
+
+
+
+<h1 class="has-text-align-left wp-block-unilux-blocks-heading"        id="au-dela-des-nombres-les-mathematiques-comme-source-dinspiration"
+    >
+Au-delà des nombres : les mathématiques comme source d&rsquo;inspiration</h1>
+
+
+
+<p class="excerpt-text wp-block-unilux-blocks-plain-text">La Luxembourgeoise Tara Trauthwein n&rsquo;est pas étrangère aux récompenses pour ses résultats académiques. Dans notre interview, elle discute de l&rsquo;élégance des mathématiques, de l’intérêt de réaliser des études à l&rsquo;étranger et de comment surmonter les moments stressants pendant un doctorat. </p>
+
+
+<ul class="wp-block-unilux-blocks-custom-buttons btn-list"><li class="wp-block-unilux-blocks-custom-button"    aria-disabled="false"
+    >
+    <a
+        role="link"
+        aria-disabled="false"
+                    href="https://www.uni.lu/fstm-fr/testimonials/au-dela-des-nombres-les-mathematiques-comme-source-d-inspiration/"
+                target="_self"
+        class="btn btn--primary"
+    >Lire plus</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="swiper-slide" aria-roledescription="slide">
+    
+<div class="wp-block-unilux-blocks-wrapper swiper-slide__bg"><figure class="wp-block-dev4-reusable-blocks-image image-bg object-fit--cover">
+    
+<img decoding="async" class="wp-block-image unilux-custom-image-block"
+                alt=""
+            src="https://www.uni.lu/wp-content/uploads/sites/11/2025/07/30084304/toys-for-the-unstructured-game-made-of-colored-wo-2024-10-18-08-25-53-utc-scaled.jpg"
+                srcset="https://www.uni.lu/wp-content/uploads/sites/11/2025/07/30084304/toys-for-the-unstructured-game-made-of-colored-wo-2024-10-18-08-25-53-utc-300x200.jpg 300w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/30084304/toys-for-the-unstructured-game-made-of-colored-wo-2024-10-18-08-25-53-utc-1024x683.jpg 1024w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/30084304/toys-for-the-unstructured-game-made-of-colored-wo-2024-10-18-08-25-53-utc-768x512.jpg 768w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/30084304/toys-for-the-unstructured-game-made-of-colored-wo-2024-10-18-08-25-53-utc-1536x1024.jpg 1536w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/30084304/toys-for-the-unstructured-game-made-of-colored-wo-2024-10-18-08-25-53-utc-2048x1365.jpg 2048w"
+                style="object-position: 75.00% 56.00%; font-family: &quot;object-fit: cover; object-position: 75.00% 56.00%;&quot;; aspect-ratio: 16/9; object-fit: cover; width: 100%;"
+        loading="lazy"
+/>    </figure></div>
+
+<div class="wp-block-unilux-blocks-wrapper container xl:max-w-screen-lg 2xl:max-w-screen-xl">
+<div class="wp-block-unilux-blocks-wrapper w-full xl:w-7/12">
+<div class="wp-block-unilux-blocks-wrapper swiper-slide__content">
+<div class="wp-block-unilux-blocks-wrapper mb-12 hero-carousel-subline">
+<p class="text-primary text-xs font-medium mb-0 wp-block-unilux-blocks-plain-text">Recherche</p>
+
+
+<p class="text-dark text-xs font-medium mb-0 wp-block-unilux-blocks-plain-text">30 juillet 2025</p></div>
+
+
+
+<h1 class="has-text-align-left wp-block-unilux-blocks-heading"        id="le-piege-de-la-meritocratie-la-solidarite-en-perte-dans-leducation-de-la-petite-enfance"
+    >
+Le piège de la méritocratie : la solidarité en perte dans l’éducation de la petite enfance</h1>
+
+
+
+<p class="excerpt-text wp-block-unilux-blocks-plain-text">Est-ce que nous entrons dans l’ascenseur social seuls ou avec l’aide de nos communautés ? Les politiques d’éducation de la petite enfance misent sur la première option. Les compétences individuelles – cognitives et sociales – sont beaucoup plus représentées dans l’éducation de la petite enfance que les facteurs liés à la cohésion sociale, favorisant la compétition plutôt que la coopération et l’individualisme plutôt que la solidarité.</p>
+
+
+<ul class="wp-block-unilux-blocks-custom-buttons btn-list"><li class="wp-block-unilux-blocks-custom-button"    aria-disabled="false"
+    >
+    <a
+        role="link"
+        aria-disabled="false"
+                    href="https://www.uni.lu/fr/news/le-piege-de-la-meritocratie-la-solidarite-en-perte-dans-l-education-de-la-petite-enfance/"
+                target="_self"
+        class="btn btn--primary"
+    >Lire plus</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="swiper-slide" aria-roledescription="slide">
+    
+<div class="wp-block-unilux-blocks-wrapper swiper-slide__bg"><figure class="wp-block-dev4-reusable-blocks-image image-bg object-fit--cover">
+    
+<img decoding="async" class="wp-block-image unilux-custom-image-block"
+                alt=""
+            src="https://www.uni.lu/wp-content/uploads/sites/11/2025/07/25105225/climate-convention-5-scaled.jpeg"
+                srcset="https://www.uni.lu/wp-content/uploads/sites/11/2025/07/25105225/climate-convention-5-225x300.jpeg 225w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/25105225/climate-convention-5-768x1024.jpeg 768w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/25105225/climate-convention-5-1152x1536.jpeg 1152w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/25105225/climate-convention-5-1536x2048.jpeg 1536w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/25105225/climate-convention-5-scaled.jpeg 1920w"
+                style="object-position: 46.00% 49.00%; font-family: &quot;object-fit: cover; object-position: 46.00% 49.00%;&quot;; aspect-ratio: 16/9; object-fit: cover; width: 100%;"
+        loading="lazy"
+/>    </figure></div>
+
+<div class="wp-block-unilux-blocks-wrapper container xl:max-w-screen-lg 2xl:max-w-screen-xl">
+<div class="wp-block-unilux-blocks-wrapper w-full xl:w-7/12">
+<div class="wp-block-unilux-blocks-wrapper swiper-slide__content">
+<div class="wp-block-unilux-blocks-wrapper mb-12 hero-carousel-subline">
+<p class="text-primary text-xs font-medium mb-0 wp-block-unilux-blocks-plain-text">Université</p>
+
+
+<p class="text-dark text-xs font-medium mb-0 wp-block-unilux-blocks-plain-text">25 juillet 2025</p></div>
+
+
+
+<h1 class="has-text-align-left wp-block-unilux-blocks-heading"        id="le-luxembourg-lance-la-convention-cadre-climate-nexus-pour-renforcer-la-preparation-au-changement-climatique-et-la-cooperation-mondiale"
+    >
+Le Luxembourg lance la Convention-cadre Climate Nexus pour renforcer la préparation au changement climatique et la coopération mondiale</h1>
+
+
+
+<p class="excerpt-text wp-block-unilux-blocks-plain-text">Pour marquer le 10e anniversaire de l’Accord de Paris, le ministère luxembourgeois de l’Environnement, du Climat et de la Biodiversité (MECB) et l’Université du Luxembourg ont signé la Convention-cadre Climate Nexus.</p>
+
+
+<ul class="wp-block-unilux-blocks-custom-buttons btn-list"><li class="wp-block-unilux-blocks-custom-button"    aria-disabled="false"
+    >
+    <a
+        role="link"
+        aria-disabled="false"
+                    href="https://www.uni.lu/fr/news/le-luxembourg-lance-la-convention-cadre-climate-nexus-pour-renforcer-la-preparation-au-changement-climatique-et-la-cooperation-mondiale/"
+                target="_self"
+        class="btn btn--primary"
+    >Lire plus</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>        </ul>
+
+        <!-- Swiper pagination -->
+        <div class="swiper-pagination">
+            <div class="swiper-pagination__container">
+                <div class="swiper-pagination__grid">
+                    <div class="swiper-pagination__bullets"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section !max-w-screen-2xl wp-block-unilux-blocks-content-card-and-quick-links-section ">
+    
+<div class="wp-block-unilux-blocks-wrapper container 2xl:max-w-screen-2xl">
+<h2 class="has-text-align-left wp-block-unilux-blocks-heading"        id="etudes"
+    >
+Étudier dans notre Université</h2>
+
+
+
+<div class="wp-block-unilux-blocks-wrapper flex flex-wrap -mx-16">
+<div class="wp-block-unilux-blocks-wrapper w-full lg:w-7/12 px-16"><div class="content-card content-card--right content-card__overlay--hidden wp-block-unilux-blocks-content-card">
+    <div class="content-card__visual wp-block-unilux-blocks-content-card-visual-area">
+    
+<section class="wp-block-unilux-blocks-image-video-wrapper">
+    <figure class="wp-block-dev4-reusable-blocks-image  object-fit--cover">
+    
+<img decoding="async" class="wp-block-image unilux-custom-image-block"
+                alt=""
+            src="https://www.uni.lu/wp-content/uploads/sites/11/2025/03/home-students-2.jpg"
+                srcset="https://www.uni.lu/wp-content/uploads/sites/11/2025/03/home-students-2-300x200.jpg 300w, https://www.uni.lu/wp-content/uploads/sites/11/2025/03/home-students-2-1024x684.jpg 1024w, https://www.uni.lu/wp-content/uploads/sites/11/2025/03/home-students-2-768x513.jpg 768w, https://www.uni.lu/wp-content/uploads/sites/11/2025/03/home-students-2.jpg 1417w"
+                style="object-position: 50.00% 50.00%; font-family: &quot;object-fit: cover; object-position: 50.00% 50.00%;&quot;; aspect-ratio: 3/2; object-fit: cover; width: 100%;"
+        loading="lazy"
+/>    </figure></section>
+<div class="wp-block-unilux-blocks-wrapper content-card__overlay"><a class="wp-block-unilux-blocks-button-highlight-rounded"
+    href="#"
+    target="_self"
+>
+    
+<span class="btn-highlight-rounded__name wp-block-unilux-blocks-plain-text"></span>    <span class="icon-rounded">
+        <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right icon--lg"><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>    </span>
+</a></div>
+</div><div class="content-card__body  wp-block-unilux-blocks-content-card-free-area">
+    
+
+
+<p>Étudier à l&rsquo;Université du Luxembourg est une expérience extrêmement enrichissante. Les programmes offrent des connaissances de pointe dans un environnement hautement international, multilingue et interdisciplinaire. Le nombre réduit d&rsquo;étudiants dans chaque classe permet une interaction directe avec les enseignants. </p>
+
+<p>Les demandes d&rsquo;admission aux programmes d&rsquo;études pour l&rsquo;année académique 2025-2026 peuvent être déposées à partir du 1er février 2025. La demande d&rsquo;admission pour l&rsquo;année académique 2025/2026 est maintenant fermée pour les candidats non européens. Les candidats de l&rsquo;UE peuvent encore postuler pour certains programmes d&rsquo;études.</p>
+
+<ul class="wp-block-unilux-blocks-custom-buttons btn-list"><li class="wp-block-unilux-blocks-custom-button"    aria-disabled="false"
+    >
+    <a
+        role="link"
+        aria-disabled="false"
+                    href="https://www.uni.lu/fr/admissions/"
+                target="_self"
+        class="btn btn--primary"
+    >Admissions</a>
+</li>
+</ul>
+</div></div></div>
+
+
+
+<div class="wp-block-unilux-blocks-wrapper w-full lg:w-5/12 px-16 mt-48 lg:mt-96">
+<h3 class="has-text-align-left wp-block-unilux-blocks-heading"        id="trouvez-votre-programme-detudes"
+    >
+Trouvez votre programme d&rsquo;études</h3>
+
+
+
+<ul class="wp-block-unilux-blocks-quick-link-highlight quick-link-list">
+<li class="wp-block-unilux-blocks-quick-link-highlight-item">
+    <a
+                    href="https://www.uni.lu/fr/etudes/vue-d-ensemble-des-programmes-d-etudes/#voir"
+                    class="quick-link"
+            target=""
+    >
+            <span class="quick-link__container">
+                <span class="quick-link__body">
+                    <span class="quick-link__number">
+                                            </span>
+                    <span class="quick-link__title">
+                        Programmes de bachelor et de master                    </span>
+                    <span class="quick-link__action">
+                        Découvrez notre gamme de formations                    </span>
+                </span>
+                <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right "><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>            </span>
+    </a>
+</li>
+
+
+
+<li class="wp-block-unilux-blocks-quick-link-highlight-item">
+    <a
+                    href="https://www.uni.lu/research-fr/etudes-doctorales/ecoles-et-programmes/"
+                    class="quick-link"
+            target=""
+    >
+            <span class="quick-link__container">
+                <span class="quick-link__body">
+                    <span class="quick-link__number">
+                                            </span>
+                    <span class="quick-link__title">
+                        Écoles doctorales                    </span>
+                    <span class="quick-link__action">
+                        En savoir plus sur nos écoles doctorales                    </span>
+                </span>
+                <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right "><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>            </span>
+    </a>
+</li>
+
+
+
+<li class="wp-block-unilux-blocks-quick-link-highlight-item">
+    <a
+                    href="https://www.uni.lu/fr/etudes/vue-d-ensemble-des-programmes-d-etudes/#des"
+                    class="quick-link"
+            target=""
+    >
+            <span class="quick-link__container">
+                <span class="quick-link__body">
+                    <span class="quick-link__number">
+                                            </span>
+                    <span class="quick-link__title">
+                        Diplômes d&rsquo;études spécialisées                    </span>
+                    <span class="quick-link__action">
+                        Nos offres de formation pour les futurs médecins spécialistes                    </span>
+                </span>
+                <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right "><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>            </span>
+    </a>
+</li>
+
+
+
+<li class="wp-block-unilux-blocks-quick-link-highlight-item">
+    <a
+                    href="https://www.uni.lu/fr/etudes/vue-d-ensemble-des-programmes-d-etudes/#cped"
+                    class="quick-link"
+            target=""
+    >
+            <span class="quick-link__container">
+                <span class="quick-link__body">
+                    <span class="quick-link__number">
+                                            </span>
+                    <span class="quick-link__title">
+                        Formation continue                    </span>
+                    <span class="quick-link__action">
+                        Découvrez les possibilités de formation professionnelle et d&rsquo;apprentissage tout au long de la vie                    </span>
+                </span>
+                <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right "><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>            </span>
+    </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="wp-block-unilux-blocks-free-section section"><div class="container xl:max-w-screen-xl">
+<h2 class="has-text-align-left wp-block-unilux-blocks-heading"        id="actualites"
+    >
+Actualités</h2>
+
+
+
+<ul class="wp-block-unilux-blocks-news-card-group flex flex-wrap -mx-16"><li class=" w-full px-16 sm:w-1/2 lg:w-1/3 wp-block-unilux-blocks-news-card">
+    <div class="ulux-card card-news bg-theme">
+        <div class="ulux-card__container">
+            <div class="ulux-card__visual">
+                <img decoding="async" class="w-full" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/08/22152457/iStock-2152038865-300x174.jpg" srcset="https://www.uni.lu/wp-content/uploads/sites/11/2025/08/22152457/iStock-2152038865-768x446.jpg 768w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/22152457/iStock-2152038865-300x174.jpg 300w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/22152457/iStock-2152038865-1024x595.jpg 1024w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/22152457/iStock-2152038865-1536x893.jpg 1536w, https://www.uni.lu/wp-content/uploads/sites/11/2025/08/22152457/iStock-2152038865-2048x1191.jpg 2048w" sizes="(max-width: 768px) 100vw, 768px" alt="" />
+            </div>
+
+            <div class="ulux-card__body">
+                <h3 class="ulux-card__title break-words">Une décennie d’observation du système scolaire : 10 ans de LUCET au Luxembourg</h3>
+                <div class="ulux-card__category break-words">Education</div>
+                <time class="ulux-card__date break-words"
+                        datetime="2025-08-22">22 août 2025</time>
+                <div class="ulux-card__topic break-words">Éducation &amp; intervention sociale</div>
+                <a class="ulux-card__link link-text link-absolute"
+                    href="https://www.uni.lu/fr/news/dix-ans-de-lucet-au-luxembourg/"
+                    target="">
+                    <span class="link-text__name">En savoir plus</span>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right icon--2xs"><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>                </a>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+<li class=" w-full px-16 sm:w-1/2 lg:w-1/3 wp-block-unilux-blocks-news-card">
+    <div class="ulux-card card-news bg-theme">
+        <div class="ulux-card__container">
+            <div class="ulux-card__visual">
+                <img decoding="async" class="w-full" src="https://www.uni.lu/wp-content/uploads/sites/22/2025/07/30152131/2025-07-28_LCSB_ArtCompetition_Image_1080-1080-300x300.jpg" srcset="https://www.uni.lu/wp-content/uploads/sites/22/2025/07/30152131/2025-07-28_LCSB_ArtCompetition_Image_1080-1080-768x768.jpg 768w, https://www.uni.lu/wp-content/uploads/sites/22/2025/07/30152131/2025-07-28_LCSB_ArtCompetition_Image_1080-1080-300x300.jpg 300w, https://www.uni.lu/wp-content/uploads/sites/22/2025/07/30152131/2025-07-28_LCSB_ArtCompetition_Image_1080-1080-1024x1024.jpg 1024w, https://www.uni.lu/wp-content/uploads/sites/22/2025/07/30152131/2025-07-28_LCSB_ArtCompetition_Image_1080-1080-150x150.jpg 150w, https://www.uni.lu/wp-content/uploads/sites/22/2025/07/30152131/2025-07-28_LCSB_ArtCompetition_Image_1080-1080-1536x1536.jpg 1536w, https://www.uni.lu/wp-content/uploads/sites/22/2025/07/30152131/2025-07-28_LCSB_ArtCompetition_Image_1080-1080-2048x2048.jpg 2048w" sizes="(max-width: 768px) 100vw, 768px" alt="" />
+            </div>
+
+            <div class="ulux-card__body">
+                <h3 class="ulux-card__title break-words">Un concours pour une nouvelle œuvre d&rsquo;art publique sur le campus de Belval</h3>
+                <div class="ulux-card__category break-words">La vie sur le campus, Relations avec le public</div>
+                <time class="ulux-card__date break-words"
+                        datetime="2025-07-31">31 juillet 2025</time>
+                <div class="ulux-card__topic break-words">Sciences de la vie &amp; médecine</div>
+                <a class="ulux-card__link link-text link-absolute"
+                    href="https://www.uni.lu/lcsb-fr/news/concours-pour-une-nouvelle-oeuvre-art-publique-sur-le-campus-belval/"
+                    target="">
+                    <span class="link-text__name">En savoir plus</span>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right icon--2xs"><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>                </a>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+<li class=" w-full px-16 sm:w-1/2 lg:w-1/3 wp-block-unilux-blocks-news-card">
+    <div class="ulux-card card-news bg-theme">
+        <div class="ulux-card__container">
+            <div class="ulux-card__visual">
+                <img decoding="async" class="w-full" src="https://www.uni.lu/wp-content/uploads/sites/22/2025/07/21170733/2025-07-22_BrainClock_GenerativeAI_V2-300x221.jpg" srcset="https://www.uni.lu/wp-content/uploads/sites/22/2025/07/21170733/2025-07-22_BrainClock_GenerativeAI_V2-768x567.jpg 768w, https://www.uni.lu/wp-content/uploads/sites/22/2025/07/21170733/2025-07-22_BrainClock_GenerativeAI_V2-300x221.jpg 300w, https://www.uni.lu/wp-content/uploads/sites/22/2025/07/21170733/2025-07-22_BrainClock_GenerativeAI_V2-1024x756.jpg 1024w, https://www.uni.lu/wp-content/uploads/sites/22/2025/07/21170733/2025-07-22_BrainClock_GenerativeAI_V2-1536x1133.jpg 1536w, https://www.uni.lu/wp-content/uploads/sites/22/2025/07/21170733/2025-07-22_BrainClock_GenerativeAI_V2-2048x1511.jpg 2048w" sizes="(max-width: 768px) 100vw, 768px" alt="" />
+            </div>
+
+            <div class="ulux-card__body">
+                <h3 class="ulux-card__title break-words">Donner un coup de jeune au cerveau à l&rsquo;aide d&rsquo;une “horloge du vieillissement”</h3>
+                <div class="ulux-card__category break-words">Recherche</div>
+                <time class="ulux-card__date break-words"
+                        datetime="2025-07-22">22 juillet 2025</time>
+                <div class="ulux-card__topic break-words">Informatique &amp; TIC, Sciences de la vie &amp; médecine</div>
+                <a class="ulux-card__link link-text link-absolute"
+                    href="https://www.uni.lu/lcsb-fr/news/rajeunir-le-cerveau-avec-une-horloge-du-vieillissement/"
+                    target="">
+                    <span class="link-text__name">En savoir plus</span>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right icon--2xs"><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>                </a>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+<li class=" w-full px-16 sm:w-1/2 lg:w-1/3 wp-block-unilux-blocks-news-card">
+    <div class="ulux-card card-news bg-theme">
+        <div class="ulux-card__container">
+            <div class="ulux-card__visual">
+                <img decoding="async" class="w-full" src="https://www.uni.lu/wp-content/uploads/sites/13/2025/07/18112257/Website_News_Image_Size28-300x225.jpg" srcset="https://www.uni.lu/wp-content/uploads/sites/13/2025/07/18112257/Website_News_Image_Size28-768x576.jpg 768w, https://www.uni.lu/wp-content/uploads/sites/13/2025/07/18112257/Website_News_Image_Size28-300x225.jpg 300w, https://www.uni.lu/wp-content/uploads/sites/13/2025/07/18112257/Website_News_Image_Size28.jpg 1024w" sizes="(max-width: 768px) 100vw, 768px" alt="" />
+            </div>
+
+            <div class="ulux-card__body">
+                <h3 class="ulux-card__title break-words">Djamila Aouada nommée directrice adjointe du SnT</h3>
+                <div class="ulux-card__category break-words">Relations avec le public</div>
+                <time class="ulux-card__date break-words"
+                        datetime="2025-07-18">18 juillet 2025</time>
+                <div class="ulux-card__topic break-words">Informatique &amp; TIC</div>
+                <a class="ulux-card__link link-text link-absolute"
+                    href="https://www.uni.lu/snt-fr/news/djamila-aouada-nommee-directrice-adjointe-du-snt/"
+                    target="">
+                    <span class="link-text__name">En savoir plus</span>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right icon--2xs"><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>                </a>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+<li class=" w-full px-16 sm:w-1/2 lg:w-1/3 wp-block-unilux-blocks-news-card">
+    <div class="ulux-card card-news bg-theme">
+        <div class="ulux-card__container">
+            <div class="ulux-card__visual">
+                <img decoding="async" class="w-full" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/07/17140836/00467852-6edd-4a11-b01d-ca3012e15cae-300x169.webp" srcset="https://www.uni.lu/wp-content/uploads/sites/11/2025/07/17140836/00467852-6edd-4a11-b01d-ca3012e15cae-768x432.webp 768w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/17140836/00467852-6edd-4a11-b01d-ca3012e15cae-300x169.webp 300w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/17140836/00467852-6edd-4a11-b01d-ca3012e15cae-1024x576.webp 1024w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/17140836/00467852-6edd-4a11-b01d-ca3012e15cae-1536x864.webp 1536w, https://www.uni.lu/wp-content/uploads/sites/11/2025/07/17140836/00467852-6edd-4a11-b01d-ca3012e15cae-2048x1152.webp 2048w" sizes="(max-width: 768px) 100vw, 768px" alt="" />
+            </div>
+
+            <div class="ulux-card__body">
+                <h3 class="ulux-card__title break-words">L’importance de faire ressortir le meilleur des autres prime sur la toute-puissance</h3>
+                <div class="ulux-card__category break-words">Université</div>
+                <time class="ulux-card__date break-words"
+                        datetime="2025-07-17">17 juillet 2025</time>
+                <div class="ulux-card__topic break-words"></div>
+                <a class="ulux-card__link link-text link-absolute"
+                    href="https://www.uni.lu/fr/news/l-importance-de-faire-ressortir-le-meilleur-des-autres-prime-sur-la-toute-puissance/"
+                    target="">
+                    <span class="link-text__name">En savoir plus</span>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right icon--2xs"><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>                </a>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+<li class=" w-full px-16 sm:w-1/2 lg:w-1/3 wp-block-unilux-blocks-news-card">
+    <div class="ulux-card card-news bg-theme">
+        <div class="ulux-card__container">
+            <div class="ulux-card__visual">
+                <img decoding="async" class="w-full" src="https://www.uni.lu/wp-content/uploads/sites/13/2025/07/15095947/QB2-Cover-WIS-300x225.jpg" srcset="https://www.uni.lu/wp-content/uploads/sites/13/2025/07/15095947/QB2-Cover-WIS-768x576.jpg 768w, https://www.uni.lu/wp-content/uploads/sites/13/2025/07/15095947/QB2-Cover-WIS-300x225.jpg 300w, https://www.uni.lu/wp-content/uploads/sites/13/2025/07/15095947/QB2-Cover-WIS.jpg 1024w" sizes="(max-width: 768px) 100vw, 768px" alt="" />
+            </div>
+
+            <div class="ulux-card__body">
+                <h3 class="ulux-card__title break-words">Pourquoi la prochaine révolution technologique commence aux racines de la science</h3>
+                <div class="ulux-card__category break-words">Recherche, Relations avec le public</div>
+                <time class="ulux-card__date break-words"
+                        datetime="2025-07-15">15 juillet 2025</time>
+                <div class="ulux-card__topic break-words">Informatique &amp; TIC</div>
+                <a class="ulux-card__link link-text link-absolute"
+                    href="https://www.uni.lu/snt-fr/news/pourquoi-la-prochaine-revolution-technologique-commence-aux-racines-de-la-science/"
+                    target="">
+                    <span class="link-text__name">En savoir plus</span>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-right icon--2xs"><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-right"></use></svg>                </a>
+            </div>
+        </div>
+    </div>
+</li>
+</ul>
+
+
+
+<ul class="wp-block-unilux-blocks-custom-buttons btn-list justify-center"><li class="wp-block-unilux-blocks-custom-button"    aria-disabled="false"
+    >
+    <a
+        role="link"
+        aria-disabled="false"
+                    href="https://www.uni.lu/fr/actualites/"
+                target="_self"
+        class="btn btn--primary"
+    >Toutes les actualités</a>
+</li>
+
+
+<li class="wp-block-unilux-blocks-custom-button"    aria-disabled="false"
+    >
+    <a
+        role="link"
+        aria-disabled="false"
+                    href="https://www.uni.lu/en/events-overview/"
+                target="_self"
+        class="btn btn--secondary"
+    >Événements</a>
+</li>
+</ul>
+</div></section>
+</div>
+</main>
+<aside role="complementary" class="complementary">
+    <section class="section py-0 wp-block-template-part"><!-- section share this page on --></section>
+    <section id="newsletter-subscription" class="section py-0">
+    <div class="container max-w-screen-3xl px-0" id="inscription-lettre-information">
+        <div class="newsletter-subscription">
+            <div class="container container-py xl:max-w-screen-xl">
+                <form class="mb-0" action="#" tabindex="-1">
+                    <h2 class="text-white mb-24">Restez au courant en vous inscrivant à notre bulletin d’information</h2>
+                    <p class="text-white">Tous les champs sont obligatoires</p>
+
+                    <!--- campaign containers -->
+                    <ul class="flex flex-wrap items-end -mx-16">
+                        <li class="w-full md:w-1/2 px-16">
+
+                            <!-- Dropdown mailing list -->
+                            <div class="form-group">
+                                <p class="form-label text-white" id="mailing-list-label">
+                                    Faites votre choix dans notre/nos liste(s) de diffusion                                </p>
+                                <div class="dropdown relative">
+                                    <button
+                                        id="unilux-newsletter-btn-toggle"
+                                        class="btn btn--dark dropdown-toggle"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#unilux-newsletter-dropdown-list"
+                                        aria-controls="unilux-newsletter-dropdown-list"
+                                        aria-expanded="false"
+                                    >
+                                        <span
+                                            id="unilux-newsletter-selected-msg"
+                                            class="header-dropdown-toogle__label"
+                                        >
+                                            Liste de diffusion 0 éléments sélectionnés                                        </span>
+
+                                        <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-down "><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-down"></use></svg>                                    </button>
+
+                                    <div id="unilux-newsletter-dropdown-list" class="dropdown-menu collapse">
+                                        <fieldset aria-labelledby="mailing-list-label" class="my-0">
+                                            <ul>
+                                                                                                            <li>
+                                                                <div class="form-check">
+                                                                    <input
+                                                                        id="form_check_campaign_unilux_27"
+                                                                        type="checkbox"
+                                                                        value="campaign_UNILUX_27"
+                                                                        class="form-check__input newsletter_campagin_check_boxes"
+                                                                    >
+                                                                    <label for="form_check_campaign_unilux_27" class="form-check__label">
+                                                                        University of Luxembourg &#8211; News and events                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                                                                        </ul>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="w-full md:w-1/2 px-16">
+                            <div class="form-group dark-mode">
+                                <label for="newsletter-email" class="form-label">
+                                    <span class="form-label__name">
+                                        Introduisez votre adresse e-mail                                    </span>
+                                    <span class="form-label__help">
+                                        Exemple : contact@uni.lu                                    </span>
+                                </label>
+                                <input
+                                    type="email"
+                                    id="newsletter-email"
+                                    class="form-text-field"
+                                    aria-describedby="newsletter-email-feedback"
+                                    autocomplete="email"
+                                    aria-required="true"
+                                    aria-invalid="false"
+                                >
+                                <div id="newsletter-email-feedback" class="form-feedback">
+                                    veuillez fournir une adresse électronique valide. Exemple : jean.dupont@gmail.com                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Terms of Condition -->
+                    <div id="newsletter-form-toc-container" class="form-group dark-mode">
+                        <div class="form-check">
+                            <input type="checkbox" id="newsletter-toc" class="form-check__input" aria-describedby="contact-form-privacy-notice-feedback" aria-required="true" aria-invalid="true">
+                            <label for="newsletter-toc" class="form-check__label">
+                                J’accepte que mon adresse e-mail serve à mon inscription aux bulletins d’information de l’Université. J’ai compris que je peux me désinscrire ou mettre à jour mon profil en cliquant sur le lien « Me désinscrire » ou « Mettre à jour mon profil » contenu dans l’e-mail <a class="link-text" href="https://www.uni.lu/en/general-information-notice/" target="_blank"><span>En savoir plus sur le traitement des données.</span></a>                            </label>
+                        </div>
+                    </div>
+
+                    <!--- error messages -->
+                    <div id="unilux-newsletter-error-container" class="alert alert--error" role="alert" aria-live="assertive">
+                        <svg aria-hidden="true" focusable="false" class="icon icon-solid icon--error "><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-solid.svg#icon--error"></use></svg>                        <div class="alert__container">
+                            <header class="alert__title">
+                                Erreur                            </header>
+                            <div class="alert__body">
+                                <p id="unilux-newsletter-error-msg" class="form-feedback">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- success message -->
+                    <div id="unilux-newsletter-success-container" class="alert alert--success" role="alert" aria-live="assertive">
+                        <svg aria-hidden="true" focusable="false" class="icon icon-solid icon--success "><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-solid.svg#icon--success"></use></svg>                        <div class="alert__container">
+                            <header class="alert__title">
+                                Succès                            </header>
+                            <div class="alert__body">
+                                <p id="unilux-newsletter-success-msg"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- subscribe button -->
+                    <ul class="btn-list">
+                        <li class="w-full">
+                            <button
+                                id="unilux-newsletter-submit-btn"
+                                type="button"
+                                class="btn btn--dark w-full"
+                            >
+                                S’inscrire maintenant                            </button>
+                        </li>
+                    </ul>
+
+                </form>
+            </div>
+
+            <div class="go-to-top">
+                <a class="go-to-top__anchor" title="Retour en haut de la page" href="#">
+                    <svg aria-hidden="true" focusable="false" class="icon icon-outline icon--arrow-long-up icon--2xl"><use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-outline.svg#icon--arrow-long-up"></use></svg>                    <span class="go-to-top__label">
+                        Haut de page                    </span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</aside>
+<!-- Template: Footer Navigation-->
+<footer id="footer-page" class="section footer" role="contentinfo">
+    <section class="container 2xl:max-w-screen-2xl">
+        <div class="flex flex-wrap -mx-16">
+            <div class="w-full sm:w-1/2 lg:w-1/4 my-16 lg:my-48 px-16">
+                <!-- Template: Footer Navigation | Contact -->
+<span role="heading" aria-level="2" class="footer-heading">
+    Contact</span>
+<ul>
+    <!-- Template Footer Link -->
+<li><a class="link-text text-sm" href="https://www.uni.lu/life-fr/contacts/" rel="" target="" title="Contacts pour les étudiants"><span class="link-text__name">Contacts pour les étudiants</span></a></li><!-- Template Footer Link -->
+<li><a class="link-text text-sm" href="https://www.uni.lu/fr/a-propos/organisation/administration/bureau-des-relations-internationales/" rel="" target="" title="Bureau des relations internationales"><span class="link-text__name">Bureau des relations internationales</span></a></li><!-- Template Footer Link -->
+<li><a class="link-text text-sm" href="https://www.uni.lu/en/press/" rel="" target="" title="Presse et médias (EN)"><span class="link-text__name">Presse et médias (EN)</span></a></li><!-- Template Footer Link -->
+<li><a class="link-text text-sm" href="https://www.uni.lu/llc-fr/" rel="" target="" title="Luxembourg Learning Centre (Bibliothèque)"><span class="link-text__name">Luxembourg Learning Centre (Bibliothèque)</span></a></li><!-- Template Footer Link -->
+<li><a class="link-text text-sm" href="https://recruitment.uni.lu/fr/index.html?Resultsperpage=50" rel="" target="" title="Postes vacants"><span class="link-text__name">Postes vacants</span></a></li><!-- Template Footer Link -->
+<li><a class="link-text text-sm" href="https://www.uni.lu/fr/a-propos/soutenir-l-universite/" rel="" target="" title="Donner à l’Université"><span class="link-text__name">Donner à l’Université</span></a></li></ul>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/4 my-16 lg:my-48 px-16">
+                <div class="mb-24 lg:mb-32">
+                    <span role="heading" aria-level="2" class="footer-heading">
+                        Médias sociaux                    </span>
+                    
+<!-- Social Media Template -->
+<ul class="social-media" aria-label="Médias sociaux">
+    <!-- Template Link: Social Media -->
+<li class="social-media__item">
+    <a class="social-media__link"
+        href="https://www.facebook.com/uni.lu"
+        target="_blank"
+    >
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-solid icon--md">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-solid.svg#icon--facebook"></use>
+</svg>
+        <span class="sr-only">Facebook</span>
+    </a>
+</li>
+<!-- Template Link: Social Media -->
+<li class="social-media__item">
+    <a class="social-media__link"
+        href="https://www.linkedin.com/school/university-of-luxembourg/"
+        target="_blank"
+    >
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-solid icon--md">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-solid.svg#icon--linkedin"></use>
+</svg>
+        <span class="sr-only">Linkedin</span>
+    </a>
+</li>
+<!-- Template Link: Social Media -->
+<li class="social-media__item">
+    <a class="social-media__link"
+        href="https://www.instagram.com/uni.lu"
+        target="_blank"
+    >
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-solid icon--md">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-solid.svg#icon--instagram"></use>
+</svg>
+        <span class="sr-only">Instagram</span>
+    </a>
+</li>
+<!-- Template Link: Social Media -->
+<li class="social-media__item">
+    <a class="social-media__link"
+        href="https://www.youtube.com/@uni_lu"
+        target="_blank"
+    >
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-solid icon--md">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-solid.svg#icon--youtube"></use>
+</svg>
+        <span class="sr-only">Youtube</span>
+    </a>
+</li>
+<!-- Template Link: Social Media -->
+<li class="social-media__item">
+    <a class="social-media__link"
+        href="https://www.threads.net/@uni.lu"
+        target="_blank"
+    >
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-solid icon--md">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-solid.svg#icon--threads"></use>
+</svg>
+        <span class="sr-only">Threads</span>
+    </a>
+</li>
+<!-- Template Link: Social Media -->
+<li class="social-media__item">
+    <a class="social-media__link"
+        href="https://bsky.app/profile/uni.lu"
+        target="_blank"
+    >
+        
+<!-- Icon link Template -->
+<svg aria-hidden="true" focusable="false" class="icon icon-solid icon--md">
+    <use xlink:href="https://www.uni.lu/wp-content/themes/unilux-theme/assets/images/icons/icons-solid.svg#icon--bluesky"></use>
+</svg>
+        <span class="sr-only">Bluesky</span>
+    </a>
+</li>
+</ul>                </div>
+                <!-- Template: Footer Navigation | Locations -->
+<span role="heading" aria-level="2" class="footer-heading">
+    Localisation</span>
+<ul>
+    <!-- Template Footer Link -->
+<li><a class="link-text text-sm" href="https://www.uni.lu/fr/a-propos/campus/campus-belval/" rel="" target="" title="Campus de Belval"><span class="link-text__name">Campus de Belval</span></a></li><!-- Template Footer Link -->
+<li><a class="link-text text-sm" href="https://www.uni.lu/fr/a-propos/campus/campus-limpertsberg/" rel="" target="" title="Campus de Limpertsberg"><span class="link-text__name">Campus de Limpertsberg</span></a></li><!-- Template Footer Link -->
+<li><a class="link-text text-sm" href="https://www.uni.lu/fr/a-propos/campus/campus-kirchberg/" rel="" target="" title="Campus de Kirchberg"><span class="link-text__name">Campus de Kirchberg</span></a></li><!-- Template Footer Link -->
+<li><a class="link-text text-sm" href="https://www.uni.lu/fr/a-propos/campus/batiment-weicker/" rel="" target="" title="Bâtiment Weicker"><span class="link-text__name">Bâtiment Weicker</span></a></li></ul>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/4 my-16 lg:my-48 px-16">
+            <!-- Template: Footer Navigation | Faculties -->
+<span role="heading" aria-level="2" class="footer-heading">Facultés</span>
+<ul class="footer-entities-logos">
+                        <li class="footer-entities-logos__item">
+                <a class="footer-entities-logos__link" href="https://www.uni.lu/fstm-fr">
+                    <img decoding="async" class="mb-0" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-faculty-fstm.svg" alt="Faculté des Sciences, des Technologies et de Médecine" />
+                </a>
+            </li>
+                                <li class="footer-entities-logos__item">
+                <a class="footer-entities-logos__link" href="https://www.uni.lu/fdef-fr">
+                    <img decoding="async" class="mb-0" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-faculty-fdef.svg" alt="Faculté de Droit, d’Économie et de Finance" />
+                </a>
+            </li>
+                                <li class="footer-entities-logos__item">
+                <a class="footer-entities-logos__link" href="https://www.uni.lu/fhse-fr">
+                    <img decoding="async" class="mb-0" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-faculty-fhse.svg" alt="Faculté des Sciences Humaines, des Sciences de l’Éducation et des Sciences Sociales​" />
+                </a>
+            </li>
+            </ul>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/4 my-16 lg:my-48 px-16">
+            <!-- Template: Footer Navigation | Interdisciplinary -->
+<span role="heading" aria-level="2" class="block font-heading font-bold text-18 text-dark mb-16">Centres interdisciplinaires</span>
+<ul class="footer-entities-logos">
+                        <li class="footer-entities-logos__item">
+                <a class="footer-entities-logos__link" href="https://www.uni.lu/snt-fr">
+                    <img decoding="async" class="mb-0" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-snt.svg" alt="Interdisciplinary Centre for Security, Reliability and Trust" />
+                </a>
+            </li>
+                                <li class="footer-entities-logos__item">
+                <a class="footer-entities-logos__link" href="https://www.uni.lu/lcsb-fr">
+                    <img decoding="async" class="mb-0" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-lcsb.svg" alt="Luxembourg Centre for Systems Biomedicine" />
+                </a>
+            </li>
+                                <li class="footer-entities-logos__item">
+                <a class="footer-entities-logos__link" href="https://www.uni.lu/c2dh-fr">
+                    <img decoding="async" class="mb-0" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-c2dh.svg" alt="Luxembourg Centre for Contemporary and Digital History" />
+                </a>
+            </li>
+                                <li class="footer-entities-logos__item">
+                <a class="footer-entities-logos__link" href="https://www.uni.lu/lcel-fr">
+                    <img decoding="async" class="mb-0" src="https://www.uni.lu/wp-content/uploads/sites/11/2024/02/uni-centre-lcel.svg" alt="Luxembourg Centre for European Law" />
+                </a>
+            </li>
+                                <li class="footer-entities-logos__item">
+                <a class="footer-entities-logos__link" href="https://www.uni.lu/lcses-fr">
+                    <img decoding="async" class="mb-0" src="https://www.uni.lu/wp-content/uploads/sites/11/2025/07/17082306/LCSES_Logo_black80_text.svg" alt="Luxembourg Centre for Socio-Environmental Systems" />
+                </a>
+            </li>
+            </ul>
+
+            </div>
+        </div>
+    </section>
+    <!-- Template: Footer Navigation | Copyrights -->
+<section class="container xl:max-w-screen-xl my-16">
+    <div class="flex flex-wrap justify-between items-center">
+        <div class="footer-copyright">
+            <!-- Template SiteLogoField: Logo Footer -->
+<img decoding="async" class="footer-copyright__logo" src="https://www.uni.lu/wp-content/uploads/sites/9/2024/06/university-luxembourg-nobseline.svg" alt="UNI EN" />            <p class="footer-copyright__content">
+                &copy; Université du Luxembourg 2025. Tous droits réservés.            </p>
+        </div>
+        <ul class="footer-nav">
+            <!-- Template Footer Link -->
+<li class="footer-nav__item"><a class="link-text" href="https://www.uni.lu/fr/mentions-legales/" rel="" target="" title="Mentions légales"><span class="link-text__name">Mentions légales</span></a></li><!-- Template Footer Link -->
+<li class="footer-nav__item"><a class="link-text" href="https://www.uni.lu/fr/notice-d-information-generale/" rel="" target="" title="Notice d’information générale"><span class="link-text__name">Notice d’information générale</span></a></li><!-- Template Footer Link -->
+<li class="footer-nav__item"><a class="link-text" href="https://www.uni.lu/fr/a-propos/organisation/administration/protection-des-donnees/" rel="" target="" title="Protection des données"><span class="link-text__name">Protection des données</span></a></li><!-- Template Footer Link -->
+<li class="footer-nav__item"><a class="link-text" href="https://www.uni.lu/fr/accessibilite/" rel="" target="" title="Accessibilité"><span class="link-text__name">Accessibilité</span></a></li>        </ul>
+    </div>
+</section>
+</footer>
+
+</div>
+		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activer pour trier la colonne ascendante","sort_descending":": activer pour trier la colonne descendante"},"length_menu":"Afficher les saisies _MENU_","empty_table":"Aucune donn\u00e9e disponible sur le tableau","info":"Affichant_START_ \u00e0 _END_ du _TOTAL_ des saisies","info_empty":"Affichant 0 \u00e0 0 de 0 saisies","info_filtered":"(filtr\u00e9 \u00e0 partir du total des saisies _MAX_ )","zero_records":"Aucun enregistrement correspondant trouv\u00e9","search":"Rechercher :","all_selected_text":"Tous les \u00e9l\u00e9ments de cette page ont \u00e9t\u00e9 s\u00e9lectionn\u00e9s. ","select_all_link":"S\u00e9lectionner toutes les pages","clear_selection":"Effacer la s\u00e9lection.","pagination":{"all":"Tout","next":"Suivant","previous":"Pr\u00e9c\u00e9dent"},"select":{"rows":{"0":"","_":": a s\u00e9lectionn\u00e9 %d rang\u00e9es","1":": a s\u00e9lectionn\u00e9 une rang\u00e9e"}},"datepicker":{"dayNames":["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"],"dayNamesShort":["dim","lun","mar","mer","jeu","ven","sam"],"dayNamesMin":["D","L","M","M","J","V","S"],"monthNames":["janvier","f\u00e9vrier","mars","avril","mai","juin","juillet","ao\u00fbt","septembre","octobre","novembre","d\u00e9cembre"],"monthNamesShort":["janvier","f\u00e9vrier","mars","avril","mai","juin","juillet","ao\u00fbt","septembre","octobre","novembre","d\u00e9cembre"],"monthNamesMin":["Jan","F\u00e9v","Mar","Avr","Mai","Juin","Juil","Ao\u00fbt","Sep","Oct","Nov","D\u00e9c"],"nextText":"Suivant","prevText":"Pr\u00e9c\u00e9dent","currentText":"Aujourd&#039;hui","closeText":"Termin\u00e9","today":"Aujourd&#039;hui","clear":"Clear"},"registration_prompt":"Information non-sauv\u00e9e pour un participant. Voulez-vous continuer\u00a0?"};/* ]]> */ </script><script src='https://www.uni.lu/wp-content/plugins/event-tickets/src/resources/js/rsvp.min.js?ver=5.8.4' id='event-tickets-tickets-rsvp-js-js'></script>
+<script src='https://www.uni.lu/wp-content/plugins/event-tickets/src/resources/js/ticket-details.min.js?ver=5.8.4' id='event-tickets-details-js-js'></script>
+<script src='https://www.uni.lu/fr/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1' id='wp-hooks-js'></script>
+<script src='https://www.uni.lu/fr/wp-includes/js/dist/i18n.min.js?ver=7701b0c3857f914212ef' id='wp-i18n-js'></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script src='https://www.uni.lu/fr/wp-includes/js/dist/url.min.js?ver=8814d23f2d64864d280d' id='wp-url-js'></script>
+<script id='wp-api-fetch-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2023-12-21 15:22:55+0000","generator":"GlotPress\/4.0.0-beta.2","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n > 1;","lang":"fr"},"You are probably offline.":["Vous \u00eates probablement hors ligne."],"Media upload failed. If this is a photo or a large image, please scale it down and try again.":["Le t\u00e9l\u00e9versement du m\u00e9dia a \u00e9chou\u00e9. S\u2019il s\u2019agit d\u2019une photo ou d\u2019une grande image, veuillez la redimensionner puis r\u00e9essayer."],"An unknown error occurred.":["Une erreur inconnue est survenue."],"The response is not a valid JSON response.":["La r\u00e9ponse n\u2019est pas une r\u00e9ponse JSON valide."]}},"comment":{"reference":"wp-includes\/js\/dist\/api-fetch.js"}} );
+</script>
+<script src='https://www.uni.lu/fr/wp-includes/js/dist/api-fetch.min.js?ver=0fa4dabf8bf2c7adf21a' id='wp-api-fetch-js'></script>
+<script id="wp-api-fetch-js-after">
+wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "https://www.uni.lu/fr/wp-json/" ) );
+wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "de2262e1cc" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "https://www.uni.lu/fr/wp-admin/admin-ajax.php?action=rest-nonce";
+</script>
+<script id='unilux-newsletter-campaign-scripts-js-extra'>
+var UNILUX_NEWSLETTER_MESSAGES = {"DropDownButtonStrings":{"msg_1":"Mailing list","msg_2":"items selected"},"ErrorMessages":{"unknown":"Something went wrong. Please try again.","networkError":"Oops. We were unable to process your request. Try again later.","email":"Please provide a valid Email.","campaigns":"Please select campaigns from the mailing list(s).","toc":"Please agree to Terms and Conditions."},"NewsletterSubscribeEndpoint":"newsletter-service-api\/v1\/subscribe","nonce":"de2262e1cc"};
+</script>
+<script src='https://www.uni.lu/wp-content/mu-plugins/unilux-newsletter/assets/unilux-newsletter.js?ver=2.1.5' id='unilux-newsletter-campaign-scripts-js'></script>
+<script src="https://www.uni.lu/wp-content/themes/unilux-theme/assets/main-frontend.js?ver=df05ea8c4196d2b85950" id="frontend-js" defer></script>
+<script src="https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/HeroCarouselBlock/resources/ts/frontend-provider.min.js?ver=039ee135956cad251f11" id="unilux-blocks-hero-carousel-frontend-provider-js" defer></script>
+<script src="https://www.uni.lu/wp-content/mu-plugins/unilux-blocks/assets/src/GalleryCarouselBlock/resources/ts/frontend-provider.min.js?ver=ab83802dc90b214155ae" id="unilux-blocks-gallery-carousel-frontend-provider-js" defer></script>
+<script id='event-tickets-rsvp-js-extra'>
+var tribe_tickets_rsvp_strings = {"attendee":"Participant %1$s"};
+</script>
+<script src='https://www.uni.lu/wp-content/plugins/event-tickets/src/resources/js/rsvp.min.js?ver=5.8.4' id='event-tickets-rsvp-js'></script>
+</body>
+</html>

@@ -9,7 +9,7 @@ layout: default
 {% endif %}
 
 {% if page.show_title %}
-<div class="page-hero mb-4">
+<div class="page-hero">
   <div class="page-hero-overlay">
     <div class="page-hero-content">
       <h1 class="page-title">{% if page.name %}{{ page.name }}{% else %}{{ page.title }}{% endif %}</h1>
@@ -77,30 +77,30 @@ layout: default
 }
 
 .page-container {
-  max-width: 1200px;
-  margin: 1.25rem auto 2.5rem auto;
-  padding: 0 1rem;
+  max-width: 100%;
+  margin: 0 auto 1rem auto;
+  padding: 0 0.75rem;
 }
 
 .page-article {
-  background: var(--bg-primary);
+  background: transparent;
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  padding: 1.5rem;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0.5rem 0;
 }
 
 .page-article h2 {
-  margin-top: 2rem;
-  padding-bottom: 0.5rem;
+  margin-top: 1.25rem;
+  padding-bottom: 0.25rem;
   border-bottom: 2px solid var(--primary);
 }
 
 @media (max-width: 768px) {
   .page-hero { height: 180px; }
   .page-title { font-size: 1.5rem; }
-  .page-container { margin-top: 1rem; }
-  .page-article { padding: 1rem; }
+  .page-container { margin-top: 0.25rem; padding: 0 0.5rem; }
+  .page-article { padding: 0.25rem 0; }
 }
 </style>

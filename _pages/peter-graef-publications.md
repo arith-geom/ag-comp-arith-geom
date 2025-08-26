@@ -137,7 +137,7 @@ order: 100
 }
 
 .pathway {
-  background: #f5f5f5;
+  background: var(--bg-secondary);
   padding: 10px;
   margin-bottom: 20px;
   border-left: 4px solid #c22032;
@@ -158,7 +158,7 @@ order: 100
   gap: 20px;
   margin-bottom: 30px;
   padding: 20px;
-  background: #f9f9f9;
+  background: var(--bg-secondary);
   border-radius: 5px;
 }
 
@@ -182,7 +182,7 @@ order: 100
 .publication-list li, .thesis-list li, .presentation-list li, .poster-list li {
   margin-bottom: 15px;
   padding: 15px;
-  background: #f9f9f9;
+  background: var(--bg-secondary);
   border-left: 4px solid #c22032;
   border-radius: 3px;
 }
@@ -204,7 +204,7 @@ order: 100
 .contact-info {
   margin-top: 30px;
   padding: 20px;
-  background: #f9f9f9;
+  background: var(--bg-secondary);
   border-radius: 5px;
 }
 

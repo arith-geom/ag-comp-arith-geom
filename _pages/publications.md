@@ -10,7 +10,7 @@ title: Publications
 <div class="publications-page">
   <!-- Filter Controls -->
   <div class="filter-section">
-    <div class="container-fluid px-3 px-md-4">
+    <div class="container-fluid px-3 px-md-4 publications-filter-container">
       <!-- Publications Search Bar -->
       <div class="pub-search-container">
         <div class="pub-search-wrapper">
@@ -51,7 +51,7 @@ title: Publications
 
   <!-- Publications Grid -->
   <div class="publications-content">
-    <div class="container-fluid px-3 px-md-4">
+    <div class="container-fluid px-3 px-md-4 publications-content-container">
       <!-- Loading State -->
       <div id="loading-state" class="loading-state" style="display: none;">
         <div class="spinner"></div>
@@ -66,8 +66,8 @@ title: Publications
       </div>
 
       <!-- Software Packages Status -->
-      <!-- All software packages from Heidelberg website are included and up to date -->
-      <!-- Last updated: 2025-08-04T10:26:31.561Z -->
+      <!-- All 0 publications from Heidelberg website are included and up to date -->
+      <!-- Last updated: 2025-08-24T21:38:29.541488 -->
 
       <!-- Back from detail view -->
       <div id="pub-detail-back" class="pub-detail-back" style="display: none;">
@@ -80,112 +80,65 @@ title: Publications
       <div id="publications-grid" class="publications-grid">
         {% assign sorted_publications = site.publications | sort: 'year' | reverse %}
         {% for publication in sorted_publications %}
-          {% assign pub_key = publication.title | slugify | append: '-' | append: publication.year %}
-          <div class="publication-card" data-type="{{ publication.type }}" data-year="{{ publication.year }}" data-pub-key="{{ pub_key }}">
+          {% assign pub_key = publication.title | slugify | append: '-' | append: publication.year | replace: '?', 'unknown' | replace: '2024', 'unknown' %}
+          <div class="publication-card" data-type="{{ publication.type }}" {% if publication.year != "?" and publication.year != "2024" %}data-year="{{ publication.year }}"{% endif %} data-pub-key="{{ pub_key }}">
             <div class="publication-header">
-              <div class="publication-meta">
-                <span class="publication-type">{{ publication.type }}</span>
-                <span class="publication-status">{{ publication.status }}</span>
-                <span class="publication-year">{{ publication.year }}</span>
-      </div>
-              <h3 class="publication-title">
-                <a href="javascript:void(0)" class="publication-title-link" data-pub-key="{{ pub_key }}">{{ publication.title }}</a>
-              </h3>
-              <div class="publication-authors">{{ publication.authors }}</div>
-              {% assign has_external_url = false %}
-
-              {% assign has_links = false %}
-              {% if publication.links and publication.links.size > 0 %}
-                {% assign has_links = true %}
-              {% endif %}
-              {% if publication.pdf or publication.pdf_file or has_links %}
-              <div class="publication-actions">
-
-
-                {% if has_links %}
-                  <div class="publication-links-badges">
-                    {% for link in publication.links %}
-                      {% assign label = link.label | default: 'Link' %}
-                      {% assign href = link.url %}
-                      {% if href %}
-                        <a href="{{ href }}" class="link-badge" target="_blank" rel="noopener noreferrer">
-                          <i class="fas fa-link"></i> {{ label }}
-                        </a>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                {% endif %}
-                {% if publication.pdfs and publication.pdfs.size > 0 %}
-                  <div class="publication-pdfs">
-                    {% for item in publication.pdfs %}
-                      {% assign pdf_href = item.file %}
-                      {% assign pdf_label = item.label | default: 'PDF' %}
-                      {% if pdf_href %}
-                        <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                          <i class="fas fa-file-pdf"></i> {{ pdf_label }}
-                        </a>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                {% else %}
-                  {% assign pdf_href = publication.pdf_file | default: publication.pdf %}
-                  {% if pdf_href %}
-                    <a href="{% if pdf_href contains '://' %}{{ pdf_href }}{% else %}{{ pdf_href | relative_url }}{% endif %}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer">
-                      <i class="fas fa-file-pdf"></i> PDF
-                    </a>
+              <div class="publication-main-content">
+                <div class="publication-meta">
+                  <span class="publication-type">{{ publication.type }}</span>
+                  {% if publication.year != "?" and publication.year != "2024" %}
+                    <span class="publication-year">{{ publication.year }}</span>
                   {% endif %}
-                {% endif %}
-              </div>
-              {% endif %}
-              {% if publication.journal %}
-                <div class="publication-venue">
-                  {% if publication.journal_full %}{{ publication.journal_full }}{% else %}{{ publication.journal }}{% endif %}
-                  {% if publication.volume %}, Volume {{ publication.volume }}{% endif %}
-                  {% if publication.pages %}, {{ publication.pages }}{% endif %}
-                  {% if publication.year %}, {{ publication.year }}{% endif %}
                 </div>
-              {% endif %}
-              
-              {% if publication.volume or publication.pages or publication.url %}
-                <div class="publication-details">
-                  {% if publication.volume %}<span class="detail-item">Volume: {{ publication.volume }}</span>{% endif %}
-                  {% if publication.pages %}<span class="detail-item">Pages: {{ publication.pages }}</span>{% endif %}
-                  {% if publication.url and publication.url != publication.pdf %}
-                    {% assign url_str = publication.url %}
-                    {% unless url_str contains site.url or url_str contains site.baseurl or url_str contains '/publications/' %}
-                      {% unless url_str contains 'arxiv.org' %}
-                        <span class="detail-item">URL: <a href="{{ url_str }}" target="_blank" rel="noopener noreferrer">View</a></span>
-                      {% endunless %}
-                    {% endunless %}
-                  {% endif %}
-      </div>
-              {% endif %}
-    </div>
-            
-            {% if publication.abstract or publication.content %}
-              <div class="publication-body">
+                <h3 class="publication-title">
+                  {{ publication.title }}
+                </h3>
+                <div class="publication-authors">{{ publication.authors }}</div>
+
                 {% if publication.abstract %}
                   <div class="publication-abstract">{{ publication.abstract }}</div>
                 {% endif %}
-                                {% if publication.content and publication.content != publication.abstract %}
+
+                {% if publication.content %}
                   <div class="publication-content">
-                    <div class="publication-expandable">
-                      <button class="publication-expand-btn" onclick="togglePublicationDetails(this)">
-                        <span class="btn-text">Show full details</span>
-                        <i class="fas fa-chevron-down btn-icon"></i>
-                      </button>
-                      <div class="publication-expanded-content" style="display: none;">
-                        {{ publication.content | markdownify }}
-                      </div>
-                    </div>
+                    {{ publication.content | remove: "## Publication Details" | markdownify }}
                   </div>
                 {% endif %}
+
+                {% if publication.keywords %}
+                  <div class="publication-keywords">
+                    <strong>Keywords:</strong> {{ publication.keywords }}
+                  </div>
+                {% endif %}
+
+                {% if publication.links or publication.pdfs %}
+                  <div class="publication-actions">
+                    {% if publication.links %}
+                      {% for link in publication.links %}<a href="{{ link.url }}" target="_blank" class="publication-link-item">{{ link.label }}</a>{% endfor %}
+                    {% endif %}
+                    {% if publication.pdfs %}
+                      {% for pdf in publication.pdfs %}<a href="{{ pdf.url }}" target="_blank" class="publication-pdf-item">{{ pdf.label }}</a>{% endfor %}
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {% assign has_external_url = false %}
+                {% assign has_links = false %}
+                {% if publication.links and publication.links.size > 0 %}
+                  {% assign has_links = true %}
+                {% endif %}
+
+
+
+
+
               </div>
-            {% endif %}
-            
-              
-            
-            <div class="publication-footer"></div>
+
+
+            </div>
+
+
+
           </div>
         {% endfor %}
       </div>
@@ -243,24 +196,11 @@ title: Publications
 }
 
 .filter-section {
-  background: var(--bg-primary);
-  border-bottom: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   padding: 1rem 0 0.25rem 0;
   margin-bottom: 0.25rem;
-}
-
-.section-title {
-  border-bottom: 3px solid var(--primary);
-}
-
-[data-theme="dark"] .filter-section,
-body.dark-mode .filter-section {
-  border-bottom: 0 !important;
-}
-
-[data-theme="dark"] .section-title,
-body.dark-mode .section-title {
-  border-bottom: 3px solid #111 !important;
 }
 
 .publications-content {
@@ -279,12 +219,12 @@ body.dark-mode .section-title {
 .search-results-info {
   margin-top: 0.5rem;
   padding: 0.5rem 1.5rem;
-  background: var(--bg-secondary);
+  background: transparent;
   color: var(--text-secondary);
   border-radius: 2rem;
   font-size: 0.9rem;
   font-weight: 500;
-  border: 1px solid var(--border-color);
+  border: none;
   animation: fadeIn 0.3s ease;
 }
 
@@ -302,14 +242,14 @@ body.dark-mode .section-title {
 .pub-search-input {
   width: 100%;
   padding: 1.25rem 4rem 1.25rem 2rem;
-  border: 3px solid var(--border-color);
+  border: none;
   border-radius: 3rem;
-  background: var(--bg-primary);
+  background: transparent;
   color: var(--text-primary);
   font-size: 1.1rem;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   letter-spacing: 0.5px;
 }
 
@@ -320,14 +260,16 @@ body.dark-mode .section-title {
 
 .pub-search-input:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(194, 32, 50, 0.15), 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: none;
+  background: transparent;
+  box-shadow: none;
   transform: translateY(-2px);
 }
 
 .pub-search-input:hover {
-  border-color: var(--primary);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .search-icon {
@@ -351,8 +293,8 @@ body.dark-mode .section-title {
   right: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--primary);
-  color: white;
+  background: transparent;
+  color: var(--text-primary);
   border: none;
   border-radius: 50%;
   width: 2rem;
@@ -367,7 +309,7 @@ body.dark-mode .section-title {
 }
 
 .clear-search-btn:hover {
-  background: var(--primary-hover);
+  background: transparent;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -410,7 +352,7 @@ body.dark-mode .section-title {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(194, 32, 50, 0.2);
+  box-shadow: none;
 }
 
 .quick-filter-btn:hover,
@@ -419,7 +361,7 @@ body.dark-mode .section-title {
   color: white;
   border-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(194, 32, 50, 0.3);
+  box-shadow: none;
 }
 
 .quick-filter-btn:not(.active) {
@@ -438,8 +380,8 @@ body.dark-mode .section-title {
 .author-filter-display {
   margin-top: 1rem;
   padding: 1rem;
-  background: var(--bg-secondary);
-  border: 1px solid var(--primary);
+  background: transparent;
+  border: none;
   border-radius: var(--radius-md);
 }
 
@@ -517,35 +459,65 @@ body.dark-mode .section-title {
 
 .publications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
   margin-bottom: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .publications-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
 }
 
 .publications-page.detail-view-active #publications-grid {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
 }
 
 .publications-page.detail-view-active .filter-section {
   display: none;
 }
 
+.publications-page.detail-view-active .publications-content-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.publications-page.detail-view-active .publications-filter-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Full-screen width for detail view */
 .publication-card.detail-view {
-  width: min(1000px, 92vw);
-  max-width: 1000px;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
   transform: translateY(0) scale(1.01);
   box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
   position: relative;
   z-index: 2;
+  margin: 0 !important;
+}
+
+/* Ensure expanded content uses full width */
+.publication-card.detail-view .publication-expanded-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+}
+
+/* Responsive adjustments for full-screen detail view */
+@media (max-width: 768px) {
+  .publication-card.detail-view {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    margin: 0 !important;
+  }
+
+  .publication-card.detail-view .publication-expanded-content {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+  }
 }
 
 .publication-card.detail-view .publication-body,
@@ -569,20 +541,77 @@ body.dark-mode .section-title {
   border-color: #c22032;
 }
 
+/* Publication content styling */
+.publication-content {
+  padding: 0.125rem 0;
+  margin: 0.125rem 0;
+}
+
+
+
+
+
+.publication-keywords {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.publication-actions {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.publication-link-item, .publication-pdf-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--bg-secondary);
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.publication-link-item:hover, .publication-pdf-item:hover {
+  background-color: #c22032;
+  color: white;
+}
+
 .publication-header {
-  padding: 1.25rem;
-  border-bottom: 1px solid #dee2e6;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.publication-main-content {
+  flex: 1;
+  min-width: 0; /* Allow flex item to shrink below its content size */
+}
+
+.publication-expand-section {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .publication-meta {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
   flex-wrap: wrap;
 }
 
 .publication-type,
-.publication-status,
 .publication-year {
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
@@ -595,24 +624,20 @@ body.dark-mode .section-title {
   color: white;
 }
 
-.publication-status {
-  background: #f8f9fa;
-  color: #6c757d;
-  border: 1px solid #dee2e6;
-}
+
 
 .publication-year {
-  background: #f8f9fa;
-  color: #6c757d;
-  border: 1px solid #dee2e6;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
 }
 
 
 
 .publication-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
   line-height: 1.3;
 }
 
@@ -620,7 +645,7 @@ body.dark-mode .section-title {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin: 0.5rem 0 0.25rem 0;
+  margin: 0.2rem 0 0.1rem 0;
 }
 
 .publication-links-badges {
@@ -654,48 +679,49 @@ body.dark-mode .section-title {
 }
 
 .publication-title a {
-  color: #212529;
+  color: var(--text-primary);
   text-decoration: none;
   transition: color 0.2s ease;
   cursor: pointer;
 }
 
 .publication-title a:hover {
-  color: #c22032;
+  color: var(--primary);
   text-decoration: underline;
 }
 
 .publication-title a[href="javascript:void(0)"] {
   cursor: default;
-  color: #212529;
+  color: var(--text-primary);
 }
 
 .publication-title a[href="javascript:void(0)"]:hover {
-  color: #212529;
+  color: var(--text-primary);
   text-decoration: none;
 }
 
 .publication-authors {
-  color: #6c757d;
+  color: var(--text-muted);
   font-style: italic;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
 }
 
 .publication-venue {
-  color: #adb5bd;
+  color: var(--text-muted);
   font-size: 0.9rem;
-}
-
-.publication-body {
-  padding: 1.25rem;
 }
 
 .publication-abstract {
-  color: #495057;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  max-height: 3.2rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .publication-keywords {
@@ -705,61 +731,15 @@ body.dark-mode .section-title {
 }
 
 .keyword-tag {
-  background: #e9ecef;
-  color: #495057;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   font-size: 0.8rem;
 }
 
-.publication-footer {
-  padding: 1.25rem;
-  border-top: 1px solid #dee2e6;
-  background: #f8f9fa;
-}
 
-.publication-links {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
 
-.publication-link-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: #c22032;
-  color: white !important;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  border: 2px solid #c22032;
-  box-shadow: 0 2px 4px rgba(194, 32, 50, 0.3);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.publication-link-btn:hover {
-  background: #a01828;
-  color: white !important;
-  border-color: #a01828;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(194, 32, 50, 0.4);
-  text-decoration: none;
-}
-
-.publication-link-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(194, 32, 50, 0.3);
-}
-
-.publication-link-btn i {
-  font-size: 1rem;
-  color: white !important;
-}
 
 .publication-metrics {
   display: flex;
@@ -771,7 +751,7 @@ body.dark-mode .section-title {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #6c757d;
+  color: var(--text-muted);
   font-size: 0.85rem;
 }
 
@@ -792,31 +772,27 @@ body.dark-mode .section-title {
 }
 
 /* Expandable Content Styles */
-.publication-expandable {
-  margin-top: 1rem;
-  border-top: 1px solid var(--border-color);
-  padding-top: 1rem;
-}
 
 .publication-expand-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  width: 100%;
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #c22032 0%, #a01828 100%);
-  color: white;
+  gap: 0.25rem;
+  width: fit-content;
+  padding: 0.4rem 1rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  color: var(--primary-text);
   border: none;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(194, 32, 50, 0.3);
+  box-shadow: 0 1px 4px rgba(194, 32, 50, 0.3);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .publication-expand-btn::before {
@@ -835,19 +811,19 @@ body.dark-mode .section-title {
 }
 
 .publication-expand-btn:hover {
-  background: linear-gradient(135deg, #a01828 0%, #8a1422 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(194, 32, 50, 0.4);
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-dark) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(194, 32, 50, 0.4);
 }
 
 .publication-expand-btn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(194, 32, 50, 0.3);
+  box-shadow: 0 1px 4px rgba(194, 32, 50, 0.3);
 }
 
 .publication-expand-btn.expanded {
-  background: linear-gradient(135deg, #8a1422 0%, #6f101b 100%);
-  border-radius: 0.5rem 0.5rem 0 0;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .publication-expand-btn .btn-text {
@@ -856,7 +832,7 @@ body.dark-mode .section-title {
 }
 
 .publication-expand-btn .btn-icon {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   transition: transform 0.3s ease;
   color: white;
 }
@@ -869,14 +845,14 @@ body.dark-mode .section-title {
 }
 
 .publication-expanded-content {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-top: none;
-  border-radius: 0 0 0.5rem 0.5rem;
-  padding: 1.5rem;
-  margin-top: -1px;
+  border-radius: 0 0 0.375rem 0.375rem;
+  padding: 1rem;
+  margin-top: 0.25rem;
   animation: slideDown 0.3s ease-out;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
 @keyframes slideDown {
@@ -999,27 +975,6 @@ body.dark-mode .section-title {
   text-decoration: underline;
 }
 
-/* Dark mode support */
-[data-theme="dark"] .publication-expanded-content,
-body.dark-mode .publication-expanded-content {
-  background: var(--bg-secondary);
-  border-color: var(--border-color);
-}
-
-[data-theme="dark"] .publication-expand-btn,
-body.dark-mode .publication-expand-btn {
-  background: linear-gradient(135deg, #c22032 0%, #a01828 100%);
-}
-
-[data-theme="dark"] .publication-expand-btn:hover,
-body.dark-mode .publication-expand-btn:hover {
-  background: linear-gradient(135deg, #a01828 0%, #8a1422 100%);
-}
-
-[data-theme="dark"] .publication-expand-btn.expanded,
-body.dark-mode .publication-expand-btn.expanded {
-  background: linear-gradient(135deg, #8a1422 0%, #6f101b 100%);
-}
 
 
 </style>
@@ -1252,8 +1207,18 @@ class PublicationsManager {
   }
   
   applyFilters() {
+    // DISABLED: Filtering system - using simple expand/collapse instead
+    console.log('Filters disabled - using simple expand/collapse mode');
+
+    // Just show all publications without filtering
+    this.filteredPublications = this.publications;
+
+    // Update the display to show all cards
+    this.renderPublications();
+
+    /*
     console.log('Applying filters:', this.filters);
-    
+
     this.filteredPublications = this.publications.filter(pub => {
       // Type filter
       if (this.filters.type && this.filters.type !== 'all' && pub.type !== this.filters.type) {
@@ -1297,6 +1262,7 @@ class PublicationsManager {
     console.log('Filtered publications count:', this.filteredPublications.length);
     this.renderPublications();
     this.updateDetailState();
+    */
   }
   
   applyQuickFilter(filter) {
@@ -1403,7 +1369,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Make manager globally accessible for debugging
   window.publicationsManager = manager;
   
+  // DISABLED: Complex click-to-focus behavior - using simple expand/collapse instead
   // Click-to-focus behavior: clicking title or card toggles single-card detail view
+  /*
   const publicationsGrid = document.getElementById('publications-grid');
   if (publicationsGrid) {
     publicationsGrid.addEventListener('click', (e) => {
@@ -1437,8 +1405,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  */
 
-  // Back button
+  // DISABLED: Back button functionality - using simple expand/collapse instead
+  /*
   document.getElementById('pub-detail-back-btn')?.addEventListener('click', () => {
     manager.filters.pubKey = '';
     const url = new URL(window.location);
@@ -1448,7 +1418,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll to top of grid
     document.getElementById('publications-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
-});
+  */
+
+  // Expand/collapse functionality removed - all content is now always visible
 </script>
 
  

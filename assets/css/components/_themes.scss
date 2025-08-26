@@ -1,0 +1,64 @@
+// Theme styles and variations
+// This file contains theme-specific styles and dark mode support
+
+// Base theme variables (already defined in _variables.scss)
+// This file is for theme-specific styles and overrides
+
+// High contrast theme support
+@media (prefers-contrast: high) {
+  :root {
+    --primary: #ff0000;
+    --primary-hover: #cc0000;
+    --text-primary: #000000;
+    --bg-primary: #ffffff;
+    --border-color: #000000;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// Print styles
+@media print {
+  :root {
+    --bg-primary: #ffffff;
+    --text-primary: #000000;
+    --border-color: #cccccc;
+  }
+}
+
+// Dark theme specific styles
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body.dark-mode {
+  color-scheme: dark;
+}
+
+// Theme transition helper
+.theme-transition {
+  transition: background-color var(--transition-base),
+              color var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+// Focus indicators for accessibility
+.focus-visible:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+// High contrast focus indicators
+@media (prefers-contrast: high) {
+  .focus-visible:focus-visible {
+    outline-width: 3px;
+  }
+}

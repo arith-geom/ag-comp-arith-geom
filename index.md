@@ -5,7 +5,7 @@ permalink: /
 nav_order: 1
 ---
 
-<div class="hero-header mb-5">
+<div class="hero-header">
   <img src="{{ '/assets/img/Design ohne Titel.png' | relative_url }}" alt="Heidelberg Castle with IWR/University logos" class="hero-image">
   <div class="hero-overlay">
     <div class="hero-content">
@@ -19,11 +19,11 @@ nav_order: 1
 .hero-header {
   position: relative;
   width: 100%;
-  height: 500px; /* smaller height */
+  height: 500px; /* keep full height */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero-image {
@@ -95,8 +95,8 @@ nav_order: 1
 }
 
 .content-section {
-  margin-bottom: 3rem;
-  padding: 2rem;
+  margin-bottom: 0.25rem;
+  padding: 1rem;
   background: var(--bg-primary);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
@@ -113,8 +113,8 @@ nav_order: 1
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  margin-bottom: 0.0625rem;
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--primary);
 }
 
@@ -142,7 +142,8 @@ nav_order: 1
   color: var(--text-secondary);
   font-size: 1.1rem;
   line-height: 1.7;
-  margin-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 .cta-buttons {
@@ -276,7 +277,7 @@ nav_order: 1
     </div>
     <p>A more detailed survey of our activities can be found in the research section and in the publications of our members.</p>
     <div class="cta-buttons">
-      <a href="{{ '/research/' | relative_url }}" class="btn btn-primary">
+      <a href="{{ '/research/' | relative_url }}" class="btn btn-outline-primary">
         <i class="fas fa-search me-2" aria-hidden="true"></i>Research Areas
       </a>
       <a href="{{ '/publications/' | relative_url }}" class="btn btn-outline-primary">
@@ -297,7 +298,7 @@ nav_order: 1
     </div>
     <div class="contact-info">
       <p><strong>Email:</strong> <a href="mailto:arithgeo@iwr.uni-heidelberg.de">arithgeo@iwr.uni-heidelberg.de</a></p>
-      <p><strong>Location:</strong> Interdisciplinary Center for Scientific Computing (IWR), University of Heidelberg</p>
+      <p><strong>Location:</strong> Interdisciplinary Center for Scientific Computing (IWR), Heidelberg University</p>
     </div>
   </div>
 </div>

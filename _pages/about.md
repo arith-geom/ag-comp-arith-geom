@@ -9,74 +9,97 @@ title: About
 ---
 <h1 class="about-page-title">AG Computational Arithmetic Geometry</h1>
 
-## Group Leader
+<div class="about-card">
+  <h2>About Our Research Group</h2>
+  <p>This is the website of the research group "computational arithmetic geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.</p>
+</div>
 
-<span class="leader-name">Prof. Dr. Gebhard Böckle</span>
+<div class="about-card">
+  <h2>Research Focus</h2>
+  <p>Within algebraic number theory and arithmetic geometry, the focus of the research group is on Galois representations, their relations to modular forms and elliptic curves, their deformation theory etc., as well as on some aspects of function field arithmetic such as L-functions and Drinfeld modular forms.</p>
+</div>
 
-## Research Focus
+<div class="about-card">
+  <h2>Our Methods</h2>
+  <p>To tackle problems in the themes described above, we apply a broad range of methods. On one hand we pursue these questions by purely theoretical methods. On the other, we use computer algebra to carry out experiments that help us gather examples for the theory or to solve particular questions that arise from the theory. Some members of our group have also developed routines on top of existing computer algebra packages.</p>
+</div>
 
-Our research group focuses on computational arithmetic geometry at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg. We work on:
+<div class="about-card">
+  <h2>Learn More</h2>
+  <p>A more detailed survey of our activities can be found in the research section and in the publications of our members.</p>
+</div>
 
-### Core Research Areas
+<div class="about-card">
+  <h2>Contact Us</h2>
+  <p><strong>Email:</strong> arithgeo@iwr.uni-heidelberg.de</p>
+  <p><strong>Location:</strong> Interdisciplinary Center for Scientific Computing (IWR), Heidelberg University</p>
+</div>
 
-- **Galois representations** and their relations to modular forms and elliptic curves
-- **Deformation theory** of Galois representations
-- **Function field arithmetic** including L-functions and Drinfeld modular forms
-- **Computer algebra applications** in arithmetic geometry
+<div class="about-card">
+  <h2>Current Members</h2>
 
-### Research Methods
+  <div class="member-info">
+    <h3>Prof. Dr. Gebhard Böckle</h3>
+    <p><strong>Role:</strong> Group Leader</p>
+    <p><strong>Email:</strong> arithgeo@iwr.uni-heidelberg.de</p>
+  </div>
 
-We apply a broad range of methods to tackle problems in arithmetic geometry:
+  <div class="member-info">
+    <h3>Dr. Barinder Banwait</h3>
+    <p><strong>Role:</strong> Researcher</p>
+    <p><strong>Email:</strong> arithgeo@iwr.uni-heidelberg.de</p>
+  </div>
 
-1. **Theoretical approaches** using pure mathematical methods
-2. **Computational experiments** using computer algebra systems
-3. **Software development** extending existing computer algebra packages
+  <div class="member-info">
+    <h3>Dr. Peter Gräf</h3>
+    <p><strong>Role:</strong> Former PhD Student (2015-2020)</p>
+    <p><strong>Email:</strong> arithgeo@iwr.uni-heidelberg.de</p>
+  </div>
+</div>
 
-## Current Members
+<div class="about-card">
+  <h2>Software Development</h2>
 
-### Prof. Dr. Gebhard Böckle
-**Role:** Group Leader
-**Email:** arithgeo@iwr.uni-heidelberg.de
+  <p>Our group has developed several software packages:</p>
 
-### Dr. Barinder Banwait
-**Role:** Researcher
-**Email:** arithgeo@iwr.uni-heidelberg.de
+  <div class="software-package">
+    <h3>QaQuotGraphs</h3>
+    <p><strong>Author:</strong> Dr. Ralf Butenuth</p>
+    <p><strong>Description:</strong> Magma package to compute the action by unit groups of maximal orders in quaternion algebras over F_q(T)</p>
+    <p><strong>Category:</strong> Quaternion Algebras</p>
+  </div>
 
-### Dr. Peter Gräf
-**Role:** Former PhD Student (2015-2020)
-**Email:** arithgeo@iwr.uni-heidelberg.de
+  <div class="software-package">
+    <h3>Bruhat-Tits Buildings Package</h3>
+    <p><strong>Author:</strong> Lutz Hofmann (Former Master's student)</p>
+    <p><strong>Description:</strong> Magma package to compute quotients of Bruhat-Tits buildings over function fields modulo congruence subgroups and the action of Hecke operators on harmonic cocycles with coefficients in char. 0</p>
+    <p><strong>Category:</strong> Bruhat-Tits Buildings</p>
+  </div>
 
-## Software Development
+  <div class="software-package">
+    <h3>Hecke Eigensystems Package</h3>
+    <p><strong>Author:</strong> Burak Cakir (Master's student)</p>
+    <p><strong>Description:</strong> Magma package to compute Hecke eigensystems for harmonic cocycles on the Bruhat-Tits tree for GL_2(F_q(T))</p>
+    <p><strong>Category:</strong> Hecke Operators</p>
+  </div>
+</div>
 
-Our group has developed several software packages:
+<div class="about-card">
+  <h2>Contact Information</h2>
+  <ul>
+    <li><strong>Email:</strong> arithgeo@iwr.uni-heidelberg.de</li>
+    <li><strong>Institution:</strong> Ruprecht-Karls-Universität Heidelberg</li>
+    <li><strong>Department:</strong> Interdisciplinary Center for Scientific Computing (IWR)</li>
+    <li><strong>Group:</strong> AG Computational Arithmetic Geometry</li>
+  </ul>
+</div>
 
-### QaQuotGraphs
-- **Author:** Dr. Ralf Butenuth
-- **Description:** Magma package to compute the action by unit groups of maximal orders in quaternion algebras over F_q(T)
-- **Category:** Quaternion Algebras
-
-### Bruhat-Tits Buildings Package
-- **Author:** Lutz Hofmann (Former Master's student)
-- **Description:** Magma package to compute quotients of Bruhat-Tits buildings over function fields modulo congruence subgroups and the action of Hecke operators on harmonic cocycles with coefficients in char. 0
-- **Category:** Bruhat-Tits Buildings
-
-### Hecke Eigensystems Package
-- **Author:** Burak Cakir (Master's student)
-- **Description:** Magma package to compute Hecke eigensystems for harmonic cocycles on the Bruhat-Tits tree for GL_2(F_q(T))
-- **Category:** Hecke Operators
-
-## Contact Information
-
-- **Email:** arithgeo@iwr.uni-heidelberg.de
-- **Institution:** Ruprecht-Karls-Universität Heidelberg
-- **Department:** Interdisciplinary Center for Scientific Computing (IWR)
-- **Group:** AG Computational Arithmetic Geometry
-
-## Location
-
-Interdisciplinary Center for Scientific Computing (IWR)  
-Heidelberg University  
-Germany
+<div class="about-card">
+  <h2>Location</h2>
+  <p>Interdisciplinary Center for Scientific Computing (IWR)</p>
+  <p>Heidelberg University</p>
+  <p>Germany</p>
+</div>
 
 ---
 
@@ -114,5 +137,148 @@ body.dark-mode .profile .more-info {
   filter: none !important;
   opacity: 1 !important;
   visibility: visible !important;
+}
+
+/* Dark mode styling for the main article container */
+[data-theme="dark"] .page-article,
+body.dark-mode .page-article {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-dark) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Light mode styling for about cards */
+.about-card {
+  background: var(--bg-primary);
+  border: 3px solid red !important;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 0.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.about-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.about-card h2 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Dark mode styling for about cards - matching other pages */
+[data-theme="dark"] .about-card,
+body.dark-mode .about-card {
+  background: var(--bg-primary) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+[data-theme="dark"] .about-card:hover,
+body.dark-mode .about-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(248, 113, 113, 0.2) !important;
+  border-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .about-card h2,
+body.dark-mode .about-card h2 {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .about-card:hover,
+body.dark-mode .about-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 8px 24px rgba(248, 113, 113, 0.2) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Style section headers in cards consistently */
+[data-theme="dark"] .about-card h2,
+body.dark-mode .about-card h2 {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--primary) !important;
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 0 !important;
+  font-weight: 600 !important;
+}
+
+
+
+/* Style subsections within cards */
+[data-theme="dark"] .about-subsection,
+body.dark-mode .about-subsection {
+  background: var(--bg-secondary) !important;
+  padding: 1rem !important;
+  border-radius: 6px !important;
+  margin-bottom: 1rem !important;
+  border-left: 3px solid var(--border-color) !important;
+}
+
+[data-theme="dark"] .about-subsection h3,
+body.dark-mode .about-subsection h3 {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 4px !important;
+  border-left: 3px solid var(--primary) !important;
+  margin: -1rem -1rem 0.5rem -1rem !important;
+  font-weight: 600 !important;
+}
+
+/* Style member info sections */
+[data-theme="dark"] .member-info,
+body.dark-mode .member-info {
+  background: var(--bg-secondary) !important;
+  padding: 1rem !important;
+  border-radius: 6px !important;
+  margin-bottom: 1rem !important;
+  border-left: 3px solid var(--border-color) !important;
+}
+
+[data-theme="dark"] .member-info h3,
+body.dark-mode .member-info h3 {
+  color: var(--text-primary) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  font-weight: 600 !important;
+}
+
+/* Style software packages */
+[data-theme="dark"] .software-package,
+body.dark-mode .software-package {
+  background: var(--bg-secondary) !important;
+  padding: 1rem !important;
+  border-radius: 6px !important;
+  margin-bottom: 1rem !important;
+  border-left: 3px solid var(--border-color) !important;
+}
+
+[data-theme="dark"] .software-package h3,
+body.dark-mode .software-package h3 {
+  color: var(--text-primary) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  font-weight: 600 !important;
+}
+
+/* Ensure links and buttons have proper contrast */
+[data-theme="dark"] .page-article a,
+body.dark-mode .page-article a {
+  color: var(--link-color) !important;
+}
+
+[data-theme="dark"] .page-article strong,
+body.dark-mode .page-article strong {
+  color: var(--primary) !important;
+  font-weight: 600 !important;
 }
 </style>

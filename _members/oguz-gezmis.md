@@ -12,4 +12,4 @@ current_position: Former Member
 ---
 title: {{ page.name }}
 
-Oguz Gezmiş was a member of the AG Computational Arithmetic Geometry research group at the University of Heidelberg.
+Oguz Gezmiş was a member of the AG Computational Arithmetic Geometry research group at Heidelberg University.

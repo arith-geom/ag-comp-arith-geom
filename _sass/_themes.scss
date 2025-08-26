@@ -39,15 +39,17 @@
   --text-muted: var(--gray-600);        /* Medium gray - still readable */
   --text-inverse: var(--white);         /* White text for dark backgrounds */
   
-  --border-color: var(--gray-200);
-  --border-dark: var(--gray-300);
-  --border-light: var(--gray-100);
+  --border-color: var(--gray-400);
+  --border-dark: var(--gray-500);
+  --border-light: var(--gray-300);
   
   --link-color: var(--heidelberg-red);
   --link-hover: var(--heidelberg-red-dark);
   
   --primary: var(--heidelberg-red);
   --primary-hover: var(--heidelberg-red-dark);
+  --primary-dark: var(--heidelberg-red-darker);
+  --primary-darker: var(--heidelberg-red-darkest);
   --primary-text: var(--white);
   
   /* Shadows */
@@ -87,7 +89,9 @@ html[data-theme="dark"] {
   
   --primary: #DC2626;                   /* Bright red for dark mode */
   --primary-hover: #B91C1C;
-  --primary-text: var(--black);         /* Black text on bright red */
+  --primary-dark: #7F1D1D;
+  --primary-darker: #450A0A;
+  --primary-text: var(--white);         /* White text on bright red */
   
   /* Dark mode shadows - use white for visibility */
   --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.1);
@@ -121,7 +125,7 @@ body {
 
 /* Typography - FORCED CONTRAST */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text-primary) !important;
+  color: #DC2626 !important; /* Bright red for all headers */
   font-weight: 600;
   margin: 0.5em 0;
 }
@@ -238,17 +242,7 @@ textarea:focus {
   outline: none;
 }
 
-/* Dark mode form adjustments */
-[data-theme="dark"] .form-control:focus,
-[data-theme="dark"] .form-select:focus,
-[data-theme="dark"] input:focus,
-[data-theme="dark"] textarea:focus,
-body.dark-mode .form-control:focus,
-body.dark-mode .form-select:focus,
-body.dark-mode input:focus,
-body.dark-mode textarea:focus {
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2) !important;
-}
+
 
 /* TABLES - HIGH CONTRAST */
 table {
