@@ -66,11 +66,35 @@ description: Teaching overview with filters and recent courses
             {% assign type_lower = course.course_type | downcase %}
             <li class="course-item" data-type="{{ type_lower }}" data-year="{{ course.semester_year }}" data-period="recent" {% if course.external_url %}data-course-url="{{ course.external_url }}" data-external="true"{% endif %}>
               <div class="course-item-header">
-                <span class="course-badge {{ type_lower }}">
-                  {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Lecture{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Advanced Seminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
-                </span>
-                <span class="course-title">{{ course.title }}</span>
-                {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
+                <div class="course-info-section">
+                  <span class="course-badge {{ type_lower }}">
+                    {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Lecture{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Advanced Seminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
+                  </span>
+                  <span class="course-title">{{ course.title }}</span>
+                  {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
+                </div>
+                {% assign has_links = course.links.size %}
+                {% assign has_pdfs = course.pdfs.size %}
+                {% if has_links or has_pdfs %}
+                <div class="course-resources-preview">
+                  {% for link in course.links %}
+                    {% if link.url %}
+                    <a href="{{ link.url }}" target="_blank" rel="noopener" class="resource-link" title="{{ link.label | default: link.url }}">
+                      <i class="fas fa-external-link-alt"></i>
+                      <span class="resource-text">{{ link.label | default: 'Link' }}</span>
+                    </a>
+                    {% endif %}
+                  {% endfor %}
+                  {% for pdf in course.pdfs %}
+                    {% if pdf.file %}
+                    <a href="{{ pdf.file | relative_url }}" target="_blank" rel="noopener" class="resource-link" title="{{ pdf.label | default: 'PDF' }}">
+                      <i class="fas fa-file-pdf"></i>
+                      <span class="resource-text">{{ pdf.label | default: 'PDF' }}</span>
+                    </a>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                {% endif %}
                 <button class="course-expand-btn" aria-expanded="false" title="Show details">
                   <i class="fas fa-chevron-down"></i>
                 </button>
@@ -83,42 +107,8 @@ description: Teaching overview with filters and recent courses
                     {% if course.language %}<span class="meta-item"><i class="fas fa-language"></i> {{ course.language }}</span>{% endif %}
                     {% if course.level %}<span class="meta-item"><i class="fas fa-signal"></i> {{ course.level }}</span>{% endif %}
                   </div>
-                  {% if course.description %}
-                  <div class="course-description">{{ course.description }}</div>
-                  {% endif %}
                   {% if course.content %}
                   <div class="course-full-content">{{ course.content }}</div>
-                  {% endif %}
-                  {% assign has_links = course.links.size %}
-                  {% assign has_pdfs  = course.pdfs.size %}
-                  {% if has_links or has_pdfs %}
-                  <div class="course-links">
-                    <div class="links-title"><i class="fas fa-paperclip"></i> Resources</div>
-                    <ul>
-                      {% if has_links %}
-                        {% for link in course.links %}
-                          {% if link.url %}
-                          <li>
-                            <a href="{{ link.url }}" target="_blank" rel="noopener">
-                              {% if link.label %}{{ link.label }}{% else %}{{ link.url }}{% endif %}
-                            </a>
-                          </li>
-                          {% endif %}
-                        {% endfor %}
-                      {% endif %}
-                      {% if has_pdfs %}
-                        {% for pdf in course.pdfs %}
-                          {% if pdf.file %}
-                          <li>
-                            <a href="{{ pdf.file | relative_url }}" target="_blank" rel="noopener">
-                              {% if pdf.label %}{{ pdf.label }}{% else %}PDF{% endif %}
-                            </a>
-                          </li>
-                          {% endif %}
-                        {% endfor %}
-                      {% endif %}
-                    </ul>
-                  </div>
                   {% endif %}
                 </div>
               </div>
