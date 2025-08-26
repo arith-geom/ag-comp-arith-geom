@@ -45,11 +45,11 @@ classes: full-width-members
         </div>
         <div class="member-info">
           <div class="member-text-content">
-            <h4 class="member-name-link" data-member-key="{{ group_leader_key }}">{{ group_leader.name }}</h4>
-            <p class="member-role">{{ group_leader.role }}</p>
-            {% if group_leader.research_interests %}
-              <p class="member-description">{{ group_leader.research_interests }}</p>
-            {% endif %}
+          <h4 class="member-name-link" data-member-key="{{ group_leader_key }}">{{ group_leader.name }}</h4>
+          <p class="member-role">{{ group_leader.role }}</p>
+          {% if group_leader.research_interests %}
+            <p class="member-description">{{ group_leader.research_interests }}</p>
+          {% endif %}
           </div>
           <div class="member-links">
             <button class="btn btn-outline-primary btn-sm member-profile-btn" data-member-key="{{ group_leader_key }}">
@@ -257,11 +257,11 @@ classes: full-width-members
             </div>
             <div class="member-info">
               <div class="member-text-content">
-                <h4 class="member-name-link" data-member-key="{{ member_key }}">{{ member.name }}</h4>
-                <p class="member-role">{{ member.role }}</p>
-                {% if member.research_interests %}
-                  <p class="member-description">{{ member.research_interests }}</p>
-                {% endif %}
+              <h4 class="member-name-link" data-member-key="{{ member_key }}">{{ member.name }}</h4>
+              <p class="member-role">{{ member.role }}</p>
+              {% if member.research_interests %}
+                <p class="member-description">{{ member.research_interests }}</p>
+              {% endif %}
               </div>
               <div class="member-links">
                 <button class="btn btn-outline-primary btn-sm member-profile-btn" data-member-key="{{ member_key }}">
@@ -471,11 +471,11 @@ classes: full-width-members
             </div>
             <div class="member-info">
               <div class="member-text-content">
-                <h4 class="member-name-link" data-member-key="{{ member_key }}">{{ member.name }}</h4>
-                <p class="member-role">{{ member.role }}</p>
-                {% if member.research_interests %}
-                  <p class="member-description">{{ member.research_interests }}</p>
-                {% endif %}
+              <h4 class="member-name-link" data-member-key="{{ member_key }}">{{ member.name }}</h4>
+              <p class="member-role">{{ member.role }}</p>
+              {% if member.research_interests %}
+                <p class="member-description">{{ member.research_interests }}</p>
+              {% endif %}
               </div>
               <div class="member-links">
                 <button class="btn btn-outline-primary btn-sm member-profile-btn" data-member-key="{{ member_key }}">
@@ -811,36 +811,42 @@ classes: full-width-members
   gap: 3rem;
 }
 
-/* Expanded team sections for centered detail display */
+/* Force ALL expanded elements to cover full container width */
 .team-sections.expanded {
-  max-width: 100% !important;
   width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Additional rules to ensure proper expansion */
-.members-content-section:has(.member-card.expanded) {
-  width: 100% !important;
-  max-width: 100% !important;
+  max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
+.members-content-section:has(.member-card.expanded),
+.members-content-section.active:has(.member-card.expanded) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
-
-
-
-/* Debug styles to verify expansion is working */
 .member-card.expanded {
-  border: 3px solid red !important;
-  background: rgba(255, 0, 0, 0.1) !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 1rem !important;
 }
 
-.team-sections.expanded {
-  border: 2px solid blue !important;
-  background: rgba(0, 0, 255, 0.05) !important;
+.members-grid:has(.member-card.expanded) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
 }
+
+
+
+
+
+
 
 .team-section {
   background: transparent;
@@ -1019,9 +1025,8 @@ body.full-width-members .page-container,
 }
 
 .team-sections {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100%;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -1045,22 +1050,41 @@ body.full-width-members .page-container,
 }
 
 .member-card {
-  background: var(--bg-primary);
+  background: linear-gradient(145deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 0.3rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
-  gap: 0.3rem;
+  gap: 1rem;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   box-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.08),
-    0 1px 2px rgba(0, 0, 0, 0.06);
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   width: 100%;
-  min-height: 45px;
+  min-height: 80px;
+  cursor: pointer;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.member-card:nth-child(1) { animation-delay: 0.1s; }
+.member-card:nth-child(2) { animation-delay: 0.2s; }
+.member-card:nth-child(3) { animation-delay: 0.3s; }
+.member-card:nth-child(4) { animation-delay: 0.4s; }
+.member-card:nth-child(5) { animation-delay: 0.5s; }
+.member-card:nth-child(6) { animation-delay: 0.6s; }
 
 .member-card::before {
   content: '';
@@ -1075,12 +1099,24 @@ body.full-width-members .page-container,
 }
 
 .member-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-16px) scale(1.05);
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.15),
-    0 8px 20px rgba(0, 0, 0, 0.1);
+    0 30px 100px rgba(0, 0, 0, 0.2),
+    0 20px 50px rgba(0, 0, 0, 0.15),
+    0 0 80px rgba(26, 54, 93, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   border-color: var(--primary);
-  background: var(--bg-secondary);
+  background: linear-gradient(145deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.member-card:hover .member-role {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(26, 54, 93, 0.25);
+}
+
+.member-card:hover .member-info h4 {
+  color: var(--primary);
+  transform: translateY(-1px);
 }
 
 .member-card:hover::before {
@@ -1101,6 +1137,11 @@ body.full-width-members .page-container,
   position: relative;
   overflow: hidden;
   width: 100%;
+  padding: 0.2rem;
+  gap: 0.2rem;
+  align-items: flex-start;
+  min-height: 25px;
+  font-size: 0.85rem;
 }
 
 .member-card.former::before {
@@ -1140,6 +1181,32 @@ body.full-width-members .page-container,
   flex-direction: column;
 }
 
+.member-card.former .member-info h4 {
+  font-size: 0.9rem;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.member-card.former .member-info p {
+  font-size: 0.75rem;
+  margin: 0;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.member-card.former .member-avatar {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.member-card.former .member-avatar .member-photo {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+}
+
 /* Unified expanded member card styles */
 .member-card.expanded {
   width: 100% !important;
@@ -1169,12 +1236,30 @@ body.dark-mode .member-card.expanded {
 
 /* Transform the member detail content into a unified card */
 .member-card.expanded .member-detail-content {
-  border-radius: var(--radius-lg) !important;
+  border-radius: 0 !important;
   margin: 0 !important;
   width: 100% !important;
-  max-width: 1200px !important;
-  min-width: auto !important;
-  margin: 0 auto !important;
+  max-width: none !important;
+  min-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  background: linear-gradient(145deg, var(--bg-primary) 0%, var(--bg-secondary) 100%) !important;
+  backdrop-filter: blur(30px) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.15),
+    0 15px 35px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  animation: slideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .member-avatar {
@@ -1186,48 +1271,59 @@ body.dark-mode .member-card.expanded {
 }
 
 .member-photo {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary);
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    0 4px 16px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   z-index: 2;
-  background-color: var(--bg-secondary);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
 }
 
 .member-card:hover .member-photo {
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(5deg);
   border-color: var(--heidelberg-red);
   box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.12),
-    0 4px 10px rgba(0, 0, 0, 0.08);
+    0 12px 32px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.12),
+    0 0 40px rgba(26, 54, 93, 0.15);
 }
 
 .member-photo-placeholder {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary), var(--heidelberg-red));
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary-text);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0, 0.2, 1);
+    0 4px 16px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   z-index: 2;
   overflow: hidden;
+}
+
+.member-card:hover .member-photo-placeholder {
+  transform: scale(1.15) rotate(-5deg);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.12),
+    0 0 40px rgba(26, 54, 93, 0.15);
 }
 
 .member-photo-placeholder i {
@@ -1253,8 +1349,8 @@ body.dark-mode .member-card.expanded {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 0.3rem;
-  padding: 0.15rem 0;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
 }
 
 .member-text-content {
@@ -1262,54 +1358,59 @@ body.dark-mode .member-card.expanded {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.4rem;
+  align-self: stretch;
 }
 
 .member-info h4 {
   margin: 0;
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
   position: relative;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 0.05rem 0;
+  padding: 0.1rem 0;
+  transition: all 0.3s ease;
 }
 
 .member-role {
-  color: var(--primary);
-  font-weight: 700;
+  color: var(--primary-text);
+  font-weight: 600;
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   position: relative;
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100%;
-  padding: 0.1rem 0.2rem;
-  background: rgba(26, 54, 93, 0.08);
-  border-radius: 3px;
+  padding: 0.3rem 0.6rem;
+  background: linear-gradient(135deg, var(--primary), var(--heidelberg-red));
+  border-radius: 20px;
   align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(26, 54, 93, 0.15);
+  transition: all 0.3s ease;
 }
 
 .member-description {
   color: var(--text-secondary);
-  font-size: 0.7rem;
-  line-height: 1.3;
+  font-size: 0.85rem;
+  line-height: 1.4;
   margin: 0;
   font-weight: 400;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex: 1;
-  padding: 0.1rem 0;
+  padding: 0.2rem 0;
+  opacity: 0.9;
 }
 
 .member-info h4 a {
@@ -1397,31 +1498,70 @@ body.dark-mode .member-card.expanded {
 
 .member-links {
   display: flex;
-  gap: 0.2rem;
+  gap: 0.4rem;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
   align-self: flex-start;
   flex-shrink: 0;
+  flex-direction: column;
 }
 
 .member-links .btn {
-  font-size: 0.7rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 8px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 25px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.4rem;
   font-weight: 600;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .member-links .btn i {
   font-size: 0.75rem;
+}
+
+.member-links .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 54, 93, 0.2);
+  background: linear-gradient(135deg, var(--primary), var(--heidelberg-red));
+  color: var(--primary-text);
+  border-color: var(--primary);
+}
+
+/* Global back button styling */
+#global-back-btn {
+  text-align: center;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: none;
+}
+
+.global-back-button {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(26, 54, 93, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(15px);
+}
+
+.global-back-button:hover {
+  background: linear-gradient(135deg, var(--primary), var(--heidelberg-red));
+  color: var(--primary-text);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(26, 54, 93, 0.25);
 }
 
 .btn-outline-primary {
@@ -1466,6 +1606,30 @@ body.dark-mode .member-card.expanded {
     gap: 1.5rem;
   }
 
+  /* Force full width on mobile for ALL expanded elements */
+  .team-sections.expanded,
+  .members-content-section:has(.member-card.expanded),
+  .members-content-section.active:has(.member-card.expanded),
+  .member-card.expanded,
+  .members-grid:has(.member-card.expanded),
+  .member-card.expanded .member-detail-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  .member-detail-body {
+    padding: 2rem 1rem !important;
+  }
+
+  .member-detail-section {
+    padding: 1.5rem !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
   .members-grid {
     gap: 0.5rem;
   }
@@ -1473,10 +1637,10 @@ body.dark-mode .member-card.expanded {
   .member-card {
     flex-direction: row;
     text-align: left;
-    padding: 0.25rem;
-    gap: 0.25rem;
+    padding: 0.8rem;
+    gap: 0.8rem;
     align-items: flex-start;
-    min-height: 38px;
+    min-height: 70px;
   }
 
   .member-avatar {
@@ -1486,8 +1650,8 @@ body.dark-mode .member-card.expanded {
 
   .member-photo,
   .member-photo-placeholder {
-    width: 28px;
-    height: 28px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
   }
 
@@ -1542,8 +1706,8 @@ body.dark-mode .member-card.expanded {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 0.25rem;
-    padding: 0.1rem 0;
+    gap: 0.6rem;
+    padding: 0.2rem 0;
   }
 
   .member-text-content {
@@ -1551,22 +1715,25 @@ body.dark-mode .member-card.expanded {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
+    gap: 0.3rem;
+    align-self: stretch;
   }
 
   .member-links {
     justify-content: flex-start;
-    gap: 0.15rem;
+    gap: 0.3rem;
     margin: 0;
     padding: 0;
     align-self: flex-start;
     flex-shrink: 0;
+    flex-direction: column;
   }
 
   .member-links .btn {
-    font-size: 0.65rem;
-    padding: 0.2rem 0.4rem;
-    gap: 0.2rem;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+    gap: 0.35rem;
+    border-radius: 20px;
   }
 
   .member-links .btn i {
@@ -1576,15 +1743,35 @@ body.dark-mode .member-card.expanded {
   .member-card.former {
     flex-direction: row;
     text-align: left;
-    padding: 0.4rem;
-    gap: 0.4rem;
+    padding: 0.2rem;
+    gap: 0.2rem;
     align-items: flex-start;
-    min-height: 50px;
+    min-height: 25px;
+    font-size: 0.85rem;
+  }
+
+  .member-card.former .member-info h4 {
+    font-size: 0.9rem;
+    margin: 0 0 0.1rem 0;
+  }
+
+  .member-card.former .member-info p {
+    font-size: 0.75rem;
+    margin: 0 0 0.05rem 0;
+    line-height: 1.2;
   }
 
   .member-card.former .member-avatar {
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
     align-self: flex-start;
+  }
+
+  .member-card.former .member-avatar .member-photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
   }
 
   .member-card.former .member-info {
@@ -1626,7 +1813,7 @@ body.dark-mode .member-card.expanded {
 /* Member Detail Content Styles */
 .member-detail-content {
   width: 100% !important;
-  max-width: min(1200px, 95vw) !important;
+  max-width: none !important;
   min-width: min(400px, 90vw) !important;
   margin: 2rem auto !important;
   padding: 0;
@@ -1651,8 +1838,8 @@ body.dark-mode .member-detail-content {
 /* Specific styles for expanded member cards */
 .member-card.expanded .member-detail-content {
   width: 100% !important;
-  max-width: min(1200px, 95vw) !important;
-  min-width: min(400px, 90vw) !important;
+  max-width: none !important;
+  min-width: min(400px, 100%) !important;
   margin: 0 !important;
   background: var(--bg-primary) !important;
   border: 3px solid var(--primary) !important;
@@ -1691,7 +1878,7 @@ body.dark-mode .member-detail-content::before {
 .member-detail-content[style*="display: block"] {
   display: block !important;
   width: 100% !important;
-  max-width: min(1200px, 95vw) !important;
+  max-width: none !important;
   min-width: min(400px, 90vw) !important;
   box-sizing: border-box !important;
 }
@@ -1767,7 +1954,7 @@ body.dark-mode .member-detail-content::before {
 .member-card.expanded .member-detail-body,
 .member-card.expanded .member-detail-section {
   width: 100% !important;
-  max-width: min(1200px, 95vw) !important;
+  max-width: none !important;
   min-width: min(400px, 90vw) !important;
   box-sizing: border-box !important;
   color: var(--text-primary) !important;
@@ -1835,13 +2022,8 @@ body.dark-mode .member-card.expanded .member-detail-section {
   display: none !important;
 }
 
-/* Debug styles removed - expansion is working correctly */
-
 .member-detail-content.show {
   display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  min-width: 100% !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
@@ -1891,164 +2073,90 @@ body.dark-mode .member-card.expanded .member-detail-section {
 .member-detail-header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
   color: var(--primary-text);
-  padding: 2rem 3rem !important;
+  padding: 2rem 3rem;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 2rem;
   position: relative;
   z-index: 4;
   width: 100%;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
   flex-wrap: wrap;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 /* Member info section within expanded header */
-.member-card.expanded .member-detail-header {
-  flex-direction: row;
-  text-align: left;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 3rem !important;
-  gap: 1.5rem;
-  position: relative;
-  z-index: 5;
-  flex-wrap: wrap;
-}
-
-/* Member avatar styling in expanded header */
-.member-card.expanded .member-detail-header .member-avatar {
+.member-detail-header .member-avatar {
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  height: auto;
 }
 
-.member-card.expanded .member-detail-header .member-avatar .member-photo {
-  width: 80px !important;
-  height: 80px !important;
-  border: 3px solid var(--primary-text) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Member info styling in expanded header */
-.member-card.expanded .member-detail-header .member-info {
+.member-detail-header .member-info {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
   min-width: 0;
-  max-width: calc(100% - 200px);
 }
 
-/* Back button styling in expanded header */
-.member-card.expanded .member-detail-header .member-detail-back-btn {
+.member-detail-header .member-detail-back-btn {
   flex-shrink: 0;
-  white-space: nowrap;
   margin-left: auto;
 }
 
 /* Member info text styling in expanded header */
-.member-card.expanded .member-detail-header .member-info h4 {
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 0.5rem !important;
-  color: var(--primary-text) !important;
+.member-detail-header h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-text);
 }
 
-.member-card.expanded .member-detail-header .member-info .member-role {
-  font-size: 1.1rem !important;
-  font-weight: 500 !important;
-  margin-bottom: 0.75rem !important;
-  color: var(--primary-text) !important;
-  opacity: 0.95 !important;
+.member-detail-header .member-role {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: var(--primary-text);
+  opacity: 0.95;
 }
 
-.member-card.expanded .member-detail-header .member-info .member-description {
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-  margin-bottom: 1rem !important;
-  color: var(--primary-text) !important;
-  opacity: 0.9 !important;
+.member-detail-header .member-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: var(--primary-text);
+  opacity: 0.9;
 }
 
 /* Member links styling in expanded header */
-.member-card.expanded .member-detail-header .member-info .member-links {
+.member-detail-header .member-links {
   display: flex;
   gap: 0.4rem;
   flex-wrap: wrap;
 }
 
-.member-card.expanded .member-detail-header .member-info .member-links .btn {
-  font-size: 0.85rem !important;
-  padding: 0.4rem 0.8rem !important;
+.member-detail-header .member-links .btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
 }
 
-.member-card.expanded .member-detail-header .member-photo {
+.member-detail-header .member-photo {
   width: 90px;
   height: 90px;
   border: 3px solid var(--primary-text);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  display: block !important;
-  visibility: visible !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  background-color: var(--bg-secondary) !important;
 }
 
-.member-card.expanded .member-detail-header .member-photo-placeholder {
-  width: 70px !important;
-  height: 70px !important;
-  font-size: 2rem !important;
+.member-detail-header .member-photo-placeholder {
+  width: 70px;
+  height: 70px;
+  font-size: 2rem;
 }
 
-.member-card.expanded .member-detail-header .member-photo-placeholder i {
-  font-size: 2rem !important;
-  line-height: 1 !important;
-}
-
-.member-card.expanded .member-detail-header .member-info {
-  flex: 1;
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  visibility: visible !important;
-}
-
-.member-card.expanded .member-detail-header .member-name-link {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-  color: var(--primary-text) !important;
-  text-decoration: none;
-  line-height: 1.1;
-  display: block !important;
-  visibility: visible !important;
-}
-
-.member-card.expanded .member-detail-header .member-role {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--primary-text) !important;
-  opacity: 0.95;
-  margin-bottom: 0.5rem;
-  display: block !important;
-  visibility: visible !important;
-}
-
-.member-card.expanded .member-detail-header .member-description {
-  font-size: 1.1rem;
-  color: var(--primary-text) !important;
-  opacity: 0.9;
-  line-height: 1.5;
-  margin-bottom: 0;
-  display: block !important;
-  visibility: visible !important;
+.member-detail-header .member-photo-placeholder i {
+  font-size: 2rem;
+  line-height: 1;
 }
 
 /* Center member name and role in header for non-expanded view */
@@ -2077,32 +2185,24 @@ body.dark-mode .member-card.expanded .member-detail-section {
 
 .member-detail-body {
   padding: 3rem 4rem;
-  max-width: 100% !important;
-  width: 100% !important;
-  min-width: 100% !important;
-  box-sizing: border-box !important;
-  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 2rem;
+  text-align: left;
 }
 
 .member-detail-section {
-  margin-bottom: 2.5rem;
   background: var(--bg-primary);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  border-radius: 16px;
   padding: 2rem;
-  width: 100% !important;
-  max-width: min(1200px, 95vw) !important;
-  min-width: min(400px, 90vw) !important;
-  box-sizing: border-box !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: var(--transition-base);
-  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
   position: relative;
   z-index: 3;
+  width: 100%;
+  max-width: none;
 }
 
 /* Dark mode styles for member detail sections - IMPROVED READABILITY */
@@ -2424,9 +2524,9 @@ body.dark-mode .member-card.former:hover::before {
 }
 
 .member-detail-section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  border-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary);
 }
 
 .member-detail-section:last-child {
@@ -2443,18 +2543,6 @@ body.dark-mode .member-card.former:hover::before {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  position: relative;
-}
-
-.member-detail-section h3::before {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--primary-hover));
-  border-radius: 2px;
 }
 
 .member-detail-section h3 i {
@@ -3013,9 +3101,9 @@ body.dark-mode .member-card.expanded .member-detail-publications .publication-me
 /* Responsive design for member detail */
 @media (max-width: 768px) {
   .member-detail-content {
-    width: min(100%, calc(100vw - 2rem)) !important;
-    max-width: min(100%, calc(100vw - 2rem)) !important;
-    min-width: min(300px, calc(100vw - 2rem)) !important;
+    width: min(100%, calc(100% - 2rem)) !important;
+    max-width: min(100%, calc(100% - 2rem)) !important;
+    min-width: min(300px, calc(100% - 2rem)) !important;
     margin: 1rem auto !important;
     border-radius: var(--radius-md);
   }
@@ -3051,9 +3139,9 @@ body.dark-mode .member-card.expanded .member-detail-publications .publication-me
 
 @media (max-width: 480px) {
   .member-detail-content {
-    width: min(100%, calc(100vw - 1rem)) !important;
-    max-width: min(100%, calc(100vw - 1rem)) !important;
-    min-width: min(280px, calc(100vw - 1rem)) !important;
+    width: min(100%, calc(100% - 1rem)) !important;
+    max-width: min(100%, calc(100% - 1rem)) !important;
+    min-width: min(280px, calc(100% - 1rem)) !important;
     margin: 0.5rem auto !important;
     border-radius: var(--radius-sm);
   }
@@ -3099,15 +3187,15 @@ function showSection(sectionName) {
   document.querySelectorAll('.members-content-section').forEach(section => {
     section.classList.remove('active');
   });
-  
+
   // Remove active class from all buttons
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.classList.remove('active');
   });
-  
+
   // Show selected section
   document.getElementById(sectionName + '-section').classList.add('active');
-  
+
   // Update button active states without relying on global event
   const btnCurrent = document.getElementById('btn-current');
   const btnAlumni = document.getElementById('btn-alumni');
@@ -3168,7 +3256,7 @@ class MembersManager {
       const backBtn = e.target.closest('.member-detail-back-btn');
       if (backBtn) {
         e.preventDefault();
-        this.hideAllDetails();
+        this.showAllMembersFromBothSections();
       }
     });
   }
@@ -3189,104 +3277,60 @@ class MembersManager {
   }
 
   applyFilters() {
-
-    // Hide all detail views first
+    // Reset all members
     this.members.forEach(member => {
       const detailContent = member.element.querySelector('.member-detail-content');
       if (detailContent) {
         detailContent.style.display = 'none';
         detailContent.classList.remove('show');
       }
-      // Remove expanded class from all member cards
       member.element.classList.remove('expanded');
     });
 
-    // Remove expanded class from team sections
     const teamSections = document.querySelector('.team-sections');
     if (teamSections) {
       teamSections.classList.remove('expanded');
     }
 
-            // Show detail view for filtered member
         if (this.filters.memberKey) {
           const targetMember = this.members.find(m => m.key === this.filters.memberKey);
           if (targetMember) {
-            // First, make sure the target member card is visible and properly positioned
-            targetMember.element.style.display = 'block';
-            targetMember.element.style.visibility = 'visible';
-            targetMember.element.style.zIndex = '100';
+        // Show target member and hide others
+        this.members.forEach(member => {
+          if (member.key === this.filters.memberKey) {
+            member.element.style.display = 'block';
+            member.element.classList.add('expanded');
 
-            const detailContent = targetMember.element.querySelector('.member-detail-content');
+            const detailContent = member.element.querySelector('.member-detail-content');
             if (detailContent) {
-              // Use both style and class for maximum compatibility
               detailContent.style.display = 'block';
-              detailContent.style.visibility = 'visible';
               detailContent.classList.add('show');
+            }
+          } else {
+            member.element.style.display = 'none';
+          }
+        });
 
-              // Add expanded class to the member card for full width styling
-              targetMember.element.classList.add('expanded');
-
-              // Add expanded class to team sections for full width container
               const teamSections = document.querySelector('.team-sections');
               if (teamSections) {
                 teamSections.classList.add('expanded');
               }
 
-              // Move member info to the expanded header for unified experience
-              this.integrateMemberInfo(targetMember.element, detailContent);
-
-              // Hide the "View Profile" button in the expanded card
-              const viewProfileBtn = targetMember.element.querySelector('.member-profile-btn');
-              if (viewProfileBtn) {
-                viewProfileBtn.style.display = 'none';
-              }
-
-              // Hide other member cards
-              this.members.forEach(member => {
-                if (member.key !== this.filters.memberKey) {
-                  member.element.style.display = 'none';
-                  // Also hide any detail content that might be showing
-                  const otherDetail = member.element.querySelector('.member-detail-content');
-                  if (otherDetail) {
-                    otherDetail.style.display = 'none';
-                    otherDetail.classList.remove('show');
-                  }
-                }
-              });
-
-              // Hide navigation buttons and section headers
               this.hideNavigationElements();
-
-              // Show global "Show All Members" button
               this.showGlobalBackButton();
-
-              // Scroll to the member detail
               targetMember.element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
           }
         } else {
       // Show all members
       this.members.forEach(member => {
         member.element.style.display = 'block';
-        member.element.style.visibility = 'visible';
-        member.element.style.zIndex = 'auto';
+        member.element.classList.remove('expanded');
 
-        // Hide any detail content that might be showing
         const detailContent = member.element.querySelector('.member-detail-content');
         if (detailContent) {
           detailContent.style.display = 'none';
           detailContent.classList.remove('show');
         }
-
-        // Remove expanded class and show the "View Profile" button again
-        member.element.classList.remove('expanded');
-        const viewProfileBtn = member.element.querySelector('.member-profile-btn');
-        if (viewProfileBtn) {
-          viewProfileBtn.style.display = 'inline-flex';
-        }
-
-        // Restore member info visibility
-        this.restoreMemberInfo(member.element);
       });
 
       // Remove expanded class from team sections
@@ -3320,17 +3364,60 @@ class MembersManager {
     this.applyFilters();
   }
 
-  restoreMemberInfo(memberCard) {
-    // Restore member info visibility when collapsing expanded view
-    const memberAvatar = memberCard.querySelector('.member-avatar');
-    const memberInfo = memberCard.querySelector('.member-info');
+  showAllMembersFromBothSections() {
+    // Clear any member filters
+    this.filters.memberKey = '';
 
-    if (memberAvatar) {
-      memberAvatar.style.display = 'flex';
+    // Update URL to remove hash
+    const url = new URL(window.location);
+    url.hash = '';
+    window.history.replaceState({}, '', url);
+
+    // Show both sections
+    document.querySelectorAll('.members-content-section').forEach(section => {
+      section.classList.add('active');
+    });
+
+    // Reset all member cards - show them all
+    this.members.forEach(member => {
+      member.element.style.display = 'block';
+      member.element.style.visibility = 'visible';
+      member.element.style.zIndex = 'auto';
+      member.element.classList.remove('expanded');
+
+      // Show the "View Profile" button again
+      const viewProfileBtn = member.element.querySelector('.member-profile-btn');
+      if (viewProfileBtn) {
+        viewProfileBtn.style.display = 'inline-flex';
+      }
+
+      // Hide any detail content
+      const detailContent = member.element.querySelector('.member-detail-content');
+      if (detailContent) {
+        detailContent.style.display = 'none';
+        detailContent.classList.remove('show');
+      }
+
+      // Restore member info visibility
+      this.restoreMemberInfo(member.element);
+    });
+
+    // Remove expanded class from team sections
+    const teamSections = document.querySelector('.team-sections');
+    if (teamSections) {
+      teamSections.classList.remove('expanded');
     }
-    if (memberInfo) {
-      memberInfo.style.display = 'flex';
-    }
+
+    // Show navigation elements
+    this.showNavigationElements();
+
+    // Hide global back button if it exists
+    this.hideGlobalBackButton();
+
+    // Remove active state from all navigation buttons (show neutral state)
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
   }
 
   hideAllDetails() {
@@ -3376,13 +3463,16 @@ class MembersManager {
     // Hide navigation buttons
     const navButtons = document.querySelector('.members-nav-simple');
     if (navButtons) {
-      navButtons.style.display = 'none';
+      navButtons.style.display = 'none !important';
+      navButtons.style.visibility = 'hidden !important';
+      navButtons.style.opacity = '0 !important';
     }
 
     // Hide section headers
     const sectionHeaders = document.querySelectorAll('.section-header');
     sectionHeaders.forEach(header => {
       header.style.display = 'none';
+      header.style.visibility = 'hidden';
     });
   }
 
@@ -3400,36 +3490,7 @@ class MembersManager {
     });
   }
 
-  integrateMemberInfo(memberCard, detailContent) {
-    // Create a unified experience by moving member info to the expanded header
-    const memberAvatar = memberCard.querySelector('.member-avatar');
-    const memberInfo = memberCard.querySelector('.member-info');
-    const detailHeader = detailContent.querySelector('.member-detail-header');
 
-    if (memberAvatar && memberInfo && detailHeader) {
-      // Clone and move member avatar and info to the detail header
-      const avatarClone = memberAvatar.cloneNode(true);
-      const infoClone = memberInfo.cloneNode(true);
-
-      // Clear the existing header content and add the member info
-      detailHeader.innerHTML = '';
-
-      // Add the cloned elements to the header
-      detailHeader.appendChild(avatarClone);
-      detailHeader.appendChild(infoClone);
-
-      // Add the back button to the header
-      const backButton = document.createElement('button');
-      backButton.type = 'button';
-      backButton.className = 'btn btn-outline-primary member-detail-back-btn';
-      backButton.innerHTML = '<i class="fas fa-arrow-left"></i> Back to all members';
-      detailHeader.appendChild(backButton);
-
-      // Hide the original member avatar and info in the card
-      memberAvatar.style.display = 'none';
-      memberInfo.style.display = 'none';
-    }
-  }
 
   showGlobalBackButton() {
     // Remove existing global back button if it exists
@@ -3446,62 +3507,15 @@ class MembersManager {
     const backButton = document.createElement('div');
     backButton.id = 'global-back-btn';
     backButton.innerHTML = `
-      <div class="global-back-container" style="
-        position: relative;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto 2rem auto;
-        background: var(--primary);
-        color: var(--primary-text);
-        padding: 1rem 2rem;
-        border-radius: var(--radius-lg);
-        cursor: pointer;
-        box-shadow: var(--shadow-md);
-        font-weight: 600;
-        transition: var(--transition-base);
-        border: 2px solid var(--primary-text);
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.4rem;
-      ">
-        <i class="fas fa-users"></i>
-        Show All Members
-      </div>
+      <button class="btn btn-outline-primary btn-lg global-back-button">
+        <i class="fas fa-users me-2"></i>Show All Members
+      </button>
     `;
 
     // Add click handler
-    backButton.querySelector('.global-back-container').addEventListener('click', () => {
+    backButton.querySelector('.global-back-button').addEventListener('click', () => {
       this.hideAllDetails();
-      // Also remove expanded class from team sections
-      const teamSections = document.querySelector('.team-sections');
-      if (teamSections) {
-        teamSections.classList.remove('expanded');
-      }
     });
-
-    // Add hover effect
-    backButton.querySelector('.global-back-container').addEventListener('mouseenter', function() {
-      this.style.background = 'var(--primary-hover)';
-      this.style.transform = 'translateY(-2px)';
-      this.style.boxShadow = 'var(--shadow-lg)';
-    });
-
-    backButton.querySelector('.global-back-container').addEventListener('mouseleave', function() {
-      this.style.background = 'var(--primary)';
-      this.style.transform = 'translateY(0)';
-      this.style.boxShadow = 'var(--shadow-md)';
-    });
-
-    // Apply dark mode styles if needed
-    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark' ||
-                      document.body.classList.contains('dark-mode');
-    if (isDarkMode) {
-      backButton.querySelector('.global-back-container').style.background = 'var(--primary)';
-      backButton.querySelector('.global-back-container').style.color = 'var(--primary-text)';
-      backButton.querySelector('.global-back-container').style.borderColor = 'var(--primary-text)';
-    }
 
     // Insert the button at the beginning of the team sections
     teamSections.insertBefore(backButton, teamSections.firstChild);
@@ -3518,9 +3532,8 @@ class MembersManager {
 // Initialize the members manager when the page loads
 document.addEventListener('DOMContentLoaded', () => {
   const membersManager = new MembersManager();
-  membersManager.init();
+      membersManager.init();
 
-  // Make manager globally accessible for debugging
   window.membersManager = membersManager;
 
   // Listen for hash changes to handle browser back/forward
@@ -3528,9 +3541,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.membersManager) {
       window.membersManager.checkMemberParam();
       window.membersManager.applyFilters();
-    }
+      }
+    });
   });
-});
 
 
 
