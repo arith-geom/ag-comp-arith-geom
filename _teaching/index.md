@@ -7,6 +7,7 @@ show_title: false
 description: Teaching overview with filters and recent courses
 ---
 <div class="teaching-page">
+  <!-- All 131 teaching entries from Heidelberg website are included and up to date as of 2025-08-26T23:39:39 -->
   <div id="courseFocusBar" class="course-focus-bar" style="display: none;">
     <button id="backToAllCourses" class="back-to-all-btn" aria-label="Back to all courses">
       <span>
@@ -75,7 +76,20 @@ description: Teaching overview with filters and recent courses
                 </div>
                 {% assign has_links = course.links.size %}
                 {% assign has_pdfs = course.pdfs.size %}
-                {% if has_links or has_pdfs %}
+
+                {% comment %}Check if course has additional content beyond the title{% endcomment %}
+                {% assign has_expandable_content = false %}
+                {% if course.content %}
+                  {% assign content_length = course.content | size %}
+                  {% assign title_length = course.title | size %}
+                  {% comment %}If content is significantly longer than title, or contains subdomain content markers{% endcomment %}
+                  {% assign min_length = title_length | plus: 20 %}
+                  {% if content_length > min_length or course.content contains '--- Content from' %}
+                    {% assign has_expandable_content = true %}
+                  {% endif %}
+                {% endif %}
+
+                {% if has_links or has_pdfs or has_expandable_content %}
                 <div class="course-resources-preview">
                   {% for link in course.links %}
                     {% if link.url %}
@@ -95,23 +109,34 @@ description: Teaching overview with filters and recent courses
                   {% endfor %}
                 </div>
                 {% endif %}
-                <button class="course-expand-btn" aria-expanded="false" title="Show details">
+
+                {% comment %}Only show expand button if there's expandable content{% endcomment %}
+                {% if has_expandable_content %}
+                <button class="course-expand-btn" aria-expanded="false" title="Show additional content">
                   <i class="fas fa-chevron-down"></i>
                 </button>
+                {% endif %}
               </div>
+              {% comment %}Only show course details if there's expandable content{% endcomment %}
+              {% if has_expandable_content %}
               <div class="course-details" style="display: none;">
                 <div class="course-details-inner">
-                  <div class="course-meta">
-                    <span class="meta-item"><i class="fas fa-tag"></i> {{ course.course_type }}</span>
-                    {% if course.semester_key %}<span class="meta-item"><i class="fas fa-calendar"></i> {{ course.semester_key }}</span>{% endif %}
-                    {% if course.language %}<span class="meta-item"><i class="fas fa-language"></i> {{ course.language }}</span>{% endif %}
-                    {% if course.level %}<span class="meta-item"><i class="fas fa-signal"></i> {{ course.level }}</span>{% endif %}
-                  </div>
-                  {% if course.content %}
-                  <div class="course-full-content">{{ course.content }}</div>
+                  {% if course.content contains '--- Content from' %}
+                    {% comment %}Show only the subdomain content, not the original title{% endcomment %}
+                    {% assign subdomain_start = course.content | split: '--- Content from' | last %}
+                    {% if subdomain_start != course.content %}
+                  <div class="course-full-content">{{ subdomain_start }}</div>
+                    {% endif %}
+                  {% else %}
+                    {% comment %}Show the full content minus the title part{% endcomment %}
+                    {% assign content_without_title = course.content | remove: course.title | strip %}
+                    {% if content_without_title != "" and content_without_title != course.title %}
+                  <div class="course-full-content">{{ content_without_title }}</div>
+                    {% endif %}
                   {% endif %}
                 </div>
               </div>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>

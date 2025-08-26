@@ -17,6 +17,8 @@ import time
 import html
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
+from urllib.error import URLError, HTTPError
+import urllib.request
 from html.parser import HTMLParser
 
 # Configuration
@@ -51,8 +53,6 @@ def download_file(url: str, filename: str) -> str:
 
     try:
         print(f"📥 Downloading: {url}")
-        # Use urllib instead of requests for better compatibility
-        import urllib.request
         filepath = DOWNLOAD_DIR / filename
         urllib.request.urlretrieve(url, filepath)
         print(f"✅ Downloaded: {filename}")
@@ -60,6 +60,66 @@ def download_file(url: str, filename: str) -> str:
     except Exception as e:
         print(f"❌ Error downloading {url}: {e}")
         return ""
+
+def scrape_subdomain_content(url: str) -> str:
+    """Scrape content from Heidelberg University subdomains for expansion."""
+    if not url or not url.startswith(('http://', 'https://')):
+        return ""
+
+    # Only scrape from Heidelberg University domains
+    parsed_url = urlparse(url)
+    if not ('heidelberg.de' in parsed_url.netloc or 'uni-heidelberg.de' in parsed_url.netloc):
+        return ""
+
+    try:
+        print(f"🌐 Scraping subdomain content from: {url}")
+        req = urllib.request.Request(url, headers={
+            'User-Agent': 'Mozilla/5.0 (compatible; Teaching Scraper)'
+        })
+
+        with urllib.request.urlopen(req, timeout=10) as response:
+            html_content = response.read().decode('utf-8', errors='ignore')
+
+        # Extract main content - look for common content containers
+        content_patterns = [
+            r'<div[^>]*id="content"[^>]*>(.*?)</div>',
+            r'<div[^>]*class="content"[^>]*>(.*?)</div>',
+            r'<main[^>]*>(.*?)</main>',
+            r'<article[^>]*>(.*?)</article>',
+            r'<body[^>]*>(.*?)</body>'
+        ]
+
+        for pattern in content_patterns:
+            match = re.search(pattern, html_content, re.DOTALL | re.IGNORECASE)
+            if match:
+                content = match.group(1)
+                # Clean up the content
+                content = re.sub(r'<script[^>]*>.*?</script>', '', content, flags=re.DOTALL | re.IGNORECASE)
+                content = re.sub(r'<style[^>]*>.*?</style>', '', content, flags=re.DOTALL | re.IGNORECASE)
+                content = re.sub(r'<[^>]+>', '', content)  # Remove remaining HTML tags
+                content = re.sub(r'\s+', ' ', content).strip()  # Normalize whitespace
+
+                if len(content) > 100:  # Only return if we got substantial content
+                    print(f"✅ Scraped {len(content)} characters from subdomain")
+                    return content[:2000]  # Limit content length
+
+        # Fallback: try to extract text between title and common footer elements
+        title_match = re.search(r'<title[^>]*>(.*?)</title>', html_content, re.IGNORECASE)
+        title = title_match.group(1) if title_match else ""
+
+        # Extract body text as fallback
+        body_match = re.search(r'<body[^>]*>(.*?)</body>', html_content, re.DOTALL | re.IGNORECASE)
+        if body_match:
+            content = re.sub(r'<[^>]+>', '', body_match.group(1))
+            content = re.sub(r'\s+', ' ', content).strip()
+            if len(content) > 100:
+                print(f"✅ Scraped {len(content)} characters from subdomain (fallback)")
+                return f"{title}\n\n{content[:2000]}" if title else content[:2000]
+
+    except Exception as e:
+        print(f"❌ Error scraping subdomain content from {url}: {e}")
+
+    return ""
 
 def extract_course_type(title: str, context: str) -> str:
     """Extract course type from title or context."""
@@ -239,20 +299,17 @@ def parse_course_entry_html(li_html: str, semester_info: dict, source_name: str)
     # Remove HTML tags to get plain text
     plain_text = re.sub(r'<[^>]+>', '', course_text).strip()
 
-    # Extract title - look for quoted titles first
-    title = ""
-    title_match = re.search(r'"([^"]+)"', plain_text)
-    if title_match:
-        title = title_match.group(1)
-    else:
-        # Fallback: take the first substantial text before any URLs or parenthetical content
-        text_parts = re.split(r'\s*\(', plain_text)
-        title = text_parts[0].strip()
+    # Extract clean title without quotes and HTML - clean version for display
+    title = plain_text.strip()
 
-        # Clean up common prefixes/suffixes
-        title = re.sub(r'^(Seminar|Vorlesung|Proseminar|Übung|Arbeitsgemeinschaft)\s+on\s+', '', title, flags=re.IGNORECASE)
-        title = re.sub(r'\s*\([^)]*\)\s*$', '', title)  # Remove trailing parenthetical
-        title = re.sub(r'\s*,\s*$', '', title)  # Remove trailing comma
+    # Remove quotes around course names
+    title = re.sub(r'"([^"]+)"', r'\1', title)
+
+    # Clean up any remaining HTML artifacts
+    title = re.sub(r'<[^>]+>', '', title)
+
+    # Clean up extra whitespace
+    title = re.sub(r'\s+', ' ', title).strip()
 
     if not title:
         return None
@@ -271,9 +328,25 @@ def parse_course_entry_html(li_html: str, semester_info: dict, source_name: str)
     # Extract links and PDFs from HTML
     links, pdfs = extract_links_and_pdfs_html(li_html, BASE_URL)
 
+    # Scrape subdomain content for Heidelberg University links
+    subdomain_content = ""
+    for link in links:
+        if link.get('url') and ('heidelberg.de' in link['url'] or 'uni-heidelberg.de' in link['url']):
+            scraped_content = scrape_subdomain_content(link['url'])
+            if scraped_content and len(scraped_content.strip()) > 50:  # Only add substantial content
+                subdomain_content += f"\n\n--- Content from {link['url']} ---\n{scraped_content}"
+
+    # Use the complete original text as base content
+    base_content = plain_text.strip()
+
+    # Combine base content with subdomain content only if subdomain content exists
+    final_content = base_content
+    if subdomain_content.strip():
+        final_content = base_content + subdomain_content
+
     # Create course entry
     course = {
-        'title': title,
+        'title': title,  # Clean title without quotes for display
         'instructor': ', '.join(instructors) if instructors else '',
         'instructors': ', '.join(instructors) if instructors else '',
         'course_type': course_type,
@@ -284,8 +357,8 @@ def parse_course_entry_html(li_html: str, semester_info: dict, source_name: str)
         'semester_sort': semester_info['semester_sort'],
         'links': links,
         'pdfs': pdfs,
-        'content': plain_text.strip(),
-        'description': f"{course_type}: {title}",
+        'content': final_content,  # Complete original text + any meaningful subdomain content
+        'description': title,  # Description matches the clean title
         'active': False,  # Default to inactive
         'language': 'English' if any(word in plain_text.lower() for word in ['english', 'englisch']) else 'German',
         'source': source_name
@@ -353,28 +426,39 @@ def create_teaching_file(course: dict, index: int):
                     f.write(f'{key}:\n')
                     for item in value:
                         if isinstance(item, dict):
-                            escaped_label = str(item.get("label", "")).replace('"', '\\"')
-                            f.write(f'  - label: "{escaped_label}"\n')
+                            clean_label = str(item.get("label", "")).replace('"', '').strip()
+                            f.write(f'  - label: "{clean_label}"\n')
                             if 'url' in item:
-                                escaped_url = str(item["url"]).replace('"', '\\"')
-                                f.write(f'    url: "{escaped_url}"\n')
+                                f.write(f'    url: "{item["url"]}"\n')
                             if 'file' in item:
-                                escaped_file = str(item["file"]).replace('"', '\\"')
-                                f.write(f'    file: "{escaped_file}"\n')
+                                f.write(f'    file: "{item["file"]}"\n')
                         else:
-                            f.write(f'  - "{item}"\n')
+                            clean_item = str(item).replace('"', '').strip()
+                            f.write(f'  - "{clean_item}"\n')
                 elif isinstance(value, bool):
                     f.write(f'{key}: {str(value).lower()}\n')
                 else:
-                    # Escape quotes in the value
-                    escaped_value = str(value).replace('"', '\\"')
-                    f.write(f'{key}: "{escaped_value}"\n')
+                    # Clean quotes from the value and ensure proper YAML formatting
+                    clean_value = str(value).replace('"', '').strip()
+                    needs_quotes = (
+                        '"' in str(value) or
+                        ':' in clean_value or
+                        clean_value != str(value) or
+                        clean_value.startswith(' ') or
+                        clean_value.endswith(' ')
+                    )
+
+                    if needs_quotes:
+                        # Quote values that contain special characters or need protection
+                        f.write(f'{key}: "{clean_value}"\n')
+                    else:
+                        # Simple value without quotes
+                        f.write(f'{key}: {clean_value}\n')
             f.write('---\n\n')
 
-            # Add content section
+            # Add content section - preserve original format without legacy text
             if course.get('content') and course['content'].strip():
                 f.write(course['content'].strip() + '\n\n')
-                f.write('Imported from legacy Heidelberg University teaching listing.')
 
         print(f"✅ Created teaching file: {filename}")
         return filepath
@@ -388,6 +472,14 @@ def implement_legacy_heidelberg_content():
     print("🚀 Implementing Heidelberg University teaching content...")
     print(f"📂 Teaching files will be saved to: {TEACHING_DIR}")
     print(f"📥 Downloads will be saved to: {DOWNLOAD_DIR}")
+
+    # Clean up existing teaching files (except index.md)
+    print("🧹 Cleaning up existing teaching files...")
+    if TEACHING_DIR.exists():
+        for file_path in TEACHING_DIR.glob("*.md"):
+            if file_path.name != "index.md":  # Keep the index file
+                file_path.unlink()
+                print(f"  🗑️  Deleted: {file_path.name}")
 
     # Read the HTML files provided by the user
     html_sources = []
