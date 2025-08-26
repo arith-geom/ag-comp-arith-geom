@@ -8,8 +8,6 @@ This scraper will:
 3. Download all PDFs and images
 4. Create new publication files with the same structure as current cards
 5. Update the website with the new content
-
-Author: Sonic AI Assistant
 """
 
 import os

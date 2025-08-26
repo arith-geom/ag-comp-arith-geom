@@ -6,6 +6,7 @@ nav_order: 3
 show_title: false
 order: 100
 title: Members
+classes: full-width-members
 ---
 <!-- Simple Navigation -->
 <div class="members-nav-simple">
@@ -43,11 +44,13 @@ title: Members
           {% endif %}
         </div>
         <div class="member-info">
-          <h4 class="member-name-link" data-member-key="{{ group_leader_key }}">{{ group_leader.name }}</h4>
-          <p class="member-role">{{ group_leader.role }}</p>
-          {% if group_leader.research_interests %}
-            <p class="member-description">{{ group_leader.research_interests }}</p>
-          {% endif %}
+          <div class="member-text-content">
+            <h4 class="member-name-link" data-member-key="{{ group_leader_key }}">{{ group_leader.name }}</h4>
+            <p class="member-role">{{ group_leader.role }}</p>
+            {% if group_leader.research_interests %}
+              <p class="member-description">{{ group_leader.research_interests }}</p>
+            {% endif %}
+          </div>
           <div class="member-links">
             <button class="btn btn-outline-primary btn-sm member-profile-btn" data-member-key="{{ group_leader_key }}">
               <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
@@ -253,11 +256,13 @@ title: Members
               {% endif %}
             </div>
             <div class="member-info">
-              <h4 class="member-name-link" data-member-key="{{ member_key }}">{{ member.name }}</h4>
-              <p class="member-role">{{ member.role }}</p>
-              {% if member.research_interests %}
-                <p class="member-description">{{ member.research_interests }}</p>
-              {% endif %}
+              <div class="member-text-content">
+                <h4 class="member-name-link" data-member-key="{{ member_key }}">{{ member.name }}</h4>
+                <p class="member-role">{{ member.role }}</p>
+                {% if member.research_interests %}
+                  <p class="member-description">{{ member.research_interests }}</p>
+                {% endif %}
+              </div>
               <div class="member-links">
                 <button class="btn btn-outline-primary btn-sm member-profile-btn" data-member-key="{{ member_key }}">
                   <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
@@ -465,11 +470,13 @@ title: Members
               {% endif %}
             </div>
             <div class="member-info">
-              <h4 class="member-name-link" data-member-key="{{ member_key }}">{{ member.name }}</h4>
-              <p class="member-role">{{ member.role }}</p>
-              {% if member.research_interests %}
-                <p class="member-description">{{ member.research_interests }}</p>
-              {% endif %}
+              <div class="member-text-content">
+                <h4 class="member-name-link" data-member-key="{{ member_key }}">{{ member.name }}</h4>
+                <p class="member-role">{{ member.role }}</p>
+                {% if member.research_interests %}
+                  <p class="member-description">{{ member.research_interests }}</p>
+                {% endif %}
+              </div>
               <div class="member-links">
                 <button class="btn btn-outline-primary btn-sm member-profile-btn" data-member-key="{{ member_key }}">
                   <i class="fas fa-user me-2" aria-hidden="true"></i>View Profile
@@ -666,9 +673,20 @@ title: Members
       </div>
       <div class="members-grid">
         {% for member in alumni_members %}
-          <div class="member-card former">
+          {% assign member_slug = member.slug | default: member.name | slugify %}
+          {% assign member_key = member.name | slugify | append: '-' | append: member.role | slugify %}
+          <div class="member-card former" data-member-key="{{ member_key }}" data-member-slug="{{ member_slug }}">
+            <div class="member-avatar">
+              {% if member.photo %}
+                <img src="{{ member.photo }}" alt="{{ member.name }}" class="member-photo">
+              {% else %}
+                <div class="member-photo-placeholder">
+                  <i class="fas fa-user"></i>
+                </div>
+              {% endif %}
+            </div>
             <div class="member-info">
-              <h4>{{ member.name }}</h4>
+              <h4 class="member-name-link" data-member-key="{{ member_key }}">{{ member.name }}</h4>
               <p class="member-role">{{ member.role }}</p>
               {% if member.graduation_year %}
                 <p class="member-graduation">Graduated: {{ member.graduation_year }}</p>
@@ -932,9 +950,9 @@ body.dark-mode .nav-btn.active {
 .section-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem 0;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
   position: relative;
 }
 
@@ -951,16 +969,16 @@ body.dark-mode .nav-btn.active {
 }
 
 .section-icon {
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 32px;
   background: linear-gradient(135deg, var(--primary), var(--heidelberg-red));
   color: var(--primary-text);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  font-size: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   position: relative;
   transition: all 0.3s ease;
 }
@@ -973,28 +991,41 @@ body.dark-mode .nav-btn.active {
 .section-header h3 {
   margin: 0;
   color: var(--text-primary);
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 600;
   background: linear-gradient(135deg, var(--text-primary), var(--primary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .members-grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 0;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+/* Force full width coverage - Multiple approaches for compatibility */
+body.full-width-members .page-container,
+.page-container .team-sections {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 .team-sections {
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
+  padding: 0 1rem;
 }
 
 .team-section {
@@ -1016,11 +1047,11 @@ body.dark-mode .nav-btn.active {
 .member-card {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 0.75rem;
+  border-radius: 6px;
+  padding: 0.3rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
-  gap: 0.75rem;
+  gap: 0.3rem;
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
@@ -1028,6 +1059,7 @@ body.dark-mode .nav-btn.active {
     0 2px 12px rgba(0, 0, 0, 0.08),
     0 1px 2px rgba(0, 0, 0, 0.06);
   width: 100%;
+  min-height: 45px;
 }
 
 .member-card::before {
@@ -1063,8 +1095,8 @@ body.dark-mode .nav-btn.active {
 .member-card.former {
   opacity: 0.9;
   background: var(--bg-secondary);
-  flex-direction: column;
-  text-align: center;
+  flex-direction: row;
+  text-align: left;
   border: 2px solid var(--border-color);
   position: relative;
   overflow: hidden;
@@ -1089,8 +1121,10 @@ body.dark-mode .nav-btn.active {
   opacity: 1;
   background: var(--bg-primary);
   border-color: var(--primary);
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .member-card.former:hover::before {
@@ -1099,7 +1133,11 @@ body.dark-mode .nav-btn.active {
 }
 
 .member-card.former .member-info {
-  width: 100%;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Unified expanded member card styles */
@@ -1148,15 +1186,15 @@ body.dark-mode .member-card.expanded {
 }
 
 .member-photo {
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: contain;
   object-position: center;
-  border: 2px solid var(--primary);
+  border: 1px solid var(--primary);
   box-shadow:
-    0 4px 15px rgba(0, 0, 0, 0.12),
-    0 2px 6px rgba(0, 0, 0, 0.08);
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 2;
@@ -1167,25 +1205,25 @@ body.dark-mode .member-card.expanded {
   transform: scale(1.1);
   border-color: var(--heidelberg-red);
   box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.2),
-    0 8px 20px rgba(0, 0, 0, 0.15);
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .member-photo-placeholder {
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary), var(--heidelberg-red));
-  border: 2px solid var(--primary);
+  border: 1px solid var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary-text);
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   font-weight: 600;
   box-shadow:
-    0 4px 15px rgba(0, 0, 0, 0.12),
-    0 2px 6px rgba(0, 0, 0, 0.08);
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
   transition: all 0.3s cubic-bezier(0.4, 0, 0, 0.2, 1);
   position: relative;
   z-index: 2;
@@ -1193,7 +1231,7 @@ body.dark-mode .member-card.expanded {
 }
 
 .member-photo-placeholder i {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -1209,16 +1247,69 @@ body.dark-mode .member-card.expanded {
 
 .member-info {
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.3rem;
+  padding: 0.15rem 0;
+}
+
+.member-text-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 
 .member-info h4 {
-  margin: 0 0 0.4rem 0;
+  margin: 0;
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.2;
   letter-spacing: -0.01em;
   position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0.05rem 0;
+}
+
+.member-role {
+  color: var(--primary);
+  font-weight: 700;
+  margin: 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  padding: 0.1rem 0.2rem;
+  background: rgba(26, 54, 93, 0.08);
+  border-radius: 3px;
+  align-self: flex-start;
+}
+
+.member-description {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  line-height: 1.3;
+  margin: 0;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+  padding: 0.1rem 0;
 }
 
 .member-info h4 a {
@@ -1266,26 +1357,34 @@ body.dark-mode .member-card.expanded {
 }
 
 .member-graduation {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.5rem 0;
   font-style: italic;
   background: var(--bg-tertiary);
-  padding: 0.5rem 1rem;
-  border-radius: 15px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
   display: inline-block;
   border-left: 3px solid var(--primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .member-current {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
   font-weight: 500;
   background: var(--bg-secondary);
-  padding: 0.5rem 1rem;
-  border-radius: 15px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
   border: 1px solid var(--border-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .member-description {
@@ -1298,19 +1397,23 @@ body.dark-mode .member-card.expanded {
 
 .member-links {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.2rem;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  align-self: flex-start;
+  flex-shrink: 0;
 }
 
 .member-links .btn {
-  font-size: 0.8rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 12px;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.25rem;
   font-weight: 600;
   position: relative;
   overflow: hidden;
@@ -1352,53 +1455,160 @@ body.dark-mode .member-card.expanded {
 }
 
 @media (max-width: 768px) {
-  .members-grid {
-    gap: 0.75rem;
+  body.full-width-members .page-container,
+  .page-container .team-sections {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
-  .member-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 0.75rem;
+  .team-sections {
+    padding: 0 0.5rem;
+    gap: 1.5rem;
+  }
+
+  .members-grid {
     gap: 0.5rem;
   }
 
+  .member-card {
+    flex-direction: row;
+    text-align: left;
+    padding: 0.25rem;
+    gap: 0.25rem;
+    align-items: flex-start;
+    min-height: 38px;
+  }
+
   .member-avatar {
-    align-self: center;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .member-photo,
+  .member-photo-placeholder {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
   }
 
   .member-info h4 {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.1;
+    padding: 0.02rem 0;
   }
 
   .member-role {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 0.1rem 0.25rem;
+    align-self: flex-start;
   }
 
   .member-description {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0.08rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .member-graduation {
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 8px;
+    border-left: 2px solid var(--primary);
+    align-self: flex-start;
+  }
+
+  .member-current {
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 8px;
+    align-self: flex-start;
+  }
+
+  .member-info {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 0.1rem 0;
+  }
+
+  .member-text-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
   }
 
   .member-links {
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
+
+  .member-links .btn {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+    gap: 0.2rem;
+  }
+
+  .member-links .btn i {
+    font-size: 0.65rem;
+  }
+
+  .member-card.former {
+    flex-direction: row;
+    text-align: left;
+    padding: 0.4rem;
+    gap: 0.4rem;
+    align-items: flex-start;
+    min-height: 50px;
+  }
+
+  .member-card.former .member-avatar {
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .member-card.former .member-info {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .section-header {
     flex-direction: column;
     text-align: center;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem 0;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+    padding: 0.25rem 0;
   }
 
   .section-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
   }
 
   .section-header h3 {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
 
   /* Responsive navigation */
@@ -1770,7 +1980,7 @@ body.dark-mode .member-card.expanded .member-detail-section {
 /* Member links styling in expanded header */
 .member-card.expanded .member-detail-header .member-info .member-links {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
   flex-wrap: wrap;
 }
 
@@ -2314,7 +2524,7 @@ body.dark-mode .member-card.former:hover::before {
   margin-bottom: 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .member-detail-publications .publication-meta {
@@ -2548,7 +2758,7 @@ body.dark-mode .member-card.expanded .member-detail-publications .publication-me
 
   .member-detail-publications .publication-meta {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
     align-items: flex-start;
     text-align: left !important;
   }
@@ -2879,7 +3089,7 @@ body.dark-mode .member-card.expanded .member-detail-publications .publication-me
   .member-detail-contact .contact-item {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 </style>
 
@@ -3191,7 +3401,7 @@ class MembersManager {
     // Show section headers
     const sectionHeaders = document.querySelectorAll('.section-header');
     sectionHeaders.forEach(header => {
-      header.style.display = 'block';
+      header.style.display = 'flex';
     });
   }
 
@@ -3259,7 +3469,7 @@ class MembersManager {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 0.4rem;
       ">
         <i class="fas fa-users"></i>
         Show All Members
