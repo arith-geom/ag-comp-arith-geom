@@ -9,7 +9,7 @@ order: 199976
 pdfs:
 - file: /assets/uploads/Boeckle-Explicit.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Explicit.pdf
+  url: /ag-comp-arith-geom/assets/uploads/Boeckle-Explicit.pdf
 status: Published
 title: Explicit universal deformations of even Galois representations
 type: Journal Article

@@ -9,7 +9,7 @@ order: 200283
 pdfs:
 - file: /assets/uploads/DeJongAnJNTbRev2.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DeJongAnJNTbRev2.pdf
+  url: /ag-comp-arith-geom/assets/uploads/DeJongAnJNTbRev2.pdf
 status: Published
 title: Finiteness conjectures for Fl[[T]]-analytic extensions of number fields
 type: Journal Article

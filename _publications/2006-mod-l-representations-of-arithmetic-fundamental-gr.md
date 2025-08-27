@@ -9,7 +9,7 @@ order: 200688
 pdfs:
 - file: /assets/uploads/B-K-deJong-Rev2.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/B-K-deJong-Rev2.pdf
+  url: /ag-comp-arith-geom/assets/uploads/B-K-deJong-Rev2.pdf
 status: Published
 title: Mod l representations of arithmetic fundamental groups. II. A conjecture of
   A. J. de Jong

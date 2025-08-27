@@ -10,9 +10,9 @@ order: 201374
 pdfs:
 - file: /assets/uploads/Boeckle-Barcelona-DefTheory-Rev.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Barcelona-DefTheory-Rev.pdf
+  url: /ag-comp-arith-geom/assets/uploads/Boeckle-Barcelona-DefTheory-Rev.pdf
 status: Published
 title: Deformations of Galois representations
-type: Journal Article
+type: Book Chapter
 year: '2013'
 ---

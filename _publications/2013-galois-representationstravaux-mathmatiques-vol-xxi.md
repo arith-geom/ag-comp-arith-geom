@@ -9,6 +9,6 @@ pdfs:
   url: http://wwwfr.uni.lu/content/download/75430/940982/file/Boeckle.pdf
 status: Published
 title: Galois representations.Travaux mathématiques. Vol. XXIII
-type: Journal Article
+type: Lecture Series and Surveys
 year: '2013'
 ---

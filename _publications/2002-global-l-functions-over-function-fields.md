@@ -9,7 +9,7 @@ order: 200282
 pdfs:
 - file: /assets/uploads/AofC-MAProof.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AofC-MAProof.pdf
+  url: /ag-comp-arith-geom/assets/uploads/AofC-MAProof.pdf
 status: Published
 title: Global L-functions over function fields
 type: Journal Article

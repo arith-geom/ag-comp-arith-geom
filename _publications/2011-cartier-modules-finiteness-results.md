@@ -9,7 +9,7 @@ order: 201194
 pdfs:
 - file: /assets/uploads/BlickleBoeckle-CartierModulesFinitenessResults.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BlickleBoeckle-CartierModulesFinitenessResults.pdf
+  url: /ag-comp-arith-geom/assets/uploads/BlickleBoeckle-CartierModulesFinitenessResults.pdf
 status: Published
 title: 'Cartier Modules: finiteness results'
 type: Journal Article

@@ -9,7 +9,7 @@ order: 200790
 pdfs:
 - file: /assets/uploads/OnUDefPres9.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/OnUDefPres9.pdf
+  url: /ag-comp-arith-geom/assets/uploads/OnUDefPres9.pdf
 status: Published
 title: Presentations of universal deformation rings
 type: Journal Article

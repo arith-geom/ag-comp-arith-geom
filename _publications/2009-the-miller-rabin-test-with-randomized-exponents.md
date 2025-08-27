@@ -9,7 +9,7 @@ order: 200992
 pdfs:
 - file: /assets/uploads/RandomizedMR.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/RandomizedMR.pdf
+  url: /ag-comp-arith-geom/assets/uploads/RandomizedMR.pdf
 status: Published
 title: The Miller-Rabin test with randomized exponents
 type: Journal Article

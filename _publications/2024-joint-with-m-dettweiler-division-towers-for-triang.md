@@ -6,6 +6,6 @@ layout: publication
 order: 202466
 status: Published
 title: (joint with M. Dettweiler) Division Towers for Triangle Shimura Curves
-type: Journal Article
+type: In Preparation
 year: '2024'
 ---

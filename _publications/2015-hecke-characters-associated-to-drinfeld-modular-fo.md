@@ -9,7 +9,7 @@ order: 201598
 pdfs:
 - file: /assets/uploads/Boeckle-Centeleghe-HeckeCharactersAssociatedToDrinfeldModularForms.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Centeleghe-HeckeCharactersAssociatedToDrinfeldModularForms.pdf
+  url: /ag-comp-arith-geom/assets/uploads/Boeckle-Centeleghe-HeckeCharactersAssociatedToDrinfeldModularForms.pdf
 status: Published
 title: Hecke characters associated to Drinfeld modular forms
 type: Journal Article

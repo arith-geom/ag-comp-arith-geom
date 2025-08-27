@@ -9,7 +9,7 @@ order: 200789
 pdfs:
 - file: /assets/uploads/TAMS_4136_Bockle_Hartl.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/TAMS_4136_Bockle_Hartl.pdf
+  url: /ag-comp-arith-geom/assets/uploads/TAMS_4136_Bockle_Hartl.pdf
 status: Published
 title: Uniformizable families of t-motives
 type: Journal Article

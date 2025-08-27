@@ -9,7 +9,7 @@ order: 201295
 pdfs:
 - file: /assets/uploads/Proofs-Boeckle-Butenuth.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Proofs-Boeckle-Butenuth.pdf
+  url: /ag-comp-arith-geom/assets/uploads/Proofs-Boeckle-Butenuth.pdf
 status: Published
 title: On computing quaternion quotient graphs for function fields
 type: Journal Article

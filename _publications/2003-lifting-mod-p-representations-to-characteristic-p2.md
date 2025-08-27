@@ -9,7 +9,7 @@ order: 200385
 pdfs:
 - file: /assets/uploads/LiftModp2Corr.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/LiftModp2Corr.pdf
+  url: /ag-comp-arith-geom/assets/uploads/LiftModp2Corr.pdf
 status: Published
 title: Lifting mod p representations to characteristic p2
 type: Journal Article

@@ -9,7 +9,7 @@ order: 201396
 pdfs:
 - file: /assets/uploads/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf
+  url: /ag-comp-arith-geom/assets/uploads/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf
 status: Published
 title: Algebraic Hecke characters and compatible systems of abelian mod p Galois representations
   over global fields
