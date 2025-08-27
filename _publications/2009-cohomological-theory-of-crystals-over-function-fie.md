@@ -8,6 +8,6 @@ links:
 order: 200970
 status: Published
 title: Cohomological Theory of Crystals over Function Fields
-type: Journal Article
+type: Book
 year: '2009'
 ---

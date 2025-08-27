@@ -9,7 +9,7 @@ order: 201600
 pdfs:
 - file: /assets/uploads/BoeckleJuschka-Irreducibility.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BoeckleJuschka-Irreducibility.pdf
+  url: /ag-comp-arith-geom/assets/uploads/BoeckleJuschka-Irreducibility.pdf
 status: Published
 title: Irreducibility of versal deformation rings in the (p,p)-case for 2-dimensional
   representations

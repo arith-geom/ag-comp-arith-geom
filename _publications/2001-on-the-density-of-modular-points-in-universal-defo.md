@@ -9,7 +9,7 @@ order: 200181
 pdfs:
 - file: /assets/uploads/DensityAJMCorr.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DensityAJMCorr.pdf
+  url: /ag-comp-arith-geom/assets/uploads/DensityAJMCorr.pdf
 status: Published
 title: On the density of modular points in universal deformation spaces
 type: Journal Article

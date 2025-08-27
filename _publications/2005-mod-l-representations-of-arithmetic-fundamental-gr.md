@@ -9,7 +9,7 @@ order: 200587
 pdfs:
 - file: /assets/uploads/BK-Serre-dmj4021.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BK-Serre-dmj4021.pdf
+  url: /ag-comp-arith-geom/assets/uploads/BK-Serre-dmj4021.pdf
 status: Published
 title: Mod l representations of arithmetic fundamental groups. I. An analog of Serre's
   conjecture for function fields

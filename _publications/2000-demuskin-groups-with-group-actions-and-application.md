@@ -9,7 +9,7 @@ order: 200079
 pdfs:
 - file: /assets/uploads/DemGps.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DemGps.pdf
+  url: /ag-comp-arith-geom/assets/uploads/DemGps.pdf
 status: Published
 title: Demuskin groups with group actions and applications to deformations of Galois
   representations

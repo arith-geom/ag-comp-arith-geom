@@ -9,7 +9,7 @@ order: 200384
 pdfs:
 - file: /assets/uploads/KhareAppboeckleNew2.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/KhareAppboeckleNew2.pdf
+  url: /ag-comp-arith-geom/assets/uploads/KhareAppboeckleNew2.pdf
 status: Published
 title: On the isomorphism R0 -> T0
 type: Journal Article

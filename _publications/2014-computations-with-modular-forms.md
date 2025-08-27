@@ -8,6 +8,6 @@ links:
 order: 201471
 status: Published
 title: Computations with Modular Forms
-type: Journal Article
+type: Book
 year: '2014'
 ---

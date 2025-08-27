@@ -9,7 +9,7 @@ order: 201599
 pdfs:
 - file: /assets/uploads/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf
   label: PDF
-  url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf
+  url: /ag-comp-arith-geom/assets/uploads/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf
 status: Published
 title: Independence of l-adic representations of geometric Galois groups
 type: Journal Article
