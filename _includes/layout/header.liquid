@@ -19,56 +19,29 @@
           </picture>
         </div>
         <div class="brand-text">
-          <div class="fw-bold brand-title d-none d-md-inline">AG Computational Arithmetic Geometry</div>
-          <small class="university-name d-none d-lg-inline">Heidelberg University</small>
+          <div class="fw-bold brand-title">AG Computational Arithmetic Geometry</div>
+          <small class="university-name">Heidelberg University</small>
         </div>
       </a>
 
-            <!-- Enhanced Search Bar - Center position for medium+ screens -->
-      <div class="d-none d-md-flex search-container-center">
-        <div class="search-container">
-          <div class="search-input-wrapper">
-
-            <input type="text" id="search-input" class="search-input"
-                   placeholder="Search articles, publications, research..."
-                   aria-label="Search this site" autocomplete="off">
-          </div>
-          <div id="search-results" class="search-results-container"></div>
-        </div>
-
-      </div>
-
       <!-- Right side controls -->
       <div class="d-flex align-items-center gap-2">
-
-
-        <!-- Enhanced Theme Switcher -->
+        <!-- Theme Switcher -->
         {% if site.enable_theme_switcher %}
-          <button id="theme-toggle" class="header-control-btn"
+          <button id="theme-toggle" class="header-control-btn theme-toggle-btn"
                   title="Switch Theme" aria-label="Toggle dark and light mode">
              <span class="theme-icon-light" id="theme-icon-light" aria-hidden="true">☀️</span>
              <span class="theme-icon-dark" id="theme-icon-dark" aria-hidden="true">🌙</span>
           </button>
         {% endif %}
 
-        <!-- Compact Search Button - Extra small screens only -->
-        <div class="d-md-none">
-          <button id="compact-search-toggle" class="header-control-btn compact-search-btn"
-                  title="Search" aria-label="Open search">
-            <i class="fas fa-search" aria-hidden="true"></i>
-          </button>
-        </div>
 
-        <!-- Navbar Toggle for Mobile -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation menu"
-        >
+
+        <!-- Mobile menu toggle -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation menu">
           <span class="navbar-toggler-icon" aria-hidden="true"></span>
         </button>
       </div>
@@ -79,28 +52,28 @@
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/' | relative_url }}" role="menuitem" aria-current="{% if page.permalink == '/' %}page{% endif %}" aria-label="Home">
               <i class="fas fa-home nav-icon" aria-hidden="true"></i>
-              <span class="nav-text d-none d-xl-inline">Home</span>
+              <span class="nav-text">Home</span>
             </a>
           </li>
 
           <li class="nav-item {% if page.url == '/research/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/research/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/research/' %}page{% endif %}">
               <i class="fas fa-microscope nav-icon" aria-hidden="true"></i>
-              <span class="nav-text d-none d-xl-inline">Research</span>
+              <span class="nav-text">Research</span>
             </a>
           </li>
 
           <li class="nav-item {% if page.url == '/publications/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/publications/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/publications/' %}page{% endif %}">
               <i class="fas fa-file-alt nav-icon" aria-hidden="true"></i>
-              <span class="nav-text d-none d-xl-inline">Publications</span>
+              <span class="nav-text">Publications</span>
             </a>
           </li>
 
           <li class="nav-item {% if page.url == '/teaching/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/teaching/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/teaching/' %}page{% endif %}">
               <i class="fas fa-chalkboard-teacher nav-icon" aria-hidden="true"></i>
-              <span class="nav-text d-none d-xl-inline">Teaching</span>
+              <span class="nav-text">Teaching</span>
             </a>
           </li>
 
@@ -108,36 +81,25 @@
           <li class="nav-item {% if page.url == '/members/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/members/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/members/' %}page{% endif %}">
               <i class="fas fa-users nav-icon" aria-hidden="true"></i>
-              <span class="nav-text d-none d-xl-inline">Members</span>
+              <span class="nav-text">Members</span>
             </a>
           </li>
 
           <li class="nav-item {% if page.url == '/links/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/links/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/links/' %}page{% endif %}">
               <i class="fas fa-link nav-icon" aria-hidden="true"></i>
-              <span class="nav-text d-none d-xl-inline">Links</span>
+              <span class="nav-text">Links</span>
             </a>
           </li>
 
           <li class="nav-item {% if page.url == '/contact/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/contact/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/contact/' %}page{% endif %}">
               <i class="fas fa-envelope nav-icon" aria-hidden="true"></i>
-              <span class="nav-text d-none d-xl-inline">Contact</span>
+              <span class="nav-text">Contact</span>
             </a>
           </li>
 
-          <!-- Enhanced Search Bar - Mobile version -->
-          <li class="nav-item d-md-none" role="none">
-            <div class="search-container">
-              <div class="search-input-wrapper">
-                
-                <input type="text" id="search-input-mobile" class="search-input" 
-                       placeholder="Search articles, publications, research..." 
-                       aria-label="Search this site" autocomplete="off">
-              </div>
-              <div id="search-results-mobile" class="search-results-container"></div>
-            </div>
-          </li>
+
         </ul>
       </div>
     </div>
@@ -145,22 +107,31 @@
 </header>
 
 <style>
-/* Enhanced High-Contrast Navbar Styles */
+/* Navbar Styles */
 .heidelberg-navbar .container-fluid {
   background-color: transparent !important;
+}
+
+/* Force all navbar text to be white */
+.heidelberg-navbar *,
+.heidelberg-navbar .navbar-brand,
+.heidelberg-navbar .nav-link,
+.heidelberg-navbar .brand-title,
+.heidelberg-navbar .university-name {
+  color: #ffffff !important;
 }
 
 .heidelberg-navbar {
   background-color: var(--primary) !important;
   border-bottom: 2px solid var(--primary-hover) !important;
   box-shadow: var(--shadow-lg) !important;
-  padding: 0.5rem 0 !important;
+  padding: 0.15rem 0 !important;
   transition: all var(--transition-base);
   position: relative;
   z-index: var(--z-sticky);
 }
 
-/* Dark mode navbar - black background to avoid red lines */
+/* Dark mode navbar */
 [data-theme="dark"] .heidelberg-navbar,
 body.dark-mode .heidelberg-navbar {
   background-color: #000000 !important;
@@ -168,9 +139,9 @@ body.dark-mode .heidelberg-navbar {
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Navbar brand with maximum visibility - more compact */
+/* Navbar brand with maximum visibility - always white */
 .heidelberg-navbar .navbar-brand {
-  color: var(--white) !important;
+  color: #ffffff !important;
   font-weight: 700 !important;
   font-size: 1rem !important;
   transition: all var(--transition-base);
@@ -180,47 +151,39 @@ body.dark-mode .heidelberg-navbar {
 
 .heidelberg-navbar .navbar-brand:hover,
 .heidelberg-navbar .navbar-brand:focus {
-  color: #FEE2E2 !important;
+  color: #ffffff !important;
   transform: translateY(-1px);
   text-decoration: none;
 }
 
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  transition: gap 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .brand-title {
-  color: var(--white) !important;
-  font-size: 1rem;
+  color: #ffffff !important;
+  font-size: 0.9rem;
   line-height: 1.2;
+  display: block;
+  transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .university-name {
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-size: 0.8rem;
+  color: #ffffff !important;
+  font-size: 0.75rem;
   font-weight: 400;
+  display: block;
+  opacity: 0.9;
+  transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Brand icon styling */
-.brand-icon .bg-white {
-  background-color: var(--white) !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all var(--transition-base);
-}
-
-.heidelberg-navbar .navbar-brand:hover .brand-icon .bg-white {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Center search container */
-.search-container-center {
-  flex: 1 1 auto;
-  justify-content: center;
-  max-width: none;
-  width: 100%;
-  margin: 0 1rem;
-}
-
-/* Navbar links with high contrast */
+/* Navbar links with high contrast - always white */
 .heidelberg-navbar .nav-link {
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: #ffffff !important;
   font-weight: 500 !important;
   padding: 0.5rem 0.75rem !important;
   margin: 0 0.125rem;
@@ -239,64 +202,54 @@ body.dark-mode .heidelberg-navbar {
 /* Icon-only styles for medium screens */
 .nav-icon {
   font-size: 1rem;
-  transition: all var(--transition-base);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-text {
   margin-left: 0.375rem;
   white-space: nowrap;
+  transition: opacity 0.3s ease, display 0.3s ease;
 }
 
-/* Compact search button for medium screens */
-.compact-search-btn {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  color: var(--white) !important;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  transition: all var(--transition-base);
+
+
+/* Default: Icon-only mode (text hidden) */
+.nav-text {
+  display: none !important;
+  margin-left: 0.375rem;
+  white-space: nowrap;
 }
 
-.compact-search-btn:hover,
-.compact-search-btn:focus {
-  background: rgba(255, 255, 255, 0.2) !important;
-  border-color: rgba(255, 255, 255, 0.5) !important;
-  color: var(--white) !important;
-  transform: scale(1.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-  outline: none;
-}
-
-.compact-search-btn:focus {
-  box-shadow: 0 0 0 2px var(--white) !important;
-}
-
-.compact-search-btn i {
-  font-size: 0.9rem;
-}
-
-/* Icon-only mode: center icons when text is hidden */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .heidelberg-navbar .nav-link {
-    padding: 0.5rem !important;
-    justify-content: center;
-    min-width: 48px;
-    transition: all var(--transition-base);
+/* Large screens: Show both icons and text */
+@media (min-width: 900px) {
+  .nav-text {
+    display: inline !important;
   }
 
   .nav-icon {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-right: 0.375rem;
+  }
+}
+
+/* Medium screens: Icon-only mode with larger icons (optimal switch timing) */
+@media (min-width: 700px) and (max-width: 899.98px) {
+  .heidelberg-navbar .nav-link {
+    padding: 0.5rem !important;
+    justify-content: center;
+    min-width: 60px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-icon {
+    font-size: 1.4rem;
     margin: 0;
-    transition: all var(--transition-base);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-text {
     display: none !important;
+    opacity: 0;
   }
 
   /* Ensure navbar doesn't wrap in icon-only mode */
@@ -305,6 +258,7 @@ body.dark-mode .heidelberg-navbar {
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .navbar-nav::-webkit-scrollbar {
@@ -313,6 +267,7 @@ body.dark-mode .heidelberg-navbar {
 
   .nav-item {
     flex-shrink: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -330,7 +285,7 @@ body.dark-mode .heidelberg-navbar {
 
 .heidelberg-navbar .nav-link:hover,
 .heidelberg-navbar .nav-link:focus {
-  color: var(--white) !important;
+  color: #ffffff !important;
   background-color: rgba(255, 255, 255, 0.15) !important;
   transform: translateY(-1px);
   text-decoration: none;
@@ -338,7 +293,7 @@ body.dark-mode .heidelberg-navbar {
 }
 
 .heidelberg-navbar .nav-link:focus {
-  box-shadow: 0 0 0 2px var(--white) !important;
+  box-shadow: 0 0 0 2px #ffffff !important;
 }
 
 .heidelberg-navbar .nav-link:hover::before,
@@ -348,7 +303,7 @@ body.dark-mode .heidelberg-navbar {
 }
 
 .heidelberg-navbar .nav-item.active .nav-link {
-  color: var(--white) !important;
+  color: #ffffff !important;
   background-color: var(--primary-hover) !important;
   font-weight: 600 !important;
 }
@@ -359,7 +314,13 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   background-color: var(--primary-hover) !important;
 }
 
-/* Mobile navbar toggle */
+/* Mobile navbar toggle - show at our custom breakpoint */
+@media (max-width: 699.98px) {
+  .heidelberg-navbar .navbar-toggler {
+    display: inline-block !important;
+  }
+}
+
 .heidelberg-navbar .navbar-toggler {
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
   background: rgba(255, 255, 255, 0.1) !important;
@@ -377,21 +338,21 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 }
 
 .heidelberg-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.95%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
   width: 1.25rem !important;
   height: 1.25rem !important;
 }
 
   /* Brand logo image (left of title) */
   .brand-logo-img {
-    height: 36px;
+    height: 28px;
     width: auto;
     display: block;
     border-radius: 6px;
     background: #fff;
     padding: 2px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.12);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .brand-logo-img img {
@@ -427,7 +388,7 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 
 
 
-/* Theme toggle button with enhanced styling */
+/* Theme toggle button */
 .theme-toggle-btn {
   background: rgba(255, 255, 255, 0.1) !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
@@ -440,6 +401,23 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   height: 36px;
   border-radius: var(--radius-lg);
   padding: 0;
+}
+
+/* Theme icon visibility control */
+.theme-toggle-btn.dark-mode .theme-icon-light {
+  display: inline-block !important;
+}
+
+.theme-toggle-btn.dark-mode .theme-icon-dark {
+  display: none !important;
+}
+
+.theme-toggle-btn.light-mode .theme-icon-light {
+  display: none !important;
+}
+
+.theme-toggle-btn.light-mode .theme-icon-dark {
+  display: inline-block !important;
 }
 
 .theme-toggle-btn:hover,
@@ -462,127 +440,49 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   transition: all var(--transition-base);
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 1199.98px) {
-  .search-container-center {
-    display: none !important;
+/* Large screens: Full brand text and logo */
+@media (min-width: 900px) {
+  .brand-title {
+    font-size: 0.95rem;
+    display: block !important;
   }
 
+  .university-name {
+    font-size: 0.8rem;
+    display: block !important;
+  }
+
+  .brand-logo-img {
+    height: 28px;
+    width: auto;
+  }
+}
+
+/* Medium screens: Slightly smaller brand text and logo */
+@media (min-width: 700px) and (max-width: 899.98px) {
   .brand-title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    display: block !important;
   }
 
   .university-name {
     font-size: 0.75rem;
+    display: block !important;
+  }
+
+  .brand-logo-img {
+    height: 26px;
+    width: auto;
   }
 }
 
-/* Medium screens: Full search bar with icon-only navigation */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  /* Hide navigation text but keep icons */
-  .nav-text {
-    display: none !important;
-  }
 
-  .heidelberg-navbar .nav-link {
-    padding: 0.5rem !important;
-    justify-content: center;
-    min-width: 44px;
-    transition: all var(--transition-base);
-  }
 
-  .nav-icon {
-    font-size: 1rem;
-    margin: 0;
-    transition: all var(--transition-base);
-  }
+/* REMOVED: This breakpoint was conflicting with the new responsive system */
 
-  /* Full search bar takes center position */
-  .search-container {
-    max-width: 300px;
-    transform: none;
-  }
+/* REMOVED: This breakpoint was conflicting with the previous one */
 
-  .search-input {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  /* Hide brand text to maximize search space */
-  .brand-title {
-    display: none !important;
-  }
-
-  /* Ensure navbar doesn't wrap */
-  .navbar-nav {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .navbar-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-item {
-    flex-shrink: 0;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  /* Give more space to search bar, hide nav text */
-  .search-container {
-    max-width: 400px;
-    transform: none;
-  }
-
-  .search-input {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-  }
-
-  /* Icon-only navigation mode to save space */
-  .heidelberg-navbar .nav-link {
-    padding: 0.5rem !important;
-    justify-content: center;
-    min-width: 44px;
-    transition: all var(--transition-base);
-  }
-
-  .nav-icon {
-    font-size: 1.1rem;
-    margin: 0;
-    transition: all var(--transition-base);
-  }
-
-  .nav-text {
-    display: none !important;
-  }
-
-  /* Ensure navbar doesn't wrap in icon-only mode */
-  .navbar-nav {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .navbar-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-item {
-    flex-shrink: 0;
-  }
-
-  /* Hide university name to give more space */
-  .university-name {
-    display: none !important;
-  }
-}
-
-@media (max-width: 767.98px) {
+@media (max-width: 699.98px) {
   .navbar-collapse {
     background: var(--primary) !important;
     border-radius: var(--radius-lg);
@@ -609,6 +509,7 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
     margin: 0.125rem 0;
     text-align: left;
     justify-content: flex-start !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Ensure nav-text is visible in mobile dropdown */
@@ -617,57 +518,66 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   }
 
   .nav-icon {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-right: 0.5rem;
   }
 
   .brand-title {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    display: block !important;
   }
 
   .university-name {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
+    display: block !important;
   }
 
-  .brand-icon .bg-white {
-    width: 32px !important;
-    height: 32px !important;
+  .brand-logo-img {
+    height: 24px;
+    width: auto;
+  }
+
+  /* Adjust vertical spacing on mobile */
+  .brand-text {
+    gap: 0.08rem;
   }
 
   .theme-toggle-btn {
-    width: 32px;
-    height: 32px;
+    width: 32px !important;
+    height: 32px !important;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 699.98px) {
   .heidelberg-navbar .container-fluid {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
-  
+
   .brand-text {
     margin-left: 0.5rem;
+    gap: 0.05rem;
   }
-  
+
   .brand-title {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     line-height: 1.1;
   }
-  
+
   .university-name {
-    display: none !important;
+    font-size: 0.65rem !important;
+    display: block !important;
   }
-  
-  .brand-icon .bg-white {
-    width: 28px !important;
-    height: 28px !important;
+
+  .brand-logo-img {
+    height: 24px !important;
+    width: auto !important;
   }
-  
+
   .brand-icon .fa-infinity {
     font-size: 0.7rem;
   }
-  
+
   .theme-toggle-btn {
     width: 32px;
     height: 32px;
@@ -732,23 +642,37 @@ document.addEventListener('DOMContentLoaded', function() {
   if (themeToggle && themeIconLight && themeIconDark) {
     // Update icon based on current theme
     function updateThemeIcon(theme) {
+      // Remove inline styles to let CSS control responsive behavior
+      themeIconLight.style.display = '';
+      themeIconDark.style.display = '';
+
+      // Use CSS classes to control which icon is shown
       if (theme === 'dark') {
-        themeIconLight.style.display = 'inline-block';
-        themeIconDark.style.display = 'none';
+        themeToggle.classList.remove('light-mode');
+        themeToggle.classList.add('dark-mode');
         themeToggle.setAttribute('aria-label', 'Switch to light mode');
         themeToggle.setAttribute('title', 'Switch to light mode');
       } else {
-        themeIconLight.style.display = 'none';
-        themeIconDark.style.display = 'inline-block';
+        themeToggle.classList.remove('dark-mode');
+        themeToggle.classList.add('light-mode');
         themeToggle.setAttribute('aria-label', 'Switch to dark mode');
         themeToggle.setAttribute('title', 'Switch to dark mode');
       }
     }
     
     // Initialize icon based on current theme
-    const currentTheme = localStorage.getItem('theme') || 
+    const currentTheme = localStorage.getItem('theme') ||
                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     updateThemeIcon(currentTheme);
+
+    // Ensure theme toggle has proper initial class
+    if (currentTheme === 'dark') {
+      themeToggle.classList.add('dark-mode');
+      themeToggle.classList.remove('light-mode');
+    } else {
+      themeToggle.classList.add('light-mode');
+      themeToggle.classList.remove('dark-mode');
+    }
     
     // Listen for theme changes
     document.addEventListener('themeChanged', function(e) {
@@ -784,7 +708,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
-      if (window.innerWidth < 992) {
+      if (window.innerWidth < 700) {
         const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
         if (bsCollapse) {
           bsCollapse.hide();
@@ -808,190 +732,44 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateNavbarForScreenSize() {
     const width = window.innerWidth;
     const navLinks = document.querySelectorAll('.nav-link');
+    const brandLogo = document.querySelector('.brand-logo-img');
+    const themeIconLight = document.getElementById('theme-icon-light');
+    const themeIconDark = document.getElementById('theme-icon-dark');
 
+    // Remove all inline styles first to let CSS media queries control the responsive behavior
     navLinks.forEach(link => {
       const icon = link.querySelector('.nav-icon');
       const text = link.querySelector('.nav-text');
 
-      if (width >= 1200) {
-        // Large screens: show both icons and text
-        link.setAttribute('aria-label', text ? text.textContent : '');
+      // Remove inline styles
+      if (icon) {
         icon.style.marginRight = '';
-      } else if (width >= 992 && width < 1200) {
-        // Medium screens: icons only
-        const textContent = text ? text.textContent : '';
-        link.setAttribute('aria-label', textContent);
-        link.setAttribute('title', textContent);
-      } else {
-        // Small screens: dropdown menu
-        link.setAttribute('aria-label', text ? text.textContent : '');
-        link.removeAttribute('title');
+        icon.style.fontSize = '';
+      }
+      if (text) {
+        text.style.display = '';
       }
     });
-  }
 
-  // Debug indicator for responsive states (can be removed later)
-  function addDebugIndicator() {
-    const existing = document.getElementById('responsive-debug');
-    if (existing) existing.remove();
-
-    const indicator = document.createElement('div');
-    indicator.id = 'responsive-debug';
-    indicator.style.cssText = `
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      background: rgba(0,0,0,0.8);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 4px;
-      font-size: 12px;
-      z-index: 9999;
-      pointer-events: none;
-    `;
-
-    const width = window.innerWidth;
-    let mode = 'Mobile';
-    let searchMode = 'Mobile';
-
-    if (width >= 1200) {
-      mode = 'Full Mode';
-      searchMode = 'Center Bar';
-    } else if (width >= 768) {
-      mode = 'Icons Only + Search';
-      searchMode = 'Center Bar';
+    // Remove brand logo inline styles
+    if (brandLogo) {
+      brandLogo.style.height = '';
     }
 
-    indicator.innerHTML = `${mode}<br>Search: ${searchMode}<br>(${width}px)`;
-    document.body.appendChild(indicator);
+    // Remove theme icon inline styles (CSS classes will control visibility)
+    if (themeIconLight) themeIconLight.style.display = '';
+    if (themeIconDark) themeIconDark.style.display = '';
+
+    // Let CSS handle the responsive behavior - no need to set inline styles
+    // The CSS media queries will handle all the responsive changes automatically
   }
 
   // Update navbar on page load and window resize
   updateNavbarForScreenSize();
-  addDebugIndicator();
   window.addEventListener('resize', function() {
     updateNavbarForScreenSize();
-    addDebugIndicator();
   });
 
-  // Compact search button functionality (medium screens)
-  const compactSearchToggle = document.getElementById('compact-search-toggle');
 
-  if (compactSearchToggle) {
-    compactSearchToggle.addEventListener('click', function() {
-      // Create or toggle compact search overlay
-      let compactSearchOverlay = document.getElementById('compact-search-overlay');
-
-      if (!compactSearchOverlay) {
-        // Create overlay
-        compactSearchOverlay = document.createElement('div');
-        compactSearchOverlay.id = 'compact-search-overlay';
-        compactSearchOverlay.style.cssText = `
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.8);
-          z-index: 9998;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          opacity: 0;
-          transition: opacity var(--transition-base);
-        `;
-
-        const searchContainer = document.createElement('div');
-        searchContainer.style.cssText = `
-          background: var(--primary);
-          padding: 2rem;
-          border-radius: var(--radius-lg);
-          width: 90%;
-          max-width: 500px;
-          position: relative;
-        `;
-
-        const closeButton = document.createElement('button');
-        closeButton.innerHTML = '×';
-        closeButton.style.cssText = `
-          position: absolute;
-          top: 1rem;
-          right: 1rem;
-          background: none;
-          border: none;
-          color: var(--white);
-          font-size: 2rem;
-          cursor: pointer;
-          padding: 0;
-          width: 30px;
-          height: 30px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: var(--radius-md);
-          transition: all var(--transition-base);
-        `;
-        closeButton.setAttribute('aria-label', 'Close search');
-
-        const searchWrapper = document.createElement('div');
-        searchWrapper.className = 'search-container';
-        searchWrapper.innerHTML = `
-          <div class="search-input-wrapper">
-            <input type="text" id="search-input-compact" class="search-input"
-                   placeholder="Search articles, publications, research..."
-                   aria-label="Search this site" autocomplete="off">
-          </div>
-          <div id="search-results-compact" class="search-results-container"></div>
-        `;
-
-        closeButton.addEventListener('click', function() {
-          compactSearchOverlay.style.opacity = '0';
-          setTimeout(() => {
-            document.body.removeChild(compactSearchOverlay);
-          }, 300);
-        });
-
-        searchContainer.appendChild(closeButton);
-        searchContainer.appendChild(searchWrapper);
-        compactSearchOverlay.appendChild(searchContainer);
-        document.body.appendChild(compactSearchOverlay);
-
-        // Focus the search input after a short delay
-        setTimeout(() => {
-          const searchInput = document.getElementById('search-input-compact');
-          if (searchInput) searchInput.focus();
-        }, 100);
-      }
-
-      // Show overlay
-      setTimeout(() => {
-        compactSearchOverlay.style.opacity = '1';
-      }, 10);
-
-      // Close on escape key
-      const handleEscape = function(e) {
-        if (e.key === 'Escape') {
-          compactSearchOverlay.style.opacity = '0';
-          setTimeout(() => {
-            if (document.body.contains(compactSearchOverlay)) {
-              document.body.removeChild(compactSearchOverlay);
-            }
-          }, 300);
-          document.removeEventListener('keydown', handleEscape);
-        }
-      };
-      document.addEventListener('keydown', handleEscape);
-    });
-  }
-
-  // Mobile search toggle functionality
-  const searchToggleMobile = document.getElementById('search-toggle-mobile');
-  const searchInputMobile = document.getElementById('search-input-mobile');
-
-  if (searchToggleMobile && searchInputMobile) {
-    searchToggleMobile.addEventListener('click', function() {
-      searchInputMobile.focus();
-    });
-  }
 });
 </script>
