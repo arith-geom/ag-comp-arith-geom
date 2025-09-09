@@ -3,12 +3,13 @@
     <!-- Main Footer Content -->
     <div class="row g-4">
       <!-- Organization Info & Contact -->
-      <div class="col-lg-5 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4">
         <div class="footer-section">
           <h5 class="footer-heading mb-3">
             <i class="fas fa-university me-2" aria-hidden="true"></i>
             AG Computational Arithmetic Geometry
           </h5>
+          
           <p class="footer-description mb-3">
             Research group specializing in computational arithmetic geometry, Galois representations, and modular forms at Heidelberg University.
           </p>
@@ -34,7 +35,7 @@
       </div>
 
       <!-- Research & Academic Links -->
-      <div class="col-lg-3 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4">
         <div class="footer-section">
           <h5 class="footer-heading mb-3">Research & Publications</h5>
           <ul class="footer-links list-unstyled">
@@ -59,13 +60,8 @@
               </a>
             </li>
           </ul>
-        </div>
-      </div>
-
-      <!-- Resources & External Links -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="footer-section">
-          <h5 class="footer-heading mb-3">Resources & Links</h5>
+          
+          <h5 class="footer-heading mb-3 mt-4">Resources & Links</h5>
           <div class="row">
             <div class="col-6">
               <ul class="footer-links list-unstyled">
@@ -96,6 +92,34 @@
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- IWR Logo Section -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="footer-section text-center">
+          <!-- IWR Group Logo -->
+          <div class="footer-logo-container">
+            <a href="https://www.iwr.uni-heidelberg.de/en" target="_blank" rel="noopener" class="footer-logo-link">
+              <picture class="footer-logo">
+                <source srcset="{{ '/assets/img/group_logo.webp' | relative_url }}" type="image/webp">
+                <img src="{{ '/assets/img/group_logo_optimized.png' | relative_url }}"
+                     alt="IWR - Interdisciplinary Center for Scientific Computing Logo"
+                     class="footer-logo-img"
+                     loading="lazy"
+                     decoding="async">
+              </picture>
+            </a>
+          </div>
+          
+          <h5 class="footer-heading mb-3 mt-3">
+            <i class="fas fa-building me-2" aria-hidden="true"></i>
+            Interdisciplinary Center for Scientific Computing
+          </h5>
+          
+          <p class="footer-description">
+            Part of the Interdisciplinary Center for Scientific Computing (IWR) at Heidelberg University
+          </p>
         </div>
       </div>
     </div>
@@ -133,9 +157,9 @@
       <!-- Legal Links -->
       <div class="legal-links mt-3 pt-3 border-top border-secondary">
         <div class="d-flex flex-wrap justify-content-center gap-3">
-          <a href="https://web.iwr.uni-heidelberg.de/impressum.html" target="_blank" rel="noopener" class="legal-link">Legal Notice</a>
+          <a href="https://web.iwr.uni-heidelberg.de/impressum.html" target="_blank" rel="noopener" class="legal-link">Impressum</a>
           <span class="separator">|</span>
-          <a href="{{ '/sitemap.xml' | relative_url }}" class="legal-link">Sitemap</a>
+          <a href="https://web.iwr.uni-heidelberg.de/impressum.html" target="_blank" rel="noopener" class="legal-link">Legal Notice</a>
         </div>
       </div>
     </div>
@@ -185,10 +209,58 @@
   align-items: center;
 }
 
+.footer-section.text-center .footer-heading {
+  justify-content: center;
+}
+
 .footer-heading i {
   color: var(--primary, #C22032) !important;
   font-size: 1.2rem;
   margin-right: 0.5rem;
+}
+
+/* Footer Logo Styles */
+.footer-logo-container {
+  margin: 0 auto 1.5rem auto;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.footer-logo-img {
+  height: 140px;
+  width: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  border-radius: 16px;
+  background: white;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: 3px solid var(--primary, #C22032);
+  text-decoration: none !important;
+}
+
+.footer-logo-link:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  text-decoration: none !important;
 }
 
 .footer-description {
@@ -205,7 +277,7 @@
 }
 
 .contact-icon {
-  color: white !important;
+  color: var(--primary, #C22032) !important;
   margin-top: 0.125rem;
   font-size: 0.9rem;
   flex-shrink: 0;
@@ -464,6 +536,29 @@ html[data-theme="dark"] .footer-divider {
   background: linear-gradient(90deg, transparent, var(--border-color, #374151), transparent);
 }
 
+/* Dark mode footer logo styles */
+[data-theme="dark"] .footer-logo-link,
+body.dark-mode .footer-logo-link,
+html[data-theme="dark"] .footer-logo-link {
+  background: #1F2937;
+  border-color: var(--primary, #FF6B6B);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .footer-logo-link:hover,
+body.dark-mode .footer-logo-link:hover,
+html[data-theme="dark"] .footer-logo-link:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .footer-logo-container,
+body.dark-mode .footer-logo-container,
+html[data-theme="dark"] .footer-logo-container {
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+  border-color: rgba(255,255,255,0.15);
+  max-width: 300px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer {
@@ -495,6 +590,19 @@ html[data-theme="dark"] .footer-divider {
 
   .footer-description {
     font-size: 0.9rem;
+  }
+
+  .footer-logo-img {
+    height: 120px;
+  }
+
+  .footer-logo-link {
+    padding: 8px;
+  }
+
+  .footer-logo-container {
+    max-width: 250px;
+    padding: 1rem;
   }
 }
 

@@ -167,7 +167,7 @@ order: 100
   border-color: var(--primary);
 }
 
-.contact-icon {
+.contact-sections .contact-icon {
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
@@ -182,7 +182,7 @@ order: 100
   transition: all var(--transition-base);
 }
 
-.contact-card:hover .contact-icon {
+.contact-sections .contact-card:hover .contact-icon {
   transform: scale(1.1);
   box-shadow: var(--shadow-md);
 }
@@ -271,7 +271,7 @@ order: 100
   border-bottom: 2px solid var(--primary);
 }
 
-.location-icon {
+.contact-sections .location-icon {
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
@@ -285,7 +285,7 @@ order: 100
   transition: all var(--transition-base);
 }
 
-.location-container:hover .location-icon {
+.contact-sections .location-container:hover .location-icon {
   transform: scale(1.1);
   box-shadow: var(--shadow-md);
 }
@@ -381,7 +381,7 @@ order: 100
   border-bottom: 2px solid var(--primary);
 }
 
-.form-icon {
+.contact-sections .form-icon {
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
@@ -395,7 +395,7 @@ order: 100
   transition: all var(--transition-base);
 }
 
-.form-container:hover .form-icon {
+.contact-sections .form-container:hover .form-icon {
   transform: scale(1.1);
   box-shadow: var(--shadow-md);
 }
@@ -528,7 +528,7 @@ body.dark-mode .form-container:hover {
     transform: translateY(-2px);
   }
   
-  .contact-icon {
+  .contact-sections .contact-icon {
     width: 50px;
     height: 50px;
     font-size: 1.25rem;
