@@ -11,10 +11,6 @@ semester_sort: 20091
 active: false
 instructors: mit U. Goertz und G. Wiese
 description: "Arbeitsgemeinschaft: The Eigencurve (mit U. Goertz und G. Wiese)"
-pdfs:
-  - label: "The Eigencurve (mit U. Goertz und G. Wiese)"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/0910WS_Eigencurve.pdf"
-    file: "/assets/uploads/0910WS_Eigencurve.pdf"
 ---
 
 Arbeitsgemeinschaft: The Eigencurve (mit U. Goertz und G. Wiese)

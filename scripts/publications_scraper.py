@@ -1158,7 +1158,7 @@ def create_comprehensive_publications():
             'year': '2024',
             'type': 'Publications',
             'abstract': 'Complete list of all publications from the AG Computational Arithmetic Geometry research group at Heidelberg University',
-            'links': [{'label': 'Heidelberg Website', 'url': 'https://typo.iwr.uni-heidelberg.de/groups/arith-geom/publications.html'}],
+            'links': [],
             'pdfs': [],
             'content': 'Comprehensive collection of publications from 1998 to present',
             'keywords': ['publications', 'research group', 'comprehensive list']

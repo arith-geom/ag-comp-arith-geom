@@ -67,9 +67,7 @@ title: Members
 
           {% if group_leader.email %}
           <div class="member-contact">
-            <a href="mailto:{{ group_leader.email }}" class="btn btn-outline-primary">
-              <i class="fas fa-envelope"></i> Email
-            </a>
+            <p><strong>{{ group_leader.email }}</strong></p>
           </div>
           {% endif %}
         </div>
@@ -125,9 +123,7 @@ title: Members
 
             {% if member.email %}
             <div class="member-contact">
-              <a href="mailto:{{ member.email }}" class="btn btn-outline-primary btn-sm">
-                <i class="fas fa-envelope"></i> Email
-              </a>
+              <p><strong>{{ member.email }}</strong></p>
             </div>
             {% endif %}
           </div>
@@ -166,9 +162,7 @@ title: Members
 
           <div class="member-contact">
             {% if member.email %}
-              <a href="mailto:{{ member.email }}" class="btn btn-outline-primary btn-sm">
-                <i class="fas fa-envelope"></i> Email
-              </a>
+              <p><strong>{{ member.email }}</strong></p>
             {% endif %}
           </div>
         </div>

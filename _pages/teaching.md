@@ -1,10 +1,10 @@
 ---
 layout: page
-permalink: "/teaching/"
-nav: true
+permalink: "/teaching-overview/"
+nav: false
 nav_order: 4
 show_title: false
-title: Teaching
+title: Teaching Overview
 ---
 
 <div class="teaching-redirect">

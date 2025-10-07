@@ -11,13 +11,9 @@ semester_sort: 20181
 active: false
 instructors: Prof. Dr. Böckle, Dr. Maurischat, Gazda
 description: Hauptseminar Arithmetik von Zahl- und Funktionenkörpern (Prof. Dr. Böckle, Dr. Maurischat, Gazda)
-links:
-  - label: "Arithmetik von Zahl- und Funktionenkörpern"
-    url: "https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/andreas-maurischat/hauptseminar-ss2018.html"
 ---
 
 Hauptseminar Arithmetik von Zahl- und Funktionenkörpern (Prof. Dr. Böckle, Dr. Maurischat, Gazda)
 
---- Content from https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/andreas-maurischat/hauptseminar-ss2018.html ---
 HomeMembersResearchPublicationsTeachingLinksContactInterna --> Uni Heidelberg > IWR > ARITHGEO > &nbsp;Members >&nbsp;Hauptseminar SS2018 [english]&nbsp;|&nbsp;[] Hauptseminar "Arithmetik von Zahl- und Funktionenkörpern" (SS 2018)&nbsp; Topic: Shtuka cohomology and special values of Goss L-functions We meet thursdays 9-11 in Seminarraum 2. The first talk will take place on April 19. Seminar program &nbsp;arithgeo@iwr.uni-heidelberg.deLast Update:&nbsp;25.10.2021 - 15:08 &copy; Copyright Universit&auml;t Heidelberg.&nbsp;Impressum.
 

@@ -14,10 +14,6 @@ description: Vorlesung Darstellungen und Invarianten (Dr. Cerviño), Modulbeschr
 links:
   - label: "Darstellungen und Invarianten"
     url: "https://jmcrv.org/?page_id=253"
-pdfs:
-  - label: "Modulbeschreibung"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/DarstellungenUndInvarianten_WS201415.pdf"
-    file: "/assets/uploads/DarstellungenUndInvarianten_WS201415.pdf"
 ---
 
 Vorlesung "Darstellungen und Invarianten" (Dr. Cerviño), Modulbeschreibung

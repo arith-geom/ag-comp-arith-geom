@@ -14,10 +14,6 @@ description: Vorlesung Darstellungen und Invarianten 2 (Dr. Cerviño), Modulbesc
 links:
   - label: "Darstellungen und Invarianten 2"
     url: "https://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&amp;status=init&amp;vmfile=no&amp;publishid=204925&amp;moduleCall=webInfo&amp;publishConfFile=webInfo&amp;publishSubDir=veranstaltung"
-pdfs:
-  - label: "Modulbeschreibung"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/DarstellungenUndInvarianten_II_SS2015.pdf"
-    file: "/assets/uploads/DarstellungenUndInvarianten_II_SS2015.pdf"
 ---
 
 Vorlesung "Darstellungen und Invarianten 2" (Dr. Cerviño), Modulbeschreibung

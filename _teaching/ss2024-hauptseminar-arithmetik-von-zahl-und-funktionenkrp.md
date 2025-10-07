@@ -11,10 +11,6 @@ semester_sort: 20241
 active: false
 instructors: Prof. Dr. Böckle, Dr. Gezmiş, Shavali, C.V. Sriram
 description: "Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: Shtukas for reductive groups and global Langlands correspondence after Vincent Lafforgue (Prof. Dr. Böckle, Dr. Gezmiş, Shavali, C.V. Sriram)"
-pdfs:
-  - label: "Shtukas for reductive groups and global Langlands correspondence after Vincent Lafforgue"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/Seminar.pdf"
-    file: "/assets/uploads/Seminar.pdf"
 ---
 
 Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "Shtukas for reductive groups and global Langlands correspondence after Vincent Lafforgue" (Prof. Dr. Böckle, Dr. Gezmiş, Shavali, C.V. Sriram)

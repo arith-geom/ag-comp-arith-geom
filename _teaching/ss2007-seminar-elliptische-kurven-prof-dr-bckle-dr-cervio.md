@@ -11,10 +11,6 @@ semester_sort: 20071
 active: false
 instructors: Prof. Dr. Böckle, Dr. Cerviño
 description: Seminar Elliptische Kurven (Prof. Dr. Böckle, Dr. Cerviño)
-pdfs:
-  - label: "Elliptische Kurven"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/EllKurvenSemRev2.pdf"
-    file: "/assets/uploads/EllKurvenSemRev2.pdf"
 ---
 
 Seminar "Elliptische Kurven" (Prof. Dr. Böckle, Dr. Cerviño)

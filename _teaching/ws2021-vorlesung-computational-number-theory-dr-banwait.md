@@ -11,10 +11,6 @@ semester_sort: 20212
 active: false
 instructors: Dr. Banwait
 description: Vorlesung Computational Number Theory (Dr. Banwait)
-pdfs:
-  - label: "Computational Number Theory"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/program_comp_nt.pdf"
-    file: "/assets/uploads/program_comp_nt.pdf"
 ---
 
 Vorlesung "Computational Number Theory" (Dr. Banwait)

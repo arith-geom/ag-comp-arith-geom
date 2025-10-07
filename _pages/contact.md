@@ -87,13 +87,8 @@ order: 100
     <div class="form-content">
       <div class="email-info">
         <div class="contact-options">
-          <div class="contact-buttons" style="display: inline-block; margin-right: 1rem; vertical-align: middle;">
-            <a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="btn btn-outline-primary">
-              <i class="fas fa-envelope me-2" aria-hidden="true"></i>Send Email
-            </a>
-          </div>
-          <div class="contact-detail" style="display: inline-block; vertical-align: middle;">
-            <p><a href="mailto:sekretariat.boeckle@iwr.uni-heidelberg.de" class="email-link"><strong>sekretariat.boeckle@iwr.uni-heidelberg.de</strong></a></p>
+          <div class="contact-detail">
+            <p><strong>sekretariat.boeckle@iwr.uni-heidelberg.de</strong></p>
           </div>
         </div>
       </div>

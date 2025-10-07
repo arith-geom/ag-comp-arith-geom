@@ -31,7 +31,7 @@ order: 100
         <h3>Dr. Peter Gräf</h3>
         <p><strong>Former PhD Student</strong> (2015-2020)</p>
         <p><strong>Research interests:</strong> Drinfeld modular forms, p-adic automorphic forms, L-invariants, representation theory, arithmetic geometry</p>
-        <p><strong>Email:</strong> <a href="mailto:peter.graef@iwr.uni-heidelberg.de">peter.graef@iwr.uni-heidelberg.de</a></p>
+        <p><strong>Email:</strong> peter.graef@iwr.uni-heidelberg.de</p>
         <p><strong>Website:</strong> <a href="https://sites.google.com/view/peter-graef" target="_blank">Personal Website</a></p>
       </div>
     </div>
@@ -122,7 +122,7 @@ order: 100
     <div class="contact-info">
       <h3>Contact</h3>
       <p>For questions about Peter's research or publications:</p>
-      <p><strong>Email:</strong> <a href="mailto:arithgeo@iwr.uni-heidelberg.de">arithgeo@iwr.uni-heidelberg.de</a></p>
+      <p><strong>Email:</strong> arithgeo@iwr.uni-heidelberg.de</p>
       <p><strong>Personal Website:</strong> <a href="https://sites.google.com/view/peter-graef" target="_blank">https://sites.google.com/view/peter-graef</a></p>
     </div>
   </div>

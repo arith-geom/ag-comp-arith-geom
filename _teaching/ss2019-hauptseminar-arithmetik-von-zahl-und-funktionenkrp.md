@@ -11,10 +11,6 @@ semester_sort: 20191
 active: false
 instructors: Prof. Dr. Böckle, Dr. Ludwig
 description: Hauptseminar Arithmetik von Zahl- und Funktionenkörpern (Prof. Dr. Böckle, Dr. Ludwig)
-pdfs:
-  - label: "Arithmetik von Zahl- und Funktionenkörpern"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/Programm_la-courbe_SoSe19.pdf"
-    file: "/assets/uploads/Programm_la-courbe_SoSe19.pdf"
 ---
 
 Hauptseminar Arithmetik von Zahl- und Funktionenkörpern (Prof. Dr. Böckle, Dr. Ludwig)

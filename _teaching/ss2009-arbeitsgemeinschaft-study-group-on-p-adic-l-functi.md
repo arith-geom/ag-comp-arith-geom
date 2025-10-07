@@ -11,10 +11,6 @@ semester_sort: 20091
 active: false
 instructors: G. Böckle, G. Wiese
 description: "Arbeitsgemeinschaft: Study group on p-adic L-functions and the Mazur-Tate-Teitelbaum conjecture (G. Böckle, G. Wiese)"
-pdfs:
-  - label: "Study group on p-adic L-functions and the Mazur-Tate-Teitelbaum conjecture"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/09SS_pAdicLF.pdf"
-    file: "/assets/uploads/09SS_pAdicLF.pdf"
 ---
 
 Arbeitsgemeinschaft: Study group on p-adic L-functions and the Mazur-Tate-Teitelbaum conjecture (G. Böckle, G. Wiese)

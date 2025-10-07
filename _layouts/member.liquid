@@ -22,9 +22,7 @@ window.location.href = '/members/?member={{ page.name | slugify | append: '-' | 
       {% endif %}
       {% if page.email %}
         <div class="member-contact">
-          <a href="mailto:{{ page.email }}" class="member-email">
-            <i class="fas fa-envelope me-2" aria-hidden="true"></i>{{ page.email }}
-          </a>
+          <p class="member-email">{{ page.email }}</p>
         </div>
       {% endif %}
       <div class="member-links">

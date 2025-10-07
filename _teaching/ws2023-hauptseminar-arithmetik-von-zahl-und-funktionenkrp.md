@@ -11,10 +11,6 @@ semester_sort: 20232
 active: false
 instructors: Prof. Dr. Böckle, Dr. Gezmiş, Dr. Ludwig
 description: "Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: Rigid meromorphic cocycles (Prof. Dr. Böckle, Dr. Gezmiş, Dr. Ludwig)"
-pdfs:
-  - label: "Rigid meromorphic cocycles"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/RMCprogram_01.pdf"
-    file: "/assets/uploads/RMCprogram_01.pdf"
 ---
 
 Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "Rigid meromorphic cocycles" (Prof. Dr. Böckle, Dr. Gezmiş, Dr. Ludwig)

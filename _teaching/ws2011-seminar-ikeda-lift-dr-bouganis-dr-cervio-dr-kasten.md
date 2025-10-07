@@ -11,10 +11,6 @@ semester_sort: 20112
 active: false
 instructors: Dr. Bouganis, Dr. Cerviño, Dr. Kasten
 description: Seminar Ikeda-Lift (Dr. Bouganis, Dr. Cerviño, Dr. Kasten)
-pdfs:
-  - label: "Ikeda-Lift"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/Seminarprogramm_IkedaLift_WS2011-12_BouganisCervinoKasten.pdf"
-    file: "/assets/uploads/Seminarprogramm_IkedaLift_WS2011-12_BouganisCervinoKasten.pdf"
 ---
 
 Seminar "Ikeda-Lift" (Dr. Bouganis, Dr. Cerviño, Dr. Kasten)
