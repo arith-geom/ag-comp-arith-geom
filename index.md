@@ -11,6 +11,7 @@ nav_order: 1
     <div class="hero-content">
       <h1 class="hero-title">AG Computational Arithmetic Geometry</h1>
       <p class="hero-subtitle">Prof. Dr. Gebhard Böckle</p>
+      <p class="hero-description">Research Group at the Interdisciplinary Center for Scientific Computing (IWR), Heidelberg University</p>
     </div>
   </div>
 </div>
@@ -19,18 +20,18 @@ nav_order: 1
 .hero-header {
   position: relative;
   width: 100%;
-  height: 500px; /* keep full height */
+  height: 500px;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fill width, crop bottom */
-  object-position: 50% 0%; /* focus the top area (show logos) */
+  object-fit: cover;
+  object-position: 50% 0%;
   background: transparent;
 }
 
@@ -48,14 +49,13 @@ nav_order: 1
 
 .hero-content {
   text-align: center;
-  color: white;
+  color: #ffffff !important;
   padding: 2rem;
 }
 
-/* Ensure hero text stays white even with global heading overrides */
-.hero-title,
-.hero-subtitle {
-  color: var(--white) !important;
+/* Ensure all text in hero content is white */
+.hero-content * {
+  color: #ffffff !important;
 }
 
 .hero-title {
@@ -63,259 +63,261 @@ nav_order: 1
   font-weight: 700;
   margin-bottom: 0.5rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  color: #ffffff !important;
+}
+
+/* Override any global heading styles for hero title */
+.hero-header .hero-title,
+.hero-overlay .hero-title,
+.hero-content .hero-title {
+  color: #ffffff !important;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   font-weight: 400;
-  margin: 0;
+  margin-bottom: 0.75rem;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  color: #ffffff !important;
+}
+
+/* Override any global styles for hero subtitle */
+.hero-header .hero-subtitle,
+.hero-overlay .hero-subtitle,
+.hero-content .hero-subtitle {
+  color: #ffffff !important;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 0;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  color: #ffffff !important;
+}
+
+/* Override any global styles for hero description */
+.hero-header .hero-description,
+.hero-overlay .hero-description,
+.hero-content .hero-description,
+.hero-description {
+  color: #ffffff !important;
 }
 
 @media (max-width: 768px) {
   .hero-header {
-    height: 360px; /* smaller on mobile too */
+    height: 360px;
   }
-  
+
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.2rem;
   }
+
+  .hero-description {
+    font-size: 1rem;
+  }
 }
 
-/* Content Sections Styles */
-.content-sections {
+/* Horizontal Card Layout Styles */
+.main-container {
   width: 100%;
   margin: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 0.75rem;
 }
 
-.content-section {
-  margin-bottom: 0.25rem;
-  padding: 1rem;
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature-card {
   background: var(--bg-primary);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
+  overflow: hidden;
+  position: relative;
 }
 
-.content-section:hover {
+.feature-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  border-color: var(--primary);
 }
 
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.0625rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary);
-}
-
-.section-icon {
-  width: 50px;
-  height: 50px;
+.card-header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
-  color: var(--primary-text);
+  padding: 0.75rem;
+  color: white;
+  position: relative;
+}
+
+.card-icon {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
-  box-shadow: var(--shadow-sm);
-}
-
-/* Ensure section icons are always white */
-.section-icon,
-.section-icon i,
-.section-icon .fas {
-  color: #ffffff !important;
-}
-
-/* Dark mode specific override for section icons */
-[data-theme="dark"] .section-icon,
-[data-theme="dark"] .section-icon i,
-[data-theme="dark"] .section-icon .fas,
-body.dark-mode .section-icon,
-body.dark-mode .section-icon i,
-body.dark-mode .section-icon .fas {
-  color: #ffffff !important;
-}
-
-.section-header h3 {
-  color: var(--text-primary);
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-.content-section p {
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-top: 0;
   margin-bottom: 0.5rem;
+  backdrop-filter: blur(10px);
 }
 
-.cta-buttons {
+.card-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  padding: 0 1rem 1rem 1rem;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
 }
 
-.cta-buttons .btn {
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
   border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.8rem;
   transition: all var(--transition-base);
 }
 
-.cta-buttons .btn:hover {
+.card-link:hover {
+  background: var(--primary);
+  color: var(--primary-text);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
-.contact-section {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  border: 2px solid var(--primary);
-}
 
-.contact-info {
-  background: var(--bg-secondary);
-  padding: 1.5rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-}
 
-.contact-info p {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-.contact-info a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive adjustments for content sections */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .content-section {
-    padding: 1.5rem;
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
-  
-  .section-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-  
-  .section-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-  
-  .section-header h3 {
-    font-size: 1.5rem;
-  }
-  
-  .cta-buttons {
+
+  .card-footer {
     flex-direction: column;
   }
-  
-  .cta-buttons .btn {
+
+  .card-link {
     width: 100%;
-    text-align: center;
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  .content-section {
-    padding: 1rem;
+  .main-container {
+    padding: 0 0.5rem;
   }
-  
-  .contact-info {
-    padding: 1rem;
+
+  .card-header {
+    padding: 0.5rem;
+  }
+
+  .card-body {
+    padding: 0.75rem;
+  }
+
+  .card-footer {
+    padding: 0 0.75rem 0.75rem 0.75rem;
   }
 }
 </style>
 
 
 
-<div class="content-sections">
-  <div class="content-section">
-    <div class="section-header">
-      <div class="section-icon">
-        <i class="fas fa-university" aria-hidden="true"></i>
+<div class="main-container">
+  <!-- Main Feature Cards -->
+  <div class="content-grid">
+    <div class="feature-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-university" aria-hidden="true"></i>
+        </div>
+        <h3>About Our Research Group</h3>
       </div>
-      <h3>About Our Research Group</h3>
+      <div class="card-body">
+        <p>Website of the computational arithmetic geometry research group at IWR, Heidelberg University. Conducting cutting-edge research in algebraic number theory and arithmetic geometry.</p>
+      </div>
+      <div class="card-footer">
+        <a href="{{ '/research/' | relative_url }}" class="card-link">
+          <i class="fas fa-search" aria-hidden="true"></i>Research Areas
+        </a>
+        <a href="{{ '/members/' | relative_url }}" class="card-link">
+          <i class="fas fa-users" aria-hidden="true"></i>Our Team
+        </a>
+      </div>
     </div>
-    <p>This is the website of the research group "computational arithmetic geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.</p>
+
+    <div class="feature-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-microscope" aria-hidden="true"></i>
+        </div>
+        <h3>Research Focus</h3>
+      </div>
+      <div class="card-body">
+        <p>Focus on Galois representations, modular forms, elliptic curves, deformation theory, and function field arithmetic including L-functions and Drinfeld modular forms.</p>
+      </div>
+      <div class="card-footer">
+        <a href="{{ '/research/' | relative_url }}" class="card-link">
+          <i class="fas fa-flask" aria-hidden="true"></i>Explore Research
+        </a>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-cogs" aria-hidden="true"></i>
+        </div>
+        <h3>Our Methods</h3>
+      </div>
+      <div class="card-body">
+        <p>We apply theoretical methods and computer algebra experiments to solve problems in number theory and arithmetic geometry, developing computational tools and gathering examples.</p>
+      </div>
+      <div class="card-footer">
+        <a href="{{ '/publications/' | relative_url }}" class="card-link">
+          <i class="fas fa-file-alt" aria-hidden="true"></i>Publications
+        </a>
+      </div>
+    </div>
   </div>
 
-  <div class="content-section">
-    <div class="section-header">
-      <div class="section-icon">
-        <i class="fas fa-microscope" aria-hidden="true"></i>
-      </div>
-      <h3>Research Focus</h3>
-    </div>
-    <p>Within algebraic number theory and arithmetic geometry, the focus of the research group is on Galois representations, their relations to modular forms and elliptic curves, their deformation theory etc., as well as on some aspects of function field arithmetic such as L-functions and Drinfeld modular forms.</p>
-  </div>
 
-  <div class="content-section">
-    <div class="section-header">
-      <div class="section-icon">
-        <i class="fas fa-cogs" aria-hidden="true"></i>
-      </div>
-      <h3>Our Methods</h3>
-    </div>
-    <p>To tackle problems in the themes described above, we apply a broad range of methods. On one hand we pursue these questions by purely theoretical methods. On the other, we use computer algebra to carry out experiments that help us gather examples for the theory or to solve particular questions that arise from the theory. Some members of our group have also developed routines on top of existing computer algebra packages.</p>
-  </div>
 
-  <div class="content-section">
-    <div class="section-header">
-      <div class="section-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </div>
-      <h3>Learn More</h3>
-    </div>
-    <p>A more detailed survey of our activities can be found in the research section and in the publications of our members.</p>
-    <div class="cta-buttons">
-      <a href="{{ '/research/' | relative_url }}" class="btn btn-outline-primary">
-        <i class="fas fa-search me-2" aria-hidden="true"></i>Research Areas
-      </a>
-      <a href="{{ '/publications/' | relative_url }}" class="btn btn-outline-primary">
-        <i class="fas fa-file-alt me-2" aria-hidden="true"></i>Publications
-      </a>
-      <a href="{{ '/members/' | relative_url }}" class="btn btn-outline-primary">
-        <i class="fas fa-users me-2" aria-hidden="true"></i>Our Team
-      </a>
-    </div>
-  </div>
-
-  <div class="content-section contact-section">
-    <div class="section-header">
-      <div class="section-icon">
-        <i class="fas fa-envelope" aria-hidden="true"></i>
-      </div>
-      <h3>Contact Us</h3>
-    </div>
-    <div class="contact-info">
-      <p><strong>Email:</strong> <a href="mailto:arithgeo@iwr.uni-heidelberg.de">arithgeo@iwr.uni-heidelberg.de</a></p>
-      <p><strong>Location:</strong> Interdisciplinary Center for Scientific Computing (IWR), Heidelberg University</p>
-    </div>
-  </div>
 </div>

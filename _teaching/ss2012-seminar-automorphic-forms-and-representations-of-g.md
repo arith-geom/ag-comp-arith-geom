@@ -11,10 +11,6 @@ semester_sort: 20121
 active: false
 instructors: Dr. Cerviño, Dr. Centeleghe
 description: Seminar Automorphic Forms and representations of GL2 (Dr. Cerviño, Dr. Centeleghe)
-pdfs:
-  - label: "Automorphic Forms and representations of GL2"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/AutomorphicFormsAndRepresentationsForGL2_CentelegheCervinoChekaru.pdf"
-    file: "/assets/uploads/AutomorphicFormsAndRepresentationsForGL2_CentelegheCervinoChekaru.pdf"
 ---
 
 Seminar "Automorphic Forms and representations of GL2" (Dr. Cerviño, Dr. Centeleghe)

@@ -14,10 +14,6 @@ description: Vorlesung Bruhat-Tits Gebäude (Prof. Dr. Böckle), Modulbeschreibu
 links:
   - label: "Bruhat-Tits Gebäude"
     url: "http://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&amp;status=init&amp;vmfile=no&amp;publishid=204923&amp;moduleCall=webInfo&amp;publishConfFile=webInfo&amp;publishSubDir=veranstaltung"
-pdfs:
-  - label: "Modulbeschreibung"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/Bruhat-Tits.pdf"
-    file: "/assets/uploads/Bruhat-Tits.pdf"
 ---
 
 Vorlesung "Bruhat-Tits Gebäude" (Prof. Dr. Böckle), Modulbeschreibung

@@ -30,7 +30,7 @@ order: 100
       <div class="member-details">
         <h3>Dr. Ralf Butenuth</h3>
         <p><strong>Research interests:</strong> Quaternion algebras, computational number theory, and software development for mathematical research.</p>
-        <p><strong>Email:</strong> <a href="mailto:ralf.butenuth@math.uni-heidelberg.de">ralf.butenuth@math.uni-heidelberg.de</a></p>
+        <p><strong>Email:</strong> ralf.butenuth@math.uni-heidelberg.de</p>
       </div>
     </div>
 
@@ -78,7 +78,7 @@ order: 100
       <tr>
         <td align="right">
           <div class="bearbeiter">
-            <a href="mailto:ralf.butenuth@math.uni-heidelberg.de?subject=About%20Publications">ralf.butenuth@math.uni-heidelberg.de</a><br>
+            ralf.butenuth@math.uni-heidelberg.de<br>
             Last Update: 04.06.2024 - 16:09<br>
           </div>
         </td>

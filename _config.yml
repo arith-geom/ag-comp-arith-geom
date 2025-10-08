@@ -18,7 +18,7 @@ creator:
   name: "Victor Merk"
   github: "VictorMerk"
   github_url: "https://github.com/VictorMerk"
-  role: "Website Designer & Developer"
+  role: "Student and Developer"
   year: "2024"
 # Bilingual support removed - keeping English only
 markdown: kramdown
@@ -143,7 +143,6 @@ collections:
     output: true
     permalink: /links/:name/
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-scholar
@@ -170,6 +169,7 @@ exclude:
   - Thumbs.db
   - assets/search-data-backup.json
   - assets/json/publications-data.json.old
+  - assets/search-data.json
 
 # Performance and regeneration settings
 incremental: false

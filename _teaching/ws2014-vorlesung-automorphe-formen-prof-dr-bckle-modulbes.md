@@ -14,10 +14,6 @@ description: Vorlesung Automorphe Formen (Prof. Dr. Böckle), Modulbeschreibung
 links:
   - label: "Automorphe Formen"
     url: "https://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&amp;status=init&amp;vmfile=no&amp;publishid=193880&amp;moduleCall=webInfo&amp;publishConfFile=webInfo&amp;publishSubDir=veranstaltung"
-pdfs:
-  - label: "Modulbeschreibung"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Vorlesungen/Modulbeschreibung-AutomorpheFormen.pdf"
-    file: "/assets/uploads/Modulbeschreibung-AutomorpheFormen.pdf"
 ---
 
 Vorlesung "Automorphe Formen" (Prof. Dr. Böckle), Modulbeschreibung

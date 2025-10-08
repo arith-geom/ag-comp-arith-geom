@@ -3,7 +3,7 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- Enhanced Navigation Bar with High Contrast Theme -->
-  <nav id="navbar" class="navbar heidelberg-navbar navbar-expand-lg sticky-top" role="navigation" aria-label="Main navigation">
+  <nav id="navbar" class="navbar heidelberg-navbar sticky-top" role="navigation" aria-label="Main navigation">
     <div class="container-fluid px-3">
       <!-- Brand/Logo - Responsive -->
       <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ site.baseurl }}/" aria-label="AG Computational Arithmetic Geometry - Home">
@@ -13,30 +13,9 @@
         </div>
       </a>
 
-      <!-- Right side controls -->
-      <div class="d-flex align-items-center gap-2">
-        <!-- Theme Switcher -->
-        {% if site.enable_theme_switcher %}
-          <button id="theme-toggle" class="header-control-btn theme-toggle-btn"
-                  title="Switch Theme" aria-label="Toggle dark and light mode">
-             <span class="theme-icon-light" id="theme-icon-light" aria-hidden="true">☀️</span>
-             <span class="theme-icon-dark" id="theme-icon-dark" aria-hidden="true">🌙</span>
-          </button>
-        {% endif %}
-
-
-
-        <!-- Mobile menu toggle -->
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation menu">
-          <span class="navbar-toggler-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto flex-nowrap align-items-center" role="menubar">
+      <!-- Desktop Navigation (Large screens) -->
+      <div class="navbar-collapse collapse" id="navbarNav">
+        <ul class="navbar-nav flex-nowrap align-items-center ms-auto" role="menubar">
           <!-- Home -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}" role="none">
             <a class="nav-link" href="{{ '/' | relative_url }}" role="menuitem" aria-current="{% if page.permalink == '/' %}page{% endif %}" aria-label="Home">
@@ -88,8 +67,104 @@
             </a>
           </li>
 
-
+          <!-- Theme Switcher -->
+          {% if site.enable_theme_switcher %}
+          <li class="nav-item" role="none">
+            <button id="theme-toggle" class="nav-link header-control-btn theme-toggle-btn"
+                    title="Switch Theme" aria-label="Toggle dark and light mode">
+               <span class="theme-icon-light" id="theme-icon-light" aria-hidden="true">☀️</span>
+               <span class="theme-icon-dark" id="theme-icon-dark" aria-hidden="true">🌙</span>
+            </button>
+          </li>
+          {% endif %}
         </ul>
+      </div>
+
+      <!-- Sidebar toggle - positioned outside navbar-collapse so it's always accessible -->
+      <button class="navbar-sidebar-toggle" type="button"
+              id="sidebarToggle"
+              aria-controls="sidebarNav" aria-expanded="false"
+              aria-label="Toggle navigation menu">
+        <span class="sidebar-toggle-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+
+      <!-- Main page backdrop (behind everything) -->
+      <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+      <!-- Custom Sidebar Navigation -->
+      <div class="sidebar-nav" id="sidebarNav" role="navigation" aria-label="Mobile navigation menu">
+        <!-- Sidebar overlay (behind sidebar content) -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <div class="sidebar-content">
+          <div class="sidebar-header">
+            <div class="brand-text-sidebar">
+              <div class="fw-bold brand-title-sidebar">AG Computational Arithmetic Geometry</div>
+              <small class="university-name-sidebar">Heidelberg University</small>
+            </div>
+            <button class="sidebar-close-btn" id="sidebarClose" aria-label="Close navigation menu">
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <nav class="sidebar-menu">
+            <ul class="sidebar-menu-list" role="menubar">
+              <!-- Home -->
+              <li class="sidebar-menu-item {% if page.permalink == '/' %}active{% endif %}" role="none">
+                <a class="sidebar-menu-link" href="{{ '/' | relative_url }}" role="menuitem" aria-current="{% if page.permalink == '/' %}page{% endif %}">
+                  <i class="fas fa-home nav-icon" aria-hidden="true"></i>
+                  <span class="nav-text">Home</span>
+                </a>
+              </li>
+
+              <li class="sidebar-menu-item {% if page.url == '/research/' %}active{% endif %}" role="none">
+                <a class="sidebar-menu-link" href="{{ '/research/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/research/' %}page{% endif %}">
+                  <i class="fas fa-microscope nav-icon" aria-hidden="true"></i>
+                  <span class="nav-text">Research</span>
+                </a>
+              </li>
+
+              <li class="sidebar-menu-item {% if page.url == '/publications/' %}active{% endif %}" role="none">
+                <a class="sidebar-menu-link" href="{{ '/publications/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/publications/' %}page{% endif %}">
+                  <i class="fas fa-file-alt nav-icon" aria-hidden="true"></i>
+                  <span class="nav-text">Publications</span>
+                </a>
+              </li>
+
+              <li class="sidebar-menu-item {% if page.url == '/teaching/' %}active{% endif %}" role="none">
+                <a class="sidebar-menu-link" href="{{ '/teaching/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/teaching/' %}page{% endif %}">
+                  <i class="fas fa-chalkboard-teacher nav-icon" aria-hidden="true"></i>
+                  <span class="nav-text">Teaching</span>
+                </a>
+              </li>
+
+              <!-- Members - positioned before Links -->
+              <li class="sidebar-menu-item {% if page.url == '/members/' %}active{% endif %}" role="none">
+                <a class="sidebar-menu-link" href="{{ '/members/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/members/' %}page{% endif %}">
+                  <i class="fas fa-users nav-icon" aria-hidden="true"></i>
+                  <span class="nav-text">Members</span>
+                </a>
+              </li>
+
+              <li class="sidebar-menu-item {% if page.url == '/links/' %}active{% endif %}" role="none">
+                <a class="sidebar-menu-link" href="{{ '/links/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/links/' %}page{% endif %}">
+                  <i class="fas fa-link nav-icon" aria-hidden="true"></i>
+                  <span class="nav-text">Links</span>
+                </a>
+              </li>
+
+              <li class="sidebar-menu-item {% if page.url == '/contact/' %}active{% endif %}" role="none">
+                <a class="sidebar-menu-link" href="{{ '/contact/' | relative_url }}" role="menuitem" aria-current="{% if page.url == '/contact/' %}page{% endif %}">
+                  <i class="fas fa-envelope nav-icon" aria-hidden="true"></i>
+                  <span class="nav-text">Contact</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   </nav>
@@ -99,6 +174,20 @@
 /* Navbar Styles */
 .heidelberg-navbar .container-fluid {
   background-color: transparent !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  flex-wrap: nowrap !important;
+  overflow: hidden !important;
+  height: 60px !important;
+  max-height: 60px !important;
+  min-height: 60px !important;
+  transition: all 0.3s ease !important;
+  /* Prevent layout shifts */
+  flex-shrink: 0 !important;
 }
 
 /* Force all navbar text to be white */
@@ -115,9 +204,19 @@
   border-bottom: 2px solid var(--primary-hover) !important;
   box-shadow: var(--shadow-lg) !important;
   padding: 0.15rem 0 !important;
-  transition: all var(--transition-base);
+  transition: all 0.3s ease !important;
   position: relative;
   z-index: var(--z-sticky);
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 60px !important;
+  max-height: 60px !important;
+  min-height: 60px !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  /* Prevent layout shifts */
+  flex-shrink: 0 !important;
 }
 
 /* Dark mode navbar */
@@ -136,6 +235,10 @@ body.dark-mode .heidelberg-navbar {
   transition: all var(--transition-base);
   text-decoration: none;
   flex-shrink: 0;
+  white-space: nowrap;
+  min-width: 0;
+  max-width: 380px;
+  overflow: hidden;
 }
 
 .heidelberg-navbar .navbar-brand:hover,
@@ -151,6 +254,10 @@ body.dark-mode .heidelberg-navbar {
   align-items: flex-start;
   gap: 0.1rem;
   transition: gap 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  min-width: 0;
+  max-width: 350px;
+  overflow: hidden;
 }
 
 .brand-title {
@@ -159,6 +266,9 @@ body.dark-mode .heidelberg-navbar {
   line-height: 1.2;
   display: block;
   transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .university-name {
@@ -168,16 +278,19 @@ body.dark-mode .heidelberg-navbar {
   display: block;
   opacity: 0.9;
   transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Navbar links with high contrast - always white */
 .heidelberg-navbar .nav-link {
   color: #ffffff !important;
   font-weight: 500 !important;
-  padding: 0.5rem 0.75rem !important;
+  padding: 0.25rem 0.5rem !important;
   margin: 0 0.125rem;
   border-radius: var(--radius-lg);
-  transition: all var(--transition-base);
+  transition: none !important;
   position: relative;
   text-decoration: none;
   font-size: 0.9rem;
@@ -185,13 +298,18 @@ body.dark-mode .heidelberg-navbar {
   align-items: center;
   justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  height: 44px !important;
+  max-height: 44px !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
 }
 
 /* Icon-only styles for medium screens */
 .nav-icon {
   font-size: 1rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: none !important;
+  max-height: 1rem;
+  line-height: 1;
 }
 
 .nav-text {
@@ -202,61 +320,289 @@ body.dark-mode .heidelberg-navbar {
 
 
 
-/* Default: Icon-only mode (text hidden) */
+/* Default navbar states */
+.navbar-collapse {
+  display: none;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+  transition: none !important;
+}
+
+.navbar-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  align-self: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  flex-shrink: 1 !important;
+  overflow: hidden !important;
+  gap: 0.125rem !important;
+  margin-left: auto !important;
+  justify-content: center !important;
+  transition: none !important;
+}
+
 .nav-text {
   display: none !important;
   margin-left: 0.375rem;
   white-space: nowrap;
+  opacity: 0;
+  transition: none !important;
 }
 
-/* Large screens: Show both icons and text */
-@media (min-width: 900px) {
+.nav-icon {
+  font-size: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+/* Large screens: Show desktop navigation and icons + text */
+@media (min-width: 1200px) {
+  .navbar-collapse {
+    display: flex !important;
+    flex: 1 !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Ensure consistent sizing */
+    min-height: 60px !important;
+  }
+
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    align-self: center !important;
+    width: auto !important;
+    min-width: 0 !important;
+    gap: 0.125rem !important;
+    margin-left: auto !important;
+    justify-content: center !important;
+    transition: all 0.3s ease;
+    /* Prevent layout shifts */
+    flex-shrink: 0 !important;
+  }
+
+  .nav-item {
+    flex-shrink: 0 !important;
+    transition: all 0.3s ease;
+  }
+
   .nav-text {
     display: inline !important;
+    opacity: 1 !important;
+    margin-left: 0.375rem !important;
+    transition: opacity 0.3s ease, display 0.3s ease;
+    /* Consistent font sizing */
+    font-size: 0.9rem !important;
+    white-space: nowrap !important;
   }
 
   .nav-icon {
-    font-size: 1rem;
-    margin-right: 0.375rem;
+    font-size: 1rem !important;
+    margin-right: 0.375rem !important;
+    flex-shrink: 0 !important;
+    transition: font-size 0.3s ease, margin 0.3s ease;
+    max-height: 1rem !important;
+    line-height: 1 !important;
+    width: 1rem !important;
+  }
+
+  /* Ensure proper spacing for nav links */
+  .heidelberg-navbar .nav-link {
+    gap: 0.375rem !important;
+    transition: gap 0.3s ease, padding 0.3s ease;
+    padding: 0.25rem 0.5rem !important;
+    min-width: auto !important;
+    width: auto !important;
+  }
+
+  /* Theme toggle button - visible on medium and large screens */
+  .theme-toggle-btn {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+    position: relative !important;
+    left: auto !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0 !important;
+  }
+
+    /* Hide sidebar toggle on large screens */
+  .navbar-sidebar-toggle {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: scale(0.8) !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, display 0.3s ease;
+    position: absolute !important;
+    pointer-events: none !important;
+  }
+
+  /* Hide sidebar on large screens only when not open */
+  @media (min-width: 1200px) {
+    .sidebar-nav:not(.open) {
+      display: none !important;
+      transform: translateX(-100%) !important;
+      opacity: 0 !important;
+    }
+
+    .sidebar-nav.open {
+      display: flex !important;
+      transform: translateX(0) !important;
+      opacity: 1 !important;
+    }
   }
 }
 
-/* Medium screens: Icon-only mode with larger icons (optimal switch timing) */
-@media (min-width: 700px) and (max-width: 899.98px) {
+/* Medium screens: Icon-only mode with proper transition */
+@media (min-width: 900px) and (max-width: 1199.98px) {
+  .navbar-collapse {
+    display: flex !important;
+    flex: 1 !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    min-height: 60px !important;
+  }
+
+  .navbar-nav {
+    flex-shrink: 0 !important;
+    max-width: none !important;
+  }
+
+  .nav-item {
+    flex-shrink: 0 !important;
+    min-width: 60px !important;
+    max-width: 70px !important;
+  }
+
   .heidelberg-navbar .nav-link {
     padding: 0.5rem !important;
     justify-content: center;
-    min-width: 60px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 60px !important;
+    max-width: 70px !important;
+    width: 60px !important;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .nav-icon {
-    font-size: 1.4rem;
-    margin: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.2rem !important;
+    margin: 0 !important;
+    transition: font-size 0.3s ease;
+    max-height: 1.2rem !important;
+    line-height: 1 !important;
+    flex-shrink: 0 !important;
+    width: 1.2rem !important;
   }
 
   .nav-text {
     display: none !important;
-    opacity: 0;
+    opacity: 0 !important;
+    margin-left: 0 !important;
+    transition: opacity 0.3s ease, display 0.3s ease;
   }
 
-  /* Ensure navbar doesn't wrap in icon-only mode */
-  .navbar-nav {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Show theme toggle button in icon-only mode */
+  .theme-toggle-btn {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+    position: relative !important;
+    left: auto !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0 !important;
   }
 
-  .navbar-nav::-webkit-scrollbar {
-    display: none;
+  /* Hide sidebar toggle in medium screens (use icon-only mode) */
+  .navbar-sidebar-toggle {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: scale(0.8) !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, display 0.3s ease;
+    pointer-events: none !important;
   }
 
-  .nav-item {
-    flex-shrink: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Hide sidebar on medium screens only when not open */
+  @media (min-width: 900px) and (max-width: 1199.98px) {
+    .sidebar-nav:not(.open) {
+      display: none !important;
+      transform: translateX(-100%) !important;
+      opacity: 0 !important;
+    }
+
+    .sidebar-nav.open {
+      display: flex !important;
+      transform: translateX(0) !important;
+      opacity: 1 !important;
+    }
+  }
+}
+
+/* Transition zone: Show sidebar button instead of cramping icons */
+@media (min-width: 700px) and (max-width: 899.98px) {
+  /* Hide navbar collapse (main navigation) */
+  .navbar-collapse {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, display 0.3s ease;
+    width: 0 !important;
+    flex: 0 0 0 !important;
+  }
+
+  /* Show sidebar toggle in transition zone */
+  .navbar-sidebar-toggle {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+    pointer-events: auto !important;
+  }
+
+  /* Ensure navbar container layout */
+  .heidelberg-navbar .container-fluid {
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Show sidebar for interaction */
+  @media (min-width: 700px) and (max-width: 899.98px) {
+    .sidebar-nav:not(.open) {
+      transform: translateX(-100%) !important;
+      opacity: 1 !important;
+    }
+
+    .sidebar-nav.open {
+      transform: translateX(0) !important;
+      opacity: 1 !important;
+    }
+  }
+
+  /* Hide theme toggle in transition zone */
+  .theme-toggle-btn {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: scale(0.8) !important;
+    pointer-events: none !important;
   }
 }
 
@@ -303,33 +649,51 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   background-color: var(--primary-hover) !important;
 }
 
-/* Mobile navbar toggle - show at our custom breakpoint */
-@media (max-width: 699.98px) {
-  .heidelberg-navbar .navbar-toggler {
-    display: inline-block !important;
-  }
-}
-
-.heidelberg-navbar .navbar-toggler {
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  padding: 0.25rem 0.5rem;
+/* Sidebar Toggle Button - positioned outside navbar-collapse */
+.navbar-sidebar-toggle {
+  display: none; /* Hidden by default, shown on small/transition screens */
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-md);
-  transition: all var(--transition-base);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 10;
 }
 
-.heidelberg-navbar .navbar-toggler:hover,
-.heidelberg-navbar .navbar-toggler:focus {
+.navbar-sidebar-toggle:hover,
+.navbar-sidebar-toggle:focus {
   background-color: rgba(255, 255, 255, 0.2) !important;
   border-color: rgba(255, 255, 255, 0.5) !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2) !important;
-  outline: none;
+  outline: none !important;
 }
 
-.heidelberg-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-  width: 1.25rem !important;
-  height: 1.25rem !important;
+.sidebar-toggle-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 20px;
+  height: 16px;
+  position: relative;
+}
+
+.sidebar-toggle-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 1px;
+  transition: all var(--transition-base);
+}
+
+.navbar-sidebar-toggle:hover .sidebar-toggle-icon span {
+  background-color: #ffffff;
 }
 
   /* Brand logo image (left of title) */
@@ -377,19 +741,25 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 
 
 
-/* Theme toggle button */
+/* Theme toggle button (now a nav-item) */
 .theme-toggle-btn {
   background: rgba(255, 255, 255, 0.1) !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
   color: var(--white) !important;
-  transition: all var(--transition-base);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-lg);
-  padding: 0;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 0 !important;
+  margin: 0 0.125rem !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 10 !important;
 }
 
 /* Theme icon visibility control */
@@ -407,6 +777,13 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 
 .theme-toggle-btn.light-mode .theme-icon-dark {
   display: inline-block !important;
+}
+
+/* Ensure theme icons are properly positioned */
+.theme-icon-light,
+.theme-icon-dark {
+  display: inline-block !important;
+  transition: all var(--transition-base);
 }
 
 .theme-toggle-btn:hover,
@@ -430,7 +807,7 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 }
 
 /* Large screens: Full brand text and logo */
-@media (min-width: 900px) {
+@media (min-width: 1300px) {
   .brand-title {
     font-size: 0.95rem;
     display: block !important;
@@ -448,7 +825,7 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 }
 
 /* Medium screens: Slightly smaller brand text and logo */
-@media (min-width: 700px) and (max-width: 899.98px) {
+@media (min-width: 800px) and (max-width: 1299.98px) {
   .brand-title {
     font-size: 0.85rem;
     display: block !important;
@@ -467,77 +844,328 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 
 
 
-/* REMOVED: This breakpoint was conflicting with the new responsive system */
 
-/* REMOVED: This breakpoint was conflicting with the previous one */
+/* Custom Sidebar Navigation Styles */
+.sidebar-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Fallback for initial load */
+  width: 320px;
+  z-index: 1050;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex !important;
+  align-items: stretch;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* Fixed height set by JavaScript to prevent viewport-based resizing */
+}
 
-@media (max-width: 699.98px) {
-  .navbar-collapse {
-    background: var(--primary) !important;
-    border-radius: var(--radius-lg);
-    margin-top: 0.5rem;
-    padding: 1rem;
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.sidebar-nav.open {
+  transform: translateX(0);
+}
+
+/* Sidebar backdrop - covers entire page with very dark overlay */
+.sidebar-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.4s ease, visibility 0.4s ease !important;
+  z-index: 1035 !important;
+  overflow: hidden !important;
+  /* Very dark backdrop effect */
+  box-shadow: inset 0 0 300px rgba(0, 0, 0, 0.95) !important;
+  pointer-events: none !important;
+  /* Ensure it's behind everything */
+  transform: translateZ(-1px) !important;
+  /* Additional darkening for better contrast */
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+}
+
+html body .sidebar-nav.open .sidebar-backdrop,
+.sidebar-nav.open .sidebar-backdrop {
+  background: #00FF00 !important; /* BRIGHT GREEN FOR TESTING */
+  opacity: 0.8 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
+.sidebar-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  /* Fallback for browsers without backdrop-filter support */
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1040 !important;
+  overflow: hidden !important;
+  /* Fixed height set by JavaScript to prevent viewport-based resizing */
+  /* Enhanced darkening effect */
+  box-shadow: inset 0 0 400px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Enhanced sidebar overlay for better background blur */
+html body .sidebar-nav.open .sidebar-overlay,
+.sidebar-nav.open .sidebar-overlay {
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(40px) !important;
+  -webkit-backdrop-filter: blur(40px) !important;
+  /* Fallback for browsers without backdrop-filter support */
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1040 !important;
+  /* Extra dark overlay effect */
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.8) !important;
+}
+
+.sidebar-content {
+  background: var(--primary);
+  width: 100%;
+  height: 100vh; /* Fallback for initial load */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1055;
+  box-sizing: border-box;
+  /* Fixed height set by JavaScript to prevent viewport-based resizing */
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  flex-shrink: 0; /* Prevent header from shrinking */
+  min-height: 60px;
+}
+
+.brand-text-sidebar {
+  flex: 1;
+}
+
+.brand-title-sidebar {
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  display: block;
+}
+
+.university-name-sidebar {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.75rem;
+  font-weight: 400;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.sidebar-close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.sidebar-close-btn:hover,
+.sidebar-close-btn:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  outline: none;
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 1rem 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0; /* Allow flex item to shrink below content size */
+  /* Height calculated by JavaScript to prevent viewport-based resizing */
+  box-sizing: border-box;
+}
+
+.sidebar-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu-item {
+  margin: 0;
+}
+
+.sidebar-menu-link {
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 1.5rem;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all var(--transition-base);
+  border-left: 3px solid transparent;
+}
+
+.sidebar-menu-link:hover,
+.sidebar-menu-link:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+  text-decoration: none;
+  border-left-color: rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+.sidebar-menu-item.active .sidebar-menu-link {
+  background: var(--primary-hover);
+  border-left-color: #ffffff;
+  font-weight: 600;
+}
+
+.sidebar-menu-link .nav-icon {
+  font-size: 1.1rem;
+  margin-right: 0.75rem;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar-menu-link .nav-text {
+  display: inline !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  flex: 1 !important;
+  margin-left: 0 !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  white-space: nowrap !important;
+}
+
+/* Dark mode sidebar */
+[data-theme="dark"] .sidebar-content,
+body.dark-mode .sidebar-content {
+  background: #000000;
+}
+
+[data-theme="dark"] .sidebar-header,
+body.dark-mode .sidebar-header {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile responsive adjustments for very small screens */
+@media (max-width: 799.98px) {
+  .sidebar-nav {
+    width: 300px; /* Wider on mobile for better usability */
+    /* Height set by JavaScript to prevent viewport-based resizing */
   }
 
-  [data-theme="dark"] .navbar-collapse,
-  body.dark-mode .navbar-collapse {
-    background: var(--primary) !important;
+  .sidebar-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.4s ease, visibility 0.4s ease !important;
+    z-index: 1035 !important;
+    box-shadow: inset 0 0 400px rgba(0, 0, 0, 0.95) !important;
+    pointer-events: none !important;
+    transform: translateZ(-1px) !important;
+    /* Enhanced mobile backdrop */
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
   }
 
-  .navbar-nav {
-    gap: 0.25rem;
-    flex-direction: column;
-    align-items: stretch;
+  html body .sidebar-nav.open .sidebar-backdrop,
+  .sidebar-nav.open .sidebar-backdrop {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 
-  .navbar-nav .nav-link {
-    padding: 0.75rem 1rem !important;
-    border-radius: var(--radius-md);
-    margin: 0.125rem 0;
-    text-align: left;
-    justify-content: flex-start !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .sidebar-overlay {
+    /* Cover entire viewport on mobile too */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    /* Fallback for browsers without backdrop-filter support */
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1040 !important;
   }
 
-  /* Ensure nav-text is visible in mobile dropdown */
-  .nav-text {
-    display: inline !important;
+  .sidebar-content {
+    /* Height set by JavaScript to prevent viewport-based resizing */
   }
 
-  .nav-icon {
-    font-size: 1.1rem;
-    margin-right: 0.5rem;
+  .sidebar-header {
+    padding: 0.75rem 1rem;
   }
 
-  .brand-title {
+  .brand-title-sidebar {
     font-size: 0.8rem;
-    display: block !important;
   }
 
-  .university-name {
-    font-size: 0.65rem;
-    display: block !important;
+  .university-name-sidebar {
+    font-size: 0.7rem;
   }
 
-  .brand-logo-img {
-    height: 24px;
-    width: auto;
+  .sidebar-menu-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
   }
 
-  /* Adjust vertical spacing on mobile */
-  .brand-text {
-    gap: 0.08rem;
-  }
-
-  .theme-toggle-btn {
-    width: 32px !important;
-    height: 32px !important;
+  .sidebar-menu-link .nav-icon {
+    font-size: 1rem;
+    margin-right: 0.625rem;
   }
 }
 
-@media (max-width: 699.98px) {
+@media (max-width: 799.98px) {
   .heidelberg-navbar .container-fluid {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -612,11 +1240,113 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
     transition: none;
     transform: none;
   }
-  
+
   .heidelberg-navbar .navbar-brand:hover,
   .heidelberg-navbar .nav-link:hover,
   .theme-toggle-btn:hover {
     transform: none;
+  }
+}
+
+/* Small screens: Hide desktop nav and show sidebar toggle - HIGHEST PRIORITY */
+@media (max-width: 699.98px) {
+  .navbar-collapse {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, display 0.3s ease;
+    /* Prevent layout shifts */
+    width: 0 !important;
+    flex: 0 0 0 !important;
+  }
+
+  /* Ensure navbar container layout on small screens */
+  .heidelberg-navbar .container-fluid {
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+
+  /* Ensure navbar container maintains consistent layout */
+  .heidelberg-navbar .container-fluid {
+    justify-content: space-between !important;
+    align-items: center !important;
+    transition: justify-content 0.3s ease;
+    /* Consistent sizing */
+    min-height: 60px !important;
+    position: relative !important;
+  }
+
+  /* Show sidebar on small screens with smooth transitions */
+  @media (max-width: 699.98px) {
+    .sidebar-nav:not(.open) {
+      transform: translateX(-100%) !important;
+      opacity: 1 !important;
+    }
+
+    .sidebar-nav.open {
+      transform: translateX(0) !important;
+      opacity: 1 !important;
+    }
+  }
+
+  /* Hide theme toggle button on small screens */
+  .theme-toggle-btn {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: scale(0.8) !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, display 0.3s ease;
+    pointer-events: none !important;
+  }
+
+  /* Ensure navbar container uses space-between for proper alignment */
+  .heidelberg-navbar .container-fluid {
+    justify-content: space-between !important;
+    align-items: center !important;
+    transition: justify-content 0.3s ease;
+  }
+
+  /* Position sidebar toggle */
+  .navbar-sidebar-toggle {
+    order: 2 !important;
+    margin-left: 0.5rem !important;
+  }
+
+  /* Ensure nav items are properly spaced */
+  .navbar-nav {
+    gap: 0 !important;
+    margin-left: auto !important;
+    justify-content: center !important;
+    transition: gap 0.3s ease, margin-left 0.3s ease;
+  }
+
+  /* Brand adjustments for small screens */
+  .brand-text {
+    margin-left: 0.25rem !important;
+    gap: 0.05rem !important;
+    transition: margin-left 0.3s ease, gap 0.3s ease;
+  }
+
+  .brand-title {
+    font-size: 0.75rem !important;
+    line-height: 1.1 !important;
+    transition: font-size 0.3s ease, line-height 0.3s ease;
+  }
+
+  .university-name {
+    font-size: 0.65rem !important;
+    display: block !important;
+    transition: font-size 0.3s ease;
+  }
+
+  /* Show sidebar toggle on small screens */
+  .navbar-sidebar-toggle {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+    pointer-events: auto !important;
   }
 }
 </style>
@@ -631,9 +1361,9 @@ document.addEventListener('DOMContentLoaded', function() {
   if (themeToggle && themeIconLight && themeIconDark) {
     // Update icon based on current theme
     function updateThemeIcon(theme) {
-      // Remove inline styles to let CSS control responsive behavior
-      themeIconLight.style.display = '';
-      themeIconDark.style.display = '';
+      // Remove any inline styles that might interfere with CSS
+      if (themeIconLight) themeIconLight.style.display = '';
+      if (themeIconDark) themeIconDark.style.display = '';
 
       // Use CSS classes to control which icon is shown
       if (theme === 'dark') {
@@ -669,94 +1399,354 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Enhanced mobile menu accessibility
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarCollapse = document.querySelector('.navbar-collapse');
-  
-  if (navbarToggler && navbarCollapse) {
-    navbarToggler.addEventListener('click', function() {
-      const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
-      navbarToggler.setAttribute('aria-expanded', !isExpanded);
-      
-      // Announce menu state for screen readers
-      const announcement = document.createElement('div');
-      announcement.setAttribute('aria-live', 'polite');
-      announcement.className = 'sr-only';
-      announcement.textContent = isExpanded ? 'Menu collapsed' : 'Menu expanded';
-      document.body.appendChild(announcement);
-      
-      setTimeout(() => {
-        if (document.body.contains(announcement)) {
-          document.body.removeChild(announcement);
-        }
-      }, 1000);
-    });
+  // Custom Sidebar Navigation Functionality
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebarNav = document.getElementById('sidebarNav');
+  const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+  const sidebarOverlay = document.getElementById('sidebarOverlay');
+  const sidebarClose = document.getElementById('sidebarClose');
+
+  function openSidebar() {
+    sidebarNav.classList.add('open');
+    sidebarToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+    // CSS now handles visibility with .open class, but ensure it's properly applied
+    // Force visibility if CSS media queries are interfering
+    if (window.getComputedStyle(sidebarNav).display === 'none') {
+      sidebarNav.style.display = 'flex';
+    }
+
+    // Focus management for accessibility
+    setTimeout(() => {
+      sidebarClose.focus();
+    }, 100);
+
+    // Announce for screen readers
+    announceToScreenReader('Navigation menu opened');
   }
-  
-  // Close mobile menu when clicking on nav links
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-  navLinks.forEach(link => {
+
+  function closeSidebar() {
+    sidebarNav.classList.remove('open');
+    sidebarToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = ''; // Restore scrolling
+
+    // Remove inline styles to let CSS handle responsive behavior
+    sidebarNav.style.display = '';
+    sidebarNav.style.transform = '';
+    sidebarNav.style.opacity = '';
+
+    // Return focus to toggle button
+    sidebarToggle.focus();
+
+    // Announce for screen readers
+    announceToScreenReader('Navigation menu closed');
+  }
+
+  function announceToScreenReader(message) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    document.body.appendChild(announcement);
+
+    setTimeout(() => {
+      if (document.body.contains(announcement)) {
+        document.body.removeChild(announcement);
+      }
+    }, 1000);
+  }
+
+  // Event listeners for sidebar
+  if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', openSidebar);
+  }
+
+  if (sidebarClose) {
+    sidebarClose.addEventListener('click', closeSidebar);
+  }
+
+  if (sidebarBackdrop) {
+    sidebarBackdrop.addEventListener('click', closeSidebar);
+  }
+
+  if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', closeSidebar);
+  }
+
+  // Close sidebar when clicking on nav links (both desktop and mobile)
+  const desktopNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const sidebarLinks = document.querySelectorAll('.sidebar-menu-link');
+
+  desktopNavLinks.forEach(link => {
     link.addEventListener('click', function() {
-      if (window.innerWidth < 700) {
-        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-        if (bsCollapse) {
-          bsCollapse.hide();
-        }
+      if (window.innerWidth < 700 && sidebarNav.classList.contains('open')) {
+        closeSidebar();
       }
     });
   });
-  
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', closeSidebar);
+  });
+
   // Keyboard navigation enhancements
   document.addEventListener('keydown', function(e) {
-    // ESC to close mobile menu
-    if (e.key === 'Escape' && navbarCollapse.classList.contains('show')) {
-      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-      if (bsCollapse) {
-        bsCollapse.hide();
-      }
+    // ESC to close sidebar
+    if (e.key === 'Escape' && sidebarNav.classList.contains('open')) {
+      closeSidebar();
     }
   });
 
-  // Progressive responsive navbar functionality
+  // Close sidebar when clicking outside (for desktop)
+  document.addEventListener('click', function(e) {
+    if (sidebarNav.classList.contains('open') &&
+        !sidebarNav.contains(e.target) &&
+        !sidebarToggle.contains(e.target)) {
+      closeSidebar();
+    }
+  });
+
+  // Enhanced responsive navbar functionality with smooth transitions
   function updateNavbarForScreenSize() {
     const width = window.innerWidth;
-    const navLinks = document.querySelectorAll('.nav-link');
-    const brandLogo = document.querySelector('.brand-logo-img');
-    const themeIconLight = document.getElementById('theme-icon-light');
-    const themeIconDark = document.getElementById('theme-icon-dark');
+    const sidebarNav = document.getElementById('sidebarNav');
+    const navbarNav = document.querySelector('.navbar-nav');
 
-    // Remove all inline styles first to let CSS media queries control the responsive behavior
-    navLinks.forEach(link => {
-      const icon = link.querySelector('.nav-icon');
-      const text = link.querySelector('.nav-text');
+    // Set fixed height to prevent viewport-based resizing
+    if (sidebarNav && !sidebarNav.style.height) {
+      const fixedHeight = window.innerHeight + 'px';
+      sidebarNav.style.height = fixedHeight;
+      sidebarNav.style.maxHeight = fixedHeight;
 
-      // Remove inline styles
-      if (icon) {
-        icon.style.marginRight = '';
-        icon.style.fontSize = '';
+      // Also fix the sidebar content height
+      const sidebarContent = sidebarNav.querySelector('.sidebar-content');
+      if (sidebarContent) {
+        sidebarContent.style.height = fixedHeight;
+        sidebarContent.style.maxHeight = fixedHeight;
       }
-      if (text) {
-        text.style.display = '';
-      }
-    });
 
-    // Remove brand logo inline styles
-    if (brandLogo) {
-      brandLogo.style.height = '';
+      // Fix sidebar overlay height
+      const sidebarOverlay = sidebarNav.querySelector('.sidebar-overlay');
+      if (sidebarOverlay) {
+        sidebarOverlay.style.height = fixedHeight;
+        sidebarOverlay.style.maxHeight = fixedHeight;
+      }
+
+      // Fix sidebar menu height (content area minus header)
+      const sidebarMenu = sidebarNav.querySelector('.sidebar-menu');
+      if (sidebarMenu) {
+        const headerHeight = 80; // Approximate header height
+        const menuHeight = (window.innerHeight - headerHeight) + 'px';
+        sidebarMenu.style.maxHeight = menuHeight;
+      }
     }
 
-    // Remove theme icon inline styles (CSS classes will control visibility)
-    if (themeIconLight) themeIconLight.style.display = '';
-    if (themeIconDark) themeIconDark.style.display = '';
+    // Handle navbar nav scrollability for medium screens
+    if (navbarNav && width >= 900 && width <= 1199) {
+      // Check if navbar content overflows
+      setTimeout(() => {
+        const navbarRect = navbarNav.getBoundingClientRect();
+        const containerRect = navbarNav.parentElement.getBoundingClientRect();
+        const isScrollable = navbarRect.width > containerRect.width;
 
-    // Let CSS handle the responsive behavior - no need to set inline styles
-    // The CSS media queries will handle all the responsive changes automatically
+        if (isScrollable) {
+          navbarNav.classList.add('scrollable');
+        } else {
+          navbarNav.classList.remove('scrollable');
+        }
+      }, 100);
+    } else if (navbarNav) {
+      navbarNav.classList.remove('scrollable');
+    }
+
+    // Handle sidebar visibility based on screen size with smooth transitions
+    // CSS media queries now handle this with .open class, so we don't need to set styles here
+    // unless the sidebar is open and needs to override media query hiding
+    if (sidebarNav && sidebarNav.classList.contains('open')) {
+      // If sidebar is open, ensure it's visible regardless of screen size
+      sidebarNav.style.display = 'flex';
+      sidebarNav.style.transform = 'translateX(0)';
+      sidebarNav.style.opacity = '1';
+    }
+
+    // Ensure buttons are properly visible based on screen size
+    const themeToggle = document.getElementById('theme-toggle');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+
+    if (width >= 1200) {
+      // Large screens: show theme toggle, hide sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'flex';
+        themeToggle.style.opacity = '1';
+        themeToggle.style.visibility = 'visible';
+        themeToggle.style.transform = 'scale(1)';
+        themeToggle.style.pointerEvents = 'auto';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'none';
+        sidebarToggle.style.opacity = '0';
+        sidebarToggle.style.visibility = 'hidden';
+        sidebarToggle.style.transform = 'scale(0.8)';
+        sidebarToggle.style.pointerEvents = 'none';
+      }
+    } else if (width >= 900) {
+      // Medium screens: show theme toggle (unless very tight), hide sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'flex';
+        themeToggle.style.opacity = width >= 750 ? '1' : '0';
+        themeToggle.style.visibility = width >= 750 ? 'visible' : 'hidden';
+        themeToggle.style.transform = 'scale(1)';
+        themeToggle.style.pointerEvents = width >= 750 ? 'auto' : 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'none';
+        sidebarToggle.style.opacity = '0';
+        sidebarToggle.style.visibility = 'hidden';
+        sidebarToggle.style.transform = 'scale(0.8)';
+        sidebarToggle.style.pointerEvents = 'none';
+      }
+    } else if (width >= 700) {
+      // Transition zone: hide theme toggle, show sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'none';
+        themeToggle.style.opacity = '0';
+        themeToggle.style.visibility = 'hidden';
+        themeToggle.style.transform = 'scale(0.8)';
+        themeToggle.style.pointerEvents = 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'flex';
+        sidebarToggle.style.opacity = '1';
+        sidebarToggle.style.visibility = 'visible';
+        sidebarToggle.style.transform = 'scale(1)';
+        sidebarToggle.style.pointerEvents = 'auto';
+      }
+    } else {
+      // Small screens: hide theme toggle, show sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'none';
+        themeToggle.style.opacity = '0';
+        themeToggle.style.visibility = 'hidden';
+        themeToggle.style.transform = 'scale(0.8)';
+        themeToggle.style.pointerEvents = 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'flex';
+        sidebarToggle.style.opacity = '1';
+        sidebarToggle.style.visibility = 'visible';
+        sidebarToggle.style.transform = 'scale(1)';
+        sidebarToggle.style.pointerEvents = 'auto';
+      }
+    }
   }
 
-  // Update navbar on page load and window resize
+  // Update navbar on page load (set fixed height once)
   updateNavbarForScreenSize();
+
+  // Enhanced resize handler with smooth transitions and scrollability detection
   window.addEventListener('resize', function() {
-    updateNavbarForScreenSize();
+    const width = window.innerWidth;
+    const sidebarNav = document.getElementById('sidebarNav');
+    const navbarNav = document.querySelector('.navbar-nav');
+
+    // Handle navbar nav scrollability for medium screens
+    if (navbarNav && width >= 900 && width <= 1199) {
+      // Check if navbar content overflows after resize
+      setTimeout(() => {
+        const navbarRect = navbarNav.getBoundingClientRect();
+        const containerRect = navbarNav.parentElement.getBoundingClientRect();
+        const isScrollable = navbarRect.width > containerRect.width;
+
+        if (isScrollable) {
+          navbarNav.classList.add('scrollable');
+        } else {
+          navbarNav.classList.remove('scrollable');
+        }
+      }, 100);
+    } else if (navbarNav) {
+      navbarNav.classList.remove('scrollable');
+    }
+
+    // Handle sidebar visibility based on screen size with smooth transitions
+    // CSS media queries now handle this with .open class, so we don't need to set styles here
+    // unless the sidebar is open and needs to override media query hiding
+    if (sidebarNav && sidebarNav.classList.contains('open')) {
+      // If sidebar is open, ensure it's visible regardless of screen size
+      sidebarNav.style.display = 'flex';
+      sidebarNav.style.transform = 'translateX(0)';
+      sidebarNav.style.opacity = '1';
+    }
+
+    // Ensure buttons are properly visible based on screen size
+    const themeToggle = document.getElementById('theme-toggle');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+
+    if (width >= 1200) {
+      // Large screens: show theme toggle, hide sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'flex';
+        themeToggle.style.opacity = '1';
+        themeToggle.style.visibility = 'visible';
+        themeToggle.style.transform = 'scale(1)';
+        themeToggle.style.pointerEvents = 'auto';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'none';
+        sidebarToggle.style.opacity = '0';
+        sidebarToggle.style.visibility = 'hidden';
+        sidebarToggle.style.transform = 'scale(0.8)';
+        sidebarToggle.style.pointerEvents = 'none';
+      }
+    } else if (width >= 900) {
+      // Medium screens: show theme toggle (unless very tight), hide sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'flex';
+        themeToggle.style.opacity = width >= 750 ? '1' : '0';
+        themeToggle.style.visibility = width >= 750 ? 'visible' : 'hidden';
+        themeToggle.style.transform = 'scale(1)';
+        themeToggle.style.pointerEvents = width >= 750 ? 'auto' : 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'none';
+        sidebarToggle.style.opacity = '0';
+        sidebarToggle.style.visibility = 'hidden';
+        sidebarToggle.style.transform = 'scale(0.8)';
+        sidebarToggle.style.pointerEvents = 'none';
+      }
+    } else if (width >= 700) {
+      // Transition zone: hide theme toggle, show sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'none';
+        themeToggle.style.opacity = '0';
+        themeToggle.style.visibility = 'hidden';
+        themeToggle.style.transform = 'scale(0.8)';
+        themeToggle.style.pointerEvents = 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'flex';
+        sidebarToggle.style.opacity = '1';
+        sidebarToggle.style.visibility = 'visible';
+        sidebarToggle.style.transform = 'scale(1)';
+        sidebarToggle.style.pointerEvents = 'auto';
+      }
+    } else {
+      // Small screens: hide theme toggle, show sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'none';
+        themeToggle.style.opacity = '0';
+        themeToggle.style.visibility = 'hidden';
+        themeToggle.style.transform = 'scale(0.8)';
+        themeToggle.style.pointerEvents = 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'flex';
+        sidebarToggle.style.opacity = '1';
+        sidebarToggle.style.visibility = 'visible';
+        sidebarToggle.style.transform = 'scale(1)';
+        sidebarToggle.style.pointerEvents = 'auto';
+      }
+    }
   });
 
 

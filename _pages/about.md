@@ -1,11 +1,11 @@
 ---
 layout: page
-permalink: "/home/"
+permalink: "/about/"
 nav: true
 nav_order: 1
 order: 100
 show_title: false
-title: Home
+title: About
 ---
 <h1 class="home-page-title">AG Computational Arithmetic Geometry</h1>
 

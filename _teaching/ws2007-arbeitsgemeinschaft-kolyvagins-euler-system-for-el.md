@@ -11,10 +11,6 @@ semester_sort: 20072
 active: false
 instructors: G. Böckle, G. Frey
 description: "Arbeitsgemeinschaft: Kolyvagin's Euler system for elliptic curves (G. Böckle, G. Frey)"
-pdfs:
-  - label: "Kolyvagin's Euler system for elliptic curves"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/0708WS_Kolyv.pdf"
-    file: "/assets/uploads/0708WS_Kolyv.pdf"
 ---
 
 Arbeitsgemeinschaft: Kolyvagin's Euler system for elliptic curves (G. Böckle, G. Frey)

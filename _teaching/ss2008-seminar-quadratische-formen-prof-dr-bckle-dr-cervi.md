@@ -11,10 +11,6 @@ semester_sort: 20081
 active: false
 instructors: Prof. Dr. Böckle, Dr. Cerviño
 description: Seminar Quadratische Formen (Prof. Dr. Böckle, Dr. Cerviño)
-pdfs:
-  - label: "Quadratische Formen"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/QF_ProgrammC.pdf"
-    file: "/assets/uploads/QF_ProgrammC.pdf"
 ---
 
 Seminar "Quadratische Formen" (Prof. Dr. Böckle, Dr. Cerviño)

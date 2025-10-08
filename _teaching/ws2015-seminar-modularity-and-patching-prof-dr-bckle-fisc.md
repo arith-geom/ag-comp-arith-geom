@@ -11,10 +11,6 @@ semester_sort: 20152
 active: false
 instructors: Prof. Dr. Böckle, Fischer, Gräf
 description: Seminar Modularity and Patching (Prof. Dr. Böckle, Fischer, Gräf), Seminardetails
-pdfs:
-  - label: "Seminardetails"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/Ankuendigung-Modularity.pdf"
-    file: "/assets/uploads/Ankuendigung-Modularity.pdf"
 ---
 
 Seminar "Modularity and Patching" (Prof. Dr. Böckle, Fischer, Gräf), Seminardetails

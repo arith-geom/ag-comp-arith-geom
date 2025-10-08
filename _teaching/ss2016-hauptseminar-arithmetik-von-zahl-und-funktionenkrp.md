@@ -11,13 +11,9 @@ semester_sort: 20161
 active: false
 instructors: Prof. Dr. Böckle, Dr. Guiraud, Fischer, Gräf
 description: "Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: p-adic Uniformization (Prof. Dr. Böckle, Dr. Guiraud, Fischer, Gräf), Seminardetails"
-links:
-  - label: "Seminardetails"
-    url: "https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/konrad-fischer/p-adic-uniformization-ss16.html"
 ---
 
 Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "p-adic Uniformization" (Prof. Dr. Böckle, Dr. Guiraud, Fischer, Gräf), Seminardetails
 
---- Content from https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/konrad-fischer/p-adic-uniformization-ss16.html ---
 HomeMembersResearchPublicationsTeachingLinksContactInterna --> Uni Heidelberg > IWR > ARITHGEO > &nbsp;Members >&nbsp;p-adic Uniformization SS16 [english]&nbsp;|&nbsp;[] Working group seminar: p-adic Uniformization Topic of the research seminar in summer 2016 is 'p-adic uniformization of Shimura curves'. &nbsp;The seminar meets every friday, 9am in Seminar room 3 of the Mathematikon, starting 22nd of April. &nbsp;The program with details to each talk can be found here: Program &nbsp;arithgeo@iwr.uni-heidelberg.deLast Update:&nbsp;25.10.2021 - 15:13 &copy; Copyright Universit&auml;t Heidelberg.&nbsp;Impressum.
 

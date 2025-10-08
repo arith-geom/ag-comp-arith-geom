@@ -11,10 +11,6 @@ semester_sort: 20111
 active: false
 instructors: Dr. Cerviño
 description: Quadratic Forms (Dr. Cerviño)
-pdfs:
-  - label: "Quadratic Forms"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Seminare/qF_Programm_SS2011.pdf"
-    file: "/assets/uploads/qF_Programm_SS2011.pdf"
 ---
 
 Quadratic Forms (Dr. Cerviño)

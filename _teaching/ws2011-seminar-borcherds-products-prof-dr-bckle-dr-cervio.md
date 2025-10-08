@@ -11,10 +11,6 @@ semester_sort: 20112
 active: false
 instructors: Prof. Dr. Böckle, Dr. Cerviño
 description: Seminar Borcherds Products (Prof. Dr. Böckle, Dr. Cerviño)
-pdfs:
-  - label: "Borcherds Products"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/BorcherdsProducts_SeminarProgram_WS2011-12_G3.pdf"
-    file: "/assets/uploads/BorcherdsProducts_SeminarProgram_WS2011-12_G3.pdf"
 ---
 
 Seminar "Borcherds Products" (Prof. Dr. Böckle, Dr. Cerviño)

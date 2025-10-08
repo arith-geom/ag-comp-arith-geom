@@ -11,10 +11,6 @@ semester_sort: 20242
 active: false
 instructors: Prof. Dr. Böckle, Dr. Conti
 description: Seminar on Commutative Algebra (Prof. Dr. Böckle, Dr. Conti)
-pdfs:
-  - label: "Commutative Algebra"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/comm_alg_announcement.pdf"
-    file: "/assets/uploads/comm_alg_announcement.pdf"
 ---
 
 Seminar on "Commutative Algebra" (Prof. Dr. Böckle, Dr. Conti)

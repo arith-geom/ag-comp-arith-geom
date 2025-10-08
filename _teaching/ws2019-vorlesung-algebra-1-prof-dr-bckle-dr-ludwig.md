@@ -11,9 +11,6 @@ semester_sort: 20192
 active: false
 instructors: Prof. Dr. Böckle, Dr. Ludwig
 description: Vorlesung Algebra 1 (Prof. Dr. Böckle, Dr. Ludwig)
-links:
-  - label: "Algebra 1"
-    url: "https://typo.iwr.uni-heidelberg.de/https//typoiwruni-heidelbergde/fileadmin/groups/arithgeo/templates/data/judith-ludwig/algebra1/indexhtml"
 ---
 
 Vorlesung "Algebra 1" (Prof. Dr. Böckle, Dr. Ludwig)

@@ -11,10 +11,6 @@ semester_sort: 20081
 active: false
 instructors: G. Böckle, G. Hein
 description: "Arbeitsgemeinschaft: Eine kanonische Kompaktifizierung des Modulraums Abelscher Varietäten (G. Böckle, G. Hein)"
-pdfs:
-  - label: "Eine kanonische Kompaktifizierung des Modulraums Abelscher Varietäten"
-    url: "https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/08SS_CanComp.pdf"
-    file: "/assets/uploads/08SS_CanComp.pdf"
 ---
 
 Arbeitsgemeinschaft: Eine kanonische Kompaktifizierung des Modulraums Abelscher Varietäten (G. Böckle, G. Hein)

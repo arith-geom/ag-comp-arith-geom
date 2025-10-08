@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py-5">
+<footer class="footer mt-auto py-3">
   <div class="container-fluid px-3 px-md-4">
     <!-- Main Footer Content -->
     <div class="row g-4">
@@ -28,7 +28,7 @@
             </div>
             <div class="contact-item mb-2">
               <i class="fas fa-envelope me-2 contact-icon" aria-hidden="true"></i>
-              <a href="mailto:arithgeo@iwr.uni-heidelberg.de" class="contact-link">arithgeo@iwr.uni-heidelberg.de</a>
+              arithgeo@iwr.uni-heidelberg.de
             </div>
           </div>
         </div>
@@ -80,12 +80,12 @@
             <div class="col-6">
               <ul class="footer-links list-unstyled">
                 <li class="mb-2">
-                  <a href="https://www.iwr.uni-heidelberg.de/en" target="_blank" rel="noopener" class="footer-link">
+                  <a href="https://www.iwr.uni-heidelberg.de" target="_blank" rel="noopener" class="footer-link">
                     <i class="fas fa-building me-2" aria-hidden="true"></i>IWR
                   </a>
                 </li>
                 <li class="mb-2">
-                  <a href="https://www.uni-heidelberg.de/en" target="_blank" rel="noopener" class="footer-link">
+                  <a href="https://www.uni-heidelberg.de" target="_blank" rel="noopener" class="footer-link">
                     <i class="fas fa-graduation-cap me-2" aria-hidden="true"></i>University
                   </a>
                 </li>
@@ -100,7 +100,7 @@
         <div class="footer-section text-center">
           <!-- IWR Group Logo -->
           <div class="footer-logo-container">
-            <a href="https://www.iwr.uni-heidelberg.de/en" target="_blank" rel="noopener" class="footer-logo-link">
+            <a href="https://www.iwr.uni-heidelberg.de" target="_blank" rel="noopener" class="footer-logo-link">
               <picture class="footer-logo">
                 <source srcset="{{ '/assets/img/group_logo.webp' | relative_url }}" type="image/webp">
                 <img src="{{ '/assets/img/group_logo_optimized.png' | relative_url }}"
@@ -125,11 +125,11 @@
     </div>
 
     <!-- Footer Bottom Section -->
-    <hr class="footer-divider my-4">
+    <hr class="footer-divider my-2">
 
         <div class="footer-bottom">
       <div class="row align-items-center">
-        <div class="col-lg-7 col-md-8 mb-3 mb-md-0">
+        <div class="col-lg-4 col-md-6 mb-2 mb-md-0">
           <div class="copyright-info">
             <p class="mb-1">
               &copy; {{ "now" | date: "%Y" }} {{ site.title }}.
@@ -141,7 +141,17 @@
           </div>
         </div>
 
-        <div class="col-lg-5 col-md-4 text-md-end">
+        <div class="col-lg-4 col-md-6 text-md-center mb-2 mb-md-0">
+          <div class="legal-links-footer">
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="https://www.iwr.uni-heidelberg.de/impressum" target="_blank" rel="noopener" class="legal-link">Impressum</a>
+              <span class="separator">|</span>
+              <a href="https://www.iwr.uni-heidelberg.de/impressum" target="_blank" rel="noopener" class="legal-link">Legal Notice</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 text-md-end">
           <div class="website-credits">
             <p class="mb-0">
               Website by
@@ -151,15 +161,6 @@
               <span class="creator-role">{{ site.creator.role }}</span>
             </p>
           </div>
-        </div>
-      </div>
-
-      <!-- Legal Links -->
-      <div class="legal-links mt-3 pt-3 border-top border-secondary">
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <a href="https://web.iwr.uni-heidelberg.de/impressum.html" target="_blank" rel="noopener" class="legal-link">Impressum</a>
-          <span class="separator">|</span>
-          <a href="https://web.iwr.uni-heidelberg.de/impressum.html" target="_blank" rel="noopener" class="legal-link">Legal Notice</a>
         </div>
       </div>
     </div>
@@ -402,8 +403,8 @@
 /* Back to Top Button */
 .back-to-top-btn {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 4rem;
+  left: 2rem;
   width: 50px;
   height: 50px;
   background: var(--primary, #C22032);
@@ -438,7 +439,7 @@
   border: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border-color, #E5E7EB), transparent);
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 /* Dark Mode Styles */
