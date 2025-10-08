@@ -93,8 +93,12 @@
       </button>
 
 
+      <!-- Main page backdrop (behind everything) -->
+      <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
       <!-- Custom Sidebar Navigation -->
       <div class="sidebar-nav" id="sidebarNav" role="navigation" aria-label="Mobile navigation menu">
+        <!-- Sidebar overlay (behind sidebar content) -->
         <div class="sidebar-overlay" id="sidebarOverlay"></div>
         <div class="sidebar-content">
           <div class="sidebar-header">
@@ -444,12 +448,19 @@ body.dark-mode .heidelberg-navbar {
     pointer-events: none !important;
   }
 
-  /* Ensure sidebar is completely hidden on large screens */
-  .sidebar-nav {
-    display: none !important;
-    transform: translateX(-100%) !important;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-    opacity: 0 !important;
+  /* Hide sidebar on large screens only when not open */
+  @media (min-width: 1200px) {
+    .sidebar-nav:not(.open) {
+      display: none !important;
+      transform: translateX(-100%) !important;
+      opacity: 0 !important;
+    }
+
+    .sidebar-nav.open {
+      display: flex !important;
+      transform: translateX(0) !important;
+      opacity: 1 !important;
+    }
   }
 }
 
@@ -529,12 +540,19 @@ body.dark-mode .heidelberg-navbar {
     pointer-events: none !important;
   }
 
-  /* Ensure sidebar is completely hidden on medium screens */
-  .sidebar-nav {
-    display: none !important;
-    transform: translateX(-100%) !important;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-    opacity: 0;
+  /* Hide sidebar on medium screens only when not open */
+  @media (min-width: 900px) and (max-width: 1199.98px) {
+    .sidebar-nav:not(.open) {
+      display: none !important;
+      transform: translateX(-100%) !important;
+      opacity: 0 !important;
+    }
+
+    .sidebar-nav.open {
+      display: flex !important;
+      transform: translateX(0) !important;
+      opacity: 1 !important;
+    }
   }
 }
 
@@ -566,16 +584,16 @@ body.dark-mode .heidelberg-navbar {
   }
 
   /* Show sidebar for interaction */
-  .sidebar-nav {
-    display: flex !important;
-    transform: translateX(-100%) !important; /* Hidden by default, shown via JS */
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-    opacity: 1 !important;
-  }
+  @media (min-width: 700px) and (max-width: 899.98px) {
+    .sidebar-nav:not(.open) {
+      transform: translateX(-100%) !important;
+      opacity: 1 !important;
+    }
 
-  .sidebar-nav.open {
-    transform: translateX(0) !important;
-    opacity: 1 !important;
+    .sidebar-nav.open {
+      transform: translateX(0) !important;
+      opacity: 1 !important;
+    }
   }
 
   /* Hide theme toggle in transition zone */
@@ -833,7 +851,7 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   top: 0;
   left: 0;
   height: 100vh; /* Fallback for initial load */
-  width: 250px;
+  width: 320px;
   z-index: 1050;
   transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -848,30 +866,78 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   transform: translateX(0);
 }
 
+/* Sidebar backdrop - covers entire page with very dark overlay */
+.sidebar-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.4s ease, visibility 0.4s ease !important;
+  z-index: 1035 !important;
+  overflow: hidden !important;
+  /* Very dark backdrop effect */
+  box-shadow: inset 0 0 300px rgba(0, 0, 0, 0.95) !important;
+  pointer-events: none !important;
+  /* Ensure it's behind everything */
+  transform: translateZ(-1px) !important;
+  /* Additional darkening for better contrast */
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+}
+
+html body .sidebar-nav.open .sidebar-backdrop,
+.sidebar-nav.open .sidebar-backdrop {
+  background: #00FF00 !important; /* BRIGHT GREEN FOR TESTING */
+  opacity: 0.8 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
 .sidebar-overlay {
-  position: fixed;
-  top: 0;
-  left: 250px;
-  width: calc(100vw - 250px);
-  height: 100vh; /* Fallback for initial load */
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  opacity: 0;
-  visibility: hidden;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  /* Fallback for browsers without backdrop-filter support */
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 1045;
-  overflow: hidden;
+  z-index: 1040 !important;
+  overflow: hidden !important;
   /* Fixed height set by JavaScript to prevent viewport-based resizing */
+  /* Enhanced darkening effect */
+  box-shadow: inset 0 0 400px rgba(0, 0, 0, 0.8) !important;
 }
 
 /* Enhanced sidebar overlay for better background blur */
+html body .sidebar-nav.open .sidebar-overlay,
 .sidebar-nav.open .sidebar-overlay {
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  opacity: 1;
-  visibility: visible;
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(40px) !important;
+  -webkit-backdrop-filter: blur(40px) !important;
+  /* Fallback for browsers without backdrop-filter support */
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1040 !important;
+  /* Extra dark overlay effect */
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.8) !important;
 }
 
 .sidebar-content {
@@ -1000,11 +1066,14 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 
 .sidebar-menu-link .nav-text {
   display: inline !important;
+  opacity: 1 !important;
+  visibility: visible !important;
   flex: 1 !important;
   margin-left: 0 !important;
   font-size: 0.95rem !important;
   font-weight: 500 !important;
   color: #ffffff !important;
+  white-space: nowrap !important;
 }
 
 /* Dark mode sidebar */
@@ -1021,17 +1090,52 @@ body.dark-mode .sidebar-header {
 /* Mobile responsive adjustments for very small screens */
 @media (max-width: 799.98px) {
   .sidebar-nav {
-    width: 260px; /* Slightly wider on very small screens but still not full width */
+    width: 300px; /* Wider on mobile for better usability */
     /* Height set by JavaScript to prevent viewport-based resizing */
   }
 
+  .sidebar-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.4s ease, visibility 0.4s ease !important;
+    z-index: 1035 !important;
+    box-shadow: inset 0 0 400px rgba(0, 0, 0, 0.95) !important;
+    pointer-events: none !important;
+    transform: translateZ(-1px) !important;
+    /* Enhanced mobile backdrop */
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+  }
+
+  html body .sidebar-nav.open .sidebar-backdrop,
+  .sidebar-nav.open .sidebar-backdrop {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
   .sidebar-overlay {
-    left: 260px;
-    width: calc(100vw - 260px);
-    /* Height set by JavaScript to prevent viewport-based resizing */
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* Cover entire viewport on mobile too */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    /* Fallback for browsers without backdrop-filter support */
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1040 !important;
   }
 
   .sidebar-content {
@@ -1174,16 +1278,16 @@ body.dark-mode .sidebar-header {
   }
 
   /* Show sidebar on small screens with smooth transitions */
-  .sidebar-nav {
-    display: flex !important;
-    transform: translateX(-100%) !important; /* Hidden by default, shown via JS */
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-    opacity: 1 !important;
-  }
+  @media (max-width: 699.98px) {
+    .sidebar-nav:not(.open) {
+      transform: translateX(-100%) !important;
+      opacity: 1 !important;
+    }
 
-  .sidebar-nav.open {
-    transform: translateX(0) !important;
-    opacity: 1 !important;
+    .sidebar-nav.open {
+      transform: translateX(0) !important;
+      opacity: 1 !important;
+    }
   }
 
   /* Hide theme toggle button on small screens */
@@ -1298,6 +1402,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Custom Sidebar Navigation Functionality
   const sidebarToggle = document.getElementById('sidebarToggle');
   const sidebarNav = document.getElementById('sidebarNav');
+  const sidebarBackdrop = document.getElementById('sidebarBackdrop');
   const sidebarOverlay = document.getElementById('sidebarOverlay');
   const sidebarClose = document.getElementById('sidebarClose');
 
@@ -1305,6 +1410,12 @@ document.addEventListener('DOMContentLoaded', function() {
     sidebarNav.classList.add('open');
     sidebarToggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+    // CSS now handles visibility with .open class, but ensure it's properly applied
+    // Force visibility if CSS media queries are interfering
+    if (window.getComputedStyle(sidebarNav).display === 'none') {
+      sidebarNav.style.display = 'flex';
+    }
 
     // Focus management for accessibility
     setTimeout(() => {
@@ -1319,6 +1430,11 @@ document.addEventListener('DOMContentLoaded', function() {
     sidebarNav.classList.remove('open');
     sidebarToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = ''; // Restore scrolling
+
+    // Remove inline styles to let CSS handle responsive behavior
+    sidebarNav.style.display = '';
+    sidebarNav.style.transform = '';
+    sidebarNav.style.opacity = '';
 
     // Return focus to toggle button
     sidebarToggle.focus();
@@ -1348,6 +1464,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (sidebarClose) {
     sidebarClose.addEventListener('click', closeSidebar);
+  }
+
+  if (sidebarBackdrop) {
+    sidebarBackdrop.addEventListener('click', closeSidebar);
   }
 
   if (sidebarOverlay) {
@@ -1441,20 +1561,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle sidebar visibility based on screen size with smooth transitions
-    if (sidebarNav) {
-      if (width <= 699) {
-        // Small screens: ensure sidebar is available but hidden by default
-        sidebarNav.style.display = 'flex';
-        sidebarNav.style.opacity = '1';
-        if (!sidebarNav.classList.contains('open')) {
-          sidebarNav.style.transform = 'translateX(-100%)';
-        }
-      } else {
-        // Large/medium screens: completely hide sidebar using CSS classes
-        sidebarNav.style.display = 'none';
-        sidebarNav.style.transform = 'translateX(-100%)';
-        sidebarNav.style.opacity = '0';
-      }
+    // CSS media queries now handle this with .open class, so we don't need to set styles here
+    // unless the sidebar is open and needs to override media query hiding
+    if (sidebarNav && sidebarNav.classList.contains('open')) {
+      // If sidebar is open, ensure it's visible regardless of screen size
+      sidebarNav.style.display = 'flex';
+      sidebarNav.style.transform = 'translateX(0)';
+      sidebarNav.style.opacity = '1';
     }
 
     // Ensure buttons are properly visible based on screen size
@@ -1556,20 +1669,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle sidebar visibility based on screen size with smooth transitions
-    if (sidebarNav) {
-      if (width <= 699) {
-        // Small screens: ensure sidebar is available but hidden by default
-        sidebarNav.style.display = 'flex';
-        sidebarNav.style.opacity = '1';
-        if (!sidebarNav.classList.contains('open')) {
-          sidebarNav.style.transform = 'translateX(-100%)';
-        }
-      } else {
-        // Large/medium screens: completely hide sidebar
-        sidebarNav.style.display = 'none';
-        sidebarNav.style.transform = 'translateX(-100%)';
-        sidebarNav.style.opacity = '0';
-      }
+    // CSS media queries now handle this with .open class, so we don't need to set styles here
+    // unless the sidebar is open and needs to override media query hiding
+    if (sidebarNav && sidebarNav.classList.contains('open')) {
+      // If sidebar is open, ensure it's visible regardless of screen size
+      sidebarNav.style.display = 'flex';
+      sidebarNav.style.transform = 'translateX(0)';
+      sidebarNav.style.opacity = '1';
     }
 
     // Ensure buttons are properly visible based on screen size
