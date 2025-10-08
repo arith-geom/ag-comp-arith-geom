@@ -77,22 +77,20 @@
             </button>
           </li>
           {% endif %}
-
-          <!-- Mobile sidebar toggle - positioned at the end -->
-          <li class="nav-item" role="none">
-            <button class="nav-link navbar-sidebar-toggle" type="button"
-                    id="sidebarToggle"
-                    aria-controls="sidebarNav" aria-expanded="false"
-                    aria-label="Toggle navigation menu">
-              <span class="sidebar-toggle-icon" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </button>
-          </li>
         </ul>
       </div>
+
+      <!-- Sidebar toggle - positioned outside navbar-collapse so it's always accessible -->
+      <button class="navbar-sidebar-toggle" type="button"
+              id="sidebarToggle"
+              aria-controls="sidebarNav" aria-expanded="false"
+              aria-label="Toggle navigation menu">
+        <span class="sidebar-toggle-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
 
 
       <!-- Custom Sidebar Navigation -->
@@ -455,8 +453,8 @@ body.dark-mode .heidelberg-navbar {
   }
 }
 
-/* Medium screens: Icon-only mode */
-@media (min-width: 600px) and (max-width: 1199.98px) {
+/* Medium screens: Icon-only mode with proper transition */
+@media (min-width: 900px) and (max-width: 1199.98px) {
   .navbar-collapse {
     display: flex !important;
     flex: 1 !important;
@@ -540,6 +538,55 @@ body.dark-mode .heidelberg-navbar {
   }
 }
 
+/* Transition zone: Show sidebar button instead of cramping icons */
+@media (min-width: 700px) and (max-width: 899.98px) {
+  /* Hide navbar collapse (main navigation) */
+  .navbar-collapse {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, display 0.3s ease;
+    width: 0 !important;
+    flex: 0 0 0 !important;
+  }
+
+  /* Show sidebar toggle in transition zone */
+  .navbar-sidebar-toggle {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+    pointer-events: auto !important;
+  }
+
+  /* Ensure navbar container layout */
+  .heidelberg-navbar .container-fluid {
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Show sidebar for interaction */
+  .sidebar-nav {
+    display: flex !important;
+    transform: translateX(-100%) !important; /* Hidden by default, shown via JS */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    opacity: 1 !important;
+  }
+
+  .sidebar-nav.open {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+
+  /* Hide theme toggle in transition zone */
+  .theme-toggle-btn {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: scale(0.8) !important;
+    pointer-events: none !important;
+  }
+}
 
 .heidelberg-navbar .nav-link::before {
   content: '';
@@ -584,24 +631,21 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   background-color: var(--primary-hover) !important;
 }
 
-/* Custom Sidebar Toggle Button */
+/* Sidebar Toggle Button - positioned outside navbar-collapse */
 .navbar-sidebar-toggle {
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  padding: 0.5rem !important;
-  border-radius: var(--radius-md) !important;
-  transition: all 0.3s ease !important;
-  width: 44px !important;
-  height: 44px !important;
-  position: relative !important;
-  margin: 0 0.125rem !important;
-  min-width: 44px !important;
-  min-height: 44px !important;
-  cursor: pointer !important;
-  flex-shrink: 0 !important;
-  order: 1 !important;
-  z-index: 10 !important;
-  /* Default state - will be overridden by media queries */
+  display: none; /* Hidden by default, shown on small/transition screens */
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 10;
 }
 
 .navbar-sidebar-toggle:hover,
@@ -810,8 +854,9 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   left: 250px;
   width: calc(100vw - 250px);
   height: 100vh; /* Fallback for initial load */
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -820,7 +865,11 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   /* Fixed height set by JavaScript to prevent viewport-based resizing */
 }
 
+/* Enhanced sidebar overlay for better background blur */
 .sidebar-nav.open .sidebar-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   opacity: 1;
   visibility: visible;
 }
@@ -951,8 +1000,11 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 
 .sidebar-menu-link .nav-text {
   display: inline !important;
-  flex: 1;
-  margin-left: 0;
+  flex: 1 !important;
+  margin-left: 0 !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
 }
 
 /* Dark mode sidebar */
@@ -977,6 +1029,9 @@ body.dark-mode .sidebar-header {
     left: 260px;
     width: calc(100vw - 260px);
     /* Height set by JavaScript to prevent viewport-based resizing */
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .sidebar-content {
@@ -1090,7 +1145,7 @@ body.dark-mode .sidebar-header {
 }
 
 /* Small screens: Hide desktop nav and show sidebar toggle - HIGHEST PRIORITY */
-@media (max-width: 599.98px) {
+@media (max-width: 699.98px) {
   .navbar-collapse {
     display: none !important;
     opacity: 0 !important;
@@ -1107,36 +1162,15 @@ body.dark-mode .sidebar-header {
     align-items: center !important;
   }
 
-  /* Show sidebar toggle on small screens - HIGHEST SPECIFICITY */
-  .heidelberg-navbar .navbar-nav .nav-item .navbar-sidebar-toggle {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    transform: scale(1) !important;
-    order: 1 !important;
-    flex: 0 0 auto !important;
-    position: relative !important;
-    left: auto !important;
-    width: 44px !important;
-    height: 44px !important;
-    min-width: 44px !important;
-    min-height: 44px !important;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, display 0.3s ease;
-    flex-shrink: 0 !important;
-    pointer-events: auto !important;
-    /* Maximum specificity - overrides everything */
-    position: relative !important;
-    z-index: 9999 !important;
-  }
 
   /* Ensure navbar container maintains consistent layout */
   .heidelberg-navbar .container-fluid {
     justify-content: space-between !important;
+    align-items: center !important;
     transition: justify-content 0.3s ease;
     /* Consistent sizing */
     min-height: 60px !important;
+    position: relative !important;
   }
 
   /* Show sidebar on small screens with smooth transitions */
@@ -1165,7 +1199,14 @@ body.dark-mode .sidebar-header {
   /* Ensure navbar container uses space-between for proper alignment */
   .heidelberg-navbar .container-fluid {
     justify-content: space-between !important;
+    align-items: center !important;
     transition: justify-content 0.3s ease;
+  }
+
+  /* Position sidebar toggle */
+  .navbar-sidebar-toggle {
+    order: 2 !important;
+    margin-left: 0.5rem !important;
   }
 
   /* Ensure nav items are properly spaced */
@@ -1193,6 +1234,15 @@ body.dark-mode .sidebar-header {
     font-size: 0.65rem !important;
     display: block !important;
     transition: font-size 0.3s ease;
+  }
+
+  /* Show sidebar toggle on small screens */
+  .navbar-sidebar-toggle {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+    pointer-events: auto !important;
   }
 }
 </style>
@@ -1373,7 +1423,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle navbar nav scrollability for medium screens
-    if (navbarNav && width >= 600 && width <= 1199) {
+    if (navbarNav && width >= 900 && width <= 1199) {
       // Check if navbar content overflows
       setTimeout(() => {
         const navbarRect = navbarNav.getBoundingClientRect();
@@ -1392,7 +1442,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle sidebar visibility based on screen size with smooth transitions
     if (sidebarNav) {
-      if (width <= 599) {
+      if (width <= 699) {
         // Small screens: ensure sidebar is available but hidden by default
         sidebarNav.style.display = 'flex';
         sidebarNav.style.opacity = '1';
@@ -1427,7 +1477,7 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebarToggle.style.transform = 'scale(0.8)';
         sidebarToggle.style.pointerEvents = 'none';
       }
-    } else if (width >= 600) {
+    } else if (width >= 900) {
       // Medium screens: show theme toggle (unless very tight), hide sidebar toggle
       if (themeToggle) {
         themeToggle.style.display = 'flex';
@@ -1442,6 +1492,22 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebarToggle.style.visibility = 'hidden';
         sidebarToggle.style.transform = 'scale(0.8)';
         sidebarToggle.style.pointerEvents = 'none';
+      }
+    } else if (width >= 700) {
+      // Transition zone: hide theme toggle, show sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'none';
+        themeToggle.style.opacity = '0';
+        themeToggle.style.visibility = 'hidden';
+        themeToggle.style.transform = 'scale(0.8)';
+        themeToggle.style.pointerEvents = 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'flex';
+        sidebarToggle.style.opacity = '1';
+        sidebarToggle.style.visibility = 'visible';
+        sidebarToggle.style.transform = 'scale(1)';
+        sidebarToggle.style.pointerEvents = 'auto';
       }
     } else {
       // Small screens: hide theme toggle, show sidebar toggle
@@ -1472,7 +1538,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarNav = document.querySelector('.navbar-nav');
 
     // Handle navbar nav scrollability for medium screens
-    if (navbarNav && width >= 600 && width <= 1199) {
+    if (navbarNav && width >= 900 && width <= 1199) {
       // Check if navbar content overflows after resize
       setTimeout(() => {
         const navbarRect = navbarNav.getBoundingClientRect();
@@ -1491,7 +1557,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle sidebar visibility based on screen size with smooth transitions
     if (sidebarNav) {
-      if (width <= 599) {
+      if (width <= 699) {
         // Small screens: ensure sidebar is available but hidden by default
         sidebarNav.style.display = 'flex';
         sidebarNav.style.opacity = '1';
@@ -1526,7 +1592,7 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebarToggle.style.transform = 'scale(0.8)';
         sidebarToggle.style.pointerEvents = 'none';
       }
-    } else if (width >= 600) {
+    } else if (width >= 900) {
       // Medium screens: show theme toggle (unless very tight), hide sidebar toggle
       if (themeToggle) {
         themeToggle.style.display = 'flex';
@@ -1541,6 +1607,22 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebarToggle.style.visibility = 'hidden';
         sidebarToggle.style.transform = 'scale(0.8)';
         sidebarToggle.style.pointerEvents = 'none';
+      }
+    } else if (width >= 700) {
+      // Transition zone: hide theme toggle, show sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'none';
+        themeToggle.style.opacity = '0';
+        themeToggle.style.visibility = 'hidden';
+        themeToggle.style.transform = 'scale(0.8)';
+        themeToggle.style.pointerEvents = 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'flex';
+        sidebarToggle.style.opacity = '1';
+        sidebarToggle.style.visibility = 'visible';
+        sidebarToggle.style.transform = 'scale(1)';
+        sidebarToggle.style.pointerEvents = 'auto';
       }
     } else {
       // Small screens: hide theme toggle, show sidebar toggle
