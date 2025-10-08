@@ -182,7 +182,10 @@
   overflow: hidden !important;
   height: 60px !important;
   max-height: 60px !important;
-  transition: none !important;
+  min-height: 60px !important;
+  transition: all 0.3s ease !important;
+  /* Prevent layout shifts */
+  flex-shrink: 0 !important;
 }
 
 /* Force all navbar text to be white */
@@ -199,7 +202,7 @@
   border-bottom: 2px solid var(--primary-hover) !important;
   box-shadow: var(--shadow-lg) !important;
   padding: 0.15rem 0 !important;
-  transition: none !important;
+  transition: all 0.3s ease !important;
   position: relative;
   z-index: var(--z-sticky);
   display: flex !important;
@@ -207,8 +210,11 @@
   width: 100% !important;
   height: 60px !important;
   max-height: 60px !important;
+  min-height: 60px !important;
   min-width: 0 !important;
   overflow: hidden !important;
+  /* Prevent layout shifts */
+  flex-shrink: 0 !important;
 }
 
 /* Dark mode navbar */
@@ -355,13 +361,16 @@ body.dark-mode .heidelberg-navbar {
 }
 
 /* Large screens: Show desktop navigation and icons + text */
-@media (min-width: 1300px) {
+@media (min-width: 1200px) {
   .navbar-collapse {
     display: flex !important;
     flex: 1 !important;
     justify-content: flex-end !important;
     align-items: center !important;
     margin-left: auto !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Ensure consistent sizing */
+    min-height: 60px !important;
   }
 
   .navbar-nav {
@@ -375,26 +384,43 @@ body.dark-mode .heidelberg-navbar {
     gap: 0.125rem !important;
     margin-left: auto !important;
     justify-content: center !important;
+    transition: all 0.3s ease;
+    /* Prevent layout shifts */
+    flex-shrink: 0 !important;
+  }
+
+  .nav-item {
+    flex-shrink: 0 !important;
+    transition: all 0.3s ease;
   }
 
   .nav-text {
     display: inline !important;
     opacity: 1 !important;
     margin-left: 0.375rem !important;
+    transition: opacity 0.3s ease, display 0.3s ease;
+    /* Consistent font sizing */
+    font-size: 0.9rem !important;
+    white-space: nowrap !important;
   }
 
   .nav-icon {
-    font-size: 1rem;
-    margin-right: 0.375rem;
-    flex-shrink: 0;
-    transition: none !important;
-    max-height: 1rem;
-    line-height: 1;
+    font-size: 1rem !important;
+    margin-right: 0.375rem !important;
+    flex-shrink: 0 !important;
+    transition: font-size 0.3s ease, margin 0.3s ease;
+    max-height: 1rem !important;
+    line-height: 1 !important;
+    width: 1rem !important;
   }
 
   /* Ensure proper spacing for nav links */
   .heidelberg-navbar .nav-link {
-    gap: 0.375rem;
+    gap: 0.375rem !important;
+    transition: gap 0.3s ease, padding 0.3s ease;
+    padding: 0.25rem 0.5rem !important;
+    min-width: auto !important;
+    width: auto !important;
   }
 
   /* Theme toggle button - visible on medium and large screens */
@@ -402,94 +428,85 @@ body.dark-mode .heidelberg-navbar {
     display: flex !important;
     opacity: 1 !important;
     visibility: visible !important;
+    transform: scale(1) !important;
     position: relative !important;
     left: auto !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0 !important;
   }
 
-  /* Hide sidebar toggle on large screens */
+    /* Hide sidebar toggle on large screens */
   .navbar-sidebar-toggle {
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
+    transform: scale(0.8) !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, display 0.3s ease;
     position: absolute !important;
-    left: -9999px !important;
+    pointer-events: none !important;
   }
 
   /* Ensure sidebar is completely hidden on large screens */
   .sidebar-nav {
     display: none !important;
     transform: translateX(-100%) !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    opacity: 0 !important;
   }
 }
 
-/* Medium screens: Icon-only mode with larger icons */
-@media (min-width: 800px) and (max-width: 1299.98px) {
+/* Medium screens: Icon-only mode */
+@media (min-width: 600px) and (max-width: 1199.98px) {
   .navbar-collapse {
     display: flex !important;
     flex: 1 !important;
     justify-content: flex-end !important;
     align-items: center !important;
     margin-left: auto !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    min-height: 60px !important;
+  }
+
+  .navbar-nav {
+    flex-shrink: 0 !important;
+    max-width: none !important;
+  }
+
+  .nav-item {
+    flex-shrink: 0 !important;
+    min-width: 60px !important;
+    max-width: 70px !important;
   }
 
   .heidelberg-navbar .nav-link {
     padding: 0.5rem !important;
     justify-content: center;
-    min-width: 60px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 60px !important;
+    max-width: 70px !important;
+    width: 60px !important;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .nav-icon {
     font-size: 1.2rem !important;
-    margin: 0;
-    transition: none !important;
-    max-height: 1.2rem;
-    line-height: 1;
-    flex-shrink: 0;
+    margin: 0 !important;
+    transition: font-size 0.3s ease;
+    max-height: 1.2rem !important;
+    line-height: 1 !important;
+    flex-shrink: 0 !important;
+    width: 1.2rem !important;
   }
 
   .nav-text {
     display: none !important;
     opacity: 0 !important;
     margin-left: 0 !important;
-    transition: none !important;
-  }
-
-  .nav-icon {
-    font-size: 1.2rem !important;
-    margin: 0;
-    flex-shrink: 0;
-    transition: none !important;
-    max-height: 1.2rem;
-    line-height: 1;
-  }
-
-  /* Ensure navbar stays horizontal in icon-only mode */
-  .navbar-nav {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    align-self: center !important;
-    overflow-x: auto !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    width: auto !important;
-    min-width: 0 !important;
-    gap: 0.125rem !important;
-    margin-left: auto !important;
-    justify-content: center !important;
-  }
-
-  .navbar-nav::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  .nav-item {
-    flex-shrink: 0 !important;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    min-width: 0 !important;
+    transition: opacity 0.3s ease, display 0.3s ease;
   }
 
   /* Show theme toggle button in icon-only mode */
@@ -497,8 +514,11 @@ body.dark-mode .heidelberg-navbar {
     display: flex !important;
     opacity: 1 !important;
     visibility: visible !important;
+    transform: scale(1) !important;
     position: relative !important;
     left: auto !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0 !important;
   }
 
   /* Hide sidebar toggle in medium screens (use icon-only mode) */
@@ -506,16 +526,20 @@ body.dark-mode .heidelberg-navbar {
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
-    position: absolute !important;
-    left: -9999px !important;
+    transform: scale(0.8) !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, display 0.3s ease;
+    pointer-events: none !important;
   }
 
   /* Ensure sidebar is completely hidden on medium screens */
   .sidebar-nav {
     display: none !important;
     transform: translateX(-100%) !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    opacity: 0;
   }
 }
+
 
 .heidelberg-navbar .nav-link::before {
   content: '';
@@ -562,22 +586,22 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 
 /* Custom Sidebar Toggle Button */
 .navbar-sidebar-toggle {
-  display: none !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
   background: rgba(255, 255, 255, 0.1) !important;
   padding: 0.5rem !important;
   border-radius: var(--radius-md) !important;
-  transition: all var(--transition-base) !important;
+  transition: all 0.3s ease !important;
   width: 44px !important;
   height: 44px !important;
   position: relative !important;
   margin: 0 0.125rem !important;
   min-width: 44px !important;
   min-height: 44px !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
+  cursor: pointer !important;
   flex-shrink: 0 !important;
   order: 1 !important;
+  z-index: 10 !important;
+  /* Default state - will be overridden by media queries */
 }
 
 .navbar-sidebar-toggle:hover,
@@ -608,56 +632,6 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 
 .navbar-sidebar-toggle:hover .sidebar-toggle-icon span {
   background-color: #ffffff;
-}
-
-/* Small screens: Hide desktop nav and show sidebar toggle */
-@media (max-width: 799.98px) {
-  .navbar-collapse {
-    display: none !important;
-  }
-
-  .navbar-sidebar-toggle {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    order: 1 !important;
-    flex: 0 0 auto !important;
-    position: relative !important;
-    left: auto !important;
-    width: 44px !important;
-    height: 44px !important;
-    min-width: 44px !important;
-    min-height: 44px !important;
-  }
-
-  /* Show sidebar on small screens */
-  .sidebar-nav {
-    display: flex !important;
-    transform: translateX(-100%) !important; /* Hidden by default, shown via JS */
-  }
-
-  /* Hide theme toggle button on small screens */
-  .theme-toggle-btn {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    position: absolute !important;
-    left: -9999px !important;
-  }
-
-  /* Ensure navbar container uses space-between for proper alignment */
-  .heidelberg-navbar .container-fluid {
-    justify-content: space-between !important;
-  }
-
-  /* Ensure nav items are properly spaced */
-  .navbar-nav {
-    gap: 0 !important;
-    margin-left: auto !important;
-    justify-content: center !important;
-  }
 }
 
   /* Brand logo image (left of title) */
@@ -710,17 +684,20 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
   background: rgba(255, 255, 255, 0.1) !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
   color: var(--white) !important;
-  transition: all var(--transition-base);
+  transition: all 0.3s ease !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 36px !important;
-  height: 36px !important;
+  width: 44px !important;
+  height: 44px !important;
   border-radius: var(--radius-lg) !important;
   padding: 0 !important;
   margin: 0 0.125rem !important;
   min-width: 44px !important;
   min-height: 44px !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 10 !important;
 }
 
 /* Theme icon visibility control */
@@ -805,9 +782,6 @@ body.dark-mode .heidelberg-navbar .nav-item.active .nav-link {
 
 
 
-/* REMOVED: This breakpoint was conflicting with the new responsive system */
-
-/* REMOVED: This breakpoint was conflicting with the previous one */
 
 /* Custom Sidebar Navigation Styles */
 .sidebar-nav {
@@ -1107,11 +1081,118 @@ body.dark-mode .sidebar-header {
     transition: none;
     transform: none;
   }
-  
+
   .heidelberg-navbar .navbar-brand:hover,
   .heidelberg-navbar .nav-link:hover,
   .theme-toggle-btn:hover {
     transform: none;
+  }
+}
+
+/* Small screens: Hide desktop nav and show sidebar toggle - HIGHEST PRIORITY */
+@media (max-width: 599.98px) {
+  .navbar-collapse {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, display 0.3s ease;
+    /* Prevent layout shifts */
+    width: 0 !important;
+    flex: 0 0 0 !important;
+  }
+
+  /* Ensure navbar container layout on small screens */
+  .heidelberg-navbar .container-fluid {
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Show sidebar toggle on small screens - HIGHEST SPECIFICITY */
+  .heidelberg-navbar .navbar-nav .nav-item .navbar-sidebar-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    order: 1 !important;
+    flex: 0 0 auto !important;
+    position: relative !important;
+    left: auto !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, display 0.3s ease;
+    flex-shrink: 0 !important;
+    pointer-events: auto !important;
+    /* Maximum specificity - overrides everything */
+    position: relative !important;
+    z-index: 9999 !important;
+  }
+
+  /* Ensure navbar container maintains consistent layout */
+  .heidelberg-navbar .container-fluid {
+    justify-content: space-between !important;
+    transition: justify-content 0.3s ease;
+    /* Consistent sizing */
+    min-height: 60px !important;
+  }
+
+  /* Show sidebar on small screens with smooth transitions */
+  .sidebar-nav {
+    display: flex !important;
+    transform: translateX(-100%) !important; /* Hidden by default, shown via JS */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    opacity: 1 !important;
+  }
+
+  .sidebar-nav.open {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+
+  /* Hide theme toggle button on small screens */
+  .theme-toggle-btn {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: scale(0.8) !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, display 0.3s ease;
+    pointer-events: none !important;
+  }
+
+  /* Ensure navbar container uses space-between for proper alignment */
+  .heidelberg-navbar .container-fluid {
+    justify-content: space-between !important;
+    transition: justify-content 0.3s ease;
+  }
+
+  /* Ensure nav items are properly spaced */
+  .navbar-nav {
+    gap: 0 !important;
+    margin-left: auto !important;
+    justify-content: center !important;
+    transition: gap 0.3s ease, margin-left 0.3s ease;
+  }
+
+  /* Brand adjustments for small screens */
+  .brand-text {
+    margin-left: 0.25rem !important;
+    gap: 0.05rem !important;
+    transition: margin-left 0.3s ease, gap 0.3s ease;
+  }
+
+  .brand-title {
+    font-size: 0.75rem !important;
+    line-height: 1.1 !important;
+    transition: font-size 0.3s ease, line-height 0.3s ease;
+  }
+
+  .university-name {
+    font-size: 0.65rem !important;
+    display: block !important;
+    transition: font-size 0.3s ease;
   }
 }
 </style>
@@ -1256,10 +1337,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Progressive responsive navbar functionality - simplified to avoid conflicts
+  // Enhanced responsive navbar functionality with smooth transitions
   function updateNavbarForScreenSize() {
     const width = window.innerWidth;
     const sidebarNav = document.getElementById('sidebarNav');
+    const navbarNav = document.querySelector('.navbar-nav');
 
     // Set fixed height to prevent viewport-based resizing
     if (sidebarNav && !sidebarNav.style.height) {
@@ -1290,37 +1372,129 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    // Only handle sidebar visibility based on screen size
+    // Handle navbar nav scrollability for medium screens
+    if (navbarNav && width >= 600 && width <= 1199) {
+      // Check if navbar content overflows
+      setTimeout(() => {
+        const navbarRect = navbarNav.getBoundingClientRect();
+        const containerRect = navbarNav.parentElement.getBoundingClientRect();
+        const isScrollable = navbarRect.width > containerRect.width;
+
+        if (isScrollable) {
+          navbarNav.classList.add('scrollable');
+        } else {
+          navbarNav.classList.remove('scrollable');
+        }
+      }, 100);
+    } else if (navbarNav) {
+      navbarNav.classList.remove('scrollable');
+    }
+
+    // Handle sidebar visibility based on screen size with smooth transitions
     if (sidebarNav) {
-      if (width <= 799.98) {
+      if (width <= 599) {
         // Small screens: ensure sidebar is available but hidden by default
         sidebarNav.style.display = 'flex';
+        sidebarNav.style.opacity = '1';
         if (!sidebarNav.classList.contains('open')) {
           sidebarNav.style.transform = 'translateX(-100%)';
         }
       } else {
-        // Large/medium screens: completely hide sidebar
+        // Large/medium screens: completely hide sidebar using CSS classes
         sidebarNav.style.display = 'none';
         sidebarNav.style.transform = 'translateX(-100%)';
+        sidebarNav.style.opacity = '0';
       }
     }
 
-    // Let CSS media queries handle everything else
-    // No need to override CSS with inline styles
+    // Ensure buttons are properly visible based on screen size
+    const themeToggle = document.getElementById('theme-toggle');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+
+    if (width >= 1200) {
+      // Large screens: show theme toggle, hide sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'flex';
+        themeToggle.style.opacity = '1';
+        themeToggle.style.visibility = 'visible';
+        themeToggle.style.transform = 'scale(1)';
+        themeToggle.style.pointerEvents = 'auto';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'none';
+        sidebarToggle.style.opacity = '0';
+        sidebarToggle.style.visibility = 'hidden';
+        sidebarToggle.style.transform = 'scale(0.8)';
+        sidebarToggle.style.pointerEvents = 'none';
+      }
+    } else if (width >= 600) {
+      // Medium screens: show theme toggle (unless very tight), hide sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'flex';
+        themeToggle.style.opacity = width >= 750 ? '1' : '0';
+        themeToggle.style.visibility = width >= 750 ? 'visible' : 'hidden';
+        themeToggle.style.transform = 'scale(1)';
+        themeToggle.style.pointerEvents = width >= 750 ? 'auto' : 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'none';
+        sidebarToggle.style.opacity = '0';
+        sidebarToggle.style.visibility = 'hidden';
+        sidebarToggle.style.transform = 'scale(0.8)';
+        sidebarToggle.style.pointerEvents = 'none';
+      }
+    } else {
+      // Small screens: hide theme toggle, show sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'none';
+        themeToggle.style.opacity = '0';
+        themeToggle.style.visibility = 'hidden';
+        themeToggle.style.transform = 'scale(0.8)';
+        themeToggle.style.pointerEvents = 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'flex';
+        sidebarToggle.style.opacity = '1';
+        sidebarToggle.style.visibility = 'visible';
+        sidebarToggle.style.transform = 'scale(1)';
+        sidebarToggle.style.pointerEvents = 'auto';
+      }
+    }
   }
 
   // Update navbar on page load (set fixed height once)
   updateNavbarForScreenSize();
 
-  // On resize, only handle visibility, not height (height stays fixed)
+  // Enhanced resize handler with smooth transitions and scrollability detection
   window.addEventListener('resize', function() {
     const width = window.innerWidth;
     const sidebarNav = document.getElementById('sidebarNav');
+    const navbarNav = document.querySelector('.navbar-nav');
 
+    // Handle navbar nav scrollability for medium screens
+    if (navbarNav && width >= 600 && width <= 1199) {
+      // Check if navbar content overflows after resize
+      setTimeout(() => {
+        const navbarRect = navbarNav.getBoundingClientRect();
+        const containerRect = navbarNav.parentElement.getBoundingClientRect();
+        const isScrollable = navbarRect.width > containerRect.width;
+
+        if (isScrollable) {
+          navbarNav.classList.add('scrollable');
+        } else {
+          navbarNav.classList.remove('scrollable');
+        }
+      }, 100);
+    } else if (navbarNav) {
+      navbarNav.classList.remove('scrollable');
+    }
+
+    // Handle sidebar visibility based on screen size with smooth transitions
     if (sidebarNav) {
-      if (width <= 799.98) {
+      if (width <= 599) {
         // Small screens: ensure sidebar is available but hidden by default
         sidebarNav.style.display = 'flex';
+        sidebarNav.style.opacity = '1';
         if (!sidebarNav.classList.contains('open')) {
           sidebarNav.style.transform = 'translateX(-100%)';
         }
@@ -1328,6 +1502,61 @@ document.addEventListener('DOMContentLoaded', function() {
         // Large/medium screens: completely hide sidebar
         sidebarNav.style.display = 'none';
         sidebarNav.style.transform = 'translateX(-100%)';
+        sidebarNav.style.opacity = '0';
+      }
+    }
+
+    // Ensure buttons are properly visible based on screen size
+    const themeToggle = document.getElementById('theme-toggle');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+
+    if (width >= 1200) {
+      // Large screens: show theme toggle, hide sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'flex';
+        themeToggle.style.opacity = '1';
+        themeToggle.style.visibility = 'visible';
+        themeToggle.style.transform = 'scale(1)';
+        themeToggle.style.pointerEvents = 'auto';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'none';
+        sidebarToggle.style.opacity = '0';
+        sidebarToggle.style.visibility = 'hidden';
+        sidebarToggle.style.transform = 'scale(0.8)';
+        sidebarToggle.style.pointerEvents = 'none';
+      }
+    } else if (width >= 600) {
+      // Medium screens: show theme toggle (unless very tight), hide sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'flex';
+        themeToggle.style.opacity = width >= 750 ? '1' : '0';
+        themeToggle.style.visibility = width >= 750 ? 'visible' : 'hidden';
+        themeToggle.style.transform = 'scale(1)';
+        themeToggle.style.pointerEvents = width >= 750 ? 'auto' : 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'none';
+        sidebarToggle.style.opacity = '0';
+        sidebarToggle.style.visibility = 'hidden';
+        sidebarToggle.style.transform = 'scale(0.8)';
+        sidebarToggle.style.pointerEvents = 'none';
+      }
+    } else {
+      // Small screens: hide theme toggle, show sidebar toggle
+      if (themeToggle) {
+        themeToggle.style.display = 'none';
+        themeToggle.style.opacity = '0';
+        themeToggle.style.visibility = 'hidden';
+        themeToggle.style.transform = 'scale(0.8)';
+        themeToggle.style.pointerEvents = 'none';
+      }
+      if (sidebarToggle) {
+        sidebarToggle.style.display = 'flex';
+        sidebarToggle.style.opacity = '1';
+        sidebarToggle.style.visibility = 'visible';
+        sidebarToggle.style.transform = 'scale(1)';
+        sidebarToggle.style.pointerEvents = 'auto';
       }
     }
   });
