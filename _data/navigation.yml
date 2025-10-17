@@ -1,0 +1,21 @@
+- title: Home
+  url: /
+  icon: fas fa-home
+- title: Research
+  url: /research/
+  icon: fas fa-microscope
+- title: Publications
+  url: /publications/
+  icon: fas fa-file-alt
+- title: Teaching
+  url: /teaching/
+  icon: fas fa-chalkboard-teacher
+- title: Members
+  url: /members/
+  icon: fas fa-users
+- title: Links
+  url: /links/
+  icon: fas fa-link
+- title: Contact
+  url: /contact/
+  icon: fas fa-envelope

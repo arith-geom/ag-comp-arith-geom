@@ -7,6 +7,7 @@ _site/
 .jekyll-metadata
 vendor/
 .bundle/
+assets/search-data.json
 
 # ==============================================================================
 # Private Documentation & AI-Related Content (KEEP PRIVATE)
@@ -68,6 +69,7 @@ yarn.lock
 .rvmrc
 .ruby-version
 .ruby-gemset
+Rakefile
 
 # ==============================================================================
 # Backup & Temporary Files
@@ -97,13 +99,10 @@ config/secrets.yml
 
 # ==============================================================================
 # Additional Development Files
-# ==============================================================================
-TODO.md
-NOTES.md
-SCRATCH.md
-PAGES_CMS_SETUP.md
-CMS_FIXES_SUMMARY.md
+# =================================================_MESSAGE
+
 test/
 tests/
 spec/
 coverage/
+assets/search-data.json

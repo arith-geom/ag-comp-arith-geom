@@ -1,0 +1,78 @@
+.publication-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.publication-card {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  display: flex;
+  justify-content: space-between;
+
+  .publication-main {
+    flex-grow: 1;
+  }
+
+  .publication-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+
+  .publication-authors {
+    font-style: italic;
+    margin-bottom: 0.25rem;
+    font-size: 0.85em;
+  }
+
+  .publication-appendix {
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+    color: #6c757d;
+  }
+
+  .publication-details,
+  .publication-publisher,
+  .publication-isbn {
+    margin-bottom: 0.15rem;
+    font-size: 0.8rem;
+  }
+
+  .publication-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+
+    .publication-status,
+    .publication-mr,
+    .publication-type {
+      background-color: #e9ecef;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      color: #212529;
+      display: inline-block;
+      margin-top: 0.25rem;
+    }
+
+    .publication-type {
+      .fas {
+        margin-right: 0.3rem;
+      }
+    }
+
+    .publication-mr {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+    }
+  }
+}

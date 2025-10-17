@@ -1,0 +1,76 @@
+sections:
+- title: Head of Research Group
+  members:
+    - name: Prof. Dr. Placeholder
+      role: Professor & Group Leader
+      photo: https://fpoimg.com/150x150?bg_color=cccccc&text_color=969696
+      description: "Leading the research group with a focus on innovative and collaborative projects."
+      links:
+        - url: "mailto:placeholder.email@example.com"
+          icon: "fas fa-envelope"
+          text: "Email"
+        - url: "#"
+          icon: "fab fa-google-scholar"
+          text: "Scholar"
+        - url: "#"
+          icon: "fab fa-linkedin"
+          text: "LinkedIn"
+        - url: "#"
+          icon: "fas fa-globe"
+          text: "Website"
+
+- title: Secretary
+  members:
+    - name: Jane Doe
+      role: Secretary
+      photo: https://fpoimg.com/150x150?bg_color=cccccc&text_color=969696
+      description: "Managing administrative tasks and ensuring the smooth operation of the research group."
+      links:
+        - url: "mailto:jane.doe@example.com"
+          icon: "fas fa-envelope"
+          text: "Email"
+        - url: "#"
+          icon: "fas fa-phone"
+          text: "Phone"
+
+- title: Research Members
+  members:
+    - name: Dr. Alice Smith
+      role: Postdoctoral Researcher
+      photo: https://fpoimg.com/100x100?bg_color=cccccc&text_color=969696
+      description: "Researching advanced topics in computational geometry and its applications."
+      links:
+        - url: "mailto:alice.smith@example.com"
+          icon: "fas fa-envelope"
+          text: "Email"
+        - url: "#"
+          icon: "fab fa-google-scholar"
+          text: "Scholar"
+    - name: Bob Johnson
+      role: PhD Candidate
+      photo: https://fpoimg.com/100x100?bg_color=cccccc&text_color=969696
+      description: "Developing new algorithms for data analysis in high-dimensional spaces."
+      links:
+        - url: "mailto:bob.johnson@example.com"
+          icon: "fas fa-envelope"
+          text: "Email"
+        - url: "#"
+          icon: "fab fa-linkedin"
+          text: "LinkedIn"
+    - name: Charlie Brown
+      role: PhD Candidate
+      photo: https://fpoimg.com/100x100?bg_color=cccccc&text_color=969696
+      description: "Exploring the intersection of machine learning and algebraic geometry."
+      links:
+        - url: "mailto:charlie.brown@example.com"
+          icon: "fas fa-envelope"
+          text: "Email"
+
+- title: Former Members
+  members:
+    - name: Dr. David Williams
+      role: Postdoctoral Researcher (2020-2023)
+    - name: Dr. Eve Davis
+      role: PhD (2018-2022)
+    - name: Frank Miller
+      role: Research Assistant (2021-2022)

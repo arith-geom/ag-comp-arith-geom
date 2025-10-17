@@ -1,0 +1,18 @@
+.research-page-override .content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .research-page-override .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.research-page-override .feature-card {
+  border: 1px solid #ddd !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  padding: 1.5rem !important;
+  margin-bottom: 0 !important;
+}

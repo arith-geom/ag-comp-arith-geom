@@ -5,6 +5,9 @@
   "dependencies": {
     "js-yaml": "^4.1.0"
   },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  },
   "keywords": [
     "jekyll",
     "academic",

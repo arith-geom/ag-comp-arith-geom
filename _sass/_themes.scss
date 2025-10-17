@@ -5,11 +5,11 @@
 
 :root {
   /* Heidelberg University Brand Colors */
-  --heidelberg-red: #C22032;
-  --heidelberg-red-light: #E45424;
-  --heidelberg-red-dark: #991B1B;
-  --heidelberg-red-darker: #7F1D1D;
-  --heidelberg-red-darkest: #450A0A;
+  --heidelberg-red: #c61826;
+  --heidelberg-red-light: #F58C91;
+  --heidelberg-red-dark: #90121B;
+  --heidelberg-red-darker: #5B0B11;
+  --heidelberg-red-darkest: #5B0B11;
   
   /* High Contrast Color Palette */
   --white: #FFFFFF;
@@ -62,6 +62,18 @@
   --transition-fast: 150ms ease-out;
   --transition-base: 200ms ease-out;
   --transition-slow: 300ms ease-out;
+
+  /* Footer */
+  --footer-bg-color: var(--bg-primary);
+  --footer-text-color: var(--gray-700);
+  --footer-secondary-text-color: var(--gray-600);
+  --footer-heading-color: var(--gray-900);
+  --footer-border-color: var(--gray-300);
+  --footer-link-color: var(--gray-800);
+  --footer-link-hover-color: var(--heidelberg-red);
+  --footer-icon-color: var(--gray-500);
+  --footer-logo-bg: var(--white);
+  --footer-logo-filter: none;
 }
 
 /* Dark Mode - MAXIMUM CONTRAST */
@@ -84,13 +96,13 @@ html[data-theme="dark"] {
   --border-dark: var(--gray-600);
   --border-light: var(--gray-800);
   
-  --link-color: #FF6B6B;                /* Bright red for dark mode visibility */
-  --link-hover: #FF5252;                /* Brighter on hover */
+  --link-color: #F58C91;                /* Bright red for dark mode visibility */
+  --link-hover: #F06B73;                /* Brighter on hover */
   
-  --primary: #DC2626;                   /* Bright red for dark mode */
-  --primary-hover: #B91C1C;
-  --primary-dark: #7F1D1D;
-  --primary-darker: #450A0A;
+  --primary: #EC4A55;                   /* Bright red for dark mode */
+  --primary-hover: #F06B73;
+  --primary-dark: #c61826;
+  --primary-darker: #90121B;
   --primary-text: var(--white);         /* White text on bright red */
   
   /* Dark mode shadows - use white for visibility */
@@ -98,6 +110,18 @@ html[data-theme="dark"] {
   --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.15), 0 2px 4px -1px rgba(255, 255, 255, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.2), 0 4px 6px -2px rgba(255, 255, 255, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(255, 255, 255, 0.25), 0 10px 10px -5px rgba(255, 255, 255, 0.1);
+
+  /* Footer - Dark Mode */
+  --footer-bg-color: var(--gray-950);
+  --footer-text-color: var(--gray-400);
+  --footer-secondary-text-color: var(--gray-500);
+  --footer-heading-color: var(--gray-100);
+  --footer-border-color: var(--gray-800);
+  --footer-link-color: var(--gray-200);
+  --footer-link-hover-color: var(--link-color); /* Use dark mode bright red */
+  --footer-icon-color: var(--gray-600);
+  --footer-logo-bg: var(--gray-800);
+  --footer-logo-filter: invert(1) grayscale(100) brightness(1.5);
 }
 
 /* Global Base Styles - FORCED HIGH CONTRAST */
@@ -115,8 +139,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%) !important;
-  background-attachment: fixed !important;
+  background-color: var(--bg-primary);
+  background-attachment: fixed;
   color: var(--text-primary) !important;
   font-family: 'Inter', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
@@ -126,31 +150,31 @@ body {
 
 /* Typography - FORCED CONTRAST */
 h1, h2, h3, h4, h5, h6 {
-  color: #DC2626 !important; /* Bright red for all headers */
+  color: #c61826; /* Bright red for all headers */
   font-weight: 600;
   margin: 0.5em 0;
 }
 
 p, span, li, td, th, label, strong, em, small {
-  color: var(--text-primary) !important;
+  color: var(--text-primary);
 }
 
 /* Muted text - still readable */
 .text-muted, 
 .text-secondary,
 small.text-muted {
-  color: var(--text-muted) !important;
+  color: var(--text-muted);
 }
 
 /* Links with maximum contrast */
 a {
-  color: var(--link-color) !important;
+  color: var(--link-color);
   text-decoration: none;
   transition: all var(--transition-fast);
 }
 
 a:hover, a:focus {
-  color: var(--link-hover) !important;
+  color: var(--link-hover);
   text-decoration: underline;
 }
 
@@ -239,7 +263,7 @@ textarea:focus {
   background: var(--bg-primary) !important;
   color: var(--text-primary) !important;
   border-color: var(--primary) !important;
-  box-shadow: 0 0 0 3px rgba(194, 32, 50, 0.1) !important;
+  box-shadow: 0 0 0 3px rgba(198, 24, 38, 0.1) !important;
   outline: none;
 }
 
@@ -339,8 +363,3 @@ tbody td {
   }
 }
 
-/* Ensure navbar text is always white */
-.navbar-dark .navbar-nav .nav-link,
-.navbar-dark .navbar-brand {
-    color: var(--white) !important;
-}

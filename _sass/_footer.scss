@@ -1,0 +1,176 @@
+// _sass/_footer.scss
+
+@use 'variables' as v;
+@use 'themes' as t;
+@use 'mixins' as m;
+
+.footer {
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  border-top: 1px solid var(--footer-border-color);
+  font-size: 0.9rem;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative; // Needed for back-to-top button positioning
+
+  .footer-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--footer-heading-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+
+    i {
+      color: var(--footer-heading-color);
+      font-size: 1.2em;
+    }
+  }
+
+  .footer-description {
+    color: var(--footer-secondary-text-color);
+    line-height: 1.6;
+  }
+
+  .footer-section {
+    height: 100%;
+  }
+
+  .contact-details {
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      color: var(--footer-text-color);
+
+      .contact-icon {
+        color: var(--footer-icon-color);
+        margin-top: 0.25rem;
+        width: 20px; // Ensure alignment
+      }
+    }
+  }
+
+  .footer-links {
+    .footer-link {
+      color: var(--footer-link-color);
+      text-decoration: none;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
+      display: flex;
+      align-items: center;
+
+      &:hover, &:focus {
+        color: var(--footer-link-hover-color);
+        text-decoration: underline;
+        text-decoration-color: var(--heidelberg-red);
+      }
+
+      i {
+        width: 24px;
+        color: var(--footer-icon-color);
+      }
+    }
+  }
+
+  .footer-logo-container {
+    padding: 1rem;
+    background-color: var(--footer-logo-bg);
+    border-radius: v.$border-radius-lg;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+
+  .footer-logo-img {
+    max-width: 180px;
+    height: auto;
+    filter: var(--footer-logo-filter);
+    transition: filter 0.3s;
+  }
+
+  .footer-divider {
+    border-color: var(--footer-border-color);
+    opacity: 0.5;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+
+    .copyright-info, .legal-links-footer, .website-credits {
+      color: var(--footer-secondary-text-color);
+    }
+
+    .legal-link, .creator-link {
+      color: var(--footer-link-color);
+      text-decoration: none;
+      &:hover {
+        color: var(--footer-link-hover-color);
+        text-decoration: underline;
+      }
+    }
+
+    .separator {
+      color: var(--footer-border-color);
+    }
+
+    .creator-role {
+      font-style: italic;
+      display: block;
+      font-size: 0.9em;
+      color: var(--footer-secondary-text-color);
+    }
+  }
+}
+
+// Back to Top Button
+.back-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px);
+  transition: all 0.3s ease;
+  z-index: 1050;
+
+  &.show {
+    opacity: 0.5;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    opacity: 1;
+    background-color: var(--heidelberg-red);
+  }
+}
+
+// Responsive adjustments
+@include m.media-breakpoint-down(md) {
+  .footer {
+    text-align: center;
+
+    .footer-heading, .contact-item {
+      justify-content: center;
+    }
+
+    .contact-item {
+      text-align: left; // Keep address lines aligned left
+    }
+
+    .footer-bottom {
+      .row > div {
+        text-align: center !important;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

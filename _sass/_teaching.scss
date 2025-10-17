@@ -1,0 +1,101 @@
+.teaching-by-year-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.year-row {
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr; // Year label, Summer, Winter
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+
+  &.highlight-top-year {
+    border-top: 2px solid #c61826;
+    padding-top: calc(0.5rem - 2px);
+  }
+}
+
+.year-label-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .year-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+.semester-section {
+  &.empty {
+    min-height: 20px;
+  }
+
+  .semester-title {
+    font-size: 1rem;
+    color: #333;
+    border-bottom: 1px solid #c61826;
+    padding-bottom: 0.1rem;
+    margin-bottom: 0.4rem;
+  }
+}
+
+.course-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #f9f9f9;
+
+  .course-title {
+    font-size: 0.95rem;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .course-instructor {
+    font-style: italic;
+    color: #555;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .course-body {
+    p {
+      margin-bottom: 0.2rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  .course-resources {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+
+    .resource-link {
+      color: #c61826;
+      text-decoration: none;
+      font-size: 0.85rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      i {
+        margin-right: 0.1rem;
+      }
+    }
+  }
+}
+
+// Highlighting styles for the current semester
+.semester-section.highlight-current {
+  .semester-title {
+    background-color: #c61826;
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+  }
+}

@@ -97,8 +97,7 @@ order: 100
     <ul class="poster-list">
       <li>
         <strong>Workshop Arithmetic Geometry and Computer Algebra</strong> (Oldenburg, 29/06/2017 - 01/07/2017)
-        <br><a href="{{ '/assets/uploads/Poster_Peter_Graef.pdf' | relative_url }}" class="download">Poster</a> | 
-        <a href="http://www.uni-oldenburg.de/jan-steffen-mueller/workshop" target="_blank">Workshop Website</a>
+        <br><a href="{{ '/assets/uploads/Poster_Peter_Graef.pdf' | relative_url }}" class="download">Poster</a>
       </li>
     </ul>
 

@@ -1,145 +1,127 @@
 ---
 layout: page
 permalink: "/teaching/"
-scripts:
-- "/assets/js/components/teaching-page.js"
+title: "Teaching"
 show_title: false
-description: Teaching overview with filters and recent courses
+description: "An overview of our courses, seminars, and lectures, organized by semester."
 ---
-<div class="teaching-page">
-  <!-- All 131 teaching entries from Heidelberg website are included and up to date as of 2025-08-26T23:39:39 -->
-  <div id="courseFocusBar" class="course-focus-bar" style="display: none;">
-    <button id="backToAllCourses" class="back-to-all-btn" aria-label="Back to all courses">
-      <span>
-        <i class="fas fa-circle-arrow-left"></i>
-        Back to All Courses
-      </span>
-    </button>
-  </div>
-  
-  <!-- Filter Controls -->
-  <div class="filter-controls">
-    <div class="filter-group">
-      <label for="courseTypeFilter">Filter by Type:</label>
-      <select id="courseTypeFilter" class="filter-select">
-        <option value="all">All Courses</option>
-        <option value="vorlesung">Lectures</option>
-        <option value="seminar">Seminars</option>
-        <option value="proseminar">Proseminars</option>
-        <option value="hauptseminar">Hauptseminars</option>
-      </select>
-    </div>
-    <div class="filter-group">
-      <label for="yearFilter">Filter by Year:</label>
-      <select id="yearFilter" class="filter-select">
-        <option value="all">All Years</option>
-        {% assign teaching_all = site.teaching | where: 'layout', 'teaching' %}
-        {% assign years = teaching_all | map: 'semester_year' | compact | uniq | sort | reverse %}
-        {% for y in years %}
-        {% if y %}<option value="{{ y }}">{{ y }}</option>{% endif %}
-        {% endfor %}
-      </select>
-    </div>
-    <div class="filter-group">
-      <label for="searchFilter">Search Courses:</label>
-      <input type="text" id="searchFilter" class="filter-input" placeholder="Search course titles...">
-    </div>
-  </div>
 
-  {% assign teaching_all = site.teaching | where: 'layout', 'teaching' %}
-  {% assign teaching_sorted = teaching_all | sort: 'semester_sort' | reverse %}
+{% assign current_year = site.time | date: "%Y" | plus: 0 %}
+{% assign current_month = site.time | date: "%m" | plus: 0 %}
 
-  <!-- Recent Teaching (auto) -->
-  <div class="teaching-section recent-section">
-    <h3 class="section-title recent-title">
-      <i class="fas fa-clock"></i> Recent Teaching
-    </h3>
-    {% assign recent_courses = teaching_sorted | where_exp: "c", "c.semester_key and c.semester_key != ''" %}
-    {% assign recent_by_semester = recent_courses | group_by: 'semester_key' %}
-    {% for sem in recent_by_semester %}
-      {% assign sample = sem.items | first %}
-      <div class="semester-group" data-period="recent" data-semester="{{ sample.semester_key }}">
-        <h4 class="semester-title recent-semester">
-          <i class="fas fa-calendar-alt"></i> {{ sample.semester_key }}
-        </h4>
-        <ul class="course-list">
-          {% for course in sem.items %}
-            {% assign type_lower = course.course_type | downcase %}
-            <li class="course-item" data-type="{{ type_lower }}" data-year="{{ course.semester_year }}" data-period="recent" {% if course.external_url %}data-course-url="{{ course.external_url }}" data-external="true"{% endif %}>
-              <div class="course-item-header">
-                <div class="course-info-section">
-                  <span class="course-badge {{ type_lower }}">
-                    {% if type_lower == 'vorlesung' %}<i class="fas fa-chalkboard-teacher"></i> Lecture{% elsif type_lower == 'hauptseminar' %}<i class="fas fa-graduation-cap"></i> Advanced Seminar{% elsif type_lower == 'proseminar' %}<i class="fas fa-book-open"></i> Proseminar{% else %}<i class="fas fa-users"></i> {{ course.course_type }}{% endif %}
-                  </span>
-                  <span class="course-title">{{ course.title }}</span>
-                  {% if course.instructor %}<span class="instructors">({{ course.instructor }})</span>{% endif %}
-                </div>
-                {% assign has_links = course.links.size %}
-                {% assign has_pdfs = course.pdfs.size %}
+{% if current_month >= 4 and current_month <= 9 %}
+  {% assign current_semester_string = "Summer Term " | append: current_year %}
+{% else %}
+  {% if current_month >= 10 %}
+    {% assign next_year = current_year | plus: 1 %}
+    {% assign next_year_short = next_year | modulo: 100 %}
+    {% assign current_semester_string = "Winter Term " | append: current_year | append: "/" | append: next_year_short %}
+  {% else %}
+    {% assign prev_year = current_year | minus: 1 %}
+    {% assign current_year_short = current_year | modulo: 100 %}
+    {% assign current_semester_string = "Winter Term " | append: prev_year | append: "/" | append: current_year_short %}
+  {% endif %}
+{% endif %}
 
-                {% comment %}Check if course has additional content beyond the title{% endcomment %}
-                {% assign has_expandable_content = false %}
-                {% if course.content %}
-                  {% assign content_length = course.content | size %}
-                  {% assign title_length = course.title | size %}
-                  {% comment %}If content is significantly longer than title, or contains subdomain content markers{% endcomment %}
-                  {% assign min_length = title_length | plus: 20 %}
-                  {% if content_length > min_length or course.content contains '--- Content from' %}
-                    {% assign has_expandable_content = true %}
+<div class="timeline-section">
+  <h2 class="timeline-title">Courses Timeline</h2>
+  <div class="teaching-by-year-container">
+    {% for year_data in site.data.teaching.courses %}
+      {% assign summer_semester = "" %}
+      {% assign winter_semester = "" %}
+      {% for semester in year_data.semesters %}
+        {% if semester.semester contains "Summer" %}
+          {% assign summer_semester = semester %}
+        {% endif %}
+        {% if semester.semester contains "Winter" %}
+          {% assign winter_semester = semester %}
+        {% endif %}
+      {% endfor %}
+
+      <div class="year-row {% if forloop.first %}highlight-top-year{% endif %}">
+        <div class="year-label-column">
+          <h3 class="year-title">{{ year_data.year }}</h3>
+        </div>
+        <div class="semester-content-column">
+          {% if summer_semester != "" %}
+            {% assign highlight_class = "" %}
+            {% if summer_semester.semester == current_semester_string %}
+              {% assign highlight_class = "highlight-current" %}
+            {% endif %}
+            <div class="semester-section {{ highlight_class | strip }}">
+              <h4 class="semester-title">{{ summer_semester.semester }}</h4>
+              {% for course in summer_semester.courses %}
+                <div class="course-card">
+                  <h5 class="course-title">{{ course.title }}</h5>
+                  {% if course.instructor %}
+                    <p class="course-instructor"><i class="fas fa-user-tie"></i> {{ course.instructor }}</p>
                   {% endif %}
-                {% endif %}
-
-                {% if has_links or has_pdfs or has_expandable_content %}
-                <div class="course-resources-preview">
-                  {% for link in course.links %}
-                    {% if link.url %}
-                    <a href="{{ link.url }}" target="_blank" rel="noopener" class="resource-link" title="{{ link.label | default: link.url }}">
-                      <i class="fas fa-external-link-alt"></i>
-                      <span class="resource-text">{{ link.label | default: 'Link' }}</span>
-                    </a>
+                  <div class="course-body">
+                    {% if course.description and course.description != "" %}
+                      <p>{{ course.description }}</p>
                     {% endif %}
-                  {% endfor %}
-                  {% for pdf in course.pdfs %}
-                    {% if pdf.file %}
-                    <a href="{{ pdf.file | relative_url }}" target="_blank" rel="noopener" class="resource-link" title="{{ pdf.label | default: 'PDF' }}">
-                      <i class="fas fa-file-pdf"></i>
-                      <span class="resource-text">{{ pdf.label | default: 'PDF' }}</span>
-                    </a>
+                    {% if course.links or course.pdfs %}
+                      <div class="course-resources">
+                        {% for link in course.links %}
+                          <a href="{{ link.url }}" class="resource-link" target="_blank" rel="noopener">
+                            <i class="fas fa-external-link-alt"></i> {{ link.label | default: "More Info" }}
+                          </a>
+                        {% endfor %}
+                        {% for pdf in course.pdfs %}
+                          <a href="{{ pdf.file | relative_url }}" class="resource-link" target="_blank" rel="noopener">
+                            <i class="fas fa-file-pdf"></i> {{ pdf.label | default: "PDF" }}
+                          </a>
+                        {% endfor %}
+                      </div>
                     {% endif %}
-                  {% endfor %}
+                  </div>
                 </div>
-                {% endif %}
-
-                {% comment %}Only show expand button if there's expandable content{% endcomment %}
-                {% if has_expandable_content %}
-                <button class="course-expand-btn" aria-expanded="false" title="Show additional content">
-                  <i class="fas fa-chevron-down"></i>
-                </button>
-                {% endif %}
-              </div>
-              {% comment %}Only show course details if there's expandable content{% endcomment %}
-              {% if has_expandable_content %}
-              <div class="course-details" style="display: none;">
-                <div class="course-details-inner">
-                  {% if course.content contains '--- Content from' %}
-                    {% comment %}Show only the subdomain content, not the original title{% endcomment %}
-                    {% assign subdomain_start = course.content | split: '--- Content from' | last %}
-                    {% if subdomain_start != course.content %}
-                  <div class="course-full-content">{{ subdomain_start }}</div>
-                    {% endif %}
-                  {% else %}
-                    {% comment %}Show the full content minus the title part{% endcomment %}
-                    {% assign content_without_title = course.content | remove: course.title | strip %}
-                    {% if content_without_title != "" and content_without_title != course.title %}
-                  <div class="course-full-content">{{ content_without_title }}</div>
-                    {% endif %}
+              {% endfor %}
+            </div>
+          {% else %}
+            <div class="semester-section empty"></div>
+          {% endif %}
+        </div>
+        <div class="semester-content-column">
+          {% if winter_semester != "" %}
+            {% assign highlight_class = "" %}
+            {% if winter_semester.semester == current_semester_string %}
+              {% assign highlight_class = "highlight-current" %}
+            {% endif %}
+            <div class="semester-section {{ highlight_class | strip }}">
+              <h4 class="semester-title">{{ winter_semester.semester }}</h4>
+              {% for course in winter_semester.courses %}
+                <div class="course-card">
+                  <h5 class="course-title">{{ course.title }}</h5>
+                  {% if course.instructor %}
+                    <p class="course-instructor"><i class="fas fa-user-tie"></i> {{ course.instructor }}</p>
                   {% endif %}
+                  <div class="course-body">
+                    {% if course.description and course.description != "" %}
+                      <p>{{ course.description }}</p>
+                    {% endif %}
+                    {% if course.links or course.pdfs %}
+                      <div class="course-resources">
+                        {% for link in course.links %}
+                          <a href="{{ link.url }}" class="resource-link" target="_blank" rel="noopener">
+                            <i class="fas fa-external-link-alt"></i> {{ link.label | default: "More Info" }}
+                          </a>
+                        {% endfor %}
+                        {% for pdf in course.pdfs %}
+                          <a href="{{ pdf.file | relative_url }}" class="resource-link" target="_blank" rel="noopener">
+                            <i class="fas fa-file-pdf"></i> {{ pdf.label | default: "PDF" }}
+                          </a>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
                 </div>
-              </div>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
+              {% endfor %}
+            </div>
+          {% else %}
+            <div class="semester-section empty"></div>
+          {% endif %}
+        </div>
       </div>
     {% endfor %}
   </div>

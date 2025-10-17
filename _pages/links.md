@@ -7,150 +7,195 @@ show_title: false
 order: 100
 title: Links
 ---
-<!-- Heidelberg University Links -->
-<h2>Heidelberg University</h2>
-<div class="list-group mb-4">
-  <a href="https://www.iwr.uni-heidelberg.de/" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Interdisciplinary Center for Scientific Computing (IWR)</h5>
-    </div>
-    <small class="text-muted">https://www.iwr.uni-heidelberg.de/</small>
-  </a>
-  
-  <a href="https://www.math.uni-heidelberg.de/en" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Institute of Mathematics Heidelberg</h5>
-    </div>
-    <small class="text-muted">https://www.math.uni-heidelberg.de/en</small>
-  </a>
-  
-  <a href="https://www.mathinf.uni-heidelberg.de/" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Faculty of Mathematics and Computer Sciences</h5>
-    </div>
-    <small class="text-muted">https://www.mathinf.uni-heidelberg.de/</small>
-  </a>
-  
-  <a href="http://www.match.uni-heidelberg.de/" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">The MAThematics Center Heidelberg (MATCH)</h5>
-    </div>
-    <small class="text-muted">http://www.match.uni-heidelberg.de/</small>
-  </a>
-</div>
-
-
-
-<!-- DFG Research Projects -->
-<h2>DFG Research Projects</h2>
-<div class="list-group mb-4">
-  <a href="https://crc326gaus.de/" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">DFG CRC 326 GAUS "Geometry and Arithmetic of Uniformized Structures"</h5>
-    </div>
-    <small class="text-muted">https://crc326gaus.de/</small>
-  </a>
-  
-  <a href="https://www.mathi.uni-heidelberg.de/fg-sga/index-en.html" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">DFG Research Group 1920 "Symmetry, Geometry and Arithmetic" Heidelberg/Darmstadt</h5>
-    </div>
-    <small class="text-muted">https://www.mathi.uni-heidelberg.de/fg-sga/index-en.html</small>
-  </a>
-  
-  <a href="http://www.computeralgebra.de/" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">DFG Priority Project SSP 1489 "Algorithmic and Experimental Methods in Algebra, Geometry, and Number Theory"</h5>
-    </div>
-    <small class="text-muted">http://www.computeralgebra.de/</small>
-  </a>
-</div>
-
-<!-- Academic Resources -->
-<h2>Academic Resources</h2>
-<div class="list-group mb-4">
-  <a href="http://www.journals.elsevier.com/journal-of-number-theory/" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Journal of Number Theory</h5>
-    </div>
-    <small class="text-muted">http://www.journals.elsevier.com/journal-of-number-theory/</small>
-  </a>
-</div>
-
-<div class="links-list mt-5">
- {% if site.links %}
-   {% assign alpha_links = site.links | sort: 'title' %}
-    {% assign links_by_category = alpha_links | group_by: "category" | sort: "name" %}
-    
-    {% for category_group in links_by_category %}
-      <h2 class="category-heading">{{ category_group.name }}</h2>
-      <div class="list-group">
-        {% assign cat_links = category_group.items | sort: 'title' %}
-        {% for link in cat_links %}
-          <a href="{{ link.url }}" target="_blank" rel="noopener" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">{{ link.title }}</h5>
-            </div>
-            {% if link.description %}
-              <p class="mb-1">{{ link.description }}</p>
-            {% endif %}
-            <small class="text-muted">{{ link.url }}</small>
-          </a>
-        {% endfor %}
-      </div>
-    {% endfor %}
-  {% else %}
-    <p class="text-muted">No links available at this time.</p>
-  {% endif %}
-</div>
 
 <style>
-.category-heading {
-  font-size: 2rem;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary);
+/* Links Cards Layout */
+.main-container {
+  width: 100%;
+  margin: 0;
+  padding: 0 0.75rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.link-category-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  overflow: hidden;
+  position: relative;
+}
+
+.link-category-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  padding: 1rem;
+  color: white;
+  position: relative;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.link-item {
+  display: block;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  border: 1px solid var(--border-color);
+}
+
+.link-item:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--primary);
+}
+
+.link-title {
+  font-weight: 600;
   color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  display: block;
 }
 
-/* Dark mode enhancements for links page - Subtle gradients */
-[data-theme="dark"] .list-group-item,
-body.dark-mode .list-group-item {
-  background: linear-gradient(90deg, var(--bg-secondary) 0%, rgba(26, 26, 26, 0.3) 50%, var(--bg-secondary) 100%) !important;
-  border-color: var(--border-color) !important;
-  color: var(--text-primary) !important;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.03) !important;
-  transition: all 0.3s ease !important;
+.link-url {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  display: block;
+  word-break: break-all;
 }
 
-[data-theme="dark"] .list-group-item:hover,
-body.dark-mode .list-group-item:hover {
-  background: linear-gradient(90deg, rgba(31, 31, 31, 0.8) 0%, rgba(21, 21, 21, 0.6) 50%, rgba(31, 31, 31, 0.8) 100%) !important;
-  border-color: rgba(220, 38, 38, 0.3) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05) !important;
+.link-item:hover .link-title {
+  color: var(--primary);
 }
 
-[data-theme="dark"] .list-group-item h5,
-body.dark-mode .list-group-item h5 {
-  color: var(--text-primary) !important;
+.link-item:hover .link-url {
+  color: var(--text-secondary);
 }
 
-[data-theme="dark"] .list-group-item small,
-body.dark-mode .list-group-item small {
-  color: var(--text-muted) !important;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .main-container {
+    padding: 0 0.5rem;
+  }
+
+  .card-header {
+    padding: 0.75rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .link-item {
+    padding: 0.6rem;
+  }
 }
 
-[data-theme="dark"] .list-group-item p,
-body.dark-mode .list-group-item p {
-  color: var(--text-secondary) !important;
-}
+@media (max-width: 480px) {
+  .main-container {
+    padding: 0 0.25rem;
+  }
 
-/* Ensure the list-group icon/text contrast is correct on red badges */
-[data-theme="dark"] .list-group-item .badge,
-body.dark-mode .list-group-item .badge {
-  background: var(--primary) !important;
-  color: var(--primary-text) !important;
+  .card-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .card-body {
+    padding: 0.75rem;
+  }
 }
-</style> 
+</style>
+
+<div class="main-container">
+  <div class="content-grid">
+    <!-- Heidelberg University Links -->
+    <div class="link-category-card">
+      <div class="card-header">
+        <h3><i class="fas fa-university" aria-hidden="true"></i> Heidelberg University</h3>
+      </div>
+      <div class="card-body">
+        <a href="https://www.iwr.uni-heidelberg.de/" target="_blank" rel="noopener" class="link-item">
+          <span class="link-title">Interdisciplinary Center for Scientific Computing (IWR)</span>
+          <span class="link-url">https://www.iwr.uni-heidelberg.de/</span>
+        </a>
+
+        <a href="https://www.math.uni-heidelberg.de/en" target="_blank" rel="noopener" class="link-item">
+          <span class="link-title">Institute of Mathematics Heidelberg</span>
+          <span class="link-url">https://www.math.uni-heidelberg.de/en</span>
+        </a>
+
+        <a href="https://www.mathinf.uni-heidelberg.de/" target="_blank" rel="noopener" class="link-item">
+          <span class="link-title">Faculty of Mathematics and Computer Sciences</span>
+          <span class="link-url">https://www.mathinf.uni-heidelberg.de/</span>
+        </a>
+
+        <a href="https://www.uni-heidelberg.de/excellenceinitiative/institutionalstrategy/match.html" target="_blank" rel="noopener" class="link-item">
+          <span class="link-title">The MAThematics Center Heidelberg (MATCH)</span>
+          <span class="link-url">https://www.uni-heidelberg.de/excellenceinitiative/institutionalstrategy/match.html</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- DFG Research Projects -->
+    <div class="link-category-card">
+      <div class="card-header">
+        <h3><i class="fas fa-flask" aria-hidden="true"></i> DFG Research Projects</h3>
+      </div>
+      <div class="card-body">
+        <a href="https://crc326gaus.de/" target="_blank" rel="noopener" class="link-item">
+          <span class="link-title">DFG CRC 326 GAUS "Geometry and Arithmetic of Uniformized Structures"</span>
+          <span class="link-url">https://crc326gaus.de/</span>
+        </a>
+
+        <a href="http://www.computeralgebra.de/" target="_blank" rel="noopener" class="link-item">
+          <span class="link-title">DFG Priority Project SSP 1489 "Algorithmic and Experimental Methods in Algebra, Geometry, and Number Theory"</span>
+          <span class="link-url">http://www.computeralgebra.de/</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Academic Resources -->
+    <div class="link-category-card">
+      <div class="card-header">
+        <h3><i class="fas fa-book" aria-hidden="true"></i> Academic Resources</h3>
+      </div>
+      <div class="card-body">
+        <a href="https://math.osu.edu/research/journals" target="_blank" rel="noopener" class="link-item">
+          <span class="link-title">Journal of Number Theory</span>
+          <span class="link-url">https://math.osu.edu/research/journals</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

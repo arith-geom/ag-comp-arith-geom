@@ -4,23 +4,23 @@
  ******************************************************************************/
 
 // Heidelberg University Official Colors (based on research)
-$heidelberg-red: #C22032 !default;      // PMS 200 C - Primary Red
+$heidelberg-red: #c61826 !default;      // PMS 200 C - Primary Red
 $heidelberg-orange: #E45424 !default;   // PMS 166 C - Secondary Orange  
 $heidelberg-black: #141414 !default;    // Pantone Black 7 C
 $heidelberg-black-92: #383839 !default; // PMS Black 92%
 $heidelberg-warmblack: #383019 !default; // PMS 2335 C
 
 // Extended Red Color Palette for Modern Design
-$red-900: #7F1D1D !default; // Very Dark Red
-$red-800: #991B1B !default; // Dark Red
-$red-700: #C22032 !default; // Heidelberg Primary Red
-$red-600: #DC2626 !default; // Red
-$red-500: #EF4444 !default; // Bright Red
-$red-400: #F87171 !default; // Light Red
-$red-300: #FCA5A5 !default; // Very Light Red
-$red-200: #FECACA !default; // Pink Red
-$red-100: #FEE2E2 !default; // Very Light Pink
-$red-50: #FEF2F2 !default;  // Almost White Pink
+$red-900: #5B0B11 !default;
+$red-800: #90121B !default;
+$red-700: #c61826 !default;
+$red-600: #EC4A55 !default;
+$red-500: #F06B73 !default;
+$red-400: #F58C91 !default;
+$red-300: #F9ADB0 !default;
+$red-200: #FCDDE0 !default;
+$red-100: #FDF2F3 !default;
+$red-50: #FEF9F9 !default;
 
 // Complementary Orange Palette
 $orange-900: #9A3412 !default; // Very Dark Orange
@@ -125,8 +125,8 @@ $shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 
 $shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !default;
 
 // Red-themed shadows
-$shadow-red: 0 4px 14px 0 rgba(194, 32, 50, 0.15) !default;
-$shadow-red-lg: 0 10px 25px -3px rgba(194, 32, 50, 0.2) !default;
+$shadow-red: 0 4px 14px 0 rgba(198, 24, 38, 0.15) !default;
+$shadow-red-lg: 0 10px 25px -3px rgba(198, 24, 38, 0.2) !default;
 $shadow-glass: $shadow-md !default;
 $shadow-glass-hover: $shadow-lg !default;
 $shadow-blue: $shadow-red !default;
@@ -272,3 +272,4 @@ $back-to-top-right: $space-lg;
 $back-to-top-diameter: 56px;
 $back-to-top-height: $back-to-top-diameter;
 $back-to-top-width: $back-to-top-diameter;
+

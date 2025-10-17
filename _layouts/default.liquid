@@ -17,15 +17,12 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
-    <!-- Skip Link for Accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+  <body class="d-flex flex-column min-vh-100 {% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     <!-- Header -->
     {% include layout/header.liquid %}
 
     <!-- Content -->
-    <div class="container-fluid mt-0 p-0" role="main" id="main-content">
+    <div class="container-fluid mt-0 p-0 flex-grow-1" role="main" id="main-content">
       <div class="content-wrapper page-content">
         {% if page.toc and page.toc.sidebar %}
           {% if page.toc.sidebar == 'right' %}

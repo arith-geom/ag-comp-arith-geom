@@ -259,6 +259,13 @@ ul.task-list input[type="checkbox"] {
   opacity: 0.95;
 }
 
+// Heidelberg Red Header Fix:
+// The main header should NOT have the default background.
+// We make it transparent so the red from .header-main shows through.
+.header-main > .navbar {
+  background-color: transparent;
+}
+
 .navbar .dropdown-menu {
   background-color: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
