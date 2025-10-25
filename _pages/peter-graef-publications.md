@@ -158,14 +158,14 @@ order: 100
   margin-bottom: 30px;
   padding: 20px;
   background: var(--bg-secondary);
-  border-radius: 5px;
+  border-radius: var(--radius-md);
 }
 
 .member-photo {
   width: 150px;
   height: 225px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: var(--radius-md);
 }
 
 .member-details h3 {
@@ -183,7 +183,7 @@ order: 100
   padding: 15px;
   background: var(--bg-secondary);
   border-left: 4px solid #c22032;
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
 }
 
 .publication-list li strong, .thesis-list li strong, .presentation-list li strong, .poster-list li strong {
@@ -204,7 +204,7 @@ order: 100
   margin-top: 30px;
   padding: 20px;
   background: var(--bg-secondary);
-  border-radius: 5px;
+  border-radius: var(--radius-md);
 }
 
 .contact-info h3 {

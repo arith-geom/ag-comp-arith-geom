@@ -1,3 +1,4 @@
+@use "variables" as v;
 /******************************************************************************
  * Content
  ******************************************************************************/
@@ -36,7 +37,7 @@ body.sticky-bottom-footer {
 .content-wrapper {
   background-color: transparent;
   padding: 0;
-  border-radius: 0;
+  border-radius: v.$radius-none;
   box-shadow: none;
   margin-bottom: 1rem;
 }
@@ -46,7 +47,7 @@ body.sticky-bottom-footer {
 }
 
 .main-container {
-  max-width: 1200px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -73,3 +74,4 @@ body.sticky-bottom-footer {
 // TODO: redefine projects layout.
 
 @use "footer";
+@use "links";

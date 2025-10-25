@@ -43,14 +43,16 @@ title: Publications
         </div>
         <div class="publication-sidebar">
           {% if pub.status %}
-            <span class="publication-status">{{ pub.status }}</span>
+            <a href="#" class="publication-status publication-status-{{ pub.status | slugify }}">
+              <i class="fas {% case pub.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %}"></i> {{ pub.status }}
+            </a>
           {% endif %}
           <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ pub.mr_number | remove: 'MR' }}" target="_blank" class="publication-mr">
             {{ pub.mr_number }}
           </a>
           {% if pub.type == "Article" %}
-            <a href="#" class="publication-type">
-              <i class="fas fa-file-alt"></i> Article
+            <a href="#" class="publication-type publication-type-pdf">
+              <i class="fas fa-file-pdf"></i> Article
             </a>
           {% endif %}
         </div>

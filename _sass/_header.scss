@@ -2,8 +2,10 @@
   background-color: #c61826;
   color: white;
   padding: 0.25rem 1rem;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
+  transition: top 0.3s ease-in-out;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -131,6 +133,10 @@
       }
     }
   }
+
+  &.header--hidden {
+    top: -100px; /* Adjust this value to be more than the header's height */
+  }
 }
 
 .sidebar-nav {
@@ -156,11 +162,16 @@
     li {
       margin-bottom: 1rem;
 
-      a {
+      a, a:link, a:visited {
         text-decoration: none;
         font-size: 1.2rem;
         display: flex;
         align-items: center;
+        color: white !important;
+
+        i, span {
+          color: white !important;
+        }
 
         i {
           margin-right: 1rem;

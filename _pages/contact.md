@@ -7,11 +7,10 @@ nav_order: 7
 order: 100
 ---
 
-<div class="main-container">
-  <!-- Contact Information Cards -->
-  <div class="contact-grid">
-    <div class="feature-card location-card">
-      <div class="card-header">
+<!-- Contact Information Cards -->
+<div class="contact-grid">
+  <div class="feature-card location-card">
+    <div class="card-header">
         <div class="card-icon">
           <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
         </div>
@@ -32,7 +31,7 @@ order: 100
           <iframe
             width="100%"
             height="300"
-            style="border:0; border-radius: var(--radius-md);"
+            class="contact-map"
             loading="lazy"
             allowfullscreen
             title="Map showing the location of AG Computational Arithmetic Geometry at Heidelberg University"
@@ -107,4 +106,3 @@ order: 100
         </div>
       </div>
   </div>
-</div>

@@ -3,7 +3,7 @@ publications:
   title: "Weak abelian direct summands and irreducibility of Galois representations"
   authors: "Böckle, Gebhard; Hui, Chun-Yin"
   journal_details: "Math. Ann. 393 (2025), no. 1, 543–569."
-  status: "Prelim"
+  status: "Preprint"
   msc_code: "11F80"
   type: "Article"
 
@@ -13,7 +13,7 @@ publications:
   journal_details: "J. Inst. Math. Jussieu 23 (2024), no. 6, 2461–2541."
   appendix: "With an appendix by Najmuddin Fakhruddin and (Chandrashekhar B.) Khare"
   reviewer: "Yamagami, Atsushi"
-  status: "Reviewed"
+  status: "Journal Article"
   citation_count: 1
   msc_code: "11F80"
   type: "Article"
@@ -24,7 +24,7 @@ publications:
   journal_details: "Tata Inst. Fundam. Res. Stud. Math., 41"
   publisher_details: "Published for the Tata Institute of Fundamental Research, Mumbai; by , 2024, 21–64."
   isbn: "978-81-957829-7-0"
-  status: "Summary"
+  status: "Book"
   msc_code: "11R23"
 
 - mr_number: "MR4796042"
@@ -32,7 +32,7 @@ publications:
   authors: "Böckle, Gebhard; Feng, Tony; Harris, Michael; Khare, Chandrashekhar B.; Thorne, Jack A."
   journal_details: "Compos. Math. 160 (2024), no. 9, 1959–2004."
   reviewer: "Takloo-Bighash, Ramin"
-  status: "Reviewed"
+  status: "Submitted"
   citation_count: 2
   msc_code: "11F70"
   type: "Article"
@@ -41,6 +41,6 @@ publications:
   title: "Equidimensionality of universal pseudodeformation rings in characteristic p for absolute Galois groups of p-adic fields"
   authors: "Böckle, Gebhard; Juschka, Ann-Kristin"
   journal_details: "Forum Math. Sigma 11 (2023), Paper No. e102, 83 pp."
-  status: "Summary"
+  status: "Other"
   msc_code: "11F80"
   type: "Article"

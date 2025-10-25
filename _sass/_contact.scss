@@ -1,3 +1,4 @@
+@use "variables" as v;
 /* Contact Cards Layout - Matching Homepage Style */
 .main-container {
   width: 100%;
@@ -34,20 +35,21 @@
 }
 
 .card-header {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  background: var(--bg-primary);
   padding: 0.5rem 0.75rem;
-  color: white;
+  color: var(--text-primary);
   position: relative;
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .card-icon {
   width: 32px;
   height: 32px;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
+  border-radius: v.$radius-full;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,6 +130,11 @@
   margin-top: 1rem;
 }
 
+.contact-map {
+  border: 0;
+  border-radius: var(--radius-md);
+}
+
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -145,7 +152,7 @@
   height: 32px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
   color: white;
-  border-radius: 50%;
+  border-radius: v.$radius-full;
   display: flex;
   align-items: center;
   justify-content: center;

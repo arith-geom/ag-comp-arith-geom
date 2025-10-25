@@ -1,0 +1,136 @@
+@use 'variables' as v;
+
+/* Links Page Card Layout - Matching Homepage Style */
+.main-container {
+  width: 100%;
+  margin: 0;
+  padding: 0 0.75rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature-card {
+  background: var(--bg-primary);
+  border-radius: v.$radius-lg;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  overflow: hidden;
+  position: relative;
+}
+
+.feature-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.card-header {
+  background: var(--bg-primary);
+  padding: 0.5rem 0.75rem;
+  color: var(--text-primary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: v.$radius-full;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.links-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+/* Link Item Styling */
+.link-item {
+  display: block;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.link-item:hover {
+  background: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.link-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.link-url {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  display: block;
+  word-break: break-all;
+}
+
+.link-item:hover .link-title {
+  color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 0 0.5rem;
+  }
+
+  .card-header {
+    padding: 0.25rem;
+  }
+
+  .card-body {
+    padding: 0.75rem;
+  }
+  .links-container {
+    grid-template-columns: 1fr;
+  }
+}

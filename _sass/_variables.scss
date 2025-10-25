@@ -7,8 +7,6 @@
 $heidelberg-red: #c61826 !default;      // PMS 200 C - Primary Red
 $heidelberg-orange: #E45424 !default;   // PMS 166 C - Secondary Orange  
 $heidelberg-black: #141414 !default;    // Pantone Black 7 C
-$heidelberg-black-92: #383839 !default; // PMS Black 92%
-$heidelberg-warmblack: #383019 !default; // PMS 2335 C
 
 // Extended Red Color Palette for Modern Design
 $red-900: #5B0B11 !default;
@@ -46,230 +44,40 @@ $gray-200: #E5E7EB !default;
 $gray-100: #F3F4F6 !default;
 $gray-50: #F9FAFB !default;
 
-// Full Screen Layout Variables
-$max-content-width: 100% !default;  // Full width
-$container-max-width: none !default; // No container restrictions
-$header-full-width: 100vw !default;
-$footer-full-width: 100vw !default;
-
 // Mobile-First Breakpoints
-$mobile-sm: 320px !default;   // Small phones
-$mobile-md: 375px !default;   // Medium phones
-$mobile-lg: 425px !default;   // Large phones
 $tablet-sm: 768px !default;   // Small tablets
-$tablet-lg: 1024px !default;  // Large tablets
-$desktop-sm: 1200px !default; // Small desktops
 $desktop-lg: 1440px !default; // Large desktops
-$desktop-xl: 1920px !default; // Extra large screens
 
 // Background System - Light Mode
 $bg-primary: #FFFFFF !default;
 $bg-secondary: $gray-50 !default;
-$bg-tertiary: $gray-100 !default;
 $bg-accent: $red-50 !default;
-$bg-glass: $bg-secondary !default;
-$bg-animated-gradient: #FFFFFF !default;
 
 // Background System - Dark Mode
 $bg-primary-dark: #000000 !default;
 $bg-secondary-dark: $gray-900 !default;
-$bg-tertiary-dark: $gray-800 !default;
-$bg-accent-dark: $red-900 !default;
-$bg-glass-dark: $bg-secondary-dark !default;
 
 // Theme Colors - Light Mode
 $primary: $heidelberg-red !default;
-$primary-light: $red-400 !default;
-$primary-dark: $red-800 !default;
-$secondary: $heidelberg-orange !default;
-$secondary-light: $orange-400 !default;
-$secondary-dark: $orange-800 !default;
 
 // Text Colors - Light Mode
 $text-primary: $gray-900 !default;
-$text-secondary: $gray-700 !default;
-$text-muted: $gray-500 !default;
-$text-accent: $heidelberg-red !default;
-
-// Text Colors - Dark Mode
-$text-primary-dark: $gray-100 !default;
-$text-secondary-dark: $gray-300 !default;
-$text-muted-dark: $gray-400 !default;
-$text-accent-dark: $red-400 !default;
-
-// Modern Gradient Definitions
-$gradient-red: linear-gradient(135deg, #{$heidelberg-red} 0%, #{$red-800} 100%) !default;
-$gradient-orange: linear-gradient(135deg, #{$heidelberg-orange} 0%, #{$orange-800} 100%) !default;
-$gradient-warm: linear-gradient(135deg, #{$heidelberg-red} 0%, #{$heidelberg-orange} 100%) !default;
-$gradient-red-light: linear-gradient(135deg, #{$red-400} 0%, #{$orange-400} 100%) !default;
-$gradient-fire: $gradient-red !default;
-$gradient-sunset: $gradient-orange !default;
-$gradient-blue: $gradient-red !default;
-$gradient-sky: $gradient-orange !default;
-$gradient-ocean: $gradient-warm !default;
-$gradient-glass-blue: $gradient-red !default;
-$gradient-glass-indigo: $gradient-orange !default;
-$gradient-glass-orange: $gradient-warm !default;
-
-// Radial Gradients
-$radial-red: radial-gradient(circle at center, #{$heidelberg-red} 0%, #{$red-800} 100%) !default;
-$radial-warm: radial-gradient(circle at center, #{$heidelberg-red} 0%, #{$heidelberg-orange} 100%) !default;
-$radial-blue: $radial-red !default;
-$radial-glass: $radial-warm !default;
 
 // Modern Shadow System
 $shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !default;
 $shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !default;
 $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !default;
-$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !default;
-$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !default;
-
-// Red-themed shadows
-$shadow-red: 0 4px 14px 0 rgba(198, 24, 38, 0.15) !default;
-$shadow-red-lg: 0 10px 25px -3px rgba(198, 24, 38, 0.2) !default;
-$shadow-glass: $shadow-md !default;
-$shadow-glass-hover: $shadow-lg !default;
-$shadow-blue: $shadow-red !default;
-$shadow-indigo: $shadow-red-lg !default;
-$shadow-warm: $shadow-red !default;
-
-// Mobile-Optimized Spacing System
-$space-xs: 0.25rem !default;  // 4px
-$space-sm: 0.5rem !default;   // 8px
-$space-md: 1rem !default;     // 16px
-$space-lg: 1.5rem !default;   // 24px
-$space-xl: 2rem !default;     // 32px
-$space-2xl: 2.5rem !default;  // 40px
-$space-3xl: 3rem !default;    // 48px
-$space-4xl: 4rem !default;    // 64px
-$space-5xl: 5rem !default;    // 80px
-
-// Mobile spacing overrides
-$mobile-space-xs: 0.25rem !default;
-$mobile-space-sm: 0.5rem !default;
-$mobile-space-md: 0.75rem !default;
-$mobile-space-lg: 1rem !default;
-$mobile-space-xl: 1.25rem !default;
-
-// Typography Scale - Mobile-First
-$font-size-xs: 0.75rem !default;   // 12px
-$font-size-sm: 0.875rem !default;  // 14px
-$font-size-base: 1rem !default;    // 16px
-$font-size-lg: 1.125rem !default;  // 18px
-$font-size-xl: 1.25rem !default;   // 20px
-$font-size-2xl: 1.5rem !default;   // 24px
-$font-size-3xl: 1.875rem !default; // 30px
-$font-size-4xl: 2.25rem !default;  // 36px
-$font-size-5xl: 3rem !default;     // 48px
-$font-size-6xl: 3.75rem !default;  // 60px
-
-// Mobile typography overrides
-$mobile-font-size-3xl: 1.5rem !default;  // 24px on mobile
-$mobile-font-size-4xl: 1.875rem !default; // 30px on mobile
-$mobile-font-size-5xl: 2.25rem !default;  // 36px on mobile
 
 // Border Radius System
-$radius-none: 0 !default;
-$radius-sm: 0.125rem !default;    // 2px
-$radius-md: 0.375rem !default;    // 6px
-$radius-lg: 0.5rem !default;      // 8px
-$radius-xl: 0.75rem !default;     // 12px
-$radius-2xl: 1rem !default;       // 16px
-$radius-3xl: 1.5rem !default;     // 24px
-$radius-full: 9999px !default;    // Full round
-
-// Animation System
-$transition-fast: 150ms ease-in-out !default;
-$transition-base: 250ms ease-in-out !default;
-$transition-slow: 350ms ease-in-out !default;
-$transition-bounce: 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55) !default;
-$transition-glass: $transition-base !default;
-$transition-smooth: $transition-slow !default;
+$radius-sm: 0.5rem !default;    // 8px
+$radius-md: 1rem !default;     // 16px
+$radius-lg: 1.5rem !default;    // 24px
+$radius-xl: 2rem !default;       // 32px
+$radius-full: 9999px !default;   // Full round
 
 // Z-index layers
-$z-dropdown: 1000 !default;
-$z-sticky: 1020 !default;
 $z-fixed: 1030 !default;
-$z-modal-backdrop: 1040 !default;
 $z-modal: 1050 !default;
-$z-popover: 1060 !default;
-$z-tooltip: 1070 !default;
-
-// Legacy compatibility
-$red-color: $heidelberg-red !default;
-$red-color-dark: $red-800 !default;
-$red-color-light: $red-400 !default;
-$orange-color: $heidelberg-orange !default;
-$orange-color-light: $orange-400 !default;
-$orange-color-dark: $orange-800 !default;
-
-$blue-color: $gray-600 !default;  // Neutral blue replacement
-$blue-color-dark: $gray-700 !default;
-$cyan-color: $gray-500 !default;
-$light-cyan-color: $gray-300 !default;
-$green-color: #059669 !default;
-$green-color-lime: #65A30D !default;
-$green-color-dark: #047857 !default;
-$green-color-light: #D1FAE5 !default;
-$green-color-bright: #10B981 !default;
-$purple-color: $red-600 !default; // Replace purple with red
-$light-purple-color: $red-400 !default;
-$pink-color: $red-500 !default;
-$pink-color-light: $red-100 !default;
-$yellow-color: $orange-500 !default; // Use orange instead
-
-$grey-color: $gray-500 !default;
-$grey-color-light: $gray-300 !default;
-$grey-color-dark: $gray-700 !default;
-$grey-900: $gray-900 !default;
-
-$white-color: #FFFFFF !default;
-$black-color: #000000 !default;
-
-// CSS variable fallbacks
-:root {
-  // Text color to render on top of primary (red) backgrounds
-  --primary-text: #FFFFFF;
-}
-
-// Background colors
-$body-bg: $bg-primary !default;
-$body-bg-dark: $bg-primary-dark !default;
-$card-bg: $bg-secondary !default;
-$card-bg-dark: $bg-secondary-dark !default;
-
-$code-bg-color-light: $gray-100 !default;
-$code-bg-color-dark: $gray-800 !default;
-
-// Remove glass effects
-$glass-white: transparent !default;
-$glass-white-light: transparent !default;
-$glass-white-strong: transparent !default;
-$glass-red: transparent !default;
-$glass-orange: transparent !default;
-$glass-blur: none !default;
-$glass-blur-strong: none !default;
-$glass-blur-light: none !default;
-
-// Enhanced Red-Orange Spectrum (Legacy)
-$blue-primary: $heidelberg-red !default;
-$blue-secondary: $red-400 !default;
-$blue-accent: $red-300 !default;
-$indigo-primary: $heidelberg-orange !default;
-$indigo-secondary: $orange-400 !default;
-$indigo-accent: $orange-300 !default;
 
 // Font awesome location
 $fa-font-path: "../webfonts";
-
-// Tabler icons location
-$ti-font-path: "../fonts";
-
-// Back To Top button config
-$back-to-top-z-index: $z-fixed;
-$back-to-top-bottom: $space-lg;
-$back-to-top-right: $space-lg;
-$back-to-top-diameter: 56px;
-$back-to-top-height: $back-to-top-diameter;
-$back-to-top-width: $back-to-top-diameter;
-

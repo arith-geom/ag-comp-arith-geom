@@ -74,12 +74,16 @@
     padding: 1rem;
     background-color: var(--footer-logo-bg);
     border-radius: v.$border-radius-lg;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color 0.3s;
+    max-width: 500px; // Allow the logo to be wider in its new column
+    margin: 0 auto; // Center the container
   }
 
   .footer-logo-img {
-    max-width: 180px;
+    width: 100%; // Make image responsive to container
     height: auto;
     filter: var(--footer-logo-filter);
     transition: filter 0.3s;
@@ -127,7 +131,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   border: none;
-  border-radius: 50%;
+  border-radius: $radius-full;
   width: 40px;
   height: 40px;
   font-size: 1rem;

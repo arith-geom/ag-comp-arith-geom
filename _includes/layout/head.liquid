@@ -81,9 +81,6 @@
 <meta name="application-name" content="AG Computational Arithmetic Geometry">
 <meta name="msapplication-TileColor" content="#C22032">
 
-
-
-
 <!-- MathJax for LaTeX support -->
 <script>
   window.MathJax = {
@@ -112,97 +109,6 @@
     id="highlight_theme_dark"
   >
 
-{% endif %}
-
-{% if page.map %}
-  <!-- GeoJSON support via Leaflet -->
-  <link
-    defer
-    rel="stylesheet"
-    href="{{ site.third_party_libraries.leaflet.url.css }}"
-    crossorigin="anonymous"
-  >
-{% endif %}
-
-{% if page.code_diff %}
-  <!-- diff2html -->
-  <link
-    defer
-    rel="stylesheet"
-    href="{{ site.third_party_libraries.highlightjs.url.css.light }}"
-    crossorigin="anonymous"
-    media="screen and (prefers-color-scheme: light)"
-  >
-  <link
-    defer
-    rel="stylesheet"
-    href="{{ site.third_party_libraries.highlightjs.url.css.dark }}"
-    crossorigin="anonymous"
-    media="screen and (prefers-color-scheme: dark)"
-  >
-  <link
-    defer
-    rel="stylesheet"
-    href="{{ site.third_party_libraries.diff2html.url.css }}"
-    crossorigin="anonymous"
-  >
-{% endif %}
-
-{% if page.images %}
-  {% if page.images.compare %}
-    <!-- Image comparison slider -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.img-comparison-slider.url.css }}"
-      crossorigin="anonymous"
-    >
-  {% endif %}
-  {% if page.images.lightbox2 %}
-    <!-- Lightbox2 -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.lightbox2.url.css }}"
-      crossorigin="anonymous"
-    >
-  {% endif %}
-  {% if page.images.photoswipe %}
-    <!-- Photoswipe -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.photoswipe.url.css }}"
-      crossorigin="anonymous"
-    >
-  {% endif %}
-  {% if page.images.slider %}
-    <!-- Image slider -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.swiper.url.css }}"
-      crossorigin="anonymous"
-    >
-  {% endif %}
-  {% if page.images.spotlight %}
-    <!-- Spotlight -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.spotlight.url.css }}"
-      crossorigin="anonymous"
-    >
-  {% endif %}
-  {% if page.images.venobox %}
-    <!-- Venobox -->
-    <link
-      defer
-      rel="stylesheet"
-      href="{{ site.third_party_libraries.venobox.url.css }}"
-      crossorigin="anonymous"
-    >
-  {% endif %}
 {% endif %}
 
 {% if page.tikzjax %}

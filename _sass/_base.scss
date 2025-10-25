@@ -1,3 +1,4 @@
+@use "variables" as v;
 /*******************************************************************************
  * Styles for the base elements of the theme.
  ******************************************************************************/
@@ -177,6 +178,7 @@ ul.task-list input[type="checkbox"] {
 
 .card {
   background-color: var(--global-card-bg-color);
+  border-radius: v.$radius-md;
 
   .card-img {
     width: 100%;
@@ -365,7 +367,7 @@ ul.task-list input[type="checkbox"] {
     width: 22px;
     height: 2px;
     background-color: var(--global-text-color);
-    border-radius: 1px;
+    border-radius: v.$radius-sm;
     margin-bottom: 4px;
     transition: all 0.2s;
   }
@@ -898,13 +900,13 @@ figure.highlight {
 pre {
   color: var(--global-theme-color);
   background-color: var(--global-code-bg-color);
-  border-radius: 6px;
+  border-radius: v.$radius-md;
   padding: 6px 12px;
 
   pre,
   code {
     background-color: transparent;
-    border-radius: 0;
+    border-radius: v.$radius-none;
     margin-bottom: 0;
     padding: 0;
   }
@@ -913,7 +915,7 @@ pre {
 code {
   color: var(--global-theme-color);
   background-color: var(--global-code-bg-color);
-  border-radius: 3px;
+  border-radius: v.$radius-sm;
   padding: 3px 3px;
 }
 
@@ -1013,7 +1015,7 @@ progress::-moz-progress-bar {
   .copy {
     background: var(--global-card-bg-color);
     border-color: var(--global-bg-color);
-    border-radius: 0.3rem;
+    border-radius: $radius-sm;
     border-style: none;
     color: var(--global-text-color);
     font-size: medium;
@@ -1229,7 +1231,7 @@ ninja-keys::part(ninja-input-wrapper) {
   min-width: 100px;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
-  border-radius: 6px;
+  border-radius: v.$radius-md;
   padding: 8px 12px;
 }
 
@@ -1249,7 +1251,7 @@ ninja-keys::part(ninja-input-wrapper) {
   flex-direction: row;
   padding: 9px 17px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
-  border-radius: 6px;
+  border-radius: v.$radius-md;
   text-align: center;
   font-style: normal;
   font-weight: 500;
@@ -1270,7 +1272,7 @@ ninja-keys::part(ninja-input-wrapper) {
   flex-direction: row;
   padding: 9px 17px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
-  border-radius: 6px;
+  border-radius: v.$radius-md;
   text-align: center;
   font-style: normal;
   font-weight: 500;

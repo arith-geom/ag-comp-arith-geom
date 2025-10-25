@@ -7,7 +7,7 @@ layout: page
 window.location.href = '/members/?member={{ page.name | slugify | append: '-' | append: page.role | slugify }}';
 </script>
 <div class="member-profile" style="display: none;">
-  <div class="member-header" style="background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%); border-radius: 0.75rem; border: 1px solid var(--border-color); color: var(--primary-text);">
+  <div class="member-header">
     <div class="member-photo-container">
       {% if page.photo %}
         <img src="{{ page.photo | relative_url }}" alt="Photo of {{ page.name }}" class="member-photo">
@@ -272,6 +272,10 @@ window.location.href = '/members/?member={{ page.name | slugify | append: '-' | 
   gap: 2rem;
   margin-bottom: 3rem;
   padding: 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  color: var(--primary-text);
 }
 
 .member-photo-container {
@@ -281,7 +285,7 @@ window.location.href = '/members/?member={{ page.name | slugify | append: '-' | 
 .member-photo {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   object-fit: cover;
   border: 4px solid var(--border-color);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -448,7 +452,7 @@ window.location.href = '/members/?member={{ page.name | slugify | append: '-' | 
 .member-section {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-lg);
   padding: 2rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
