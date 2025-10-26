@@ -36,46 +36,20 @@ Our group focuses on:
 
 This website is built with Jekyll and hosted on GitHub Pages. If you need to work on the website development, follow these steps:
 
-### Prerequisites
-
-**Install Ruby:**
-```bash
-# On Ubuntu/Debian
-sudo apt update
-sudo apt install ruby-full
-
-# On macOS (using Homebrew)
-brew install ruby
-
-# On Windows (using RubyInstaller)
-# Download from https://rubyinstaller.org/
-```
-
-**Install Git:**
-```bash
-# On Ubuntu/Debian
-sudo apt install git
-
-# On macOS (using Homebrew)
-brew install git
-
-# On Windows
-# Download from https://git-scm.com/
-```
-
-**Install Bundler:**
-```bash
-gem install bundler
-```
-
 ### Development Setup
 
-1. **Install dependencies:**
+1. **Clone the repository:**
    ```bash
-   bundle install
+   git clone https://github.com/placeholder-ag-comp-arith-geom/placeholder-ag-comp-arith-geom.github.io.git
+   cd placeholder-ag-comp-arith-geom.github.io
    ```
 
-2. **Start the development server:**
+2. **Run the setup script:**
+   ```bash
+   ./scripts/setup.sh
+   ```
+
+3. **Start the development server:**
    ```bash
    bundle exec jekyll serve
    ```
@@ -91,3 +65,18 @@ gem install bundler
 - `_members/` - Team member information
 - `_includes/` - Reusable HTML components
 - `assets/` - CSS, JavaScript, and image files
+
+---
+
+## Content Management with PagesCMS
+
+This website's content is managed using PagesCMS, a user-friendly, Git-based content management system. This allows you to edit the content of the website without needing to write any code.
+
+### How to Edit Content
+
+1.  **Log in to PagesCMS**: Go to [app.pagescms.org](https://app.pagescms.org/) and log in with your GitHub account.
+2.  **Select Your Repository**: Once logged in, you should see this repository in your list of sites. Select it to open the CMS interface.
+3.  **Navigate and Edit**: You will see a sidebar with links to the different content types you can edit (e.g., Publications, Members, Teaching, etc.). Click on a section to see the entries, and then click on an entry to open the editor.
+4.  **Save Changes**: After making your changes, click the "Save" button. PagesCMS will automatically create a new commit in the repository with your updates. The website will then rebuild and your changes will be live.
+
+The configuration for PagesCMS is stored in the `.pages.yml` file in this repository.

@@ -13,8 +13,6 @@ en:
   
   # Common
   common:
-    search: "Search"
-    search_placeholder: "Search..."
     theme_toggle: "Switch Theme"
     language_switch: "Switch Language"
     skip_to_content: "Skip to main content"
@@ -337,8 +335,6 @@ it:
   
   # Common
   common:
-    search: "Cerca"
-    search_placeholder: "Cerca..."
     theme_toggle: "Cambia tema"
     language_switch: "Cambia lingua"
     skip_to_content: "Vai al contenuto principale"

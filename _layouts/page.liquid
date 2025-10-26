@@ -8,11 +8,11 @@ layout: default
   </style>
 {% endif %}
 
-{% if page.show_title %}
+{% if page.show_title and page.permalink != '/teaching/' %}
 <div class="page-hero">
   <div class="page-hero-overlay">
     <div class="page-hero-content">
-      <h1 class="page-title">{% if page.name %}{{ page.name }}{% else %}{{ page.title }}{% endif %}</h1>
+      <h1 class="page-title">{{ page.title | default: page.name }}</h1>
       {% if page.description %}
         <p class="page-subtitle">{{ page.description }}</p>
       {% endif %}
@@ -21,86 +21,17 @@ layout: default
 </div>
 {% endif %}
 
-<div class="page-container">
-  <article class="page-article tex2jax_process">
-    {{ content }}
-  </article>
+<article class="page-article tex2jax_process">
+  {{ content }}
+</article>
 
-  {% if page.related_publications %}
-    <h2>References</h2>
-    <div class="publications">
-      {% bibliography --cited_in_order %}
-    </div>
-  {% endif %}
+{% if page.related_publications %}
+  <h2>References</h2>
+  <div class="publications">
+    {% bibliography --cited_in_order %}
+  </div>
+{% endif %}
 
-  {% if site.giscus and page.giscus_comments %}
-    {% include giscus.liquid %}
-  {% endif %}
-</div>
-
-<style>
-.page-hero {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: var(--shadow-sm);
-  background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%);
-}
-
-.page-hero-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.page-hero-content {
-  text-align: center;
-  color: var(--primary-text);
-  padding: 0.5rem 1rem;
-}
-
-.page-title {
-  margin: 0 0 0.25rem 0;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.page-subtitle {
-  margin: 0;
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-.page-container {
-  max-width: 100%;
-  margin: 0 auto 1rem auto;
-  padding: 0 0.75rem;
-}
-
-.page-article {
-  background: transparent;
-  color: var(--text-primary);
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 0.5rem 0;
-}
-
-.page-article h2 {
-  margin-top: 1.25rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 2px solid var(--primary);
-}
-
-@media (max-width: 768px) {
-  .page-hero { height: 180px; }
-  .page-title { font-size: 1.5rem; }
-  .page-container { margin-top: 0.25rem; padding: 0 0.5rem; }
-  .page-article { padding: 0.25rem 0; }
-}
-</style>
+{% if site.giscus and page.giscus_comments %}
+  {% include giscus.liquid %}
+{% endif %}

@@ -1,0 +1,200 @@
+@use "../variables" as v;
+/*--------------------------------------------------------------
+# Members Page Layout
+--------------------------------------------------------------*/
+.members-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+
+    .member-section-head-of-research-group {
+      grid-area: head;
+    }
+    .member-section-secretary {
+      grid-area: secretary;
+    }
+    .member-section-research-members {
+      grid-area: members;
+    }
+    .member-section-former-members {
+      grid-area: former;
+    }
+
+    grid-template-areas:
+      "head secretary"
+      "members members"
+      "former former";
+  }
+
+  .member-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .content-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  /* A denser grid for active members */
+  .members-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  /* An even denser grid for the list of former members */
+  .former-members-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .head-of-research-group-grid, .secretary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-members-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .former-members-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+/*--------------------------------------------------------------
+# Compact Member Card
+--------------------------------------------------------------*/
+.member-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-primary);
+  border-radius: var(--radius-md); /* Slightly smaller radius */
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    border-color: var(--primary);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem; /* Reduced padding */
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+  }
+
+  .member-photo {
+    width: 50px; /* Smaller photo */
+    height: 50px;
+    border-radius: v.$radius-full;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+  }
+
+  .member-photo-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: v.$radius-full;
+    background: var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+  }
+
+  .member-header-info {
+    .member-name {
+      font-size: 1.1rem; /* Smaller name font */
+      font-weight: 600;
+      margin: 0 0 0.1rem;
+      color: var(--text-primary);
+    }
+    .member-role {
+      font-size: 0.85rem; /* Smaller role font */
+      color: var(--text-secondary);
+      margin: 0;
+    }
+  }
+
+  .card-body {
+    padding: 1rem; /* Reduced padding */
+    flex-grow: 1;
+  }
+
+  .member-description {
+    font-size: 0.9rem; /* Smaller description font */
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .card-footer {
+    padding: 0.5rem 1rem; /* Reduced padding */
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+  }
+
+  .member-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+
+  .btn-social {
+    color: var(--text-secondary);
+    font-size: 1.1rem; /* Smaller icons */
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
+
+.member-section-head-of-research-group,
+.member-section-secretary {
+  .member-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Specific styles for former members to be even more compact */
+.former-members-grid .member-card {
+  .card-header {
+    background: var(--bg-primary);
+    padding: 0.75rem;
+  }
+  .card-body {
+    padding: 0.75rem;
+    padding-top: 0;
+  }
+  .member-name {
+    font-size: 1rem;
+  }
+  .member-description {
+      font-size: 0.85rem;
+  }
+  &:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+    border-color: var(--border-color);
+  }
+}

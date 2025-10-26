@@ -1,0 +1,211 @@
+.header-main {
+  background-color: #c61826;
+  color: white;
+  padding: 0.25rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: top 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a, span, p, div {
+    color: white !important;
+  }
+
+  .brand {
+    text-decoration: none;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .brand-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .university-name {
+      font-size: 1rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 991.98px) {
+      .brand-title {
+        font-size: 1rem;
+      }
+      .university-name {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .main-nav-desktop {
+    display: none;
+
+    @media (min-width: 992px) {
+      display: block;
+
+      ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin: 0 0 0 1.5rem;
+
+          @media (max-width: 1200px) {
+            margin: 0 0 0 0.75rem;
+          }
+
+          a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+
+            i {
+              margin-right: 0.5rem;
+            }
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 1199.98px) {
+        ul li {
+          margin: 0 0 0 0.75rem;
+          a {
+            padding: 0.5rem 0.25rem;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-shrink: 0;
+
+    @media (max-width: 991.98px) {
+      display: block;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+      cursor: pointer;
+
+      .nav-toggle-icon {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        position: relative;
+
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          width: 30px;
+          height: 3px;
+          background-color: white;
+          position: absolute;
+        }
+
+        &::before {
+          top: -10px;
+        }
+
+        &::after {
+          top: 10px;
+        }
+      }
+    }
+  }
+
+  &.header--hidden {
+    top: -100px; /* Adjust this value to be more than the header's height */
+  }
+}
+
+.sidebar-nav {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #c61826;
+  padding: 2rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 100;
+
+  &.is-open {
+    right: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 1rem;
+
+      a, a:link, a:visited {
+        text-decoration: none;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        color: white !important;
+
+        i, span {
+          color: white !important;
+        }
+
+        i {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
+  .sidebar-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 99;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

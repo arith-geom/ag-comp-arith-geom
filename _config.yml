@@ -1,14 +1,8 @@
-title: "AG Computational Arithmetic Geometry "
+title: "AG Computational Arithmetic Geometry"
+university: "Heidelberg University"
 email: arithgeo@iwr.uni-heidelberg.de
-description: This is the website of the research group "computational arithmetic
-  geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in
-  Heidelberg.
-# Always set the canonical site URL; downstream code will prefix with baseurl for GH Pages.
+description: This is the website of the research group "computational arithmetic geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.
 url: https://victormerk.github.io
-# Base URL for the project site on GitHub Pages (repository name)
-# If you run locally, access the site at http://localhost:4000/ag-comp-arith-geom/
-# Base URL used for GitHub Pages. All internal links and assets are prefixed at runtime
-# using relative_url or JS prefixBase so the site continues to work if this path changes.
 baseurl: "/ag-comp-arith-geom"
 twitter_username: placeholder
 github_username: placeholder
@@ -20,6 +14,13 @@ creator:
   github_url: "https://github.com/VictorMerk"
   role: "Student and Developer"
   year: "2024"
+
+# Contact Information
+contact:
+  address: "Mathematikon, INF 205, 69120 Heidelberg, Germany"
+  phone: "+49-6221-54-14734"
+  fax: "+49-6221-54-14737"
+  email: "arithgeo@iwr.uni-heidelberg.de"
 # Bilingual support removed - keeping English only
 markdown: kramdown
 highlighter: rouge
@@ -29,100 +30,25 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 theme_mode: auto
-enable_darkmode: true
-enable_theme_switcher: true
+enable_darkmode: false
+enable_theme_switcher: false
 lang: en
 locale: en_US
 third_party_libraries:
-  mdb:
-    url:
-      css: https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css
-      js: https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  bootstrap-table:
-    url:
-      css: https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css
-      js: https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  pseudocode:
-    url:
-      css: https://unpkg.com/pseudocode@2.4.1/build/pseudocode.min.css
-      js: https://unpkg.com/pseudocode@2.4.1/build/pseudocode.min.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  leaflet:
-    url:
-      css: https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
-      js: https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  highlightjs:
-    url:
-      css:
-        light: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css
-        dark: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css
-    integrity:
-      css:
-        light: sha512-...
-        dark: sha512-...
-  diff2html:
-    url:
-      css: https://cdnjs.cloudflare.com/ajax/libs/diff2html/3.4.42/diff2html.min.css
-      js: https://cdnjs.cloudflare.com/ajax/libs/diff2html/3.4.42/diff2html.min.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  img-comparison-slider:
-    url:
-      css: https://unpkg.com/img-comparison-slider@7.4.0/dist/styles.css
-      js: https://unpkg.com/img-comparison-slider@7.4.0/dist/index.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  lightbox2:
-    url:
-      css: https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css
-      js: https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  photoswipe:
-    url:
-      css: https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.8/photoswipe.min.css
-      js: https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.8/photoswipe.umd.min.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  swiper:
-    url:
-      css: https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css
-      js: https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  spotlight:
-    url:
-      css: https://cdn.jsdelivr.net/npm/spotlight.js@0.8.0/dist/spotlight.min.css
-      js: https://cdn.jsdelivr.net/npm/spotlight.js@0.8.0/dist/spotlight.min.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  venobox:
-    url:
-      css: https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.min.css
-      js: https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.min.js
-    integrity:
-      css: sha512-...
-      js: sha512-...
-  google_fonts:
-    url:
-      fonts: https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap
+  bootstrap:
+    path:
+      css: /vendor/bootstrap/dist/css/bootstrap.min.css
+      js: /vendor/bootstrap/dist/js/bootstrap.bundle.min.js
+  font-awesome:
+    path:
+      css: /vendor/font-awesome/css/all.min.css
+  academicons:
+    path:
+      css: /vendor/academicons/css/academicons.min.css
+  mdb-ui-kit:
+    path:
+      css: /vendor/mdb-ui-kit/css/mdb.min.css
+      js: /vendor/mdb-ui-kit/js/mdb.umd.min.js
 collections:
   pages:
     output: true
@@ -168,8 +94,8 @@ exclude:
   - .DS_Store
   - Thumbs.db
   - assets/search-data-backup.json
-  - assets/json/publications-data.json.old
   - assets/search-data.json
+  - jules-scratch/
 
 # Performance and regeneration settings
 incremental: false

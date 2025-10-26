@@ -218,7 +218,7 @@ body.dark-mode .home-card h2 {
 body.dark-mode .home-subsection {
   background: var(--bg-secondary) !important;
   padding: 1rem !important;
-  border-radius: 6px !important;
+  border-radius: var(--radius-md) !important;
   margin-bottom: 1rem !important;
   border-left: 3px solid var(--border-color) !important;
 }
@@ -228,7 +228,7 @@ body.dark-mode .home-subsection h3 {
   background: var(--bg-secondary) !important;
   color: var(--text-primary) !important;
   padding: 0.5rem 0.75rem !important;
-  border-radius: 4px !important;
+  border-radius: var(--radius-sm) !important;
   border-left: 3px solid var(--primary) !important;
   margin: -1rem -1rem 0.5rem -1rem !important;
   font-weight: 600 !important;
@@ -239,7 +239,7 @@ body.dark-mode .home-subsection h3 {
 body.dark-mode .member-info {
   background: var(--bg-secondary) !important;
   padding: 1rem !important;
-  border-radius: 6px !important;
+  border-radius: var(--radius-md) !important;
   margin-bottom: 1rem !important;
   border-left: 3px solid var(--border-color) !important;
 }
@@ -257,7 +257,7 @@ body.dark-mode .member-info h3 {
 body.dark-mode .software-package {
   background: var(--bg-secondary) !important;
   padding: 1rem !important;
-  border-radius: 6px !important;
+  border-radius: var(--radius-md) !important;
   margin-bottom: 1rem !important;
   border-left: 3px solid var(--border-color) !important;
 }

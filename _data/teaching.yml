@@ -1,0 +1,57 @@
+courses:
+- year: 2025
+  semesters:
+  - semester: Summer Term 2025
+    courses:
+    - title: "Advanced Topics in Computational Geometry"
+      instructor: "Prof. Dr. Böckle"
+      course_type: "Seminar"
+      description: "A deep dive into advanced algorithms and data structures for computational geometry."
+      links:
+      - label: "Course Website"
+        url: "#"
+      pdfs:
+      - label: "Syllabus"
+        file: "/assets/pdfs/placeholder.pdf"
+
+- year: 2024
+  semesters:
+  - semester: Winter Term 2024/25
+    courses:
+    - title: "Introduction to Cryptography"
+      instructor: "Dr. Banwait"
+      course_type: "Lecture"
+      description: "An introductory course on the principles and practices of modern cryptography."
+      links:
+      - label: "Course Website"
+        url: "#"
+      pdfs: []
+    - title: "Seminar on Algebraic Number Theory"
+      instructor: "Prof. Dr. Böckle"
+      course_type: "Seminar"
+      description: "A seminar exploring key topics in algebraic number theory."
+      links: []
+      pdfs:
+      - label: "Reading List"
+        file: "/assets/pdfs/placeholder.pdf"
+  - semester: Summer Term 2024
+    courses:
+    - title: "Computer Algebra"
+      instructor: "Dr. Gräf"
+      course_type: "Lecture"
+      description: "A practical introduction to computer algebra systems and their applications."
+      links:
+      - label: "Course Website"
+        url: "#"
+      pdfs: []
+
+- year: 2023
+  semesters:
+  - semester: Winter Term 2023/24
+    courses:
+    - title: "Seminar on Elliptic Curves"
+      instructor: "Prof. Dr. Böckle"
+      course_type: "Seminar"
+      description: "An advanced seminar on the theory of elliptic curves."
+      links: []
+      pdfs: []

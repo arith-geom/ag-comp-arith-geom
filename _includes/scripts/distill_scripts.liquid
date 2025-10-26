@@ -5,13 +5,9 @@
   crossorigin="anonymous"
 ></script>
 
-<!-- Bootsrap & MDB scripts -->
-<script src="{{ '/assets/js/vendor/bootstrap.bundle.min.js' | relative_url }}"></script>
-<script
-  src="{{ site.third_party_libraries.mdb.url.js }}"
-  integrity="{{ site.third_party_libraries.mdb.integrity.js }}"
-  crossorigin="anonymous"
-></script>
+<!-- Vendor JS -->
+<script src="{{ site.third_party_libraries.bootstrap.path.js | relative_url }}"></script>
+<script src="{{ site.third_party_libraries.mdb-ui-kit.path.js | relative_url }}"></script>
 
 {% if page.mermaid and page.mermaid.enabled %}
   <!-- Mermaid and D3 -->
@@ -148,7 +144,7 @@
 
 {% if page.toc and page.toc.sidebar %}
   <!-- Sidebar Table of Contents -->
-  <script defer src="{{ '/assets/js/vendor/bootstrap-toc.min.js' | relative_url | bust_file_cache }}"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js"></script>
 {% endif %}
 
 {% if page.pretty_table %}

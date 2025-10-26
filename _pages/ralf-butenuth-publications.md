@@ -102,7 +102,7 @@ order: 100
   background: var(--bg-secondary);
   padding: 10px 15px;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   margin-bottom: 20px;
   overflow: hidden;
 }
@@ -127,7 +127,7 @@ order: 100
   background: var(--bg-primary);
   padding: 30px;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -156,14 +156,14 @@ order: 100
   margin-bottom: 30px;
   padding: 20px;
   background: var(--bg-secondary);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   border-left: 4px solid #0066cc;
 }
 
 .member-photo {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   object-fit: cover;
   border: 3px solid #0066cc;
 }
@@ -206,7 +206,7 @@ order: 100
   padding: 15px;
   background: var(--bg-secondary);
   border-left: 4px solid #0066cc;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   transition: all 0.2s ease;
 }
 
