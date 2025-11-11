@@ -23,9 +23,7 @@ description: "An overview of our courses, seminars, and lectures, organized by s
   {% endif %}
 {% endif %}
 
-<div class="timeline-section">
-  <h2 class="timeline-title">Courses Timeline</h2>
-  <div class="teaching-by-semester-container">
+<div class="teaching-by-semester-container">
     {% assign all_semesters = "" | split: "," %}
     {% for year_data in site.data.teaching.courses %}
       {% for semester in year_data.semesters %}
@@ -69,5 +67,4 @@ description: "An overview of our courses, seminars, and lectures, organized by s
         {% endfor %}
       </div>
     {% endfor %}
-  </div>
 </div>

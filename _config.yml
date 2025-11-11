@@ -7,6 +7,12 @@ baseurl: "/ag-comp-arith-geom"
 twitter_username: placeholder
 github_username: placeholder
 
+# Social Media Profiles
+social:
+  name: AG Computational Arithmetic Geometry
+  links:
+    - https://github.com/ag-comp-arith-geom
+
 # Website Creator Information
 creator:
   name: "Victor Merk"
@@ -112,3 +118,7 @@ analytics:
   enabled: false
 linkedin_url: placeholder
 researchgate_url: placeholder
+
+# SASS/SCSS compilation settings
+sass:
+  style: compressed

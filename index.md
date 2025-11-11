@@ -1,12 +1,13 @@
 ---
 layout: page
 title: "Computational Arithmetic Geometry"
+description: "Official website of the Computational Arithmetic Geometry research group at Heidelberg University, led by Prof. Dr. Gebhard Böckle. Discover our research, publications, and team."
 permalink: /
 nav_order: 1
 ---
 
 <div class="hero-header">
-  <img src="{{ '/assets/img/heidelberg-4963800_1920.jpg' | relative_url }}" alt="Heidelberg Castle with IWR/University logos" class="hero-image">
+  <img src="{{ '/assets/img/heidelberg-4963800_1920.jpg' | relative_url }}" alt="Panoramic view of Heidelberg, home to the Computational Arithmetic Geometry research group at Heidelberg University." class="hero-image">
   <div class="hero-overlay">
     <div class="hero-content">
       <h1 class="hero-title">AG Computational Arithmetic Geometry</h1>

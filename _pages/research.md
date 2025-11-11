@@ -5,7 +5,8 @@ nav: true
 nav_order: 2
 show_title: false
 order: 100
-title: Research
+title: Research Areas
+description: "Explore the research areas of the Computational Arithmetic Geometry group at Heidelberg University, including Galois representations, modular forms, and function field arithmetic."
 ---
 <div class="research-section research-page-override">
   <div class="content-grid">

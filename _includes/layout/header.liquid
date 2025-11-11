@@ -6,7 +6,7 @@
   <nav class="main-nav-desktop">
     <ul>
       {% for item in site.data.navigation %}
-        <li>
+        <li {% if page.url == item.url %}class="active"{% endif %}>
           <a href="{{ item.url | relative_url }}">
             <i class="{{ item.icon }}" aria-hidden="true"></i>
             <span>{{ item.title }}</span>
@@ -24,7 +24,7 @@
   <button class="sidebar-close" aria-label="Close navigation">&times;</button>
   <ul>
     {% for item in site.data.navigation %}
-      <li>
+      <li {% if page.url == item.url %}class="active"{% endif %}>
         <a href="{{ item.url | relative_url }}">
           <i class="{{ item.icon }}" aria-hidden="true"></i>
           <span>{{ item.title }}</span>

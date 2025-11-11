@@ -6,6 +6,7 @@ nav_order: 5
 show_title: false
 order: 100
 title: Publications
+description: "Browse the comprehensive list of publications from the Computational Arithmetic Geometry research group, including journal articles, preprints, and books."
 ---
 
 <div class="publications-container">
@@ -60,3 +61,37 @@ title: Publications
     {% endfor %}
   </div>
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {% for pub in site.data.publications.publications %}
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "{{ pub.title | escape_once }}",
+      "author": [
+        {% assign authors = pub.authors | split: ', ' %}
+        {% for author in authors %}
+          {
+            "@type": "Person",
+            "name": "{{ author | strip }}"
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      {% assign year = pub.journal_details | split: '(' | last | split: ')' | first %}
+      "datePublished": "{{ year }}",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": "{{ pub.journal_details | escape_once }}"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "MathSciNet",
+        "value": "{{ pub.mr_number }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>

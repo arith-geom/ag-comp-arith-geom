@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Contact
+title: Contact Us
+description: "Contact the Computational Arithmetic Geometry research group at Heidelberg University. Find our address, phone number, and email for inquiries."
 permalink: "/contact/"
 nav: true
 nav_order: 7

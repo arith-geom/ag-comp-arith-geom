@@ -139,6 +139,13 @@
   }
 }
 
+/* Style for the active navigation link */
+.main-nav-desktop ul li.active a,
+.sidebar-nav ul li.active a {
+  font-weight: bold;
+  text-decoration: underline !important;
+}
+
 .sidebar-nav {
   position: fixed;
   top: 0;

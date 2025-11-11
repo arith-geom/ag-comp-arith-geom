@@ -4,7 +4,8 @@ permalink: "/members/"
 nav: true
 nav_order: 3
 show_title: false
-title: Members
+title: Group Members
+description: "Meet the team of the Computational Arithmetic Geometry research group at Heidelberg University, including professors, researchers, and students."
 ---
 
 <div class="main-container members-page">
@@ -50,3 +51,34 @@ title: Members
     </div>
   {% endfor %}
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {% for section in site.data.members.sections %}
+      {% if section.title != "Former Members" %}
+        {% for member in section.members %}
+          {
+            "@type": "Person",
+            "name": "{{ member.name }}",
+            "jobTitle": "{{ member.role }}",
+            "worksFor": {
+              "@type": "EducationalOrganization",
+              "name": "{{ site.title }}"
+            }
+            {% if member.links %}
+              ,"sameAs": [
+                {% for link in member.links %}
+                  {% if link.url contains "mailto:" %}{% continue %}{% endif %}
+                  "{{ link.url }}"{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+              ]
+            {% endif %}
+          }{% unless forloop.last and section.title == "Research Members" %},{% endunless %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  ]
+}
+</script>
