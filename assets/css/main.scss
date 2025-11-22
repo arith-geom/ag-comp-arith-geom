@@ -1,5 +1,4 @@
 ---
-# Front matter comment to ensure Jekyll processes this file
 ---
 
 @use "variables";
@@ -9,8 +8,10 @@
 @use "research";
 @use "teaching";
 @use "layout/members";
+@use "layout/member_profile";
 @use "contact";
 @use "home";
 @use "links";
 @use "container";
 @use "page";
+@use "footer";

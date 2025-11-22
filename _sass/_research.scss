@@ -1,18 +1,30 @@
-.research-page-override .content-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+.research-section .content-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  min-height: 50vh;
+  /* Ensure it takes up vertical space */
+  align-items: center;
 }
 
-@media (min-width: 768px) {
-  .research-page-override .content-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.research-page-override .feature-card {
+.research-section .feature-card {
   border: 1px solid #ddd !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-  padding: 1.5rem !important;
+  padding: 2rem !important;
   margin-bottom: 0 !important;
+  flex: 1 1 300px;
+  /* Grow: 1, Shrink: 1, Basis: 300px */
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.research-section .feature-card .card-body {
+  flex: 1;
+  /* Fill remaining space */
+}
+
+.research-section .feature-card .card-body p {
+  text-align: justify;
 }

@@ -7,6 +7,12 @@ baseurl: "/ag-comp-arith-geom"
 twitter_username: placeholder
 github_username: placeholder
 
+# Social Media Profiles
+social:
+  name: AG Computational Arithmetic Geometry
+  links:
+    - https://github.com/ag-comp-arith-geom
+
 # Website Creator Information
 creator:
   name: "Victor Merk"
@@ -49,6 +55,11 @@ third_party_libraries:
     path:
       css: /vendor/mdb-ui-kit/css/mdb.min.css
       js: /vendor/mdb-ui-kit/js/mdb.umd.min.js
+  jquery:
+    url:
+      js: https://code.jquery.com/jquery-3.6.0.min.js
+    integrity:
+      js: sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=
 collections:
   pages:
     output: true
@@ -112,3 +123,7 @@ analytics:
   enabled: false
 linkedin_url: placeholder
 researchgate_url: placeholder
+
+# SASS/SCSS compilation settings
+sass:
+  style: compressed

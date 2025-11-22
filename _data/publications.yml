@@ -1,46 +1,169 @@
 publications:
-- mr_number: "MR4966566"
-  title: "Weak abelian direct summands and irreducibility of Galois representations"
-  authors: "Böckle, Gebhard; Hui, Chun-Yin"
-  journal_details: "Math. Ann. 393 (2025), no. 1, 543–569."
-  status: "Preprint"
-  msc_code: "11F80"
-  type: "Article"
-
-- mr_number: "MR4825120"
-  title: "Wiles defect of Hecke algebras via local-global arguments"
-  authors: "Böckle, Gebhard; Khare, Chandrashekhar B.; Manning, Jeffrey"
-  journal_details: "J. Inst. Math. Jussieu 23 (2024), no. 6, 2461–2541."
-  appendix: "With an appendix by Najmuddin Fakhruddin and (Chandrashekhar B.) Khare"
-  reviewer: "Yamagami, Atsushi"
-  status: "Journal Article"
-  citation_count: 1
-  msc_code: "11F80"
-  type: "Article"
-
-- mr_number: "MR4812700"
-  title: "Wieferich primes and a mod p Leopoldt conjecture"
-  authors: "Böckle, Gebhard; Guiraud, David-A.; Kalyanswamy, Sudesh; Khare, Chandrashekhar"
-  journal_details: "Tata Inst. Fundam. Res. Stud. Math., 41"
-  publisher_details: "Published for the Tata Institute of Fundamental Research, Mumbai; by , 2024, 21–64."
-  isbn: "978-81-957829-7-0"
-  status: "Book"
-  msc_code: "11R23"
-
-- mr_number: "MR4796042"
-  title: "Cyclic base change of cuspidal automorphic representations over function fields"
-  authors: "Böckle, Gebhard; Feng, Tony; Harris, Michael; Khare, Chandrashekhar B.; Thorne, Jack A."
-  journal_details: "Compos. Math. 160 (2024), no. 9, 1959–2004."
-  reviewer: "Takloo-Bighash, Ramin"
-  status: "Submitted"
-  citation_count: 2
-  msc_code: "11F70"
-  type: "Article"
-
-- mr_number: "MR4668540"
-  title: "Equidimensionality of universal pseudodeformation rings in characteristic p for absolute Galois groups of p-adic fields"
-  authors: "Böckle, Gebhard; Juschka, Ann-Kristin"
-  journal_details: "Forum Math. Sigma 11 (2023), Paper No. e102, 83 pp."
-  status: "Other"
-  msc_code: "11F80"
-  type: "Article"
+  - mr_number: "444"
+    title: Irreducibility of versal deformation rings in the (p,p)-case for
+      2-dimensional representations
+    authors: Böckle, Gebhard; Juschka, Ann-Kristin
+    journal_details: J. Algebra 444 (2015), 81–123
+    status: Journal Article
+    msc_code: DSA"§"§342
+    type: Article
+    reviewer: bbb
+    citation_count: 2
+    publisher_details: ccccc
+    isbn: "3423"
+    appendix: dfs
+    body: fdsfsfdsfsfsdfdsdsd
+    links:
+      - label: aaaaavvcvv
+        url: xxx
+    pdfs:
+      - label: j
+  - title: Independence of l-adic representations of geometric Galois groups
+    authors: Böckle, Gebhard; Gajda, W.; Petersen, S.
+    journal_details: J. Reine Angew. Math. (2015), 25 p.
+    status: Journal Article
+    type: Article
+  - title: Hecke characters associated to Drinfeld modular forms (Appendix B)
+    authors: Böckle, Gebhard; Centeleghe, T.
+    journal_details: Compos. Math. (2015), 53 p.
+    status: Journal Article
+    type: Article
+  - title: The distribution of the zeros of the Goss zeta-function for
+      A=F2[x,y]/(y2+y+x3+x+1)
+    authors: Böckle, Gebhard
+    journal_details: Math. Z. 275 (2013), no. 3-4, 835–861
+    status: Journal Article
+    type: Article
+  - title: Algebraic Hecke characters and compatible systems of abelian mod p Galois
+      representations over global fields
+    authors: Böckle, Gebhard
+    journal_details: Manuscripta Math. 140 (2013), no. 3-4, 303-331
+    status: Journal Article
+    type: Article
+  - title: On computing quaternion quotient graphs for function fields
+    authors: Böckle, Gebhard; Butenuth, R.
+    journal_details: J. Théor. Nombres Bordeaux 24 (2012), no. 1, 73-99
+    status: Journal Article
+    type: Article
+  - title: "Cartier Modules: finiteness results"
+    authors: Böckle, Gebhard; Blickle, M.
+    journal_details: J. Reine Angew. Math. 661 (2011), 85-123
+    status: Journal Article
+    type: Article
+  - title: Deformation rings for some mod 3 Galois representations of the absolute
+      Galois group of Q3
+    authors: Böckle, Gebhard
+    journal_details: Asterisque 330 (2010), 529-542
+    status: Journal Article
+    type: Article
+  - title: The Miller-Rabin test with randomized exponents
+    authors: Böckle, Gebhard
+    journal_details: J. Math. Cryptol. 3 (2009), no. 4, 307-319
+    status: Journal Article
+    type: Article
+  - title: Deformations and the rigidity method
+    authors: Böckle, Gebhard
+    journal_details: J. Algebra 320 (2008), no. 10, 3613-3658
+    status: Journal Article
+    type: Article
+  - title: Presentations of universal deformation rings
+    authors: Böckle, Gebhard
+    journal_details: LMS Lecture Note Ser., 320, Cambridge Univ. Press (2007), 24-58
+    status: Journal Article
+    type: Article
+  - title: Uniformizable families of t-motives
+    authors: Böckle, Gebhard; Hartl, U.
+    journal_details: Trans. Amer. Math. Soc. 359 (2007), no. 8, 3933-3972
+    status: Journal Article
+    type: Article
+  - title: Mod l representations of arithmetic fundamental groups. II. A conjecture
+      of A. J. de Jong
+    authors: Böckle, Gebhard; Khare, C.
+    journal_details: Compos. Math. 142 (2006), no. 2, 271-294
+    status: Journal Article
+    type: Article
+  - title: Mod l representations of arithmetic fundamental groups. I. An analog of
+      Serre's conjecture for function fields
+    authors: Böckle, Gebhard; Khare, C.
+    journal_details: Duke Math. J. 129 (2005), no. 2, 337-369
+    status: Journal Article
+    type: Article
+  - title: "Arithmetic over function fields: a cohomological approach"
+    authors: Böckle, Gebhard
+    journal_details: Progr. Math., 239, Birkhäuser Boston (2005), 1-38
+    status: Journal Article
+    type: Article
+  - title: Lifting mod p representations to characteristic p2
+    authors: Böckle, Gebhard
+    journal_details: J. Number Theory 101 (2003), no. 2, 310-337
+    status: Journal Article
+    type: Article
+  - title: On the isomorphism R0 -> T0 (Appendix)
+    authors: Böckle, Gebhard
+    journal_details: Inventiones Math. 154 (2003), no. 1, 217-222
+    status: Journal Article
+    type: Article
+  - title: Finiteness conjectures for Fl[[T]]-analytic extensions of number fields
+    authors: Böckle, Gebhard
+    journal_details: J. Number Theory 96 (2002), no. 2, 257-274
+    status: Journal Article
+    type: Article
+  - title: Global L-functions over function fields
+    authors: Böckle, Gebhard
+    journal_details: Math. Ann. 323 (2002), no. 4, 737-795
+    status: Journal Article
+    type: Article
+  - title: On the density of modular points in universal deformation spaces
+    authors: Böckle, Gebhard
+    journal_details: Amer. J. Math. 123 (2001), no. 5, 985-1007
+    status: Journal Article
+    type: Article
+  - title: A remark on a finiteness conjecture on mod p Galois representations
+    authors: Böckle, Gebhard
+    journal_details: J. Ramanujan Math. Soc. 16 (2001), no. 1, 39-44
+    status: Journal Article
+    type: Article
+  - title: Demuskin groups with group actions and applications to deformations of
+      Galois representations
+    authors: Böckle, Gebhard
+    journal_details: Compositio Math. 121 (2000), no. 2, 109-154
+    status: Journal Article
+    type: Article
+  - title: The prime-to-adjoint principle and unobstructed Galois deformations in
+      the Borel case
+    authors: Böckle, Gebhard; Mezard, A.
+    journal_details: J. Number Theory 78 (1999), no. 2, 167-203
+    status: Journal Article
+    type: Article
+  - title: A local-to-global principle for deformations of Galois representations
+    authors: Böckle, Gebhard
+    journal_details: J. Reine Angew. Math. 509 (1999), 199-236
+    status: Journal Article
+    type: Article
+  - title: Explicit universal deformations of even Galois representations
+    authors: Böckle, Gebhard
+    journal_details: Math. Nachr. 206 (1999), 85-110
+    status: Journal Article
+    type: Article
+  - title: Computations with Modular Forms
+    authors: Böckle, Gebhard; Wiese, G.
+    journal_details: Springer (2014)
+    status: Book
+    type: Book
+  - title: Cohomological Theory of Crystals over Function Fields
+    authors: Böckle, Gebhard; Pink, R.
+    journal_details: Tracts in Mathematics 5, European Mathematical Society (2009)
+    status: Book
+    type: Book
+  - title: Equidimensionality of universal pseudodeformation rings in characteristic
+      p for absolute Galois groups of p-adic fields
+    authors: Böckle, Gebhard; Juschka, Ann-Kristin
+    journal_details: Preprint, 91 pages
+    status: Preprint
+    type: Article
+  - title: An Eichler-Shimura isomorphism over function fields between Drinfeld
+      modular forms and cohomology classes of crystals
+    authors: Böckle, Gebhard
+    journal_details: Preprint, 183 pages
+    status: Preprint
+    type: Article

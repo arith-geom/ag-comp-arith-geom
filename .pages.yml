@@ -6,52 +6,97 @@ media:
   output: "/assets/img"
 
 content:
+  - name: "home"
+    label: "Home Page"
+    path: "_data/home.yml"
+    type: "file"
+    fields:
+      - name: "hero"
+        label: "Hero Section"
+        type: "object"
+        fields:
+          - { name: "image", label: "Image", type: "image" }
+          - { name: "title", label: "Title", type: "string" }
+          - { name: "subtitle", label: "Subtitle", type: "string" }
+          - { name: "description", label: "Description", type: "text" }
+      - name: "feature_cards"
+        label: "Feature Cards"
+        type: "object"
+        list:
+          collapsible:
+            summary: "{fields.title}"
+            collapsed: true
+        fields:
+          - { name: "title", label: "Title", type: "string" }
+          - { name: "icon", label: "Icon Class", type: "string" }
+          - { name: "content", label: "Content", type: "text" }
+          - { name: "link", label: "Link", type: "string" }
+          - { name: "link_text", label: "Link Text", type: "string" }
+          - { name: "link_icon", label: "Link Icon", type: "string" }
+
+  - name: "research"
+    label: "Research Page"
+    path: "_data/research.yml"
+    type: "file"
+    fields:
+      - name: "research_areas"
+        label: "Research Areas"
+        type: "object"
+        list:
+          collapsible:
+            summary: "{fields.title}"
+            collapsed: true
+        fields:
+          - { name: "title", label: "Title", type: "string" }
+          - { name: "icon", label: "Icon Class (e.g. fas fa-infinity)", type: "string" }
+          - { name: "content", label: "Content", type: "rich-text" }
+
   - name: "publications"
     label: "Publications"
     path: "_data/publications.yml"
     type: "file"
     fields:
       - name: "publications"
-        label: "Publications"
-        type: "list"
+        label: "Publications List"
+        type: "object"
+        list:
+          collapsible:
+            summary: "{fields.title}"
+            collapsed: true
         fields:
           - { name: "mr_number", label: "MR Number", type: "string" }
-          - { name: "title", label: "Title", type: "string" }
-          - { name: "authors", label: "Authors", type: "string" }
-          - { name: "journal_details", label: "Journal Details", type: "string" }
-          - { name: "status", label: "Status", type: "string" }
-          - { name: "msc_code", label: "MSC Code", type: "string" }
-          - { name: "type", label: "Type", type: "string" }
-          - { name: "reviewer", label: "Reviewer", type: "string" }
-          - { name: "citation_count", label: "Citation Count", type: "number" }
-          - { name: "publisher_details", label: "Publisher Details", type: "string" }
-          - { name: "isbn", label: "ISBN", type: "string" }
-
-  - name: "members"
-    label: "Members"
-    path: "_data/members.yml"
-    type: "file"
-    fields:
-      - name: "sections"
-        label: "Member Sections"
-        type: "list"
-        fields:
-          - { name: "title", label: "Section Title", type: "string" }
-          - name: "members"
-            label: "Members"
-            type: "list"
+          - { name: "title", label: "Title (Both)", type: "string" }
+          - { name: "authors", label: "Authors (Both)", type: "string" }
+          - { name: "journal_details", label: "Journal Details (Both)", type: "string" }
+          - { name: "status", label: "Status (Both)", type: "select", options: { values: ["Preprint", "Journal Article", "Book", "Submitted", "Other"] } }
+          - { name: "msc_code", label: "MSC Code (Subpage Only)", type: "string" }
+          - { name: "type", label: "Type (Both)", type: "select", options: { values: ["Article", "Book", "Other"] } }
+          - { name: "reviewer", label: "Reviewer (Subpage Only)", type: "string" }
+          - { name: "citation_count", label: "Citation Count (Subpage Only)", type: "number" }
+          - { name: "publisher_details", label: "Publisher Details (Subpage Only)", type: "string" }
+          - { name: "isbn", label: "ISBN (Subpage Only)", type: "string" }
+          - { name: "appendix", label: "Appendix (Subpage Only)", type: "string" }
+          - { name: "body", label: "Content / Abstract (Subpage Only)", type: "rich-text" }
+          - name: "links"
+            label: "Links"
+            type: "object"
+            list:
+              collapsible:
+                summary: "{fields.label}"
+                collapsed: true
             fields:
-              - { name: "name", label: "Name", type: "string" }
-              - { name: "role", label: "Role", type: "string" }
-              - { name: "photo", label: "Photo URL", type: "image" }
-              - { name: "description", label: "Description", type: "text" }
-              - name: "links"
-                label: "Links"
-                type: "list"
-                fields:
-                  - { name: "url", label: "URL", type: "string" }
-                  - { name: "icon", label: "Icon (e.g., 'fas fa-envelope')", type: "string" }
-                  - { name: "text", label: "Link Text", type: "string" }
+              - { name: "label", label: "Label", type: "string" }
+              - { name: "url", label: "URL", type: "string" }
+          - name: "pdfs"
+            label: "PDFs"
+            type: "object"
+            list:
+              collapsible:
+                summary: "{fields.label}"
+                collapsed: true
+            fields:
+              - { name: "label", label: "Label", type: "string" }
+              - { name: "file", label: "File", type: "file" }
 
   - name: "teaching"
     label: "Teaching"
@@ -60,72 +105,190 @@ content:
     fields:
       - name: "courses"
         label: "Courses by Year"
-        type: "list"
+        type: "object"
+        list:
+          collapsible:
+            summary: "{fields.year}"
+            collapsed: true
         fields:
           - { name: "year", label: "Year", type: "number" }
           - name: "semesters"
             label: "Semesters"
-            type: "list"
+            type: "object"
+            list:
+              collapsible:
+                summary: "{fields.semester}"
+                collapsed: true
             fields:
-              - { name: "semester", label: "Semester", type: "string" }
+              - { name: "semester", label: "Semester Name", type: "string" }
               - name: "courses"
                 label: "Courses"
-                type: "list"
+                type: "object"
+                list:
+                  collapsible:
+                    summary: "{fields.title}"
+                    collapsed: true
                 fields:
                   - { name: "title", label: "Course Title", type: "string" }
                   - { name: "instructor", label: "Instructor", type: "string" }
-                  - { name: "course_type", label: "Course Type", type: "string" }
+                  - { name: "course_type", label: "Course Type", type: "select", options: { values: ["Lecture", "Seminar", "Proseminar", "Exercise", "Other"] } }
                   - { name: "description", label: "Description", type: "text" }
                   - name: "links"
                     label: "Links"
-                    type: "list"
+                    type: "object"
+                    list:
+                      collapsible:
+                        summary: "{fields.label}"
+                        collapsed: true
                     fields:
                       - { name: "label", label: "Label", type: "string" }
                       - { name: "url", label: "URL", type: "string" }
                   - name: "pdfs"
                     label: "PDFs"
-                    type: "list"
+                    type: "object"
+                    list:
+                      collapsible:
+                        summary: "{fields.label}"
+                        collapsed: true
                     fields:
                       - { name: "label", label: "Label", type: "string" }
-                      - { name: "file", label: "File Path", type: "file" }
+                      - { name: "file", label: "File", type: "file" }
+                  - { name: "body", label: "Course Details", type: "rich-text" }
 
-  - name: "home"
-    label: "Home Page"
-    path: "_pages/home.md"
+  - name: "members"
+    label: "Members"
+    path: "_data/members.yml"
     type: "file"
-    format: "yaml-frontmatter"
     fields:
-      - { name: "layout", label: "Layout", type: "string", default: "page", hidden: true }
-      - { name: "permalink", label: "Permalink", type: "string", default: "/home/", hidden: true }
-      - { name: "nav", label: "Show in Navigation", type: "boolean" }
-      - { name: "nav_order", label: "Navigation Order", type: "number" }
-      - { name: "show_title", label: "Show Title", type: "boolean" }
-      - { name: "title", label: "Title", type: "string" }
-      - { name: "body", label: "Page Content", type: "rich-text" }
+      - name: "sections"
+        label: "Member Sections"
+        type: "object"
+        list:
+          collapsible:
+            summary: "{fields.title}"
+            collapsed: true
+        fields:
+          - { name: "title", label: "Section Title", type: "string" }
+          - { name: "layout", label: "Layout Style", type: "select", options: { values: ["big", "medium", "small"], labels: ["Big (Highlight)", "Medium (Standard)", "Small (Compact)"] }, default: "medium" }
+          - name: "members"
+            label: "Members"
+            type: "object"
+            list:
+              collapsible:
+                summary: "{fields.name}"
+                collapsed: true
+            fields:
+              - { name: "name", label: "Name", type: "string", required: true }
+              - { name: "role", label: "Role", type: "string" }
+              - { name: "group", label: "Group", type: "select", options: { values: ["Head", "Secretary", "Members", "Former Members"] }, default: "Members", hidden: true }
+              - { name: "photo", label: "Photo", type: "image" }
+              - { name: "description", label: "Short Description (Card)", type: "rich-text" }
+              - { name: "email", label: "Email", type: "string" }
+              - { name: "cv", label: "CV (PDF)", type: "file" }
+              - name: "research_interests"
+                label: "Research Interests"
+                type: "list"
+                field: { type: "string" }
+              - name: "education"
+                label: "Education"
+                type: "object"
+                list:
+                  collapsible:
+                    summary: "{fields.degree} - {fields.institution}"
+                    collapsed: true
+                fields:
+                  - { name: "year", label: "Year/Period", type: "string" }
+                  - { name: "degree", label: "Degree/Position", type: "string" }
+                  - { name: "institution", label: "Institution", type: "string" }
+              - { name: "body", label: "Biography / Full Profile", type: "rich-text" }
+              - name: "links"
+                label: "Social Links"
+                type: "object"
+                list:
+                  collapsible:
+                    summary: "{fields.text}"
+                    collapsed: true
+                fields:
+                  - { name: "url", label: "URL", type: "string" }
+                  - { name: "icon", label: "Icon Class (e.g. fas fa-globe)", type: "string" }
+                  - { name: "text", label: "Link Text", type: "string" }
+
+  - name: "links"
+    label: "Links Page"
+    path: "_data/links.yml"
+    type: "file"
+    fields:
+      - name: "groups"
+        label: "Link Groups"
+        type: "object"
+        list:
+          collapsible:
+            summary: "{fields.title}"
+            collapsed: true
+        fields:
+          - { name: "title", label: "Group Title", type: "string" }
+          - { name: "icon", label: "Icon Class", type: "string" }
+          - name: "links"
+            label: "Links"
+            type: "object"
+            list:
+              collapsible:
+                summary: "{fields.title}"
+                collapsed: true
+            fields:
+              - { name: "title", label: "Title", type: "string" }
+              - { name: "url", label: "URL", type: "string" }
 
   - name: "contact"
     label: "Contact Page"
-    path: "_pages/contact.md"
+    path: "_data/contact.yml"
     type: "file"
-    format: "yaml-frontmatter"
     fields:
-      - { name: "layout", label: "Layout", type: "string", default: "page", hidden: true }
-      - { name: "title", label: "Title", type: "string" }
-      - { name: "permalink", label: "Permalink", type: "string", default: "/contact/", hidden: true }
-      - { name: "nav", label: "Show in Navigation", type: "boolean" }
-      - { name: "nav_order", label: "Navigation Order", type: "number" }
-      - { name: "body", label: "Page Content", type: "rich-text" }
+      - name: "address"
+        label: "Address"
+        type: "object"
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            summary: "{fields.title}"
+            collapsed: true
+        fields:
+          - { name: "title", label: "Title", type: "string" }
+          - { name: "institution", label: "Institution", type: "string" }
+          - { name: "university", label: "University", type: "string" }
+          - { name: "street", label: "Street", type: "string" }
+          - { name: "city", label: "City", type: "string" }
+          - { name: "country", label: "Country", type: "string" }
+          - { name: "description", label: "Description", type: "text" }
+          - { name: "map_url", label: "Map URL", type: "string" }
+      - name: "contact_details"
+        label: "Contact Details"
+        type: "object"
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            summary: "{fields.phone}"
+            collapsed: true
+        fields:
+          - { name: "phone", label: "Phone", type: "string" }
+          - { name: "phone_hours", label: "Phone Hours", type: "string" }
+          - { name: "fax", label: "Fax", type: "string" }
+          - { name: "fax_note", label: "Fax Note", type: "string" }
+          - { name: "general_info", label: "General Info", type: "text" }
+      - name: "email"
+        label: "Email Section"
+        type: "object"
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            summary: "{fields.address}"
+            collapsed: true
+        fields:
+          - { name: "intro", label: "Intro Text", type: "text" }
+          - { name: "address", label: "Email Address", type: "string" }
+          - { name: "outro", label: "Outro Text", type: "text" }
 
-  - name: "research"
-    label: "Research Page"
-    path: "_pages/research.md"
-    type: "file"
-    format: "yaml-frontmatter"
-    fields:
-      - { name: "layout", label: "Layout", type: "string", default: "page", hidden: true }
-      - { name: "permalink", label: "Permalink", type: "string", default: "/research/", hidden: true }
-      - { name: "nav", label: "Show in Navigation", type: "boolean" }
-      - { name: "nav_order", label: "Navigation Order", type: "number" }
-      - { name: "show_title", label: "Show Title", type: "boolean" }
-      - { name: "title", label: "Title", type: "string" }
-      - { name: "body", label: "Page Content", type: "rich-text" }
+

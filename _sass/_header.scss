@@ -1,15 +1,26 @@
 .header-main {
   background-color: #c61826;
   color: white;
-  padding: 0.25rem 1rem;
   position: sticky;
   top: 0;
   z-index: 10;
   transition: top 0.3s ease-in-out;
+}
+
+.header-content-wrapper {
+  width: 100%;
+  max-width: 1900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: clamp(15px, 1.25rem, 30px);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 
+.header-main {
   a, span, p, div {
     color: white !important;
   }
@@ -139,6 +150,13 @@
   }
 }
 
+/* Style for the active navigation link */
+.main-nav-desktop ul li.active a,
+.sidebar-nav ul li.active a {
+  font-weight: bold;
+  text-decoration: underline !important;
+}
+
 .sidebar-nav {
   position: fixed;
   top: 0;
@@ -160,7 +178,13 @@
     padding: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin: 0;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+      &:last-child {
+        border-bottom: none;
+      }
 
       a, a:link, a:visited {
         text-decoration: none;

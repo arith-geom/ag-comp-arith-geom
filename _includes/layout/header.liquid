@@ -1,30 +1,32 @@
 <header class="header-main">
-  <a class="brand" href="{{ site.baseurl }}/">
-    <div class="brand-title">{{ site.title }}</div>
-    <div class="university-name">{{ site.university }}</div>
-  </a>
-  <nav class="main-nav-desktop">
-    <ul>
-      {% for item in site.data.navigation %}
-        <li>
-          <a href="{{ item.url | relative_url }}">
-            <i class="{{ item.icon }}" aria-hidden="true"></i>
-            <span>{{ item.title }}</span>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
-  <button class="nav-toggle" aria-label="Toggle navigation">
-    <span class="nav-toggle-icon"></span>
-  </button>
+  <div class="header-content-wrapper">
+    <a class="brand" href="{{ site.baseurl }}/">
+      <div class="brand-title">{{ site.title }}</div>
+      <div class="university-name">{{ site.university }}</div>
+    </a>
+    <nav class="main-nav-desktop">
+      <ul>
+        {% for item in site.data.navigation %}
+          <li {% if page.url == item.url %}class="active"{% endif %}>
+            <a href="{{ item.url | relative_url }}">
+              <i class="{{ item.icon }}" aria-hidden="true"></i>
+              <span>{{ item.title }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="nav-toggle-icon"></span>
+    </button>
+  </div>
 </header>
 
 <div class="sidebar-nav">
   <button class="sidebar-close" aria-label="Close navigation">&times;</button>
   <ul>
     {% for item in site.data.navigation %}
-      <li>
+      <li {% if page.url == item.url %}class="active"{% endif %}>
         <a href="{{ item.url | relative_url }}">
           <i class="{{ item.icon }}" aria-hidden="true"></i>
           <span>{{ item.title }}</span>

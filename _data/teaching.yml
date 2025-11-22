@@ -1,57 +1,606 @@
 courses:
-- year: 2025
-  semesters:
-  - semester: Summer Term 2025
-    courses:
-    - title: "Advanced Topics in Computational Geometry"
-      instructor: "Prof. Dr. Böckle"
-      course_type: "Seminar"
-      description: "A deep dive into advanced algorithms and data structures for computational geometry."
-      links:
-      - label: "Course Website"
-        url: "#"
-      pdfs:
-      - label: "Syllabus"
-        file: "/assets/pdfs/placeholder.pdf"
+  - year: 2019
+    semesters:
+      - semester: Winter Term 2019/20
+        courses:
+          - title: Algebra 1
+            instructor: Prof. Dr. Böckle, Dr. Ludwig
+            course_type: Lecture
+            description: >-
+              victor@PC:~/Downloads/newtest/website$ git push
 
-- year: 2024
-  semesters:
-  - semester: Winter Term 2024/25
-    courses:
-    - title: "Introduction to Cryptography"
-      instructor: "Dr. Banwait"
-      course_type: "Lecture"
-      description: "An introductory course on the principles and practices of modern cryptography."
-      links:
-      - label: "Course Website"
-        url: "#"
-      pdfs: []
-    - title: "Seminar on Algebraic Number Theory"
-      instructor: "Prof. Dr. Böckle"
-      course_type: "Seminar"
-      description: "A seminar exploring key topics in algebraic number theory."
-      links: []
-      pdfs:
-      - label: "Reading List"
-        file: "/assets/pdfs/placeholder.pdf"
-  - semester: Summer Term 2024
-    courses:
-    - title: "Computer Algebra"
-      instructor: "Dr. Gräf"
-      course_type: "Lecture"
-      description: "A practical introduction to computer algebra systems and their applications."
-      links:
-      - label: "Course Website"
-        url: "#"
-      pdfs: []
+              To https://github.com/Hausplayer31/website.git
+               ! [rejected]        teaching-1 -> teaching-1 (non-fast-forward)
+              error: failed to push some refs to
+              'https://github.com/Hausplayer31/website.git'
 
-- year: 2023
-  semesters:
-  - semester: Winter Term 2023/24
-    courses:
-    - title: "Seminar on Elliptic Curves"
-      instructor: "Prof. Dr. Böckle"
-      course_type: "Seminar"
-      description: "An advanced seminar on the theory of elliptic curves."
-      links: []
-      pdfs: []
+              hint: Updates were rejected because the tip of your current branch
+              is behind
+
+              hint: its remote counterpart. If you want to integrate the remote
+              changes,
+
+              hint: use 'git pull' before pushing again.
+
+              hint: See the 'Note about fast-forwards' in 'git push --help' for
+              details.
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/https//typoiwruni-heidelbergde/fileadmin/groups/arithgeo/templates/data/judith-ludwig/algebra1/indexhtml
+          - title: "Seminar: Affine algebraische Gruppen"
+            instructor: Prof. Dr. Böckle, Quast
+            course_type: Seminar
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/julian-quast/seminar-affine-algebraische-gruppen.html
+          - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
+            instructor: Prof. Dr. Böckle
+            course_type: Seminar
+      - semester: Summer Term 2019
+        courses:
+          - title: "Proseminar: Bilinearformen und klassische Gruppen"
+            instructor: Prof. Dr. Böckle, Quast
+            course_type: Proseminar
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/julian-quast/proseminar-bilinearformen-und-klassische-gruppen.html
+          - title: Kompatible Systeme von Galoisdarstellungen
+            instructor: Prof. Dr. Böckle, Dr. Conti
+            course_type: Lecture
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/gebhard-boeckle/kompatible-systeme-von-galoisdarstellungen.html
+          - title: p-divisible Gruppen
+            instructor: Dr. Ludwig
+            course_type: Lecture
+            description: dasdas
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/judith-ludwig/p-divisible-gruppen.html
+            pdfs:
+              - label: ssss
+                file: /assets/img/Design ohne Titel 3.png
+            body: xxxxxxxx
+          - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
+            instructor: Prof. Dr. Böckle, Dr. Ludwig
+            course_type: Seminar
+            links:
+              - label: Program (PDF)
+                url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/Programm_la-courbe_SoSe19.pdf
+  - year: 2018
+    semesters:
+      - semester: Winter Term 2018/19
+        courses:
+          - title: "Seminar: Darstellungstheorie von GL_2"
+            instructor: Prof. Dr. Böckle, Dr. Ludwig
+            course_type: Seminar
+            links:
+              - label: Program (PDF)
+                url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Programm_GL2_WS1819.pdf
+          - title: "Seminar: Algorithmische Algebra"
+            instructor: Dr. Maurischat
+            course_type: Seminar
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/andreas-maurischat/seminar-algorithmische-algebra.html
+          - title: Galoiskohomologie und Galoisdarstellungen
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/gebhard-boeckle/galoiskohomologie.html
+          - title: Funktionentheorie 2
+            instructor: Dr. Maurischat, Quast
+            course_type: Lecture
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/julian-quast/funktionentheorie-2.html
+          - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
+            instructor: Prof. Dr. Böckle, Dr. Ludwig
+            course_type: Seminar
+            links:
+              - label: Program (PDF)
+                url: https://typo.iwr.uni-heidelberg.de/fileadmin/groups/arithgeo/templates/data/Hauptseminare/WS1819_lokale_G-shtukas.pdf
+      - semester: Summer Term 2018
+        courses:
+          - title: "Seminar: Lokale Klassenkörpertheorie nach Lubin-Tate"
+            instructor: Prof. Dr. Böckle, Fischer
+            course_type: Seminar
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/konrad-fischer/seminar-lubin-tate-theorie.html#c5925
+          - title: Algebraische Zahlentheorie 2
+            instructor: Prof. Dr. Böckle, Dr. Conti
+            course_type: Lecture
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/gebhard-boeckle/algebraische-zahlentheorie-2.html
+          - title: Galois representations and their deformations
+            instructor: Dr. Conti
+            course_type: Lecture
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/andrea-conti/galois-representations-and-their-deformations.html
+          - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
+            instructor: Prof. Dr. Böckle, Dr. Maurischat, Gazda
+            course_type: Seminar
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/andreas-maurischat/hauptseminar-ss2018.html
+  - year: 2017
+    semesters:
+      - semester: Winter Term 2017/18
+        courses:
+          - title: Algebraische Zahlentheorie 1
+            instructor: Prof. Dr. Böckle, Dr. Guiraud
+            course_type: Lecture
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/david-guiraud/algebraische-zahlentheorie-1.html
+          - title: "Seminar: Gruppenkohomologie"
+            instructor: Prof. Dr. Böckle, Fischer
+            course_type: Seminar
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/konrad-fischer/seminar-gruppenkohomologie.html
+          - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
+            instructor: Prof. Dr. Böckle, Dr. Guiraud
+            course_type: Seminar
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/david-guiraud/hauptseminar-ws2017/18.html
+      - semester: Summer Term 2017
+        courses:
+          - title: Algebra 2
+            instructor: Dr. Malte Witte, K. Fischer
+            course_type: Lecture
+            links:
+              - label: Course Website
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/konrad-fischer/algebra-2.html
+  - year: 2016
+    semesters:
+      - semester: Winter Term 2016/17
+        courses:
+          - title: "Proseminar: Primzahlen und Faktorisierung für die Kryptographie"
+            instructor: Prof. Dr. Böckle, Fischer
+            course_type: Proseminar
+            links:
+              - label: Seminar Details
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/konrad-fischer/proseminar-primzahlen-und-faktorisierung.html
+          - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
+            instructor: Prof. Dr. Böckle
+            course_type: Seminar
+            links:
+              - label: Topic List
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/teaching/group-seminar-ws16/17.html
+      - semester: Summer Term 2016
+        courses:
+          - title: Lineare Algebra 2
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+            links:
+              - label: Course Website
+                url: http://www1.iwr.uni-heidelberg.de/groups/arith-geom/LA2-SS2016/LA2_index.html
+              - label: Module Description
+                url: https://www.mathematik.uni-heidelberg.de/2015/Modulhandbuch_BA_15-07-15.pdf
+          - title: "Proseminar: p-adische Analysis"
+            instructor: Prof. Dr. Böckle, Gräf
+            course_type: Proseminar
+            links:
+              - label: Seminar Details
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/peter-graef/proseminar.html
+          - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
+            instructor: Prof. Dr. Böckle, Dr. Guiraud, Fischer, Gräf
+            course_type: Seminar
+            links:
+              - label: Seminar Details
+                url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/konrad-fischer/p-adic-uniformization-ss16.html
+      - semester: Winter Term 2015/16
+        courses:
+          - title: Lineare Algebra 1
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+            links:
+              - label: Course Website
+                url: http://www1.iwr.uni-heidelberg.de/groups/arith-geom/LA1-WS201516/LA1_index.html
+              - label: Module Description
+                url: https://www.mathematik.uni-heidelberg.de/2015/Modulhandbuch_BA_15-07-15.pdf
+  - year: 2015
+    semesters:
+      - semester: Summer term 2015
+        courses:
+          - title: Vorlesung "Bruhat-Tits Gebäude"
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+            links:
+              - url: http://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=204923&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung
+            pdfs:
+              - {}
+          - title: Seminar "Darstellungstheorie"
+            instructor: Prof. Dr. Böckle, Qiu
+            course_type: Seminar
+            links:
+              - url: https://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung&veranstaltung.veranstid=204926
+              - url: http://www1.iwr.uni-heidelberg.de/groups/arith-geom/home/members/yujia-qiu/dar-ss2015/
+          - title: Vorlesung "Darstellungen und Invarianten 2"
+            instructor: Dr. Cerviño
+            course_type: Lecture
+            links:
+              - url: https://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=204925&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung
+            pdfs:
+              - {}
+          - title: 'Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "Lenny
+              Taelman´s body of work on Drinfeld modules"'
+            instructor: Prof. Dr. Böckle, Dr. Perkins, Dr. Hubschmid
+            course_type: Seminar
+            pdfs:
+              - {}
+  - year: 2014
+    semesters:
+      - semester: Winter term 2014/15
+        courses:
+          - title: Vorlesung "Automorphe Formen"
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+            links:
+              - url: https://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=193880&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung
+            pdfs:
+              - {}
+          - title: Seminar "Klassenkörpertheorie über Funktionenkörpern und Drinfeld Moduln"
+            instructor: Prof. Dr. Böckle, Qiu
+            course_type: Seminar
+            links:
+              - url: https://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=193882&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung
+              - url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/yujia-qiu/dm-ws2014.html
+          - title: Vorlesung "Darstellungen und Invarianten"
+            instructor: Dr. Cerviño
+            course_type: Lecture
+            links:
+              - url: https://jmcrv.org/?page_id=253
+            pdfs:
+              - {}
+          - title: 'Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "Recent results
+              towards the BSD conjecture for elliptic curves over Q"'
+            instructor: Prof. Dr. Böckle, Dr. Cerviño, Dr. Hubschmid
+            course_type: Seminar
+            pdfs:
+              - {}
+      - semester: Summer term 2014
+        courses:
+          - title: Seminar "p-adische Geometrie"
+            instructor: Prof. Dr. Böckle, Juschka, Qiu
+            course_type: Seminar
+            links:
+              - url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/ann-kristin-juschka/seminar-ss2014.html
+          - title: Vorlesung "Algebraische Gruppen"
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+            links:
+              - url: https://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=182260&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung
+          - title: Spezialvorlesung "Abelsche Varietäten II"
+            instructor: Prof. Dr. Böckle, Dr. Centeleghe
+            course_type: Lecture
+            links:
+              - url: https://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=182263&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung
+          - title: 'Hauptseminar "Arithmetik von Zahl- und Funktionenkörpern: Shimura
+              Varieties"'
+            instructor: Prof. Dr. Böckle, Dr. Cerviño, Fischer
+            course_type: Seminar
+            links:
+              - url: https://lsf.uni-heidelberg.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=179737&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung
+  - year: 2013
+    semesters:
+      - semester: Winter term 2013/14
+        courses:
+          - title: Étale Kohomologie
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+          - title: Seminar "Deformationen von (Pseudo-)Darstellungen"
+            instructor: Prof. Dr. Böckle, Juschka
+            course_type: Seminar
+            links:
+              - url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/ann-kristin-juschka/seminar-ws2013.html
+          - title: Abelsche Varietäten I
+            instructor: Prof. Dr. Böckle, Dr. Tommaso Centeleghe
+            course_type: Lecture
+          - title: 'Arithmetik von Zahl- und Funktionenkörpern: "Modularity Lifting"'
+            instructor: Prof. Dr. Böckle, Dr. Cerviño, Fischer
+            course_type: Seminar
+            links:
+              - url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/konrad-fischer/mls-ws13.html
+      - semester: Summer term 2013
+        courses:
+          - title: Algebraische Geometrie 2
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+            links:
+              - url: http://elearning2.uni-heidelberg.de/course/view.php?id=1026
+          - title: Seminar "Torische Varietäten"
+            instructor: Prof. Dr. Böckle
+            course_type: Seminar
+            links:
+              - url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/konrad-fischer/toric-ss13.html
+          - title: Seminar "Trianguline Representations"
+            instructor: Prof. Dr. Böckle
+            course_type: Seminar
+            pdfs:
+              - {}
+          - title: Group cohomology
+            instructor: Dr. Cerviño
+            course_type: Lecture
+            links:
+              - url: http://www.rzuser.uni-heidelberg.de/~f25/kvv/ss2013/k-3.htm
+          - title: Exercise sessions for "Lineare Algebra 2"
+            instructor: Dr. Maurischat
+            course_type: Exercise
+            links:
+              - url: http://www.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/la2-ss2013/index.html
+  - year: 2012
+    semesters:
+      - semester: Winter term 2012/2013
+        courses:
+          - title: Algebraische Geometrie 1
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+            links:
+              - url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/konrad-fischer/ag1-ws2012.html
+          - title: Seminar "Affine algebraische Gruppen"
+            instructor: Prof. Dr. Böckle, Dr. Cerviño
+            course_type: Seminar
+            pdfs:
+              - {}
+          - title: Exercise sessions for "Lineare Algebra 1"
+            instructor: Dr. Maurischat
+            course_type: Exercise
+            links:
+              - url: http://www.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/la1-ws2012/index.html
+          - title: Exercise sessions for "Analytic number theory"
+            instructor: Qiu
+            course_type: Exercise
+            links:
+              - url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/yujia-qiu/az1-ws2012.html
+          - title: Seminar "Transcendence theory in positive characteristic"
+            instructor: Prof. Dr. Böckle, Dr. Hubschmid
+            course_type: Seminar
+            pdfs:
+              - {}
+      - semester: Summer term 2012
+        courses:
+          - title: Algebra 2
+            instructor: Dr. Cerviño
+            course_type: Lecture
+            links:
+              - url: http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ss2012/g-9.htm
+          - title: Exercise sessions for "Computeralgebra"
+            instructor: Dr. Maurischat
+            course_type: Exercise
+            links:
+              - url: http://www.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/uebungen/compalg-ss2012/index.html
+          - title: Seminar "Automorphic Forms and representations of GL2"
+            instructor: Dr. Cerviño, Dr. Centeleghe
+            course_type: Seminar
+            pdfs:
+              - {}
+  - year: 2011
+    semesters:
+      - semester: Winter term 2011/12
+        courses:
+          - title: Algebra 1
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+            links:
+              - url: http://www.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/algebra1-ws2011/index.html
+          - title: Proseminar "Bilinear forms and classical groups"
+            instructor: Prof. Dr. Böckle, Dr. Maurischat
+            course_type: Seminar
+            links:
+              - url: http://www.iwr.uni-heidelberg.de/groups/arith-geom/maurischat/uebungen/bilinearformen.html
+          - title: Seminar "Borcherds Products"
+            instructor: Prof. Dr. Böckle, Dr. Cerviño
+            course_type: Seminar
+            pdfs:
+              - {}
+          - title: Seminar "Ikeda-Lift"
+            instructor: Dr. Bouganis, Dr. Cerviño, Dr. Kasten
+            course_type: Seminar
+            pdfs:
+              - {}
+  - year: 2010
+    semesters:
+      - semester: Winter term 2010/11
+        courses:
+          - title: Linear Algebra 1
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+            links:
+              - url: http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ws2010/g-5.htm
+          - title: Algebraic groups and buildings
+            instructor: Prof. Dr. Böckle, Dr. Cerviño
+            course_type: Lecture
+            links:
+              - url: http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ws2010/x-2.htm
+          - title: Seminar "Hecke operators and their algorithmic"
+            instructor: Prof. Dr. Böckle, Dr. Centeleghe
+            course_type: Seminar
+            links:
+              - url: http://www.ub.uni-heidelberg.de/helios/fachinfo/www/math/kvv/ws2010/s-6.htm
+          - title: Exercise sessions for "Introduction to elementary geometry"
+            instructor: Ralf Butenuth
+            course_type: Exercise
+            links:
+              - url: http://www.iwr.uni-heidelberg.de/groups/arith-geom/butenuth/geometrie/index.html
+  - year: 2009
+    semesters:
+      - semester: Winter term 2009/2010 (Duisburg-Essen)
+        courses:
+          - title: "Arbeitsgemeinschaft: The Eigencurve"
+            instructor: mit U. Goertz und G. Wiese
+            course_type: Seminar
+            pdfs:
+              - {}
+          - title: Mathematik Vorkurs
+            instructor: Dr. Cerviño
+            course_type: Lecture
+      - semester: Summer term 2009 (Duisburg-Essen)
+        courses:
+          - title: Mathematik für Biologen
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+          - title: "Arbeitsgemeinschaft: Study group on p-adic L-functions and the
+              Mazur-Tate-Teitelbaum conjecture"
+            instructor: G. Böckle, G. Wiese
+            course_type: Seminar
+            pdfs:
+              - {}
+  - year: 2008
+    semesters:
+      - semester: Winter term 2008/09 (Duisburg-Essen)
+        courses:
+          - title: Anwendungsoriente Algebra und Zahlentheorie
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+          - title: Mathematik Vorkurs
+            instructor: Dr. Cerviño
+            course_type: Lecture
+          - title: Riemannsche Flächen 1
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+          - title: "Arbeitsgemeinschaft: p-adische Galoisdarstellungen"
+            instructor: G. Böckle, G. Wiese
+            course_type: Seminar
+            pdfs:
+              - {}
+      - semester: Summer term 2008 (Duisburg-Essen)
+        courses:
+          - title: Explizite Klassenkörpertheorie
+            instructor: Prof. Böckle
+            course_type: Lecture
+          - title: Seminar "Quadratische Formen"
+            instructor: Prof. Dr. Böckle, Dr. Cerviño
+            course_type: Seminar
+            pdfs:
+              - {}
+          - title: "Arbeitsgemeinschaft: Eine kanonische Kompaktifizierung des Modulraums
+              Abelscher Varietäten"
+            instructor: G. Böckle, G. Hein
+            course_type: Seminar
+            pdfs:
+              - {}
+          - title: "Arbeitsgemeinschaft: Quaternionenalgebren"
+            instructor: G. Böckle, J.-M. Cerviño, G. Wiese
+            course_type: Seminar
+            pdfs:
+              - {}
+  - year: 2007
+    semesters:
+      - semester: Winter term 2007/08 (Duisburg-Essen)
+        courses:
+          - title: Sabbatical term
+            course_type: Other
+          - title: Mathematik Vorkurs
+            instructor: Dr. Cerviño
+            course_type: Lecture
+          - title: "Arbeitsgemeinschaft: Kolyvagin's Euler system for elliptic curves"
+            instructor: G. Böckle, G. Frey
+            course_type: Seminar
+            pdfs:
+              - {}
+      - semester: Summer term 2007 (Duisburg-Essen)
+        courses:
+          - title: Algebraische Zahlentheorie 2
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+          - title: Seminar "Elliptische Kurven"
+            instructor: Prof. Dr. Böckle, Dr. Cerviño
+            course_type: Seminar
+            pdfs:
+              - {}
+          - title: "Arbeitsgemeinschaft: Einführung in die Theorie der Automorphen Formen"
+            instructor: P. Angel, G. Böckle, J.-M. Cerviño, G. Wiese
+            course_type: Seminar
+            pdfs:
+              - {}
+          - title: Übungen zu "Lineare Algebra II"
+            instructor: Dr. Cerviño
+            course_type: Exercise
+  - year: 2006
+    semesters:
+      - semester: Winter term 2006/07 (Duisburg-Essen)
+        courses:
+          - title: Algebraische Zahlentheorie 1
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+          - title: Seminar "Homologische Algebra"
+            instructor: Prof. Dr. Böckle, Dr. Cerviño
+            course_type: Seminar
+          - title: Übungen zu "Mathematik für Ingenieure"
+            instructor: Dr. Cerviño
+            course_type: Exercise
+      - semester: Summer term 2006 (Duisburg-Essen)
+        courses:
+          - title: Algebra 2
+            instructor: Prof. Böckle
+            course_type: Lecture
+          - title: Proseminar "Zahlentheorie"
+            instructor: Prof. Dr. Böckle
+            course_type: Seminar
+          - title: "Arbeitsgemeinschaft: Über eine Vermutung von A.J. de Jong"
+            instructor: G. Böckle, H. Esnault, J. Heinloth
+            course_type: Seminar
+  - year: 2005
+    semesters:
+      - semester: Winter term 2005/06 (Duisburg-Essen)
+        courses:
+          - title: Algebra 1
+            instructor: Prof. Böckle
+            course_type: Lecture
+          - title: Proseminar "Aspekte zum Thema Zahlen"
+            instructor: Prof. Dr. Böckle
+            course_type: Seminar
+          - title: "Arbeitsgemeinschaft: Galoisdarstellungen zu Modulformen"
+            instructor: G. Böckle, G. Frey, M. Möller
+            course_type: Seminar
+      - semester: Summer term 2005 (Duisburg-Essen)
+        courses:
+          - title: Lineare Algebra 2
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+          - title: "Arbeitsgemeinschaft: Hilbertsche Modulformen"
+            instructor: G. Böckle, C. Diem, G. Frey, M. Möller
+            course_type: Seminar
+  - year: 2004
+    semesters:
+      - semester: Winter term 2004/05 (Duisburg-Essen)
+        courses:
+          - title: Lineare Algebra 1
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+          - title: Arithmetik von Modulformen
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+      - semester: Summer term 2004 (Duisburg-Essen)
+        courses:
+          - title: Drinfeld Moduln
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+          - title: Seminar "Elementare Algorithmen in der Zahlentheorie"
+            instructor: Prof. Dr. Böckle
+            course_type: Seminar
+          - title: "Arbeitsgemeinschaft: Klassenkörpertheorie"
+            instructor: G. Böckle, G. Frey, I. Bouw, C. Diem
+            course_type: Seminar
+  - year: 2003
+    semesters:
+      - semester: Winter term 2003/04 (Duisburg-Essen)
+        courses:
+          - title: Anwendungsorientierte Zahlentheorie und Algebra
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture
+          - title: "Schwerpunktseminar Zahlentheorie: Pointcounting over finite fields"
+            instructor: G. Böckle, G. Frey, I. Bouw, C. Diem
+            course_type: Seminar
+      - semester: Summer term 2003 (Duisburg-Essen)
+        courses:
+          - title: Elliptische Kurven und Anwendungen in der Krytographie
+            instructor: Prof. Dr. Böckle
+            course_type: Lecture

@@ -1,0 +1,142 @@
+---
+layout: default
+---
+
+<div class="member-profile-page mb-5 pb-5">
+  <div class="container member-content-container pt-5">
+    <div class="row">
+      <!-- Left Column: Photo & Contact Info -->
+      <div class="col-lg-3">
+        <div class="member-sidebar">
+          <!-- Photo -->
+          <div class="member-photo-wrapper mb-4">
+            {% if page.photo %}
+            <img src="{{ page.photo | relative_url }}" alt="{{ page.title }}" class="member-avatar shadow">
+            {% else %}
+            <div class="member-avatar-placeholder shadow d-flex align-items-center justify-content-center">
+              <i class="fas fa-user fa-3x text-secondary"></i>
+            </div>
+            {% endif %}
+          </div>
+
+          <!-- Contact Card -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+              <h5 class="card-title h6 text-uppercase text-muted mb-3">Contact</h5>
+
+              {% if page.email %}
+              <div class="mb-3">
+                <a href="mailto:{{ page.email }}" class="d-flex align-items-center text-decoration-none text-dark">
+                  <div class="icon-box me-2"><i class="fas fa-envelope text-primary"></i></div>
+                  <span class="text-break small">{{ page.email }}</span>
+                </a>
+              </div>
+              {% endif %}
+
+              {% if page.links %}
+              <div class="social-links">
+                {% for link in page.links %}
+                {% assign icon_class = link.icon %}
+                {% unless icon_class %}
+                {% assign link_text_down = link.text | downcase %}
+                {% if link_text_down contains "profile" %}
+                {% assign icon_class = "fas fa-user" %}
+                {% elsif link_text_down contains "website" or link_text_down contains "webpage" %}
+                {% assign icon_class = "fas fa-globe" %}
+                {% elsif link_text_down contains "publication" %}
+                {% assign icon_class = "fas fa-book" %}
+                {% elsif link_text_down contains "email" %}
+                {% assign icon_class = "fas fa-envelope" %}
+                {% else %}
+                {% assign icon_class = "fas fa-link" %}
+                {% endif %}
+                {% endunless %}
+                <a href="{{ link.url }}" class="btn btn-outline-light text-dark border mb-2 w-100 text-start btn-sm"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="{{ icon_class }} me-2 text-secondary"></i> {{ link.text }}
+                </a>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- CV Download -->
+          {% if page.cv %}
+          <a href="{{ page.cv | relative_url }}" class="btn btn-primary w-100 shadow-sm mb-4" target="_blank">
+            <i class="fas fa-file-pdf me-2"></i> Download CV
+          </a>
+          {% endif %}
+
+          <!-- Education (Mobile/Sidebar) -->
+          {% if page.education %}
+          <div class="d-none d-lg-block">
+            <h5 class="h6 text-uppercase text-muted mb-3 mt-2">Education</h5>
+            <div class="education-timeline-sidebar">
+              {% for edu in page.education %}
+              <div class="edu-item mb-3 ps-3 border-start border-2 border-primary">
+                <div class="small fw-bold text-primary">{{ edu.year }}</div>
+                <div class="small fw-bold">{{ edu.degree }}</div>
+                <div class="small text-muted">{{ edu.institution }}</div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Right Column: Main Content -->
+      <div class="col-lg-9">
+        <div class="member-main-content ps-lg-4">
+
+          <!-- Header Info -->
+          <div class="mb-4">
+            <h1 class="member-name h2 fw-bold text-dark mb-1">{{ page.title }}</h1>
+            <p class="member-role h5 text-muted mb-2">{{ page.role }}</p>
+            <span class="badge bg-secondary-soft text-secondary border">{{ page.group }}</span>
+          </div>
+
+          <!-- Biography -->
+          <div class="mb-5">
+            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Biography</h2>
+            <div class="member-bio text-secondary">
+              {{ content }}
+            </div>
+          </div>
+
+          <!-- Research Interests -->
+          {% if page.research_interests %}
+          <div class="mb-5">
+            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Research Interests</h2>
+            <div class="d-flex flex-wrap gap-2">
+              {% for interest in page.research_interests %}
+              <span class="badge bg-light text-dark border px-3 py-2 fw-normal">{{ interest }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Education (Mobile Only) -->
+          {% if page.education %}
+          <div class="d-lg-none mb-5">
+            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Education</h2>
+            <div class="education-timeline">
+              {% for edu in page.education %}
+              <div class="d-flex mb-3">
+                <div class="fw-bold text-primary me-3" style="min-width: 100px;">{{ edu.year }}</div>
+                <div>
+                  <div class="fw-bold">{{ edu.degree }}</div>
+                  <div class="text-muted">{{ edu.institution }}</div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

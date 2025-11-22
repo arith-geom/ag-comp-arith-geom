@@ -1,76 +1,188 @@
 sections:
-- title: Head of Research Group
-  members:
-    - name: Prof. Dr. Placeholder
-      role: Professor & Group Leader
-      photo: https://fpoimg.com/150x150?bg_color=cccccc&text_color=969696
-      description: "Leading the research group with a focus on innovative and collaborative projects."
-      links:
-        - url: "mailto:placeholder.email@example.com"
-          icon: "fas fa-envelope"
-          text: "Email"
-        - url: "#"
-          icon: "fab fa-google-scholar"
-          text: "Scholar"
-        - url: "#"
-          icon: "fab fa-linkedin"
-          text: "LinkedIn"
-        - url: "#"
-          icon: "fas fa-globe"
-          text: "Website"
+  - title: Head
+    layout: big
+    members:
+      - name: Prof. Dr. Gebhard Böckle
+        role: Group Leader
+        group: Members
+        photo: /assets/img/gebhard-boeckle.jpg
+        body: Professor for Computational Arithmetic Geometry.
+  - title: Secretary
+    layout: big
+    members:
+      - name: Astrid Cederbaum
+        role: Secretary
+        group: Members
+        photo: /assets/img/astrid-cederbaum.jpg
+        cv: /assets/img/Design ohne Titel.png
+        body: Secretary for the research group.
+  - title: Members
+    layout: medium
+    members:
+      - name: Dr. Andrea Conti
+        role: Researcher
+        group: Members
+        photo: /assets/img/andrea-conti.jpg
+        email: sada@gmail.,com
+        cv: /assets/img/Design ohne Titel.png
+        research_interests: ssssssssssssssss
+        education:
+          - year: "2024"
+            degree: sa
+            institution: dsa
+        body: dasdasdsaadsdasasdsdaasd
+      - name: Paola Chilla
+        role: PhD Student
+        group: Members
+        photo: /assets/img/paola-chilla.jpg
+        email: sdadasdas@gmail.com
+        education:
+          - year: 2022 - Present
+            degree: PhD Student
+            institution: Heidelberg University
+          - year: 2020 - 2022
+            degree: Master of Science in Mathematics
+            institution: University of Bonn
+        body: This is a test description for Paola Chilla. If you can see this, the page
+          is working. The new layout should show the education and research
+          interests sections.
+      - name: Sriram Chinthalagiri Venkata
+        role: PhD Student
+        group: Members
+        photo: /assets/img/sriram-chinthalagiri-venkata.jpg
+      - name: Theresa Kaiser
+        role: PhD Student
+        group: Members
+        photo: /assets/img/theresa-kaiser.jpg
+      - name: Dr. Giacomo Hermes Ferraro
+        role: dsadsadsa
+        group: Members
+        photo: /assets/img/giacomo-hermes-ferraro.jpg
+        description: dsadsadasdas
+        body: >-
+          layout: member name: Dr. Giacomo Hermes Ferraro role: Researcher
+          group: Members photo: /assets/img/giacomo-hermes-ferraro.jpg email:
+          [dsadas@gmail.com](mailto:dsadas@gmail.com) research\_interests:
 
-- title: Secretary
-  members:
-    - name: Jane Doe
-      role: Secretary
-      photo: https://fpoimg.com/150x150?bg_color=cccccc&text_color=969696
-      description: "Managing administrative tasks and ensuring the smooth operation of the research group."
-      links:
-        - url: "mailto:jane.doe@example.com"
-          icon: "fas fa-envelope"
-          text: "Email"
-        - url: "#"
-          icon: "fas fa-phone"
-          text: "Phone"
 
-- title: Research Members
-  members:
-    - name: Dr. Alice Smith
-      role: Postdoctoral Researcher
-      photo: https://fpoimg.com/100x100?bg_color=cccccc&text_color=969696
-      description: "Researching advanced topics in computational geometry and its applications."
-      links:
-        - url: "mailto:alice.smith@example.com"
-          icon: "fas fa-envelope"
-          text: "Email"
-        - url: "#"
-          icon: "fab fa-google-scholar"
-          text: "Scholar"
-    - name: Bob Johnson
-      role: PhD Candidate
-      photo: https://fpoimg.com/100x100?bg_color=cccccc&text_color=969696
-      description: "Developing new algorithms for data analysis in high-dimensional spaces."
-      links:
-        - url: "mailto:bob.johnson@example.com"
-          icon: "fas fa-envelope"
-          text: "Email"
-        - url: "#"
-          icon: "fab fa-linkedin"
-          text: "LinkedIn"
-    - name: Charlie Brown
-      role: PhD Candidate
-      photo: https://fpoimg.com/100x100?bg_color=cccccc&text_color=969696
-      description: "Exploring the intersection of machine learning and algebraic geometry."
-      links:
-        - url: "mailto:charlie.brown@example.com"
-          icon: "fas fa-envelope"
-          text: "Email"
+          *   Arithmetic Geometry education:
 
-- title: Former Members
-  members:
-    - name: Dr. David Williams
-      role: Postdoctoral Researcher (2020-2023)
-    - name: Dr. Eve Davis
-      role: PhD (2018-2022)
-    - name: Frank Miller
-      role: Research Assistant (2021-2022)
+          *   year: s degree: PhD institution: Heidelberg links:
+
+          *   url: dsadas icon: dasdsa text: dsadsa
+
+
+          * * *
+
+
+          This is a test description.dsa
+      - name: Alireza Shavali
+        role: PhD Student
+        group: Members
+        photo: /assets/img/alireza-shavali.jpg
+  - title: Former Members
+    layout: small
+    members:
+      - name: Dr. Oguz Gezmiş
+        role: Former Member
+        group: Members
+        photo: /assets/img/oguz-gezmis.jpg
+      - name: Prof. Dr. Judith Ludwig
+        role: Former Member
+        group: Members
+        photo: /assets/img/judith-ludwig.jpg
+        links:
+          - url: https://www.judith-ludwig.com/
+            text: Website
+      - name: Dr. Julian Quast
+        role: Former Member
+        group: Members
+        photo: /assets/img/julian-quast.jpg
+      - name: Dr. Peter Gräf
+        role: Former Member
+        group: Members
+        photo: /assets/img/peter-graef.jpg
+      - name: Dr. Barinder Banwait
+        role: Former Member
+        group: Members
+        photo: /assets/img/barinder-banwait.jpg
+      - name: Dr. Özge Ülkem
+        role: Former Member
+        group: Members
+        photo: /assets/img/oezge-uelkem.jpg
+      - name: Dr. Andreas Maurischat
+        role: Former Member
+        group: Members
+        photo: /assets/img/andreas-maurischat.jpg
+      - name: Konrad Fischer
+        role: Former Member
+        group: Members
+        photo: /assets/img/konrad-fischer.jpg
+      - name: Dr. David-A. Guiraud
+        role: Former Member
+        group: Members
+        photo: /assets/img/david-a-guiraud.jpg
+      - name: Dr. Rudolph Perkins
+        role: Former Member
+        group: Members
+        photo: /assets/img/rudolph-perkins.jpg
+        links:
+          - url: https://rudolphperkins.wordpress.com/
+            text: Website
+      - name: Dr. Samuele Anni
+        role: Former Member
+        group: Members
+        photo: /assets/img/samuele-anni.jpg
+        links:
+          - url: https://sites.google.com/view/samuele-anni/home
+            text: Website
+      - name: Dr. Ann-Kristin Juschka
+        role: Former Member
+        group: Members
+        photo: /assets/img/ann-kristin-juschka.jpg
+      - name: Dr. Juan Marcos Cerviño
+        role: Former Member
+        group: Members
+        photo: /assets/img/juan-marcos-cervino.jpg
+      - name: Dr. Yujia Qiu
+        role: Former Member
+        group: Members
+        photo: /assets/img/yujia-qiu.jpg
+      - name: Dr. Tommaso Centeleghe
+        role: Former Member
+        group: Members
+        photo: /assets/img/tommaso-centeleghe.jpg
+      - name: Dr. Patrik Hubschmid
+        role: Former Member
+        group: Members
+        photo: /assets/img/patrik-hubschmid.jpg
+      - name: Dr. Yamidt Bermudez Tobon
+        role: Former Member
+        group: Members
+        photo: /assets/img/yamidt-bermudez-tobon.jpg
+      - name: Dr. Alain Muller
+        role: Former Member
+        group: Members
+        photo: /assets/img/alain-muller.jpg
+      - name: Dr. Sundeep Balaji
+        role: Former Member
+        group: Members
+        photo: /assets/img/sundeep-balaji.jpg
+      - name: Dr. Ralf Butenuth
+        role: Former Member
+        group: Members
+        photo: /assets/img/ralf-butenuth.jpg
+        links:
+          - url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/ralf-butenuth/publications.html
+            text: Publications
+      - name: Dr. Narasimha Kumar Cheraku
+        role: Former Member
+        group: Members
+        photo: /assets/img/narasimha-kumar-cheraku.jpg
+        links:
+          - url: https://sites.google.com/site/chnarasimhakumar/
+            text: Website
+      - name: Dr. Archiebold Karumbidza
+        role: Former Member
+        group: Members
+        photo: /assets/img/archiebold-karumbidza.jpg

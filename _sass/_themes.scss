@@ -21,24 +21,27 @@
   --gray-700: #374151;
   --gray-800: #1F2937;
   --gray-900: #111827;
-  
+
   /* Light Mode - MAXIMUM CONTRAST */
   --bg-primary: var(--gray-50);
   --bg-secondary: var(--gray-100);
   --bg-accent: #FEF2F2;
-  
-  --text-primary: var(--black);         /* Pure black text */
-  --text-secondary: var(--gray-900);    /* Very dark gray */
-  --text-muted: var(--gray-600);        /* Medium gray - still readable */
-  
+
+  --text-primary: var(--black);
+  /* Pure black text */
+  --text-secondary: var(--gray-900);
+  /* Very dark gray */
+  --text-muted: var(--gray-600);
+  /* Medium gray - still readable */
+
   --border-color: var(--gray-400);
-  
+
   --link-color: var(--heidelberg-red);
   --link-hover: var(--heidelberg-red-dark);
-  
+
   --primary: var(--heidelberg-red);
   --primary-text: var(--white);
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -47,30 +50,62 @@
   /* Transitions */
   --transition-fast: 150ms ease-out;
   --transition-base: 200ms ease-out;
+
+  /* Footer Specific Variables */
+  --footer-bg-color: #C61826;
+  --footer-text-color: #FFF;
+  --footer-secondary-text-color: #FFF;
+  --footer-heading-color: #fff;
+  --footer-border-color: #000;
+  --footer-link-color: #FFF;
+  --footer-link-hover-color: #000;
+  --footer-icon-color: var(--white);
+  --footer-logo-bg: transparent;
+  --footer-logo-filter: invert(0);
 }
 
 /* Dark Mode - MAXIMUM CONTRAST */
 [data-theme="dark"] {
-  --bg-primary: var(--black);           /* Pure black background */
-  --bg-secondary: var(--gray-900);      /* Dark gray */
+  --bg-primary: var(--black);
+  /* Pure black background */
+  --bg-secondary: var(--gray-900);
+  /* Dark gray */
   --bg-accent: #5B0B11;
-  
-  --text-primary: var(--white);         /* Pure white text */
-  --text-secondary: var(--gray-100);    /* Very light gray */
-  --text-muted: var(--gray-400);        /* Medium gray - still readable on black */
-  
+
+  --text-primary: var(--white);
+  /* Pure white text */
+  --text-secondary: var(--gray-100);
+  /* Very light gray */
+  --text-muted: var(--gray-400);
+  /* Medium gray - still readable on black */
+
   --border-color: var(--gray-700);
-  
-  --link-color: #F58C91;                /* Bright red for dark mode visibility */
-  --link-hover: #F06B73;                /* Brighter on hover */
-  
-  --primary: #EC4A55;                   /* Bright red for dark mode */
-  --primary-text: var(--white);         /* White text on bright red */
-  
+
+  --link-color: #F58C91;
+  /* Bright red for dark mode visibility */
+  --link-hover: #F06B73;
+  /* Brighter on hover */
+
+  --primary: #EC4A55;
+  /* Bright red for dark mode */
+  --primary-text: var(--white);
+  /* White text on bright red */
+
   /* Dark mode shadows - use white for visibility */
   --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.1);
   --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.15), 0 2px 4px -1px rgba(255, 255, 255, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.2), 0 4px 6px -2px rgba(255, 255, 255, 0.1);
+
+  /* Footer Dark Mode Variables */
+  --footer-bg-color: var(--black);
+  --footer-text-color: var(--gray-300);
+  --footer-secondary-text-color: var(--gray-400);
+  --footer-heading-color: var(--gray-100);
+  --footer-border-color: var(--gray-800);
+  --footer-link-color: var(--gray-300);
+  --footer-link-hover-color: var(--white);
+  --footer-icon-color: var(--white);
+  --footer-logo-filter: invert(1);
 }
 
 /* Global Base Styles */

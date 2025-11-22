@@ -23,51 +23,48 @@ description: "An overview of our courses, seminars, and lectures, organized by s
   {% endif %}
 {% endif %}
 
-<div class="timeline-section">
-  <h2 class="timeline-title">Courses Timeline</h2>
-  <div class="teaching-by-semester-container">
-    {% assign all_semesters = "" | split: "," %}
+<div class="teaching-by-semester-container">
     {% for year_data in site.data.teaching.courses %}
       {% for semester in year_data.semesters %}
-        {% assign all_semesters = all_semesters | push: semester %}
-      {% endfor %}
-    {% endfor %}
-
-    {% for semester in all_semesters %}
-      {% assign highlight_class = "" %}
-      {% if semester.semester == current_semester_string %}
-        {% assign highlight_class = "highlight-current" %}
-      {% endif %}
-      <div class="semester-section {{ highlight_class | strip }}">
-        <h4 class="semester-title">{{ semester.semester }}</h4>
-        {% for course in semester.courses %}
-          <div class="course-card">
-            <h5 class="course-title">{{ course.title }}</h5>
-            {% if course.instructor %}
-              <p class="course-instructor"><i class="fas fa-user-tie"></i> {{ course.instructor }}</p>
-            {% endif %}
-            <div class="course-body">
-              {% if course.description and course.description != "" %}
-                <p>{{ course.description }}</p>
+        {% assign highlight_class = "" %}
+        {% if semester.semester == current_semester_string %}
+          {% assign highlight_class = "highlight-current" %}
+        {% endif %}
+        <div class="semester-section {{ highlight_class | strip }}">
+          <h4 class="semester-title">{{ semester.semester }}</h4>
+          {% for course in semester.courses %}
+            <div class="course-card position-relative">
+              <h5 class="course-title">
+                {% assign course_slug = course.title | slugify %}
+                {% assign semester_slug = semester.semester | slugify %}
+                <a href="{{ '/teaching/' | append: year_data.year | append: '/' | append: semester_slug | append: '/' | append: course_slug | append: '/' | relative_url }}" class="text-decoration-none text-dark stretched-link">{{ course.title }}</a>
+              </h5>
+              {% if course.instructor %}
+                <p class="course-instructor"><i class="fas fa-user-tie"></i> {{ course.instructor }}</p>
               {% endif %}
-              {% if course.links or course.pdfs %}
-                <div class="course-resources">
+              <div class="course-body">
+                {% if course.description and course.description != "" %}
+                  <p>{{ course.description }}</p>
+                {% endif %}
+                
+                {% if course.links or course.pdfs %}
+                <div class="course-resources mt-2 position-relative" style="z-index: 2;">
                   {% for link in course.links %}
-                    <a href="{{ link.url }}" class="resource-link" target="_blank" rel="noopener">
+                    <a href="{{ link.url }}" class="btn btn-sm btn-outline-primary me-1 mb-1" target="_blank" rel="noopener">
                       <i class="fas fa-external-link-alt"></i> {{ link.label | default: "More Info" }}
                     </a>
                   {% endfor %}
                   {% for pdf in course.pdfs %}
-                    <a href="{{ pdf.file | relative_url }}" class="resource-link" target="_blank" rel="noopener">
+                    <a href="{{ pdf.file | relative_url }}" class="btn btn-sm btn-outline-danger me-1 mb-1" target="_blank" rel="noopener">
                       <i class="fas fa-file-pdf"></i> {{ pdf.label | default: "PDF" }}
                     </a>
                   {% endfor %}
                 </div>
-              {% endif %}
+                {% endif %}
+              </div>
             </div>
-          </div>
-        {% endfor %}
-      </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
     {% endfor %}
-  </div>
 </div>

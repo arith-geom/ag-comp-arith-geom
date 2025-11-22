@@ -1,5 +1,32 @@
 <!-- Metadata, OpenGraph and Schema.org -->
-{% include metadata.liquid %}
+{% seo %}
+
+<!-- JSON-LD for Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "{{ site.university }}"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "{{ site.contact.phone }}",
+    "email": "{{ site.contact.email }}",
+    "contactType": "scientific support"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.contact.address | split: ', ' | first }}",
+    "addressLocality": "Heidelberg",
+    "postalCode": "{{ site.contact.address | split: ', ' | index: 1 }}",
+    "addressCountry": "DE"
+  }
+}
+</script>
 
 <!-- Vendor CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -96,7 +123,7 @@
     }
   };
 </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="{{ '/assets/js/components/mathjax-setup.js' | relative_url | bust_file_cache }}"></script>
 

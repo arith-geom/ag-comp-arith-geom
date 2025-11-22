@@ -1,165 +1,184 @@
 @use "../variables" as v;
+
 /*--------------------------------------------------------------
 # Members Page Layout
 --------------------------------------------------------------*/
+
 .members-page {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 1.5rem; // Reduced gap between sections
 
+  // Responsive grid layout for larger screens
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
 
-    .member-section-head-of-research-group {
-      grid-area: head;
-    }
-    .member-section-secretary {
-      grid-area: secretary;
-    }
-    .member-section-research-members {
-      grid-area: members;
-    }
-    .member-section-former-members {
-      grid-area: former;
+    // Default: sections take full width
+    .member-section {
+      grid-column: 1 / -1;
     }
 
-    grid-template-areas:
-      "head secretary"
-      "members members"
-      "former former";
+    // Exception: Big layout takes 1 column (allows side-by-side)
+    .section-layout-big {
+      grid-column: span 1;
+    }
   }
 
+
   .member-section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 0; // Removed bottom margin for a tighter layout
   }
 
   .section-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem; // Slightly smaller title
     color: var(--text-primary);
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: 1rem; // Reduced margin below title
+    padding-bottom: 0.25rem;
     border-bottom: 2px solid var(--primary);
   }
 
   .content-grid {
     display: grid;
-    gap: 1.25rem;
+    gap: 1rem; // Reduced gap between cards
   }
 
-  /* A denser grid for active members */
-  .members-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  // Grid templates for different member sections
+  // Generic layout classes controlled by CMS
+  .section-layout-big .content-grid {
+    grid-template-columns: 1fr; // Single column for big (large photos)
   }
 
-  /* An even denser grid for the list of former members */
-  .former-members-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  .section-layout-medium .content-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Medium cards
   }
 
-  .head-of-research-group-grid, .secretary-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .research-members-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
-
-  .former-members-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  .section-layout-small .content-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // Small cards, auto-fill prevents stretching
   }
 }
 
 /*--------------------------------------------------------------
-# Compact Member Card
+# Compact Member Card - Refactored for Professionalism
 --------------------------------------------------------------*/
 .member-card {
   display: flex;
   flex-direction: column;
   height: 100%;
   background: var(--bg-primary);
-  border-radius: var(--radius-md); /* Slightly smaller radius */
+  border-radius: var(--radius-sm); // Smaller radius for a sharper look
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
 
   &:hover {
     box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: var(--primary);
   }
 
   .card-header {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem; /* Reduced padding */
+    gap: 0.5rem; // Reduced gap
+    padding: 0.5rem; // Significantly reduced padding
     background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 1rem;
+    // border-bottom: 1px solid var(--border-color); // Removed default border
+
+    // If header is the only child (no body/footer), let it fill the card
+    &:only-child {
+      flex-grow: 1;
+      border-radius: inherit; // Ensure it respects card border radius at the bottom
+    }
   }
 
+  // Show separator if card header has bordered class (applied by Liquid)
+  .card-header.bordered {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+
   .member-photo {
-    width: 50px; /* Smaller photo */
-    height: 50px;
+    width: 45px; // Smaller photo
+    height: 45px;
     border-radius: v.$radius-full;
     object-fit: cover;
     border: 2px solid var(--primary);
   }
 
   .member-photo-placeholder {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: v.$radius-full;
     background: var(--bg-tertiary);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
   }
 
   .member-header-info {
     .member-name {
-      font-size: 1.1rem; /* Smaller name font */
+      font-size: 1rem; // Smaller font
       font-weight: 600;
-      margin: 0 0 0.1rem;
+      margin: 0;
       color: var(--text-primary);
+
+      // Handle long names
+      &.long-name {
+        font-size: 0.85rem !important; // Reduce size for long names, override layout specifics
+      }
+
+      // Prevent layout breakage
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2; // Standard property
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
+
     .member-role {
-      font-size: 0.85rem; /* Smaller role font */
+      font-size: 0.8rem; // Smaller font
       color: var(--text-secondary);
       margin: 0;
     }
   }
 
   .card-body {
-    padding: 1rem; /* Reduced padding */
+    padding: 0.75rem; // Reduced padding
     flex-grow: 1;
   }
 
   .member-description {
-    font-size: 0.9rem; /* Smaller description font */
-    line-height: 1.5;
+    font-size: 0.85rem; // Smaller font
+    line-height: 1.4;
     color: var(--text-secondary);
     margin: 0;
   }
 
   .card-footer {
-    padding: 0.5rem 1rem; /* Reduced padding */
+    padding: 0.5rem 0.75rem; // Reduced padding
     background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
-    margin-top: auto;
+    // border-top: 1px solid var(--border-color); // Removed default border
+    margin-top: auto; // Pushes footer to the bottom
+
+    // Show separator if footer has bordered class (applied by Liquid)
+    &.bordered {
+      border-top: 1px solid var(--border-color);
+    }
   }
 
   .member-links {
     display: flex;
     justify-content: flex-end;
-    gap: 0.75rem;
+    gap: 0.5rem; // Reduced gap
+    min-height: 1.5rem; // Ensure consistent height even if empty (matches icon size)
+    align-items: center; // Center icons vertically
   }
 
   .btn-social {
     color: var(--text-secondary);
-    font-size: 1.1rem; /* Smaller icons */
+    font-size: 1rem; // Smaller icons
     transition: color 0.3s ease;
 
     &:hover {
@@ -168,33 +187,32 @@
   }
 }
 
-.member-section-head-of-research-group,
-.member-section-secretary {
+// Specific styles for larger photos in big layout
+.section-layout-big {
   .member-photo {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
   }
 }
 
-/* Specific styles for former members to be even more compact */
-.former-members-grid .member-card {
-  .card-header {
-    background: var(--bg-primary);
-    padding: 0.75rem;
-  }
+// Ultra-compact style for small layout
+.section-layout-small .member-card {
   .card-body {
-    padding: 0.75rem;
-    padding-top: 0;
+    padding: 0.5rem; // Reduced padding
   }
-  .member-name {
-    font-size: 1rem;
+
+  .member-header-info {
+    .member-name {
+      font-size: 0.9rem; // Smaller name
+    }
+
+    .member-role {
+      font-size: 0.75rem; // Smaller role
+    }
   }
-  .member-description {
-      font-size: 0.85rem;
-  }
+
   &:hover {
     transform: none;
     box-shadow: var(--shadow-sm);
-    border-color: var(--border-color);
   }
 }

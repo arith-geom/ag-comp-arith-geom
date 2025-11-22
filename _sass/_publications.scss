@@ -14,6 +14,7 @@
   box-shadow: var(--shadow-sm);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   .publication-main {
     flex-grow: 1;
@@ -48,65 +49,67 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 0.25rem;
     text-align: right;
     flex-shrink: 0;
     margin-left: 0.5rem;
     font-size: 0.75rem;
-
-    .publication-status,
-    .publication-mr,
-    .publication-type {
-      background-color: var(--bg-accent);
-      padding: 0.2rem 0.4rem;
-      border-radius: v.$radius-sm;
-      text-decoration: none;
-      color: var(--text-secondary);
-      display: inline-block;
-      margin-top: 0.25rem;
-    }
-
-    .publication-type {
-      .fas {
-        margin-right: 0.3rem;
-      }
-    }
-
-    .publication-status {
-      &-journal-article {
-        background-color: #d1ecf1;
-        color: #0c5460;
-      }
-
-      &-book {
-        background-color: #d4edda;
-        color: #155724;
-      }
-
-      &-submitted {
-        background-color: #fff3cd;
-        color: #856404;
-      }
-
-      &-preprint {
-        background-color: #f8d7da;
-        color: #721c24;
-      }
-
-      &-other {
-        background-color: #e2e3e5;
-        color: #383d41;
-      }
-    }
-
-    .publication-type-pdf {
-      background-color: var(--primary);
-      color: var(--primary-text);
-    }
-
-    .publication-mr {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-    }
   }
+}
+
+// Global Badge Styles
+.publication-status,
+.publication-mr,
+.publication-type {
+  background-color: var(--bg-accent);
+  padding: 0.2rem 0.4rem;
+  border-radius: v.$radius-sm;
+  text-decoration: none;
+  color: var(--text-secondary);
+  display: inline-block;
+
+}
+
+.publication-type {
+  .fas {
+    margin-right: 0.3rem;
+  }
+}
+
+.publication-status {
+  &-journal-article {
+    background-color: #d1ecf1;
+    color: #0c5460;
+  }
+
+  &-book {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  &-submitted {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  &-preprint {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+  &-other {
+    background-color: #e2e3e5;
+    color: #383d41;
+  }
+}
+
+.publication-type-pdf {
+  background-color: var(--primary);
+  color: var(--primary-text);
+}
+
+.publication-mr {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
 }

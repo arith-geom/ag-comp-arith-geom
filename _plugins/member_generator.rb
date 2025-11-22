@@ -1,0 +1,52 @@
+module Jekyll
+  class MemberPage < Page
+    def initialize(site, base, dir, member)
+      @site = site
+      @base = base
+      @dir  = dir
+      @name = 'index.html'
+
+      self.process(@name)
+      
+      # Initialize data hash with layout
+      self.data = {}
+      self.data['layout'] = 'member'
+      
+      # Set page data from member object
+      self.data['title'] = member['name']
+      self.data['name'] = member['name']
+      self.data['role'] = member['role']
+      self.data['photo'] = member['photo']
+      self.data['email'] = member['email']
+      self.data['cv'] = member['cv']
+      self.data['research_interests'] = member['research_interests']
+      self.data['education'] = member['education']
+      self.data['links'] = member['links']
+      self.data['group'] = member['group']
+      self.data['description'] = member['description'] # Short description for card
+      
+      # Handle body content (rich text)
+      self.content = member['body'] || ""
+    end
+  end
+
+  class MemberGenerator < Generator
+    safe true
+
+    def generate(site)
+      if site.data['members'] && site.data['members']['sections']
+        site.data['members']['sections'].each do |section|
+          if section['members']
+            section['members'].each do |member|
+              # Create slug from name using Jekyll's utility to match Liquid filter
+              slug = Utils.slugify(member['name'])
+              
+              # Create page at /members/:slug/
+              site.pages << MemberPage.new(site, site.source, File.join('members', slug), member)
+            end
+          end
+        end
+      end
+    end
+  end
+end
