@@ -1,0 +1,128 @@
+6:    - title: Seminar on Homological Algebra
+38:    - title: Seminar on Commutative Algebra
+44:    - title: Vorlesung Modularity and Galois Representations
+115:    - title: 'Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: Congruence
+125:    - title: Seminar on Representation theory of finite groups
+157:    - title: 'Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: Shtukas for
+165:    - title: Vorlesung Algebra 2
+173:    - title: Proseminar on Quadratic forms
+210:    - title: Vorlesung Algebra 1
+214:    - title: 'Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: Rigid meromorphic
+223:    - title: Vorlesung Lineare Algebra 2
+227:    - title: Proseminar p-adic numbers
+272:    - title: 'Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: Vectorial Drinfeld
+280:    - title: Vorlesung Lineare Algebra 1
+284:    - title: Seminar on Affine Algebraic Groups
+330:    - title: Proseminar Prime numbers and Cryptography
+422:    - title: Seminar Abelian Varieties
+467:    - title: Vorlesung Étale Kohomologie
+470:    - title: Vorlesung Computational Number Theory
+476:    - title: 'Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: Plectic Stark-Heegner
+482:    - title: Seminar Derivierte Kategorien und Algebraische Geometrie
+546:    - title: Vorlesung Algebraische Geometrie 2
+550:    - title: 'Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: Higher Hida
+558:    - title: Seminar Elliptische Kurven
+626:    - title: Vorlesung Algebraische Geometrie 1
+669:    - title: Vorlesung Algebra 2
+690:    - title: Vorlesung Adische Räume II
+751:    - title: Algebra 1
+756:    - title: 'Seminar: Affine algebraische Gruppen'
+819:    - title: 'Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern'
+824:    - title: 'Proseminar: Bilinearformen und klassische Gruppen'
+870:    - title: Kompatible Systeme von Galoisdarstellungen
+901:    - title: p-divisible Gruppen
+967:    - title: 'Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern'
+978:    - title: 'Seminar: Darstellungstheorie von GL_2'
+985:    - title: 'Seminar: Algorithmische Algebra'
+1012:    - title: Galoiskohomologie und Galoisdarstellungen
+1035:    - title: Funktionentheorie 2
+1108:    - title: 'Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern'
+1117:    - title: 'Seminar: Lokale Klassenkörpertheorie nach Lubin-Tate'
+1149:    - title: Algebraische Zahlentheorie 2
+1220:    - title: Galois representations and their deformations
+1255:    - title: 'Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern'
+1275:    - title: Algebraische Zahlentheorie 1
+1309:    - title: 'Seminar: Gruppenkohomologie'
+1346:    - title: 'Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern'
+1364:    - title: Algebra 2
+1413:    - title: 'Proseminar: Primzahlen und Faktorisierung für die Kryptographie'
+1444:    - title: 'Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern'
+1475:    - title: Lineare Algebra 2
+1481:    - title: 'Proseminar: p-adische Analysis'
+1557:    - title: 'Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern'
+1575:    - title: Lineare Algebra 1
+1585:    - title: Vorlesung "Bruhat-Tits Gebäude"
+1592:    - title: Seminar "Darstellungstheorie"
+1663:    - title: Vorlesung "Darstellungen und Invarianten 2"
+1670:    - title: 'Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "Lenny Taelman´s
+1680:    - title: Vorlesung "Automorphe Formen"
+1687:    - title: Seminar "Klassenkörpertheorie über Funktionenkörpern und Drinfeld Moduln"
+1779:    - title: Vorlesung "Darstellungen und Invarianten"
+1786:    - title: 'Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: "Recent results
+1794:    - title: Seminar "p-adische Geometrie"
+1904:    - title: Vorlesung "Algebraische Gruppen"
+1909:    - title: Spezialvorlesung "Abelsche Varietäten II"
+1914:    - title: 'Hauptseminar "Arithmetik von Zahl- und Funktionenkörpern: Shimura Varieties"'
+1923:    - title: Étale Kohomologie
+1926:    - title: Seminar "Deformationen von (Pseudo-)Darstellungen"
+2008:    - title: Abelsche Varietäten I
+2011:    - title: 'Arithmetik von Zahl- und Funktionenkörpern: "Modularity Lifting"'
+2040:    - title: Algebraische Geometrie 2
+2045:    - title: Seminar "Torische Varietäten"
+2094:    - title: Seminar "Trianguline Representations"
+2099:    - title: Group cohomology
+2104:    - title: Exercise sessions for "Lineare Algebra 2"
+2149:    - title: Algebraische Geometrie 1
+2236:    - title: Seminar "Affine algebraische Gruppen"
+2241:    - title: Exercise sessions for "Lineare Algebra 1"
+2282:    - title: Exercise sessions for "Analytic number theory"
+2369:    - title: Seminar "Transcendence theory in positive characteristic"
+2376:    - title: Algebra 2
+2381:    - title: Exercise sessions for "Computeralgebra"
+2422:    - title: Seminar "Automorphic Forms and representations of GL2"
+2431:    - title: Algebra 1
+2472:    - title: Proseminar "Bilinear forms and classical groups"
+2476:    - title: Seminar "Borcherds Products"
+2481:    - title: Seminar "Ikeda-Lift"
+2490:    - title: Linear Algebra 1
+2495:    - title: Algebraic groups and buildings
+2500:    - title: Seminar "Hecke operators and their algorithmic"
+2505:    - title: Exercise sessions for "Introduction to elementary geometry"
+2550:    - title: 'Arbeitsgemeinschaft: The Eigencurve'
+2557:    - title: Mathematik Vorkurs
+2562:    - title: Mathematik für Biologen
+2565:    - title: 'Arbeitsgemeinschaft: Study group on p-adic L-functions and the Mazur-Tate-Teitelbaum
+2578:    - title: Anwendungsoriente Algebra und Zahlentheorie
+2581:    - title: Mathematik Vorkurs
+2584:    - title: Riemannsche Flächen 1
+2587:    - title: 'Arbeitsgemeinschaft: p-adische Galoisdarstellungen'
+2596:    - title: Explizite Klassenkörpertheorie
+2599:    - title: Seminar "Quadratische Formen"
+2606:    - title: 'Arbeitsgemeinschaft: Eine kanonische Kompaktifizierung des Modulraums
+2614:    - title: 'Arbeitsgemeinschaft: Quaternionenalgebren'
+2626:    - title: Sabbatical term
+2628:    - title: Mathematik Vorkurs
+2631:    - title: 'Arbeitsgemeinschaft: Kolyvagin''s Euler system for elliptic curves'
+2640:    - title: Algebraische Zahlentheorie 2
+2643:    - title: Seminar "Elliptische Kurven"
+2650:    - title: 'Arbeitsgemeinschaft: Einführung in die Theorie der Automorphen Formen'
+2657:    - title: Übungen zu "Lineare Algebra II"
+2665:    - title: Algebraische Zahlentheorie 1
+2668:    - title: Seminar "Homologische Algebra"
+2671:    - title: Übungen zu "Mathematik für Ingenieure"
+2676:    - title: Algebra 2
+2679:    - title: Proseminar "Zahlentheorie"
+2682:    - title: 'Arbeitsgemeinschaft: Über eine Vermutung von A.J. de Jong'
+2690:    - title: Algebra 1
+2693:    - title: Proseminar "Aspekte zum Thema Zahlen"
+2696:    - title: 'Arbeitsgemeinschaft: Galoisdarstellungen zu Modulformen'
+2701:    - title: Lineare Algebra 2
+2704:    - title: 'Arbeitsgemeinschaft: Hilbertsche Modulformen'
+2712:    - title: Lineare Algebra 1
+2715:    - title: Arithmetik von Modulformen
+2720:    - title: Drinfeld Moduln
+2723:    - title: Seminar "Elementare Algorithmen in der Zahlentheorie"
+2726:    - title: 'Arbeitsgemeinschaft: Klassenkörpertheorie'
+2734:    - title: Anwendungsorientierte Zahlentheorie und Algebra
+2737:    - title: 'Schwerpunktseminar Zahlentheorie: Pointcounting over finite fields'
+2742:    - title: Elliptische Kurven und Anwendungen in der Krytographie

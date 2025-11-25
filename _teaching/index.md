@@ -24,7 +24,21 @@ description: "An overview of our courses, seminars, and lectures, organized by s
 {% endif %}
 
 <div class="teaching-by-semester-container">
+    {% assign previous_university = "" %}
     {% for year_data in site.data.teaching.courses %}
+      {% if year_data.university and year_data.university != previous_university %}
+        {% if previous_university != "" %}
+          <div class="university-separator my-5">
+            <hr class="my-4">
+            <h3 class="text-center text-muted mb-4">
+              <i class="fas fa-university me-2"></i>{{ year_data.university }}
+            </h3>
+            <hr class="my-4">
+          </div>
+        {% endif %}
+        {% assign previous_university = year_data.university %}
+      {% endif %}
+      
       {% for semester in year_data.semesters %}
         {% assign highlight_class = "" %}
         {% if semester.semester == current_semester_string %}

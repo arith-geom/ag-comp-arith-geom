@@ -9,13 +9,18 @@
   border-top: 1px solid var(--footer-border-color);
 
   // --- High-specificity selector for text elements ---
-  p, span, li, div {
+  p,
+  span,
+  li,
+  div {
     color: var(--footer-text-color);
   }
+
   // --- End ---
 
   font-size: 0.8rem;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s,
+  color 0.3s;
   padding-top: 2rem;
   padding-bottom: 2rem;
 
@@ -35,6 +40,7 @@
     max-width: 250px;
     height: auto;
     filter: var(--footer-logo-filter);
+    mix-blend-mode: multiply;
     transition: filter 0.3s;
   }
 
@@ -46,18 +52,21 @@
     text-transform: uppercase;
   }
 
-  .footer-link, .legal-link {
+  .footer-link,
+  .legal-link {
     color: var(--footer-link-color);
     text-decoration: none;
     transition: color 0.2s ease;
     font-size: 0.8rem;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: var(--footer-link-hover-color);
     }
   }
 
-  .contact-details, .contact-item {
+  .contact-details,
+  .contact-item {
     font-size: 0.8rem;
   }
 
@@ -94,7 +103,7 @@
     // Align all footer content to the left on mobile
     .contact-details,
     .list-unstyled,
-    .footer-bottom .row > div {
+    .footer-bottom .row>div {
       text-align: left !important;
     }
 
@@ -102,7 +111,7 @@
       justify-content: flex-start; // Align items to the left
     }
 
-    .footer-bottom .row > div {
+    .footer-bottom .row>div {
       margin-bottom: 0.5rem;
     }
   }

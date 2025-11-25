@@ -107,6 +107,12 @@ exclude:
   - assets/search-data-backup.json
   - assets/search-data.json
   - jules-scratch/
+  - typo_mirror/
+  - universal_migrator.py
+  - check_links.py
+  - venv/
+  - .venv/
+  - requirements.txt
 
 # Performance and regeneration settings
 incremental: false

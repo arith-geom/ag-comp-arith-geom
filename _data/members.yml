@@ -1,188 +1,254 @@
 sections:
-  - title: Head
-    layout: big
-    members:
-      - name: Prof. Dr. Gebhard Böckle
-        role: Group Leader
-        group: Members
-        photo: /assets/img/gebhard-boeckle.jpg
-        body: Professor for Computational Arithmetic Geometry.
-  - title: Secretary
-    layout: big
-    members:
-      - name: Astrid Cederbaum
-        role: Secretary
-        group: Members
-        photo: /assets/img/astrid-cederbaum.jpg
-        cv: /assets/img/Design ohne Titel.png
-        body: Secretary for the research group.
-  - title: Members
-    layout: medium
-    members:
-      - name: Dr. Andrea Conti
-        role: Researcher
-        group: Members
-        photo: /assets/img/andrea-conti.jpg
-        email: sada@gmail.,com
-        cv: /assets/img/Design ohne Titel.png
-        research_interests: ssssssssssssssss
-        education:
-          - year: "2024"
-            degree: sa
-            institution: dsa
-        body: dasdasdsaadsdasasdsdaasd
-      - name: Paola Chilla
-        role: PhD Student
-        group: Members
-        photo: /assets/img/paola-chilla.jpg
-        email: sdadasdas@gmail.com
-        education:
-          - year: 2022 - Present
-            degree: PhD Student
-            institution: Heidelberg University
-          - year: 2020 - 2022
-            degree: Master of Science in Mathematics
-            institution: University of Bonn
-        body: This is a test description for Paola Chilla. If you can see this, the page
-          is working. The new layout should show the education and research
-          interests sections.
-      - name: Sriram Chinthalagiri Venkata
-        role: PhD Student
-        group: Members
-        photo: /assets/img/sriram-chinthalagiri-venkata.jpg
-      - name: Theresa Kaiser
-        role: PhD Student
-        group: Members
-        photo: /assets/img/theresa-kaiser.jpg
-      - name: Dr. Giacomo Hermes Ferraro
-        role: dsadsadsa
-        group: Members
-        photo: /assets/img/giacomo-hermes-ferraro.jpg
-        description: dsadsadasdas
-        body: >-
-          layout: member name: Dr. Giacomo Hermes Ferraro role: Researcher
-          group: Members photo: /assets/img/giacomo-hermes-ferraro.jpg email:
-          [dsadas@gmail.com](mailto:dsadas@gmail.com) research\_interests:
+- layout: big
+  members:
+  - body: '<div class="ce-bodytext"><p><a href="http://www.uni-heidelberg.de/" target="_blank">Interdisciplinary
+      Center for Scientific Computing</a><br/><a href="http://www.uni-heidelberg.de/"
+      target="_blank">University Heidelberg</a></p><p>Secretary: <a class="internal-link"
+      href="/members/astrid-cederbaum/" title="Opens internal link in current window">Astrid
+      Cederbaum</a></p><ul><li>Email: sekretariat.boeckle &lt;at&gt; iwr.uni-heidelberg.de</li><li>Tel.:
+      ++49-(0)6221-54 14734</li></ul><p>Email: gebhard.boeckle &lt;at&gt; iwr.uni-heidelberg.de<br/>
+      Tel.: ++49-(0)6221-54 14712<br/> Fax: ++49-(0)6221-54 14737<br/>Room: 03-220
 
+      </p><p>Office Hours: by appointment
 
-          *   Arithmetic Geometry education:
+      </p><p> </p><p> Staff: <a class="internal-link" href="/members/" title="Opens
+      internal link in current window">here</a><br/> Adress: <a class="internal-link"
+      href="/contact/" title="Opens internal link in current window">here</a><br/>
+      Short CV: <a class="download" href="/assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-2014-shortCV.pdf"
+      title="Initiates file download">here</a></p></div>'
+    cv: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-2014-shortCV.pdf
+    email: gebhard.boeckle@iwr.uni-heidelberg.de
+    fax: ++49-(0)6221-54 14737
+    group: Members
+    name: Prof. Dr. Gebhard Böckle
+    office_hours: by appointment
+    phone: ++49-(0)6221-54 14712
+    photo: /assets/migrated/csm_Boeckle_d715f254f6.jpg
+    publication_name: Böckle
+    role: Group Leader
+    room: 03-220
+  title: Head
+- layout: big
+  members:
+  - body: '<div class="ce-bodytext"><h4>Astrid Cederbaum</h4><p> Mail: sekretariat.boeckle
+      &lt;at&gt; iwr.uni-heidelberg.de<br/>Tel.: ++49-(0)6221-54 14734<br/>Fax: ++49-(0)6221-54
+      14737
 
-          *   year: s degree: PhD institution: Heidelberg links:
+      </p><p>Room 03-234</p></div>'
+    fax: ++49-(0)6221-54 14737
+    group: Members
+    name: Astrid Cederbaum
+    phone: ++49-(0)6221-54 14734
+    photo: /assets/migrated/csm_Sudmann_06_99b9e54857.jpg
+    role: Secretary
+  title: Secretary
+- layout: medium
+  members:
+  - body: <div class="ce-bodytext"><p><strong>E-mail address:</strong> "contiand[at]gmail[dot]com"
+      or "andrea.conti[at]iwr[dot]uni-heidelberg[dot]de"</p><p><strong>Tel.:</strong></p><p><strong>Room:</strong>
+      3/220</p><p>Here is my <a href="https://sites.google.com/site/andreacontimath/home"
+      target="_blank" title="Opens external link in new window">private webpage</a>.</p><p> </p><p> </p></div>
+    group: Members
+    name: Dr. Andrea Conti
+    photo: /assets/migrated/csm_Andrea_Conti_1d0460d7f0.jpg
+    publication_name: Conti
+    role: Researcher
+    room: 3/220
+  - body: '<div class="ce-bodytext"><h4>Paola Chilla<br/></h4><p> Mail: <a href="mailto:paola.chilla@iwr.uni-heidelberg.de">paola.chilla
+      &lt;at&gt; iwr.uni-heidelberg.de</a><br/>Tel.: +49-(0)6221-54 14713</p><p>Room:
+      03-222</p><h4> </h4></div>'
+    group: Members
+    name: Paola Chilla
+    phone: +49-(0)6221-54 14713
+    photo: /assets/img/paola-chilla.jpg
+    role: PhD Student
+    room: 03-222
+  - body: '<div class="ce-bodytext"><h4>Sriram Chinthalagiri Venkata</h4><p>Mail:
+      <a href="mailto:sriram.chinthalagiri@iwr.uni-heidelberg.de">sriram.chinthalagiri
+      &lt;at&gt; iwr.uni-heidelberg.de</a><br/> Tel.: +49-(0)6221-54 14713</p><p>Room:
+      03/222 (INF 205)</p><h4> </h4></div>'
+    group: Members
+    name: Sriram Chinthalagiri Venkata
+    aliases:
+    - C.V. Sriram
+    publication_name: Sriram
+    phone: +49-(0)6221-54 14713
+    photo: /assets/img/sriram-chinthalagiri-venkata.jpg
+    role: PhD Student
+    room: 03/222 (INF 205)
+  - body: '<div class="ce-bodytext"><h4>Theresa Kaiser</h4><p>Mail: <a href="mailto:theresa.kaiser@iwr.uni-heidelberg.de">theresa.kaiser
+      &lt;at&gt; iwr.uni-heidelberg.de</a><br/> Tel.: +49-(0)6221-54 14713</p><p>Room:
+      03-222</p><h4> </h4></div>'
+    group: Members
+    name: Theresa Kaiser
+    phone: +49-(0)6221-54 14713
+    photo: /assets/migrated/csm_Kaiser-Theresa_aa9c1ced0f.jpeg
+    role: PhD Student
+    room: 03-222
+  - body: '<div class="ce-bodytext"><h4>Dr. Giacomo Hermes Ferraro</h4><p>Mail: <a
+      href="mailto:giacomo.ferraro@iwr.uni-heidelberg.de">giacomo.ferraro &lt;at&gt;
+      iwr.uni-heidelberg.de</a><br/> Tel.: +49-(0)6221-54 14714</p><p>Room: 03/224
+      (INF 205)</p><p>Office hours: by appointment.</p></div>'
+    group: Members
+    name: Dr. Giacomo Hermes Ferraro
+    office_hours: by appointment
+    phone: +49-(0)6221-54 14714
+    photo: /assets/img/giacomo-hermes-ferraro.jpg
+    publication_name: Ferraro
+    role: Researcher
+    room: 03/224 (INF 205)
+  - body: '<div class="ce-bodytext"><h4>Alireza Shavali</h4><p>Mail: <a href="mailto:alireza.shavali@iwr.uni-heidelberg.de">alireza.shavali
+      &lt;at&gt; iwr.uni-heidelberg.de</a><br/> Tel.: +49-(0)6221-54 14714</p><p>Private
+      webpage: <a href="https://sites.google.com/view/alireza-shavali/home" target="_blank">https://sites.google.com/view/alireza-shavali/home</a></p><p>Room:
+      03/224 (INF 205)</p><h4> </h4></div>'
+    group: Members
+    name: Alireza Shavali
+    phone: +49-(0)6221-54 14714
+    photo: /assets/migrated/csm_Shavali_e11bd855eb.jpg
+    role: PhD Student
+    room: 03/224 (INF 205)
+  title: Members
+- layout: small
+  members:
+  - body: '<div class="ce-bodytext"><h4>Oguz Gezmiş</h4><p>Mail: <a href="mailto:oguz.gezmis@iwr.uni-heidelberg.de">oguz.gezmis
+      &lt;at&gt; iwr.uni-heidelberg.de</a><br/> Tel.: +49-(0)6221-54 14714</p><p>Room:
+      03/224 (INF 205)</p><h4>Website: <a href="https://sites.google.com/view/oguzgezmis"
+      target="_blank">https://sites.google.com/view/oguzgezmis</a></h4></div>'
+    group: Members
+    name: Dr. Oguz Gezmiş
+    photo: /assets/img/oguz-gezmis.jpg
+    role: Former Member
+  - body: '<div class="ce-bodytext"><h4>Judith Ludwig</h4><p>Mail: judith.ludwig &lt;at&gt;
+      iwr.uni-heidelberg.de<br/> Room: 03/225 (INF 205)</p><p>Here is my <a href="https://sites.google.com/view/jludwig/"
+      target="_blank">webpage</a>.</p><p> </p><p>Office hours: by appointment.</p></div>'
+    group: Members
+    links:
+    - text: Website
+      url: https://www.judith-ludwig.com/
+    name: Prof. Dr. Judith Ludwig
+    photo: /assets/img/judith-ludwig.jpg
+    role: Former Member
+  - body: '<div class="ce-bodytext"><h4>Julian Quast</h4><p>Mail: julian.quast &lt;at&gt;
+      iwr.uni-heidelberg.de<br/> Mail: me &lt;at&gt; julianquast.de<br/> Tel.: +49-(0)6221-54
+      14840<br/> Room: 04/231 (INF 205)<br/> Web: <a href="http://www.julianquast.de"
+      target="_blank">www.julianquast.de</a></p></div>'
+    group: Members
+    name: Dr. Julian Quast
+    photo: /assets/img/julian-quast.jpg
+    role: Former Member
+  - body: '<div class="ce-bodytext"><h4>Peter Gräf</h4><p>Mail: peter.graef &lt;at&gt;
+      iwr.uni-heidelberg.de<br/> Tel.: +49-(0)6221-54 14715<br/> Room: 03/225 (INF
+      205)</p><p><a href="https://sites.google.com/view/peter-graef" target="_blank">Here</a>
+      is my website.</p><p><br/> Office hours: By appointment.</p></div>'
+    group: Members
+    name: Dr. Peter Gräf
+    photo: /assets/migrated/csm_Gra_f__Peter_01_a81f8eb5c5.jpg
+    role: Former Member
+  - body: '<div class="ce-bodytext"><h4>Barinder Banwait</h4><p>Mail: <a href="mailto:barinder.banwait@iwr.uni-heidelberg.de">barinder.banwait
+      &lt;at&gt; iwr.uni-heidelberg.de</a><br/> Tel.: +49-(0)6221-54 14714</p><p>Room:
+      03/224 (INF 205)</p><p>Website: https://members.vistaserv.net/barinder</p><h4> </h4></div>'
+    group: Members
+    name: Dr. Barinder Banwait
+    photo: /assets/img/barinder-banwait.jpg
+    role: Former Member
+  - body: '<div class="ce-bodytext"><h4>Özge Ülkem<br/></h4><p> Mail: <a class="mail"
+      href="mailto:oezge.uelkem@iwr.uni-heidelberg.de" title="Opens window for sending
+      email">oezge.uelkem &lt;at&gt; iwr.uni-heidelberg.de</a><br/>Tel.: +49-(0)6221-54
+      14714<br/>Fax: +49-(0)6221-54 14737</p><p>Room: 03-224</p><h4> </h4></div>'
+    group: Members
+    name: Dr. Özge Ülkem
+    photo: /assets/migrated/csm_photo3_24588f06e1.jpg
+    role: Former Member
+  - body: '<div class="ce-bodytext"><h4>Dr. Andreas Maurischat</h4><p>(if you wanted
+      to reach the website of Dr. Kathrin Maurischat, please click here.) </p><p>
+      Mail: amaurischat &lt;at&gt; mathi.uni-heidelberg.de<br/>Tel.: +49-(0)6221-54
+      14714<br/>  Room: 3/224<br/>Building: INF 205 </p><p>Office hours: by appointment
+      </p></div>'
+    group: Members
+    name: Dr. Andreas Maurischat
+    photo: /assets/migrated/csm_Maurischat_7b6f31e6ea.jpg
+    role: Former Member
+  - body: '<div class="ce-bodytext"><h4>Konrad Fischer</h4><p> Mail: konrad.fischer
+      &lt;at&gt; iwr.uni-heidelberg.de<br/>Tel.: ++49-(0)6221-54 14713<br/>Fax: ++49-(0)6221-54
+      14737<br/>Room: 03-222
 
-          *   url: dsadas icon: dasdsa text: dsadsa
+      </p><p>PGP key</p><p><br/>Office hours: wednesday from 3 to 4 p.m. or by appointment</p></div>'
+    group: Members
+    name: Konrad Fischer
+    photo: /assets/migrated/csm_image3_01_d7fd0284ac.jpg
+    role: Former Member
+  - group: Members
+    name: Dr. David-A. Guiraud
+    photo: /assets/img/david-a-guiraud.jpg
+    role: Former Member
+  - group: Members
+    links:
+    - text: Website
+      url: https://rudolphperkins.wordpress.com/
+    name: Dr. Rudolph Perkins
+    photo: /assets/img/rudolph-perkins.jpg
+    role: Former Member
+  - group: Members
+    links:
+    - text: Website
+      url: https://sites.google.com/view/samuele-anni/home
+    name: Dr. Samuele Anni
+    photo: /assets/img/samuele-anni.jpg
+    role: Former Member
+  - body: '<div class="ce-bodytext"><h4>Ann-Kristin Juschka<br/></h4><p> Mail: <a
+      class="mail" href="mailto:ann-kristin.juschka@iwr.uni-heidelberg.de" title="Opens
+      window for sending email">ann-kristin.juschka &lt;at&gt; iwr.uni-heidelberg.de</a><br/>Tel.:
+      +49-(0)6221-54 14713<br/>Fax: +49-(0)6221-54 14737
 
+      </p><p>Room: 03-222
 
-          * * *
-
-
-          This is a test description.dsa
-      - name: Alireza Shavali
-        role: PhD Student
-        group: Members
-        photo: /assets/img/alireza-shavali.jpg
-  - title: Former Members
-    layout: small
-    members:
-      - name: Dr. Oguz Gezmiş
-        role: Former Member
-        group: Members
-        photo: /assets/img/oguz-gezmis.jpg
-      - name: Prof. Dr. Judith Ludwig
-        role: Former Member
-        group: Members
-        photo: /assets/img/judith-ludwig.jpg
-        links:
-          - url: https://www.judith-ludwig.com/
-            text: Website
-      - name: Dr. Julian Quast
-        role: Former Member
-        group: Members
-        photo: /assets/img/julian-quast.jpg
-      - name: Dr. Peter Gräf
-        role: Former Member
-        group: Members
-        photo: /assets/img/peter-graef.jpg
-      - name: Dr. Barinder Banwait
-        role: Former Member
-        group: Members
-        photo: /assets/img/barinder-banwait.jpg
-      - name: Dr. Özge Ülkem
-        role: Former Member
-        group: Members
-        photo: /assets/img/oezge-uelkem.jpg
-      - name: Dr. Andreas Maurischat
-        role: Former Member
-        group: Members
-        photo: /assets/img/andreas-maurischat.jpg
-      - name: Konrad Fischer
-        role: Former Member
-        group: Members
-        photo: /assets/img/konrad-fischer.jpg
-      - name: Dr. David-A. Guiraud
-        role: Former Member
-        group: Members
-        photo: /assets/img/david-a-guiraud.jpg
-      - name: Dr. Rudolph Perkins
-        role: Former Member
-        group: Members
-        photo: /assets/img/rudolph-perkins.jpg
-        links:
-          - url: https://rudolphperkins.wordpress.com/
-            text: Website
-      - name: Dr. Samuele Anni
-        role: Former Member
-        group: Members
-        photo: /assets/img/samuele-anni.jpg
-        links:
-          - url: https://sites.google.com/view/samuele-anni/home
-            text: Website
-      - name: Dr. Ann-Kristin Juschka
-        role: Former Member
-        group: Members
-        photo: /assets/img/ann-kristin-juschka.jpg
-      - name: Dr. Juan Marcos Cerviño
-        role: Former Member
-        group: Members
-        photo: /assets/img/juan-marcos-cervino.jpg
-      - name: Dr. Yujia Qiu
-        role: Former Member
-        group: Members
-        photo: /assets/img/yujia-qiu.jpg
-      - name: Dr. Tommaso Centeleghe
-        role: Former Member
-        group: Members
-        photo: /assets/img/tommaso-centeleghe.jpg
-      - name: Dr. Patrik Hubschmid
-        role: Former Member
-        group: Members
-        photo: /assets/img/patrik-hubschmid.jpg
-      - name: Dr. Yamidt Bermudez Tobon
-        role: Former Member
-        group: Members
-        photo: /assets/img/yamidt-bermudez-tobon.jpg
-      - name: Dr. Alain Muller
-        role: Former Member
-        group: Members
-        photo: /assets/img/alain-muller.jpg
-      - name: Dr. Sundeep Balaji
-        role: Former Member
-        group: Members
-        photo: /assets/img/sundeep-balaji.jpg
-      - name: Dr. Ralf Butenuth
-        role: Former Member
-        group: Members
-        photo: /assets/img/ralf-butenuth.jpg
-        links:
-          - url: https://typo.iwr.uni-heidelberg.de/groups/arith-geom/members/ralf-butenuth/publications.html
-            text: Publications
-      - name: Dr. Narasimha Kumar Cheraku
-        role: Former Member
-        group: Members
-        photo: /assets/img/narasimha-kumar-cheraku.jpg
-        links:
-          - url: https://sites.google.com/site/chnarasimhakumar/
-            text: Website
-      - name: Dr. Archiebold Karumbidza
-        role: Former Member
-        group: Members
-        photo: /assets/img/archiebold-karumbidza.jpg
+      </p><h4> </h4></div>'
+    group: Members
+    name: Dr. Ann-Kristin Juschka
+    photo: /assets/migrated/csm_Juschka2_01_f2b754bf3f.jpg
+    role: Former Member
+  - group: Members
+    name: Dr. Juan Marcos Cerviño
+    photo: /assets/img/juan-marcos-cervino.jpg
+    role: Former Member
+  - group: Members
+    name: Dr. Yujia Qiu
+    photo: /assets/img/yujia-qiu.jpg
+    role: Former Member
+  - group: Members
+    name: Dr. Tommaso Centeleghe
+    photo: /assets/img/tommaso-centeleghe.jpg
+    role: Former Member
+  - group: Members
+    name: Dr. Patrik Hubschmid
+    photo: /assets/img/patrik-hubschmid.jpg
+    role: Former Member
+  - group: Members
+    name: Dr. Yamidt Bermudez Tobon
+    photo: /assets/img/yamidt-bermudez-tobon.jpg
+    role: Former Member
+  - group: Members
+    name: Dr. Alain Muller
+    photo: /assets/img/alain-muller.jpg
+    role: Former Member
+  - group: Members
+    name: Dr. Sundeep Balaji
+    photo: /assets/img/sundeep-balaji.jpg
+    role: Former Member
+  - group: Members
+    links: []
+    name: Dr. Ralf Butenuth
+    photo: /assets/img/ralf-butenuth.jpg
+    role: Former Member
+  - group: Members
+    links:
+    - text: Website
+      url: https://sites.google.com/site/chnarasimhakumar/
+    name: Dr. Narasimha Kumar Cheraku
+    photo: /assets/img/narasimha-kumar-cheraku.jpg
+    role: Former Member
+  - group: Members
+    name: Dr. Archiebold Karumbidza
+    photo: /assets/img/archiebold-karumbidza.jpg
+    role: Former Member
+  title: Former Members

@@ -24,6 +24,13 @@ module Jekyll
       self.data['links'] = member['links']
       self.data['group'] = member['group']
       self.data['description'] = member['description'] # Short description for card
+      self.data['phone'] = member['phone']
+      self.data['fax'] = member['fax']
+      self.data['room'] = member['room']
+      self.data['office_hours'] = member['office_hours']
+      self.data['selected_publications'] = member['selected_publications']
+      self.data['theses'] = member['theses']
+      self.data['publication_name'] = member['publication_name']
       
       # Handle body content (rich text)
       self.content = member['body'] || ""

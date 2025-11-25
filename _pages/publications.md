@@ -48,6 +48,39 @@ description: "Browse the comprehensive list of publications from the Computation
       </div>
     {% endfor %}
   </div>
+
+  {% if site.data.publications.software %}
+  <div class="software-section mt-5">
+    <h2>Software Packages</h2>
+    <div class="publication-grid">
+      {% for software in site.data.publications.software %}
+        <div class="publication-card">
+          <div class="publication-main">
+            <div class="publication-title">
+              <a href="{{ software.link }}" target="_blank" class="text-decoration-none text-dark">{{ software.title }}</a>
+            </div>
+            <div class="publication-details">
+              {{ software.description }}
+            </div>
+            <div class="publication-authors">
+              By {{ software.author }}
+            </div>
+            {% if software.thesis %}
+            <div class="publication-links mt-2">
+               <a href="{{ software.thesis }}" target="_blank">Thesis</a>
+            </div>
+            {% endif %}
+          </div>
+          <div class="publication-sidebar">
+             <a href="{{ software.link }}" target="_blank" class="publication-type publication-type-code">
+                <i class="fas fa-code"></i> {{ software.link_text }}
+             </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
 </div>
 
 <script type="application/ld+json">

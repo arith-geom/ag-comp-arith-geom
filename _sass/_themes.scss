@@ -52,16 +52,16 @@
   --transition-base: 200ms ease-out;
 
   /* Footer Specific Variables */
-  --footer-bg-color: #C61826;
-  --footer-text-color: #FFF;
-  --footer-secondary-text-color: #FFF;
-  --footer-heading-color: #fff;
-  --footer-border-color: #000;
-  --footer-link-color: #FFF;
-  --footer-link-hover-color: #000;
-  --footer-icon-color: var(--white);
+  --footer-bg-color: var(--gray-100);
+  --footer-text-color: var(--gray-900);
+  --footer-secondary-text-color: var(--gray-600);
+  --footer-heading-color: var(--gray-900);
+  --footer-border-color: var(--gray-300);
+  --footer-link-color: var(--heidelberg-red);
+  --footer-link-hover-color: var(--heidelberg-red-dark);
+  --footer-icon-color: var(--heidelberg-red);
   --footer-logo-bg: transparent;
-  --footer-logo-filter: invert(0);
+  --footer-logo-filter: none;
 }
 
 /* Dark Mode - MAXIMUM CONTRAST */

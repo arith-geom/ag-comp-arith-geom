@@ -97,6 +97,20 @@ content:
             fields:
               - { name: "label", label: "Label", type: "string" }
               - { name: "file", label: "File", type: "file" }
+      - name: "software"
+        label: "Software Packages"
+        type: "object"
+        list:
+          collapsible:
+            summary: "{fields.title}"
+            collapsed: true
+        fields:
+          - { name: "title", label: "Title", type: "string" }
+          - { name: "description", label: "Description", type: "text" }
+          - { name: "author", label: "Author", type: "string" }
+          - { name: "link", label: "Link URL", type: "string" }
+          - { name: "link_text", label: "Link Text", type: "string" }
+          - { name: "thesis", label: "Thesis URL (Optional)", type: "string" }
 
   - name: "teaching"
     label: "Teaching"
@@ -129,12 +143,12 @@ content:
                     summary: "{fields.title}"
                     collapsed: true
                 fields:
-                  - { name: "title", label: "Course Title", type: "string" }
-                  - { name: "instructor", label: "Instructor", type: "string" }
-                  - { name: "course_type", label: "Course Type", type: "select", options: { values: ["Lecture", "Seminar", "Proseminar", "Exercise", "Other"] } }
-                  - { name: "description", label: "Description", type: "text" }
+                  - { name: "title", label: "Course Title (Both)", type: "string" }
+                  - { name: "instructor", label: "Instructor (Both)", type: "string" }
+                  - { name: "course_type", label: "Course Type (Subpage Only)", type: "select", options: { values: ["Lecture", "Seminar", "Proseminar", "Exercise", "Other"] } }
+                  - { name: "description", label: "Description (Both)", type: "text" }
                   - name: "links"
-                    label: "Links"
+                    label: "Links (Both)"
                     type: "object"
                     list:
                       collapsible:
@@ -144,7 +158,7 @@ content:
                       - { name: "label", label: "Label", type: "string" }
                       - { name: "url", label: "URL", type: "string" }
                   - name: "pdfs"
-                    label: "PDFs"
+                    label: "PDFs (Both)"
                     type: "object"
                     list:
                       collapsible:
@@ -153,7 +167,7 @@ content:
                     fields:
                       - { name: "label", label: "Label", type: "string" }
                       - { name: "file", label: "File", type: "file" }
-                  - { name: "body", label: "Course Details", type: "rich-text" }
+                  - { name: "body", label: "Course Details (Subpage Only)", type: "rich-text" }
 
   - name: "members"
     label: "Members"
@@ -178,19 +192,28 @@ content:
                 summary: "{fields.name}"
                 collapsed: true
             fields:
-              - { name: "name", label: "Name", type: "string", required: true }
-              - { name: "role", label: "Role", type: "string" }
-              - { name: "group", label: "Group", type: "select", options: { values: ["Head", "Secretary", "Members", "Former Members"] }, default: "Members", hidden: true }
-              - { name: "photo", label: "Photo", type: "image" }
-              - { name: "description", label: "Short Description (Card)", type: "rich-text" }
-              - { name: "email", label: "Email", type: "string" }
-              - { name: "cv", label: "CV (PDF)", type: "file" }
+              - { name: "name", label: "Name (Both)", type: "string", required: true }
+              - { name: "role", label: "Role (Both)", type: "string" }
+              - { name: "group", label: "Group (Both)", type: "select", options: { values: ["Head", "Secretary", "Members", "Former Members"] }, default: "Members", hidden: true }
+              - { name: "photo", label: "Photo (Both)", type: "image" }
+              - { name: "description", label: "Short Description (Card) (Main Page Only)", type: "rich-text" }
+              - { name: "email", label: "Email (Subpage Only)", type: "string" }
+              - { name: "publication_name", label: "Publication Name Match (e.g. 'Böckle')", type: "string" }
+              - name: "aliases"
+                label: "Name Aliases (e.g. 'C.V. Sriram')"
+                type: "list"
+                field: { type: "string" }
+              - { name: "cv", label: "CV (PDF) (Subpage Only)", type: "file" }
+              - { name: "phone", label: "Phone (Subpage Only)", type: "string" }
+              - { name: "fax", label: "Fax (Subpage Only)", type: "string" }
+              - { name: "room", label: "Room (Subpage Only)", type: "string" }
+              - { name: "office_hours", label: "Office Hours (Subpage Only)", type: "string" }
               - name: "research_interests"
-                label: "Research Interests"
+                label: "Research Interests (Subpage Only)"
                 type: "list"
                 field: { type: "string" }
               - name: "education"
-                label: "Education"
+                label: "Education (Subpage Only)"
                 type: "object"
                 list:
                   collapsible:
@@ -200,9 +223,35 @@ content:
                   - { name: "year", label: "Year/Period", type: "string" }
                   - { name: "degree", label: "Degree/Position", type: "string" }
                   - { name: "institution", label: "Institution", type: "string" }
-              - { name: "body", label: "Biography / Full Profile", type: "rich-text" }
+              - { name: "body", label: "Biography / Full Profile (Subpage Only)", type: "rich-text" }
+              - name: "selected_publications"
+                label: "Selected Publications (Subpage Only)"
+                type: "object"
+                list:
+                  collapsible:
+                    summary: "{fields.title}"
+                    collapsed: true
+                fields:
+                  - { name: "title", label: "Title", type: "string" }
+                  - { name: "authors", label: "Authors", type: "string" }
+                  - { name: "journal", label: "Journal/Details", type: "string" }
+                  - { name: "link", label: "Link URL", type: "string" }
+              - name: "theses"
+                label: "Theses (Subpage Only)"
+                type: "object"
+                list:
+                  collapsible:
+                    summary: "{fields.title}"
+                    collapsed: true
+                fields:
+                  - { name: "title", label: "Title", type: "string" }
+                  - { name: "author", label: "Author", type: "string" }
+                  - { name: "type", label: "Type (e.g. PhD Thesis)", type: "string" }
+                  - { name: "institution", label: "Institution", type: "string" }
+                  - { name: "year", label: "Year", type: "string" }
+                  - { name: "file", label: "File", type: "file" }
               - name: "links"
-                label: "Social Links"
+                label: "Social Links (Subpage Only)"
                 type: "object"
                 list:
                   collapsible:

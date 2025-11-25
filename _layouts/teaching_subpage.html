@@ -15,25 +15,22 @@ layout: default
                             <h5 class="card-title h6 text-uppercase text-muted mb-3">Course Info</h5>
 
                             <div class="mb-3">
-                                <div class="small text-muted text-uppercase">Term</div>
-                                <div class="fw-bold">{{ page.semester }}</div>
+                                <strong class="d-block text-dark small">Term</strong>
+                                <span class="text-dark">{{ page.semester }}</span>
                             </div>
 
-                            <div class="mb-3">
-                                <div class="small text-muted text-uppercase">Year</div>
-                                <div class="fw-bold">{{ page.year }}</div>
-                            </div>
+
 
                             {% if page.instructor %}
                             <div class="mb-3">
-                                <div class="small text-muted text-uppercase">Instructor</div>
-                                <div class="fw-bold">{{ page.instructor }}</div>
+                                <strong class="d-block text-dark small">Instructor</strong>
+                                <span class="text-dark">{{ page.instructor | linkify_authors }}</span>
                             </div>
                             {% endif %}
 
                             {% if page.course_type %}
                             <div class="mb-3">
-                                <div class="small text-muted text-uppercase">Type</div>
+                                <strong class="d-block text-dark small">Type</strong>
                                 <div class="badge bg-light text-dark border">{{ page.course_type }}</div>
                             </div>
                             {% endif %}
@@ -87,7 +84,7 @@ layout: default
 
                     <!-- Header -->
                     <div class="mb-4 border-bottom pb-4">
-                        <h1 class="display-5 fw-bold text-dark mb-2">{{ page.title }}</h1>
+                        <h1 class="h2 fw-bold text-dark mb-2">{{ page.title }}</h1>
                         {% if page.description %}
                         <p class="lead text-secondary">{{ page.description }}</p>
                         {% endif %}

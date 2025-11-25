@@ -17,14 +17,14 @@ layout: default
                             {% if page.authors %}
                             <div class="mb-3">
                                 <strong class="d-block text-dark small">Authors</strong>
-                                <span class="text-secondary">{{ page.authors }}</span>
+                                <span class="text-dark">{{ page.authors | linkify_authors }}</span>
                             </div>
                             {% endif %}
 
                             {% if page.journal_details %}
                             <div class="mb-3">
                                 <strong class="d-block text-dark small">Journal / Venue</strong>
-                                <span class="text-secondary">{{ page.journal_details }}</span>
+                                <span class="text-dark">{{ page.journal_details }}</span>
                             </div>
                             {% endif %}
 

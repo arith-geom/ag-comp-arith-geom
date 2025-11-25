@@ -1,0 +1,23 @@
+Scanning for HTML files...
+Found 213 HTML files.
+Checking internal links...
+Collecting external links...
+Found 48 unique external links. Checking them now (this may take a while)...
+  Broken external: https://math.dartmouth.edu/~jvoight/notes/274-Schoof.pdf (Status code: 404)
+  Broken external: https://www.uni-heidelberg.de (HTTPSConnectionPool(host='www.uni-heidelberg.de', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7a5e101f0b90>, 'Connection to www.uni-heidelberg.de timed out. (connect timeout=5)')))
+
+==================================================
+BROKEN INTERNAL LINKS
+==================================================
+
+==================================================
+BROKEN EXTERNAL LINKS
+==================================================
+Link: https://math.dartmouth.edu/~jvoight/notes/274-Schoof.pdf
+  Reason: Status code: 404
+  Used in: _site/teaching/2019/summer-term-2019/p-divisible-gruppen/index.html...
+
+Link: https://www.uni-heidelberg.de
+  Reason: HTTPSConnectionPool(host='www.uni-heidelberg.de', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7a5e101f0b90>, 'Connection to www.uni-heidelberg.de timed out. (connect timeout=5)'))
+  Used in: _site/index.html, _site/members/index.html, _site/members/prof-dr-judith-ludwig/index.html...
+

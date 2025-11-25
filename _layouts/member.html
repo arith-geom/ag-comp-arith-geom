@@ -22,7 +22,7 @@ layout: default
           <!-- Contact Card -->
           <div class="card border-0 shadow-sm mb-4">
             <div class="card-body">
-              <h5 class="card-title h6 text-uppercase text-muted mb-3">Contact</h5>
+              <h5 class="card-title h6 text-uppercase text-dark mb-3">Contact</h5>
 
               {% if page.email %}
               <div class="mb-3">
@@ -30,6 +30,42 @@ layout: default
                   <div class="icon-box me-2"><i class="fas fa-envelope text-primary"></i></div>
                   <span class="text-break small">{{ page.email }}</span>
                 </a>
+              </div>
+              {% endif %}
+
+              {% if page.phone %}
+              <div class="mb-3">
+                <div class="d-flex align-items-center text-dark">
+                  <div class="icon-box me-2"><i class="fas fa-phone text-primary"></i></div>
+                  <span class="small">{{ page.phone }}</span>
+                </div>
+              </div>
+              {% endif %}
+
+              {% if page.fax %}
+              <div class="mb-3">
+                <div class="d-flex align-items-center text-dark">
+                  <div class="icon-box me-2"><i class="fas fa-fax text-primary"></i></div>
+                  <span class="small">{{ page.fax }}</span>
+                </div>
+              </div>
+              {% endif %}
+
+              {% if page.room %}
+              <div class="mb-3">
+                <div class="d-flex align-items-center text-dark">
+                  <div class="icon-box me-2"><i class="fas fa-door-open text-primary"></i></div>
+                  <span class="small">Room: {{ page.room }}</span>
+                </div>
+              </div>
+              {% endif %}
+
+              {% if page.office_hours %}
+              <div class="mb-3">
+                <div class="d-flex align-items-center text-dark">
+                  <div class="icon-box me-2"><i class="fas fa-clock text-primary"></i></div>
+                  <span class="small">Office Hours: {{ page.office_hours }}</span>
+                </div>
               </div>
               {% endif %}
 
@@ -71,13 +107,13 @@ layout: default
           <!-- Education (Mobile/Sidebar) -->
           {% if page.education %}
           <div class="d-none d-lg-block">
-            <h5 class="h6 text-uppercase text-muted mb-3 mt-2">Education</h5>
+            <h5 class="h6 text-uppercase text-dark mb-3 mt-2">Education</h5>
             <div class="education-timeline-sidebar">
               {% for edu in page.education %}
               <div class="edu-item mb-3 ps-3 border-start border-2 border-primary">
                 <div class="small fw-bold text-primary">{{ edu.year }}</div>
                 <div class="small fw-bold">{{ edu.degree }}</div>
-                <div class="small text-muted">{{ edu.institution }}</div>
+                <div class="small text-dark">{{ edu.institution }}</div>
               </div>
               {% endfor %}
             </div>
@@ -93,14 +129,14 @@ layout: default
           <!-- Header Info -->
           <div class="mb-4">
             <h1 class="member-name h2 fw-bold text-dark mb-1">{{ page.title }}</h1>
-            <p class="member-role h5 text-muted mb-2">{{ page.role }}</p>
+            <p class="member-role h5 text-dark mb-2">{{ page.role }}</p>
             <span class="badge bg-secondary-soft text-secondary border">{{ page.group }}</span>
           </div>
 
           <!-- Biography -->
           <div class="mb-5">
             <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Biography</h2>
-            <div class="member-bio text-secondary">
+            <div class="member-bio text-dark">
               {{ content }}
             </div>
           </div>
@@ -117,6 +153,105 @@ layout: default
           </div>
           {% endif %}
 
+          <!-- Dynamic Software Packages -->
+          {% if page.publication_name %}
+          {% assign matching_software = site.data.publications.software | where_exp: "item", "item.author contains
+          page.publication_name" %}
+          {% if matching_software.size > 0 %}
+          <div class="mb-5">
+            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Software Packages</h2>
+            <div class="list-group list-group-flush">
+              {% for software in matching_software %}
+              <div class="list-group-item px-0 py-3">
+                <h5 class="h6 fw-bold mb-1">
+                  {% if software.link %}
+                  <a href="{{ software.link }}" target="_blank" class="text-decoration-none text-dark">{{ software.title
+                    }}</a>
+                  {% else %}
+                  {{ software.title }}
+                  {% endif %}
+                </h5>
+                <p class="small text-muted mb-1">{{ software.description }}</p>
+                {% if software.thesis %}
+                <a href="{{ software.thesis }}" class="btn btn-sm btn-outline-secondary mt-2" target="_blank">
+                  <i class="fas fa-file-pdf me-1"></i> Thesis
+                </a>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+          {% endif %}
+
+          <!-- Dynamic Publications -->
+          {% if page.publication_name %}
+          {% assign matching_pubs = site.data.publications.publications | where_exp: "pub", "pub.authors contains
+          page.publication_name" %}
+          {% if matching_pubs.size > 0 %}
+          <div class="mb-5">
+            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Publications</h2>
+            <div class="list-group list-group-flush">
+              {% for pub in matching_pubs %}
+              <div class="list-group-item px-0 py-3">
+                <h5 class="h6 fw-bold mb-1">
+                  <a href="{{ '/publications/' | relative_url }}{{ pub.title | slugify }}/"
+                    class="text-decoration-none text-dark">{{ pub.title }}</a>
+                </h5>
+                <div class="small text-dark mb-1">{{ pub.authors }}</div>
+                <div class="small text-dark"><em>{{ pub.journal_details }}</em></div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+          {% endif %}
+
+          <!-- Selected Publications (Manual) -->
+          {% if page.selected_publications %}
+          <div class="mb-5">
+            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Selected Publications</h2>
+            <div class="list-group list-group-flush">
+              {% for pub in page.selected_publications %}
+              <div class="list-group-item px-0 py-3">
+                <h5 class="h6 fw-bold mb-1">
+                  {% if pub.link %}
+                  <a href="{{ pub.link }}" target="_blank" class="text-decoration-none text-dark">{{ pub.title }}</a>
+                  {% else %}
+                  {{ pub.title }}
+                  {% endif %}
+                </h5>
+                <div class="small text-dark mb-1">{{ pub.authors }}</div>
+                <div class="small text-dark"><em>{{ pub.journal }}</em></div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Theses -->
+          {% if page.theses %}
+          <div class="mb-5">
+            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Theses</h2>
+            <div class="list-group list-group-flush">
+              {% for thesis in page.theses %}
+              <div class="list-group-item px-0 py-3">
+                <h5 class="h6 fw-bold mb-1">{{ thesis.title }}</h5>
+                <div class="small text-dark mb-1">{{ thesis.author }}</div>
+                <div class="small text-dark mb-2">
+                  {{ thesis.type }}, {{ thesis.institution }} ({{ thesis.year }})
+                </div>
+                {% if thesis.file %}
+                <a href="{{ thesis.file | relative_url }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                  <i class="fas fa-file-pdf me-1"></i> Download Thesis
+                </a>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
           <!-- Education (Mobile Only) -->
           {% if page.education %}
           <div class="d-lg-none mb-5">
@@ -127,7 +262,7 @@ layout: default
                 <div class="fw-bold text-primary me-3" style="min-width: 100px;">{{ edu.year }}</div>
                 <div>
                   <div class="fw-bold">{{ edu.degree }}</div>
-                  <div class="text-muted">{{ edu.institution }}</div>
+                  <div class="text-dark">{{ edu.institution }}</div>
                 </div>
               </div>
               {% endfor %}

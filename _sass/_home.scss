@@ -6,7 +6,7 @@
   height: 500px;
   overflow: hidden;
   border-radius: v.$radius-xl;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   margin-bottom: 2rem;
 }
 
@@ -24,7 +24,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +45,7 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   color: #ffffff !important;
 }
 
@@ -60,7 +60,7 @@
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.75rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   color: #ffffff !important;
 }
 
@@ -76,7 +76,7 @@
   font-weight: 300;
   margin: 0;
   opacity: 0.9;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   color: #ffffff !important;
 }
 
@@ -122,7 +122,7 @@
 
 .feature-card {
   background: var(--bg-primary);
-  border-radius: v.$radius-lg;
+  border-radius: v.$radius-md;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
@@ -136,6 +136,10 @@
   box-shadow: var(--shadow-md);
   transform: translateY(-4px);
   border-color: var(--primary);
+}
+
+.member-card {
+  border-radius: v.$radius-sm !important;
 }
 
 .card-header {
