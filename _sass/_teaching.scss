@@ -49,6 +49,7 @@
 
   .course-resources {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 0.5rem;
 
@@ -75,5 +76,41 @@
     color: var(--primary-text);
     padding: 0.2rem 0.4rem;
     border-radius: v.$radius-sm;
+  }
+  }
+
+// Subpage Styles
+.course-header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.resource-card {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid var(--border-color);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md) !important;
+    border-color: var(--primary);
+  }
+
+  .resource-icon {
+    font-size: 2rem;
+    color: var(--primary);
+  }
+}
+
+.instructor-card {
+  .instructor-avatar {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+
+  .instructor-avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: var(--gray-200);
   }
 }

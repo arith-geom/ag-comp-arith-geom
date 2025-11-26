@@ -3,145 +3,133 @@ layout: default
 ---
 
 <div class="publication-page mb-5 pb-5">
-    <div class="container publication-content-container pt-5">
-        <div class="row">
-            <!-- Left Column: Meta Info -->
-            <div class="col-lg-4">
-                <div class="publication-sidebar">
 
-                    <!-- Quick Info Card -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title h6 text-uppercase text-muted mb-3">Details</h5>
+    <!-- Header -->
+    <div class="publication-header py-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 class="h3 fw-bold text-dark mb-3">{{ page.title }}</h1>
 
-                            {% if page.authors %}
-                            <div class="mb-3">
-                                <strong class="d-block text-dark small">Authors</strong>
-                                <span class="text-dark">{{ page.authors | linkify_authors }}</span>
-                            </div>
-                            {% endif %}
+                    {% if page.authors %}
+                    <div class="mb-3 lead text-dark">
+                        {{ page.authors | linkify_authors }}
+                    </div>
+                    {% endif %}
 
-                            {% if page.journal_details %}
-                            <div class="mb-3">
-                                <strong class="d-block text-dark small">Journal / Venue</strong>
-                                <span class="text-dark">{{ page.journal_details }}</span>
-                            </div>
-                            {% endif %}
+                    {% if page.journal_details %}
+                    <div class="text-secondary fst-italic mb-4">
+                        {{ page.journal_details }}
+                    </div>
+                    {% endif %}
 
-                            {% if page.status %}
-                            <div class="mb-3">
-                                <strong class="d-block text-dark small mb-1">Status</strong>
-                                <a href="#"
-                                    class="publication-status publication-status-{{ page.status | slugify }} text-decoration-none">
-                                    <i
-                                        class="fas {% case page.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %}"></i>
-                                    {{ page.status }}
-                                </a>
-                            </div>
-                            {% endif %}
+                    <!-- Metadata Row -->
+                    <div class="d-flex flex-wrap gap-3 align-items-center">
+                        {% if page.status %}
+                        <span
+                            class="publication-status publication-status-{{ page.status | slugify }} text-decoration-none border rounded-pill px-3 py-2 shadow-sm bg-white">
+                            <i
+                                class="fas {% case page.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %} me-1"></i>
+                            {{ page.status }}
+                        </span>
+                        {% endif %}
 
-                            {% if page.type == "Article" %}
-                            <div class="mb-3">
-                                <strong class="d-block text-dark small mb-1">Type</strong>
-                                <a href="#" class="publication-type publication-type-pdf text-decoration-none">
-                                    <i class="fas fa-file-pdf"></i> Article
-                                </a>
-                            </div>
-                            {% elsif page.type %}
-                            <div class="mb-3">
-                                <strong class="d-block text-dark small mb-1">Type</strong>
-                                <span class="badge bg-light text-dark border fw-normal">{{ page.type }}</span>
-                            </div>
-                            {% endif %}
+                        {% if page.type %}
+                        {% if page.type == "Article" %}
+                        <span class="badge bg-primary text-white px-3 py-2 rounded-pill shadow-sm"><i
+                                class="fas fa-file-pdf me-1"></i> Article</span>
+                        {% else %}
+                        <span class="badge bg-light text-dark border px-3 py-2 rounded-pill shadow-sm">{{ page.type
+                            }}</span>
+                        {% endif %}
+                        {% endif %}
 
-                            {% if page.mr_number and page.mr_number != "" %}
-                            <div class="mb-3">
-                                <strong class="d-block text-dark small mb-1">MR Number</strong>
-                                <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ page.mr_number | remove: 'MR' }}"
-                                    target="_blank" class="publication-mr text-decoration-none">
-                                    {{ page.mr_number }}
-                                </a>
-                            </div>
-                            {% endif %}
+                        {% if page.mr_number and page.mr_number != "" %}
+                        <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ page.mr_number | remove: 'MR' }}"
+                            target="_blank"
+                            class="btn btn-outline-dark border rounded-pill px-3 py-2 shadow-sm text-decoration-none small">
+                            {{ page.mr_number }} <i class="fas fa-external-link-alt ms-1"></i>
+                        </a>
+                        {% endif %}
 
-                            {% if page.isbn %}
-                            <div class="mb-3">
-                                <strong class="d-block text-dark small">ISBN</strong>
-                                <span class="font-monospace small text-muted">{{ page.isbn }}</span>
-                            </div>
-                            {% endif %}
-
-                        </div>
+                        {% if page.isbn %}
+                        <span class="font-monospace small text-muted border rounded-pill px-3 py-2 bg-light">ISBN: {{
+                            page.isbn }}</span>
+                        {% endif %}
                     </div>
 
-                    <!-- Links & PDFs -->
-                    {% if page.links or page.pdfs %}
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title h6 text-uppercase text-muted mb-3">Resources</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container publication-content-container">
+        <div class="row">
+
+            <!-- Main Content -->
+            <div class="col-lg-8 offset-lg-2">
+                <div class="publication-main-content">
+
+                    <!-- Resources Section (Moved above Abstract) -->
+                    {% if page.links or page.pdfs %}
+                    <div class="mb-5">
+                        <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Resources</h2>
+                        <div class="d-flex flex-wrap gap-3">
                             {% if page.pdfs %}
-                            <div class="mb-3">
-                                {% for pdf in page.pdfs %}
-                                <a href="{{ pdf.file | relative_url }}"
-                                    class="btn btn-primary w-100 shadow-sm mb-2 text-start" target="_blank">
-                                    <i class="fas fa-file-pdf me-2"></i> {{ pdf.label | default: "Download PDF" }}
-                                </a>
-                                {% endfor %}
-                            </div>
+                            {% for pdf in page.pdfs %}
+                            <a href="{{ pdf.file | relative_url }}"
+                                class="btn btn-primary shadow-sm rounded-pill px-4 py-2" target="_blank">
+                                <i class="fas fa-file-pdf me-2"></i> {{ pdf.label | default: "Download PDF" }}
+                            </a>
+                            {% endfor %}
                             {% endif %}
 
                             {% if page.links %}
-                            <div class="social-links">
-                                {% for link in page.links %}
-                                <a href="{{ link.url }}"
-                                    class="btn btn-outline-light text-dark border mb-2 w-100 text-start btn-sm"
-                                    target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-external-link-alt me-2 text-secondary"></i> {{ link.label |
-                                    default: "Link" }}
-                                </a>
-                                {% endfor %}
-                            </div>
+                            {% for link in page.links %}
+                            <a href="{{ link.url }}" class="btn btn-outline-dark shadow-sm rounded-pill px-4 py-2"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt me-2 text-secondary"></i> {{ link.label | default:
+                                "Link" }}
+                            </a>
+                            {% endfor %}
                             {% endif %}
                         </div>
                     </div>
                     {% endif %}
 
-                </div>
-            </div>
-
-            <!-- Right Column: Main Content -->
-            <div class="col-lg-8">
-                <div class="publication-main-content ps-lg-4">
-
-                    <!-- Header -->
-                    <div class="mb-4">
-                        <h1 class="publication-title h2 fw-bold text-dark mb-3">{{ page.title }}</h1>
-                    </div>
-
-                    <!-- Abstract / Content -->
+                    <!-- Abstract -->
                     <div class="mb-5">
-                        <h2 class="h5 fw-bold mb-3 text-dark border-bottom pb-2">Abstract / Summary</h2>
-                        <div class="publication-body text-secondary">
-                            {% if content and content != "" %}
-                            {{ content }}
-                            {% else %}
-                            <p class="fst-italic text-muted">No abstract available.</p>
-                            {% endif %}
+                        <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Abstract</h2>
+                        <div class="abstract-card p-4 rounded-3 shadow-sm mb-4">
+                            <div class="publication-body text-dark lead fs-6">
+                                {% if content and content != "" %}
+                                {{ content }}
+                                {% else %}
+                                <p class="fst-italic text-muted mb-0">No abstract available.</p>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
 
                     {% if page.appendix %}
                     <div class="mb-5">
-                        <h2 class="h5 fw-bold mb-3 text-dark border-bottom pb-2">Appendix</h2>
-                        <div class="text-secondary">
+                        <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Appendix</h2>
+                        <div class="text-dark">
                             {{ page.appendix }}
                         </div>
                     </div>
                     {% endif %}
 
+                    <div class="mt-5 pt-3 border-top">
+                        <a href="{{ '/publications/' | relative_url }}"
+                            class="btn btn-link text-decoration-none ps-0 text-secondary">
+                            <i class="fas fa-arrow-left me-1"></i> Back to Publications
+                        </a>
+                    </div>
+
                 </div>
             </div>
+
         </div>
     </div>
 </div>

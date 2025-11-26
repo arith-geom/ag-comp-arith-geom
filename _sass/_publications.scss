@@ -113,3 +113,14 @@
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
 }
+
+// Subpage Styles
+.publication-header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.abstract-card {
+  background-color: var(--bg-primary);
+  border-left: 4px solid var(--primary);
+}

@@ -3,140 +3,48 @@ layout: default
 ---
 
 <div class="member-profile-page mb-5 pb-5">
-  <div class="container member-content-container pt-5">
-    <div class="row">
-      <!-- Left Column: Photo & Contact Info -->
-      <div class="col-lg-3">
-        <div class="member-sidebar">
-          <!-- Photo -->
-          <div class="member-photo-wrapper mb-4">
+
+  <!-- Profile Header -->
+  <div class="member-header py-5 mb-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-auto text-center text-md-start mb-3 mb-md-0">
+          <div class="member-photo-wrapper">
             {% if page.photo %}
-            <img src="{{ page.photo | relative_url }}" alt="{{ page.title }}" class="member-avatar shadow">
+            <img src="{{ page.photo | relative_url }}" alt="{{ page.title }}"
+              class="member-avatar-large shadow-lg rounded-circle">
             {% else %}
-            <div class="member-avatar-placeholder shadow d-flex align-items-center justify-content-center">
-              <i class="fas fa-user fa-3x text-secondary"></i>
+            <div
+              class="member-avatar-placeholder-large shadow-lg d-flex align-items-center justify-content-center mx-auto mx-md-0">
+              <i class="fas fa-user fa-4x text-secondary"></i>
             </div>
             {% endif %}
           </div>
-
-          <!-- Contact Card -->
-          <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body">
-              <h5 class="card-title h6 text-uppercase text-dark mb-3">Contact</h5>
-
-              {% if page.email %}
-              <div class="mb-3">
-                <a href="mailto:{{ page.email }}" class="d-flex align-items-center text-decoration-none text-dark">
-                  <div class="icon-box me-2"><i class="fas fa-envelope text-primary"></i></div>
-                  <span class="text-break small">{{ page.email }}</span>
-                </a>
-              </div>
-              {% endif %}
-
-              {% if page.phone %}
-              <div class="mb-3">
-                <div class="d-flex align-items-center text-dark">
-                  <div class="icon-box me-2"><i class="fas fa-phone text-primary"></i></div>
-                  <span class="small">{{ page.phone }}</span>
-                </div>
-              </div>
-              {% endif %}
-
-              {% if page.fax %}
-              <div class="mb-3">
-                <div class="d-flex align-items-center text-dark">
-                  <div class="icon-box me-2"><i class="fas fa-fax text-primary"></i></div>
-                  <span class="small">{{ page.fax }}</span>
-                </div>
-              </div>
-              {% endif %}
-
-              {% if page.room %}
-              <div class="mb-3">
-                <div class="d-flex align-items-center text-dark">
-                  <div class="icon-box me-2"><i class="fas fa-door-open text-primary"></i></div>
-                  <span class="small">Room: {{ page.room }}</span>
-                </div>
-              </div>
-              {% endif %}
-
-              {% if page.office_hours %}
-              <div class="mb-3">
-                <div class="d-flex align-items-center text-dark">
-                  <div class="icon-box me-2"><i class="fas fa-clock text-primary"></i></div>
-                  <span class="small">Office Hours: {{ page.office_hours }}</span>
-                </div>
-              </div>
-              {% endif %}
-
-              {% if page.links %}
-              <div class="social-links">
-                {% for link in page.links %}
-                {% assign icon_class = link.icon %}
-                {% unless icon_class %}
-                {% assign link_text_down = link.text | downcase %}
-                {% if link_text_down contains "profile" %}
-                {% assign icon_class = "fas fa-user" %}
-                {% elsif link_text_down contains "website" or link_text_down contains "webpage" %}
-                {% assign icon_class = "fas fa-globe" %}
-                {% elsif link_text_down contains "publication" %}
-                {% assign icon_class = "fas fa-book" %}
-                {% elsif link_text_down contains "email" %}
-                {% assign icon_class = "fas fa-envelope" %}
-                {% else %}
-                {% assign icon_class = "fas fa-link" %}
-                {% endif %}
-                {% endunless %}
-                <a href="{{ link.url }}" class="btn btn-outline-light text-dark border mb-2 w-100 text-start btn-sm"
-                  target="_blank" rel="noopener noreferrer">
-                  <i class="{{ icon_class }} me-2 text-secondary"></i> {{ link.text }}
-                </a>
-                {% endfor %}
-              </div>
-              {% endif %}
-            </div>
+        </div>
+        <div class="col-md">
+          <div class="text-center text-md-start">
+            <h1 class="display-5 fw-bold text-dark mb-2">{{ page.title }}</h1>
+            <p class="h4 text-secondary mb-3">{{ page.role }}</p>
+            {% if page.group %}
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">{{ page.group }}</span>
+            {% endif %}
           </div>
-
-          <!-- CV Download -->
-          {% if page.cv %}
-          <a href="{{ page.cv | relative_url }}" class="btn btn-primary w-100 shadow-sm mb-4" target="_blank">
-            <i class="fas fa-file-pdf me-2"></i> Download CV
-          </a>
-          {% endif %}
-
-          <!-- Education (Mobile/Sidebar) -->
-          {% if page.education %}
-          <div class="d-none d-lg-block">
-            <h5 class="h6 text-uppercase text-dark mb-3 mt-2">Education</h5>
-            <div class="education-timeline-sidebar">
-              {% for edu in page.education %}
-              <div class="edu-item mb-3 ps-3 border-start border-2 border-primary">
-                <div class="small fw-bold text-primary">{{ edu.year }}</div>
-                <div class="small fw-bold">{{ edu.degree }}</div>
-                <div class="small text-dark">{{ edu.institution }}</div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          {% endif %}
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- Right Column: Main Content -->
-      <div class="col-lg-9">
-        <div class="member-main-content ps-lg-4">
+  <div class="container member-content-container">
+    <div class="row">
 
-          <!-- Header Info -->
-          <div class="mb-4">
-            <h1 class="member-name h2 fw-bold text-dark mb-1">{{ page.title }}</h1>
-            <p class="member-role h5 text-dark mb-2">{{ page.role }}</p>
-            <span class="badge bg-secondary-soft text-secondary border">{{ page.group }}</span>
-          </div>
+      <!-- Main Content Column -->
+      <div class="col-lg-8 order-2 order-lg-1">
+        <div class="member-main-content pe-lg-4">
 
           <!-- Biography -->
           <div class="mb-5">
-            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Biography</h2>
-            <div class="member-bio text-dark">
+            <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Biography</h2>
+            <div class="member-bio text-dark lead fs-6">
               {{ content }}
             </div>
           </div>
@@ -144,10 +52,10 @@ layout: default
           <!-- Research Interests -->
           {% if page.research_interests %}
           <div class="mb-5">
-            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Research Interests</h2>
+            <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Research Interests</h2>
             <div class="d-flex flex-wrap gap-2">
               {% for interest in page.research_interests %}
-              <span class="badge bg-light text-dark border px-3 py-2 fw-normal">{{ interest }}</span>
+              <span class="badge bg-light text-dark border px-3 py-2 rounded-pill fw-normal fs-6">{{ interest }}</span>
               {% endfor %}
             </div>
           </div>
@@ -159,11 +67,11 @@ layout: default
           page.publication_name" %}
           {% if matching_software.size > 0 %}
           <div class="mb-5">
-            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Software Packages</h2>
+            <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Software Packages</h2>
             <div class="list-group list-group-flush">
               {% for software in matching_software %}
-              <div class="list-group-item px-0 py-3">
-                <h5 class="h6 fw-bold mb-1">
+              <div class="list-group-item px-0 py-4 publication-item">
+                <h5 class="h5 fw-bold mb-2">
                   {% if software.link %}
                   <a href="{{ software.link }}" target="_blank" class="text-decoration-none text-dark">{{ software.title
                     }}</a>
@@ -171,9 +79,9 @@ layout: default
                   {{ software.title }}
                   {% endif %}
                 </h5>
-                <p class="small text-muted mb-1">{{ software.description }}</p>
+                <p class="text-secondary mb-2">{{ software.description }}</p>
                 {% if software.thesis %}
-                <a href="{{ software.thesis }}" class="btn btn-sm btn-outline-secondary mt-2" target="_blank">
+                <a href="{{ software.thesis }}" class="btn btn-sm btn-outline-primary rounded-pill" target="_blank">
                   <i class="fas fa-file-pdf me-1"></i> Thesis
                 </a>
                 {% endif %}
@@ -190,16 +98,16 @@ layout: default
           page.publication_name" %}
           {% if matching_pubs.size > 0 %}
           <div class="mb-5">
-            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Publications</h2>
+            <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Publications</h2>
             <div class="list-group list-group-flush">
               {% for pub in matching_pubs %}
-              <div class="list-group-item px-0 py-3">
-                <h5 class="h6 fw-bold mb-1">
+              <div class="list-group-item px-0 py-4 publication-item">
+                <h5 class="h5 fw-bold mb-2">
                   <a href="{{ '/publications/' | relative_url }}{{ pub.title | slugify }}/"
                     class="text-decoration-none text-dark">{{ pub.title }}</a>
                 </h5>
-                <div class="small text-dark mb-1">{{ pub.authors }}</div>
-                <div class="small text-dark"><em>{{ pub.journal_details }}</em></div>
+                <div class="text-secondary mb-1">{{ pub.authors }}</div>
+                <div class="small text-muted"><em>{{ pub.journal_details }}</em></div>
               </div>
               {% endfor %}
             </div>
@@ -210,19 +118,19 @@ layout: default
           <!-- Selected Publications (Manual) -->
           {% if page.selected_publications %}
           <div class="mb-5">
-            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Selected Publications</h2>
+            <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Selected Publications</h2>
             <div class="list-group list-group-flush">
               {% for pub in page.selected_publications %}
-              <div class="list-group-item px-0 py-3">
-                <h5 class="h6 fw-bold mb-1">
+              <div class="list-group-item px-0 py-4 publication-item">
+                <h5 class="h5 fw-bold mb-2">
                   {% if pub.link %}
                   <a href="{{ pub.link }}" target="_blank" class="text-decoration-none text-dark">{{ pub.title }}</a>
                   {% else %}
                   {{ pub.title }}
                   {% endif %}
                 </h5>
-                <div class="small text-dark mb-1">{{ pub.authors }}</div>
-                <div class="small text-dark"><em>{{ pub.journal }}</em></div>
+                <div class="text-secondary mb-1">{{ pub.authors }}</div>
+                <div class="small text-muted"><em>{{ pub.journal }}</em></div>
               </div>
               {% endfor %}
             </div>
@@ -232,17 +140,18 @@ layout: default
           <!-- Theses -->
           {% if page.theses %}
           <div class="mb-5">
-            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Theses</h2>
+            <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Theses</h2>
             <div class="list-group list-group-flush">
               {% for thesis in page.theses %}
-              <div class="list-group-item px-0 py-3">
-                <h5 class="h6 fw-bold mb-1">{{ thesis.title }}</h5>
-                <div class="small text-dark mb-1">{{ thesis.author }}</div>
-                <div class="small text-dark mb-2">
+              <div class="list-group-item px-0 py-4 publication-item">
+                <h5 class="h5 fw-bold mb-2">{{ thesis.title }}</h5>
+                <div class="text-secondary mb-1">{{ thesis.author }}</div>
+                <div class="small text-muted mb-2">
                   {{ thesis.type }}, {{ thesis.institution }} ({{ thesis.year }})
                 </div>
                 {% if thesis.file %}
-                <a href="{{ thesis.file | relative_url }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                <a href="{{ thesis.file | relative_url }}" class="btn btn-sm btn-outline-primary rounded-pill"
+                  target="_blank">
                   <i class="fas fa-file-pdf me-1"></i> Download Thesis
                 </a>
                 {% endif %}
@@ -252,26 +161,138 @@ layout: default
           </div>
           {% endif %}
 
-          <!-- Education (Mobile Only) -->
-          {% if page.education %}
-          <div class="d-lg-none mb-5">
-            <h2 class="h4 fw-bold mb-3 text-dark border-bottom pb-2">Education</h2>
-            <div class="education-timeline">
-              {% for edu in page.education %}
-              <div class="d-flex mb-3">
-                <div class="fw-bold text-primary me-3" style="min-width: 100px;">{{ edu.year }}</div>
-                <div>
-                  <div class="fw-bold">{{ edu.degree }}</div>
-                  <div class="text-dark">{{ edu.institution }}</div>
+        </div>
+      </div>
+
+      <!-- Sidebar Column -->
+      <div class="col-lg-4 order-1 order-lg-2 mb-5 mb-lg-0">
+        <div class="member-sidebar sticky-top" style="top: 2rem; z-index: 1020;">
+
+          <!-- Contact Card -->
+          <div class="card border-0 shadow-sm mb-4 rounded-3 overflow-hidden">
+            <div class="card-header bg-light border-bottom-0 py-3">
+              <h5 class="card-title h6 text-uppercase text-muted mb-0">Contact Details</h5>
+            </div>
+            <div class="card-body">
+              {% if page.email %}
+              <div class="mb-3">
+                <a href="mailto:{{ page.email }}"
+                  class="d-flex align-items-center text-decoration-none text-dark p-2 rounded hover-bg-light">
+                  <div class="icon-box me-3 text-primary"><i class="fas fa-envelope fa-lg"></i></div>
+                  <span class="text-break">{{ page.email }}</span>
+                </a>
+              </div>
+              {% endif %}
+
+              {% if page.phone %}
+              <div class="mb-3">
+                <div class="d-flex align-items-center text-dark p-2">
+                  <div class="icon-box me-3 text-primary"><i class="fas fa-phone fa-lg"></i></div>
+                  <span>{{ page.phone }}</span>
                 </div>
               </div>
-              {% endfor %}
+              {% endif %}
+
+              {% if page.fax %}
+              <div class="mb-3">
+                <div class="d-flex align-items-center text-dark p-2">
+                  <div class="icon-box me-3 text-primary"><i class="fas fa-fax fa-lg"></i></div>
+                  <span>{{ page.fax }}</span>
+                </div>
+              </div>
+              {% endif %}
+
+              {% if page.room %}
+              <div class="mb-3">
+                <div class="d-flex align-items-center text-dark p-2">
+                  <div class="icon-box me-3 text-primary"><i class="fas fa-door-open fa-lg"></i></div>
+                  <span>Room: {{ page.room }}</span>
+                </div>
+              </div>
+              {% endif %}
+
+              {% if page.office_hours %}
+              <div class="mb-3">
+                <div class="d-flex align-items-center text-dark p-2">
+                  <div class="icon-box me-3 text-primary"><i class="fas fa-clock fa-lg"></i></div>
+                  <div>
+                    <small class="d-block text-muted text-uppercase" style="font-size: 0.7rem;">Office Hours</small>
+                    <span>{{ page.office_hours }}</span>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Links & CV -->
+          {% if page.links or page.cv %}
+          <div class="card border-0 shadow-sm mb-4 rounded-3">
+            <div class="card-header bg-light border-bottom-0 py-3">
+              <h5 class="card-title h6 text-uppercase text-muted mb-0">Links & Resources</h5>
+            </div>
+            <div class="card-body">
+              {% if page.cv %}
+              <a href="{{ page.cv | relative_url }}" class="btn btn-primary w-100 shadow-sm mb-3 rounded-pill"
+                target="_blank">
+                <i class="fas fa-file-pdf me-2"></i> Download CV
+              </a>
+              {% endif %}
+
+              {% if page.links %}
+              <div class="d-grid gap-2">
+                {% for link in page.links %}
+                {% assign icon_class = link.icon %}
+                {% unless icon_class %}
+                {% assign link_text_down = link.text | downcase %}
+                {% if link_text_down contains "profile" %}
+                {% assign icon_class = "fas fa-user" %}
+                {% elsif link_text_down contains "website" or link_text_down contains "webpage" %}
+                {% assign icon_class = "fas fa-globe" %}
+                {% elsif link_text_down contains "publication" %}
+                {% assign icon_class = "fas fa-book" %}
+                {% elsif link_text_down contains "email" %}
+                {% assign icon_class = "fas fa-envelope" %}
+                {% else %}
+                {% assign icon_class = "fas fa-link" %}
+                {% endif %}
+                {% endunless %}
+                <a href="{{ link.url }}" class="btn btn-outline-dark border-0 text-start" target="_blank"
+                  rel="noopener noreferrer">
+                  <i class="{{ icon_class }} me-2 text-secondary"></i> {{ link.text }}
+                </a>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Education -->
+          {% if page.education %}
+          <div class="card border-0 shadow-sm mb-4 rounded-3">
+            <div class="card-header bg-light border-bottom-0 py-3">
+              <h5 class="card-title h6 text-uppercase text-muted mb-0">Education</h5>
+            </div>
+            <div class="card-body">
+              <div class="education-timeline-sidebar">
+                {% for edu in page.education %}
+                <div class="edu-item mb-4 ps-3 border-start border-3 border-primary position-relative">
+                  <div class="position-absolute bg-primary rounded-circle"
+                    style="width: 10px; height: 10px; left: -6.5px; top: 5px;"></div>
+                  <div class="small fw-bold text-primary mb-1">{{ edu.year }}</div>
+                  <div class="fw-bold text-dark">{{ edu.degree }}</div>
+                  <div class="small text-secondary">{{ edu.institution }}</div>
+                </div>
+                {% endfor %}
+              </div>
             </div>
           </div>
           {% endif %}
 
         </div>
       </div>
+
     </div>
   </div>
 </div>

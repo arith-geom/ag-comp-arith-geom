@@ -5,7 +5,7 @@
   width: 100%;
   height: 500px;
   overflow: hidden;
-  border-radius: v.$radius-xl;
+  border-radius: v.$radius-md;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   margin-bottom: 2rem;
 }
@@ -203,7 +203,7 @@
   background: transparent;
   color: var(--primary);
   border: 2px solid var(--primary);
-  border-radius: v.$radius-md;
+  border-radius: v.$radius-sm;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.8rem;

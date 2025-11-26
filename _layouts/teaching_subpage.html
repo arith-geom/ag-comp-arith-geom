@@ -3,100 +3,86 @@ layout: default
 ---
 
 <div class="teaching-subpage mb-5 pb-5">
-    <div class="container pt-5">
-        <div class="row">
-            <!-- Left Column: Info & Resources -->
-            <div class="col-lg-3">
-                <div class="teaching-sidebar">
 
-                    <!-- Course Info Card -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title h6 text-uppercase text-muted mb-3">Course Info</h5>
+    <!-- Course Header -->
+    <div class="course-header py-5 mb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <span class="badge bg-primary text-white px-3 py-2 rounded-pill">{{ page.semester }}</span>
+                        {% if page.course_type %}
+                        <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">{{ page.course_type
+                            }}</span>
+                        {% endif %}
+                    </div>
+                    <h1 class="h3 fw-bold text-dark mb-3">{{ page.title }}</h1>
+                    {% if page.description %}
+                    <p class="lead text-secondary mb-4">{{ page.description }}</p>
+                    {% endif %}
 
-                            <div class="mb-3">
-                                <strong class="d-block text-dark small">Term</strong>
-                                <span class="text-dark">{{ page.semester }}</span>
-                            </div>
-
-
-
-                            {% if page.instructor %}
-                            <div class="mb-3">
-                                <strong class="d-block text-dark small">Instructor</strong>
-                                <span class="text-dark">{{ page.instructor | linkify_authors }}</span>
-                            </div>
-                            {% endif %}
-
-                            {% if page.course_type %}
-                            <div class="mb-3">
-                                <strong class="d-block text-dark small">Type</strong>
-                                <div class="badge bg-light text-dark border">{{ page.course_type }}</div>
-                            </div>
-                            {% endif %}
+                    <!-- Metadata Row -->
+                    <div class="d-flex flex-wrap gap-3 align-items-center">
+                        {% if page.instructor %}
+                        <div class="d-flex align-items-center bg-white border rounded-pill px-3 py-2 shadow-sm">
+                            <i class="fas fa-chalkboard-teacher text-secondary me-2"></i>
+                            <span class="fw-bold text-dark me-1">{{ page.instructor | linkify_authors }}</span>
                         </div>
+                        {% endif %}
+
+                        {% if page.links %}
+                        {% for link in page.links %}
+                        <a href="{{ link.url }}" class="btn btn-outline-dark border rounded-pill px-3 py-2 shadow-sm"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt me-2 text-secondary"></i> {{ link.label | default:
+                            "Link" }}
+                        </a>
+                        {% endfor %}
+                        {% endif %}
                     </div>
 
-                    <!-- Resources -->
-                    {% if page.links or page.pdfs %}
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title h6 text-uppercase text-muted mb-3">Resources</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                            {% if page.links %}
-                            <div class="links-section mb-3">
-                                {% for link in page.links %}
-                                <a href="{{ link.url }}"
-                                    class="btn btn-outline-light text-dark border mb-2 w-100 text-start btn-sm"
-                                    target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-external-link-alt me-2 text-secondary"></i> {{ link.label |
-                                    default: "Link" }}
-                                </a>
-                                {% endfor %}
-                            </div>
-                            {% endif %}
+    <div class="container pt-2">
+        <div class="row">
 
-                            {% if page.pdfs %}
-                            <div class="pdfs-section">
-                                {% for pdf in page.pdfs %}
-                                <a href="{{ pdf.file | relative_url }}"
-                                    class="btn btn-outline-light text-dark border mb-2 w-100 text-start btn-sm"
-                                    target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-file-pdf me-2 text-danger"></i> {{ pdf.label | default: "PDF" }}
-                                </a>
-                                {% endfor %}
-                            </div>
-                            {% endif %}
+            <!-- Main Content -->
+            <div class="col-lg-8 offset-lg-2">
+                <div class="teaching-main-content">
+
+                    <!-- Resources Grid (Moved above Body) -->
+                    {% if page.pdfs %}
+                    <div class="mb-5">
+                        <h3 class="h4 fw-bold mb-4 text-dark border-bottom pb-2">Course Materials</h3>
+                        <div class="d-flex flex-wrap gap-3">
+                            {% for pdf in page.pdfs %}
+                            <a href="{{ pdf.file | relative_url }}"
+                                class="btn btn-primary shadow-sm rounded-pill px-4 py-2" target="_blank">
+                                <i class="fas fa-file-pdf me-2"></i> {{ pdf.label | default: "Download PDF" }}
+                            </a>
+                            {% endfor %}
                         </div>
                     </div>
                     {% endif %}
 
-                    <a href="{{ '/teaching/' | relative_url }}" class="btn btn-link text-decoration-none ps-0">
-                        <i class="fas fa-arrow-left me-1"></i> Back to Teaching
-                    </a>
-
-                </div>
-            </div>
-
-            <!-- Right Column: Main Content -->
-            <div class="col-lg-9">
-                <div class="teaching-main-content ps-lg-4">
-
-                    <!-- Header -->
-                    <div class="mb-4 border-bottom pb-4">
-                        <h1 class="h2 fw-bold text-dark mb-2">{{ page.title }}</h1>
-                        {% if page.description %}
-                        <p class="lead text-secondary">{{ page.description }}</p>
-                        {% endif %}
-                    </div>
-
                     <!-- Body Content -->
-                    <div class="teaching-body">
+                    <div class="teaching-body mb-5 lead fs-6 text-dark">
                         {{ content }}
                     </div>
 
+                    <div class="mt-5 pt-3 border-top">
+                        <a href="{{ '/teaching/' | relative_url }}"
+                            class="btn btn-link text-decoration-none ps-0 text-secondary">
+                            <i class="fas fa-arrow-left me-1"></i> Back to Teaching
+                        </a>
+                    </div>
+
                 </div>
             </div>
+
         </div>
     </div>
 </div>
