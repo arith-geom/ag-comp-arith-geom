@@ -202,37 +202,34 @@ courses:
                 file: /assets/migrated/document_2_.pdf
             body: >2-
                 
-              <div class="frame frame-default frame-type-header frame-layout-0"
-              id="c8062"><header><h2 class="">Proseminar on Quadratic forms(WS
-              23/24)</h2></header></div><div class="frame frame-default
-              frame-type-div frame-layout-0" id="c8066"><hr
-              class="ce-div"></div><div class="frame frame-default
-              frame-type-textmedia frame-layout-0" id="c8067"><div
-              class="ce-textpic ce-center ce-above"><div
-              class="ce-bodytext"><p>The aim of this proseminar is to formulate
-              and study a proof of the <strong>Hasse principle </strong>for
-              quadratic forms. All the necessary tools required such as the
-              field of p-adic numbers, geometry of numbers etc. will be
-              introduced during the course.</p></div></div></div><div
-              class="frame frame-default frame-type-textpic frame-layout-0"
-              id="c8076"><div class="ce-textpic ce-center ce-above"><div
-              class="ce-bodytext"><p>Here's the proseminar <a
-              href="/assets/migrated/annquad__2_.pdf">announcement</a>; and <a
-              href="/assets/migrated/quad_form.pdf">here</a> the
-              rubric.</p><p>Participants are also expected to prepare a handout
-              for their talks. Regarding a sample format of an handout, please
-              refer to a previous proseminar (or come up with your own
-              format:-)).</p><p><a
-              href="/assets/migrated/document_2_.pdf">Handout</a> for the last
-              talk.</p></div></div></div><div class="frame frame-default
-              frame-type-image frame-layout-0" id="c8405"><div class="ce-image
-              ce-center ce-above"><div class="ce-gallery" data-ce-columns="1"
-              data-ce-images="1"><div class="ce-outer"><div
-              class="ce-inner"><div class="ce-row"><div
-              class="ce-column"><figure class="image"><img alt=""
-              class="image-embed-item" height="562"
-              src="/assets/fileadmin/_processed_/b/f/csm_1_3f711c7767.png"
-              width="1000"></figure></div></div></div></div></div></div></div>
+
+              ## Proseminar on Quadratic forms (WS 23/24)
+
+
+              * * *
+
+
+              The aim of this proseminar is to formulate and study a proof of
+              the **Hasse principle** for quadratic forms. All the necessary
+              tools required such as the field of $p$-adic numbers, geometry of
+              numbers etc. will be introduced during the course.
+
+
+              Here's the proseminar
+              [announcement](/assets/migrated/annquad__2_.pdf); and
+              [here](/assets/migrated/quad_form.pdf) the rubric.
+
+
+              Participants are also expected to prepare a handout for their
+              talks. Regarding a sample format of an handout, please refer to a
+              previous proseminar (or come up with your own format:-)).
+
+
+              [Handout](/assets/migrated/document_2_.pdf) for the last talk.
+
+
+              <img src="/assets/fileadmin/_processed_/b/f/csm_1_3f711c7767.png"
+              alt="" class="image-embed-item" width="1000" height="562">
           - title: Vorlesung Algebra 1
             instructor: Prof. Dr. Böckle, Shavali
             course_type: Lecture
