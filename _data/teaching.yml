@@ -1,6 +1,7 @@
 courses:
   - year: 2025
     semesters:
+      - semester: Winter term 2025/26
       - semester: Summer term 2025
         courses:
           - title: Seminar on Homological Algebra
@@ -32,7 +33,6 @@ courses:
               expected to prepare a handout for their talks. Regarding a sample
               format of an handout, please refer to here (or feel free to make
               your own format).</p></div>
-      - semester: Winter term 2025/26
   - year: 2024
     semesters:
       - semester: Winter term 2024/25
