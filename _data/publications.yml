@@ -392,6 +392,13 @@ publications:
     pdfs:
       - label: PDF
         file: /assets/migrated/Thesis_Cakir.pdf
+  - mr_number: MR4668540
+    title: Equidimensionality of universal pseudodeformation rings in characteristic
+      p for absolute Galois groups of p-adic fields.
+    authors: Gebhard Böckle, Ann-Kristin Juschka
+    journal_details: Forum Math. Sigma 11
+    status: Journal Article
+    type: Article
 software:
   - title: Magma package QaQuotGraphs
     description: to compute the action by unit groups of maximal orders in
