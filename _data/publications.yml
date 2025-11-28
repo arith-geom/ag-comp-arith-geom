@@ -399,6 +399,11 @@ publications:
     journal_details: Forum Math. Sigma 11
     status: Journal Article
     type: Article
+  - title: Ein toller Artikel
+    authors: Gebhard Böckle, Theresa Kaiser
+    journal_details: Beispiel-Journal
+    status: Journal Article
+    type: Article
 software:
   - title: Magma package QaQuotGraphs
     description: to compute the action by unit groups of maximal orders in
