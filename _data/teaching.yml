@@ -2,6 +2,8 @@ courses:
   - year: 2025
     semesters:
       - semester: Winter term 2025/26
+        courses:
+          - title: Beispiel-Seite
       - semester: Summer term 2025
         courses:
           - title: Seminar on Homological Algebra
@@ -10,9 +12,7 @@ courses:
             pdfs:
               - label: seminar program
                 file: /assets/migrated/Homological_algebra___Seminar_2025.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: <div class="frame frame-default frame-type-header frame-layout-0"
               id="c8666"><header><h2 class="">Seminar on Homological Algebra
               (Summer Semester 2025)</h2></header></div><div class="frame
               frame-default frame-type-div frame-layout-0" id="c8664"><hr
@@ -46,9 +46,7 @@ courses:
           - title: Vorlesung Modularity and Galois Representations
             instructor: Prof. Dr. Böckle, Shavali
             course_type: Lecture
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: '<div class="frame frame-default frame-type-header frame-layout-0"
               id="c8496"><header><h2 class="">Modularity and Galois
               Representations (Winter Semester 2024/25)</h2></header></div><div
               class="frame frame-default frame-type-div frame-layout-0"
@@ -128,7 +126,7 @@ courses:
               register for the exam. The grade for the module will be based
               entirely on the performance in the final
               exam.</li></ul><h3>&nbsp;</h3><h2><strong>Literature:
-              TBA</strong></h2></div></div></div>
+              TBA</strong></h2></div></div></div>'
           - title: "Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: Congruence
               Modules and the Wiles–Lenstra–Diamond Numerical Criterion in
               Higher Codimension"
@@ -148,9 +146,7 @@ courses:
                 file: /assets/migrated/SeminarProgramSummer2024.pdf
               - label: Here
                 file: /assets/migrated/VorbesprechungNotes_240122_165909.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: <div class="frame frame-default frame-type-header frame-layout-0"
               id="c8308"><header><h2 class="">Seminar on Representation theory
               of finite groups (Summer semester 2024)</h2></header></div><div
               class="frame frame-default frame-type-div frame-layout-0"
@@ -200,9 +196,7 @@ courses:
                 file: /assets/migrated/quad_form.pdf
               - label: Handout
                 file: /assets/migrated/document_2_.pdf
-            body: >2-
-                
-
+            body: >-
               ## Proseminar on Quadratic forms (WS 23/24)
 
 
@@ -253,9 +247,7 @@ courses:
                 file: /assets/migrated/Announcement.pdf
               - label: here
                 file: /assets/migrated/p_adic_psem.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: '<div class="frame frame-default frame-type-header frame-layout-0"
               id="c7788"><header><h2 class="">Proseminar on p-adic
               numbers</h2></header></div><div class="frame frame-default
               frame-type-div frame-layout-0" id="c7789"><hr
@@ -291,11 +283,9 @@ courses:
               class="ce-column"><figure class="image"><img alt=""
               class="image-embed-item" height="376"
               src="/assets/fileadmin/_processed_/7/e/csm_img-fotor-20230712112726_c08adf2200.png"
-              width="500"></figure></div></div></div></div></div></div></div>
-
-
-              <div class="frame frame-default frame-type-div frame-layout-0"
-              id="c7791"><hr class="ce-div"></div>
+              width="500"></figure></div></div></div></div></div></div></div><div
+              class="frame frame-default frame-type-div frame-layout-0"
+              id="c7791"><hr class="ce-div"></div>'
           - title: "Hauptseminar Arithmetik von Zahl- und Funktionenkörpern: Vectorial
               Drinfeld modular forms over Tate algebras"
             instructor: Prof. Dr. Böckle, Dr. Gezmiş
@@ -315,50 +305,49 @@ courses:
                 file: /assets/migrated/Announcement-1.pdf
               - label: here
                 file: /assets/migrated/AffineAlgGrpSem.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
-              id="c7699"><header><h2 class="">Seminar on Affine Algebraic
+            body: "<div class=\"frame frame-default frame-type-header frame-layout-0\"
+              id=\"c7699\"><header><h2 class=\"\">Seminar on Affine Algebraic
               Groups(Winter Semester 2022/23)</h2></header></div><div
-              class="frame frame-default frame-type-div frame-layout-0"
-              id="c7705"><hr class="ce-div"></div><div class="frame
-              frame-default frame-type-text frame-layout-0"
-              id="c7702"><h3>Organisers: <a
-              href="/members/prof-dr-gebhard-böckle/" title="Opens internal link
-              in current window">Prof. Dr. G. Böckle</a>, <a
-              href="/members/sriram-chinthalagiri-venkata/" title="Opens
-              internal link in current window">C.V. Sriram</a></h3><p>The study
+              class=\"frame frame-default frame-type-div frame-layout-0\"
+              id=\"c7705\"><hr class=\"ce-div\"></div><div class=\"frame
+              frame-default frame-type-text frame-layout-0\"
+              id=\"c7702\"><h3>Organisers: <a
+              href=\"/members/prof-dr-gebhard-böckle/\" title=\"Opens internal
+              link in current window\">Prof. Dr. G. Böckle</a>, <a
+              href=\"/members/sriram-chinthalagiri-venkata/\" title=\"Opens
+              internal link in current window\">C.V. Sriram</a></h3><p>The study
               of algebraic groups constitutes a prominant place in mathematical
               sciences today, having applications in fields such as algebraic
               geometry, number theory and mathematical physics. This seminar is
               about one of the building blocks of these groups the affine
               algebraic groups. We will mainly follow the self contained book of
               W.C. Waterhouse ``Introduction to Affine Group Schemes'' during
-              the seminar.&nbsp;</p></div><div class="frame frame-default
-              frame-type-textmedia frame-layout-0" id="c7703"><div
-              class="ce-textpic ce-center ce-above"><div
-              class="ce-bodytext"><h4>The seminar commences on October 25th,
+              the seminar.&nbsp;</p></div><div class=\"frame frame-default
+              frame-type-textmedia frame-layout-0\" id=\"c7703\"><div
+              class=\"ce-textpic ce-center ce-above\"><div
+              class=\"ce-bodytext\"><h4>The seminar commences on October 25th,
               2022 and will be held every Tuesday from 11 AM to 1PM. The
               location is INF 205. The lecture hall is SR3.</h4><p>The
               Vorbesprechung will be held on <strong>September 30, 2022</strong>
               from <strong>2 PM to 4 PM</strong>; <strong>SR2, INF
               205</strong></p><p>Here you will find the announcement of the
               seminar: <a
-              href="/assets/migrated/Announcement-1.pdf">Announcement</a>.</p><p>A
-              detailed description of the talks and also the practicalities of
-              the seminar can be found <a
-              href="/assets/migrated/AffineAlgGrpSem.pdf">here</a>.</p><p>A
+              href=\"/assets/migrated/Announcement-1.pdf\">Announcement</a>.</p\
+              ><p>A detailed description of the talks and also the
+              practicalities of the seminar can be found <a
+              href=\"/assets/migrated/AffineAlgGrpSem.pdf\">here</a>.</p><p>A
               template(LaTeX file) for creating handout is available here (There
               are two ways of compiling this file :-(i) using the online editor
-              <a href="https://www.overleaf.com/"
-              target="_blank">https://www.overleaf.com/</a>&nbsp; or (ii)
+              <a href=\"https://www.overleaf.com/\"
+              target=\"_blank\">https://www.overleaf.com/</a>&nbsp; or (ii)
               downloading a LaTeX editor and compiler. There are loads of them
               available online(for free). One could download editor <a
-              href="https://www.xm1math.net/texmaker/"
-              target="_blank">https://www.xm1math.net/texmaker/</a> and compiler
-              <a href="https://miktex.org/download"
-              target="_blank">https://miktex.org/download</a>).</p><p>Contact :-
-              sriram.chinthalagiri@iwr.uni-heidelberg.de</p></div></div></div>
+              href=\"https://www.xm1math.net/texmaker/\"
+              target=\"_blank\">https://www.xm1math.net/texmaker/</a> and
+              compiler <a href=\"https://miktex.org/download\"
+              target=\"_blank\">https://miktex.org/download</a>).</p><p>Contact
+              :-
+              sriram.chinthalagiri@iwr.uni-heidelberg.de</p></div></div></div>"
       - semester: Summer term 2022
         courses:
           - title: Proseminar Prime numbers and Cryptography
@@ -393,27 +382,26 @@ courses:
                 file: /assets/migrated/handout_scheerer.pdf
               - label: click here
                 file: /assets/migrated/handout_banwait.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
-              id="c7565"><header><h2 class="">Prime numbers and cryptography
+            body: "<div class=\"frame frame-default frame-type-text frame-layout-0\"
+              id=\"c7565\"><header><h2 class=\"\">Prime numbers and cryptography
               (Proseminar/Seminar SS 2022)</h2></header><p>Dozent: <a
-              href="/members/dr-barinder-banwait/">Dr. Barinder Banwait</a>, <a
-              href="/members/sriram-chinthalagiri-venkata/">C. V.
+              href=\"/members/dr-barinder-banwait/\">Dr. Barinder Banwait</a>,
+              <a href=\"/members/sriram-chinthalagiri-venkata/\">C. V.
               Sriram</a></p><p><strong>Termine</strong>: April 11-14
               2022</p><p><strong>Wo</strong>: SR8 and <a
-              href="https://us06web.zoom.us/j/3356707466?pwd=U0E3ZWlYR0huWEJPTE9xSURFMFRmdz09"
-              target="_blank">online</a></p><p><strong>Format</strong>: Block
+              href=\"https://us06web.zoom.us/j/3356707466?pwd=U0E3ZWlYR0huWEJPT\
+              E9xSURFMFRmdz09\"
+              target=\"_blank\">online</a></p><p><strong>Format</strong>: Block
               Seminar</p><p><strong>Announcement</strong>: <a
-              href="/assets/migrated/announcement-crypto.pdf">click
+              href=\"/assets/migrated/announcement-crypto.pdf\">click
               here</a></p><p><strong>Program</strong>: <a
-              href="/assets/migrated/program-crypto.pdf">click
+              href=\"/assets/migrated/program-crypto.pdf\">click
               here</a></p><p><strong>Vorbesprechung slides</strong>: <a
-              href="/assets/migrated/seminar_prime_numbers.pdf">click
-              here</a></p></div><div class="frame frame-default frame-type-div
-              frame-layout-0" id="c7564"><hr class="ce-div"></div><div
-              class="frame frame-default frame-type-text frame-layout-0"
-              id="c7563"><p><strong>Thema</strong>:</p><p>This seminar will
+              href=\"/assets/migrated/seminar_prime_numbers.pdf\">click
+              here</a></p></div><div class=\"frame frame-default frame-type-div
+              frame-layout-0\" id=\"c7564\"><hr class=\"ce-div\"></div><div
+              class=\"frame frame-default frame-type-text frame-layout-0\"
+              id=\"c7563\"><p><strong>Thema</strong>:</p><p>This seminar will
               develop some of the theory that lies behind these real-world
               applications, via a hands-on, algorithmic approach: Fast
               arithmetic in <strong>Z/nZ</strong>, complexity analysis, and
@@ -421,62 +409,62 @@ courses:
               sieve, a technique arising from algebraic number theory. The
               analogues of these in the elliptic curve setting will also be
               seen.</p><p>See the course announcement and program (linked above)
-              for more information.</p></div>
-
-
-              <div class="frame frame-default frame-type-div frame-layout-0"
-              id="c7561"><hr class="ce-div"></div><div class="frame
-              frame-default frame-type-text frame-layout-0"
-              id="c7560"><p><strong>Talks</strong></p><p>Grey indicates that the
-              talk is also suitable for a Seminar talk.</p><table align="center"
-              border="1" class="contenttable"><tbody><tr><td
-              class="text-center">Title</td><td>Speaker</td><td>Date</td><td>Time</td><td>Handout</td></tr><tr><td>Prime
-              numbers and Complexity analysis</td><td>Etienne
+              for more information.</p></div><div class=\"frame frame-default
+              frame-type-div frame-layout-0\" id=\"c7561\"><hr
+              class=\"ce-div\"></div><div class=\"frame frame-default
+              frame-type-text frame-layout-0\"
+              id=\"c7560\"><p><strong>Talks</strong></p><p>Grey indicates that
+              the talk is also suitable for a Seminar talk.</p><table
+              align=\"center\" border=\"1\"
+              class=\"contenttable\"><tbody><tr><td
+              class=\"text-center\">Title</td><td>Speaker</td><td>Date</td><td>\
+              Time</td><td>Handout</td></tr><tr><td>Prime numbers and Complexity
+              analysis</td><td>Etienne
               Stock</td><td>11.4.2022</td><td>09:15</td><td><a
-              href="/assets/migrated/handout_stock.pdf">click
+              href=\"/assets/migrated/handout_stock.pdf\">click
               here</a></td></tr><tr><td>Fast arithmetic I : Fourier Transform
               Algorithms</td><td>Jonas
               Höcht</td><td>11.4.2022</td><td>11:00</td><td><a
-              href="/assets/migrated/handout_hoecht.pdf">click
+              href=\"/assets/migrated/handout_hoecht.pdf\">click
               here</a></td></tr><tr><td>Pseudoprimes and the Miller-Rabin
               test</td><td>Philipp
               Nazari</td><td>11.4.2022</td><td>14:15</td><td><a
-              href="/assets/migrated/handout_nazari.pdf">click
+              href=\"/assets/migrated/handout_nazari.pdf\">click
               here</a></td></tr><tr><td>The Theorem of Agrawal-Kayal-Saxena
               I</td><td>Carola Behr</td><td>12.4.2022</td><td>09:15</td><td><a
-              href="/assets/migrated/handout_behr.pdf">click
+              href=\"/assets/migrated/handout_behr.pdf\">click
               here</a></td></tr><tr><td>The Theorem of Agrawal-Kayal-Saxena
               II</td><td>Saif Mandour</td><td>12.4.2022</td><td>11:00</td><td><a
-              href="/assets/migrated/handout_mandour.pdf">click
-              here</a></td></tr><tr style="background-color:#C0C0C0"><td>Brief
+              href=\"/assets/migrated/handout_mandour.pdf\">click
+              here</a></td></tr><tr style=\"background-color:#C0C0C0\"><td>Brief
               overview of Algebraic number theory</td><td>Vincent
               Zahlen</td><td>12.4.2022</td><td>14:15</td><td><a
-              href="/assets/migrated/handout_zahlen.pdf">click
+              href=\"/assets/migrated/handout_zahlen.pdf\">click
               here</a></td></tr><tr
-              style="background-color:#C0C0C0"><td>Factorisation III - The
+              style=\"background-color:#C0C0C0\"><td>Factorisation III - The
               number field sieve</td><td>C. V.
               Sriram</td><td>12.4.2022</td><td>16:00</td><td><a
-              href="/assets/migrated/handout_sriram.pdf">click
-              here</a></td></tr><tr style="background-color:#C0C0C0"><td>Brief
+              href=\"/assets/migrated/handout_sriram.pdf\">click
+              here</a></td></tr><tr style=\"background-color:#C0C0C0\"><td>Brief
               overview of elliptic curves</td><td>Marcel
               Eichberg</td><td>13.4.2022</td><td>09:15</td><td><a
-              href="/assets/migrated/handout_eichberg.pdf">click
+              href=\"/assets/migrated/handout_eichberg.pdf\">click
               here</a></td></tr><tr
-              style="background-color:#C0C0C0"><td>Public-key
+              style=\"background-color:#C0C0C0\"><td>Public-key
               cryptography</td><td>Akin
               Yilmaz</td><td>13.4.2022</td><td>11:00</td><td><a
-              href="/assets/migrated/handout_yilmaz.pdf">click
+              href=\"/assets/migrated/handout_yilmaz.pdf\">click
               here</a></td></tr><tr
-              style="background-color:#C0C0C0"><td>Lenstra's elliptic curve
+              style=\"background-color:#C0C0C0\"><td>Lenstra's elliptic curve
               method and elliptic curve primality proving</td><td>Mona
               Scheerer</td><td>14.4.2022</td><td>09:15</td><td><a
-              href="/assets/migrated/handout_scheerer.pdf">click
+              href=\"/assets/migrated/handout_scheerer.pdf\">click
               here</a></td></tr><tr
-              style="background-color:#C0C0C0"><td>Post-quantum cryptography,
+              style=\"background-color:#C0C0C0\"><td>Post-quantum cryptography,
               and the Supersingular Isogeny Diffie-Hellman protocol</td><td>B.
               S. Banwait</td><td>14.4.2022</td><td>11:00</td><td><a
-              href="/assets/migrated/handout_banwait.pdf">click
-              here</a></td></tr></tbody></table></div>
+              href=\"/assets/migrated/handout_banwait.pdf\">click
+              here</a></td></tr></tbody></table></div>"
   - year: 2021
     semesters:
       - semester: Winter term 2021/22
@@ -493,9 +481,7 @@ courses:
                 file: /assets/migrated/AV_handout_1.pdf
               - label: Handout 2
                 file: /assets/migrated/av_handout02.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c7424"><header><h2 class="">Seminar on Abelian Varieties (WiSe
               2021/22)</h2></header><p>Dozent: <a
               href="/members/dr-barinder-banwait/">Dr. Barinder Banwait</a>, <a
@@ -538,7 +524,7 @@ courses:
               endomorphism ring</td><td>Lukas
               Heger</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>The Albert
               classification</td><td>Lukas
-              Heger</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></div>
+              Heger</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></div>'
           - title: Vorlesung Étale Kohomologie
             instructor: Prof. Dr. Böckle, Chilla, Quast, Sriram
             course_type: Lecture
@@ -564,9 +550,7 @@ courses:
                 file: /assets/migrated/Programm_Derivierte_Kategorien.pdf
               - label: Tipps für gute Seminarvorträge
                 file: /assets/migrated/Tipps.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c6898"><header><h2 class="">Seminar Derivierte Kategorien und
               Algebraische Geometrie (SoSe 2021)</h2></header><p>Dozent: <a
               class="internal-link" href="/members/prof-dr-gebhard-böckle/"
@@ -633,7 +617,7 @@ courses:
               </i>Lecture notes, 2019. <a class="external-link-new-window"
               href="http://perso.ens-lyon.fr/sophie.morel/notes540.pdf"
               target="_blank" title="Opens internal link in current
-              window">Link</a>.</li></ul></div>
+              window">Link</a>.</li></ul></div>'
           - title: Vorlesung Algebraische Geometrie 2
             instructor: Prof. Dr. Böckle, Chilla, Quast
             course_type: Lecture
@@ -653,9 +637,7 @@ courses:
                 file: /assets/migrated/Programm_Elliptische_Kurven.pdf
               - label: Tipps für gute Seminarvorträge
                 file: /assets/migrated/Tipps.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c6791"><header><h2 class="">Seminar Elliptische Kurven (WS
               2020/21)</h2></header><p>Dozent: <a class="internal-link"
               href="/members/prof-dr-gebhard-böckle/" title="Opens internal link
@@ -728,13 +710,11 @@ courses:
               &nbsp;</p><p><b>Literatur:</b></p><ul><li>[Si] Silverman, Joseph
               H.<i>, The Arithmetic of Elliptic Curves, </i>Springer Graduate
               Texts in Mathematics (106), second edition, Springer,
-              2010.</li></ul></div>
+              2010.</li></ul></div>'
           - title: Vorlesung Algebraische Geometrie 1
             instructor: Prof. Dr. Böckle, Chilla, Quast
             course_type: Lecture
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: <div class="frame frame-default frame-type-text frame-layout-0"
               id="c1163"><h1>AG Computational Arithmetic Geometry</h1><h3><a
               class="internal-link" href="/members/prof-dr-gebhard-böckle/"
               title="Opens internal link in current window">Prof. Dr. Gebhard
@@ -774,13 +754,12 @@ courses:
 
               ## Sommersemester 2020
 
-                
-
               ### Organisation
 
               *   Dozent: Prof. Dr. Gebhard Böckle
                   
               *   Assistent: Julian Quast
+                  
 
               ### Vorlesung
 
@@ -794,9 +773,7 @@ courses:
             pdfs:
               - label: Adic spaces
                 file: /assets/migrated/WedhornAdicSpaces.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c6700"><header><h2 class="">Vorlesung Adische Räume II
               (Sommersemester 2020)</h2></header><p>Dozent: <a
               class="internal-link" href="/members/prof-dr-judith-ludwig/"
@@ -859,7 +836,7 @@ courses:
               2018.</li><li>[JN] Christian Johansson and James Newton,
               <i>Extended eigenvarieties for overconvergent cohomology,
               </i>Algebra and Number Theory, vol. 13(1), pp 93-158,
-              2019.</li></ul></div>
+              2019.</li></ul></div>'
   - year: 2019
     semesters:
       - semester: Winter Term 2019/20
@@ -875,9 +852,7 @@ courses:
                 file: /assets/migrated/Seminar_Affine_Algebraische_Gruppen_Aushang.pdf
               - label: Programm
                 file: /assets/migrated/Seminar_Affine_Algebraische_Gruppen__Programm.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c6503"><header><h2 class="">Seminar "Affine algebraische
               Gruppen" (WS 2019/20)</h2></header><p><b>Dozent:</b><a
               class="internal-link" href="/members/prof-dr-gebhard-böckle/"
@@ -949,7 +924,7 @@ courses:
               Raum 3/222.</p><p><b>Vorkenntnisse: </b>Algebraische Geometrie
               1.</p><p><b>Literatur:</b></p><p>[Mil] J.S. Milne: Algebraic
               Groups - The Theory of Group Schemes of Finite Type over a
-              Field.</p></div>
+              Field.</p></div>'
           - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
             instructor: Prof. Dr. Böckle
             course_type: Seminar
@@ -963,9 +938,7 @@ courses:
                 file: /assets/migrated/Proseminar_Bilinearformen_und_Klassische_Gruppen_Aushang.pdf
               - label: Programm
                 file: /assets/migrated/Proseminar_Bilinearformen_und_klassische_Gruppen__Programm.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c6414"><header><h2 class="">Proseminar "Bilinearformen und
               Klassische Gruppen" (SS 2019)</h2></header><p><b>Dozent:</b><a
               class="internal-link" href="/members/prof-dr-gebhard-böckle/"
@@ -1008,16 +981,14 @@ courses:
               können Restplätze an Studenten vergeben werden, die zumindest eine
               der beiden Prüfungen bestanden
               haben.</p><p><b>Literatur:</b></p><p>[J] Nathan Jacobson: Basic
-              Algebra 1</p><p>[L] Serge Lang: Algebra</p></div>
+              Algebra 1</p><p>[L] Serge Lang: Algebra</p></div>'
           - title: Kompatible Systeme von Galoisdarstellungen
             instructor: Prof. Dr. Böckle, Dr. Conti
             course_type: Lecture
             pdfs:
               - label: Vorlesungsankündigung
                 file: /assets/migrated/Vorlesungsankuendigung-MumfordTate.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c6462"><header><h2 class="">Vorlesung "Kompatible Systeme von
               Galoisdarstellungen" (SS 2018)</h2></header><p><b>Dozent:</b>
               Prof. Dr. Gebhard Böckle</p><p><b>Assistent:</b> Dr. Andrea
@@ -1042,7 +1013,7 @@ courses:
               "></span><span style="left: 368.347px; top: 119.291px; font-size:
               14.944px; font-family: sans-serif; transform: scaleX(1.04743);
               "></span></span></p><p>Die <b>Übungsblätter</b> finden Sie im
-              Moodle.<b><br></b></p></div>
+              Moodle.<b><br></b></p></div>'
           - title: p-divisible Gruppen
             instructor: Dr. Ludwig
             course_type: Lecture
@@ -1056,9 +1027,7 @@ courses:
                 file: /assets/migrated/Blatt2.pdf
               - label: Übungen Juni
                 file: /assets/migrated/Blatt3.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: '<div class="frame frame-default frame-type-header frame-layout-0"
               id="c6413"><header><h2 class="">Vorlesung: p-divisible
               Gruppen</h2><h3 class="">Dr. Judith Ludwig</h3></header></div><div
               class="frame frame-default frame-type-div frame-layout-0"
@@ -1109,7 +1078,7 @@ courses:
               class="external-link-new-window"
               href="http://virtualmath1.stanford.edu/~conrad/mordellsem/"
               target="_blank" title="Opens internal link in current
-              window">NTLS10/11</a>.</li></ul></div>
+              window">NTLS10/11</a>.</li></ul></div>'
           - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
             instructor: Prof. Dr. Böckle, Dr. Ludwig
             course_type: Seminar
@@ -1134,9 +1103,7 @@ courses:
                 file: /assets/migrated/ws18-sem-algo-alg-ankuendigung.pdf
               - label: Programm
                 file: /assets/migrated/ws18-sem-algo-alg-programm.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c6101"><p><b>Seminar</b><b> "Algorithmische Algebra"</b> im
               Wintersemester 2018/19</p><p>Dr. Andreas Maurischat</p><p>Eine
               Ankündigung findet sich <a class="download"
@@ -1155,13 +1122,11 @@ courses:
               href="mailto:andreas.maurischat@iwr.uni-heidelberg.de"
               title="Opens internal link in current window">per Email bei
               mir</a>.</p><p><b>Hauptquelle</b>: Skript "Computeralgebra" von
-              Prof. Matzat</p></div>
+              Prof. Matzat</p></div>'
           - title: Galoiskohomologie und Galoisdarstellungen
             instructor: Prof. Dr. Böckle
             course_type: Lecture
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c6191"><header><h2 class="">Vorlesung "Galoiskohomologie und
               Galoisdarstellungen" (WS 2018/2019)</h2></header><p><b>Dozent:</b>
               Prof. Dr. Gebhard Böckle</p><p><b>Vorlesungen:</b></p><p>Dienstags
@@ -1181,7 +1146,7 @@ courses:
               Neukirch, A. Schmidt, K. Wingberg, Cohomology of Number
               Fields</li><li>E. Artin, J. Tate, Class Field
               Theory</li></ul><p><b>Übungsblätter:</b></p><p>Finden sich unter
-              Moodle.</p></div>
+              Moodle.</p></div>'
           - title: Funktionentheorie 2
             instructor: Dr. Maurischat, Quast
             course_type: Lecture
@@ -1210,9 +1175,7 @@ courses:
                 file: /assets/migrated/ft2_blatt11.pdf
               - label: Übungsblatt 12
                 file: /assets/migrated/ft2_blatt12.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c6188"><header><h2 class="">Vorlesung "Funktionentheorie 2"
               (WS 2018/19)</h2></header><p><b>Dozent:</b> Gast-Prof. Dr. Andreas
               Maurischat</p><p><b>Assistent:</b> Julian
@@ -1257,7 +1220,7 @@ courses:
               href="/assets/migrated/ft2_blatt11.pdf" title="Opens internal link
               in current window">Übungsblatt 11</a></p><p><a class="download"
               href="/assets/migrated/ft2_blatt12.pdf" title="Opens internal link
-              in current window">Übungsblatt 12</a></p></div>
+              in current window">Übungsblatt 12</a></p></div>'
           - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
             instructor: Prof. Dr. Böckle, Dr. Ludwig
             course_type: Seminar
@@ -1274,9 +1237,7 @@ courses:
                 file: /assets/migrated/ws17_sem_gp-coh_INFO.pdf
               - label: Programm
                 file: /assets/migrated/SS18_LT_Programm.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c5925"><p><b>Seminar</b><b> "Lubin-Tate Theorie"</b> im
               Sommersemester 2018</p><p>Prof. Dr. Gebhard Böckle, Konrad
               Fischer</p><p><b>Ziel</b>: Das Seminar wird die Konstruktion
@@ -1302,7 +1263,7 @@ courses:
               Sie <a class="mail"
               href="mailto:konrad.fischer@iwr.uni-heidelberg.de" title="Opens
               window for sending email">Konrad Fischer</a> eine
-              Email.<br></p></div>
+              Email.<br></p></div>'
           - title: Algebraische Zahlentheorie 2
             instructor: Prof. Dr. Böckle, Dr. Conti
             course_type: Lecture
@@ -1329,9 +1290,7 @@ courses:
                 file: /assets/migrated/AZT2-Blatt10.pdf
               - label: Übungsblatt 12
                 file: /assets/migrated/AZT2-Blatt12.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c5990"><header><h2 class="">Vorlesung "Algebraische
               Zahlentheorie 2" (SS 2018)</h2></header><p><b>Dozent:</b> Prof.
               Dr. Gebhard Böckle</p><p><b>Assistent:</b> Dr. Andrea
@@ -1388,16 +1347,14 @@ courses:
               13.07 und Di 17.07.2018)</p><p><a class="download"
               href="/assets/migrated/AZT2-Blatt12.pdf" title="Opens internal
               link in current window">Übungsblatt 12</a> (Nicht in der Pruefung;
-              Besprechung: Di 24.06.2018)</p></div>
+              Besprechung: Di 24.06.2018)</p></div>'
           - title: Galois representations and their deformations
             instructor: Dr. Conti
             course_type: Lecture
             pdfs:
               - label: PDF
                 file: /assets/migrated/Gouvea-2001-Deformations_of_Galois_representations.pdf
-            body: " \ 
-
-              <div class=\"frame frame-default frame-type-text frame-layout-0\"
+            body: "<div class=\"frame frame-default frame-type-text frame-layout-0\"
               id=\"c5991\"><header><h2 class=\"\">Vorlesung \"Galois
               representations and their deformations\" (SS
               2018)</h2></header><p><b>Dozent:</b> Dr. Andrea Conti</p><p>Die
@@ -1433,9 +1390,7 @@ courses:
             pdfs:
               - label: Seminar program
                 file: /assets/migrated/oberseminar-ss2018.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c6030"><p><b>Hauptseminar "Arithmetik von Zahl- und
               Funktionenkörpern" (SS 2018)&nbsp;</b></p><p>Topic: Shtuka
               cohomology and special values of Goss L-functions</p><p>We meet
@@ -1443,7 +1398,7 @@ courses:
               April 19.</p><p><a class="download"
               href="/assets/migrated/oberseminar-ss2018.pdf" target="_blank"
               title="Opens internal link in current window">Seminar
-              program</a></p></div>
+              program</a></p></div>'
   - year: 2017
     semesters:
       - semester: Winter Term 2017/18
@@ -1451,9 +1406,7 @@ courses:
           - title: Algebraische Zahlentheorie 1
             instructor: Prof. Dr. Böckle, Dr. Guiraud
             course_type: Lecture
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c5570"><header><h2 class="">Vorlesung "Algebraische
               Zahlentheorie 1" (WS 2017/18)</h2></header><p>Dozent: Prof. Dr.
               Gebhard Böckle</p><p>Assistent: Dr. David-A.
@@ -1482,7 +1435,7 @@ courses:
               window">Müsli</a> und
               Moodle.</p><p><b>Prüfung:</b></p><ul><li>Haupttermin: Donnerstag,
               15.2.2018, Uhrzeit und Raum werden noch bekannt
-              gegeben.</li><li>Nachtermin: TBA</li></ul></div>
+              gegeben.</li><li>Nachtermin: TBA</li></ul></div>'
           - title: "Seminar: Gruppenkohomologie"
             instructor: Prof. Dr. Böckle, Fischer
             course_type: Seminar
@@ -1491,9 +1444,7 @@ courses:
                 file: /assets/migrated/ws17_sem_gp-coh_INFO.pdf
               - label: Programm
                 file: /assets/migrated/programm_gp-coh.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-textpic frame-layout-0"
+            body: '<div class="frame frame-default frame-type-textpic frame-layout-0"
               id="c5562"><div class="ce-textpic ce-center ce-above"><div
               class="ce-bodytext"><p><b>Seminar</b><b> "Gruppenkohomologie"</b>
               im Wintersemester 2017</p><p>Prof. Dr. Gebhard Böckle, Konrad
@@ -1526,16 +1477,14 @@ courses:
               (INF 205)</b> oder schreiben Sie <a class="mail"
               href="mailto:konrad.fischer@iwr.uni-heidelberg.de" title="Opens
               window for sending email">Konrad Fischer</a> eine
-              Email.<br></p></div></div></div>
+              Email.<br></p></div></div></div>'
           - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
             instructor: Prof. Dr. Böckle, Dr. Guiraud
             course_type: Seminar
             pdfs:
               - label: Seminar program
                 file: /assets/migrated/oberseminar.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c5660"><p><b>Hauptseminar "Arithmetik von Zahl- und
               Funktionenkörpern" (WS 2017/18)&nbsp;</b></p><p>Topic: Big image
               theorems for Hida families</p><p>We meet thursdays 9-11 in
@@ -1543,15 +1492,13 @@ courses:
               19.</p><p><a class="download"
               href="/assets/migrated/oberseminar.pdf" target="_blank"
               title="Opens internal link in current window">Seminar
-              program</a></p></div>
+              program</a></p></div>'
       - semester: Summer Term 2017
         courses:
           - title: Algebra 2
             instructor: Dr. Malte Witte, K. Fischer
             course_type: Lecture
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c5392"><h1><b>Algebra 2</b> im Sommersemester
               2017</h1><header><header><p><b>Dozent: Dr. Malte
               Witte</b></p></header></header><p>Assistent: Konrad
@@ -1592,7 +1539,7 @@ courses:
               gebildet, bzw. ist 5, wenn weder Klausur noch Nachprüfung
               bestanden wurde.</p><p><b>Klausurtermin ist der Dienstag, 1.
               August, 9-12h.</b></p><p><b>Ein (evtl mündlicher) Nachtermin ist
-              13. Oktober.</b></p></div>
+              13. Oktober.</b></p></div>'
   - year: 2016
     semesters:
       - semester: Winter Term 2016/17
@@ -1605,9 +1552,7 @@ courses:
                 file: /assets/migrated/ws16_prosem_ankuendigung.pdf
               - label: hier.
                 file: /assets/migrated/ws16_sem_talks_details.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: '<div class="frame frame-default frame-type-text frame-layout-0"
               id="c5157"><p><b>Proseminar</b><b> "Primzahlen und Faktorisierung
               für die Kryptographie"</b> im Wintersemester 2016</p><p>Prof. Dr.
               Gebhard Böckle, <a class="mail"
@@ -1634,13 +1579,11 @@ courses:
               </b>um<b> 13:00</b> in <b>SR3</b></p><p>Bei Fragen schreiben sie
               mir bitte eine <a class="mail"
               href="mailto:konrad.fischer@iwr.uni-heidelberg.de" title="Opens
-              window for sending email">Email</a>.</p></div>
+              window for sending email">Email</a>.</p></div>'
           - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
             instructor: Prof. Dr. Böckle
             course_type: Seminar
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: <div class="frame frame-default frame-type-header frame-layout-0"
               id="c5210"><header><h2 class="">Surveys on conjectures in number
               and function field arithmetic</h2><h3 class="">Hauptseminar Prof.
               Böckle WS 2016/17</h3></header></div><div class="frame
@@ -1679,9 +1622,7 @@ courses:
             pdfs:
               - label: hier
                 file: /assets/migrated/p-adic_analysis_prosem.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: '<div class="frame frame-default frame-type-header frame-layout-0"
               id="c5038"><header><h2 class="">Proseminar p-adische
               Analysis</h2><h3 class="">Prof. Dr. Gebhard Böckle, Peter
               Gräf</h3></header></div><div class="frame frame-default
@@ -1771,25 +1712,23 @@ courses:
               Real</i> (2007).</li><li>Koblitz, N.: <i>p-adic Numbers, p-adic
               Analysis and Zeta-Functions</i> (1984).</li></ul></div><div
               class="frame frame-default frame-type-div frame-layout-0"
-              id="c5052"><hr class="ce-div"></div>
+              id="c5052"><hr class="ce-div"></div>'
           - title: "Hauptseminar: Arithmetik von Zahl- und Funktionenkörpern"
             instructor: Prof. Dr. Böckle, Dr. Guiraud, Fischer, Gräf
             course_type: Seminar
             pdfs:
               - label: Program
                 file: /assets/migrated/Program_SS2016.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
-              id="c5115"><header><h2 class="">Working group seminar: p-adic
+            body: "<div class=\"frame frame-default frame-type-text frame-layout-0\"
+              id=\"c5115\"><header><h2 class=\"\">Working group seminar: p-adic
               Uniformization</h2></header><p>Topic of the research seminar in
               summer 2016 is '<b>p-adic uniformization of Shimura
               curves</b>'.</p><p>The seminar meets every friday, 9am in Seminar
               room 3 of the Mathematikon, starting<b> 22nd of
               April</b>.</p><p>The program with details to each talk can be
-              found here: <a class="download"
-              href="/assets/migrated/Program_SS2016.pdf" title="Opens external
-              link in new window">Program</a></p></div>
+              found here: <a class=\"download\"
+              href=\"/assets/migrated/Program_SS2016.pdf\" title=\"Opens
+              external link in new window\">Program</a></p></div>"
       - semester: Winter Term 2015/16
         courses:
           - title: Lineare Algebra 1
@@ -1810,9 +1749,7 @@ courses:
             pdfs:
               - label: hier
                 file: /assets/migrated/Seminarprogram.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: '<div class="frame frame-default frame-type-header frame-layout-0"
               id="c4559"><header><h2 class="">Seminar zur Darstellungstheorie
               endlicher Gruppen</h2><h3 class="">Prof. Dr. Gebhard Böckle und
               Yujia Qiu</h3></header></div><div class="frame frame-default
@@ -1895,7 +1832,7 @@ courses:
               Versionen)</li></ul><p>Falls es die Bücher nicht in der Bibliothek
               gibt, wendet euch bitte an <a href="/members/dr-yujia-qiu/"
               title="Opens internal link in current window">Yujia
-              Qiu</a>.</p></div>
+              Qiu</a>.</p></div>'
           - title: Vorlesung "Darstellungen und Invarianten 2"
             instructor: Dr. Cerviño
             course_type: Lecture
@@ -1924,86 +1861,87 @@ courses:
                 file: /assets/migrated/Seminarprogram.pdf
               - label: hier
                 file: /assets/migrated/Vorbesprechung.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
-              id="c3364"><header><h2 class="">Seminar zur Klassenkörpertheorie
-              über Funktionenkörpern und Drinfeld Moduln</h2><h3 class="">Prof.
-              Dr. Gebhard Böckle und Yujia Qiu</h3></header></div><div
-              class="frame frame-default frame-type-div frame-layout-0"
-              id="c3363"><hr class="ce-div"></div><div class="frame
-              frame-default frame-type-text frame-layout-0" id="c3362"><p><a
-              class="internal-link" href="#c3360" title="Opens internal link in
-              current window">Termin und Ort</a></p><p><a class="internal-link"
-              href="#c3358" title="Opens internal link in current
-              window">Seminarprogramm</a></p><p><a class="internal-link"
-              href="#c3356" title="Opens internal link in current
-              window">Vorträge</a></p><p><a class="internal-link" href="#c3354"
-              title="Opens internal link in current
-              window">Literatur</a></p><p><a class="internal-link" href="#c3352"
-              title="Opens internal link in current window">Ankündigung und
-              Vorbesprechung</a></p></div><div class="frame frame-default
-              frame-type-div frame-layout-0" id="c3361"><hr
-              class="ce-div"></div><div class="frame frame-default
-              frame-type-text frame-layout-0" id="c3360"><header><h4
-              class="">Termin und Ort</h4></header><p>Dienstags 16:15-17:45
+            body: "<div class=\"frame frame-default frame-type-header frame-layout-0\"
+              id=\"c3364\"><header><h2 class=\"\">Seminar zur
+              Klassenkörpertheorie über Funktionenkörpern und Drinfeld
+              Moduln</h2><h3 class=\"\">Prof. Dr. Gebhard Böckle und Yujia
+              Qiu</h3></header></div><div class=\"frame frame-default
+              frame-type-div frame-layout-0\" id=\"c3363\"><hr
+              class=\"ce-div\"></div><div class=\"frame frame-default
+              frame-type-text frame-layout-0\" id=\"c3362\"><p><a
+              class=\"internal-link\" href=\"#c3360\" title=\"Opens internal
+              link in current window\">Termin und Ort</a></p><p><a
+              class=\"internal-link\" href=\"#c3358\" title=\"Opens internal
+              link in current window\">Seminarprogramm</a></p><p><a
+              class=\"internal-link\" href=\"#c3356\" title=\"Opens internal
+              link in current window\">Vorträge</a></p><p><a
+              class=\"internal-link\" href=\"#c3354\" title=\"Opens internal
+              link in current window\">Literatur</a></p><p><a
+              class=\"internal-link\" href=\"#c3352\" title=\"Opens internal
+              link in current window\">Ankündigung und
+              Vorbesprechung</a></p></div><div class=\"frame frame-default
+              frame-type-div frame-layout-0\" id=\"c3361\"><hr
+              class=\"ce-div\"></div><div class=\"frame frame-default
+              frame-type-text frame-layout-0\" id=\"c3360\"><header><h4
+              class=\"\">Termin und Ort</h4></header><p>Dienstags 16:15-17:45
               Uhr&nbsp;im Wintersemester 2014/2015 im Raum 220, INF
-              368.</p><p>Beginn:&nbsp; 14.10.14</p></div><div class="frame
-              frame-default frame-type-div frame-layout-0" id="c3359"><hr
-              class="ce-div"></div><div class="frame frame-default
-              frame-type-text frame-layout-0" id="c3358"><header><h4
-              class="">Seminarprogramm</h4></header><p>Das vorläufige
-              Seminarprogramm befindet sich <a class="download"
-              href="/assets/migrated/Seminarprogram.pdf" title="Initiates file
-              download">hier</a>.</p></div><div class="frame frame-default
-              frame-type-div frame-layout-0" id="c3357"><hr
-              class="ce-div"></div><div class="frame frame-default
-              frame-type-text frame-layout-0" id="c3356"><header><h4
-              class="">Vorträge</h4></header><p>Bei Interesse oder Fragen zu den
-              Vorträgen wendet euch bitte an <a class="mail"
-              href="mailto:yujia.qiu@iwr.uni-heidelberg.de" title="Opens window
-              for sending email">Yujia Qiu</a>.</p><p>Dies ist die
+              368.</p><p>Beginn:&nbsp; 14.10.14</p></div><div class=\"frame
+              frame-default frame-type-div frame-layout-0\" id=\"c3359\"><hr
+              class=\"ce-div\"></div><div class=\"frame frame-default
+              frame-type-text frame-layout-0\" id=\"c3358\"><header><h4
+              class=\"\">Seminarprogramm</h4></header><p>Das vorläufige
+              Seminarprogramm befindet sich <a class=\"download\"
+              href=\"/assets/migrated/Seminarprogram.pdf\" title=\"Initiates
+              file download\">hier</a>.</p></div><div class=\"frame
+              frame-default frame-type-div frame-layout-0\" id=\"c3357\"><hr
+              class=\"ce-div\"></div><div class=\"frame frame-default
+              frame-type-text frame-layout-0\" id=\"c3356\"><header><h4
+              class=\"\">Vorträge</h4></header><p>Bei Interesse oder Fragen zu
+              den Vorträgen wendet euch bitte an <a class=\"mail\"
+              href=\"mailto:yujia.qiu@iwr.uni-heidelberg.de\" title=\"Opens
+              window for sending email\">Yujia Qiu</a>.</p><p>Dies ist die
               <i>vorläufige</i> Liste der Vorträge:</p><table
-              class="contenttable"><thead><tr><th class="align-left" colspan="4"
-              rowspan="1" scope="col">Teil I. Skew Polynomial
+              class=\"contenttable\"><thead><tr><th class=\"align-left\"
+              colspan=\"4\" rowspan=\"1\" scope=\"col\">Teil I. Skew Polynomial
               Rings</th></tr></thead><tbody><tr><td>1</td><td
-              class="align-left">Skew polynomial rings and <i>q</i>-linear
-              polynomials</td><td></td><td>14.10.14</td></tr><tr><td>2</td><td>The
-              Moore determinant and zeros of <i>q</i>-linear
-              polynomials</td><td></td><td>21.10.14</td></tr><tr><td colspan="4"
-              rowspan="1"><b>Teil II. Analysis of Nonarchimedean Valued
-              Fields</b></td></tr><tr><td>3</td><td>Valuations and Hensel's
-              lemma</td><td></td><td>28.10.14</td></tr><tr><td>4</td><td>Extensions
-              of valuations and Newton
-              polygons</td><td></td><td>04.11.14</td></tr><tr><td>5</td><td>Analytic
-              functions and normed vector
+              class=\"align-left\">Skew polynomial rings and <i>q</i>-linear
+              polynomials</td><td></td><td>14.10.14</td></tr><tr><td>2</td><td>\
+              The Moore determinant and zeros of <i>q</i>-linear
+              polynomials</td><td></td><td>21.10.14</td></tr><tr><td
+              colspan=\"4\" rowspan=\"1\"><b>Teil II. Analysis of Nonarchimedean
+              Valued Fields</b></td></tr><tr><td>3</td><td>Valuations and
+              Hensel's
+              lemma</td><td></td><td>28.10.14</td></tr><tr><td>4</td><td>Extens\
+              ions of valuations and Newton
+              polygons</td><td></td><td>04.11.14</td></tr><tr><td>5</td><td>Ana\
+              lytic functions and normed vector
               spaces</td><td></td><td>11.11.14</td></tr><tr><td>6</td><td>Review
               of Dedekind rings</td><td></td><td>18.11.14</td></tr><tr><td
-              colspan="4" rowspan="1"><b>Teil III. Drinfeld
+              colspan=\"4\" rowspan=\"1\"><b>Teil III. Drinfeld
               Modules</b></td></tr><tr><td>7</td><td>Analytic theory I:
-              lattices</td><td></td><td>25.11.14</td></tr><tr><td>8</td><td>Analytic
-              theory II: Carlitz
-              exponential</td><td></td><td>02.12.14</td></tr><tr><td>9</td><td>Algebraic
-              theory I: basic notions, torsion and special
-              characteristic</td><td></td><td>09.12.14</td></tr><tr><td>10</td><td>Algebraic
-              theory II: homomorphisms and the action of
-              ideals</td><td></td><td>16.12.14</td></tr><tr><td colspan="4"
-              rowspan="1"><b>Teil IV. Explicit Class Field Theory over Function
-              Fields</b></td></tr><tr><td>11</td><td>Overview of class field
-              theory over global
+              lattices</td><td></td><td>25.11.14</td></tr><tr><td>8</td><td>Ana\
+              lytic theory II: Carlitz
+              exponential</td><td></td><td>02.12.14</td></tr><tr><td>9</td><td>\
+              Algebraic theory I: basic notions, torsion and special
+              characteristic</td><td></td><td>09.12.14</td></tr><tr><td>10</td>\
+              <td>Algebraic theory II: homomorphisms and the action of
+              ideals</td><td></td><td>16.12.14</td></tr><tr><td colspan=\"4\"
+              rowspan=\"1\"><b>Teil IV. Explicit Class Field Theory over
+              Function Fields</b></td></tr><tr><td>11</td><td>Overview of class
+              field theory over global
               fields</td><td></td><td>13.01.15</td></tr><tr><td>12</td><td>Sign
               normalization and field of
-              definition</td><td></td><td>20.01.15</td></tr><tr><td>13</td><td>The
-              sign-normalized Drinfeld modules and
-              reduction</td><td></td><td>27.01.15</td></tr><tr><td>14</td><td>Explicit
-              CFT and division fields of Drinfeld-Hayes
+              definition</td><td></td><td>20.01.15</td></tr><tr><td>13</td><td>\
+              The sign-normalized Drinfeld modules and
+              reduction</td><td></td><td>27.01.15</td></tr><tr><td>14</td><td>E\
+              xplicit CFT and division fields of Drinfeld-Hayes
               modules</td><td></td><td>03.02.15</td></tr></tbody></table><p>Da
               die Vorträge noch angepasst werden, können sich die jeweiligen
-              Termine noch um 1-2 Wochen ändern.</p></div><div class="frame
-              frame-default frame-type-div frame-layout-0" id="c3355"><hr
-              class="ce-div"></div><div class="frame frame-default
-              frame-type-text frame-layout-0" id="c3354"><header><h4
-              class="">Literatur</h4></header><p>Dies sind die Hauptquellen,
+              Termine noch um 1-2 Wochen ändern.</p></div><div class=\"frame
+              frame-default frame-type-div frame-layout-0\" id=\"c3355\"><hr
+              class=\"ce-div\"></div><div class=\"frame frame-default
+              frame-type-text frame-layout-0\" id=\"c3354\"><header><h4
+              class=\"\">Literatur</h4></header><p>Dies sind die Hauptquellen,
               denen wir im Seminar folgen werden:</p><ul><li>David Goss,
               <i>Basic Structures of Function Field Arithmetic</i>, Band 35,
               Ergebnisse der Mathematik und ihrer Grenzgebeite. 3. Folge.
@@ -2014,20 +1952,21 @@ courses:
               editors, <i>Drinfeld moduls, modular schemes and applications</i>,
               page 44-65. World Scientific Publishing Co., Inc., River Edge, NJ,
               1997</li></ul><p>Falls es die Bücher nicht in der Bibliothek gibt,
-              wendet euch bitte an <a class="internal-link"
-              href="/members/dr-yujia-qiu/" title="Opens internal link in
-              current window">Yujia Qiu</a>.</p><p>Literatur zum Seminar finden
-              Sie außerdem hier (passwortgeschützt).</p></div><div class="frame
-              frame-default frame-type-div frame-layout-0" id="c3353"><hr
-              class="ce-div"></div><div class="frame frame-default
-              frame-type-text frame-layout-0" id="c3352"><header><h4
-              class="">Ankündigung und Vorbesprechung</h4></header><p>Die
-              PDF-Version des Seminarprograms befindet sich <a class="download"
-              href="/assets/migrated/Vorbesprechung.pdf" title="Initiates file
-              download">hier</a>.</p><p>Die Vorbesprechung zum Seminar ist am
-              Freitag, den 25.7. um 10:45 Uhr im HS4, INF 288.</p><p>Bitte tragt
-              euch auch in Müsli ein, wenn ihr das Seminar teilnehmen möchtet.
-              Die Müsli Gruppe befindet sich hier.</p></div>
+              wendet euch bitte an <a class=\"internal-link\"
+              href=\"/members/dr-yujia-qiu/\" title=\"Opens internal link in
+              current window\">Yujia Qiu</a>.</p><p>Literatur zum Seminar finden
+              Sie außerdem hier (passwortgeschützt).</p></div><div class=\"frame
+              frame-default frame-type-div frame-layout-0\" id=\"c3353\"><hr
+              class=\"ce-div\"></div><div class=\"frame frame-default
+              frame-type-text frame-layout-0\" id=\"c3352\"><header><h4
+              class=\"\">Ankündigung und Vorbesprechung</h4></header><p>Die
+              PDF-Version des Seminarprograms befindet sich <a
+              class=\"download\" href=\"/assets/migrated/Vorbesprechung.pdf\"
+              title=\"Initiates file download\">hier</a>.</p><p>Die
+              Vorbesprechung zum Seminar ist am Freitag, den 25.7. um 10:45 Uhr
+              im HS4, INF 288.</p><p>Bitte tragt euch auch in Müsli ein, wenn
+              ihr das Seminar teilnehmen möchtet. Die Müsli Gruppe befindet sich
+              hier.</p></div>"
           - title: Vorlesung "Darstellungen und Invarianten"
             instructor: Dr. Cerviño
             course_type: Lecture
@@ -2051,9 +1990,7 @@ courses:
                 file: /assets/migrated/Seminarp-adischeGeometrie.pdf
               - label: hier
                 file: /assets/migrated/Ankuendigungp-adischeGeometrie.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: '<div class="frame frame-default frame-type-header frame-layout-0"
               id="c3196"><header><h2 class="">Seminar zur p-adischen
               Geometrie</h2><h3 class="">Prof. Dr. Gebhard Böckle, Ann-Kristin
               Juschka und Yujia Qiu</h3></header></div><div class="frame
@@ -2180,7 +2117,7 @@ courses:
               download">hier</a>&nbsp;und&nbsp;dies&nbsp;ist&nbsp;der Eintrag im
               kommentierten Vorlesungsverzeichnis (KVV).</p><p>Die
               Vorbesprechung zum Seminar war&nbsp;am Freitag, den 7.2. um 10:50
-              Uhr im HS4, INF 288.</p></div>
+              Uhr im HS4, INF 288.</p></div>'
           - title: Vorlesung "Algebraische Gruppen"
             instructor: Prof. Dr. Böckle
             course_type: Lecture
@@ -2206,9 +2143,7 @@ courses:
                 file: /assets/migrated/SeminarDeterminants_01.pdf
               - label: hier
                 file: /assets/migrated/AnkuendigungDeterminants.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: '<div class="frame frame-default frame-type-header frame-layout-0"
               id="c3050"><header><h2 class="">Seminar über Deformationen von
               (Pseudo-)Darstellungen</h2><h3 class="">Prof. Dr. Gebhard Böckle
               und Ann-Kristin Juschka</h3></header></div><div class="frame
@@ -2301,7 +2236,7 @@ courses:
               href="/assets/migrated/AnkuendigungDeterminants.pdf"
               title="Initiates file download">hier</a> oder (kürzer) im KVV: als
               PDF oder HTML.</p><p>Die Vorbesprechung zum Seminar war am
-              Freitag, den 26.7., um 10:45 Uhr im HS4, INF 288.</p></div>
+              Freitag, den 26.7., um 10:45 Uhr im HS4, INF 288.</p></div>'
           - title: Abelsche Varietäten I
             instructor: Prof. Dr. Böckle, Dr. Tommaso Centeleghe
             course_type: Lecture
@@ -2311,9 +2246,7 @@ courses:
             pdfs:
               - label: Program
                 file: /assets/migrated/WS1314_ModLifting.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-textpic frame-layout-0"
+            body: '<div class="frame frame-default frame-type-textpic frame-layout-0"
               id="c3108"><header><h2 class="">Working group seminar: Modularity
               lifting theorems</h2></header><div class="ce-textpic ce-right
               ce-intext"><div class="ce-gallery" data-ce-columns="1"
@@ -2336,7 +2269,7 @@ courses:
               window">Literature</a> (protected, <a class="mail"
               href="mailto:konrad.fischer@iwr.uni-heidelberg.de" title="Opens
               window for sending email">mail me</a> for the
-              pass)</p></div></div></div>
+              pass)</p></div></div></div>'
       - semester: Summer term 2013
         courses:
           - title: Algebraische Geometrie 2
@@ -2345,9 +2278,7 @@ courses:
           - title: Seminar "Torische Varietäten"
             instructor: Prof. Dr. Böckle
             course_type: Seminar
-            body: >2-
-                
-              <div class="frame frame-default frame-type-textpic frame-layout-0"
+            body: '<div class="frame frame-default frame-type-textpic frame-layout-0"
               id="c2896"><div class="ce-textpic ce-right ce-intext
               ce-nowrap"><div class="ce-gallery" data-ce-columns="1"
               data-ce-images="1"><div class="ce-row"><div
@@ -2396,7 +2327,7 @@ courses:
               Juli</td><td rowspan="1">Brandon Williams</td><td
               rowspan="1">Serre Duality (#13)</td></tr></tbody></table><p>(1)
               Additional material to this talk and the next can be found here
-              and here.</p></div></div></div>
+              and here.</p></div></div></div>'
           - title: Seminar "Trianguline Representations"
             instructor: Prof. Dr. Böckle
             course_type: Seminar
@@ -2408,9 +2339,7 @@ courses:
           - title: Exercise sessions for "Lineare Algebra 2"
             instructor: Dr. Maurischat
             course_type: Exercise
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: <div class="frame frame-default frame-type-text frame-layout-0"
               id="c1163"><h1>AG Computational Arithmetic Geometry</h1><h3><a
               class="internal-link" href="/members/prof-dr-gebhard-böckle/"
               title="Opens internal link in current window">Prof. Dr. Gebhard
@@ -2447,9 +2376,7 @@ courses:
           - title: Algebraische Geometrie 1
             instructor: Prof. Dr. Böckle
             course_type: Lecture
-            body: >2-
-                
-              <div class="frame frame-default frame-type-textpic frame-layout-0"
+            body: '<div class="frame frame-default frame-type-textpic frame-layout-0"
               id="c2696"><header><h2 class="">Algebraische Geometrie
               1</h2></header><div class="ce-textpic ce-right ce-intext"><div
               class="ce-gallery" data-ce-columns="1" data-ce-images="1"><div
@@ -2503,7 +2430,7 @@ courses:
               5(pdf)</p><p>Blatt 6(pdf)</p><p>Blatt 7(pdf)</p><p>Weihnachtsblatt
               (pdf), nicht abzugeben</p><p>Blatt 8(pdf)</p><p>Blatt
               9(pdf)</p><p>Blatt 10(pdf)</p><p>Blatt 11(pdf)</p><p>Letzte
-              Aktualisierung der Seite: 25.01.</p></div></div></div>
+              Aktualisierung der Seite: 25.01.</p></div></div></div>'
           - title: Seminar "Affine algebraische Gruppen"
             instructor: Prof. Dr. Böckle, Dr. Cerviño
             course_type: Seminar
@@ -2512,9 +2439,7 @@ courses:
           - title: Exercise sessions for "Lineare Algebra 1"
             instructor: Dr. Maurischat
             course_type: Exercise
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: <div class="frame frame-default frame-type-text frame-layout-0"
               id="c1163"><h1>AG Computational Arithmetic Geometry</h1><h3><a
               class="internal-link" href="/members/prof-dr-gebhard-böckle/"
               title="Opens internal link in current window">Prof. Dr. Gebhard
@@ -2576,9 +2501,7 @@ courses:
                 file: /assets/migrated/AufgabenAZ2.pdf
               - label: Aufgaben 1
                 file: /assets/migrated/AufgabenAZ1.pdf
-            body: >2-
-                
-              <div class="frame frame-default frame-type-header frame-layout-0"
+            body: '<div class="frame frame-default frame-type-header frame-layout-0"
               id="c2701"><header><h2 class="">Analytische Zahlentheorie
               I</h2><h3 class="">bei Prof. Dr. Böge, WS
               2012/2013</h3></header></div><div class="frame frame-default
@@ -2639,7 +2562,7 @@ courses:
               download">Aufgaben 1</a></p><p>Bitte geben vor 13 Uhr Freitags ins
               Postfach neben Hoersaal 2 ab!</p><p>updated:
               25.01.2013</p></div><div class="frame frame-default frame-type-div
-              frame-layout-0" id="c2721"><hr class="ce-div"></div>
+              frame-layout-0" id="c2721"><hr class="ce-div"></div>'
           - title: Seminar "Transcendence theory in positive characteristic"
             instructor: Prof. Dr. Böckle, Dr. Hubschmid
             course_type: Seminar
@@ -2653,9 +2576,7 @@ courses:
           - title: Exercise sessions for "Computeralgebra"
             instructor: Dr. Maurischat
             course_type: Exercise
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: <div class="frame frame-default frame-type-text frame-layout-0"
               id="c1163"><h1>AG Computational Arithmetic Geometry</h1><h3><a
               class="internal-link" href="/members/prof-dr-gebhard-böckle/"
               title="Opens internal link in current window">Prof. Dr. Gebhard
@@ -2697,9 +2618,7 @@ courses:
           - title: Algebra 1
             instructor: Prof. Dr. Böckle
             course_type: Lecture
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: <div class="frame frame-default frame-type-text frame-layout-0"
               id="c1163"><h1>AG Computational Arithmetic Geometry</h1><h3><a
               class="internal-link" href="/members/prof-dr-gebhard-böckle/"
               title="Opens internal link in current window">Prof. Dr. Gebhard
@@ -2758,9 +2677,7 @@ courses:
           - title: Exercise sessions for "Introduction to elementary geometry"
             instructor: Ralf Butenuth
             course_type: Exercise
-            body: >2-
-                
-              <div class="frame frame-default frame-type-text frame-layout-0"
+            body: <div class="frame frame-default frame-type-text frame-layout-0"
               id="c1163"><h1>AG Computational Arithmetic Geometry</h1><h3><a
               class="internal-link" href="/members/prof-dr-gebhard-böckle/"
               title="Opens internal link in current window">Prof. Dr. Gebhard
