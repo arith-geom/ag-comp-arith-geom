@@ -1,4 +1,25 @@
 publications:
+  - title: $U$-Operators Acting on Harmonic Cocycles for $\mathrm{GL}_3$ and Their
+      Slopes
+    authors: Gebhard Böckle, Peter Mathias Gräf, Theresa Kaiser
+    status: Preprint
+    type: Article
+    body: In this article, we describe a computational study of the action of the
+      two natural $U$ operators acting on $\\Gamma$-invariant spaces of harmonic
+      cocycles for $\\mathrm{GL}\_3$ for certain congruence subgroups $\\Gamma$,
+      in a positive characteristic setting. The cocycle spaces we consider are
+      conjecturally isomorphic to spaces of Drinfeld cusp forms of rank $3$ and
+      level $\\Gamma$ via an analogue of Teitelbaum's residue map. We give
+      explicit descriptions of the spaces of harmonic cocycles as subspaces of
+      the vector space of coefficients, and of the resulting $U$ and Hecke
+      operators acting on these. We then implement these formulas in a computer
+      algebra system. Using the resulting data of slopes (and characteristic
+      polynomials) for the Hecke actions, we observe several patterns and
+      interesting phenomena present in our slope tables. This appears to be the
+      first such study in a $\\mathrm{GL}\_3$ setting.
+    links:
+      - label: ArXiv
+        url: https://arxiv.org/abs/2503.00141
   - title: Irreducibility of versal deformation rings in the (p,p)-case for
       2-dimensional representations.
     authors: Joint with A.-K. Juschka
@@ -371,27 +392,6 @@ publications:
     pdfs:
       - label: PDF
         file: /assets/migrated/Thesis_Cakir.pdf
-  - title: $U$-Operators Acting on Harmonic Cocycles for $\mathrm{GL}_3$ and Their
-      Slopes
-    authors: Gebhard Böckle, Peter Mathias Gräf, Theresa Kaiser
-    status: Preprint
-    type: Article
-    body: In this article, we describe a computational study of the action of the
-      two natural $U$ operators acting on $\\Gamma$-invariant spaces of harmonic
-      cocycles for $\\mathrm{GL}\_3$ for certain congruence subgroups $\\Gamma$,
-      in a positive characteristic setting. The cocycle spaces we consider are
-      conjecturally isomorphic to spaces of Drinfeld cusp forms of rank $3$ and
-      level $\\Gamma$ via an analogue of Teitelbaum's residue map. We give
-      explicit descriptions of the spaces of harmonic cocycles as subspaces of
-      the vector space of coefficients, and of the resulting $U$ and Hecke
-      operators acting on these. We then implement these formulas in a computer
-      algebra system. Using the resulting data of slopes (and characteristic
-      polynomials) for the Hecke actions, we observe several patterns and
-      interesting phenomena present in our slope tables. This appears to be the
-      first such study in a $\\mathrm{GL}\_3$ setting.
-    links:
-      - label: ArXiv
-        url: https://arxiv.org/abs/2503.00141
 software:
   - title: Magma package QaQuotGraphs
     description: to compute the action by unit groups of maximal orders in
