@@ -25,8 +25,8 @@ layout: default
           <div class="text-center text-md-start">
             <h1 class="display-5 fw-bold text-dark mb-2">{{ page.title }}</h1>
             <p class="h4 text-secondary mb-3">{{ page.role }}</p>
-            {% if page.group %}
-            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">{{ page.group }}</span>
+            {% if page.group and page.group != "Members" %}
+            <span class="badge-custom badge-custom-primary">{{ page.group }}</span>
             {% endif %}
           </div>
         </div>
@@ -55,16 +55,16 @@ layout: default
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Research Interests</h2>
             <div class="d-flex flex-wrap gap-2">
               {% for interest in page.research_interests %}
-              <span class="badge bg-light text-dark border px-3 py-2 rounded-pill fw-normal fs-6">{{ interest }}</span>
+              <span class="badge-custom badge-custom-light shadow-sm">{{ interest }}</span>
               {% endfor %}
             </div>
           </div>
           {% endif %}
 
           <!-- Dynamic Software Packages -->
-          {% if page.publication_name %}
+          {% if page.content_match_name %}
           {% assign matching_software = site.data.publications.software | where_exp: "item", "item.author contains
-          page.publication_name" %}
+          page.content_match_name" %}
           {% if matching_software.size > 0 %}
           <div class="mb-5">
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Software Packages</h2>
@@ -79,9 +79,9 @@ layout: default
                   {{ software.title }}
                   {% endif %}
                 </h5>
-                <p class="text-secondary mb-2">{{ software.description }}</p>
+                <div class="text-secondary mb-2">{{ software.description | markdownify }}</div>
                 {% if software.thesis %}
-                <a href="{{ software.thesis }}" class="btn btn-sm btn-outline-primary rounded-pill" target="_blank">
+                <a href="{{ software.thesis }}" class="btn-custom btn-custom-danger" target="_blank">
                   <i class="fas fa-file-pdf me-1"></i> Thesis
                 </a>
                 {% endif %}
@@ -93,14 +93,34 @@ layout: default
           {% endif %}
 
           <!-- Dynamic Publications -->
-          {% if page.publication_name %}
+          {% if page.content_match_name %}
           {% assign matching_pubs = site.data.publications.publications | where_exp: "pub", "pub.authors contains
-          page.publication_name" %}
+          page.content_match_name" %}
           {% if matching_pubs.size > 0 %}
           <div class="mb-5">
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Publications</h2>
             <div class="list-group list-group-flush">
-              {% for pub in matching_pubs %}
+              {% assign matching_pubs_with_year = matching_pubs | where_exp: "item", "item.year != nil and item.year !=
+              ''" %}
+              {% assign matching_pubs_without_year = matching_pubs | where_exp: "item", "item.year == nil or item.year
+              == ''" %}
+              {% assign sorted_matching_pubs = matching_pubs_with_year | sort: "year" | reverse %}
+
+              {% for pub in sorted_matching_pubs %}
+              <div class="list-group-item px-0 py-4 publication-item">
+                <h5 class="h5 fw-bold mb-2">
+                  <a href="{{ '/publications/' | relative_url }}{{ pub.title | slugify }}/"
+                    class="text-decoration-none text-dark">{{ pub.title }}</a>
+                  {% if pub.year %}
+                  <span class="text-muted ms-2 small">({{ pub.year }})</span>
+                  {% endif %}
+                </h5>
+                <div class="text-secondary mb-1">{{ pub.authors }}</div>
+                <div class="small text-muted"><em>{{ pub.journal_details }}</em></div>
+              </div>
+              {% endfor %}
+
+              {% for pub in matching_pubs_without_year %}
               <div class="list-group-item px-0 py-4 publication-item">
                 <h5 class="h5 fw-bold mb-2">
                   <a href="{{ '/publications/' | relative_url }}{{ pub.title | slugify }}/"
@@ -116,6 +136,60 @@ layout: default
           {% endif %}
 
           <!-- Selected Publications (Manual) -->
+          <!-- Dynamic Teaching -->
+          {% if page.content_match_name %}
+          {% assign has_teaching = false %}
+          {% for year_data in site.data.teaching.courses %}
+          {% for semester_data in year_data.semesters %}
+          {% assign matching_courses = semester_data.courses | where_exp: "course", "course.instructor contains
+          page.content_match_name" %}
+          {% if matching_courses.size > 0 %}
+          {% assign has_teaching = true %}
+          {% break %}
+          {% endif %}
+          {% endfor %}
+          {% if has_teaching %}{% break %}{% endif %}
+          {% endfor %}
+
+          {% if has_teaching %}
+          <div class="mb-5">
+            <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Teaching</h2>
+            <div class="list-group list-group-flush">
+              {% for year_data in site.data.teaching.courses %}
+              {% for semester_data in year_data.semesters %}
+              {% assign matching_courses = semester_data.courses | where_exp: "course", "course.instructor contains
+              page.content_match_name" %}
+              {% for course in matching_courses %}
+              <div class="list-group-item px-0 py-4 publication-item">
+                <h5 class="h5 fw-bold mb-2">
+                  {% assign year = year_data.year %}
+                  {% assign semester = semester_data.semester %}
+                  {% assign semester_title = semester %}
+                  {% if semester == "Winter" %}
+                  {% assign next_year = year | plus: 1 %}
+                  {% assign next_year_short = next_year | modulo: 100 %}
+                  {% if next_year_short < 10 %} {% assign next_year_short="0" | append: next_year_short %} {% endif %}
+                    {% assign semester_title="Winter Semester " | append: year | append: "/" | append: next_year_short
+                    %} {% elsif semester=="Summer" %} {% assign semester_title="Summer Semester " | append: year %} {%
+                    endif %} {% assign semester_slug=semester_title | slugify %} <a
+                    href="{{ '/teaching/' | relative_url }}{{ year }}/{{ semester_slug }}/{{ course.title | slugify }}/"
+                    class="text-decoration-none text-dark">{{ course.title }}</a>
+                    <span class="text-muted ms-2 small">({{ semester_data.semester }} {{ year_data.year }})</span>
+                </h5>
+                <div class="text-secondary mb-1">{{ course.course_type }}</div>
+                {% if course.description %}
+                <div class="small text-muted"><em>{{ course.description | markdownify | strip_html | truncate: 150
+                    }}</em></div>
+                {% endif %}
+              </div>
+              {% endfor %}
+              {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+          {% endif %}
+
           {% if page.selected_publications %}
           <div class="mb-5">
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Selected Publications</h2>
@@ -150,8 +224,7 @@ layout: default
                   {{ thesis.type }}, {{ thesis.institution }} ({{ thesis.year }})
                 </div>
                 {% if thesis.file %}
-                <a href="{{ thesis.file | relative_url }}" class="btn btn-sm btn-outline-primary rounded-pill"
-                  target="_blank">
+                <a href="{{ thesis.file | relative_url }}" class="btn-custom btn-custom-danger" target="_blank">
                   <i class="fas fa-file-pdf me-1"></i> Download Thesis
                 </a>
                 {% endif %}
@@ -233,8 +306,8 @@ layout: default
             </div>
             <div class="card-body">
               {% if page.cv %}
-              <a href="{{ page.cv | relative_url }}" class="btn btn-primary w-100 shadow-sm mb-3 rounded-pill"
-                target="_blank">
+              <a href="{{ page.cv | relative_url }}"
+                class="btn-custom btn-custom-primary w-100 mb-3 justify-content-center" target="_blank">
                 <i class="fas fa-file-pdf me-2"></i> Download CV
               </a>
               {% endif %}
@@ -257,8 +330,8 @@ layout: default
                 {% assign icon_class = "fas fa-link" %}
                 {% endif %}
                 {% endunless %}
-                <a href="{{ link.url }}" class="btn btn-outline-dark border-0 text-start" target="_blank"
-                  rel="noopener noreferrer">
+                <a href="{{ link.url }}" class="btn-custom btn-custom-outline w-100 justify-content-start border-0"
+                  target="_blank" rel="noopener noreferrer">
                   <i class="{{ icon_class }} me-2 text-secondary"></i> {{ link.text }}
                 </a>
                 {% endfor %}

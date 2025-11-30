@@ -99,6 +99,11 @@
     if (path.startsWith('/')) return (window.__BASEURL__ || '') + path;
     return path;
   };
+
+  // Enforce HTTPS
+  if (window.location.protocol === "http:" && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+    window.location.href = window.location.href.replace("http:", "https:");
+  }
 </script>
 
 <!-- Theme Color for Mobile Browsers -->

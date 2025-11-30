@@ -1,5 +1,138 @@
 // This file is for custom SASS styles.
 // You can add your own styles here.
 
+@use "variables" as v;
 @use "teaching";
 @use "publications";
+
+// Custom Button Styles matching Home Page Cards
+.btn-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid v.$primary;
+    border-radius: v.$radius-sm;
+    font-weight: 500;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    line-height: 1.5;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+        text-decoration: none;
+    }
+
+    &.btn-custom-primary {
+        background: v.$primary;
+        color: v.$bg-primary; // Assuming text on primary is white/bg-primary
+
+        &:hover {
+            background: v.$red-900; // Darker red
+            border-color: v.$red-900;
+            color: v.$bg-primary;
+        }
+    }
+
+    &.btn-custom-outline {
+        background: transparent;
+        color: v.$primary;
+
+        &:hover {
+            background: var(--primary);
+            color: var(--primary-text);
+        }
+    }
+
+    // Variant for secondary/dark buttons if needed, mapping to outline style but different color
+    &.btn-custom-secondary {
+        border-color: var(--text-secondary);
+        color: var(--text-secondary);
+
+        &:hover {
+            background: var(--text-secondary);
+            color: white;
+        }
+    }
+
+    // Small variant
+    &.btn-custom-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+// Custom Badge Styles matching Home Page Cards
+.badge-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: v.$radius-sm;
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    border: 1px solid transparent; // Default border
+
+    // Variants
+    &.badge-custom-light {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        border-color: var(--border-color);
+    }
+
+    &.badge-custom-primary {
+        background-color: var(--primary);
+        color: var(--primary-text);
+    }
+
+    &.badge-custom-status {
+        // Inherits background from specific status classes, but enforces geometry
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    // Status Colors
+    &.badge-custom-journal-article {
+        background-color: #d1ecf1;
+        color: #0c5460;
+    }
+
+    &.badge-custom-book {
+        background-color: #d4edda;
+        color: #155724;
+    }
+
+    &.badge-custom-submitted {
+        background-color: #fff3cd;
+        color: #856404;
+    }
+
+    &.badge-custom-preprint {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+
+    &.badge-custom-other {
+        background-color: #e2e3e5;
+        color: #383d41;
+    }
+
+    &.badge-custom-danger {
+        background-color: transparent;
+        color: v.$primary;
+        border: 1px solid v.$primary;
+    }
+}
+
+// Danger Button Variant (Red Outline)
+.btn-custom-danger {
+    border-color: v.$primary; // Using primary red
+    color: v.$primary;
+
+    &:hover {
+        background: v.$primary;
+        color: white;
+    }
+}

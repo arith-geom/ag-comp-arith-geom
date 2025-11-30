@@ -14,11 +14,20 @@ description: "Browse the comprehensive list of publications from the Computation
     <span class="results-count">{{ site.data.publications.publications.size }} results</span>
   </div>
   <div class="publication-grid">
-    {% for pub in site.data.publications.publications %}
+    {% assign all_pubs = site.data.publications.publications %}
+    {% assign pubs_with_year = all_pubs | where_exp: "item", "item.year != nil and item.year != ''" %}
+    {% assign pubs_without_year = all_pubs | where_exp: "item", "item.year == nil or item.year == ''" %}
+    
+    {% assign sorted_pubs = pubs_with_year | sort: "year" | reverse %}
+    
+    {% for pub in sorted_pubs %}
       <div class="publication-card">
         <div class="publication-main">
           <div class="publication-title">
             <a href="/publications/{{ pub.title | slugify }}/" class="text-decoration-none text-dark">{{ pub.title }}</a>
+            {% if pub.year %}
+              <span class="text-muted ms-2 small">({{ pub.year }})</span>
+            {% endif %}
           </div>
           <div class="publication-details">
             {{ pub.journal_details }}
@@ -30,19 +39,56 @@ description: "Browse the comprehensive list of publications from the Computation
         </div>
         <div class="publication-sidebar">
           {% if pub.status %}
-            <a href="#" class="publication-status publication-status-{{ pub.status | slugify }}">
+            <span class="publication-status text-decoration-none badge-custom badge-custom-{{ pub.status | slugify }}">
               <i class="fas {% case pub.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %}"></i> {{ pub.status }}
-            </a>
+            </span>
           {% endif %}
           {% if pub.mr_number and pub.mr_number != "" %}
-          <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ pub.mr_number | remove: 'MR' }}" target="_blank" class="publication-mr">
+          <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ pub.mr_number | remove: 'MR' }}" target="_blank" class="btn-custom btn-custom-outline btn-custom-sm">
             {{ pub.mr_number }}
           </a>
           {% endif %}
           {% if pub.type == "Article" %}
-            <a href="#" class="publication-type publication-type-pdf">
+            <span class="badge-custom badge-custom-danger">
               <i class="fas fa-file-pdf"></i> Article
-            </a>
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+
+    {% for pub in pubs_without_year %}
+      <div class="publication-card">
+        <div class="publication-main">
+          <div class="publication-title">
+            <a href="/publications/{{ pub.title | slugify }}/" class="text-decoration-none text-dark">{{ pub.title }}</a>
+            {% if pub.year %}
+              <span class="text-muted ms-2 small">({{ pub.year }})</span>
+            {% endif %}
+          </div>
+          <div class="publication-details">
+            {{ pub.journal_details }}
+          </div>
+          <div class="publication-authors">
+            {{ pub.authors }}
+          </div>
+
+        </div>
+        <div class="publication-sidebar">
+          {% if pub.status %}
+            <span class="publication-status text-decoration-none badge-custom badge-custom-{{ pub.status | slugify }}">
+              <i class="fas {% case pub.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %}"></i> {{ pub.status }}
+            </span>
+          {% endif %}
+          {% if pub.mr_number and pub.mr_number != "" %}
+          <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ pub.mr_number | remove: 'MR' }}" target="_blank" class="btn-custom btn-custom-outline btn-custom-sm">
+            {{ pub.mr_number }}
+          </a>
+          {% endif %}
+          {% if pub.type == "Article" %}
+            <span class="badge-custom badge-custom-danger">
+              <i class="fas fa-file-pdf"></i> Article
+            </span>
           {% endif %}
         </div>
       </div>
@@ -60,7 +106,7 @@ description: "Browse the comprehensive list of publications from the Computation
               <a href="{{ software.link }}" target="_blank" class="text-decoration-none text-dark">{{ software.title }}</a>
             </div>
             <div class="publication-details">
-              {{ software.description }}
+              {{ software.description | markdownify }}
             </div>
             <div class="publication-authors">
               By {{ software.author }}
@@ -72,7 +118,7 @@ description: "Browse the comprehensive list of publications from the Computation
             {% endif %}
           </div>
           <div class="publication-sidebar">
-             <a href="{{ software.link }}" target="_blank" class="publication-type publication-type-code">
+             <a href="{{ software.link }}" target="_blank" class="btn-custom btn-custom-outline btn-custom-sm">
                 <i class="fas fa-code"></i> {{ software.link_text }}
              </a>
           </div>

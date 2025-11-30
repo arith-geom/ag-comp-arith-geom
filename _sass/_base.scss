@@ -30,10 +30,11 @@ strong {
 }
 
 hr {
-  border-top: 1px solid var(--global-divider-color);
+  border-top: 1px solid var(--primary-dark);
 }
 
 table {
+
   td,
   th {
     font-size: 1rem;
@@ -61,8 +62,9 @@ table.table a {
 
 .table-dark {
   background-color: transparent;
+
   &.table-bordered {
-    border: 1px solid var(--global-divider-color) !important;
+    border: 1px solid var(--primary-dark) !important;
   }
 }
 
@@ -145,10 +147,11 @@ blockquote {
 // Checklist
 
 ul.task-list {
-  list-style-type: none; /* Remove bullets from all levels */
+  list-style-type: none;
+  /* Remove bullets from all levels */
 }
 
-ul.task-list > li ul {
+ul.task-list>li ul {
   /* Nested lists within .task-list */
   padding-inline-start: 1.5rem;
 }
@@ -264,7 +267,7 @@ ul.task-list input[type="checkbox"] {
 // Heidelberg Red Header Fix:
 // The main header should NOT have the default background.
 // We make it transparent so the red from .header-main shows through.
-.header-main > .navbar {
+.header-main>.navbar {
   background-color: transparent;
 }
 
@@ -313,7 +316,7 @@ ul.task-list input[type="checkbox"] {
     }
   }
 
-  .navbar-nav .nav-item.active > .nav-link {
+  .navbar-nav .nav-item.active>.nav-link {
     background-color: inherit;
     font-weight: bolder;
     color: var(--global-theme-color);
@@ -473,7 +476,7 @@ ul.task-list input[type="checkbox"] {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.wechat-modal > img {
+.wechat-modal>img {
   display: block;
   position: relative;
   top: 50%;
@@ -484,7 +487,7 @@ ul.task-list input[type="checkbox"] {
 }
 
 @media only screen and (max-width: 400px) {
-  .wechat-modal > img {
+  .wechat-modal>img {
     width: 100%;
   }
 }
@@ -650,12 +653,12 @@ footer.sticky-bottom {
       padding: 0.75rem 1.15rem;
 
       &:hover {
-        color: $black-color;
+        color: #000;
       }
     }
 
     &.active .page-link {
-      color: $white-color;
+      color: #fff;
       background-color: var(--global-theme-color);
 
       &:hover {
@@ -750,8 +753,7 @@ footer.sticky-bottom {
     li {
       margin-bottom: 1rem;
 
-      .preview {
-      }
+      .preview {}
 
       .abbr {
         margin-bottom: 0.5rem;
@@ -791,12 +793,12 @@ footer.sticky-bottom {
           }
         }
 
-        > em {
+        >em {
           border-bottom: 1px solid;
           font-style: normal;
         }
 
-        > span.more-authors {
+        >span.more-authors {
           color: var(--global-text-color-light);
           border-bottom: 1px dashed var(--global-text-color-light);
           cursor: pointer;
@@ -823,6 +825,7 @@ footer.sticky-bottom {
             border-color: var(--global-theme-color);
           }
         }
+
         a.award.btn {
           border-color: var(--global-highlight-color);
         }
@@ -830,9 +833,10 @@ footer.sticky-bottom {
 
       .badges {
         padding-bottom: 0.5rem;
+
         span {
           display: inline-block;
-          color: $black-color;
+          color: #000;
           height: 100%;
           padding-right: 0.5rem;
           vertical-align: middle;
@@ -883,9 +887,11 @@ footer.sticky-bottom {
         border-color: var(--global-text-color);
       }
     }
+
     div.award.hidden {
       border: dashed 1px var(--global-bg-color);
     }
+
     div.award.hidden.open {
       border-color: var(--global-highlight-color);
     }
@@ -1015,7 +1021,7 @@ progress::-moz-progress-bar {
   .copy {
     background: var(--global-card-bg-color);
     border-color: var(--global-bg-color);
-    border-radius: $radius-sm;
+    border-radius: v.$radius-sm;
     border-style: none;
     color: var(--global-text-color);
     font-size: medium;
@@ -1085,11 +1091,11 @@ progress::-moz-progress-bar {
 nav[data-toggle="toc"] {
   top: 5rem;
 
-  .nav .nav > li > a {
+  .nav .nav>li>a {
     font-size: 0.75rem;
   }
 
-  .nav > li > a {
+  .nav>li>a {
     color: var(--global-text-color);
     font-size: 0.75rem;
 
@@ -1113,6 +1119,7 @@ nav[data-toggle="toc"] {
 
 /* small screens */
 @media (max-width: 576px) {
+
   /* override stickyness so that the navigation does not follow scrolling */
   nav[data-toggle="toc"] {
     visibility: hidden;
@@ -1185,7 +1192,7 @@ swiper-container {
     border-bottom: 2px solid var(--global-text-color);
   }
 
-  .ps-algorithm.with-caption > .ps-line:first-child {
+  .ps-algorithm.with-caption>.ps-line:first-child {
     border-bottom: 2px solid var(--global-text-color);
   }
 }
@@ -1307,6 +1314,7 @@ ninja-keys::part(ninja-input-wrapper) {
 }
 
 @media (max-width: 575px) {
+
   .newsletter-form-input,
   .newsletter-form-button,
   .newsletter-loading-button,
@@ -1314,6 +1322,7 @@ ninja-keys::part(ninja-input-wrapper) {
   .newsletter-error {
     font-size: 16px !important;
   }
+
   .newsletter-form-container {
     margin-right: 20px;
     margin-left: 20px;
@@ -1336,6 +1345,7 @@ ninja-keys::part(ninja-input-wrapper) {
 }
 
 .bs-popover-top {
+
   // arrow fill color
   .arrow::after {
     border-top-color: var(--global-bg-color);
@@ -1348,6 +1358,7 @@ ninja-keys::part(ninja-input-wrapper) {
 }
 
 .bs-popover-bottom {
+
   // arrow fill color
   .arrow::after {
     border-bottom-color: var(--global-bg-color);
@@ -1368,7 +1379,8 @@ ninja-keys::part(ninja-input-wrapper) {
 figure.cover {
   display: inline-block;
   text-align: center;
-  margin: 0.5rem; /* adjust as needed */
+  margin: 0.5rem;
+  /* adjust as needed */
 
   img {
     vertical-align: bottom;
@@ -1436,5 +1448,100 @@ figure.cover {
   /* mouse over link */
   a.cover-link:hover {
     color: #23212d !important;
+  }
+}
+
+// Enhanced Table Styling
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: var(--global-text-color);
+  border-collapse: collapse;
+  border: 1px solid var(--primary-dark);
+
+  th,
+  td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border: 1px solid var(--primary-dark);
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--primary-dark);
+    font-weight: 600;
+  }
+
+  tbody+tbody {
+    border-top: 2px solid var(--primary-dark);
+  }
+}
+
+// Striped rows for better readability
+table.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+// Bordered table
+table.table-bordered {
+  border: 1px solid var(--primary-dark);
+
+  th,
+  td {
+    border: 1px solid var(--primary-dark);
+  }
+
+  thead th,
+  thead td {
+    border-bottom-width: 2px;
+  }
+}
+
+// Code Block Styling
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid var(--primary-dark);
+  border-radius: 4px;
+  overflow: auto;
+
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+// Inline code styling
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+// Dark mode adjustments for code
+@media (prefers-color-scheme: dark) {
+  pre {
+    color: #eee;
+    background-color: #2a2a2a;
+    border-color: #444;
+  }
+
+  code {
+    color: #e83e8c;
+    background-color: #2a2a2a;
   }
 }

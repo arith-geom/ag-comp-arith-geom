@@ -12,7 +12,7 @@ nav_order: 1
     <div class="hero-content">
       <h1 class="hero-title">{{ site.data.home.hero.title }}</h1>
       <p class="hero-subtitle">{{ site.data.home.hero.subtitle }}</p>
-      <p class="hero-description">{{ site.data.home.hero.description }}</p>
+      <div class="hero-description">{{ site.data.home.hero.description | markdownify }}</div>
     </div>
   </div>
 </div>
@@ -31,7 +31,7 @@ nav_order: 1
       <h3>{{ card.title }}</h3>
     </div>
     <div class="card-body">
-      <p>{{ card.content }}</p>
+      <div>{{ card.content | markdownify }}</div>
     </div>
     <div class="card-footer">
       <a href="{{ card.link | relative_url }}" class="card-link">

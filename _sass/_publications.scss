@@ -58,69 +58,15 @@
   }
 }
 
-// Global Badge Styles
-.publication-status,
-.publication-mr,
-.publication-type {
-  background-color: var(--bg-accent);
-  padding: 0.2rem 0.4rem;
-  border-radius: v.$radius-sm;
-  text-decoration: none;
-  color: var(--text-secondary);
-  display: inline-block;
 
-}
-
-.publication-type {
-  .fas {
-    margin-right: 0.3rem;
-  }
-}
-
-.publication-status {
-  &-journal-article {
-    background-color: #d1ecf1;
-    color: #0c5460;
-  }
-
-  &-book {
-    background-color: #d4edda;
-    color: #155724;
-  }
-
-  &-submitted {
-    background-color: #fff3cd;
-    color: #856404;
-  }
-
-  &-preprint {
-    background-color: #f8d7da;
-    color: #721c24;
-  }
-
-  &-other {
-    background-color: #e2e3e5;
-    color: #383d41;
-  }
-}
-
-.publication-type-pdf {
-  background-color: var(--primary);
-  color: var(--primary-text);
-}
-
-.publication-mr {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-}
 
 // Subpage Styles
 .publication-header {
   background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--primary-dark);
 }
 
 .abstract-card {
   background-color: var(--bg-primary);
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--primary-dark);
 }

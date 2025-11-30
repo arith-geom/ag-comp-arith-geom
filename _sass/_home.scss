@@ -150,7 +150,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--primary-dark);
 }
 
 .card-icon {
@@ -192,6 +192,7 @@
   gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  border-top: 1px solid var(--primary-dark);
   margin-top: auto;
 }
 

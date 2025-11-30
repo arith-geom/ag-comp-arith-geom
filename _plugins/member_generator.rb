@@ -30,7 +30,7 @@ module Jekyll
       self.data['office_hours'] = member['office_hours']
       self.data['selected_publications'] = member['selected_publications']
       self.data['theses'] = member['theses']
-      self.data['publication_name'] = member['publication_name']
+      self.data['content_match_name'] = member['content_match_name']
       
       # Handle body content (rich text)
       self.content = member['body'] || ""

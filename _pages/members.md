@@ -40,7 +40,7 @@ description: "Meet the team of the Computational Arithmetic Geometry research gr
             </div>
             {% if member.description %}
             <div class="card-body">
-              <p class="member-description">{{ member.description }}</p>
+              <div class="member-description">{{ member.description | markdownify }}</div>
             </div>
             {% endif %}
             

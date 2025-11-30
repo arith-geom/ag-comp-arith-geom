@@ -4,9 +4,9 @@
  ******************************************************************************/
 
 // Heidelberg University Official Colors (based on research)
-$heidelberg-red: #c61826 !default;      // PMS 200 C - Primary Red
-$heidelberg-orange: #E45424 !default;   // PMS 166 C - Secondary Orange  
-$heidelberg-black: #141414 !default;    // Pantone Black 7 C
+$heidelberg-red: #c61826 !default; // PMS 200 C - Primary Red
+$heidelberg-orange: #E45424 !default; // PMS 166 C - Secondary Orange  
+$heidelberg-black: #141414 !default; // Pantone Black 7 C
 
 // Extended Red Color Palette for Modern Design
 $red-900: #5B0B11 !default;
@@ -30,7 +30,7 @@ $orange-400: #FB923C !default; // Light Orange
 $orange-300: #FDBA74 !default; // Very Light Orange
 $orange-200: #FED7AA !default; // Light Peach
 $orange-100: #FFEDD5 !default; // Very Light Peach
-$orange-50: #FFF7ED !default;  // Almost White Orange
+$orange-50: #FFF7ED !default; // Almost White Orange
 
 // Neutral Grays for Balance
 $gray-900: #111827 !default;
@@ -45,7 +45,7 @@ $gray-100: #F3F4F6 !default;
 $gray-50: #F9FAFB !default;
 
 // Mobile-First Breakpoints
-$tablet-sm: 768px !default;   // Small tablets
+$tablet-sm: 768px !default; // Small tablets
 $desktop-lg: 1440px !default; // Large desktops
 
 // Background System - Light Mode
@@ -69,11 +69,12 @@ $shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06
 $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !default;
 
 // Border Radius System
-$radius-sm: 0.5rem !default;    // 8px
-$radius-md: 1rem !default;     // 16px
-$radius-lg: 1.5rem !default;    // 24px
-$radius-xl: 2rem !default;       // 32px
-$radius-full: 9999px !default;   // Full round
+$radius-none: 0 !default;
+$radius-sm: 0.5rem !default; // 8px
+$radius-md: 1rem !default; // 16px
+$radius-lg: 1.5rem !default; // 24px
+$radius-xl: 2rem !default; // 32px
+$radius-full: 9999px !default; // Full round
 
 // Z-index layers
 $z-fixed: 1030 !default;

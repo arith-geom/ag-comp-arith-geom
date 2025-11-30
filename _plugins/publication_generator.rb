@@ -19,7 +19,8 @@ module Jekyll
       self.data['status'] = publication['status']
       self.data['type'] = publication['type']
       self.data['mr_number'] = publication['mr_number']
-      self.data['msc_code'] = publication['msc_code']
+      self.data['year'] = publication['year']
+
       self.data['reviewer'] = publication['reviewer']
       self.data['citation_count'] = publication['citation_count']
       self.data['publisher_details'] = publication['publisher_details']

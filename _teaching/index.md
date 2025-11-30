@@ -25,7 +25,10 @@ description: "An overview of our courses, seminars, and lectures, organized by s
 
 <div class="teaching-by-semester-container">
     {% assign previous_university = "" %}
-    {% for year_data in site.data.teaching.courses %}
+    {% assign sorted_years = site.data.teaching.courses | sort: "year" | reverse %}
+    {% assign previous_university = "" %}
+    
+    {% for year_data in sorted_years %}
       {% if year_data.university and year_data.university != previous_university %}
         {% if previous_university != "" %}
           <div class="university-separator my-5">
@@ -39,18 +42,36 @@ description: "An overview of our courses, seminars, and lectures, organized by s
         {% assign previous_university = year_data.university %}
       {% endif %}
       
-      {% for semester in year_data.semesters %}
+      {% comment %} Sort semesters: Winter should come before Summer {% endcomment %}
+      {% assign winter_semesters = year_data.semesters | where: "semester", "Winter" %}
+      {% assign summer_semesters = year_data.semesters | where: "semester", "Summer" %}
+      {% assign other_semesters = year_data.semesters | where_exp: "item", "item.semester != 'Winter' and item.semester != 'Summer'" %}
+      
+      {% assign sorted_semesters = winter_semesters | concat: summer_semesters | concat: other_semesters %}
+
+      {% for semester in sorted_semesters %}
+        {% assign semester_title = semester.semester %}
+        {% if semester.semester == "Winter" %}
+           {% assign next_year_short = year_data.year | plus: 1 | modulo: 100 %}
+           {% if next_year_short < 10 %}
+             {% assign next_year_short = "0" | append: next_year_short %}
+           {% endif %}
+           {% assign semester_title = "Winter Semester " | append: year_data.year | append: "/" | append: next_year_short %}
+        {% elsif semester.semester == "Summer" %}
+           {% assign semester_title = "Summer Semester " | append: year_data.year %}
+        {% endif %}
+
         {% assign highlight_class = "" %}
-        {% if semester.semester == current_semester_string %}
+        {% if semester_title == current_semester_string %}
           {% assign highlight_class = "highlight-current" %}
         {% endif %}
         <div class="semester-section {{ highlight_class | strip }}">
-          <h4 class="semester-title">{{ semester.semester }}</h4>
+          <h4 class="semester-title">{{ semester_title }}</h4>
           {% for course in semester.courses %}
             <div class="course-card position-relative">
               <h5 class="course-title">
                 {% assign course_slug = course.title | slugify %}
-                {% assign semester_slug = semester.semester | slugify %}
+                {% assign semester_slug = semester_title | slugify %}
                 <a href="{{ '/teaching/' | append: year_data.year | append: '/' | append: semester_slug | append: '/' | append: course_slug | append: '/' | relative_url }}" class="text-decoration-none text-dark stretched-link">{{ course.title }}</a>
               </h5>
               {% if course.instructor %}
@@ -58,7 +79,7 @@ description: "An overview of our courses, seminars, and lectures, organized by s
               {% endif %}
               <div class="course-body">
                 {% if course.description and course.description != "" %}
-                  <p>{{ course.description }}</p>
+                  <div>{{ course.description | markdownify }}</div>
                 {% endif %}
                 
                 {% if course.links or course.pdfs %}

@@ -60,13 +60,13 @@
           <div class="publication-header">
             <div class="publication-meta">
               {% if page.type %}
-                <span class="badge bg-primary">{{ page.type }}</span>
+                <span class="badge-custom badge-custom-primary">{{ page.type }}</span>
               {% endif %}
               {% if page.status %}
-                <span class="badge bg-secondary">{{ page.status }}</span>
+                <span class="badge-custom badge-custom-{{ page.status | slugify }}">{{ page.status }}</span>
               {% endif %}
               {% if page.year %}
-                <span class="badge bg-info">{{ page.year }}</span>
+                <span class="badge-custom badge-custom-light">{{ page.year }}</span>
               {% endif %}
             </div>
             
@@ -90,25 +90,25 @@
           <!-- Publication Links -->
           <div class="publication-links mb-4">
             {% if page.doi %}
-              <a href="https://doi.org/{{ page.doi }}" class="btn btn-outline-primary" target="_blank">
+              <a href="https://doi.org/{{ page.doi }}" class="btn-custom btn-custom-outline" target="_blank">
                 <i class="fas fa-external-link-alt"></i> DOI
               </a>
             {% endif %}
             
             {% if page.pdf %}
-              <a href="{% if page.pdf contains '://' %}{{ page.pdf }}{% else %}{{ page.pdf | relative_url }}{% endif %}" class="btn btn-outline-secondary" target="_blank">
+              <a href="{% if page.pdf contains '://' %}{{ page.pdf }}{% else %}{{ page.pdf | relative_url }}{% endif %}" class="btn-custom btn-custom-danger" target="_blank">
                 <i class="fas fa-file-pdf"></i> PDF
               </a>
             {% endif %}
             
             {% if page.arxiv %}
-              <a href="https://arxiv.org/abs/{{ page.arxiv }}" class="btn btn-outline-info" target="_blank">
+              <a href="https://arxiv.org/abs/{{ page.arxiv }}" class="btn-custom btn-custom-outline" target="_blank">
                 <i class="fas fa-external-link-alt"></i> arXiv
               </a>
             {% endif %}
             
             {% if page.url and page.url != page.pdf %}
-              <a href="{{ page.url }}" class="btn btn-outline-success" target="_blank">
+              <a href="{{ page.url }}" class="btn-custom btn-custom-outline" target="_blank">
                 <i class="fas fa-external-link-alt"></i> View Online
               </a>
             {% endif %}
@@ -143,7 +143,7 @@
           
           <!-- Back to Publications -->
           <div class="text-center mt-5">
-            <a href="{{ '/publications/' | relative_url }}" class="btn btn-primary">
+            <a href="{{ '/publications/' | relative_url }}" class="btn-custom btn-custom-secondary">
               <i class="fas fa-arrow-left"></i> Back to Publications
             </a>
           </div>

@@ -10,30 +10,32 @@ layout: default
             <div class="row align-items-center">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <span class="badge bg-primary text-white px-3 py-2 rounded-pill">{{ page.semester }}</span>
+                        <span class="badge-custom badge-custom-primary">{{ page.semester
+                            }}</span>
                         {% if page.course_type %}
-                        <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">{{ page.course_type
+                        <span class="badge-custom badge-custom-light">{{
+                            page.course_type
                             }}</span>
                         {% endif %}
                     </div>
                     <h1 class="h3 fw-bold text-dark mb-3">{{ page.title }}</h1>
                     {% if page.description %}
-                    <p class="lead text-secondary mb-4">{{ page.description }}</p>
+                    <div class="lead text-secondary mb-4">{{ page.description | markdownify }}</div>
                     {% endif %}
 
                     <!-- Metadata Row -->
                     <div class="d-flex flex-wrap gap-3 align-items-center">
                         {% if page.instructor %}
-                        <div class="d-flex align-items-center bg-white border rounded-pill px-3 py-2 shadow-sm">
+                        <div class="badge-custom badge-custom-light bg-white">
                             <i class="fas fa-chalkboard-teacher text-secondary me-2"></i>
-                            <span class="fw-bold text-dark me-1">{{ page.instructor | linkify_authors }}</span>
+                            <span class="text-dark me-1">{{ page.instructor | linkify_authors }}</span>
                         </div>
                         {% endif %}
 
                         {% if page.links %}
                         {% for link in page.links %}
-                        <a href="{{ link.url }}" class="btn btn-outline-dark border rounded-pill px-3 py-2 shadow-sm"
-                            target="_blank" rel="noopener noreferrer">
+                        <a href="{{ link.url }}" class="btn-custom btn-custom-outline" target="_blank"
+                            rel="noopener noreferrer">
                             <i class="fas fa-external-link-alt me-2 text-secondary"></i> {{ link.label | default:
                             "Link" }}
                         </a>
@@ -59,8 +61,8 @@ layout: default
                         <h3 class="h4 fw-bold mb-4 text-dark border-bottom pb-2">Course Materials</h3>
                         <div class="d-flex flex-wrap gap-3">
                             {% for pdf in page.pdfs %}
-                            <a href="{{ pdf.file | relative_url }}"
-                                class="btn btn-primary shadow-sm rounded-pill px-4 py-2" target="_blank">
+                            <a href="{{ pdf.file | relative_url }}" class="btn-custom btn-custom-danger"
+                                target="_blank">
                                 <i class="fas fa-file-pdf me-2"></i> {{ pdf.label | default: "Download PDF" }}
                             </a>
                             {% endfor %}
@@ -70,12 +72,12 @@ layout: default
 
                     <!-- Body Content -->
                     <div class="teaching-body mb-5 lead fs-6 text-dark">
-                        {{ content }}
+                        {{ content | markdownify }}
                     </div>
 
                     <div class="mt-5 pt-3 border-top">
                         <a href="{{ '/teaching/' | relative_url }}"
-                            class="btn btn-link text-decoration-none ps-0 text-secondary">
+                            class="btn-custom btn-custom-secondary border-0 ps-0">
                             <i class="fas fa-arrow-left me-1"></i> Back to Teaching
                         </a>
                     </div>

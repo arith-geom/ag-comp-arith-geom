@@ -14,7 +14,7 @@
   .semester-title {
     font-size: 1rem;
     color: var(--text-secondary);
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 1px solid var(--primary-dark);
     padding-bottom: 0.1rem;
     margin-bottom: 0.4rem;
   }
@@ -77,12 +77,12 @@
     padding: 0.2rem 0.4rem;
     border-radius: v.$radius-sm;
   }
-  }
+}
 
 // Subpage Styles
 .course-header {
   background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--primary-dark);
 }
 
 .resource-card {

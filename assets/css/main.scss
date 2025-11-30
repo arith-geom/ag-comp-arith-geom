@@ -1,18 +1,28 @@
 ---
+# WARNING: Do not remove the dashes above or below.
+# They are required for Jekyll to process this file.
 ---
 
 @use "variables";
-@use "themes";
+@use "base";
+
+// Layout & Struktur
+@use "container";
+@use "footer";
 @use "header";
+@use "page";
+
+// Layout-Unterseiten
+@use "layout/members";
+@use "layout/member_profile";
+
+// Inhalte
+@use "contact";
+@use "custom";
+@use "home";
+@use "links";
+@use "member";
 @use "publications";
 @use "research";
 @use "teaching";
-@use "member";
-@use "layout/members";
-@use "layout/member_profile";
-@use "contact";
-@use "home";
-@use "links";
-@use "container";
-@use "page";
-@use "footer";
+@use "themes";

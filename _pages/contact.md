@@ -21,7 +21,7 @@ nav: true
         <p>{{ site.data.contact.address[0].city }}, {{ site.data.contact.address[0].country }}</p>
       </div>
       <div class="location-description">
-        <p>{{ site.data.contact.address[0].description }}</p>
+        <div>{{ site.data.contact.address[0].description | markdownify }}</div>
       </div>
       <div class="map-wrapper">
         <iframe
@@ -68,7 +68,7 @@ nav: true
         </div>
       </div>
       <div class="contact-description">
-        <p>{{ site.data.contact.contact_details[0].general_info }}</p>
+        <div>{{ site.data.contact.contact_details[0].general_info | markdownify }}</div>
       </div>
     </div>
   </div>
@@ -82,13 +82,13 @@ nav: true
     </div>
     <div class="card-body">
       <div class="email-info">
-        <p>{{ site.data.contact.email[0].intro }}</p>
+        <div>{{ site.data.contact.email[0].intro | markdownify }}</div>
         <div class="email-address">
           <strong>{{ site.data.contact.email[0].address }}</strong>
         </div>
       </div>
       <div class="contact-description">
-        <p>{{ site.data.contact.email[0].outro }}</p>
+        <div>{{ site.data.contact.email[0].outro | markdownify }}</div>
       </div>
     </div>
   </div>

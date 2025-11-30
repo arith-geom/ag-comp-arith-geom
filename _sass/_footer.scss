@@ -27,7 +27,7 @@
   .footer-logo-section {
     display: flex;
     align-items: center;
-    justify-content: center; // Center on mobile
+    justify-content: flex-start; // Align left on all devices
   }
 
   @media (min-width: 768px) {

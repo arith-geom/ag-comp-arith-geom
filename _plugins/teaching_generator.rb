@@ -41,7 +41,21 @@ module Jekyll
                 semester_data['courses'].each do |course|
                   # Create slug from title
                   slug = Utils.slugify(course['title'])
-                  semester_slug = Utils.slugify(semester)
+                  
+                  # Generate full semester title for slug to match Liquid template
+                  semester_title = semester
+                  if semester == "Winter"
+                    next_year = year.to_i + 1
+                    next_year_short = next_year % 100
+                    if next_year_short < 10
+                      next_year_short = "0#{next_year_short}"
+                    end
+                    semester_title = "Winter Semester #{year}/#{next_year_short}"
+                  elsif semester == "Summer"
+                    semester_title = "Summer Semester #{year}"
+                  end
+                  
+                  semester_slug = Utils.slugify(semester_title)
                   
                   # Create page at /teaching/:year/:semester/:slug/ to ensure uniqueness
                   site.pages << TeachingPage.new(site, site.source, File.join('teaching', year.to_s, semester_slug, slug), course, year, semester)

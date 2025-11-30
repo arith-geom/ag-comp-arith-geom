@@ -18,7 +18,7 @@ content:
           - { name: "image", label: "Image", type: "image" }
           - { name: "title", label: "Title", type: "string" }
           - { name: "subtitle", label: "Subtitle", type: "string" }
-          - { name: "description", label: "Description", type: "text" }
+          - { name: "description", label: "Description", type: "rich-text" }
       - name: "feature_cards"
         label: "Feature Cards"
         type: "object"
@@ -29,7 +29,7 @@ content:
         fields:
           - { name: "title", label: "Title", type: "string" }
           - { name: "icon", label: "Icon Class", type: "string" }
-          - { name: "content", label: "Content", type: "text" }
+          - { name: "content", label: "Content", type: "rich-text" }
           - { name: "link", label: "Link", type: "string" }
           - { name: "link_text", label: "Link Text", type: "string" }
           - { name: "link_icon", label: "Link Icon", type: "string" }
@@ -64,12 +64,13 @@ content:
             summary: "{fields.title}"
             collapsed: true
         fields:
-          - { name: "mr_number", label: "MR Number", type: "string" }
           - { name: "title", label: "Title (Both)", type: "string" }
+          - { name: "year", label: "Year (Both)", type: "string" }
+          - { name: "mr_number", label: "MR Number (Both)", type: "string" }
           - { name: "authors", label: "Authors (Both)", type: "string" }
           - { name: "journal_details", label: "Journal Details (Both)", type: "string" }
           - { name: "status", label: "Status (Both)", type: "select", options: { values: ["Preprint", "Journal Article", "Book", "Submitted", "Other"] } }
-          - { name: "msc_code", label: "MSC Code (Subpage Only)", type: "string" }
+
           - { name: "type", label: "Type (Both)", type: "select", options: { values: ["Article", "Book", "Other"] } }
           - { name: "reviewer", label: "Reviewer (Subpage Only)", type: "string" }
           - { name: "citation_count", label: "Citation Count (Subpage Only)", type: "number" }
@@ -106,7 +107,7 @@ content:
             collapsed: true
         fields:
           - { name: "title", label: "Title", type: "string" }
-          - { name: "description", label: "Description", type: "text" }
+          - { name: "description", label: "Description", type: "rich-text" }
           - { name: "author", label: "Author", type: "string" }
           - { name: "link", label: "Link URL", type: "string" }
           - { name: "link_text", label: "Link Text", type: "string" }
@@ -134,7 +135,8 @@ content:
                 summary: "{fields.semester}"
                 collapsed: true
             fields:
-              - { name: "semester", label: "Semester Name", type: "string" }
+            fields:
+              - { name: "semester", label: "Term", type: "select", options: { values: ["Winter", "Summer"] } }
               - name: "courses"
                 label: "Courses"
                 type: "object"
@@ -146,7 +148,7 @@ content:
                   - { name: "title", label: "Course Title (Both)", type: "string" }
                   - { name: "instructor", label: "Instructor (Both)", type: "string" }
                   - { name: "course_type", label: "Course Type (Subpage Only)", type: "select", options: { values: ["Lecture", "Seminar", "Proseminar", "Exercise", "Other"] } }
-                  - { name: "description", label: "Description (Both)", type: "text" }
+                  - { name: "description", label: "Description (Both)", type: "rich-text" }
                   - name: "links"
                     label: "Links (Both)"
                     type: "object"
@@ -198,7 +200,7 @@ content:
               - { name: "photo", label: "Photo (Both)", type: "image" }
               - { name: "description", label: "Short Description (Card) (Main Page Only)", type: "rich-text" }
               - { name: "email", label: "Email (Subpage Only)", type: "string" }
-              - { name: "publication_name", label: "Publication Name Match (e.g. 'Böckle')", type: "string" }
+              - { name: "content_match_name", label: "Content Match Name (Publications & Teaching)", type: "string" }
               - name: "aliases"
                 label: "Name Aliases (e.g. 'C.V. Sriram')"
                 type: "list"
@@ -309,7 +311,7 @@ content:
           - { name: "street", label: "Street", type: "string" }
           - { name: "city", label: "City", type: "string" }
           - { name: "country", label: "Country", type: "string" }
-          - { name: "description", label: "Description", type: "text" }
+          - { name: "description", label: "Description", type: "rich-text" }
           - { name: "map_url", label: "Map URL", type: "string" }
       - name: "contact_details"
         label: "Contact Details"
@@ -325,7 +327,7 @@ content:
           - { name: "phone_hours", label: "Phone Hours", type: "string" }
           - { name: "fax", label: "Fax", type: "string" }
           - { name: "fax_note", label: "Fax Note", type: "string" }
-          - { name: "general_info", label: "General Info", type: "text" }
+          - { name: "general_info", label: "General Info", type: "rich-text" }
       - name: "email"
         label: "Email Section"
         type: "object"
@@ -336,8 +338,8 @@ content:
             summary: "{fields.address}"
             collapsed: true
         fields:
-          - { name: "intro", label: "Intro Text", type: "text" }
+          - { name: "intro", label: "Intro Text", type: "rich-text" }
           - { name: "address", label: "Email Address", type: "string" }
-          - { name: "outro", label: "Outro Text", type: "text" }
+          - { name: "outro", label: "Outro Text", type: "rich-text" }
 
 
