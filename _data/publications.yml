@@ -1,396 +1,513 @@
 publications:
-  - title: Irreducibility of versal deformation rings in the (p,p)-case for
-      2-dimensional representations.
-    authors: Joint with A.-K. Juschka
-    journal_details: J. Algebra
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BoeckleJuschka-Irreducibility.pdf
-  - title: Independence of l-adic representations of geometric Galois groups.
-    authors: Joint with W. Gajda, S. Petersen
-    journal_details: J. Reine Angew. Math.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf
-  - title: Hecke characters associated to Drinfeld modular forms
-    year: "2222"
-    authors: Gebhard Böckle
-    journal_details: Compos. Math.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Centeleghe-HeckeCharactersAssociatedToDrinfeldModularForms.pdf
-  - title: The distribution of the zeros of the Goss zeta-function for
-      A=F2[x,y]/(y2+y+x3+x+1)
-    year: "2013"
-    authors: Gebhard Böckle
-    journal_details: Math. Z.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/ZeroDistribForOneA.pdf
-  - title: Algebraic Hecke characters and compatible systems of abelian mod p Galois
-      representations over global fields.
-    authors: Gebhard Böckle
-    journal_details: Manuscripta Math.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf
-  - title: On computing quaternion quotient graphs for function fields.
-    authors: Joint with R. Butenuth
-    journal_details: J. Théor. Nombres Bordeaux
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Proofs-Boeckle-Butenuth.pdf
-  - title: "Cartier Modules: finiteness results"
-    year: "2011"
-    authors: Joint with M. Blickle
-    journal_details: J. Reine Angew. Math. 661 (2011), 85-123
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BlickleBoeckle-CartierModulesFinitenessResults.pdf
-  - title: Deformation rings for some mod 3 Galois representations of the absolute
-      Galois group of Q3
-    year: "2010"
-    authors: Gebhard Böckle
-    journal_details: "in Representations p-adic de groupes p-adiques II: Representations de GL"
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Mod3DefRings-2010_01_11.pdf
-  - title: The Miller-Rabin test with randomized exponents
-    year: "2009"
-    authors: Gebhard Böckle
-    journal_details: J. Math. Cryptol.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/RandomizedMR.pdf
-  - title: Deformations and the rigidity method
-    year: "2008"
-    authors: Gebhard Böckle
-    journal_details: J. Algebra
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Rigidity-CorrectionsThm8.9.pdf
-  - title: Presentations of universal deformation rings
-    year: "2007"
-    authors: Gebhard Böckle
-    journal_details: "in: $L$-functions and Galois representations, 24--58, LMS
-      Lecture Note Ser., 320, Cambridge Univ. Press, Cambridge (2007)."
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/OnUDefPres9.pdf
-  - title: Uniformizable families of t-motives
-    year: "2007"
-    authors: Joint with U. Hartl
-    journal_details: Trans. Amer. Math. Soc.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/TAMS_4136_Bockle_Hartl.pdf
-  - title: Mod l representations of arithmetic fundamental groups. II. A conjecture
-      of A. J. de Jong
-    year: "2006"
-    authors: Joint with C. Khare
-    journal_details: Compos. Math.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/B-K-deJong-Rev2.pdf
-  - title: Mod l representations of arithmetic fundamental groups. I. An analog of
-      Serre's conjecture for function fields
-    year: "2005"
-    authors: Joint with C. Khare
-    journal_details: Duke Math. J.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BK-Serre-dmj4021.pdf
-  - title: "Arithmetic over function fields: a cohomological approach"
-    year: "2005"
-    authors: Gebhard Böckle
-    journal_details: Number fields and function fields---two parallel worlds,
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/TexelProcRev.pdf
-  - title: Lifting mod p representations to characteristic p2
-    year: "2003"
-    authors: Gebhard Böckle
-    journal_details: J. Number Theory
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/LiftModp2Corr.pdf
-  - title: On the isomorphism R0 -> T0
-    year: "2003"
-    mr_number: "342342342343"
-    authors: Gebhard Böckle
-    journal_details: appendix to
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/KhareAppboeckleNew2.pdf
-  - title: Finiteness conjectures for Fl[[T]]-analytic extensions of number fields
-    year: "2002"
-    authors: Gebhard Böckle
-    journal_details: J. Number Theory
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DeJongAnJNTbRev2.pdf
-  - title: Global L-functions over function fields
-    year: "2002"
-    authors: Gebhard Böckle
-    journal_details: Math. Ann.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AofC-MAProof.pdf
-  - title: On the density of modular points in universal deformation spaces
-    year: "2001"
-    authors: Gebhard Böckle
-    journal_details: Amer. J. Math.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DensityAJMCorr.pdf
-  - title: A remark on a finiteness conjecture on mod $p$ Galois representations by
-      C. Khare
-    year: "2001"
-    authors: Gebhard Böckle
-    journal_details: J. Ramanujan Math. Soc.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/RemOnKhare.pdf
-  - title: Demuskin groups with group actions and applications to deformations of
-      Galois representations
-    year: "2000"
-    authors: Gebhard Böckle
-    journal_details: Compositio Math.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DemGps.pdf
-  - title: The prime-to-adjoint principle and unobstructed Galois deformations in
-      the Borel case
-    year: "1999"
-    authors: Joint with A. Mezard
-    journal_details: J. Number Theory
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AriGebJNTRev2.pdf
-  - title: A local-to-global principle for deformations of Galois representations
-    year: "1999"
-    authors: Gebhard Böckle
-    journal_details: J. Reine Angew. Math.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/LocalGlobalRev3.pdf
-  - title: Explicit universal deformations of even Galois representations
-    year: "1999"
-    authors: Gebhard Böckle
-    journal_details: Math. Nachr.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Explicit.pdf
-  - title: The generic fiber of the universal deformation space associated to a tame
-      Galois representation
-    year: "1998"
-    authors: Gebhard Böckle
-    journal_details: Manuscripta Math.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/GeneriFiberMM2.pdf
-  - title: Deformations of Galois representations
-    authors: Gebhard Böckle
-    journal_details: In
-    status: Journal Article
-    type: Article
-    links:
-      - label: Link
-        url: http://link.springer.com/chapter/10.1007%2F978-3-0348-0618-3_2
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Barcelona-DefTheory-Rev.pdf
-  - title: Cohomological theory of crystals over function fields and applications
-    year: "2012"
-    authors: Gebhard Böckle
-    journal_details: In "Arithmetic Geometry in Positive Characteristic". Advanced
-      Courses in Mathematics. CRM Barcelona. Birkhäuser Verlag, Basel (2012), to
-      appear.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/LectureNotesOnCrystals-Barcelona2012-01-24.pdf
-  - title: Galois representations
-    year: "2013"
-    authors: Gebhard Böckle
-    journal_details: Travaux mathématiques.
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: http://wwwfr.uni.lu/content/download/75430/940982/file/Boeckle.pdf
-  - title: Computations with Modular Forms
-    authors: Joint with G. Wiese
-    status: Book
-    type: Book
-    links:
-      - label: Link
-        url: http://link.springer.com/book/10.1007/978-3-319-03847-6
-  - title: Cohomological Theory of Crystals over Function Fields Tracts in
-      Mathematics 5, European Mathematical Society
-    year: "2009"
-    authors: Joint with R. Pink
-    journal_details: Tracts in Mathematics 5, European Mathematical Society (2009).
-    status: Book
-    type: Book
-  - title: Equidimensionality of universal pseudodeformation rings in characteristic
-      p for absolute Galois groups of p-adic fields (pdf), 91 pages.
-    authors: Joint with A.-K. Juschka
-    journal_details: ", 91 pages."
-    status: Preprint
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Juschka-Pseudo-20230701.pdf
-  - title: An Eichler-Shimura isomorphism over function fields between Drinfeld
-      modular forms and cohomology classes of crystals. (pdf), 183 pages.
-    authors: Gebhard Böckle
-    journal_details: ", 183 pages."
-    status: Preprint
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/EiShNew.pdf
-  - title: Cartier Crystals. An overview can be found in a chapter of the
-      habilitation treatise of M.Blickle
-    authors: Joint with M. Blickle
-    status: Submitted
-    type: Article
-  - title: Division Towers for Triangle Shimura Curves.
-    authors: Joint with M. Dettweiler
-    status: Submitted
-    type: Article
-  - title: Lifts of mod p Galois representations with local supercuspidal types.
-    authors: Gebhard Böckle
-    status: Submitted
-    type: Article
-  - title: published version
-    authors: "Joint with G. Böckle, R. Perkins, Research in Number Theory 7, Article
-      number: 44, 2021, published version"
-    status: Journal Article
-    type: Article
-    links:
-      - label: Link
-        url: https://link.springer.com/article/10.1007%2Fs40993-021-00254-0
-  - title: Computing L-invariants via the Greenberg-Stevens formula
-    authors: Joint with S. Anni, G. Böckle, A. Troya, Journal de Théorie des Nombres
-      de Bordeaux 31, 727–746, 2019, published version
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: https://jtnb.centre-mersenne.org/article/JTNB_2019__31_3_727_0.pdf
-  - title: published version
-    authors: Gebhard Böckle
-    status: Journal Article
-    type: Article
-  - title: Boundary Distributions for GL3 over a Local Field and Symmetric Power
-      Coefficients (Ph.D. thesis, 2020, pdf)
-    authors: Gebhard Böckle
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Peter_Graef/boundary_peter_graef.pdf
-  - title: Slides for the Journées du GDR TLAG 2021 (Rennes, 24/03/2021 - 26/03/2021)
-    authors: Gebhard Böckle
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Peter_Graef/slides_rennes.pdf
-  - title: Slides for the Special Session on Drinfeld Modules, Modular Varieties and
-      Arithmetic Applications (AMS Fall Eastern Virtual Sectional Meeting,
-      03/10/2020 - 04/10/2020)
-    authors: Gebhard Böckle
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Peter_Graef/Slides_AMS.pdf
-  - title: Workshop Arithmetic Geometry and Computer Algebra
-    authors: Gebhard Böckle
-    status: Journal Article
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/fileadmin/groups/arithgeo/templates/data/Peter_Graef/Poster_Peter_Graef.pdf
-  - title: Magma package to compute Hecke eigensystems for harmonic cocycles on the
-      Bruhat-Tits tree for GL_2(F_q(T)) by Master's student Burak Cakir, thesis
-      available here.
-    status: Other
-    type: Article
-    pdfs:
-      - label: PDF
-        file: /assets/migrated/Thesis_Cakir.pdf
+- title: "$U$-Operators Acting on Harmonic Cocycles for $\\mathrm{GL}_3$ and Their Slopes"
+  year: '2025'
+  authors: Joint with G. Böckle, P. M. Gräf, T. Kaiser
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "On the Endomorphism Algebra of Abelian Varieties Associated with Hilbert Modular Forms"
+  year: '2025'
+  authors: Alireza Shavali
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "On the Image of Automorphic Galois Representations"
+  year: '2025'
+  authors: Alireza Shavali
+  journal_details: Submitted
+  status: Submitted
+  type: Article
+- title: "Bogomolov property for Galois representations with big local image"
+  year: '2025'
+  authors: Joint with A. Conti, L. Terracini
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "A duality result about special functions in Drinfeld modules of arbitrary rank"
+  year: '2025'
+  authors: Giacomo Ferraro
+  journal_details: Res. Math. Sci.
+  status: Journal Article
+  type: Article
+- title: "On nearly holomorphic Drinfeld modular forms for admissible coefficient rings"
+  year: '2025'
+  authors: Sriram Chinthalagiri Venkata
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "Lattices in rigid analytic representations"
+  year: '2024'
+  authors: Joint with A. Conti, E. Torti
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "Lifting Galois representations via Kummer flags"
+  year: '2024'
+  authors: Joint with A. Conti, C. Demarche, M. Florence
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "p-adic rigidity of eigenforms of infinite slope"
+  year: '2024'
+  authors: Andrea Conti
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "The trianguline variety for reductive groups and Zariski density of crystalline points"
+  year: '2024'
+  authors: Joint with A. Conti, J. Quast, M. Moakher
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "Big images of two-dimensional pseudorepresentations"
+  year: '2023'
+  authors: Joint with A. Conti, J. Lang, A. Medvedovsky
+  journal_details: Mathematische Annalen
+  status: Journal Article
+  type: Article
+- title: "L-invariants and deep congruences between newforms"
+  year: '2023'
+  authors: Joint with A. Conti, P. Graef
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "Local constancy of families of Galois representations modulo prime powers"
+  year: '2023'
+  authors: Joint with A. Conti, E. Torti
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "A class of functional identities associated to curves over finite fields"
+  year: '2022'
+  authors: Giacomo Ferraro
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "Lifting trianguline Galois representations along isogenies"
+  year: '2021'
+  authors: Andrea Conti
+  journal_details: Preprint
+  status: Preprint
+  type: Article
+- title: "$\\hat G$-local systems on smooth projective curves are potentially automorphic"
+  year: '2019'
+  authors: Joint with G. Böckle, M. Harris, C. Khare, J. A. Thorne
+  journal_details: Published
+  status: Journal Article
+  type: Article
+- title: "New Bounds on the Biplanar and $k$-Planar Crossing Numbers"
+  year: '2019'
+  authors: Joint with A. Shavali, H. Zarrabi-Zadeh
+  journal_details: CCCG 2022
+  status: Journal Article
+  type: Article
+- title: Weak abelian direct summands and irreducibility of Galois representations
+  year: '2024'
+  authors: Joint with C.-Y. Hui
+  journal_details: To appear
+  status: Preprint
+  type: Article
+- title: Deformation rings and images of Galois representations
+  year: '2021'
+  authors: Joint with S. Arias-de-Reyna
+  journal_details: To appear
+  status: Preprint
+  type: Article
+- title: A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via representation theory, and an investigation of its subfactors
+  year: '2021'
+  authors: Joint with P. M. Gräf, R. Perkins
+  journal_details: To appear
+  status: Preprint
+  type: Article
+- title: Irreducibility of versal deformation rings in the (p,p)-case for 2-dimensional
+    representations.
+  authors: Joint with A.-K. Juschka
+  journal_details: J. Algebra
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BoeckleJuschka-Irreducibility.pdf
+- title: Independence of l-adic representations of geometric Galois groups.
+  authors: Joint with W. Gajda, S. Petersen
+  journal_details: J. Reine Angew. Math.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf
+- title: Hecke characters associated to Drinfeld modular forms
+  year: '2015'
+  authors: Gebhard Böckle
+  journal_details: Compos. Math.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Centeleghe-HeckeCharactersAssociatedToDrinfeldModularForms.pdf
+- title: The distribution of the zeros of the Goss zeta-function for A=F2[x,y]/(y2+y+x3+x+1)
+  year: '2013'
+  authors: Gebhard Böckle
+  journal_details: Math. Z.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/ZeroDistribForOneA.pdf
+- title: Algebraic Hecke characters and compatible systems of abelian mod p Galois
+    representations over global fields.
+  authors: Gebhard Böckle
+  journal_details: Manuscripta Math.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf
+- title: On computing quaternion quotient graphs for function fields.
+  authors: Joint with R. Butenuth
+  journal_details: J. Théor. Nombres Bordeaux
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Proofs-Boeckle-Butenuth.pdf
+- title: 'Cartier Modules: finiteness results'
+  year: '2011'
+  authors: Joint with M. Blickle
+  journal_details: J. Reine Angew. Math. 661 (2011), 85-123
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BlickleBoeckle-CartierModulesFinitenessResults.pdf
+- title: Deformation rings for some mod 3 Galois representations of the absolute Galois
+    group of Q3
+  year: '2010'
+  authors: Gebhard Böckle
+  journal_details: 'in Representations p-adic de groupes p-adiques II: Representations
+    de GL'
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Mod3DefRings-2010_01_11.pdf
+- title: The Miller-Rabin test with randomized exponents
+  year: '2009'
+  authors: Gebhard Böckle
+  journal_details: J. Math. Cryptol.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/RandomizedMR.pdf
+- title: Deformations and the rigidity method
+  year: '2008'
+  authors: Gebhard Böckle
+  journal_details: J. Algebra
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Rigidity-CorrectionsThm8.9.pdf
+- title: Presentations of universal deformation rings
+  year: '2007'
+  authors: Gebhard Böckle
+  journal_details: 'in: $L$-functions and Galois representations, 24--58, LMS Lecture
+    Note Ser., 320, Cambridge Univ. Press, Cambridge (2007).'
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/OnUDefPres9.pdf
+- title: Uniformizable families of t-motives
+  year: '2007'
+  authors: Joint with U. Hartl
+  journal_details: Trans. Amer. Math. Soc.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/TAMS_4136_Bockle_Hartl.pdf
+- title: Mod l representations of arithmetic fundamental groups. II. A conjecture
+    of A. J. de Jong
+  year: '2006'
+  authors: Joint with C. Khare
+  journal_details: Compos. Math.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/B-K-deJong-Rev2.pdf
+- title: Mod l representations of arithmetic fundamental groups. I. An analog of Serre's
+    conjecture for function fields
+  year: '2005'
+  authors: Joint with C. Khare
+  journal_details: Duke Math. J.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BK-Serre-dmj4021.pdf
+- title: 'Arithmetic over function fields: a cohomological approach'
+  year: '2005'
+  authors: Gebhard Böckle
+  journal_details: Number fields and function fields---two parallel worlds,
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/TexelProcRev.pdf
+- title: Lifting mod p representations to characteristic p2
+  year: '2003'
+  authors: Gebhard Böckle
+  journal_details: J. Number Theory
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/LiftModp2Corr.pdf
+- title: On the isomorphism R0 -> T0
+  year: '2003'
+  mr_number: '342342342343'
+  authors: Gebhard Böckle
+  journal_details: appendix to
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/KhareAppboeckleNew2.pdf
+- title: Finiteness conjectures for Fl[[T]]-analytic extensions of number fields
+  year: '2002'
+  authors: Gebhard Böckle
+  journal_details: J. Number Theory
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DeJongAnJNTbRev2.pdf
+- title: Global L-functions over function fields
+  year: '2002'
+  authors: Gebhard Böckle
+  journal_details: Math. Ann.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AofC-MAProof.pdf
+- title: On the density of modular points in universal deformation spaces
+  year: '2001'
+  authors: Gebhard Böckle
+  journal_details: Amer. J. Math.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DensityAJMCorr.pdf
+- title: A remark on a finiteness conjecture on mod $p$ Galois representations by
+    C. Khare
+  year: '2001'
+  authors: Gebhard Böckle
+  journal_details: J. Ramanujan Math. Soc.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/RemOnKhare.pdf
+- title: Demuskin groups with group actions and applications to deformations of Galois
+    representations
+  year: '2000'
+  authors: Gebhard Böckle
+  journal_details: Compositio Math.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/DemGps.pdf
+- title: The prime-to-adjoint principle and unobstructed Galois deformations in the
+    Borel case
+  year: '1999'
+  authors: Joint with A. Mezard
+  journal_details: J. Number Theory
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AriGebJNTRev2.pdf
+- title: A local-to-global principle for deformations of Galois representations
+  year: '1999'
+  authors: Gebhard Böckle
+  journal_details: J. Reine Angew. Math.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/LocalGlobalRev3.pdf
+- title: Explicit universal deformations of even Galois representations
+  year: '1999'
+  authors: Gebhard Böckle
+  journal_details: Math. Nachr.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Explicit.pdf
+- title: The generic fiber of the universal deformation space associated to a tame
+    Galois representation
+  year: '1998'
+  authors: Gebhard Böckle
+  journal_details: Manuscripta Math.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/GeneriFiberMM2.pdf
+- title: Deformations of Galois representations
+  authors: Gebhard Böckle
+  journal_details: In
+  status: Journal Article
+  type: Article
+  links:
+  - label: Link
+    url: http://link.springer.com/chapter/10.1007%2F978-3-0348-0618-3_2
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Barcelona-DefTheory-Rev.pdf
+- title: Cohomological theory of crystals over function fields and applications
+  year: '2012'
+  authors: Gebhard Böckle
+  journal_details: In "Arithmetic Geometry in Positive Characteristic". Advanced Courses
+    in Mathematics. CRM Barcelona. Birkhäuser Verlag, Basel (2012), to appear.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/LectureNotesOnCrystals-Barcelona2012-01-24.pdf
+- title: Galois representations
+  year: '2013'
+  authors: Gebhard Böckle
+  journal_details: Travaux mathématiques.
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: http://wwwfr.uni.lu/content/download/75430/940982/file/Boeckle.pdf
+- title: Computations with Modular Forms
+  authors: Joint with G. Wiese
+  status: Book
+  type: Book
+  links:
+  - label: Link
+    url: http://link.springer.com/book/10.1007/978-3-319-03847-6
+- title: Cohomological Theory of Crystals over Function Fields Tracts in Mathematics
+    5, European Mathematical Society
+  year: '2009'
+  authors: Joint with R. Pink
+  journal_details: Tracts in Mathematics 5, European Mathematical Society (2009).
+  status: Book
+  type: Book
+- title: Equidimensionality of universal pseudodeformation rings in characteristic
+    p for absolute Galois groups of p-adic fields (pdf), 91 pages.
+  authors: Joint with A.-K. Juschka
+  journal_details: ', 91 pages.'
+  status: Preprint
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Juschka-Pseudo-20230701.pdf
+- title: An Eichler-Shimura isomorphism over function fields between Drinfeld modular
+    forms and cohomology classes of crystals. (pdf), 183 pages.
+  authors: Gebhard Böckle
+  journal_details: ', 183 pages.'
+  status: Preprint
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/EiShNew.pdf
+- title: Cartier Crystals. An overview can be found in a chapter of the habilitation
+    treatise of M.Blickle
+  authors: Joint with M. Blickle
+  status: Submitted
+  type: Article
+- title: Division Towers for Triangle Shimura Curves.
+  authors: Joint with M. Dettweiler
+  status: Submitted
+  type: Article
+- title: Lifts of mod p Galois representations with local supercuspidal types.
+  authors: Gebhard Böckle
+  status: Submitted
+  type: Article
+- title: published version
+  authors: 'Joint with G. Böckle, R. Perkins, Research in Number Theory 7, Article
+    number: 44, 2021, published version'
+  status: Journal Article
+  type: Article
+  links:
+  - label: Link
+    url: https://link.springer.com/article/10.1007%2Fs40993-021-00254-0
+- title: Computing L-invariants via the Greenberg-Stevens formula
+  authors: Joint with S. Anni, G. Böckle, A. Troya, Journal de Théorie des Nombres
+    de Bordeaux 31, 727–746, 2019, published version
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: https://jtnb.centre-mersenne.org/article/JTNB_2019__31_3_727_0.pdf
+- title: published version
+  authors: Gebhard Böckle
+  status: Journal Article
+  type: Article
+- title: Boundary Distributions for GL3 over a Local Field and Symmetric Power Coefficients
+    (Ph.D. thesis, 2020, pdf)
+  authors: Gebhard Böckle
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Peter_Graef/boundary_peter_graef.pdf
+- title: Slides for the Journées du GDR TLAG 2021 (Rennes, 24/03/2021 - 26/03/2021)
+  authors: Gebhard Böckle
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Peter_Graef/slides_rennes.pdf
+- title: Slides for the Special Session on Drinfeld Modules, Modular Varieties and
+    Arithmetic Applications (AMS Fall Eastern Virtual Sectional Meeting, 03/10/2020
+    - 04/10/2020)
+  authors: Gebhard Böckle
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Peter_Graef/Slides_AMS.pdf
+- title: Workshop Arithmetic Geometry and Computer Algebra
+  authors: Gebhard Böckle
+  status: Journal Article
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/img/fileadmin/groups/arithgeo/templates/data/Peter_Graef/Poster_Peter_Graef.pdf
+- title: Magma package to compute Hecke eigensystems for harmonic cocycles on the
+    Bruhat-Tits tree for GL_2(F_q(T)) by Master's student Burak Cakir, thesis available
+    here.
+  status: Other
+  type: Article
+  pdfs:
+  - label: PDF
+    file: /assets/migrated/Thesis_Cakir.pdf
 software:
-  - title: Magma package QaQuotGraphs
-    description: to compute the action by unit groups of maximal orders in
-      quaternion algebras over F_q(T) by Dr. Ralf Butenuth.
-    link_text: View Package
-  - title: Magma package
-    description: to compute quotients of Bruhat-Tits buildings over function fields
-      modulo congruence subgroups and the action of Hecke operators on harmonic
-      cocycles with coefficients in char. 0 by former Master's student Lutz
-      Hofmann.
-    link: https://github.com/lhofmann/buildings
-    link_text: View Package
-  - title: Magma package
-    description: to compute Hecke eigensystems for harmonic cocycles on the
-      Bruhat-Tits tree for GL_2(F_q(T)) by Master's student Burak Cakir, thesis
-      available here.
-    link: https://github.com/b-cakir/hecke-operator
-    link_text: View Package
+- title: Magma package QaQuotGraphs
+  description: to compute the action by unit groups of maximal orders in quaternion
+    algebras over F_q(T) by Dr. Ralf Butenuth.
+  link_text: View Package
+- title: Magma package
+  description: to compute quotients of Bruhat-Tits buildings over function fields
+    modulo congruence subgroups and the action of Hecke operators on harmonic cocycles
+    with coefficients in char. 0 by former Master's student Lutz Hofmann.
+  link: https://github.com/lhofmann/buildings
+  link_text: View Package
+- title: Magma package
+  description: to compute Hecke eigensystems for harmonic cocycles on the Bruhat-Tits
+    tree for GL_2(F_q(T)) by Master's student Burak Cakir, thesis available here.
+  link: https://github.com/b-cakir/hecke-operator
+  link_text: View Package

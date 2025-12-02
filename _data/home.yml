@@ -1,31 +1,30 @@
 hero:
   image: /assets/img/heidelberg-4963800_1920.jpg
-  title: AG Computational Arithmetic Geometry
+  title: Computational Arithmetic Geometry
   subtitle: Prof. Dr. Gebhard Böckle
-  description: Research Group at the Interdisciplinary Center for Scientific
-    Computing (IWR), Heidelberg University
+  description: Research Group at Heidelberg University
 feature_cards:
-  - title: About Our Research Group
-    icon: fas fa-university
-    content: Website of the computational arithmetic geometry research group at IWR,
-      Heidelberg University. Conducting cutting-edge research in algebraic
-      number theory and arithmetic geometry.
-    link: /members/
-    link_text: Our Team
-    link_icon: fas fa-users
-  - title: Research Focus
-    icon: fas fa-microscope
-    content: Focus on Galois representations, modular forms, elliptic curves,
-      deformation theory, and function field arithmetic including L-functions
-      and Drinfeld modular forms.
-    link: /research/
-    link_text: Explore Research
-    link_icon: fas fa-flask
-  - title: Our Methods
-    icon: fas fa-cogs
-    content: We apply theoretical methods and computer algebra experiments to solve
-      problems in number theory and arithmetic geometry, developing
-      computational tools and gathering examples.
-    link: /publications/
-    link_text: Publications
-    link_icon: fas fa-file-alt
+- title: About Our Research Group
+  icon: fas fa-university
+  content: Website of the computational arithmetic geometry research group at IWR,
+    Heidelberg University. Conducting cutting-edge research in algebraic number theory
+    and arithmetic geometry.
+  link: /members/
+  link_text: Our Team
+  link_icon: fas fa-users
+- title: Research Focus
+  icon: fas fa-microscope
+  content: Focus on Galois representations, modular forms, elliptic curves, deformation
+    theory, and function field arithmetic including L-functions and Drinfeld modular
+    forms.
+  link: /research/
+  link_text: Explore Research
+  link_icon: fas fa-flask
+- title: Our Methods
+  icon: fas fa-cogs
+  content: We apply theoretical methods and computer algebra experiments to solve
+    problems in number theory and arithmetic geometry, developing computational tools
+    and gathering examples.
+  link: /publications/
+  link_text: Publications
+  link_icon: fas fa-file-alt

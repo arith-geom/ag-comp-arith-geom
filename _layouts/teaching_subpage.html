@@ -10,17 +10,17 @@ layout: default
             <div class="row align-items-center">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <span class="badge-custom badge-custom-primary">{{ page.semester
+                        <span class="badge-custom badge-custom-primary">{{ page.semester | escape
                             }}</span>
                         {% if page.course_type %}
                         <span class="badge-custom badge-custom-light">{{
-                            page.course_type
+                            page.course_type | escape
                             }}</span>
                         {% endif %}
                     </div>
-                    <h1 class="h3 fw-bold text-dark mb-3">{{ page.title }}</h1>
+                    <h1 class="h3 fw-bold text-dark mb-3">{{ page.title | escape }}</h1>
                     {% if page.description %}
-                    <div class="lead text-secondary mb-4">{{ page.description | markdownify }}</div>
+                    <div class="lead text-secondary mb-4">{{ page.description | strip_html | markdownify }}</div>
                     {% endif %}
 
                     <!-- Metadata Row -->
@@ -34,10 +34,10 @@ layout: default
 
                         {% if page.links %}
                         {% for link in page.links %}
-                        <a href="{{ link.url }}" class="btn-custom btn-custom-outline" target="_blank"
-                            rel="noopener noreferrer">
+                        <a href="{{ link.url | sanitize_url | escape }}" class="btn-custom btn-custom-outline"
+                            target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-external-link-alt me-2 text-secondary"></i> {{ link.label | default:
-                            "Link" }}
+                            "Link" | escape }}
                         </a>
                         {% endfor %}
                         {% endif %}
@@ -63,7 +63,7 @@ layout: default
                             {% for pdf in page.pdfs %}
                             <a href="{{ pdf.file | relative_url }}" class="btn-custom btn-custom-danger"
                                 target="_blank">
-                                <i class="fas fa-file-pdf me-2"></i> {{ pdf.label | default: "Download PDF" }}
+                                <i class="fas fa-file-pdf me-2"></i> {{ pdf.label | default: "Download PDF" | escape }}
                             </a>
                             {% endfor %}
                         </div>
@@ -72,7 +72,7 @@ layout: default
 
                     <!-- Body Content -->
                     <div class="teaching-body mb-5 lead fs-6 text-dark">
-                        {{ content | markdownify }}
+                        {{ content | strip_html | markdownify }}
                     </div>
 
                     <div class="mt-5 pt-3 border-top">

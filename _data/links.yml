@@ -1,26 +1,25 @@
 groups:
-  - title: "Heidelberg University"
-    icon: "fas fa-university"
-    links:
-      - title: "Interdisciplinary Center for Scientific Computing (IWR)"
-        url: "https://www.iwr.uni-heidelberg.de/"
-      - title: "Institute of Mathematics Heidelberg"
-        url: "https://www.math.uni-heidelberg.de/en"
-      - title: "Faculty of Mathematics and Computer Sciences"
-        url: "https://www.mathinf.uni-heidelberg.de/"
-      - title: "The MAThematics Center Heidelberg (MATCH)"
-        url: "https://www.uni-heidelberg.de/excellenceinitiative/institutionalstrategy/match.html"
-
-  - title: "DFG Research Projects"
-    icon: "fas fa-flask"
-    links:
-      - title: "DFG CRC 326 GAUS \"Geometry and Arithmetic of Uniformized Structures\""
-        url: "https://crc326gaus.de/"
-      - title: "DFG Priority Project SSP 1489 \"Algorithmic and Experimental Methods in Algebra, Geometry, and Number Theory\""
-        url: "http://www.computeralgebra.de/"
-
-  - title: "Academic Resources"
-    icon: "fas fa-book"
-    links:
-      - title: "Journal of Number Theory"
-        url: "https://math.osu.edu/research/journals"
+- title: Heidelberg University
+  icon: fas fa-university
+  links:
+  - title: Interdisciplinary Center for Scientific Computing (IWR)
+    url: https://www.iwr.uni-heidelberg.de/
+  - title: Institute of Mathematics Heidelberg
+    url: https://www.math.uni-heidelberg.de/en
+  - title: Faculty of Mathematics and Computer Sciences
+    url: https://www.mathinf.uni-heidelberg.de/
+  - title: The MAThematics Center Heidelberg (MATCH)
+    url: https://www.uni-heidelberg.de/excellenceinitiative/institutionalstrategy/match.html
+- title: DFG Research Projects
+  icon: fas fa-flask
+  links:
+  - title: DFG CRC 326 GAUS "Geometry and Arithmetic of Uniformized Structures"
+    url: https://crc326gaus.de/
+  - title: DFG Priority Project SSP 1489 "Algorithmic and Experimental Methods in
+      Algebra, Geometry, and Number Theory"
+    url: http://www.computeralgebra.de/
+- title: Academic Resources
+  icon: fas fa-book
+  links:
+  - title: Journal of Number Theory
+    url: https://math.osu.edu/research/journals

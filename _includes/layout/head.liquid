@@ -6,23 +6,23 @@
 {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  "name": "{{ site.title }}",
+  "name": {{ site.title | jsonify }},
   "url": "{{ site.url }}{{ site.baseurl }}",
   "parentOrganization": {
     "@type": "CollegeOrUniversity",
-    "name": "{{ site.university }}"
+    "name": {{ site.university | jsonify }}
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "{{ site.contact.phone }}",
-    "email": "{{ site.contact.email }}",
+    "telephone": {{ site.contact.phone | jsonify }},
+    "email": {{ site.contact.email | jsonify }},
     "contactType": "scientific support"
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "{{ site.contact.address | split: ', ' | first }}",
+    "streetAddress": {{ site.contact.address | split: ', ' | first | jsonify }},
     "addressLocality": "Heidelberg",
-    "postalCode": "{{ site.contact.address | split: ', ' | index: 1 }}",
+    "postalCode": {{ site.contact.address | split: ', ' | index: 1 | jsonify }},
     "addressCountry": "DE"
   }
 }
@@ -75,7 +75,7 @@
 {% if site.icon.size <= 4 %}
   <link
     rel="shortcut icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.icon }}</text></svg>"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.icon | escape }}</text></svg>"
   >
 {% elsif site.icon != blank %}
   <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache}}">

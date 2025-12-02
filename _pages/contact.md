@@ -5,23 +5,23 @@ permalink: /contact/
 nav: true
 ---
 <div class="contact-grid">
+  {% for location in site.data.contact.address %}
   <div class="feature-card location-card">
     <div class="card-header">
       <div class="card-icon">
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
       </div>
-      <h3>Our Location</h3>
+      <h3>{{ location.title }}</h3>
     </div>
     <div class="card-body">
       <div class="address-block">
-        <p><strong>{{ site.data.contact.address[0].title }}</strong></p>
-        <p>{{ site.data.contact.address[0].institution }}</p>
-        <p>{{ site.data.contact.address[0].university }}</p>
-        <p>{{ site.data.contact.address[0].street }}</p>
-        <p>{{ site.data.contact.address[0].city }}, {{ site.data.contact.address[0].country }}</p>
+        <p><strong>{{ location.institution }}</strong></p>
+        <p>{{ location.university }}</p>
+        <p>{{ location.street }}</p>
+        <p>{{ location.city }}, {{ location.country }}</p>
       </div>
       <div class="location-description">
-        <div>{{ site.data.contact.address[0].description | markdownify }}</div>
+        <div>{{ location.description | markdownify }}</div>
       </div>
       <div class="map-wrapper">
         <iframe
@@ -30,13 +30,15 @@ nav: true
           class="contact-map"
           loading="lazy"
           allowfullscreen
-          title="Map showing the location of AG Computational Arithmetic Geometry at Heidelberg University"
-          src="{{ site.data.contact.address[0].map_url }}">
+          title="Map showing location"
+          src="{{ location.map_url }}">
         </iframe>
       </div>
     </div>
   </div>
+  {% endfor %}
 
+  {% for detail in site.data.contact.contact_details %}
   <div class="feature-card">
     <div class="card-header">
       <div class="card-icon">
@@ -52,8 +54,8 @@ nav: true
           </div>
           <div class="info-content">
             <strong class="info-label">Phone</strong>
-            <span class="info-value">{{ site.data.contact.contact_details[0].phone }}</span>
-            <small class="info-description">{{ site.data.contact.contact_details[0].phone_hours }}</small>
+            <span class="info-value">{{ detail.phone }}</span>
+            <small class="info-description">{{ detail.phone_hours }}</small>
           </div>
         </div>
         <div class="info-item">
@@ -62,17 +64,19 @@ nav: true
           </div>
           <div class="info-content">
             <strong class="info-label">Fax</strong>
-            <span class="info-value">{{ site.data.contact.contact_details[0].fax }}</span>
-            <small class="info-description">{{ site.data.contact.contact_details[0].fax_note }}</small>
+            <span class="info-value">{{ detail.fax }}</span>
+            <small class="info-description">{{ detail.fax_note }}</small>
           </div>
         </div>
       </div>
       <div class="contact-description">
-        <div>{{ site.data.contact.contact_details[0].general_info | markdownify }}</div>
+        <div>{{ detail.general_info | markdownify }}</div>
       </div>
     </div>
   </div>
+  {% endfor %}
 
+  {% for email in site.data.contact.email %}
   <div class="feature-card">
     <div class="card-header">
       <div class="card-icon">
@@ -82,14 +86,15 @@ nav: true
     </div>
     <div class="card-body">
       <div class="email-info">
-        <div>{{ site.data.contact.email[0].intro | markdownify }}</div>
+        <div>{{ email.intro | markdownify }}</div>
         <div class="email-address">
-          <strong>{{ site.data.contact.email[0].address }}</strong>
+          <strong>{{ email.address }}</strong>
         </div>
       </div>
       <div class="contact-description">
-        <div>{{ site.data.contact.email[0].outro | markdownify }}</div>
+        <div>{{ email.outro | markdownify }}</div>
       </div>
     </div>
   </div>
+  {% endfor %}
 </div>

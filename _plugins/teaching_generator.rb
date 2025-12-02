@@ -40,7 +40,7 @@ module Jekyll
               if semester_data['courses']
                 semester_data['courses'].each do |course|
                   # Create slug from title
-                  slug = Utils.slugify(course['title'])
+                  slug = Utils.slugify(course['title'])[0..100]
                   
                   # Generate full semester title for slug to match Liquid template
                   semester_title = semester

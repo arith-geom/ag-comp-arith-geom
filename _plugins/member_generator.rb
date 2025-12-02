@@ -46,7 +46,7 @@ module Jekyll
           if section['members']
             section['members'].each do |member|
               # Create slug from name using Jekyll's utility to match Liquid filter
-              slug = Utils.slugify(member['name'])
+              slug = Utils.slugify(member['name'])[0..100]
               
               # Create page at /members/:slug/
               site.pages << MemberPage.new(site, site.source, File.join('members', slug), member)

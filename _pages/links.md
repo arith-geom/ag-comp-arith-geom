@@ -18,9 +18,9 @@ title: Links
     <div class="card-body">
       <div class="links-container">
         {% for link in group.links %}
-        <a href="{{ link.url }}" target="_blank" rel="noopener" class="link-item">
-          <span class="link-title">{{ link.title }}</span>
-          <span class="link-url">{{ link.url }}</span>
+        <a href="{{ link.url | sanitize_url | escape }}" target="_blank" rel="noopener" class="link-item">
+          <div class="link-title">{{ link.title | escape | markdownify }}</div>
+          <span class="link-url">{{ link.url | escape }}</span>
         </a>
         {% endfor %}
       </div>

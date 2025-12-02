@@ -12,7 +12,7 @@ layout: default
           <div class="member-photo-wrapper">
             {% if page.photo %}
             <img src="{{ page.photo | relative_url }}" alt="{{ page.title }}"
-              class="member-avatar-large shadow-lg rounded-circle">
+              class="member-avatar-large shadow-lg rounded-circle" loading="lazy">
             {% else %}
             <div
               class="member-avatar-placeholder-large shadow-lg d-flex align-items-center justify-content-center mx-auto mx-md-0">
@@ -45,7 +45,7 @@ layout: default
           <div class="mb-5">
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Biography</h2>
             <div class="member-bio text-dark lead fs-6">
-              {{ content }}
+              {{ content | strip_html | markdownify }}
             </div>
           </div>
 
@@ -61,10 +61,34 @@ layout: default
           </div>
           {% endif %}
 
+          <!-- Determine Content Match Names -->
+          {% assign match_names = "" | split: "" %}
+
+          <!-- 1. Add Inferred Surname -->
+          {% assign name_parts = page.title | split: " " %}
+          {% assign inferred_surname = name_parts | last %}
+          {% assign match_names = match_names | push: inferred_surname %}
+
+          <!-- 2. Add Aliases -->
+          {% if page.aliases %}
+          {% for alias in page.aliases %}
+          {% assign match_names = match_names | push: alias.name %}
+          {% endfor %}
+          {% endif %}
+
+          {% assign match_names = match_names | uniq %}
+
           <!-- Dynamic Software Packages -->
-          {% if page.content_match_name %}
-          {% assign matching_software = site.data.publications.software | where_exp: "item", "item.author contains
-          page.content_match_name" %}
+          {% if match_names.size > 0 %}
+          {% assign matching_software = "" | split: "" %}
+          {% for item in site.data.publications.software %}
+          {% for name in match_names %}
+          {% if item.author contains name %}
+          {% assign matching_software = matching_software | push: item %}
+          {% break %}
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
           {% if matching_software.size > 0 %}
           <div class="mb-5">
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Software Packages</h2>
@@ -93,9 +117,16 @@ layout: default
           {% endif %}
 
           <!-- Dynamic Publications -->
-          {% if page.content_match_name %}
-          {% assign matching_pubs = site.data.publications.publications | where_exp: "pub", "pub.authors contains
-          page.content_match_name" %}
+          {% if match_names.size > 0 %}
+          {% assign matching_pubs = "" | split: "" %}
+          {% for pub in site.data.publications.publications %}
+          {% for name in match_names %}
+          {% if pub.authors contains name %}
+          {% assign matching_pubs = matching_pubs | push: pub %}
+          {% break %}
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
           {% if matching_pubs.size > 0 %}
           <div class="mb-5">
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Publications</h2>
@@ -115,7 +146,7 @@ layout: default
                   <span class="text-muted ms-2 small">({{ pub.year }})</span>
                   {% endif %}
                 </h5>
-                <div class="text-secondary mb-1">{{ pub.authors }}</div>
+                <div class="text-secondary mb-1">{{ pub.authors | linkify_authors }}</div>
                 <div class="small text-muted"><em>{{ pub.journal_details }}</em></div>
               </div>
               {% endfor %}
@@ -126,7 +157,7 @@ layout: default
                   <a href="{{ '/publications/' | relative_url }}{{ pub.title | slugify }}/"
                     class="text-decoration-none text-dark">{{ pub.title }}</a>
                 </h5>
-                <div class="text-secondary mb-1">{{ pub.authors }}</div>
+                <div class="text-secondary mb-1">{{ pub.authors | linkify_authors }}</div>
                 <div class="small text-muted"><em>{{ pub.journal_details }}</em></div>
               </div>
               {% endfor %}
@@ -137,16 +168,23 @@ layout: default
 
           <!-- Selected Publications (Manual) -->
           <!-- Dynamic Teaching -->
-          {% if page.content_match_name %}
+          {% if match_names.size > 0 %}
           {% assign has_teaching = false %}
           {% for year_data in site.data.teaching.courses %}
           {% for semester_data in year_data.semesters %}
-          {% assign matching_courses = semester_data.courses | where_exp: "course", "course.instructor contains
-          page.content_match_name" %}
-          {% if matching_courses.size > 0 %}
+          {% assign course_matched = false %}
+          {% for course in semester_data.courses %}
+          {% for name in match_names %}
+          {% if course.instructor contains name %}
+          {% assign course_matched = true %}
+          {% break %}
+          {% endif %}
+          {% endfor %}
+          {% if course_matched %}
           {% assign has_teaching = true %}
           {% break %}
           {% endif %}
+          {% endfor %}
           {% endfor %}
           {% if has_teaching %}{% break %}{% endif %}
           {% endfor %}
@@ -157,8 +195,15 @@ layout: default
             <div class="list-group list-group-flush">
               {% for year_data in site.data.teaching.courses %}
               {% for semester_data in year_data.semesters %}
-              {% assign matching_courses = semester_data.courses | where_exp: "course", "course.instructor contains
-              page.content_match_name" %}
+              {% assign matching_courses = "" | split: "" %}
+              {% for course in semester_data.courses %}
+              {% for name in match_names %}
+              {% if course.instructor contains name %}
+              {% assign matching_courses = matching_courses | push: course %}
+              {% break %}
+              {% endif %}
+              {% endfor %}
+              {% endfor %}
               {% for course in matching_courses %}
               <div class="list-group-item px-0 py-4 publication-item">
                 <h5 class="h5 fw-bold mb-2">
@@ -198,12 +243,13 @@ layout: default
               <div class="list-group-item px-0 py-4 publication-item">
                 <h5 class="h5 fw-bold mb-2">
                   {% if pub.link %}
-                  <a href="{{ pub.link }}" target="_blank" class="text-decoration-none text-dark">{{ pub.title }}</a>
+                  <a href="{{ pub.link | sanitize_url | escape }}" target="_blank"
+                    class="text-decoration-none text-dark">{{ pub.title }}</a>
                   {% else %}
                   {{ pub.title }}
                   {% endif %}
                 </h5>
-                <div class="text-secondary mb-1">{{ pub.authors }}</div>
+                <div class="text-secondary mb-1">{{ pub.authors | linkify_authors }}</div>
                 <div class="small text-muted"><em>{{ pub.journal }}</em></div>
               </div>
               {% endfor %}
@@ -330,8 +376,9 @@ layout: default
                 {% assign icon_class = "fas fa-link" %}
                 {% endif %}
                 {% endunless %}
-                <a href="{{ link.url }}" class="btn-custom btn-custom-outline w-100 justify-content-start border-0"
-                  target="_blank" rel="noopener noreferrer">
+                <a href="{{ link.url | escape }}"
+                  class="btn-custom btn-custom-outline w-100 justify-content-start border-0" target="_blank"
+                  rel="noopener noreferrer">
                   <i class="{{ icon_class }} me-2 text-secondary"></i> {{ link.text }}
                 </a>
                 {% endfor %}

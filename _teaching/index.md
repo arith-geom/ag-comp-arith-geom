@@ -34,7 +34,7 @@ description: "An overview of our courses, seminars, and lectures, organized by s
           <div class="university-separator my-5">
             <hr class="my-4">
             <h3 class="text-center text-muted mb-4">
-              <i class="fas fa-university me-2"></i>{{ year_data.university }}
+              <i class="fas fa-university me-2"></i>{{ year_data.university | escape }}
             </h3>
             <hr class="my-4">
           </div>
@@ -66,32 +66,32 @@ description: "An overview of our courses, seminars, and lectures, organized by s
           {% assign highlight_class = "highlight-current" %}
         {% endif %}
         <div class="semester-section {{ highlight_class | strip }}">
-          <h4 class="semester-title">{{ semester_title }}</h4>
+          <h4 class="semester-title">{{ semester_title | escape }}</h4>
           {% for course in semester.courses %}
             <div class="course-card position-relative">
               <h5 class="course-title">
                 {% assign course_slug = course.title | slugify %}
                 {% assign semester_slug = semester_title | slugify %}
-                <a href="{{ '/teaching/' | append: year_data.year | append: '/' | append: semester_slug | append: '/' | append: course_slug | append: '/' | relative_url }}" class="text-decoration-none text-dark stretched-link">{{ course.title }}</a>
+                <a href="{{ '/teaching/' | append: year_data.year | append: '/' | append: semester_slug | append: '/' | append: course_slug | append: '/' | relative_url }}" class="text-decoration-none text-dark stretched-link">{{ course.title | escape }}</a>
               </h5>
               {% if course.instructor %}
-                <p class="course-instructor"><i class="fas fa-user-tie"></i> {{ course.instructor }}</p>
+                <p class="course-instructor"><i class="fas fa-user-tie"></i> {{ course.instructor | escape }}</p>
               {% endif %}
               <div class="course-body">
                 {% if course.description and course.description != "" %}
-                  <div>{{ course.description | markdownify }}</div>
+                  <div>{{ course.description | strip_html | markdownify }}</div>
                 {% endif %}
                 
                 {% if course.links or course.pdfs %}
                 <div class="course-resources mt-2 position-relative" style="z-index: 2;">
                   {% for link in course.links %}
-                    <a href="{{ link.url }}" class="btn btn-sm btn-outline-primary me-1 mb-1" target="_blank" rel="noopener">
-                      <i class="fas fa-external-link-alt"></i> {{ link.label | default: "More Info" }}
+                    <a href="{{ link.url | escape }}" class="btn btn-sm btn-outline-primary me-1 mb-1" target="_blank" rel="noopener">
+                      <i class="fas fa-external-link-alt"></i> {{ link.label | default: "More Info" | escape }}
                     </a>
                   {% endfor %}
                   {% for pdf in course.pdfs %}
-                    <a href="{{ pdf.file | relative_url }}" class="btn btn-sm btn-outline-danger me-1 mb-1" target="_blank" rel="noopener">
-                      <i class="fas fa-file-pdf"></i> {{ pdf.label | default: "PDF" }}
+                    <a href="{{ pdf.file | relative_url | escape }}" class="btn btn-sm btn-outline-danger me-1 mb-1" target="_blank" rel="noopener">
+                      <i class="fas fa-file-pdf"></i> {{ pdf.label | default: "PDF" | escape }}
                     </a>
                   {% endfor %}
                 </div>

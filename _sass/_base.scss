@@ -1545,3 +1545,51 @@ code {
     background-color: #2a2a2a;
   }
 }
+// Improved Code Block Styling
+pre {
+  background-color: var(--global-bg-color);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  border: 1px solid var(--global-divider-color);
+  margin-bottom: 1.5rem;
+}
+
+code {
+  background-color: rgba(175, 184, 193, 0.2);
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9em;
+  color: var(--global-text-color);
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 100%;
+  color: var(--global-text-color);
+}
+
+// Improved Table Styling
+table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+  
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--global-divider-color);
+  }
+  
+  th {
+    background-color: var(--global-bg-color);
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+}

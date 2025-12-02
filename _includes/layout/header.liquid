@@ -1,8 +1,8 @@
 <header class="header-main">
   <div class="header-content-wrapper">
     <a class="brand" href="{{ site.baseurl }}/">
-      <div class="brand-title">{{ site.title }}</div>
-      <div class="university-name">{{ site.university }}</div>
+      <div class="brand-title">{{ site.title | escape }}</div>
+      <div class="university-name">{{ site.university | escape }}</div>
     </a>
     <nav class="main-nav-desktop">
       <ul>
@@ -10,7 +10,7 @@
           <li {% if page.url == item.url %}class="active"{% endif %}>
             <a href="{{ item.url | relative_url }}">
               <i class="{{ item.icon }}" aria-hidden="true"></i>
-              <span>{{ item.title }}</span>
+              <span>{{ item.title | escape }}</span>
             </a>
           </li>
         {% endfor %}
@@ -29,7 +29,7 @@
       <li {% if page.url == item.url %}class="active"{% endif %}>
         <a href="{{ item.url | relative_url }}">
           <i class="{{ item.icon }}" aria-hidden="true"></i>
-          <span>{{ item.title }}</span>
+          <span>{{ item.title | escape }}</span>
         </a>
       </li>
     {% endfor %}

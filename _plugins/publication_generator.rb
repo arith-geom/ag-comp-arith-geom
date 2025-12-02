@@ -41,7 +41,7 @@ module Jekyll
       if site.data['publications'] && site.data['publications']['publications']
         site.data['publications']['publications'].each do |publication|
           # Create slug from title using Jekyll's utility to match Liquid filter
-          slug = Utils.slugify(publication['title'])
+          slug = Utils.slugify(publication['title'])[0..100]
           
           # Create page at /publications/:slug/
           site.pages << PublicationPage.new(site, site.source, File.join('publications', slug), publication)

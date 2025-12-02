@@ -22,25 +22,25 @@
           {% if site.contact.address %}
           <div class="contact-item">
             <i class="fas fa-map-marker-alt fa-fw contact-icon" aria-hidden="true"></i>
-            <span>{{ site.contact.address | replace: ", ", "<br>" }}</span>
+            <span>{{ site.contact.address | escape | replace: ", ", "<br>" }}</span>
           </div>
           {% endif %}
           {% if site.contact.phone %}
           <div class="contact-item">
             <i class="fas fa-phone fa-fw contact-icon" aria-hidden="true"></i>
-            <span>{{ site.contact.phone }}</span>
+            <span>{{ site.contact.phone | escape }}</span>
           </div>
           {% endif %}
           {% if site.contact.fax %}
           <div class="contact-item">
             <i class="fas fa-fax fa-fw contact-icon" aria-hidden="true"></i>
-            <span>{{ site.contact.fax }}</span>
+            <span>{{ site.contact.fax | escape }}</span>
           </div>
           {% endif %}
           {% if site.contact.email %}
           <div class="contact-item">
             <i class="fas fa-envelope fa-fw contact-icon" aria-hidden="true"></i>
-            <a href="mailto:{{ site.contact.email }}" class="footer-link">{{ site.contact.email }}</a>
+            <a href="mailto:{{ site.contact.email | escape }}" class="footer-link">{{ site.contact.email | escape }}</a>
           </div>
           {% endif %}
         </div>
@@ -54,7 +54,7 @@
             {% if item.title == 'Home' or item.title == 'Contact' %}{% continue %}{% endif %}
             <li>
               <a href="{{ item.url | relative_url }}" class="footer-link">
-                {% if item.icon %}<i class="{{ item.icon }} fa-fw me-2" aria-hidden="true"></i>{% endif %}{{ item.title }}
+                {% if item.icon %}<i class="{{ item.icon }} fa-fw me-2" aria-hidden="true"></i>{% endif %}{{ item.title | escape }}
               </a>
             </li>
           {% endfor %}
@@ -78,14 +78,14 @@
     <div class="footer-bottom text-center text-md-start">
       <div class="row align-items-center">
         <div class="col-md-4">
-          <p class="mb-0">&copy; {{ "now" | date: "%Y" }} {{ site.title }}.</p>
+          <p class="mb-0">&copy; {{ "now" | date: "%Y" }} {{ site.title | escape }}.</p>
         </div>
         <div class="col-md-4 text-md-center">
           <div class="website-credits">
             <p class="mb-0">
               Website by
               <a href="{{ site.creator.github_url }}" target="_blank" rel="noopener" class="footer-link">
-                {{ site.creator.name }}
+                {{ site.creator.name | escape }}
               </a>
             </p>
           </div>

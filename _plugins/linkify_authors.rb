@@ -1,7 +1,11 @@
+require 'cgi'
 module Jekyll
   module LinkifyAuthorsFilter
     def linkify_authors(input)
       return input if input.nil? || input.empty?
+
+
+
 
       site = @context.registers[:site]
       members_data = site.data['members']
@@ -59,7 +63,8 @@ module Jekyll
         # Add aliases
         if member['aliases']
             member['aliases'].each do |a|
-                add_to_map.call(a, url)
+                alias_name = a.is_a?(Hash) ? a['name'] : a
+                add_to_map.call(alias_name, url)
             end
         end
       }
@@ -91,13 +96,16 @@ module Jekyll
       # Use placeholders to avoid nested links
       # We replace matches with a token, then restore them at the end.
       
-      result = input.dup
+      # Escape the entire input first to prevent XSS in non-matching parts
+      result = CGI.escapeHTML(input.dup)
       replacements = {}
       token_id = 0
       
       sorted_names.each do |name|
         url = name_map[name]
-        escaped_name = Regexp.escape(name)
+        # We must match against the escaped version of the name
+        escaped_name_html = CGI.escapeHTML(name)
+        escaped_name_regex = Regexp.escape(escaped_name_html)
         
         # Match whole words if possible, but be careful with punctuation.
         # \b matches word boundary.
@@ -109,10 +117,11 @@ module Jekyll
         # We still need to be careful about "Böckle" matching "Böckler".
         # So lookahead/lookbehind for non-word char.
         
-        regex = /(?<!\w)#{escaped_name}(?!\w)/
+        regex = /(?<!\w)#{escaped_name_regex}(?!\w)/
         
         result.gsub!(regex) do |match|
           token = "@@LINK_#{token_id}@@"
+          # match is already escaped because we are matching against an escaped string
           replacements[token] = "<a href=\"#{url}\">#{match}</a>"
           token_id += 1
           token
@@ -136,3 +145,21 @@ module Jekyll
 end
 
 Liquid::Template.register_filter(Jekyll::LinkifyAuthorsFilter)
+
+module Jekyll
+  module SanitizeUrlFilter
+    def sanitize_url(input)
+      return input if input.nil? || input.empty?
+      
+      
+      # Check for javascript: protocol (case insensitive)
+      if input.to_s.strip.downcase.start_with?("javascript:")
+        return "#"
+      end
+      
+      input
+    end
+  end
+end
+
+Liquid::Template.register_filter(Jekyll::SanitizeUrlFilter)

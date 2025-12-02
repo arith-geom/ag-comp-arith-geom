@@ -13,7 +13,7 @@ description: "Meet the team of the Computational Arithmetic Geometry research gr
     {% assign section_slug = section.title | slugify %}
     {% assign layout_class = section.layout | default: "medium" | prepend: "section-layout-" %}
     <div class="member-section member-section-{{ section_slug }} {{ layout_class }}">
-      <h2 class="section-title">{{ section.title }}</h2>
+      <h2 class="section-title">{{ section.title | escape }}</h2>
       <div class="content-grid {{ section_slug }}-grid">
 
 
@@ -24,7 +24,7 @@ description: "Meet the team of the Computational Arithmetic Geometry research gr
               {% if section.title != "Former Members" %}
               <div class="member-photo-container">
                 {% if member.photo %}
-                  <img src="{{ member.photo | relative_url }}" alt="Photo of {{ member.name }}" class="member-photo">
+                  <img src="{{ member.photo | relative_url }}" alt="Photo of {{ member.name | escape }}" class="member-photo">
                 {% else %}
                   <div class="member-photo-placeholder"><i class="fas fa-user"></i></div>
                 {% endif %}
@@ -33,14 +33,14 @@ description: "Meet the team of the Computational Arithmetic Geometry research gr
               <div class="member-header-info">
                 <h3 class="member-name {% if member.name.size > 25 %}long-name{% endif %}">
                   {% assign member_slug = member.name | slugify %}
-                  <a href="{{ '/members/' | append: member_slug | append: '/' | relative_url }}" class="text-reset text-decoration-none stretched-link">{{ member.name }}</a>
+                  <a href="{{ '/members/' | append: member_slug | append: '/' | relative_url }}" class="text-reset text-decoration-none stretched-link">{{ member.name | escape }}</a>
                 </h3>
-                <p class="member-role">{{ member.role }}</p>
+                <p class="member-role">{{ member.role | escape }}</p>
               </div>
             </div>
             {% if member.description %}
             <div class="card-body">
-              <div class="member-description">{{ member.description | markdownify }}</div>
+              <div class="member-description">{{ member.description | strip_html | markdownify }}</div>
             </div>
             {% endif %}
             
@@ -61,19 +61,19 @@ description: "Meet the team of the Computational Arithmetic Geometry research gr
         {% for member in section.members %}
           {
             "@type": "Person",
-            "name": "{{ member.name }}",
-            "jobTitle": "{{ member.role }}",
+            "name": {{ member.name | jsonify }},
+            "jobTitle": {{ member.role | jsonify }},
             "worksFor": {
               "@type": "EducationalOrganization",
-              "name": "{{ site.title }}"
+              "name": {{ site.title | jsonify }}
             },
             {% assign member_slug = member.name | slugify %}
-            "url": "{{ '/members/' | append: member_slug | append: '/' | absolute_url }}"
+            "url": {{ '/members/' | append: member_slug | append: '/' | absolute_url | jsonify }}
             {% if member.links %}
               ,"sameAs": [
                 {% for link in member.links %}
                   {% if link.url contains "mailto:" %}{% continue %}{% endif %}
-                  "{{ link.url }}"{% unless forloop.last %},{% endunless %}
+                  {{ link.url | jsonify }}{% unless forloop.last %},{% endunless %}
                 {% endfor %}
               ]
             {% endif %}

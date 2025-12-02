@@ -18,10 +18,10 @@ description: "Explore the research areas of the Computational Arithmetic Geometr
         <div class="card-icon">
           <i class="{{ area.icon }}" aria-hidden="true"></i>
         </div>
-        <h3>{{ area.title }}</h3>
+        <h3>{{ area.title | escape }}</h3>
       </div>
       <div class="card-body">
-        {{ area.content | markdownify }}
+        {{ area.content | strip_html | markdownify }}
       </div>
     </div>
     {% endfor %}

@@ -24,28 +24,28 @@ description: "Browse the comprehensive list of publications from the Computation
       <div class="publication-card">
         <div class="publication-main">
           <div class="publication-title">
-            <a href="/publications/{{ pub.title | slugify }}/" class="text-decoration-none text-dark">{{ pub.title }}</a>
+            <a href="/publications/{{ pub.title | slugify }}/" class="text-decoration-none text-dark">{{ pub.title | escape }}</a>
             {% if pub.year %}
-              <span class="text-muted ms-2 small">({{ pub.year }})</span>
+              <span class="text-muted ms-2 small">({{ pub.year | escape }})</span>
             {% endif %}
           </div>
           <div class="publication-details">
-            {{ pub.journal_details }}
+            {{ pub.journal_details | escape }}
           </div>
           <div class="publication-authors">
-            {{ pub.authors }}
+            {{ pub.authors | escape }}
           </div>
 
         </div>
         <div class="publication-sidebar">
           {% if pub.status %}
             <span class="publication-status text-decoration-none badge-custom badge-custom-{{ pub.status | slugify }}">
-              <i class="fas {% case pub.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %}"></i> {{ pub.status }}
+              <i class="fas {% case pub.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %}"></i> {{ pub.status | escape }}
             </span>
           {% endif %}
           {% if pub.mr_number and pub.mr_number != "" %}
-          <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ pub.mr_number | remove: 'MR' }}" target="_blank" class="btn-custom btn-custom-outline btn-custom-sm">
-            {{ pub.mr_number }}
+          <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ pub.mr_number | remove: 'MR' | escape }}" target="_blank" class="btn-custom btn-custom-outline btn-custom-sm">
+            {{ pub.mr_number | escape }}
           </a>
           {% endif %}
           {% if pub.type == "Article" %}
@@ -61,28 +61,28 @@ description: "Browse the comprehensive list of publications from the Computation
       <div class="publication-card">
         <div class="publication-main">
           <div class="publication-title">
-            <a href="/publications/{{ pub.title | slugify }}/" class="text-decoration-none text-dark">{{ pub.title }}</a>
+            <a href="/publications/{{ pub.title | slugify }}/" class="text-decoration-none text-dark">{{ pub.title | escape }}</a>
             {% if pub.year %}
-              <span class="text-muted ms-2 small">({{ pub.year }})</span>
+              <span class="text-muted ms-2 small">({{ pub.year | escape }})</span>
             {% endif %}
           </div>
           <div class="publication-details">
-            {{ pub.journal_details }}
+            {{ pub.journal_details | escape }}
           </div>
           <div class="publication-authors">
-            {{ pub.authors }}
+            {{ pub.authors | escape }}
           </div>
 
         </div>
         <div class="publication-sidebar">
           {% if pub.status %}
             <span class="publication-status text-decoration-none badge-custom badge-custom-{{ pub.status | slugify }}">
-              <i class="fas {% case pub.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %}"></i> {{ pub.status }}
+              <i class="fas {% case pub.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %}"></i> {{ pub.status | escape }}
             </span>
           {% endif %}
           {% if pub.mr_number and pub.mr_number != "" %}
-          <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ pub.mr_number | remove: 'MR' }}" target="_blank" class="btn-custom btn-custom-outline btn-custom-sm">
-            {{ pub.mr_number }}
+          <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ pub.mr_number | remove: 'MR' | escape }}" target="_blank" class="btn-custom btn-custom-outline btn-custom-sm">
+            {{ pub.mr_number | escape }}
           </a>
           {% endif %}
           {% if pub.type == "Article" %}
@@ -103,23 +103,23 @@ description: "Browse the comprehensive list of publications from the Computation
         <div class="publication-card">
           <div class="publication-main">
             <div class="publication-title">
-              <a href="{{ software.link }}" target="_blank" class="text-decoration-none text-dark">{{ software.title }}</a>
+              <a href="{{ software.link | escape }}" target="_blank" class="text-decoration-none text-dark">{{ software.title | escape }}</a>
             </div>
             <div class="publication-details">
               {{ software.description | markdownify }}
             </div>
             <div class="publication-authors">
-              By {{ software.author }}
+              By {{ software.author | escape }}
             </div>
             {% if software.thesis %}
             <div class="publication-links mt-2">
-               <a href="{{ software.thesis }}" target="_blank">Thesis</a>
+               <a href="{{ software.thesis | escape }}" target="_blank">Thesis</a>
             </div>
             {% endif %}
           </div>
           <div class="publication-sidebar">
-             <a href="{{ software.link }}" target="_blank" class="btn-custom btn-custom-outline btn-custom-sm">
-                <i class="fas fa-code"></i> {{ software.link_text }}
+             <a href="{{ software.link | escape }}" target="_blank" class="btn-custom btn-custom-outline btn-custom-sm">
+                <i class="fas fa-code"></i> {{ software.link_text | escape }}
              </a>
           </div>
         </div>

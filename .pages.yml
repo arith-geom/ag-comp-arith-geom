@@ -200,11 +200,16 @@ content:
               - { name: "photo", label: "Photo (Both)", type: "image" }
               - { name: "description", label: "Short Description (Card) (Main Page Only)", type: "rich-text" }
               - { name: "email", label: "Email (Subpage Only)", type: "string" }
-              - { name: "content_match_name", label: "Content Match Name (Publications & Teaching)", type: "string" }
               - name: "aliases"
-                label: "Name Aliases (e.g. 'C.V. Sriram')"
-                type: "list"
-                field: { type: "string" }
+                label: "Content Matching Names & Aliases"
+                hint: "Add surnames (e.g. 'Böckle') and variations (e.g. 'G. Böckle') here. The system also automatically checks your last name."
+                type: "object"
+                list:
+                  collapsible:
+                    summary: "{fields.name}"
+                    collapsed: true
+                fields:
+                  - { name: "name", label: "Alias", type: "string" }
               - { name: "cv", label: "CV (PDF) (Subpage Only)", type: "file" }
               - { name: "phone", label: "Phone (Subpage Only)", type: "string" }
               - { name: "fax", label: "Fax (Subpage Only)", type: "string" }

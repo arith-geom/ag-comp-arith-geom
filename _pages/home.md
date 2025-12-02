@@ -22,21 +22,21 @@ contact_location: "Interdisciplinary Center for Scientific Computing (IWR), Heid
 <h1 class="home-page-title">AG Computational Arithmetic Geometry</h1>
 
 <div class="home-card">
-  <h2>{{ page.about_title }}</h2>
-  {{ page.about_content }}
+  <h2>{{ page.about_title | escape }}</h2>
+  {{ page.about_content | strip_html }}
 </div>
 
 <div class="home-card">
-  <h2>{{ page.methods_title }}</h2>
-  {{ page.methods_content }}
+  <h2>{{ page.methods_title | escape }}</h2>
+  {{ page.methods_content | strip_html }}
 </div>
 
 
 
 <div class="home-card">
   <h2>{{ page.contact_title }}</h2>
-  <p><strong>Email:</strong> {{ page.contact_email }}</p>
-  <p><strong>Location:</strong> {{ page.contact_location }}</p>
+  <p><strong>Email:</strong> {{ page.contact_email | escape }}</p>
+  <p><strong>Location:</strong> {{ page.contact_location | escape }}</p>
 </div>
 
 <style>
