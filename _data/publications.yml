@@ -2,6 +2,7 @@ publications:
   - title: $U$-Operators Acting on Harmonic Cocycles for $\mathrm{GL}_3$ and Their
       Slopes
     year: "2025"
+    mr_number: "543543543"
     authors: Joint with G. Böckle, P. M. Gräf, T. Kaiser
     journal_details: Preprint
     status: Preprint
@@ -525,7 +526,7 @@ publications:
 software:
   - title: Magma package QaQuotGraphs
     description: to compute the action by unit groups of maximal orders in
-      quaternion algebras over $F_q(T)$.
+      quaternion algebras over $F\_q(T)$.
     author: Dr. Ralf Butenuth
     link: /members/dr-ralf-butenuth
     link_text: View Package
@@ -538,7 +539,7 @@ software:
     link_text: View Package
   - title: Magma package (Hecke eigensystems)
     description: to compute Hecke eigensystems for harmonic cocycles on the
-      Bruhat-Tits tree for $GL_2(F_q(T))$, thesis available here.
+      Bruhat-Tits tree for $GL\_2(F\_q(T))$, thesis available here.
     author: Burak Cakir
     link: https://github.com/b-cakir/hecke-operator
     link_text: View Package
