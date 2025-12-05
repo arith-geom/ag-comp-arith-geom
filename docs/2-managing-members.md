@@ -5,9 +5,12 @@ This section explains how to add, edit, or remove team members.
 ## 👥 Accessing the Members Section
 
 1.  In the CMS sidebar, click on **"Members"**.
-2.  You will see a list of existing members.
-3.  To **edit** a member, click on their name.
-4.  To **add** a new member, click the **"New members"** (or similar "Add") button.
+2.  You will see a list of **Member Sections** (e.g., "Principal Investigators", "Members", "Former Members").
+3.  **To add a new section:** Click "Add item" at the top level.
+    *   **Section Title**: Name of the section.
+    *   **Layout Style**: Choose how members in this section are displayed (`Big`, `Medium`, or `Small`).
+4.  **To manage members:** Click on a section to expand it, then look for the **"Members"** list inside.
+5.  **Add/Edit Member:** Click on a member's name to edit, or "Add item" to create a new one.
 
 ## 📝 Member Fields Explained
 
@@ -16,11 +19,6 @@ When you open a member profile, you will see several fields. Here is what each o
 ### Basic Information
 *   **Name (Required)**: The full name of the person (e.g., "Dr. Max Mustermann").
 *   **Role**: Their job title (e.g., "PhD Student", "Professor").
-*   **Group**: Select the group they belong to:
-    *   `Head`: The group leader.
-    *   `Secretary`: Administrative staff.
-    *   `Members`: Current researchers and students.
-    *   `Former Members`: Alumni.
 *   **Photo**: Upload a profile picture. Ideally a square image.
 *   **Short Description (Card)**: A brief summary shown on the main "Members" page card.
 
@@ -34,8 +32,8 @@ These details appear on the member's personal profile page.
 *   **CV (PDF)**: Upload their Curriculum Vitae as a PDF file.
 
 ### Advanced Settings
-*   **Content Match Name**: **Important!** This name is used to automatically find their publications and teaching courses. Usually just their Last Name or "Lastname, Firstname". If their publications aren't showing up, check this field.
-*   **Name Aliases**: If they publish under different names (e.g., "M. Mustermann" and "Max Mustermann"), add them here so the system finds all their work.
+*   **Content Matching Names & Aliases**: **Important!** This name is used to automatically find their publications and teaching courses. Usually just their Last Name or "Lastname, Firstname". If their publications aren't showing up, check this field.
+*   **Alias**: If they publish under different names (e.g., "M. Mustermann" and "Max Mustermann"), add them here so the system finds all their work.
 
 ### Detailed Content
 *   **Research Interests**: Click "Add item" to list their research topics.

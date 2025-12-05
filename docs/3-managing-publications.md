@@ -28,10 +28,9 @@ Click on **"Publications List"** and then **"Add item"** (or edit an existing on
 *   **Type**: Select `Article`, `Book`, or `Other`.
 
 ### Detailed Info (Subpage)
-*   **Reviewer**: Name of the reviewer (if applicable).
-*   **Citation Count**: Number of citations.
 *   **Publisher Details**: For books.
 *   **ISBN**: For books.
+*   **Appendix**: Extra information or appendices.
 *   **Content / Abstract**: The abstract or summary of the paper.
 
 ### Links and PDFs

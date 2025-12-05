@@ -45,7 +45,7 @@ layout: default
           <div class="mb-5">
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Biography</h2>
             <div class="member-bio text-dark lead fs-6">
-              {{ content | strip_html | markdownify }}
+              {{ content }}
             </div>
           </div>
 
@@ -299,6 +299,16 @@ layout: default
                   class="d-flex align-items-center text-decoration-none text-dark p-2 rounded hover-bg-light">
                   <div class="icon-box me-3 text-primary"><i class="fas fa-envelope fa-lg"></i></div>
                   <span class="text-break">{{ page.email }}</span>
+                </a>
+              </div>
+              {% endif %}
+
+              {% if page.orcid %}
+              <div class="mb-3">
+                <a href="https://orcid.org/{{ page.orcid }}" target="_blank"
+                  class="d-flex align-items-center text-decoration-none text-dark p-2 rounded hover-bg-light">
+                  <div class="icon-box me-3 text-success"><i class="fab fa-orcid fa-lg"></i></div>
+                  <span class="text-break">{{ page.orcid }}</span>
                 </a>
               </div>
               {% endif %}

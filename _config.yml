@@ -40,26 +40,8 @@ enable_darkmode: false
 enable_theme_switcher: false
 lang: en
 locale: en_US
-third_party_libraries:
-  bootstrap:
-    path:
-      css: /vendor/bootstrap/dist/css/bootstrap.min.css
-      js: /vendor/bootstrap/dist/js/bootstrap.bundle.min.js
-  font-awesome:
-    path:
-      css: /vendor/font-awesome/css/all.min.css
-  academicons:
-    path:
-      css: /vendor/academicons/css/academicons.min.css
-  mdb-ui-kit:
-    path:
-      css: /vendor/mdb-ui-kit/css/mdb.min.css
-      js: /vendor/mdb-ui-kit/js/mdb.umd.min.js
-  jquery:
-    url:
-      js: https://code.jquery.com/jquery-3.6.0.min.js
-    integrity:
-      js: sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=
+third_party_libraries: {}
+
 collections:
   pages:
     output: true
@@ -106,10 +88,6 @@ exclude:
   - Thumbs.db
   - assets/search-data-backup.json
   - assets/search-data.json
-  - jules-scratch/
-  - typo_mirror/
-  - universal_migrator.py
-  - check_links.py
   - venv/
   - .venv/
   - requirements.txt

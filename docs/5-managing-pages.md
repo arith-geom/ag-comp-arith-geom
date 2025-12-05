@@ -15,6 +15,8 @@ This section explains how to edit the content of the Home, Research, Links, and 
     *   `Icon Class`: FontAwesome icon name (e.g., `fas fa-book`).
     *   `Content`: Text inside the card.
     *   `Link`: Where the card links to (e.g., `/research/`).
+    *   `Link Text`: Text for the button (e.g., "Read More").
+    *   `Link Icon`: Icon for the button.
 
 ## 🔬 Research Page
 
@@ -38,8 +40,11 @@ This section explains how to edit the content of the Home, Research, Links, and 
 
 1.  In the CMS sidebar, click on **"Contact Page"**.
 2.  **Address**: Update the physical address and map link.
+    *   Fields: `Title`, `Institution`, `University`, `Street`, `City`, `Country`, `Description`, `Map URL`.
 3.  **Contact Details**: Update phone, fax, and general info.
+    *   Fields: `Phone`, `Phone Hours`, `Fax`, `Fax Note`, `General Info`.
 4.  **Email Section**: Update the email address and surrounding text.
+    *   Fields: `Intro Text`, `Email Address`, `Outro Text`.
 
 ---
 

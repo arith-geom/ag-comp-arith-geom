@@ -6,10 +6,21 @@ This section explains how to access the website management interface and the bas
 
 1.  Go to **[https://pagescms.org](https://pagescms.org)** (or the specific URL provided by your administrator).
 2.  Click **"Sign in with GitHub"**.
-    *   *Note: You can be invited by a member.*
+2. **Note: You can also be invited by a member in PagesCMS.**
 3.  Select the repository for the website (e.g., `arith-geom/ag-comp-arith-geom`).
 
 Once logged in, you will see the **Dashboard**.
+
+## 👥 Managing Users (Inviting Members)
+
+If you are an administrator, you can invite other people to edit the website without them needing a GitHub account.
+
+1.  Log in to the **Pages CMS Dashboard**.
+2.  Click on the **Settings** icon (usually a gear ⚙️) in the sidebar.
+3.  Go to the **"Collaborators"** or **"Users"** section.
+4.  Click **"Invite"** or **"Add Member"**.
+5.  Enter their **email address**. They will receive an email with a link to log in.
+
 
 ## 🖥️ The Interface
 

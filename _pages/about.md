@@ -6,6 +6,7 @@ nav_order: 1
 order: 100
 show_title: false
 title: About
+excerpt_separator: ""
 ---
 <h1 class="home-page-title">AG Computational Arithmetic Geometry</h1>
 
@@ -65,7 +66,7 @@ title: About
   <div class="software-package">
     <h3>QaQuotGraphs</h3>
     <p><strong>Author:</strong> Dr. Ralf Butenuth</p>
-    <p><strong>Description:</strong> Magma package to compute the action by unit groups of maximal orders in quaternion algebras over F_q(T)</p>
+    <p><strong>Description:</strong> Magma package to compute the action by unit groups of maximal orders in quaternion algebras over $F_q(T)$</p>
     <p><strong>Category:</strong> Quaternion Algebras</p>
   </div>
 
@@ -79,7 +80,7 @@ title: About
   <div class="software-package">
     <h3>Hecke Eigensystems Package</h3>
     <p><strong>Author:</strong> Burak Cakir (Master's student)</p>
-    <p><strong>Description:</strong> Magma package to compute Hecke eigensystems for harmonic cocycles on the Bruhat-Tits tree for GL_2(F_q(T))</p>
+    <p><strong>Description:</strong> Magma package to compute Hecke eigensystems for harmonic cocycles on the Bruhat-Tits tree for $GL_2(F_q(T))$</p>
     <p><strong>Category:</strong> Hecke Operators</p>
   </div>
 </div>

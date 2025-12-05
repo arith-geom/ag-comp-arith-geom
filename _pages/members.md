@@ -6,6 +6,7 @@ nav_order: 3
 show_title: false
 title: Group Members
 description: "Meet the team of the Computational Arithmetic Geometry research group at Heidelberg University, including professors, researchers, and students."
+excerpt_separator: ""
 ---
 
 <div class="members-page">

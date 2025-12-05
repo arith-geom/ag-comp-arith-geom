@@ -37,10 +37,11 @@
   }
 
   .footer-logo-img {
-    max-width: 250px;
+    width: 100%;
+    max-width: 320px;
     height: auto;
-    filter: var(--footer-logo-filter);
-    mix-blend-mode: multiply;
+    // Removed mix-blend-mode as it can cause issues with SVGs
+    // mix-blend-mode: multiply; 
     transition: filter 0.3s;
   }
 

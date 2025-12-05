@@ -51,14 +51,12 @@ $RECYCLE.BIN/
 .vim/
 
 # ==============================================================================
-# Node.js & Package Manager Files (if using npm/yarn for frontend)
+# Node.js & Package Manager Files
 # ==============================================================================
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
-yarn.lock
 
 # ==============================================================================
 # Ruby & Bundler
@@ -69,7 +67,14 @@ yarn.lock
 .rvmrc
 .ruby-version
 .ruby-gemset
-Rakefile
+
+# ==============================================================================
+# Python Virtual Environments
+# ==============================================================================
+venv/
+.venv/
+__pycache__/
+*.pyc
 
 # ==============================================================================
 # Backup & Temporary Files
@@ -99,10 +104,8 @@ config/secrets.yml
 
 # ==============================================================================
 # Additional Development Files
-# =================================================_MESSAGE
-
+# ==============================================================================
 test/
 tests/
 spec/
 coverage/
-assets/search-data.json

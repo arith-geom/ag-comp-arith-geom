@@ -10,8 +10,12 @@ layout: default
             <div class="row align-items-center">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <span class="badge-custom badge-custom-primary">{{ page.semester | escape
-                            }}</span>
+                        {% if page.semester == "Winter" %}
+                        <span class="badge-custom badge-custom-primary">Winter Semester {{ page.year }}/{{ page.year |
+                            plus: 1 | modulo: 100 }}</span>
+                        {% else %}
+                        <span class="badge-custom badge-custom-primary">Summer Semester {{ page.year }}</span>
+                        {% endif %}
                         {% if page.course_type %}
                         <span class="badge-custom badge-custom-light">{{
                             page.course_type | escape
@@ -72,7 +76,7 @@ layout: default
 
                     <!-- Body Content -->
                     <div class="teaching-body mb-5 lead fs-6 text-dark">
-                        {{ content | strip_html | markdownify }}
+                        {{ content }}
                     </div>
 
                     <div class="mt-5 pt-3 border-top">

@@ -3,6 +3,7 @@ layout: page
 title: Contact
 permalink: /contact/
 nav: true
+excerpt_separator: ""
 ---
 <div class="contact-grid">
   {% for location in site.data.contact.address %}

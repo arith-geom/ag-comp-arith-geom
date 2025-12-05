@@ -62,7 +62,20 @@ layout: default
                             {{
                             page.isbn | escape }}</span>
                         {% endif %}
+
+                        {% if page.doi %}
+                        <a href="https://doi.org/{{ page.doi | escape }}" target="_blank"
+                            class="badge-custom badge-custom-warning text-decoration-none">
+                            <i class="fas fa-link me-1"></i> DOI: {{ page.doi | escape }}
+                        </a>
+                        {% endif %}
                     </div>
+
+                    {% if page.publisher_details %}
+                    <div class="mt-3 text-secondary">
+                        <strong>Publisher:</strong> {{ page.publisher_details | escape }}
+                    </div>
+                    {% endif %}
 
                 </div>
             </div>

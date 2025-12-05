@@ -4,6 +4,7 @@ permalink: /links/
 nav: true
 nav_order: 4
 title: Links
+excerpt_separator: ""
 ---
 
 <div class="content-grid">

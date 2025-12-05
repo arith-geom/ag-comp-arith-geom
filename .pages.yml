@@ -68,14 +68,13 @@ content:
           - { name: "year", label: "Year (Both)", type: "string" }
           - { name: "mr_number", label: "MR Number (Both)", type: "string" }
           - { name: "authors", label: "Authors (Both)", type: "string" }
-          - { name: "journal_details", label: "Journal Details (Both)", type: "string" }
+          - { name: "journal_details", label: "Journal / Publisher Details (Both)", type: "string" }
           - { name: "status", label: "Status (Both)", type: "select", options: { values: ["Preprint", "Journal Article", "Book", "Submitted", "Other"] } }
+          - { name: "doi", label: "DOI (Subpage Only)", type: "string", hint: "e.g. 10.1007/s00222-014-0544-x" }
 
           - { name: "type", label: "Type (Both)", type: "select", options: { values: ["Article", "Book", "Other"] } }
-          - { name: "reviewer", label: "Reviewer (Subpage Only)", type: "string" }
-          - { name: "citation_count", label: "Citation Count (Subpage Only)", type: "number" }
-          - { name: "publisher_details", label: "Publisher Details (Subpage Only)", type: "string" }
-          - { name: "isbn", label: "ISBN (Subpage Only)", type: "string" }
+          - { name: "publisher_details", label: "Publisher Details (Books Only)", type: "string" }
+          - { name: "isbn", label: "ISBN (Books Only)", type: "string" }
           - { name: "appendix", label: "Appendix (Subpage Only)", type: "string" }
           - { name: "body", label: "Content / Abstract (Subpage Only)", type: "rich-text" }
           - name: "links"
@@ -200,6 +199,7 @@ content:
               - { name: "photo", label: "Photo (Both)", type: "image" }
               - { name: "description", label: "Short Description (Card) (Main Page Only)", type: "rich-text" }
               - { name: "email", label: "Email (Subpage Only)", type: "string" }
+              - { name: "orcid", label: "ORCID (Subpage Only)", type: "string", hint: "e.g. 0000-0002-1825-0097" }
               - name: "aliases"
                 label: "Content Matching Names & Aliases"
                 hint: "Add surnames (e.g. 'Böckle') and variations (e.g. 'G. Böckle') here. The system also automatically checks your last name."

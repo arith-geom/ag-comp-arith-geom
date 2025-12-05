@@ -18,6 +18,7 @@ methods_content: |
 contact_title: "Contact Us"
 contact_email: "arithgeo@iwr.uni-heidelberg.de"
 contact_location: "Interdisciplinary Center for Scientific Computing (IWR), Heidelberg University"
+excerpt_separator: ""
 ---
 <h1 class="home-page-title">AG Computational Arithmetic Geometry</h1>
 
