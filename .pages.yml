@@ -133,8 +133,7 @@ content:
               collapsible:
                 summary: "{fields.semester}"
                 collapsed: true
-            fields:
-            fields:
+
               - { name: "semester", label: "Term", type: "select", options: { values: ["Winter", "Summer"] } }
               - name: "courses"
                 label: "Courses"

@@ -27,7 +27,7 @@ description: "An overview of our courses, seminars, and lectures, organized by s
     {% assign previous_university = "" %}
     {% assign sorted_years = site.data.teaching.courses | sort: "year" | reverse %}
     {% assign previous_university = "" %}
-    
+
     {% for year_data in sorted_years %}
       {% if year_data.university and year_data.university != previous_university %}
         {% if previous_university != "" %}
@@ -41,7 +41,7 @@ description: "An overview of our courses, seminars, and lectures, organized by s
         {% endif %}
         {% assign previous_university = year_data.university %}
       {% endif %}
-      
+
 
       {% comment %} Sort semesters: Winter should come before Summer {% endcomment %}
       {% assign empty_array = "" | split: "" %}
@@ -89,7 +89,7 @@ description: "An overview of our courses, seminars, and lectures, organized by s
                 {% if course.description and course.description != "" %}
                   <div>{{ course.description | strip_html | markdownify }}</div>
                 {% endif %}
-                
+
                 {% if course.links or course.pdfs %}
                 <div class="course-resources mt-2 position-relative" style="z-index: 2;">
                   {% for link in course.links %}

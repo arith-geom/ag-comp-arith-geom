@@ -19,7 +19,7 @@ excerpt_separator: ""
 
 
         {% for member in section.members %}
-          
+
           <div class="feature-card member-card" style="position: relative;">
             <div class="card-header {% if member.description %}bordered{% endif %}">
               {% if section.title != "Former Members" %}
@@ -44,7 +44,7 @@ excerpt_separator: ""
               <div class="member-description">{{ member.description | strip_html | markdownify }}</div>
             </div>
             {% endif %}
-            
+
 
           </div>
         {% endfor %}
@@ -90,14 +90,14 @@ excerpt_separator: ""
 document.addEventListener('DOMContentLoaded', function() {
   function equalizeCardHeights() {
     const sections = document.querySelectorAll('.member-section');
-    
+
     sections.forEach(section => {
       const cards = section.querySelectorAll('.member-card');
       if (cards.length === 0) return;
-      
+
       // Reset heights to auto to get natural height
       cards.forEach(card => card.style.height = 'auto');
-      
+
       // Find max height
       let maxHeight = 0;
       cards.forEach(card => {
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
           maxHeight = height;
         }
       });
-      
+
       // Apply max height to all cards in this section
       cards.forEach(card => card.style.height = maxHeight + 'px');
     });
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Run on load
   equalizeCardHeights();
-  
+
   // Run on resize with debounce
   let timeout;
   window.addEventListener('resize', function() {

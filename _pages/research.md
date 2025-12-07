@@ -12,7 +12,7 @@ excerpt_separator: ""
 
 <div class="research-section">
   <div class="content-grid">
-    
+
     {% for area in site.data.research.research_areas %}
     <div class="feature-card">
       <div class="card-header">

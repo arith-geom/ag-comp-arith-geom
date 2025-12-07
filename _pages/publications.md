@@ -18,9 +18,9 @@ excerpt_separator: ""
     {% assign all_pubs = site.data.publications.publications %}
     {% assign pubs_with_year = all_pubs | where_exp: "item", "item.year != nil and item.year != ''" %}
     {% assign pubs_without_year = all_pubs | where_exp: "item", "item.year == nil or item.year == ''" %}
-    
+
     {% assign sorted_pubs = pubs_with_year | sort: "year" | reverse %}
-    
+
     {% for pub in sorted_pubs %}
       <div class="publication-card">
         <div class="publication-main">

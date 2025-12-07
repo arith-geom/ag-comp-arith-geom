@@ -11,7 +11,7 @@ def check_filenames(directory):
     print(f"Checking filenames in {directory}...")
     unsafe_pattern = re.compile(r'[^a-zA-Z0-9\-\_\.\/]')
     issues_found = False
-    
+
     if not os.path.exists(directory):
         print(f"[WARNING] Directory not found: {directory}")
         return False
@@ -26,7 +26,7 @@ def check_filenames(directory):
             if ' ' in filename:
                 print(f"[ERROR] Filename contains spaces: {os.path.join(root, filename)}")
                 issues_found = True
-                
+
     return issues_found
 
 def validate_members(file_path):
@@ -37,7 +37,7 @@ def validate_members(file_path):
 
     with open(file_path, 'r') as f:
         data = yaml.safe_load(f)
-    
+
     errors = []
     if not data or 'sections' not in data:
         errors.append("Missing 'sections' in members.yml")
@@ -49,7 +49,7 @@ def validate_members(file_path):
                         # Try to find some content to identify the member
                         context = str(member)[:50] # First 50 chars of content
                         errors.append(f"Section '{section.get('title', 'Unknown')}' -> Member #{m_idx+1}: Missing 'name' field. (Context: {context}...)")
-                    
+
     if errors:
         for e in errors:
             print(f"  [ERROR] {e}")
@@ -124,26 +124,26 @@ def main():
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     assets_dir = os.path.join(base_dir, 'assets', 'uploads')
     data_dir = os.path.join(base_dir, '_data')
-    
+
     print("=== Starting Site Validation ===")
-    
+
     failure = False
-    
+
     # Check uploads for weird filenames and large files
     # We walk the directory once for efficiency
     if os.path.exists(assets_dir):
         print(f"Checking assets in {assets_dir}...")
         unsafe_pattern = re.compile(r'[^a-zA-Z0-9\-\_\.\/]')
-        
+
         for root, dirs, files in os.walk(assets_dir):
             for filename in files:
                 fpath = os.path.join(root, filename)
-                
+
                 # Check 1: Filename safety (Error)
                 if unsafe_pattern.search(filename) or ' ' in filename:
                     print(f"[ERROR] Unsafe filename found: {fpath}")
                     failure = True
-                
+
                 # Check 2: File size (Warning)
                 try:
                     size_mb = os.path.getsize(fpath) / (1024 * 1024)

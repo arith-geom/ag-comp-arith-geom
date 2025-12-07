@@ -26,7 +26,7 @@ def sort_members(file_path):
 
     # Sort sections if needed (Head, Secretary, Members, Former Members)
     # The order seems fixed by title, but let's ensure members within sections are sorted by name
-    
+
     for section in data['sections']:
         if 'members' in section and section['members']:
             # Sort members by name
@@ -74,17 +74,17 @@ def sort_teaching(file_path):
 
     # Sort by year descending
     data['courses'].sort(key=lambda x: str(x.get('year', '0')), reverse=True)
-    
+
     # Sort semesters within year (Winter then Summer? Or Summer then Winter? Usually Winter starts later in year but spans to next)
     # Let's assume standard academic order or just keep them consistent.
     # Often: Winter, Summer.
-    
+
     semester_order = {'Winter': 0, 'Summer': 1}
-    
+
     for year_group in data['courses']:
         if 'semesters' in year_group:
             year_group['semesters'].sort(key=lambda x: semester_order.get(x.get('semester', ''), 2))
-            
+
             # Sort courses within semester by title
             for semester in year_group['semesters']:
                 if 'courses' in semester:
