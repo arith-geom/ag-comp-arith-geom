@@ -14,4 +14,4 @@ This directory contains documentation related to the Pages CMS configuration for
 
 ## Quick Links
 *   [Pages CMS Official Docs](https://pagescms.org/docs/)
-*   [Project Repository](https://github.com/Hausplayer31/website)
+*   [Project Repository](https://github.com/arith-geom/ag-comp-arith-geom)

@@ -7,6 +7,9 @@
 **[👉 Read the User Guide (docs/)](docs/README.md)**
 Learn how to manage members, publications, teaching, and other content using the Pages CMS interface.
 
+**[🛡️ Troubleshooting & Errors](docs/6-troubleshooting.md)**
+Learn how to read error messages and fix common issues if your changes don't appear.
+
 ---
 
 ## ℹ️ About This Website
@@ -62,6 +65,6 @@ We have utility scripts in `scripts/` to maintain data quality. These require `P
 pip install PyYAML
 ```
 
-- **Validation**: `python3 scripts/validate_data.py` - Checks for missing fields in YAML files.
-- **Sorting**: `python3 scripts/sort_data.py` - Enforces consistent ordering (e.g., publications by year).
-- **Cleaning**: `python3 scripts/refactor_members.py`, `python3 scripts/clean_teaching.py`, etc.
+- **Validation**: `python3 scripts/validate.py` - "The Guardian". Checks data integrity, filenames, and image sizes.
+- **Sorting**: `python3 scripts/sort_data.py` - Enforces consistent ordering.
+- **Cleanup**: `python3 scripts/cleanup_unused_media.py` - Finds files not used in content.

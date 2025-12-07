@@ -3,9 +3,13 @@ extends: default
 rules:
   line-length: disable
   truthy: disable
-  # Allow long lines (common in text content)
-  # Allow strict or loose truthy values (on/off vs true/false)
-  
+  # Jekyll data files often don't have --- start
+  document-start: disable
+  # We prefer { name: "foo" } over {name: "foo"} for readability
+  braces:
+    min-spaces-inside: 1
+    max-spaces-inside: 1
+
 ignore: |
   vendor/
   _site/

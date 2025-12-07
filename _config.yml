@@ -5,13 +5,13 @@ description: This is the website of the research group "computational arithmetic
 url: https://victormerk.github.io
 baseurl: "/ag-comp-arith-geom"
 twitter_username: placeholder
-github_username: placeholder
+github_username: arith-geom
 
 # Social Media Profiles
 social:
   name: AG Computational Arithmetic Geometry
   links:
-    - https://github.com/ag-comp-arith-geom
+    - https://github.com/arith-geom
 
 # Website Creator Information
 creator:
