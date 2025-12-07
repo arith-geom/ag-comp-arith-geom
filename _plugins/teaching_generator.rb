@@ -40,7 +40,29 @@ module Jekyll
               if semester_data['courses']
                 semester_data['courses'].each do |course|
                   # Create slug from title
-                  slug = Utils.slugify(course['title'])[0..100]
+                  slug = Utils.slugify(course['title'])
+
+                  # Auto-fix relative links in body
+                  if course['body']
+                    # Fix markdown links [label](assets/...) -> [label](/assets/...)
+                    course['body'] = course['body'].gsub(/\]\(assets\//, '](/assets/')
+                    # Fix HTML links href="assets/..." -> href="/assets/..."
+                    course['body'] = course['body'].gsub(/href="assets\//, 'href="/assets/')
+                  end
+
+                  # Auto-fix relative links in pdfs and links arrays
+                  ['pdfs', 'links'].each do |key|
+                    if course[key]
+                      course[key].each do |item|
+                        if item['file'] && item['file'].start_with?('assets/')
+                          item['file'] = '/' + item['file']
+                        end
+                        if item['url'] && item['url'].start_with?('assets/')
+                          item['url'] = '/' + item['url']
+                        end
+                      end
+                    end
+                  end
                   
                   # Generate full semester title for slug to match Liquid template
                   semester_title = semester

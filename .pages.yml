@@ -2,8 +2,8 @@
 # For more information, see: https://pagescms.org/docs/configuration/
 
 media:
-  input: "assets/img"
-  output: "/assets/img"
+  input: "assets/uploads"
+  output: "/assets/uploads"
 
 content:
   - name: "home"
@@ -167,7 +167,7 @@ content:
                         collapsed: true
                     fields:
                       - { name: "label", label: "Label", type: "string" }
-                      - { name: "file", label: "File", type: "file" }
+                      - { name: "file", label: "File", type: "file", hint: "No spaces/special chars. PDF/IMG only. Max 5MB rec." }
                   - { name: "body", label: "Course Details (Subpage Only)", type: "rich-text" }
 
   - name: "members"
@@ -210,7 +210,16 @@ content:
                     collapsed: true
                 fields:
                   - { name: "name", label: "Alias", type: "string" }
-              - { name: "cv", label: "CV (PDF) (Subpage Only)", type: "file" }
+              - name: "files"
+                label: "Files / CVs (Subpage Only)"
+                type: "object"
+                list:
+                  collapsible:
+                    summary: "{fields.label}"
+                    collapsed: true
+                fields:
+                  - { name: "label", label: "Label", type: "string" }
+                  - { name: "file", label: "File", type: "file", hint: "No spaces/special chars. PDF/IMG only. Max 5MB rec." }
               - { name: "phone", label: "Phone (Subpage Only)", type: "string" }
               - { name: "fax", label: "Fax (Subpage Only)", type: "string" }
               - { name: "room", label: "Room (Subpage Only)", type: "string" }

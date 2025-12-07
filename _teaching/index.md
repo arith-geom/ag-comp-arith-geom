@@ -42,11 +42,19 @@ description: "An overview of our courses, seminars, and lectures, organized by s
         {% assign previous_university = year_data.university %}
       {% endif %}
       
+
       {% comment %} Sort semesters: Winter should come before Summer {% endcomment %}
-      {% assign winter_semesters = year_data.semesters | where: "semester", "Winter" %}
-      {% assign summer_semesters = year_data.semesters | where: "semester", "Summer" %}
-      {% assign other_semesters = year_data.semesters | where_exp: "item", "item.semester != 'Winter' and item.semester != 'Summer'" %}
-      
+      {% assign empty_array = "" | split: "" %}
+      {% if year_data.semesters %}
+        {% assign winter_semesters = year_data.semesters | where: "semester", "Winter" | default: empty_array %}
+        {% assign summer_semesters = year_data.semesters | where: "semester", "Summer" | default: empty_array %}
+        {% assign other_semesters = year_data.semesters | where_exp: "item", "item.semester != 'Winter' and item.semester != 'Summer'" | default: empty_array %}
+      {% else %}
+        {% assign winter_semesters = empty_array %}
+        {% assign summer_semesters = empty_array %}
+        {% assign other_semesters = empty_array %}
+      {% endif %}
+
       {% assign sorted_semesters = winter_semesters | concat: summer_semesters | concat: other_semesters %}
 
       {% for semester in sorted_semesters %}

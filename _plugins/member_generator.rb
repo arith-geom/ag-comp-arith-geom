@@ -19,6 +19,7 @@ module Jekyll
       self.data['photo'] = member['photo']
       self.data['email'] = member['email']
       self.data['cv'] = member['cv']
+      self.data['files'] = member['files']
       self.data['research_interests'] = member['research_interests']
       self.data['education'] = member['education']
       self.data['links'] = member['links']
@@ -47,6 +48,31 @@ module Jekyll
             section['members'].each do |member|
               # Create slug from name using Jekyll's utility to match Liquid filter
               slug = Utils.slugify(member['name'])[0..100]
+
+              # Auto-fix relative links in body
+              if member['body']
+                # Fix markdown links [label](assets/...) -> [label](/assets/...)
+                member['body'] = member['body'].gsub(/\]\(assets\//, '](/assets/')
+                # Fix HTML links href="assets/..." -> href="/assets/..."
+                member['body'] = member['body'].gsub(/href="assets\//, 'href="/assets/')
+              end
+
+              # Auto-fix relative links in pdfs and links arrays
+              ['pdfs', 'links', 'theses', 'selected_publications', 'files'].each do |key|
+                if member[key]
+                  member[key].each do |item|
+                    if item['file'] && item['file'].start_with?('assets/')
+                      item['file'] = '/' + item['file']
+                    end
+                    if item['url'] && item['url'].start_with?('assets/')
+                      item['url'] = '/' + item['url']
+                    end
+                    if item['link'] && item['link'].start_with?('assets/')
+                      item['link'] = '/' + item['link']
+                    end
+                  end
+                end
+              end
               
               # Create page at /members/:slug/
               site.pages << MemberPage.new(site, site.source, File.join('members', slug), member)

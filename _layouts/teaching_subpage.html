@@ -75,8 +75,14 @@ layout: default
                     {% endif %}
 
                     <!-- Body Content -->
-                    <div class="teaching-body mb-5 lead fs-6 text-dark">
-                        {{ content }}
+                    <div class="abstract-card p-4 rounded-3 shadow-sm mb-5">
+                        <div class="teaching-body text-dark lead fs-6">
+                            {% if content and content != "" %}
+                            {{ content | markdownify }}
+                            {% else %}
+                            <p class="fst-italic text-muted mb-0">No course details available.</p>
+                            {% endif %}
+                        </div>
                     </div>
 
                     <div class="mt-5 pt-3 border-top">

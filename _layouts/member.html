@@ -44,8 +44,14 @@ layout: default
           <!-- Biography -->
           <div class="mb-5">
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Biography</h2>
-            <div class="member-bio text-dark lead fs-6">
-              {{ content }}
+            <div class="abstract-card p-4 rounded-3 shadow-sm mb-4">
+              <div class="member-bio text-dark lead fs-6">
+                {% if content and content != "" %}
+                {{ content | markdownify }}
+                {% else %}
+                <p class="fst-italic text-muted mb-0">No additional information available.</p>
+                {% endif %}
+              </div>
             </div>
           </div>
 
@@ -64,10 +70,13 @@ layout: default
           <!-- Determine Content Match Names -->
           {% assign match_names = "" | split: "" %}
 
+
           <!-- 1. Add Inferred Surname -->
+          {% if page.title %}
           {% assign name_parts = page.title | split: " " %}
           {% assign inferred_surname = name_parts | last %}
           {% assign match_names = match_names | push: inferred_surname %}
+          {% endif %}
 
           <!-- 2. Add Aliases -->
           {% if page.aliases %}
@@ -81,6 +90,7 @@ layout: default
           <!-- Dynamic Software Packages -->
           {% if match_names.size > 0 %}
           {% assign matching_software = "" | split: "" %}
+          {% if site.data.publications and site.data.publications.software %}
           {% for item in site.data.publications.software %}
           {% for name in match_names %}
           {% if item.author contains name %}
@@ -89,6 +99,8 @@ layout: default
           {% endif %}
           {% endfor %}
           {% endfor %}
+          {% endif %}
+
           {% if matching_software.size > 0 %}
           <div class="mb-5">
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Software Packages</h2>
@@ -119,6 +131,7 @@ layout: default
           <!-- Dynamic Publications -->
           {% if match_names.size > 0 %}
           {% assign matching_pubs = "" | split: "" %}
+          {% if site.data.publications and site.data.publications.publications %}
           {% for pub in site.data.publications.publications %}
           {% for name in match_names %}
           {% if pub.authors contains name %}
@@ -127,6 +140,8 @@ layout: default
           {% endif %}
           {% endfor %}
           {% endfor %}
+          {% endif %}
+
           {% if matching_pubs.size > 0 %}
           <div class="mb-5">
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Publications</h2>
@@ -355,13 +370,25 @@ layout: default
           </div>
 
           <!-- Links & CV -->
-          {% if page.links or page.cv %}
+          {% if page.links or page.cv or page.files %}
           <div class="card border-0 shadow-sm mb-4 rounded-3">
             <div class="card-header bg-light border-bottom-0 py-3">
               <h5 class="card-title h6 text-uppercase text-muted mb-0">Links & Resources</h5>
             </div>
             <div class="card-body">
-              {% if page.cv %}
+              {% if page.files %}
+              <div class="d-grid gap-2 mb-3">
+                {% for file in page.files %}
+                {% if file.file %}
+                <a href="{{ file.file | relative_url }}"
+                  class="btn-custom btn-custom-primary w-100 justify-content-center" target="_blank">
+                  <i class="fas fa-file-pdf me-2"></i> {{ file.label }}
+                </a>
+                {% endif %}
+                {% endfor %}
+              </div>
+              {% elsif page.cv %}
+              {# Backward compatibility #}
               <a href="{{ page.cv | relative_url }}"
                 class="btn-custom btn-custom-primary w-100 mb-3 justify-content-center" target="_blank">
                 <i class="fas fa-file-pdf me-2"></i> Download CV

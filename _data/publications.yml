@@ -2,59 +2,77 @@ publications:
   - title: $U$-Operators Acting on Harmonic Cocycles for $\mathrm{GL}_3$ and Their
       Slopes
     year: "2025"
-    mr_number: "543543543"
     authors: Joint with G. Böckle, P. M. Gräf, T. Kaiser
-    journal_details: Preprint
+    journal_details: arXiv preprint arXiv:2503.00141
     status: Preprint
+    doi: 10.48550/arXiv.2503.00141
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2503.00141
   - title: On the Endomorphism Algebra of Abelian Varieties Associated with Hilbert
       Modular Forms
-    year: "2025"
+    year: "2024"
     authors: Alireza Shavali
-    journal_details: Preprint
+    journal_details: arXiv preprint arXiv:2410.20223
     status: Preprint
+    doi: 10.48550/arXiv.2410.20223
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2410.20223
   - title: On the Image of Automorphic Galois Representations
     year: "2025"
     authors: Alireza Shavali
-    journal_details: Submitted
+    journal_details: arXiv preprint arXiv:2502.10799
     status: Submitted
+    doi: 10.48550/arXiv.2502.10799
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2502.10799
   - title: Bogomolov property for Galois representations with big local image
     year: "2025"
     authors: Joint with A. Conti, L. Terracini
-    journal_details: Preprint
+    journal_details: arXiv preprint arXiv:2503.14052
     status: Preprint
+    doi: 10.48550/arXiv.2503.14052
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2503.14052
   - title: A duality result about special functions in Drinfeld modules of arbitrary
       rank
     year: "2025"
     authors: Giacomo Ferraro
     journal_details: Res. Math. Sci.
     status: Journal Article
+    doi: 10.1007/s40687-025-00506-w
     type: Article
   - title: On nearly holomorphic Drinfeld modular forms for admissible coefficient
       rings
     year: "2025"
     authors: Sriram Chinthalagiri Venkata
-    journal_details: Preprint
+    journal_details: arXiv preprint arXiv:2503.01357
     status: Preprint
+    doi: 10.48550/arXiv.2503.01357
     type: Article
   - title: Equidimensionality of universal pseudodeformation rings in characteristic
       p for absolute Galois groups of p-adic fields (pdf), 91 pages.
-    year: "2025"
+    year: "2023"
     authors: Joint with A.-K. Juschka
-    journal_details: ", 91 pages."
+    journal_details: Forum of Mathematics, Sigma, Vol. 11:e102
     status: Preprint
+    doi: 10.1017/fms.2023.82
     type: Article
     pdfs:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Juschka-Pseudo-20230701.pdf
   - title: An Eichler-Shimura isomorphism over function fields between Drinfeld
       modular forms and cohomology classes of crystals. (pdf), 183 pages.
-    year: "2025"
+    year: "2002"
     authors: Gebhard Böckle
-    journal_details: ", 183 pages."
+    journal_details: Preprint, 183 pages
     status: Preprint
     type: Article
     pdfs:
@@ -62,38 +80,57 @@ publications:
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/EiShNew.pdf
   - title: Cartier Crystals. An overview can be found in a chapter of the
       habilitation treatise of M.Blickle
-    year: "2025"
+    year: "2013"
     authors: Joint with M. Blickle
+    journal_details: arXiv preprint arXiv:1309.1035
     status: Submitted
+    doi: 10.48550/arXiv.1309.1035
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/1309.1035
   - title: Division Towers for Triangle Shimura Curves.
     year: "2025"
     authors: Joint with M. Dettweiler
+    journal_details: Preprint
     status: Submitted
     type: Article
   - title: Lifts of mod p Galois representations with local supercuspidal types.
     year: "2025"
     authors: Gebhard Böckle
+    journal_details: Preprint
     status: Submitted
     type: Article
   - title: Lattices in rigid analytic representations
     year: "2024"
     authors: Joint with A. Conti, E. Torti
-    journal_details: Preprint
+    journal_details: arXiv preprint arXiv:2403.20232
     status: Preprint
+    doi: 10.48550/arXiv.2403.20232
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2403.20232
   - title: Lifting Galois representations via Kummer flags
     year: "2024"
     authors: Joint with A. Conti, C. Demarche, M. Florence
-    journal_details: Preprint
+    journal_details: arXiv preprint arXiv:2403.08888
     status: Preprint
+    doi: 10.48550/arXiv.2403.08888
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2403.08888
   - title: p-adic rigidity of eigenforms of infinite slope
     year: "2024"
     authors: Andrea Conti
-    journal_details: Preprint
+    journal_details: arXiv preprint arXiv:2403.16918
     status: Preprint
+    doi: 10.48550/arXiv.2403.16918
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2403.16918
   - title: The trianguline variety for reductive groups and Zariski density of
       crystalline points
     year: "2024"
@@ -104,15 +141,24 @@ publications:
   - title: Weak abelian direct summands and irreducibility of Galois representations
     year: "2024"
     authors: Joint with C.-Y. Hui
-    journal_details: To appear
+    journal_details: arXiv preprint arXiv:2404.08954, to appear in Mathematische Annalen
     status: Preprint
+    doi: 10.48550/arXiv.2404.08954
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2404.08954
   - title: Big images of two-dimensional pseudorepresentations
     year: "2023"
     authors: Joint with A. Conti, J. Lang, A. Medvedovsky
-    journal_details: Mathematische Annalen
+    journal_details: Mathematische Annalen, Vol. 385 (3-4), pp. 1085-1179 (2023),
+      arXiv:1904.10519
     status: Journal Article
+    doi: 10.1007/s00208-021-02345-w
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/1904.10519
   - title: L-invariants and deep congruences between newforms
     year: "2023"
     authors: Joint with A. Conti, P. Graef
@@ -134,22 +180,34 @@ publications:
   - title: Lifting trianguline Galois representations along isogenies
     year: "2021"
     authors: Andrea Conti
-    journal_details: Preprint
+    journal_details: arXiv preprint arXiv:2101.02189
     status: Preprint
+    doi: 10.48550/arXiv.2101.02189
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2101.02189
   - title: Deformation rings and images of Galois representations
     year: "2021"
     authors: Joint with S. Arias-de-Reyna
-    journal_details: To appear
+    journal_details: arXiv preprint arXiv:2107.03114, to appear
     status: Preprint
+    doi: 10.48550/arXiv.2107.03114
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2107.03114
   - title: A Hecke-equivariant decomposition of spaces of Drinfeld cusp forms via
       representation theory, and an investigation of its subfactors
     year: "2021"
     authors: Joint with P. M. Gräf, R. Perkins
-    journal_details: To appear
+    journal_details: arXiv preprint arXiv:2103.13126
     status: Preprint
+    doi: 10.48550/arXiv.2103.13126
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2103.13126
   - title: Irreducibility of versal deformation rings in the (p,p)-case for
       2-dimensional representations.
     year: "2020"
@@ -163,9 +221,13 @@ publications:
   - title: Independence of l-adic representations of geometric Galois groups.
     year: "2020"
     authors: Joint with W. Gajda, S. Petersen
-    journal_details: J. Reine Angew. Math.
+    journal_details: J. Reine Angew. Math., arXiv:1302.6597
     status: Journal Article
+    doi: 10.48550/arXiv.1302.6597
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/1302.6597
     pdfs:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Gajda-Petersen-crelle-2015-0024.pdf
@@ -180,11 +242,15 @@ publications:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-AlgHeckeCharsAndStrictlyCompSys.pdf
   - title: On computing quaternion quotient graphs for function fields.
-    year: "2020"
+    year: "2012"
     authors: Joint with R. Butenuth
-    journal_details: J. Théor. Nombres Bordeaux
+    journal_details: J. Théor. Nombres Bordeaux, Vol. 24(1), pp. 73-99, arXiv:1010.4826
     status: Journal Article
+    doi: 10.5802/jtnb.789
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/1010.4826
     pdfs:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Proofs-Boeckle-Butenuth.pdf
@@ -291,8 +357,9 @@ publications:
   - title: Hecke characters associated to Drinfeld modular forms
     year: "2015"
     authors: Gebhard Böckle
-    journal_details: Compos. Math.
+    journal_details: Compositio Mathematica, Vol. 151(2015), pp. 2437-2477
     status: Journal Article
+    doi: 10.1112/S0010437X15007290
     type: Article
     pdfs:
       - label: PDF
@@ -333,6 +400,9 @@ publications:
     journal_details: J. Reine Angew. Math. 661 (2011), 85-123
     status: Journal Article
     type: Article
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/0909.2531
     pdfs:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/BlickleBoeckle-CartierModulesFinitenessResults.pdf
@@ -340,7 +410,7 @@ publications:
       Galois group of Q3
     year: "2010"
     authors: Gebhard Böckle
-    journal_details: "in Representations p-adic de groupes p-adiques II: Representations de GL"
+    journal_details: Astérisque 330 (2010), pp. 529-542
     status: Journal Article
     type: Article
     pdfs:
@@ -523,6 +593,9 @@ publications:
     pdfs:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/GeneriFiberMM2.pdf
+
+
+
 software:
   - title: Magma package QaQuotGraphs
     description: to compute the action by unit groups of maximal orders in

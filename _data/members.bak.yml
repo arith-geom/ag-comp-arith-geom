@@ -1,0 +1,357 @@
+sections:
+  - title: Head
+    layout: big
+    members:
+      - name: Prof. Dr. Gebhard Böckle
+        role: Group Leader
+        group: Members
+        photo: /assets/migrated/csm_Boeckle_d715f254f6.jpg
+        email: gebhard.boeckle@iwr.uni-heidelberg.de
+        aliases:
+          - name: Böckle
+        cv: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-2014-shortCV.pdf
+        phone: +49-(0)6221-54 14715
+        fax: +49-(0)6221-54 14737
+        room: 03-220
+        office_hours: by appointment
+        body: >-
+          [Interdisciplinary Center for Scientific
+          Computing](http://www.uni-heidelberg.de/)  
+
+          [University Heidelberg](http://www.uni-heidelberg.de/)
+
+
+          Secretary: [Astrid Cederbaum](/members/astrid-cederbaum/ "Opens
+          internal link in current window")
+
+
+          Office Hours: by appointment
+
+
+          Staff: [here](/members/ "Opens internal link in current window")  
+
+          Adress: [here](/contact/ "Opens internal link in current window")  
+
+          Short CV:
+          [here](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-2014-shortCV.pdf
+          "Initiates file download")
+  - title: Secretary
+    layout: big
+    members:
+      - name: Astrid Cederbaum
+        role: Secretary
+        group: Members
+        photo: /assets/migrated/csm_Sudmann_06_99b9e54857.jpg
+        email: sekretariat.boeckle@iwr.uni-heidelberg.de
+        phone: +49-(0)6221-54 14734
+        fax: +49-(0)6221-54 14737
+        room: 03-234
+        body: "#### Astrid Cederbaum"
+  - title: Members
+    layout: medium
+    members:
+      - name: Alireza Shavali
+        role: Researcher
+        group: Members
+        photo: /assets/migrated/csm_Shavali_e11bd855eb.jpg
+        email: alireza.shavali@iwr.uni-heidelberg.de
+        phone: +49-(0)6221-54 14714
+        room: 03/224 (INF 205)
+        body: >-
+          #### Alireza Shavali
+
+
+          Mail:
+
+
+          Private
+          webpage: [https://sites.google.com/view/alireza-shavali/home](https://sites.google.com/view/alireza-shavali/home)
+        links:
+          - url: https://sites.google.com/view/alireza-shavali/home
+            icon: fas fa-globe
+            text: Website
+      - name: Dr. Andrea Conti
+        role: Researcher
+        group: Members
+        photo: /assets/migrated/csm_Andrea_Conti_1d0460d7f0.jpg
+        aliases:
+          - name: Conti
+        room: 3/220
+        body: >-
+          **E-mail address:** "contiand\[at\]gmail\[dot\]com" or
+          "andrea.conti\[at\]iwr\[dot\]uni-heidelberg\[dot\]de"
+
+
+          **Tel.:**
+
+
+          **Room:** 3/220
+
+
+          Here is my [private
+          webpage](https://sites.google.com/site/andreacontimath/home "Opens
+          external link in new window").
+        links:
+          - url: https://sites.google.com/site/andreacontimath/home
+            icon: fas fa-globe
+            text: Website
+      - name: Dr. Giacomo Hermes Ferraro
+        role: Researcher
+        group: Members
+        photo: /assets/img/giacomo-hermes-ferraro.jpg
+        email: giacomo.ferraro@iwr.uni-heidelberg.de
+        aliases:
+          - name: Ferraro
+        phone: +49-(0)6221-54 14714
+        room: 03/224 (INF 205)
+        office_hours: by appointment
+        body: |-
+          #### Dr. Giacomo Hermes Ferraro
+
+          Mail:
+
+          Office hours: by appointment.
+      - name: Paola Chilla
+        role: PhD Student
+        group: Members
+        photo: /assets/img/paola-chilla.jpg
+        email: paola.chilla@iwr.uni-heidelberg.de
+        phone: +49-(0)6221-54 14713
+        room: 03-222
+        body: |-
+          #### Paola Chilla
+
+          Mail:
+      - name: Sriram Chinthalagiri Venkata
+        role: PhD Student
+        group: Members
+        photo: /assets/img/sriram-chinthalagiri-venkata.jpg
+        email: sriram.chinthalagiri@iwr.uni-heidelberg.de
+        aliases:
+          - name: Sriram
+          - name: C.V. Sriram
+        phone: +49-(0)6221-54 14713
+        room: 03/222 (INF 205)
+        body: |-
+          #### Sriram Chinthalagiri Venkata
+
+          Mail:
+      - name: Theresa Kaiser
+        role: PhD Student
+        group: Members
+        photo: /assets/migrated/csm_Kaiser-Theresa_aa9c1ced0f.jpeg
+        email: theresa.kaiser@iwr.uni-heidelberg.de
+        aliases:
+          - name: Kaiser
+        phone: +49-(0)6221-54 14713
+        room: 03-222
+        body: |-
+          #### Theresa Kaiser
+
+          Mail:
+  - title: Former Members
+    layout: small
+    members:
+      - name: Dr. Alain Muller
+        role: Former Member
+        group: Members
+        photo: /assets/img/alain-muller.jpg
+      - name: Dr. Andreas Maurischat
+        role: Former Member
+        group: Members
+        photo: /assets/migrated/csm_Maurischat_7b6f31e6ea.jpg
+        email: amaurischat@mathi.uni-heidelberg.de
+        phone: +49-(0)6221-54 14714
+        room: 3/224
+        body: >-
+          #### Dr. Andreas Maurischat
+
+
+          (if you wanted to reach the website of Dr. Kathrin Maurischat, please
+          click here.)
+
+
+          Building: INF 205
+
+
+          Office hours: by appointment
+      - name: Dr. Ann-Kristin Juschka
+        role: Former Member
+        group: Members
+        photo: /assets/migrated/csm_Juschka2_01_f2b754bf3f.jpg
+        email: ann-kristin.juschka@iwr.uni-heidelberg.de
+        phone: +49-(0)6221-54 14713
+        fax: +49-(0)6221-54 14737
+        room: 03-222
+        body: |-
+          #### Ann-Kristin Juschka
+
+          Mail:
+      - name: Dr. Archiebold Karumbidza
+        role: Former Member
+        group: Members
+        photo: /assets/img/archiebold-karumbidza.jpg
+      - name: Dr. Barinder Banwait
+        role: Former Member
+        group: Members
+        photo: /assets/img/barinder-banwait.jpg
+        email: barinder.banwait@iwr.uni-heidelberg.de
+        aliases:
+          - name: Barinder
+        phone: +49-(0)6221-54 14714
+        room: 03/224 (INF 205)
+        links:
+          - url: assets/img/Design ohne Titel 2.png
+            icon: fa-brands fa-reddit
+            text: Website
+      - name: Dr. David-A. Guiraud
+        role: Former Member
+        group: Members
+        photo: /assets/img/david-a-guiraud.jpg
+      - name: Dr. Juan Marcos Cerviño
+        role: Former Member
+        group: Members
+        photo: /assets/img/juan-marcos-cervino.jpg
+      - name: Dr. Julian Quast
+        role: Former Member
+        group: Members
+        photo: /assets/img/julian-quast.jpg
+        email: julian.quast@iwr.uni-heidelberg.de
+        phone: +49-(0)6221-54 14840
+        room: 04/231 (INF 205)
+        body: |-
+          #### Julian Quast
+
+          Web: [www.julianquast.de](http://www.julianquast.de)
+        links:
+          - url: http://www.julianquast.de
+            icon: fas fa-globe
+            text: Website
+      - name: Dr. Narasimha Kumar Cheraku
+        role: Former Member
+        group: Members
+        photo: /assets/img/narasimha-kumar-cheraku.jpg
+        links:
+          - url: https://sites.google.com/site/chnarasimhakumar/
+            text: Website
+      - name: Dr. Oguz Gezmiş
+        role: Former Member
+        group: Members
+        photo: /assets/img/oguz-gezmis.jpg
+        email: oguz.gezmis@iwr.uni-heidelberg.de
+        phone: +49-(0)6221-54 14714
+        room: 03/224 (INF 205)
+        body: >-
+          #### Oguz Gezmiş
+
+
+          Mail:
+
+
+          #### Website:
+          [https://sites.google.com/view/oguzgezmis](https://sites.google.com/view/oguzgezmis)
+        links:
+          - url: https://sites.google.com/view/oguzgezmis
+            icon: fas fa-globe
+            text: Website
+      - name: Dr. Patrik Hubschmid
+        role: Former Member
+        group: Members
+        photo: /assets/img/patrik-hubschmid.jpg
+      - name: Dr. Peter Gräf
+        role: Former Member
+        group: Members
+        photo: /assets/migrated/csm_Gra_f__Peter_01_a81f8eb5c5.jpg
+        email: peter.graef@iwr.uni-heidelberg.de
+        aliases:
+          - name: Gräf
+        phone: +49-(0)6221-54 14715
+        room: 03/225 (INF 205)
+        body: |-
+          #### Peter Gräf
+
+          [Here](https://sites.google.com/view/peter-graef) is my website.
+
+          Office hours: By appointment.
+        links:
+          - url: https://sites.google.com/view/peter-graef
+            icon: fas fa-globe
+            text: Website
+      - name: Dr. Ralf Butenuth
+        role: Former Member
+        group: Members
+        photo: /assets/img/ralf-butenuth.jpg
+      - name: Dr. Rudolph Perkins
+        role: Former Member
+        group: Members
+        photo: /assets/img/rudolph-perkins.jpg
+        links:
+          - url: https://rudolphperkins.wordpress.com/
+            text: Website
+      - name: Dr. Samuele Anni
+        role: Former Member
+        group: Members
+        photo: /assets/img/samuele-anni.jpg
+        links:
+          - url: https://sites.google.com/view/samuele-anni/home
+            text: Website
+      - name: Dr. Sundeep Balaji
+        role: Former Member
+        group: Members
+        photo: /assets/img/sundeep-balaji.jpg
+      - name: Dr. Tommaso Centeleghe
+        role: Former Member
+        group: Members
+        photo: /assets/img/tommaso-centeleghe.jpg
+      - name: Dr. Yamidt Bermudez Tobon
+        role: Former Member
+        group: Members
+        photo: /assets/img/yamidt-bermudez-tobon.jpg
+      - name: Dr. Yujia Qiu
+        role: Former Member
+        group: Members
+        photo: /assets/img/yujia-qiu.jpg
+      - name: Dr. Özge Ülkem
+        role: Former Member
+        group: Members
+        photo: /assets/migrated/csm_photo3_24588f06e1.jpg
+        email: oezge.uelkem@iwr.uni-heidelberg.de
+        phone: +49-(0)6221-54 14714
+        fax: +49-(0)6221-54 14737
+        room: 03-224
+        body: |-
+          #### Özge Ülkem
+
+          Mail:
+      - name: Konrad Fischer
+        role: Former Member
+        group: Members
+        photo: /assets/migrated/csm_image3_01_d7fd0284ac.jpg
+        email: konrad.fischer@iwr.uni-heidelberg.de
+        phone: +49-(0)6221-54 14713
+        fax: +49-(0)6221-54 14737
+        room: 03-222
+        body: |-
+          #### Konrad Fischer
+
+          PGP key
+
+          Office hours: wednesday from 3 to 4 p.m. or by appointment
+      - name: Prof. Dr. Judith Ludwig
+        role: Former Member
+        group: Members
+        photo: /assets/img/judith-ludwig.jpg
+        email: judith.ludwig@iwr.uni-heidelberg.de
+        room: 03/225 (INF 205)
+        body: |-
+          #### Judith Ludwig
+
+          Here is my [webpage](https://sites.google.com/view/jludwig/).
+
+          Office hours: by appointment.
+        links:
+          - url: https://www.judith-ludwig.com/
+            text: Website
+          - url: https://sites.google.com/view/jludwig/
+            icon: fas fa-globe
+            text: Website

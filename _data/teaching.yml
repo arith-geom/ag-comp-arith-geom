@@ -9,8 +9,6 @@ courses:
             pdfs:
               - label: seminar program
                 file: /assets/migrated/Homological_algebra___Seminar_2025.pdf
-              - label: TEstfile, later deleted
-                file: /assets/img/Übungszettel 2.pdf
             body: >-
               ## Seminar on Homological Algebra (Summer Semester 2025)
 
@@ -19,11 +17,11 @@ courses:
               invariants associated to algebraic or topological objects; it
               finds applications in several branches of mathematics, including
               algebraic topology, differential geometry, complex analysis,
-              algebraic geometry, [number theory](assets/img/Übungszettel
-              2.pdf), and commutative algebra. In this seminar, we introduce the
-              language of (abelian) categories and focus on the simplest
-              examples of (co)homology groups appearing in the context of
-              abelian groups and—more generally—modules over a ring R.
+              algebraic geometry, number theory, and commutative algebra. In
+              this seminar, we introduce the language of (abelian) categories
+              and focus on the simplest examples of (co)homology groups
+              appearing in the context of abelian groups and—more
+              generally—modules over a ring R.
 
 
               Please refer to the [seminar
@@ -34,6 +32,7 @@ courses:
               Participants are also expected to prepare a handout for their
               talks. Regarding a sample format of an handout, please refer to
               here (or feel free to make your own format).
+
   - year: 2024
     semesters:
       - semester: Winter
@@ -61,8 +60,8 @@ courses:
 
 
               ### Organisers: [Prof. Dr. G.
-              Böckle](/members/prof-dr-gebhard-böckle/ "Opens internal link in
-              current window"), [A. Shavali](/members/alireza-shavali/)
+              Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens internal link
+              in current window"), [A. Shavali](/members/alireza-shavali/)
 
 
               <div class="ce-textpic ce-center ce-above"><h4><strong>Lectures:
@@ -277,7 +276,8 @@ courses:
               [https://miktex.org/download](https://miktex.org/download)).
 
 
-              For more info :- sriram.chinthalagiri@iwr.uni-heidelberg.de
+              For more info :-
+              [sriram.chinthalagiri@iwr.uni-heidelberg.de](mailto:sriram.chinthalagiri@iwr.uni-heidelberg.de)
           - title: Vorlesung Lineare Algebra 2
             instructor: Prof. Dr. Böckle, Dr. Ludwig
             course_type: Lecture
@@ -300,8 +300,8 @@ courses:
 
 
               ### Organisers: [Prof. Dr. G.
-              Böckle](/members/prof-dr-gebhard-böckle/ "Opens internal link in
-              current window"), [C.V.
+              Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens internal link
+              in current window"), [C.V.
               Sriram](/members/sriram-chinthalagiri-venkata/ "Opens internal
               link in current window")
 
@@ -496,7 +496,7 @@ courses:
 
 
               Dozent: [Dr. Barinder Banwait](/members/dr-barinder-banwait/),
-              [Prof. Dr. Böckle](/members/prof-dr-gebhard-böckle/ "Opens
+              [Prof. Dr. Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens
               internal link in current window")
 
 
@@ -538,15 +538,15 @@ courses:
               | Line bundles and divisors on abelian varieties | C V Sriram |
               23.11.2021 | [Handout 2](/assets/migrated/av_handout02.pdf) |
 
-              | Torsion and isogenies | B S Banwait | 30.11.2021 |
+              | Torsion and isogenies | B S Banwait | 30.11.2021 |     |
 
-              | The dual abelian variety | Max Stier | 7.12.2021 |
+              | The dual abelian variety | Max Stier | 7.12.2021 |     |
 
-              | Polarizations and Weil Pairings | 14.12.2021 |
+              | Polarizations and Weil Pairings | 14.12.2021 |     |     |
 
-              | The endomorphism ring | Lukas Heger |
+              | The endomorphism ring | Lukas Heger |     |     |
 
-              | The Albert classification | Lukas Heger |
+              | The Albert classification | Lukas Heger |     |     |
           - title: Vorlesung Computational Number Theory
             instructor: Dr. Banwait
             course_type: Lecture
@@ -577,8 +577,8 @@ courses:
               2021)
 
 
-              Dozent: [Prof. Dr. Böckle](/members/prof-dr-gebhard-böckle/ "Opens
-              internal link in current window"), [Dr. Judith
+              Dozent: [Prof. Dr. Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/
+              "Opens internal link in current window"), [Dr. Judith
               Ludwig](/members/prof-dr-judith-ludwig/ "Opens internal link in
               current window")
 
@@ -648,8 +648,8 @@ courses:
               **Literatur:**
 
 
-              *   \[H\] Huybrechts, Daniel_, Fourier-Mukai transforms in
-              Algebraic Geometry,_ Oxford Mathematical Monographs, Oxford
+              *   \[H\] Huybrechts, Daniel\_, Fourier-Mukai transforms in
+              Algebraic Geometry,\_ Oxford Mathematical Monographs, Oxford
               University Press, 2006.
 
               *   \[M\] Morel, Sophie, _Homological Algebra,_ Lecture notes,
@@ -674,8 +674,8 @@ courses:
               ## Seminar Elliptische Kurven (WS 2020/21)
 
 
-              Dozent: [Prof. Dr. Böckle](/members/prof-dr-gebhard-böckle/ "Opens
-              internal link in current window"), [Dr. Judith
+              Dozent: [Prof. Dr. Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/
+              "Opens internal link in current window"), [Dr. Judith
               Ludwig](/members/prof-dr-judith-ludwig/ "Opens internal link in
               current window")
 
@@ -779,8 +779,9 @@ courses:
               # AG Computational Arithmetic Geometry
 
 
-              ### [Prof. Dr. Gebhard Böckle](/members/prof-dr-gebhard-böckle/
-              "Opens internal link in current window")
+              ### [Prof. Dr. Gebhard
+              Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens internal link
+              in current window")
 
 
               This is the website of the research group "computational
@@ -794,8 +795,9 @@ courses:
               of the research group is on Galois representations, their
               relations to modular forms and elliptic curves, their deformation
               theory etc., as well as on some aspects of function field
-              arithmetic such as L-functions and Drinfeld modular forms.  
-                
+              arithmetic such as L-functions and Drinfeld modular forms.
+
+
               To tackle problems in the themes described above, we apply a broad
               range of methods. On one hand we pursue these questions by purely
               theoretical methods. On the other, we use computer algebra to
@@ -842,23 +844,25 @@ courses:
               Venjakob aus dem Wintersemester fort. Es werden zunächst weitere
               Grundlagen der Theorie der adischen Räume entwickelt, z.B.
               wichtige Eigenschaften von Morphismen studiert und grundlegende
-              Konzepte wie z.B. Faserprodukte diskutiert.  
-                
+              Konzepte wie z.B. Faserprodukte diskutiert.
+
+
               Ziel des Kurses ist dann eine moderne Entwicklung der sogenannten
               Eigenvarietäten-Maschine.  
 
               Mit dieser Maschine kann man die Spektraltheorie eines kompakten
               Operators auf einer Familie von nicht-archimedischen Banachräumen
               geometrisch verstehen. Um sie zu konstruieren werden wir auch
-              einen Einblick in die _p_\-adische Funktionalanalysis bekommen.  
-                
+              einen Einblick in die _p_\-adische Funktionalanalysis bekommen.
+
+
               Die Eigenvarietäten-Maschine wird in der Praxis mit Räumen von
               _p_\-adischen Modulformen gefüttert und produziert einen adischen
               Raum, die sogenannte Eigenvarietät, welcher Eigenwerte von
               interessanten Operatoren (sogenannte Hecke-Operatoren) auf diesen
               Räumen parametrisiert. Die Maschine kann aber ohne Kenntnisse über
               Modulformen gebaut werden, insbesondere werden solche Kenntnisse
-              nicht vorausgesetzt.  
+              nicht vorausgesetzt.
 
 
               **Erforderliche Vorkenntnisse:** Inhalt der Vorlesung Adische
@@ -871,14 +875,14 @@ courses:
               zu adischen Räumen:
 
 
-              *   \[Hu\] Roland Huber_, Étale Cohomology of Rigid Analytic
-              Varieties and Adic Spaces,_ Aspects of Math., E30, Vieweg, 1996.
+              *   \[Hu\] Roland Huber\_, Étale Cohomology of Rigid Analytic
+              Varieties and Adic Spaces,\_ Aspects of Math., E30, Vieweg, 1996.
 
               *   \[Hu1\] Roland Huber, _Continuous valuations,_ Math.
               Zeitschrift 212, pp 445-477, 1993. 
 
-              *   \[Hu2\] Roland Huber_, A generalization of formal schemes and
-              rigid analytic varieties_, Math. Zeitschrift 217, pp 513-551,
+              *   \[Hu2\] Roland Huber\_, A generalization of formal schemes and
+              rigid analytic varieties\_, Math. Zeitschrift 217, pp 513-551,
               1994.
 
               *   \[Mor\] Sophie Morel, _[Adic
@@ -947,8 +951,8 @@ courses:
 
 
               **Dozent:**[Prof. Dr. Gebhard
-              Böckle](/members/prof-dr-gebhard-böckle/ "Opens internal link in
-              current window")
+              Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens internal link
+              in current window")
 
 
               **Assistent:**[Julian Quast](/members/dr-julian-quast/ "Opens
@@ -1016,9 +1020,9 @@ courses:
 
               | 7.  | 10.12.2019 | Tori | Lukas Heger |
 
-              | 8.  | 17.12.2019 | Unipotente algebraische Gruppen |
+              | 8.  | 17.12.2019 | Unipotente algebraische Gruppen |     |
 
-              | 9.  | 07.01.2019 | Halbeinfache Gruppen |
+              | 9.  | 07.01.2019 | Halbeinfache Gruppen |     |
 
 
               **Sprechstunde für Vorbesprechungen:**
@@ -1083,7 +1087,7 @@ courses:
               **Sprechstunde:** nach Vereinbarung
 
 
-              **Empfohlene Vorkenntnisse:**  
+              **Empfohlene Vorkenntnisse:**
 
 
               Algebraische Zahlentheorie 1, Algebraische Geometrie
@@ -1118,8 +1122,8 @@ courses:
 
 
               **Dozent:**[Prof. Dr. Gebhard
-              Böckle](/members/prof-dr-gebhard-böckle/ "Opens internal link in
-              current window")
+              Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens internal link
+              in current window")
 
 
               **Assistent:**[Julian Quast](/members/dr-julian-quast/ "Opens
@@ -1149,16 +1153,16 @@ courses:
               als "nicht bestanden" gewertet.
 
 
-              _Anmeldungen wie Abmeldungen sind nur dann gültig, wenn sie mir
+              \_Anmeldungen wie Abmeldungen sind nur dann gültig, wenn sie mir
               [per Mail](mailto:julian.quast@iwr.uni-heidelberg.de "Opens
               internal link in current window") mitgeteilt werden und im MÜSLI
               eingetragen werden.  
 
-              _
+              \_
 
 
               **Freie Vorträge:** Aktuell sind noch die folgenden Vorträge zu
-              vergeben**:**
+              vergeben\*\*:\*\*
 
 
               (6) Satz von Cartan-Dieudonné  
@@ -1187,7 +1191,7 @@ courses:
               Montag, 14-16 Uhr bei Julian Quast in Raum 3/222
 
 
-              **Voraussetzungen:**  
+              **Voraussetzungen:**
 
 
               Lineare Algebra 1, Analysis 1
@@ -1272,7 +1276,7 @@ courses:
 
               *   Morrow, M.: _p-divisible groups_ 
 
-              *   Pink, R._:_ __Finite group schemes__ 
+              *   Pink, R._:_ **Finite group schemes** 
 
               *   Stix, J.:_A course on finite flat group schemes and
               p-divisible groups_
@@ -1381,14 +1385,14 @@ courses:
               im Besprechungsraum 3/414 im 3. OG im Mathematikon statt.
 
 
-              **Empfohlene Vorkenntnisse:**  
+              **Empfohlene Vorkenntnisse:**
 
 
-              Funktionentheorie 1  
-                
+              Funktionentheorie 1
 
-              **Literatur:** Vorlesungsskript von Hendrik Kasten  
-                
+
+              **Literatur:** Vorlesungsskript von Hendrik Kasten
+
 
               Übungsblätter:
 
@@ -1471,13 +1475,13 @@ courses:
               Prüfung teilzunehmen.
 
 
-              **Empfohlene Vorkenntnisse:**  
+              **Empfohlene Vorkenntnisse:**
 
 
-              Algebraische Zahlentheorie 2  
-                
+              Algebraische Zahlentheorie 2
 
-              **Literatur:**  
+
+              **Literatur:**
 
 
               *   R. Sharifi, [Algebraic Number
@@ -1617,13 +1621,13 @@ courses:
               Prüfung teilzunehmen.
 
 
-              **Empfohlene Vorkenntnisse:**  
+              **Empfohlene Vorkenntnisse:**
 
 
-              Algebraische Zahlentheorie 1  
-                
+              Algebraische Zahlentheorie 1
 
-              **Literatur:**  
+
+              **Literatur:**
 
 
               *   R. Sharifi, [Algebraic Number
@@ -1716,9 +1720,7 @@ courses:
               **Sprechstunde:** Donnerstags 15:30-16:30, INF 205 / Raum 3/225
 
 
-              **Empfohlene Vorkenntnisse:** Algebraische Zahlentheorie 1 \ 
-
-              \ \ 
+              **Empfohlene Vorkenntnisse:** Algebraische Zahlentheorie 1
 
 
               **Literatur:**
@@ -1861,10 +1863,10 @@ courses:
 
               Bewertungen, Fortsetzungen von Bewertungen, Galoistheorie der  
 
-              Bewertungen, Hilbertsche Verzweigungstheorie.  
-                
+              Bewertungen, Hilbertsche Verzweigungstheorie.
 
-              **Literatur:**  
+
+              **Literatur:**
 
 
               *   G.J. Janusz: Algebraic Number Fields
@@ -1874,7 +1876,7 @@ courses:
               *   D.A. Marcus: Algebraic Number Fields
 
               *   J. Milne: Algebraic Number Theory
-              (http://www.jmilne.org/math/CourseNotes/ANT.pdf)
+              ([http://www.jmilne.org/math/CourseNotes/ANT.pdf](http://www.jmilne.org/math/CourseNotes/ANT.pdf))
 
               *   J. Neukirch: Algebraische Zahlentheorie
 
@@ -1998,17 +2000,18 @@ courses:
               H. Matsumura: Commutative Ring Theory
 
 
-              **Erster Vorlesungstermin** ist in der Woche nach Ostern (19.4.)  
-                
+              **Erster Vorlesungstermin** ist in der Woche nach Ostern (19.4.)
+
+
               Sobald der Dozent Ihnen das Passwort mitgeteilt hat, können Sie
               sich im elearning-Portal Moodle2 der Universität für den Kurs
               eintragen. Dort werden Fragen beantwortet und weitere Materialien
-              zur Verfügung gestellt.  
+              zur Verfügung gestellt.
 
-                
-              **Übungsbetrieb und Prüfung:  
 
-              **
+              \*\*Übungsbetrieb und Prüfung:  
+
+              \*\*
 
 
               Der Übungsgruppenleiter ist Alvaro Troya. Bitte melden Sie sich in
@@ -2159,9 +2162,9 @@ courses:
               **Literatur**: R. Crandall, C. Pomerance;  _Prime numbers_ - _a
               computational perspective_; Springer 2005
 
-                
+
               Wenn Sie Interesse an einem Vortrag haben, melden Sie sich bitte
-              in **Müsli** an und kommen Sie zur  
+              in **Müsli** an und kommen Sie zur
 
 
               **Vorbesprechung: Dienstag, 18.10.2016** um **13:00** in **SR3**
@@ -2266,8 +2269,8 @@ courses:
 
 
               Bei Interesse oder Fragen zu den Vorträgen wenden Sie sich bitte
-              an [Peter Gräf](/members/dr-peter-gräf/ "Opens internal link in
-              current window").
+              an [Peter Gräf](/members/dr-peter-gr%C3%A4f/ "Opens internal link
+              in current window").
 
 
               Dies ist die Liste der Vorträge:
@@ -2277,7 +2280,7 @@ courses:
 
               | --- | --- | --- |
 
-              | ##### Teil I   Die p-adischen Zahlen |     |     |
+              | \##### Teil I   Die p-adischen Zahlen |     |     |
 
               | 1.  | Absolutbeträge auf Körpern | 19.04.2016 |
 
@@ -2296,7 +2299,7 @@ courses:
 
               | 7.  | Lokal-Global-Prinzipien | 07.06.2016 |
 
-              | ##### Teil II   p-adische Analysis |     |     |
+              | \##### Teil II   p-adische Analysis |     |     |
 
               | 8.  | Elementare Analysis in $\\mathbb{Q}\_p$ | 14.06.2016 |
 
@@ -2390,7 +2393,7 @@ courses:
               [Yujia Qiu](mailto:yujia.qiu@iwr.uni-heidelberg.de "Opens window
               for sending email").
 
-                
+
               Dies ist die vorläufige Liste der Vorträge.
 
 
@@ -2529,51 +2532,24 @@ courses:
               Dies ist die _vorläufige_ Liste der Vorträge:
 
 
-              | Teil I. Skew Polynomial Rings |     |     |     |
-
-              | --- | --- | --- |
-
-              | 1   | Skew polynomial rings and _q_\-linear polynomials |
-              14.10.14 |
-
-              | 2   | The Moore determinant and zeros of _q_\-linear polynomials
-              | 21.10.14 |
-
-              | **Teil II. Analysis of Nonarchimedean Valued Fields**
-              |     |     |     |
-
-              | 3   | Valuations and Hensel's lemma | 28.10.14 |
-
-              | 4   | Extensions of valuations and Newton polygons | 04.11.14 |
-
-              | 5   | Analytic functions and normed vector spaces | 11.11.14 |
-
-              | 6   | Review of Dedekind rings | 18.11.14 |
-
-              | **Teil III. Drinfeld Modules** |     |     |     |
-
-              | 7   | Analytic theory I: lattices | 25.11.14 |
-
-              | 8   | Analytic theory II: Carlitz exponential | 02.12.14 |
-
-              | 9   | Algebraic theory I: basic notions, torsion and special
-              characteristic | 09.12.14 |
-
-              | 10  | Algebraic theory II: homomorphisms and the action of
-              ideals | 16.12.14 |
-
-              | **Teil IV. Explicit Class Field Theory over Function Fields**
-              |     |     |     |
-
-              | 11  | Overview of class field theory over global fields |
-              13.01.15 |
-
-              | 12  | Sign normalization and field of definition | 20.01.15 |
-
-              | 13  | The sign-normalized Drinfeld modules and reduction |
-              27.01.15 |
-
-              | 14  | Explicit CFT and division fields of Drinfeld-Hayes modules
+              | Teil I. Skew Polynomial Rings | | | | | --- | --- | --- | | 1 |
+              Skew polynomial rings and _q_\-linear polynomials | 14.10.14 | | 2
+              | The Moore determinant and zeros of _q_\-linear polynomials |
+              21.10.14 | | **Teil II. Analysis of Nonarchimedean Valued Fields**
+              | | | | | 3 | Valuations and Hensel's lemma | 28.10.14 | | 4 |
+              Extensions of valuations and Newton polygons | 04.11.14 | | 5 |
+              Analytic functions and normed vector spaces | 11.11.14 | | 6 |
+              Review of Dedekind rings | 18.11.14 | | **Teil III. Drinfeld
+              Modules** | | | | | 7 | Analytic theory I: lattices | 25.11.14 | |
+              8 | Analytic theory II: Carlitz exponential | 02.12.14 | | 9 |
+              Algebraic theory I: basic notions, torsion and special
+              characteristic | 09.12.14 | | 10 | Algebraic theory II:
+              homomorphisms and the action of ideals | 16.12.14 | | **Teil IV.
+              Explicit Class Field Theory over Function Fields** | | | | | 11 |
+              Overview of class field theory over global fields | 13.01.15 | |
+              12 | Sign normalization and field of definition | 20.01.15 | | 13
+              | The sign-normalized Drinfeld modules and reduction | 27.01.15 |
+              | 14 | Explicit CFT and division fields of Drinfeld-Hayes modules
               | 03.02.15 |
 
 
@@ -2712,7 +2688,7 @@ courses:
 
               | --- | --- | --- |
 
-              | ##### Teil I   Tates Affinoide Räume, die lokalen Bausteine
+              | \##### Teil I   Tates Affinoide Räume, die lokalen Bausteine
               rigid-analytischer Räume |     |     |
 
               | 1.  | Die Tatealgebra | 22.04.2014 |
@@ -2723,7 +2699,7 @@ courses:
 
               | 4.  | Affinoide Räume | 13.05.2014 |
 
-              | ##### Teil II   Konstruktion von rigid-analytischen Räumen
+              | \##### Teil II   Konstruktion von rigid-analytischen Räumen
               |     |     |
 
               | 5.  | Affinoide Unterberreiche eines affinoiden Raumes |
@@ -2738,7 +2714,8 @@ courses:
               | (9.) | Quasi-kohärente Garben, deren Kohomologie und Kiehls
               Theorem A und B | 17.06.2014 |
 
-              | ##### Teil III    Beispiele rigid-analytischer Räumen |     |
+              | \##### Teil III    Beispiele rigid-analytischer Räumen
+              |     |     |
 
               | 10. | Der Residuenkalkül für Teilmengen des projektiven Raums |
               24.06.2014 |
@@ -2748,7 +2725,7 @@ courses:
               | 12. | Die Drinfeldsche obere Halbebene und ihre Quotienten |
               08.07.2014 |
 
-              | ##### Teil IV   Ausblicke auf eine Theorie von Berkovich
+              | \##### Teil IV   Ausblicke auf eine Theorie von Berkovich
               |     |     |
 
               | 13. | _k_\-affinoide Algebren | 15.07.2014 |
@@ -2779,7 +2756,7 @@ courses:
               and its applications_ (2004).
 
 
-              #####  Teil IV
+              ##### Teil IV
 
 
               *   Vladimir G. Berkovich. _Spectral theory and analytic geometry
@@ -2902,8 +2879,8 @@ courses:
 
               | --- | --- | --- |
 
-              | ##### Teil I   Darstellungen und ihre (universellen)
-              Deformationen |     |
+              | \##### Teil I   Darstellungen und ihre (universellen)
+              Deformationen |     |     |
 
               | 1.  | Einleitung in die Theorie der (Galois-)Darstellungen |
               15.10.2013 |
@@ -2912,8 +2889,8 @@ courses:
 
               | 3.  | Existenz der universellen Deformation | 29.10.2013 |
 
-              | ##### Teil II   Pseudodarstellungen und grundlegende
-              Eigenschaften |     |
+              | \##### Teil II   Pseudodarstellungen und grundlegende
+              Eigenschaften |     |     |
 
               | 4.  | Pseudodarstellungen und Polynomische Gesetze | 05.11.2013
               |
@@ -2927,8 +2904,8 @@ courses:
 
               | 8.  | Cayley-Hamilton-Pseudodarstellungen | 03.12.2013 |
 
-              | ##### Teil III   Strukturtheoreme und der Beweis von Theorem A
-              |     |
+              | \##### Teil III   Strukturtheoreme und der Beweis von Theorem A
+              |     |     |
 
               | 9.  | Erste Strukturresultate und Beweis von Theorem A |
               10.12.2013 |
@@ -2936,8 +2913,8 @@ courses:
               | 10. | Weitere Strukturtheoreme für
               Cayley-Hamilton-Pseudodarstellungen | 17.12.2013 |
 
-              | ##### Teil IV   Universelle Pseudodeformationen und universelle
-              Deformationen |     |
+              | \##### Teil IV   Universelle Pseudodeformationen und universelle
+              Deformationen |     |     |
 
               | 11. | Existenz & Noetherrschheit der universellen
               Pseudodeformation und die universelle Deformation |
@@ -2972,8 +2949,9 @@ courses:
               # AG Computational Arithmetic Geometry
 
 
-              ### [Prof. Dr. Gebhard Böckle](/members/prof-dr-gebhard-böckle/
-              "Opens internal link in current window")
+              ### [Prof. Dr. Gebhard
+              Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens internal link
+              in current window")
 
 
               This is the website of the research group "computational
@@ -2987,8 +2965,9 @@ courses:
               of the research group is on Galois representations, their
               relations to modular forms and elliptic curves, their deformation
               theory etc., as well as on some aspects of function field
-              arithmetic such as L-functions and Drinfeld modular forms.  
-                
+              arithmetic such as L-functions and Drinfeld modular forms.
+
+
               To tackle problems in the themes described above, we apply a broad
               range of methods. On one hand we pursue these questions by purely
               theoretical methods. On the other, we use computer algebra to
@@ -3168,7 +3147,7 @@ courses:
               Institut.
 
 
-                         AUSSER am Mi. 21.11. 
+                         AUSSER am Mi. 21.11.
 
 
                          Treffen wir am **Fr. 23.11.** in den **Seminarraum 532
@@ -3251,8 +3230,9 @@ courses:
               # AG Computational Arithmetic Geometry
 
 
-              ### [Prof. Dr. Gebhard Böckle](/members/prof-dr-gebhard-böckle/
-              "Opens internal link in current window")
+              ### [Prof. Dr. Gebhard
+              Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens internal link
+              in current window")
 
 
               This is the website of the research group "computational
@@ -3266,8 +3246,9 @@ courses:
               of the research group is on Galois representations, their
               relations to modular forms and elliptic curves, their deformation
               theory etc., as well as on some aspects of function field
-              arithmetic such as L-functions and Drinfeld modular forms.  
-                
+              arithmetic such as L-functions and Drinfeld modular forms.
+
+
               To tackle problems in the themes described above, we apply a broad
               range of methods. On one hand we pursue these questions by purely
               theoretical methods. On the other, we use computer algebra to
@@ -3300,8 +3281,9 @@ courses:
               # AG Computational Arithmetic Geometry
 
 
-              ### [Prof. Dr. Gebhard Böckle](/members/prof-dr-gebhard-böckle/
-              "Opens internal link in current window")
+              ### [Prof. Dr. Gebhard
+              Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens internal link
+              in current window")
 
 
               This is the website of the research group "computational
@@ -3315,8 +3297,9 @@ courses:
               of the research group is on Galois representations, their
               relations to modular forms and elliptic curves, their deformation
               theory etc., as well as on some aspects of function field
-              arithmetic such as L-functions and Drinfeld modular forms.  
-                
+              arithmetic such as L-functions and Drinfeld modular forms.
+
+
               To tackle problems in the themes described above, we apply a broad
               range of methods. On one hand we pursue these questions by purely
               theoretical methods. On the other, we use computer algebra to
@@ -3343,8 +3326,9 @@ courses:
               # AG Computational Arithmetic Geometry
 
 
-              ### [Prof. Dr. Gebhard Böckle](/members/prof-dr-gebhard-böckle/
-              "Opens internal link in current window")
+              ### [Prof. Dr. Gebhard
+              Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens internal link
+              in current window")
 
 
               This is the website of the research group "computational
@@ -3358,8 +3342,9 @@ courses:
               of the research group is on Galois representations, their
               relations to modular forms and elliptic curves, their deformation
               theory etc., as well as on some aspects of function field
-              arithmetic such as L-functions and Drinfeld modular forms.  
-                
+              arithmetic such as L-functions and Drinfeld modular forms.
+
+
               To tackle problems in the themes described above, we apply a broad
               range of methods. On one hand we pursue these questions by purely
               theoretical methods. On the other, we use computer algebra to
@@ -3397,8 +3382,9 @@ courses:
               # AG Computational Arithmetic Geometry
 
 
-              ### [Prof. Dr. Gebhard Böckle](/members/prof-dr-gebhard-böckle/
-              "Opens internal link in current window")
+              ### [Prof. Dr. Gebhard
+              Böckle](/members/prof-dr-gebhard-b%C3%B6ckle/ "Opens internal link
+              in current window")
 
 
               This is the website of the research group "computational
@@ -3412,8 +3398,9 @@ courses:
               of the research group is on Galois representations, their
               relations to modular forms and elliptic curves, their deformation
               theory etc., as well as on some aspects of function field
-              arithmetic such as L-functions and Drinfeld modular forms.  
-                
+              arithmetic such as L-functions and Drinfeld modular forms.
+
+
               To tackle problems in the themes described above, we apply a broad
               range of methods. On one hand we pursue these questions by purely
               theoretical methods. On the other, we use computer algebra to
@@ -3624,3 +3611,4 @@ courses:
           - title: Elliptische Kurven und Anwendungen in der Krytographie
             instructor: Prof. Dr. Böckle
             course_type: Lecture
+  - year: 9999

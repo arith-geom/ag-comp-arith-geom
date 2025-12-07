@@ -41,7 +41,29 @@ module Jekyll
       if site.data['publications'] && site.data['publications']['publications']
         site.data['publications']['publications'].each do |publication|
           # Create slug from title using Jekyll's utility to match Liquid filter
-          slug = Utils.slugify(publication['title'])[0..100]
+          slug = Utils.slugify(publication['title'])
+
+          # Auto-fix relative links in body
+          if publication['body']
+            # Fix markdown links [label](assets/...) -> [label](/assets/...)
+            publication['body'] = publication['body'].gsub(/\]\(assets\//, '](/assets/')
+            # Fix HTML links href="assets/..." -> href="/assets/..."
+            publication['body'] = publication['body'].gsub(/href="assets\//, 'href="/assets/')
+          end
+
+          # Auto-fix relative links in pdfs and links arrays
+          ['pdfs', 'links'].each do |key|
+            if publication[key]
+              publication[key].each do |item|
+                if item['file'] && item['file'].start_with?('assets/')
+                  item['file'] = '/' + item['file']
+                end
+                if item['url'] && item['url'].start_with?('assets/')
+                  item['url'] = '/' + item['url']
+                end
+              end
+            end
+          end
           
           # Create page at /publications/:slug/
           site.pages << PublicationPage.new(site, site.source, File.join('publications', slug), publication)
