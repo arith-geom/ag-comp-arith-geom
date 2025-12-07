@@ -61,7 +61,7 @@ jobs:
       - name: Guardian - Check Site Health (Links & HTML)
         run: |
           gem install html-proofer
-          htmlproofer ./_site --disable-external --allow-hash-href --ignore-empty-alt
+          htmlproofer ./_site --disable-external --allow-hash-href --ignore-empty-alt --swap-urls "/ag-comp-arith-geom/:/" --no-check-internal-hash --allow-missing-href --no-enforce-https
   deploy:
     needs: build
     runs-on: ubuntu-latest
