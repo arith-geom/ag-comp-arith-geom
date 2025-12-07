@@ -134,6 +134,7 @@ content:
                 summary: "{fields.semester}"
                 collapsed: true
 
+            fields:
               - { name: "semester", label: "Term", type: "select", options: { values: ["Winter", "Summer"] } }
               - name: "courses"
                 label: "Courses"
@@ -354,5 +355,3 @@ content:
           - { name: "intro", label: "Intro Text", type: "rich-text" }
           - { name: "address", label: "Email Address", type: "string" }
           - { name: "outro", label: "Outro Text", type: "rich-text" }
-
-

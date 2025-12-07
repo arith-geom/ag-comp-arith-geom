@@ -1,24 +1,24 @@
 address:
-- title: Computational Arithmetic Geometry
-  institution: IWR (Interdisciplinary Center for Scientific Computing)
-  university: Heidelberg University
-  street: Im Neuenheimer Feld 205
-  city: 69120 Heidelberg
-  country: Germany
-  description: Located in the Neuenheimer Feld campus area, our research group is
-    part of Heidelberg University's prestigious Interdisciplinary Center for Scientific
-    Computing (IWR).
-  map_url: https://www.google.com/maps/embed/v1/place?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8
+  - title: Computational Arithmetic Geometry
+    institution: IWR (Interdisciplinary Center for Scientific Computing)
+    university: Heidelberg University
+    street: Im Neuenheimer Feld 205
+    city: 69120 Heidelberg
+    country: Germany
+    description: Located in the Neuenheimer Feld campus area, our research group is
+      part of Heidelberg University's prestigious Interdisciplinary Center for Scientific
+      Computing (IWR).
+    map_url: https://www.google.com/maps/embed/v1/place?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8
 contact_details:
-- phone: +49-6221-54-14734
-  phone_hours: 'Office hours: Mon-Fri, 9:00-17:00 CET'
-  fax: +49-6221-54-14737
-  fax_note: For official correspondence
-  general_info: For general inquiries about our research group, collaborations, or
-    administrative matters, please use the contact information above.
+  - phone: +49-6221-54-14734
+    phone_hours: 'Office hours: Mon-Fri, 9:00-17:00 CET'
+    fax: +49-6221-54-14737
+    fax_note: For official correspondence
+    general_info: For general inquiries about our research group, collaborations, or
+      administrative matters, please use the contact information above.
 email:
-- address: sekretariat.boeckle@iwr.uni-heidelberg.de
-  intro: We welcome inquiries about our research, potential collaborations, and academic
-    opportunities.
-  outro: Whether you're interested in our research areas, considering graduate studies,
-    or exploring collaboration opportunities, we'd be happy to hear from you.
+  - address: sekretariat.boeckle@iwr.uni-heidelberg.de
+    intro: We welcome inquiries about our research, potential collaborations, and academic
+      opportunities.
+    outro: Whether you're interested in our research areas, considering graduate studies,
+      or exploring collaboration opportunities, we'd be happy to hear from you.

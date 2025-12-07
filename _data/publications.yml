@@ -594,8 +594,6 @@ publications:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/GeneriFiberMM2.pdf
 
-
-
 software:
   - title: Magma package QaQuotGraphs
     description: to compute the action by unit groups of maximal orders in
