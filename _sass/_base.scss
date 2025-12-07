@@ -852,11 +852,10 @@ footer.sticky-bottom {
         max-height: 0px;
         overflow: hidden;
         text-align: justify;
-        transition-property: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
         transition: all 0.15s ease;
+        -moz-transition: all 0.15s ease;
+        -ms-transition: all 0.15s ease;
+        -o-transition: all 0.15s ease;
 
         p {
           line-height: 1.4em;
@@ -872,11 +871,10 @@ footer.sticky-bottom {
 
       .hidden.open {
         max-height: 100em;
-        transition-property: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
         transition: all 0.15s ease;
+        -moz-transition: all 0.15s ease;
+        -ms-transition: all 0.15s ease;
+        -o-transition: all 0.15s ease;
       }
 
       div.abstract.hidden {
@@ -1545,6 +1543,7 @@ code {
     background-color: #2a2a2a;
   }
 }
+
 // Improved Code Block Styling
 pre {
   background-color: var(--global-bg-color);
@@ -1578,7 +1577,8 @@ table {
   margin-bottom: 1.5rem;
   border-collapse: collapse;
 
-  th, td {
+  th,
+  td {
     padding: 0.75rem;
     border: 1px solid var(--global-divider-color);
   }
