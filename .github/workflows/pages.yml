@@ -30,6 +30,25 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: |
+          pip install pyyaml beautifulsoup4 yamllint
+          npm install -D stylelint stylelint-config-standard-scss
+
+      - name: Guardian - Lint YAML
+        run: yamllint .
+
+      - name: Guardian - Lint SCSS
+        run: npx stylelint "**/*.scss"
+
+      - name: Guardian - Validate Data & Assets
+        run: python3 scripts/validate.py
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
@@ -38,6 +57,11 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
+
+      - name: Guardian - Check Site Health (Links & HTML)
+        run: |
+          gem install html-proofer
+          htmlproofer ./_site --disable-external --check-html --allow-hash-href --ignore-empty-alt
   deploy:
     needs: build
     runs-on: ubuntu-latest

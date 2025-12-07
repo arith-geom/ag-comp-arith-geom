@@ -1,0 +1,13 @@
+extends: default
+
+rules:
+  line-length: disable
+  truthy: disable
+  # Allow long lines (common in text content)
+  # Allow strict or loose truthy values (on/off vs true/false)
+  
+ignore: |
+  vendor/
+  _site/
+  .git/
+  node_modules/

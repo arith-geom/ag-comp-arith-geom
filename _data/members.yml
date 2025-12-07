@@ -15,7 +15,7 @@ sections:
             file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-2014-shortCV.pdf
         phone: +49-(0)6221-54 14715
         fax: +49-(0)6221-54 14737
-        room: 03-220
+        room: 03/220
         office_hours: by appointment
         research_interests: Galois representations over number and function fields,
           arithmetic of automorphic forms over function fields, cohomology of
@@ -42,7 +42,7 @@ sections:
         email: sekretariat.boeckle@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14734
         fax: +49-(0)6221-54 14737
-        room: 03-234
+        room: 03/234
         body: Astrid Cederbaum serves as the Secretary for Prof. Dr. Gebhard Böckle's
           Arithmetic Geometry research group at the Institute for Mathematics,
           Heidelberg University. She provides administrative support for the
@@ -85,7 +85,7 @@ sections:
         orcid: 0000-0001-9279-9451
         aliases:
           - name: Conti
-        room: 3/220
+        room: 03/220
         research_interests: Number theory, algebraic number theory, arithmetic geometry
         body: Andrea Conti is a postdoctoral researcher in the Arithmetic Geometry group
           at Heidelberg University. His research focuses on algebraic number
@@ -126,7 +126,7 @@ sections:
         photo: /assets/img/paola-chilla.jpg
         email: paola.chilla@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
-        room: 03-222
+        room: 03/222
         research_interests: Jacquet-Langlands correspondence for function field modular
           forms, Drinfeld modular forms, quaternionic Drinfeld modular forms,
           étale cohomology
@@ -170,7 +170,7 @@ sections:
         aliases:
           - name: Kaiser
         phone: +49-(0)6221-54 14713
-        room: 03-222
+        room: 03/222
         research_interests: Congruence modules, Wiles-Lenstra-Diamond numerical
           criterion, Hecke algebras, Galois representations, Cohen-Macaulay
           modules, commutative algebra
@@ -204,12 +204,12 @@ sections:
         email: amaurischat@mathi.uni-heidelberg.de
         orcid: 0000-0002-3867-8429
         phone: +49-(0)6221-54 14714
-        room: 3/224
+        room: 03/224
         research_interests: Algebra, number theory, Galois theory, Picard-Vessiot
           theory, differential Galois theory, iterative differential equations,
           Hopf-Galois theory, additive group actions, Hilbert's 14th problem,
           Anderson motives, Drinfeld modules
-        body: "#### Dr. Andreas Maurischat completed his PhD at Heidelberg University in
+        body: "Dr. Andreas Maurischat completed his PhD at Heidelberg University in
           2007 and his habilitation at Heidelberg University, where he was a
           member of the Arithmetic Geometry research group. He is now a
           Privatdozent at RWTH Aachen University in the Teaching and Research
@@ -229,11 +229,11 @@ sections:
         email: ann-kristin.juschka@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         fax: +49-(0)6221-54 14737
-        room: 03-222
+        room: 03/222
         research_interests: Number theory, arithmetic geometry, Galois representations,
           deformation theory, pseudodeformation rings, Hodge structures over
           function fields
-        body: "#### Dr. Ann-Kristin Juschka completed her PhD (Dr. rer. nat.) at
+        body: "Dr. Ann-Kristin Juschka completed her PhD (Dr. rer. nat.) at
           Ruprecht-Karls-Universität Heidelberg in 2018 under the supervision of
           Prof. Dr. Gebhard Böckle. Her doctoral thesis was titled \"Geometric
           Properties of Versal Deformation Rings and Universal Pseudodeformation
@@ -334,20 +334,15 @@ sections:
           pseudocharacters, determinant laws for symplectic groups, trianguline
           variety for reductive groups
         body: >-
-          #### Julian Quast
-
-
-          Web: [www.juliDr. Julian Quast completed his PhD at
-          Ruprecht-Karls-Universität Heidelberg. His doctoral dissertation
-          focused on the theory of pseudorepresentations and determinant laws,
-          particularly for symplectic groups. He was a member of the Arithmetic
-          Geometry research group at Heidelberg. He is currently at the
-          University of Duisburg-Essen, where his research focuses on
-          deformation theory of mod p Galois representations of number fields
-          with values in reductive groups, G-pseudocharacters, and the
-          trianguline variety for reductive groups. His work includes
-          determining Zariski density of crystalline points in the generic fiber
-          of deformation rings.anquast.de](http://www.julianquast.de)
+          Dr. Julian Quast completed his PhD at Ruprecht-Karls-Universität Heidelberg.
+          His doctoral dissertation focused on the theory of pseudorepresentations and
+          determinant laws, particularly for symplectic groups. He was a member of the
+          Arithmetic Geometry research group at Heidelberg. He is currently at the
+          University of Duisburg-Essen, where his research focuses on deformation theory
+          of mod p Galois representations of number fields with values in reductive groups,
+          G-pseudocharacters, and the trianguline variety for reductive groups. His work
+          includes determining Zariski density of crystalline points in the generic fiber
+          of deformation rings.
         links:
           - url: http://www.julianquast.de
             icon: fas fa-globe
@@ -380,7 +375,7 @@ sections:
           Carlitz polylogarithms, Zagier's conjecture on polylogarithms,
           function field arithmetic, special values of L-functions, difference
           equations
-        body: "#### Dr. Oğuz Gezmiş is a member of the Arithmetic Geometry research
+        body: "Dr. Oğuz Gezmiş is a member of the Arithmetic Geometry research
           group at Heidelberg University. His research focuses on number theory
           over function fields, particularly Drinfeld modular forms of arbitrary
           rank and their derivatives. He works on Carlitz polylogarithms and has
@@ -421,7 +416,7 @@ sections:
           automorphic representations, Drinfeld period domains, Drinfeld modular
           forms, boundary distributions for GL3, symmetric power coefficients,
           Langlands program
-        body: "#### Dr. Peter Mathias Gräf completed his PhD at Heidelberg University,
+        body: "Dr. Peter Mathias Gräf completed his PhD at Heidelberg University,
           where he was a member of the Arithmetic Geometry research group. His
           research focuses on p-adic families of automorphic forms and
           representations arising from Drinfeld period domains, as well as
@@ -538,17 +533,14 @@ sections:
         email: oezge.uelkem@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14714
         fax: +49-(0)6221-54 14737
-        room: 03-224
+        room: 03/224
         research_interests: Number theory, arithmetic geometry, modular forms, Galois
           representations
         body: >-
-          #### Özge Ülkem
-
-
-          Mail:Dr. Özge Ülkem completed her PhD in Mathematics at Heidelberg
+          Dr. Özge Ülkem completed her PhD in Mathematics at Heidelberg
           University in December 2020 under the supervision of Prof. Dr. Gebhard
           Böckle. She was born in Simav, Turkey, and completed her
-          [M.Sc](http://M.Sc). in Mathematics at Sabancı University. She was a
+          M.Sc. in Mathematics at Sabancı University. She was a
           member of the Arithmetic Geometry research group at Heidelberg. She is
           currently a postdoctoral researcher with Professor Chia-Fu Yu at
           Academia Sinica. Her research interests include number theory,
@@ -560,34 +552,29 @@ sections:
         email: konrad.fischer@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         fax: +49-(0)6221-54 14737
-        room: 03-222
+        room: 03/222
+        office_hours: Wednesday from 3 to 4 p.m. or by appointment
         research_interests: Number theory, Drinfeld modules, class field theory,
           Taelman's unit module, function field arithmetic
         body: >-
-          #### Konrad Fischer
-
-
-          PGP key
-
-
-          Office hours: wKonrad Fischer was a member of the Arithmetic Geometry
-          research group at Heidelberg University. He worked on Drinfeld modules
-          and Taelman's unit module, contributing to research on class field
-          theory and function field arithmetic. His work includes presentations
-          on Taelman's body of work on Drinfeld modules and the analogue of
-          class and unit groups in the function field setting.ednesday from 3 to
-          4 p.m. or by appointment
+          Konrad Fischer was a member of the Arithmetic Geometry research group at
+          Heidelberg University. He worked on Drinfeld modules and Taelman's unit
+          module, contributing to research on class field theory and function field
+          arithmetic. His work includes presentations on Taelman's body of work on
+          Drinfeld modules and the analogue of class and unit groups in the function
+          field setting.
       - name: Prof. Dr. Judith Ludwig
         role: Former Member
         group: Members
         photo: /assets/img/judith-ludwig.jpg
         email: judith.ludwig@iwr.uni-heidelberg.de
         room: 03/225 (INF 205)
+        office_hours: by appointment
         research_interests: Number theory, Langlands programme, p-adic automorphic
           forms, p-adic geometry, non-archimedean geometry, representation
           theory, arithmetic geometry, formalisation of mathematics
         body: >-
-          #### Judith LudwigProf. Dr. Judith Ludwig is a professor of
+          Prof. Dr. Judith Ludwig is a professor of
           mathematics at Heidelberg University, leading the research group
           "Automorphic Forms and p-adic Geometry". Her research focuses on the
           Langlands programme via arithmetic geometry, specifically the
@@ -597,12 +584,6 @@ sections:
           complex multiplication points on eigencurves. She is also interested
           in formalization of mathematics. She previously held positions
           including working with Prof. Peter Scholze.
-
-
-          Here is my [webpage](https://sites.google.com/view/jludwig/).
-
-
-          Office hours: by appointment.
         links:
           - url: https://www.judith-ludwig.com/
             text: Website
