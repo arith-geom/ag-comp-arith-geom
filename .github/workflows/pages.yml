@@ -47,7 +47,7 @@ jobs:
         run: npx stylelint "**/*.scss"
 
       - name: Guardian - Validate Data & Assets
-        run: python3 scripts/validate.py
+        run: python3 .github/scripts/validate.py
 
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"

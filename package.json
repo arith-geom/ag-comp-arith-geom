@@ -2,9 +2,7 @@
   "name": "ag-computational-arithmetic-geometry",
   "version": "2.0.0",
   "description": "Website for AG Computational Arithmetic Geometry with modern Pages CMS configuration",
-  "dependencies": {
-    "js-yaml": "^4.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "prettier": "^2.8.8",
     "stylelint": "^16.26.1",

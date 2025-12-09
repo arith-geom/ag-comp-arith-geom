@@ -21,7 +21,11 @@
 }
 
 .header-main {
-  a, span, p, div {
+
+  a,
+  span,
+  p,
+  div {
     color: white !important;
   }
 
@@ -53,8 +57,20 @@
       .brand-title {
         font-size: 1rem;
       }
+
       .university-name {
         font-size: 0.8rem;
+      }
+    }
+
+    /* Intermediate Desktop (Danger Zone): Scale down text to fit */
+    @media (min-width: 1200px) and (max-width: 1550px) {
+      .brand-title {
+        font-size: 1rem;
+      }
+
+      .university-name {
+        font-size: 0.85rem;
       }
     }
   }
@@ -62,7 +78,7 @@
   .main-nav-desktop {
     display: none;
 
-    @media (min-width: 992px) {
+    @media (min-width: 1200px) {
       display: block;
 
       ul {
@@ -73,6 +89,10 @@
 
         li {
           margin: 0 0 0 1.5rem;
+
+          @media (min-width: 1200px) and (max-width: 1450px) {
+            margin: 0 0 0 0.5rem;
+          }
 
           @media (max-width: 1200px) {
             margin: 0 0 0 0.75rem;
@@ -95,14 +115,7 @@
         }
       }
 
-      @media (max-width: 1199.98px) {
-        ul li {
-          margin: 0 0 0 0.75rem;
-          a {
-            padding: 0.5rem 0.25rem;
-          }
-        }
-      }
+
     }
   }
 
@@ -110,7 +123,7 @@
     display: none;
     flex-shrink: 0;
 
-    @media (max-width: 991.98px) {
+    @media (max-width: 1199.98px) {
       display: block;
       background: none;
       border: none;
@@ -146,7 +159,8 @@
   }
 
   &.header--hidden {
-    top: -100px; /* Adjust this value to be more than the header's height */
+    top: -100px;
+    /* Adjust this value to be more than the header's height */
   }
 }
 
@@ -186,14 +200,17 @@
         border-bottom: none;
       }
 
-      a, a:link, a:visited {
+      a,
+      a:link,
+      a:visited {
         text-decoration: none;
         font-size: 1.2rem;
         display: flex;
         align-items: center;
         color: white !important;
 
-        i, span {
+        i,
+        span {
           color: white !important;
         }
 

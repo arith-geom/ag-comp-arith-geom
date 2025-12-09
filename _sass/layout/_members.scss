@@ -7,7 +7,8 @@
 .members-page {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem; // Reduced gap between sections
+  gap: 1.5rem; // Good separation between sections
+  // margin-top: -1rem; // Removed potential layout breaker
 
   // Responsive grid layout for larger screens
   @media (min-width: 992px) {
@@ -26,20 +27,21 @@
 
 
   .member-section {
-    margin-bottom: 0; // Removed bottom margin for a tighter layout
+    margin-bottom: 0;
   }
 
   .section-title {
-    font-size: 1.5rem; // Slightly smaller title
+    font-size: 1.5rem;
     color: var(--text-primary);
-    margin-bottom: 1rem; // Reduced margin below title
+    margin-top: 0; // Remove top margin for ALL titles to ensure alignment and reduce header spacing
+    margin-bottom: 0.75rem;
     padding-bottom: 0.25rem;
     border-bottom: 2px solid var(--primary-dark);
   }
 
   .content-grid {
     display: grid;
-    gap: 1rem; // Reduced gap between cards
+    gap: 0.5rem; // 0.5rem is a good balance for member spacing
   }
 
   // Grid templates for different member sections

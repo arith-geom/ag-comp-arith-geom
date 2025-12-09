@@ -121,7 +121,7 @@ def validate_teaching(file_path):
     return True
 
 def main():
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
     assets_dir = os.path.join(base_dir, 'assets', 'uploads')
     data_dir = os.path.join(base_dir, '_data')
 
