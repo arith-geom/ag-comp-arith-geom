@@ -4,6 +4,7 @@ permalink: /links/
 nav: true
 nav_order: 4
 title: Links
+description: "Useful links to external resources, number theory tools, and related research groups."
 excerpt_separator: ""
 ---
 

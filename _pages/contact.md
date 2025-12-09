@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Contact
+description: "Contact information for the Computational Arithmetic Geometry group at Heidelberg University, including address, email, and phone."
 permalink: /contact/
 nav: true
 excerpt_separator: ""

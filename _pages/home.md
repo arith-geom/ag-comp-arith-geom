@@ -6,6 +6,7 @@ nav_order: 1
 order: 100
 show_title: false
 title: Home
+description: "Official website of the Computational Arithmetic Geometry research group at Heidelberg University."
 about_title: "About Our Research Group"
 about_content: |
   <p>This is the website of the research group "computational arithmetic geometry" at the <a href="http://www.iwr.uni-heidelberg.de/">Interdisciplinary Center for Scientific Computing (IWR)</a> in <a href="http://www.heidelberg.de/">Heidelberg</a>.</p>

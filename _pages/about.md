@@ -6,6 +6,7 @@ nav_order: 1
 order: 100
 show_title: false
 title: About
+description: "Learn about the mission, research focus, and activities of the Computational Arithmetic Geometry group at Heidelberg University."
 excerpt_separator: ""
 ---
 <h1 class="home-page-title">AG Computational Arithmetic Geometry</h1>
