@@ -18,7 +18,6 @@ This gallery contains screenshots of the Pages CMS interface to help you navigat
 | Image | Description |
 |---|---|
 | ![Members Page](/assets/img/cms-screenshots/MembersPage.png) | Members Collection View |
-| ![Members Page Edit](/assets/img/cms-screenshots/MembersPageEdit.png) | Editing a Member Profile |
 | ![Members Section Collapsed](/assets/img/cms-screenshots/MembersSectionCollapsed.png) | Collapsed Sections in Editor |
 | ![Members Profile Field](/assets/img/cms-screenshots/MembersProfileField.png) | Member Profile Fields |
 
@@ -31,8 +30,8 @@ This gallery contains screenshots of the Pages CMS interface to help you navigat
 ## Managing Teaching
 | Image | Description |
 |---|---|
-| ![Teaching Fields](/assets/img/cms-screenshots/TeachingFields.png) | Teaching Collection Overview |
-| ![Teaching Field](/assets/img/cms-screenshots/TeachingField.png) | Editing Teaching Entries |
+| ![Teaching Field](/assets/img/cms-screenshots/TeachingField.png) | Teaching Collection Overview |
+| ![Teaching Fields](/assets/img/cms-screenshots/TeachingFields.png) | Editing Teaching Entries |
 
 ## Managing Other Pages
 | Image | Description |
