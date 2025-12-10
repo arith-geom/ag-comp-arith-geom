@@ -6,12 +6,18 @@ This guide is designed to help you update and maintain the website content witho
 
 ## 📚 Table of Contents
 
-1. **[Getting Started](1-getting-started.md)**
+1. **[🛡️ Troubleshooting & Errors](docs/6-troubleshooting.md)**
+   Learn how to read error messages and fix common issues if your changes don't appear.
+
+2. **[🖼️ Screenshot Gallery](docs/7-gallery.md)**
+   Visual guide to the CMS interface.
+
+3. **[Getting Started](1-getting-started.md)**
    - How to access the CMS.
    - Understanding the interface.
    - Saving and publishing your changes.
 
-2. **[Managing Members](2-managing-members.md)**
+4. **[Managing Members](2-managing-members.md)**
    - Adding new team members.
    - Updating profiles, photos, and CVs.
    - Managing alumni.
