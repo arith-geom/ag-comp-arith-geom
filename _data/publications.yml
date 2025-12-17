@@ -399,6 +399,7 @@ publications:
     authors: Joint with M. Blickle
     journal_details: J. Reine Angew. Math. 661 (2011), 85-123
     status: Journal Article
+    doi: 10.1515/CRELLE.2011.087
     type: Article
     links:
       - label: arXiv
@@ -435,8 +436,9 @@ publications:
   - title: Deformations and the rigidity method
     year: "2008"
     authors: Gebhard Böckle
-    journal_details: J. Algebra
+    journal_details: J. Algebra 320 (2008), 3613-3658
     status: Journal Article
+    doi: 10.1016/j.jalgebra.2008.07.023
     type: Article
     pdfs:
       - label: PDF
@@ -593,7 +595,6 @@ publications:
     pdfs:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/GeneriFiberMM2.pdf
-
 software:
   - title: Magma package QaQuotGraphs
     description: to compute the action by unit groups of maximal orders in
