@@ -267,10 +267,13 @@ publications:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Boeckle-Barcelona-DefTheory-Rev.pdf
   - title: Computations with Modular Forms
-    year: "2020"
+    year: "2014"
     authors: Joint with G. Wiese
     status: Book
+    doi: 10.1007/978-3-319-03847-6
     type: Book
+    publisher_details: Springer, Contributions in Mathematical and Computational Sciences, Vol. 6
+    isbn: 978-3-319-03847-6
     links:
       - label: Link
         url: http://link.springer.com/book/10.1007/978-3-319-03847-6
