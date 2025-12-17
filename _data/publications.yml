@@ -137,6 +137,7 @@ publications:
     authors: Joint with A. Conti, J. Quast, M. Moakher
     journal_details: Preprint
     status: Preprint
+    doi: 10.48550/arXiv.2407.17005
     type: Article
   - title: Weak abelian direct summands and irreducibility of Galois representations
     year: "2024"
@@ -471,6 +472,7 @@ publications:
     authors: Joint with C. Khare
     journal_details: Compos. Math.
     status: Journal Article
+    doi: 10.1112/S0010437X05002022
     type: Article
     pdfs:
       - label: PDF
@@ -481,6 +483,7 @@ publications:
     authors: Joint with C. Khare
     journal_details: Duke Math. J.
     status: Journal Article
+    doi: 10.1215/S0012-7094-05-12923-4
     type: Article
     pdfs:
       - label: PDF
