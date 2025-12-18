@@ -120,18 +120,18 @@ sections:
         email: paola.chilla@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         room: 03/222
-        research_interests: Jacquet-Langlands correspondence for function field modular
-          forms, Drinfeld modular forms, quaternionic Drinfeld modular forms,
-          étale cohomology
-        body: Paola Francesca Chilla is a PhD student in the Arithmetic Geometry group
-          at Heidelberg University, working under the supervision of Prof. Dr.
+        research_interests: Drinfeld modular forms, quaternionic Drinfeld modular forms,
+          Jacquet-Langlands correspondence, Drinfeld modular curves, étale
+          cohomology
+        body: Paola Chilla is a PhD student in the Arithmetic Geometry group at
+          Heidelberg University, working under the supervision of Prof. Dr.
           Gebhard Böckle. She is part of the CRC-326 GAUS (Geometry and
-          arithmetic of uniformized structures). Her research focuses on
-          Drinfeld modular forms over function fields, with particular interest
-          in the Jacquet-Langlands correspondence for quaternionic Drinfeld
-          modular forms. She works on étale cohomology and vectorial Drinfeld
-          modular forms over Tate algebras, contributing to the development of
-          the theory of automorphic forms in positive characteristic.
+          Arithmetic of Uniformized Structures). Her research focuses on modular
+          forms over function fields, with particular interest in investigating
+          the existence of a Jacquet-Langlands correspondence between Drinfeld
+          modular forms and quaternionic Drinfeld modular forms. She uses
+          cohomological methods based on the theory of function field crystals.
+          She is also interested in the geometry of Drinfeld modular curves.
       - name: Sriram Chinthalagiri Venkata
         role: PhD Student
         group: Members
