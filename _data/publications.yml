@@ -118,6 +118,7 @@ publications:
     status: Preprint
     doi: 10.48550/arXiv.2403.08888
     type: Article
+    body: Test
     links:
       - label: arXiv
         url: https://arxiv.org/abs/2403.08888
