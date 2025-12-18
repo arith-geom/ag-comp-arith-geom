@@ -57,30 +57,36 @@ excerpt_separator: ""
 {
   "@context": "https://schema.org",
   "@graph": [
+    {% assign all_members = "" | split: "" %}
     {% for section in site.data.members.sections %}
       {% if section.title != "Former Members" %}
-        {% for member in section.members %}
-          {
-            "@type": "Person",
-            "name": {{ member.name | jsonify }},
-            "jobTitle": {{ member.role | jsonify }},
-            "worksFor": {
-              "@type": "EducationalOrganization",
-              "name": {{ site.title | jsonify }}
-            },
-            {% assign member_slug = member.name | slugify %}
-            "url": {{ '/members/' | append: member_slug | append: '/' | absolute_url | jsonify }}
-            {% if member.links %}
-              ,"sameAs": [
-                {% for link in member.links %}
-                  {% if link.url contains "mailto:" %}{% continue %}{% endif %}
-                  {{ link.url | jsonify }}{% unless forloop.last %},{% endunless %}
-                {% endfor %}
-              ]
-            {% endif %}
-          }{% unless forloop.last and section.title == "Research Members" %},{% endunless %}
-        {% endfor %}
+        {% assign all_members = all_members | concat: section.members %}
       {% endif %}
+    {% endfor %}
+
+    {% for member in all_members %}
+      {
+        "@type": "Person",
+        "name": {{ member.name | jsonify }},
+        "jobTitle": {{ member.role | jsonify }},
+        "worksFor": {
+          "@type": "EducationalOrganization",
+          "name": {{ site.title | jsonify }}
+        },
+        {% assign member_slug = member.name | slugify %}
+        "url": {{ '/members/' | append: member_slug | append: '/' | absolute_url | jsonify }}
+        {% if member.links %}
+          {% assign valid_links = "" | split: "" %}
+          {% for link in member.links %}
+            {% unless link.url contains "mailto:" %}
+              {% assign valid_links = valid_links | push: link.url %}
+            {% endunless %}
+          {% endfor %}
+          {% if valid_links.size > 0 %}
+          ,"sameAs": {{ valid_links | jsonify }}
+          {% endif %}
+        {% endif %}
+      }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]
 }

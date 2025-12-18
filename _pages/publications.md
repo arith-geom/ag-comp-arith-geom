@@ -137,26 +137,26 @@ excerpt_separator: ""
     {% for pub in site.data.publications.publications %}
     {
       "@type": "ScholarlyArticle",
-      "headline": "{{ pub.title | escape_once }}",
+      "headline": {{ pub.title | jsonify }},
       "author": [
         {% assign authors = pub.authors | split: ', ' %}
         {% for author in authors %}
           {
             "@type": "Person",
-            "name": "{{ author | strip }}"
+            "name": {{ author | strip | jsonify }}
           }{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ],
       {% assign year = pub.journal_details | split: '(' | last | split: ')' | first %}
-      "datePublished": "{{ year }}",
+      "datePublished": {{ year | jsonify }},
       "isPartOf": {
         "@type": "PublicationIssue",
-        "name": "{{ pub.journal_details | escape_once }}"
+        "name": {{ pub.journal_details | jsonify }}
       },
       "identifier": {
         "@type": "PropertyValue",
         "propertyID": "MathSciNet",
-        "value": "{{ pub.mr_number }}"
+        "value": {{ pub.mr_number | jsonify }}
       }
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
