@@ -48,6 +48,17 @@ module Jekyll
                     course['body'] = course['body'].gsub(/\]\(assets\//, '](/assets/')
                     # Fix HTML links href="assets/..." -> href="/assets/..."
                     course['body'] = course['body'].gsub(/href="assets\//, 'href="/assets/')
+                    
+                    # Proactively fix member links with non-ASCII characters or encoding
+                    # This ensures that even if hardcoded in CMS, they match the new 'latin' slug format
+                    course['body'] = course['body'].gsub(/\/members\/([^\/)]+)\//) do |match|
+                      slug = $1
+                      # Unescape any percent-encoded characters (like %C3%B6)
+                      decoded_slug = CGI.unescape(slug)
+                      # Re-slugify using 'latin' mode
+                      new_slug = Utils.slugify(decoded_slug, mode: 'latin')
+                      "/members/#{new_slug}/"
+                    end
                   end
 
                   # Auto-fix relative links in pdfs and links arrays
