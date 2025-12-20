@@ -1,3 +1,5 @@
+require 'cgi'
+
 module Jekyll
   class TeachingPage < Page
     def initialize(site, base, dir, course, year, semester)
@@ -52,12 +54,17 @@ module Jekyll
                     # Proactively fix member links with non-ASCII characters or encoding
                     # This ensures that even if hardcoded in CMS, they match the new 'latin' slug format
                     course['body'] = course['body'].gsub(/\/members\/([^\/)]+)\//) do |match|
-                      slug = $1
-                      # Unescape any percent-encoded characters (like %C3%B6)
-                      decoded_slug = CGI.unescape(slug)
-                      # Re-slugify using 'latin' mode
-                      new_slug = Utils.slugify(decoded_slug, mode: 'latin')
-                      "/members/#{new_slug}/"
+                      begin
+                        member_slug = $1
+                        # Unescape any percent-encoded characters (like %C3%B6)
+                        decoded_slug = CGI.unescape(member_slug)
+                        # Re-slugify using 'latin' mode
+                        new_slug = Utils.slugify(decoded_slug, mode: 'latin')
+                        "/members/#{new_slug}/"
+                      rescue => e
+                        Jekyll.logger.warn "TeachingGenerator:", "Failed to process member link #{match}: #{e.message}"
+                        match
+                      end
                     end
                   end
 
