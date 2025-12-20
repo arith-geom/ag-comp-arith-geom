@@ -78,8 +78,8 @@ description: "An overview of our courses, seminars, and lectures, organized by s
           {% for course in semester.courses %}
             <div class="course-card position-relative">
               <h5 class="course-title">
-                {% assign course_slug = course.title | slugify %}
-                {% assign semester_slug = semester_title | slugify %}
+                {% assign course_slug = course.title | slugify: "latin" %}
+                {% assign semester_slug = semester_title | slugify: "latin" %}
                 <a href="{{ '/teaching/' | append: year_data.year | append: '/' | append: semester_slug | append: '/' | append: course_slug | append: '/' | relative_url }}" class="text-decoration-none text-dark stretched-link">{{ course.title | escape }}</a>
               </h5>
               {% if course.instructor %}

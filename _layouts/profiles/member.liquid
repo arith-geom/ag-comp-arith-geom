@@ -4,7 +4,7 @@ layout: page
 {% assign page_title = page.name %}
 <script>
 // Redirect to main members page with member parameter
-window.location.href = '/members/?member={{ page.name | slugify | append: '-' | append: page.role | slugify }}';
+window.location.href = '/members/?member={{ page.name | slugify: "latin" | append: "-" | append: page.role | slugify: "latin" }}';
 </script>
 <div class="member-profile" style="display: none;">
   <div class="member-header" style="background: linear-gradient(135deg, var(--primary) 0%, var(--heidelberg-red) 100%); border-radius: 0.75rem; border: 1px solid var(--border-color); color: var(--primary-text);">
@@ -51,7 +51,7 @@ window.location.href = '/members/?member={{ page.name | slugify | append: '-' | 
   <!-- Related Content Links -->
   <div class="member-related-content">
     {% assign member_name = page.name %}
-    {% assign member_slug = page.name | downcase | replace: 'ö', 'oe' | replace: 'ä', 'ae' | replace: 'ü', 'ue' | replace: 'ß', 'ss' | replace: ' ', '-' | replace: '.', '' | replace: ',', '' %}
+    {% assign member_slug = page.name | slugify: 'latin' %}
     
     <!-- Publications -->
     {% assign member_publications = site.publications | where_exp: "pub", "pub.authors contains member_name" %}
