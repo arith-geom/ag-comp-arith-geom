@@ -2,50 +2,51 @@
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}
-  {% for collection in collections %}
-    {% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}
-    {% for doc in docs %}
+  {%- assign collections = site.collections | where_exp:'collection','collection.output != false' -%}
+  {%- for collection in collections -%}
+    {%- assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' -%}
+    {%- for doc in docs -%}
       <url>
         <loc>{{ doc.url | replace:'/index.html','/' | absolute_url | xml_escape }}</loc>
-        {% if doc.last_modified_at or doc.date %}
+        {%- if doc.last_modified_at or doc.date -%}
           <lastmod>{{ doc.last_modified_at | default: doc.date | date_to_xmlschema }}</lastmod>
-        {% endif %}
-        {% if doc.url == "/" or doc.url == "" %}
+        {%- endif -%}
+        {%- if doc.url == "/" or doc.url == "" -%}
           <changefreq>weekly</changefreq>
           <priority>1.0</priority>
-        {% else %}
+        {%- else -%}
           <changefreq>{{ doc.sitemap_changefreq | default: "monthly" }}</changefreq>
           <priority>{{ doc.sitemap_priority | default: 0.7 }}</priority>
-        {% endif %}
+        {%- endif -%}
       </url>
-    {% endfor %}
-  {% endfor %}
+    {%- endfor -%}
+  {%- endfor -%}
 
-  {% assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.url != "/404.html"' %}
-  {% for page in pages %}
+  {%- assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.url != "/404.html"' -%}
+  {%- for page in pages -%}
     <url>
       <loc>{{ page.url | replace:'/index.html','/' | absolute_url | xml_escape }}</loc>
-      {% if page.last_modified_at %}
+      {%- if page.last_modified_at -%}
         <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
-      {% endif %}
-      {% if page.url == "/" or page.url == "" %}
+      {%- endif -%}
+      {%- if page.url == "/" or page.url == "" -%}
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-      {% else %}
+      {%- else -%}
         <changefreq>{{ page.sitemap_changefreq | default: "monthly" }}</changefreq>
         <priority>{{ page.sitemap_priority | default: 0.5 }}</priority>
-      {% endif %}
+      {%- endif -%}
     </url>
-  {% endfor %}
+  {%- endfor -%}
 
-  {% assign static_files = site.static_files | where_exp:'page','page.sitemap != false' | where_exp:'page','page.name != "404.html"' %}
-  {% for file in static_files %}
+  {%- assign static_files = site.static_files | where_exp:'page','page.sitemap != false' | where_exp:'page','page.name != "404.html"' -%}
+  {%- for file in static_files -%}
     <url>
       <loc>{{ file.path | replace:'/index.html','/' | absolute_url | xml_escape }}</loc>
       <lastmod>{{ file.modified_time | date_to_xmlschema }}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.3</priority>
     </url>
-  {% endfor %}
+  {%- endfor -%}
 </urlset>
+
