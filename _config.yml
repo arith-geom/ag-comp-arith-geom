@@ -64,7 +64,6 @@ collections:
     permalink: /links/:name/
 plugins:
   - jekyll-seo-tag
-  - jekyll-sitemap
   - jekyll-scholar
 exclude:
   - Gemfile

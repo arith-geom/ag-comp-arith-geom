@@ -32,6 +32,9 @@ module Jekyll
       self.data['selected_publications'] = member['selected_publications']
       self.data['theses'] = member['theses']
       self.data['content_match_name'] = member['content_match_name']
+      self.data['sitemap_priority'] = member['sitemap_priority']
+      self.data['sitemap_changefreq'] = member['sitemap_changefreq']
+
       
       # Handle body content (rich text)
       self.content = member['body'] || ""
