@@ -25,7 +25,7 @@ excerpt_separator: ""
       <div class="publication-card">
         <div class="publication-main">
           <div class="publication-title">
-            <a href="/publications/{{ pub.title | slugify }}/" class="text-decoration-none text-dark">{{ pub.title | escape }}</a>
+            <a href="/publications/{{ pub.title | slugify: 'latin' }}/" class="text-decoration-none text-dark">{{ pub.title | escape }}</a>
             {% if pub.year %}
               <span class="text-muted ms-2 small">({{ pub.year | escape }})</span>
             {% endif %}
@@ -40,7 +40,7 @@ excerpt_separator: ""
         </div>
         <div class="publication-sidebar">
           {% if pub.status %}
-            <span class="publication-status text-decoration-none badge-custom badge-custom-{{ pub.status | slugify }}">
+            <span class="publication-status text-decoration-none badge-custom badge-custom-{{ pub.status | slugify: 'latin' }}">
               <i class="fas {% case pub.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %}"></i> {{ pub.status | escape }}
             </span>
           {% endif %}
@@ -62,7 +62,7 @@ excerpt_separator: ""
       <div class="publication-card">
         <div class="publication-main">
           <div class="publication-title">
-            <a href="/publications/{{ pub.title | slugify }}/" class="text-decoration-none text-dark">{{ pub.title | escape }}</a>
+            <a href="/publications/{{ pub.title | slugify: 'latin' }}/" class="text-decoration-none text-dark">{{ pub.title | escape }}</a>
             {% if pub.year %}
               <span class="text-muted ms-2 small">({{ pub.year | escape }})</span>
             {% endif %}
@@ -77,7 +77,7 @@ excerpt_separator: ""
         </div>
         <div class="publication-sidebar">
           {% if pub.status %}
-            <span class="publication-status text-decoration-none badge-custom badge-custom-{{ pub.status | slugify }}">
+            <span class="publication-status text-decoration-none badge-custom badge-custom-{{ pub.status | slugify: 'latin' }}">
               <i class="fas {% case pub.status %}{% when 'Journal Article' %}fa-newspaper{% when 'Book' %}fa-book{% when 'Submitted' %}fa-file-import{% when 'Preprint' %}fa-file-alt{% else %}fa-file{% endcase %}"></i> {{ pub.status | escape }}
             </span>
           {% endif %}

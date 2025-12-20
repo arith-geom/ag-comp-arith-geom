@@ -155,7 +155,7 @@ layout: default
               {% for pub in sorted_matching_pubs %}
               <div class="list-group-item px-0 py-4 publication-item">
                 <h5 class="h5 fw-bold mb-2">
-                  <a href="{{ '/publications/' | relative_url }}{{ pub.title | slugify }}/"
+                  <a href="{{ '/publications/' | relative_url }}{{ pub.title | slugify: 'latin' }}/"
                     class="text-decoration-none text-dark">{{ pub.title }}</a>
                   {% if pub.year %}
                   <span class="text-muted ms-2 small">({{ pub.year }})</span>
@@ -169,7 +169,7 @@ layout: default
               {% for pub in matching_pubs_without_year %}
               <div class="list-group-item px-0 py-4 publication-item">
                 <h5 class="h5 fw-bold mb-2">
-                  <a href="{{ '/publications/' | relative_url }}{{ pub.title | slugify }}/"
+                  <a href="{{ '/publications/' | relative_url }}{{ pub.title | slugify: 'latin' }}/"
                     class="text-decoration-none text-dark">{{ pub.title }}</a>
                 </h5>
                 <div class="text-secondary mb-1">{{ pub.authors | linkify_authors }}</div>
@@ -231,8 +231,8 @@ layout: default
                   {% if next_year_short < 10 %} {% assign next_year_short="0" | append: next_year_short %} {% endif %}
                     {% assign semester_title="Winter Semester " | append: year | append: "/" | append: next_year_short
                     %} {% elsif semester=="Summer" %} {% assign semester_title="Summer Semester " | append: year %} {%
-                    endif %} {% assign semester_slug=semester_title | slugify %} <a
-                    href="{{ '/teaching/' | relative_url }}{{ year }}/{{ semester_slug }}/{{ course.title | slugify }}/"
+                    endif %} {% assign semester_slug=semester_title | slugify: "latin" %} <a
+                    href="{{ '/teaching/' | relative_url }}{{ year }}/{{ semester_slug }}/{{ course.title | slugify: 'latin' }}/"
                     class="text-decoration-none text-dark">{{ course.title }}</a>
                     <span class="text-muted ms-2 small">({{ semester_data.semester }} {{ year_data.year }})</span>
                 </h5>

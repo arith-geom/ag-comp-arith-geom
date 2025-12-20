@@ -40,7 +40,7 @@ module Jekyll
               if semester_data['courses']
                 semester_data['courses'].each do |course|
                   # Create slug from title
-                  slug = Utils.slugify(course['title'])
+                  slug = Utils.slugify(course['title'], mode: 'latin')
 
                   # Auto-fix relative links in body
                   if course['body']
@@ -77,7 +77,7 @@ module Jekyll
                     semester_title = "Summer Semester #{year}"
                   end
                   
-                  semester_slug = Utils.slugify(semester_title)
+                  semester_slug = Utils.slugify(semester_title, mode: 'latin')
                   
                   # Create page at /teaching/:year/:semester/:slug/ to ensure uniqueness
                   site.pages << TeachingPage.new(site, site.source, File.join('teaching', year.to_s, semester_slug, slug), course, year, semester)

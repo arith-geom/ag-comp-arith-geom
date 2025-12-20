@@ -11,7 +11,7 @@ excerpt_separator: ""
 
 <div class="members-page">
   {% for section in site.data.members.sections %}
-    {% assign section_slug = section.title | slugify %}
+    {% assign section_slug = section.title | slugify: "latin" %}
     {% assign layout_class = section.layout | default: "medium" | prepend: "section-layout-" %}
     <div class="member-section member-section-{{ section_slug }} {{ layout_class }}">
       <h2 class="section-title">{{ section.title | escape }}</h2>
@@ -33,7 +33,7 @@ excerpt_separator: ""
               {% endif %}
               <div class="member-header-info">
                 <h3 class="member-name {% if member.name.size > 25 %}long-name{% endif %}">
-                  {% assign member_slug = member.name | slugify %}
+                  {% assign member_slug = member.name | slugify: "latin" %}
                   <a href="{{ '/members/' | append: member_slug | append: '/' | relative_url }}" class="text-reset text-decoration-none stretched-link">{{ member.name | escape }}</a>
                 </h3>
                 <p class="member-role">{{ member.role | escape }}</p>
@@ -73,7 +73,7 @@ excerpt_separator: ""
           "@type": "EducationalOrganization",
           "name": {{ site.title | jsonify }}
         },
-        {% assign member_slug = member.name | slugify %}
+        {% assign member_slug = member.name | slugify: "latin" %}
         "url": {{ '/members/' | append: member_slug | append: '/' | absolute_url | jsonify }}
         {% if member.links %}
           {% assign valid_links = "" | split: "" %}

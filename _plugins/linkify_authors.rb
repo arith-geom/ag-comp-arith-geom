@@ -38,7 +38,7 @@ module Jekyll
         # If I don't have the slug, I might need to slugify the name myself.
         # "Prof. Dr. Gebhard Böckle" -> "prof-dr-gebhard-böckle"
         
-        slug = Utils.slugify(member['name'])
+        slug = Utils.slugify(member['name'], mode: 'latin')
         url = "/members/#{slug}/"
         
         add_to_map.call(member['name'], url)

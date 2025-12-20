@@ -47,7 +47,7 @@ module Jekyll
           if section['members']
             section['members'].each do |member|
               # Create slug from name using Jekyll's utility to match Liquid filter
-              slug = Utils.slugify(member['name'])[0..100]
+              slug = Utils.slugify(member['name'], mode: 'latin')[0..100]
 
               # Auto-fix relative links in body
               if member['body']

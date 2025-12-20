@@ -63,7 +63,7 @@
                 <span class="badge-custom badge-custom-primary">{{ page.type }}</span>
               {% endif %}
               {% if page.status %}
-                <span class="badge-custom badge-custom-{{ page.status | slugify }}">{{ page.status }}</span>
+                <span class="badge-custom badge-custom-{{ page.status | slugify: 'latin' }}">{{ page.status }}</span>
               {% endif %}
               {% if page.year %}
                 <span class="badge-custom badge-custom-light">{{ page.year }}</span>
