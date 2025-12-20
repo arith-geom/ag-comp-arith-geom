@@ -52,9 +52,9 @@ module Jekyll
                     # Proactively fix member links with non-ASCII characters or encoding
                     # This ensures that even if hardcoded in CMS, they match the new 'latin' slug format
                     course['body'] = course['body'].gsub(/\/members\/([^\/)]+)\//) do |match|
-                      slug = $1
+                      member_slug = $1
                       # Unescape any percent-encoded characters (like %C3%B6)
-                      decoded_slug = CGI.unescape(slug)
+                      decoded_slug = CGI.unescape(member_slug)
                       # Re-slugify using 'latin' mode
                       new_slug = Utils.slugify(decoded_slug, mode: 'latin')
                       "/members/#{new_slug}/"
