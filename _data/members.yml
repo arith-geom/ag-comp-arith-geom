@@ -7,8 +7,6 @@ sections:
         group: Members
         photo: /assets/migrated/csm_Boeckle_d715f254f6.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: gebhard.boeckle@iwr.uni-heidelberg.de
         orcid: 0000-0003-1758-1537
         aliases:
@@ -41,8 +39,6 @@ sections:
         role: Assistant
         group: Members
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: sekretariat.boeckle@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14734
         fax: +49-(0)6221-54 14737
@@ -55,8 +51,6 @@ sections:
         group: Members
         photo: /assets/migrated/csm_Shavali_e11bd855eb.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: alireza.shavali@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14714
         room: 03/335
@@ -85,8 +79,6 @@ sections:
         group: Members
         photo: /assets/migrated/csm_Andrea_Conti_1d0460d7f0.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         orcid: 0000-0001-9279-9451
         aliases:
           - name: Conti
@@ -108,8 +100,6 @@ sections:
         group: Members
         photo: /assets/img/giacomo-hermes-ferraro.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: giacomo.ferraro@iwr.uni-heidelberg.de
         orcid: 0000-0002-6443-564X
         aliases:
@@ -133,8 +123,6 @@ sections:
         group: Members
         photo: /assets/img/paola-chilla.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: paola.chilla@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         room: 03/222
@@ -155,8 +143,6 @@ sections:
         group: Members
         photo: /assets/img/sriram-chinthalagiri-venkata.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: sriram.chinthalagiri@iwr.uni-heidelberg.de
         aliases:
           - name: Sriram
@@ -179,8 +165,6 @@ sections:
         group: Members
         photo: /assets/migrated/csm_Kaiser-Theresa_aa9c1ced0f.jpeg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: theresa.kaiser@iwr.uni-heidelberg.de
         aliases:
           - name: Kaiser
@@ -204,15 +188,11 @@ sections:
         group: Members
         photo: /assets/img/alain-muller.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
       - name: Dr. Andreas Maurischat
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_Maurischat_7b6f31e6ea.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: amaurischat@mathi.uni-heidelberg.de
         orcid: 0000-0002-3867-8429
         phone: +49-(0)6221-54 14714
@@ -222,8 +202,6 @@ sections:
         group: Members
         photo: /assets/migrated/csm_Juschka2_01_f2b754bf3f.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: ann-kristin.juschka@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         fax: +49-(0)6221-54 14737
@@ -233,15 +211,11 @@ sections:
         group: Members
         photo: /assets/img/archiebold-karumbidza.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
       - name: Dr. Barinder Banwait
         role: Former Member
         group: Members
         photo: /assets/img/barinder-banwait.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: barinder.banwait@iwr.uni-heidelberg.de
         orcid: 0000-0001-5873-8399
         aliases:
@@ -253,22 +227,16 @@ sections:
         group: Members
         photo: /assets/img/david-a-guiraud.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
       - name: Dr. Juan Marcos Cerviño
         role: Former Member
         group: Members
         photo: /assets/img/juan-marcos-cervino.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
       - name: Dr. Julian Quast
         role: Former Member
         group: Members
         photo: /assets/img/julian-quast.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: julian.quast@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14840
         room: 04/231 (INF 205)
@@ -281,8 +249,6 @@ sections:
         group: Members
         photo: /assets/img/narasimha-kumar-cheraku.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         links:
           - url: https://sites.google.com/site/chnarasimhakumar/
             text: Website
@@ -291,8 +257,6 @@ sections:
         group: Members
         photo: /assets/img/oguz-gezmis.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: oguz.gezmis@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14714
         room: 03/224 (INF 205)
@@ -305,15 +269,11 @@ sections:
         group: Members
         photo: /assets/img/patrik-hubschmid.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
       - name: Dr. Peter Gräf
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_Gra_f__Peter_01_a81f8eb5c5.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: peter.graef@iwr.uni-heidelberg.de
         aliases:
           - name: Gräf
@@ -328,15 +288,11 @@ sections:
         group: Members
         photo: /assets/img/ralf-butenuth.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
       - name: Dr. Rudolph Perkins
         role: Former Member
         group: Members
         photo: /assets/img/rudolph-perkins.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         links:
           - url: https://rudolphperkins.wordpress.com/
             text: Website
@@ -345,8 +301,6 @@ sections:
         group: Members
         photo: /assets/img/samuele-anni.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         links:
           - url: https://sites.google.com/view/samuele-anni/home
             text: Website
@@ -355,36 +309,26 @@ sections:
         group: Members
         photo: /assets/img/sundeep-balaji.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
       - name: Dr. Tommaso Centeleghe
         role: Former Member
         group: Members
         photo: /assets/img/tommaso-centeleghe.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
       - name: Dr. Yamidt Bermudez Tobon
         role: Former Member
         group: Members
         photo: /assets/img/yamidt-bermudez-tobon.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
       - name: Dr. Yujia Qiu
         role: Former Member
         group: Members
         photo: /assets/img/yujia-qiu.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
       - name: Dr. Özge Ülkem
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_photo3_24588f06e1.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: oezge.uelkem@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14714
         fax: +49-(0)6221-54 14737
@@ -394,8 +338,6 @@ sections:
         group: Members
         photo: /assets/migrated/csm_image3_01_d7fd0284ac.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: konrad.fischer@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         fax: +49-(0)6221-54 14737
@@ -406,8 +348,6 @@ sections:
         group: Members
         photo: /assets/img/judith-ludwig.jpg
         seo:
-          sitemap_priority: 0.8
-          sitemap_changefreq: monthly
         email: judith.ludwig@iwr.uni-heidelberg.de
         room: 03/225 (INF 205)
         office_hours: by appointment

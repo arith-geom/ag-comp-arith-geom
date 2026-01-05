@@ -23,8 +23,6 @@ module Jekyll
       self.data['pdfs'] = course['pdfs']
       self.data['year'] = year
       self.data['semester'] = semester
-      self.data['sitemap_priority'] = course['sitemap_priority']
-      self.data['sitemap_changefreq'] = course['sitemap_changefreq']
 
       
       # Handle body content (rich text)

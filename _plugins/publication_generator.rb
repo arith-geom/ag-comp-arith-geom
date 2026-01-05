@@ -28,8 +28,6 @@ module Jekyll
       self.data['appendix'] = publication['appendix']
       self.data['links'] = publication['links']
       self.data['pdfs'] = publication['pdfs']
-      self.data['sitemap_priority'] = publication['sitemap_priority']
-      self.data['sitemap_changefreq'] = publication['sitemap_changefreq']
 
       
       # Handle body content (rich text)
