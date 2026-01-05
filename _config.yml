@@ -4,7 +4,7 @@ email: arithgeo@iwr.uni-heidelberg.de
 description: This is the website of the research group "computational arithmetic geometry" at the Interdisciplinary Center for Scientific Computing (IWR) in Heidelberg.
 url: https://arith-geom.github.io
 baseurl: "/ag-comp-arith-geom"
-logo: assets/img/IWRLOGO.png
+logo: /ag-comp-arith-geom/assets/img/IWRLOGO.png
 twitter_username:
 github_username: arith-geom
 
@@ -48,7 +48,7 @@ collections:
     output: true
     permalink: /:name/
   publications:
-    output: false
+    output: true
     permalink: /publications/:name/
   teaching:
     output: true
@@ -65,7 +65,6 @@ collections:
 plugins:
   - jekyll-seo-tag
   - jekyll-scholar
-  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -112,3 +111,13 @@ researchgate_url: placeholder
 # SASS/SCSS compilation settings
 sass:
   style: compressed
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+      lang: en
+      seo:
+        type: WebPage

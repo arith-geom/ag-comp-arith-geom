@@ -1,0 +1,24 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  {% assign all_items = site.pages | concat: site.documents %}
+
+  {% for item in all_items %}
+    {% if item.url %}
+      {% unless item.url contains '.pdf' %}
+        {% unless item.sitemap == false %}
+          <url>
+            <loc>{{ site.url }}{{ site.baseurl }}{{ item.url }}</loc>
+            {% if item.last_modified_at %}
+              <lastmod>{{ item.last_modified_at | date_to_xmlschema }}</lastmod>
+            {% endif %}
+          </url>
+        {% endunless %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+
+</urlset>
