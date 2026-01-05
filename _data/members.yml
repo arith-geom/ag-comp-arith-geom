@@ -6,6 +6,9 @@ sections:
         role: Group Leader
         group: Members
         photo: /assets/migrated/csm_Boeckle_d715f254f6.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: gebhard.boeckle@iwr.uni-heidelberg.de
         orcid: 0000-0003-1758-1537
         aliases:
@@ -37,6 +40,9 @@ sections:
       - name: Maximilian Heger
         role: Assistant
         group: Members
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: sekretariat.boeckle@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14734
         fax: +49-(0)6221-54 14737
@@ -48,6 +54,9 @@ sections:
         role: Postdoc
         group: Members
         photo: /assets/migrated/csm_Shavali_e11bd855eb.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: alireza.shavali@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14714
         room: 03/335
@@ -75,6 +84,9 @@ sections:
         role: Postdoc
         group: Members
         photo: /assets/migrated/csm_Andrea_Conti_1d0460d7f0.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         orcid: 0000-0001-9279-9451
         aliases:
           - name: Conti
@@ -95,6 +107,9 @@ sections:
         role: Postdoc
         group: Members
         photo: /assets/img/giacomo-hermes-ferraro.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: giacomo.ferraro@iwr.uni-heidelberg.de
         orcid: 0000-0002-6443-564X
         aliases:
@@ -117,6 +132,9 @@ sections:
         role: PhD Student
         group: Members
         photo: /assets/img/paola-chilla.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: paola.chilla@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         room: 03/222
@@ -136,6 +154,9 @@ sections:
         role: PhD Student
         group: Members
         photo: /assets/img/sriram-chinthalagiri-venkata.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: sriram.chinthalagiri@iwr.uni-heidelberg.de
         aliases:
           - name: Sriram
@@ -157,6 +178,9 @@ sections:
         role: PhD Student
         group: Members
         photo: /assets/migrated/csm_Kaiser-Theresa_aa9c1ced0f.jpeg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: theresa.kaiser@iwr.uni-heidelberg.de
         aliases:
           - name: Kaiser
@@ -179,161 +203,75 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/alain-muller.jpg
-        research_interests: Crystalline lifts of Galois representations, arithmetic
-          geometry, deformation theory of Galois representations
-        body: Dr. Alain Muller completed his PhD at the University of Strasbourg in
-          November 2013, with his doctoral thesis focusing on crystalline lifts
-          of Galois representations (Relèvements cristallins de représentations
-          galoisiennes). He was a member of the Arithmetic Geometry research
-          group at Heidelberg University, where he contributed to research on
-          deformation theory and Galois representations, particularly in the
-          context of crystalline constructions.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
       - name: Dr. Andreas Maurischat
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_Maurischat_7b6f31e6ea.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: amaurischat@mathi.uni-heidelberg.de
         orcid: 0000-0002-3867-8429
         phone: +49-(0)6221-54 14714
         room: 03/224
-        research_interests: Algebra, number theory, Galois theory, Picard-Vessiot
-          theory, differential Galois theory, iterative differential equations,
-          Hopf-Galois theory, additive group actions, Hilbert's 14th problem,
-          Anderson motives, Drinfeld modules
-        body: Dr. Andreas Maurischat completed his PhD at Heidelberg University in 2007
-          and his habilitation at Heidelberg University, where he was a member
-          of the Arithmetic Geometry research group. He is now a Privatdozent at
-          RWTH Aachen University in the Teaching and Research Area of
-          Mathematics (Algebra) and Combinatorial Optimization. His research
-          focuses on Galois theory and its extensions, particularly
-          Picard-Vessiot theory for differential and iterative differential
-          equations, Hopf-Galois theory, invariants of additive group actions
-          related to Hilbert's 14th problem, and arithmetic of function fields
-          including Anderson motives and Drinfeld modules. His work on iterative
-          differential Galois groups and algebraic independence of special
-          values has made significant contributions to number theory over
-          function fields.
       - name: Dr. Ann-Kristin Juschka
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_Juschka2_01_f2b754bf3f.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: ann-kristin.juschka@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         fax: +49-(0)6221-54 14737
         room: 03/222
-        research_interests: Number theory, arithmetic geometry, Galois representations,
-          deformation theory, pseudodeformation rings, Hodge structures over
-          function fields
-        body: Dr. Ann-Kristin Juschka completed her PhD (Dr. rer. nat.) at
-          Ruprecht-Karls-Universität Heidelberg in 2018 under the supervision of
-          Prof. Dr. Gebhard Böckle. Her doctoral thesis was titled "Geometric
-          Properties of Versal Deformation Rings and Universal Pseudodeformation
-          Rings", which focused on the arithmetic geometry of Galois
-          representations in characteristic p. During her time at Heidelberg,
-          she was a member of the Arithmetic Geometry research group and
-          contributed to research on deformation theory, pseudodeformation
-          rings, and Hodge structures over function fields. Her work has
-          appeared in prominent journals including Forum of Mathematics, Sigma,
-          and she has collaborated on topics including equidimensionality of
-          universal pseudodeformation rings and Pink's theory of Hodge
-          structures.
       - name: Dr. Archiebold Karumbidza
         role: Former Member
         group: Members
         photo: /assets/img/archiebold-karumbidza.jpg
-        research_interests: Automorphic forms, Bruhat-Tits buildings, computational
-          number theory, financial mathematics, algorithmic algebra,
-          quantitative analysis
-        body: Dr. Archiebold Karumbidza was a member of the Arithmetic Geometry research
-          group at Heidelberg University, where he worked on algorithms for
-          quotients of Bruhat-Tits buildings and automorphic forms as part of
-          the DFG Priority Program on Algorithmic and Experimental Methods in
-          Algebra, Geometry and Number Theory. He subsequently completed his PhD
-          at the University of Oxford, specializing in financial mathematics and
-          quantitative analysis. His research bridged theoretical mathematics
-          with applications in finance, particularly in algorithmic trading and
-          market microstructure.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
       - name: Dr. Barinder Banwait
         role: Former Member
         group: Members
         photo: /assets/img/barinder-banwait.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: barinder.banwait@iwr.uni-heidelberg.de
         orcid: 0000-0001-5873-8399
         aliases:
           - name: Barinder
         phone: +49-(0)6221-54 14714
         room: 03/224 (INF 205)
-        research_interests: Computational number theory, arithmetic geometry, elliptic
-          curves and isogenies, modular forms, Galois representations, abelian
-          varieties, L-functions, del Pezzo surfaces over finite fields, machine
-          learning for number theory, LMFDB development
-        body: Dr. Barinder Singh Banwait completed his MMath at the University of
-          Cambridge (Christ's College) with distinction, followed by his PhD at
-          the University of Warwick in 2013 on local-global phenomena for
-          abelian varieties. He was a postdoctoral researcher at Heidelberg
-          University from October 2021 to April 2022, working with Prof. Dr.
-          Gebhard Böckle. He is currently a researcher at Boston University/MIT.
-          His research focuses on computational approaches to number theory and
-          arithmetic geometry, particularly elliptic curves, isogenies over
-          number fields, modular forms, and Galois representations. He has made
-          significant contributions to the L-functions and Modular Forms
-          Database (LMFDB) and published extensively on topics including
-          explicit isogenies of prime degree, del Pezzo surfaces over finite
-          fields, and applications of machine learning to number theoretic
-          problems such as the Shafarevich-Tate group.
       - name: Dr. David-A. Guiraud
         role: Former Member
         group: Members
         photo: /assets/img/david-a-guiraud.jpg
-        research_interests: Number theory, arithmetic geometry, Galois representations,
-          deformation theory, Galois deformation rings, unobstructedness theory,
-          automorphic representations, modular forms, p-adic Langlands program
-        body: Dr. David-Alexandre Guiraud completed his PhD (Dr. rer. nat.) at
-          Ruprecht-Karls-Universität Heidelberg in 2016 under the supervision of
-          Prof. Dr. Gebhard Böckle. His doctoral thesis, titled "A framework for
-          unobstructedness of Galois deformation rings", made significant
-          contributions to the theory of Galois deformations. During his time at
-          Heidelberg, he was a member of the Arithmetic Geometry research group
-          and also served as an assistant in various algebraic number theory
-          courses. His research focuses on Galois representations and
-          deformation theory, particularly unobstructedness properties of Galois
-          deformation rings in the context of automorphic representations and
-          the p-adic Langlands program. His work has been published in
-          prestigious journals including Algebra & Number Theory.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
       - name: Dr. Juan Marcos Cerviño
         role: Former Member
         group: Members
         photo: /assets/img/juan-marcos-cervino.jpg
-        research_interests: Number theory, modular forms, lattice theory, theta
-          functions, heat kernel invariants, arithmetic geometry
-        body: Dr. Juan Marcos Cerviño completed his PhD at Ruprecht-Karls-Universität
-          Heidelberg in 2015. He was a member of the Arithmetic Geometry
-          research group at Heidelberg, where he worked on modular forms and
-          lattice theory. His research focused on constructing lattice
-          invariants from the heat kernel and studying theta functions. After
-          Heidelberg, he continued his academic career at the University of
-          Duisburg-Essen (ESAGA). His work includes significant contributions to
-          understanding the theta map and the Conway-Sloane tetralattice pairs.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
       - name: Dr. Julian Quast
         role: Former Member
         group: Members
         photo: /assets/img/julian-quast.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: julian.quast@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14840
         room: 04/231 (INF 205)
-        research_interests: Number theory, Galois representations, deformation theory,
-          pseudocharacters, determinant laws for symplectic groups, trianguline
-          variety for reductive groups
-        body: Dr. Julian Quast completed his PhD at Ruprecht-Karls-Universität
-          Heidelberg. His doctoral dissertation focused on the theory of
-          pseudorepresentations and determinant laws, particularly for
-          symplectic groups. He was a member of the Arithmetic Geometry research
-          group at Heidelberg. He is currently at the University of
-          Duisburg-Essen, where his research focuses on deformation theory of
-          mod p Galois representations of number fields with values in reductive
-          groups, G-pseudocharacters, and the trianguline variety for reductive
-          groups. His work includes determining Zariski density of crystalline
-          points in the generic fiber of deformation rings.
         links:
           - url: http://www.julianquast.de
             icon: fas fa-globe
@@ -342,16 +280,9 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/narasimha-kumar-cheraku.jpg
-        research_interests: Number theory, modular forms, Drinfeld modular forms,
-          cryptography, Galois representations, dual reductive pairs, Howe
-          duality correspondence
-        body: Dr. Narasimha Kumar Cheraku was a member of the Arithmetic Geometry
-          research group at Heidelberg University. His research interests
-          include number theory, modular forms, cryptography, and Galois
-          representations. He has worked on dual reductive pairs and Howe
-          duality correspondence. He is currently a faculty member at IIT
-          Hyderabad, where he continues research in number theory and modular
-          forms.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         links:
           - url: https://sites.google.com/site/chnarasimhakumar/
             text: Website
@@ -359,23 +290,12 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/oguz-gezmis.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: oguz.gezmis@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14714
         room: 03/224 (INF 205)
-        research_interests: Number theory, Drinfeld modular forms of higher rank,
-          Carlitz polylogarithms, Zagier's conjecture on polylogarithms,
-          function field arithmetic, special values of L-functions, difference
-          equations
-        body: Dr. Oğuz Gezmiş is a member of the Arithmetic Geometry research group at
-          Heidelberg University. His research focuses on number theory over
-          function fields, particularly Drinfeld modular forms of arbitrary rank
-          and their derivatives. He works on Carlitz polylogarithms and has
-          contributed to proving function field versions of Zagier's conjecture
-          on polylogarithms using techniques from difference equations. His work
-          includes joint research with A. Maurischat on deformations of Carlitz
-          polylogarithms and identities on the derivatives of Drinfeld modular
-          forms. He has presented his research internationally, including talks
-          on quasi-periodic functions and special values.
         links:
           - url: https://sites.google.com/view/oguzgezmis
             icon: fas fa-globe
@@ -384,38 +304,21 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/patrik-hubschmid.jpg
-        research_interests: Number theory, Drinfeld modular varieties, André-Oort
-          conjecture, ℓ-adic representations, algebraic geometry
-        body: Dr. Patrik Hubschmid was a postdoctoral researcher in the Arithmetic
-          Geometry group at Heidelberg University from September 2011 to March
-          2016. He worked on the André-Oort Conjecture for Drinfeld Modular
-          Varieties and ℓ-adic representations. He also held a position as
-          visiting professor at Goethe University Frankfurt (April 2012 -
-          September 2014). His research focused on number theory and algebraic
-          geometry, particularly special points on Shimura varieties and their
-          function field analogues.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
       - name: Dr. Peter Gräf
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_Gra_f__Peter_01_a81f8eb5c5.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: peter.graef@iwr.uni-heidelberg.de
         aliases:
           - name: Gräf
         phone: +49-(0)6221-54 14715
         room: 03/225 (INF 205)
-        research_interests: Number theory, automorphic forms, p-adic families of
-          automorphic representations, Drinfeld period domains, Drinfeld modular
-          forms, boundary distributions for GL3, symmetric power coefficients,
-          Langlands program
-        body: Dr. Peter Mathias Gräf completed his PhD at Heidelberg University, where
-          he was a member of the Arithmetic Geometry research group. His
-          research focuses on p-adic families of automorphic forms and
-          representations arising from Drinfeld period domains, as well as
-          applications in function field arithmetic and the theory of Drinfeld
-          modular forms. His work includes computing boundary distributions for
-          GL3 over local fields and studying symmetric power coefficients. He is
-          currently a postdoctoral fellow at Bonn University, continuing
-          research in the Langlands program and Stark-Heegner points.
         links:
           - url: https://sites.google.com/view/peter-graef
             icon: fas fa-globe
@@ -424,24 +327,16 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/ralf-butenuth.jpg
-        research_interests: Number theory, Drinfeld modular forms, quaternionic modular
-          forms, function field arithmetic, computational number theory
-        body: Dr. Ralf Butenuth completed his PhD (Dr. rer. nat.) at
-          Ruprecht-Karls-Universität Heidelberg in 2012 under the supervision of
-          Prof. Dr. Gebhard Böckle. His doctoral thesis was titled "Quaternionic
-          Drinfeld modular forms", focusing on developing theory of modular
-          forms in the quaternionic setting over function fields. He was a
-          member of the Arithmetic Geometry research group at Heidelberg. His
-          published work includes joint research with Gebhard Böckle on
-          computing quaternion quotient graphs for function fields, which
-          appeared in the Journal de Théorie des Nombres de Bordeaux.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
       - name: Dr. Rudolph Perkins
         role: Former Member
         group: Members
         photo: /assets/img/rudolph-perkins.jpg
-        research_interests: Number theory, modular forms in positive characteristic,
-          special values of L-functions, Pellarin's L-series, vectorial modular
-          forms, Drinfeld modular forms
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         links:
           - url: https://rudolphperkins.wordpress.com/
             text: Website
@@ -449,19 +344,9 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/samuele-anni.jpg
-        research_interests: Number theory, computational arithmetic geometry, Jacobians
-          of hyperelliptic curves, inverse Galois problem, modular forms, Galois
-          representations
-        body: "Dr. Samuele Anni (ORCID: 0000-0002-8852-2238) was a postdoctoral
-          researcher at Heidelberg University from October 2016 to September
-          2017, working at the IWR (Interdisciplinary Center for Scientific
-          Computing) in the computational arithmetic geometry group. He
-          subsequently held a postdoctoral fellowship at the University of
-          Luxembourg (September 2018 - January 2019) under Prof. Wiese. He is
-          currently a Maître de conférences at Aix-Marseille Université. His
-          research focuses on computational approaches to number theory,
-          including Jacobians of hyperelliptic curves and connections to the
-          inverse Galois problem."
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         links:
           - url: https://sites.google.com/view/samuele-anni/home
             text: Website
@@ -469,109 +354,63 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/sundeep-balaji.jpg
-        research_interests: Number theory, automorphic forms, Galois representations,
-          p-adic Hodge theory, operator theory
-        body: Dr. Sundeep Balaji was a postdoctoral researcher at Heidelberg University.
-          His research interests span number theory and automorphic forms, with
-          particular focus on Galois representations and p-adic Hodge theory. He
-          has also worked on operator theory, linear algebra, and matrix theory.
-          He is currently an Assistant Professor in Mathematics at VIT Vellore.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
       - name: Dr. Tommaso Centeleghe
         role: Former Member
         group: Members
         photo: /assets/img/tommaso-centeleghe.jpg
-        research_interests: Number theory, Galois representations, abelian varieties
-          over finite fields, arithmetic geometry, Morita equivalence
-        body: Dr. Tommaso Giorgio Centeleghe (born July 2, 1980, Bologna, Italy) was a
-          postdoctoral researcher in Mathematics (Number Theory) at Heidelberg
-          University from September 2010 to June 2016, working at the IWR. His
-          research focused on Galois representations, abelian varieties over
-          finite fields, and Morita equivalence in arithmetic geometry. His work
-          includes computing the number of certain Galois representations mod p.
-          He is currently a Software Developer at XFT GmbH.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
       - name: Dr. Yamidt Bermudez Tobon
         role: Former Member
         group: Members
         photo: /assets/img/yamidt-bermudez-tobon.jpg
-        research_interests: Number theory, elliptic curves, automorphic forms over
-          function fields, computational number theory, modular forms
-        body: Dr. Yamidt Bermúdez Tobón completed his PhD (Dr. rer. nat.) at
-          Ruprecht-Karls-Universität Heidelberg in 2015 under the supervision of
-          Prof. Dr. Gebhard Böckle. His doctoral thesis was titled "An efficient
-          algorithm to compute an elliptic curve from a corresponding function
-          field automorphic form", developing computational methods to construct
-          elliptic curves from automorphic forms in the function field setting.
-          He was a member of the Arithmetic Geometry research group at
-          Heidelberg.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
       - name: Dr. Yujia Qiu
         role: Former Member
         group: Members
         photo: /assets/img/yujia-qiu.jpg
-        research_interests: Number theory, zeta functions, function field arithmetic,
-          Riemann hypothesis, partial zeta functions, cohomological methods
-        body: Dr. Yujia Qiu completed her PhD (Dr. rer. nat.) at
-          Ruprecht-Karls-Universität Heidelberg in 2016, coming from Quzhou,
-          China. She was a member of the Arithmetic Geometry research group at
-          Heidelberg. Her research focused on zeta functions and the Riemann
-          hypothesis in the function field setting, working on partial zeta
-          functions and applying cohomological methods. She previously completed
-          her Master of Science in Industrial and Applied Mathematics at
-          Eindhoven University of Technology.
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
       - name: Dr. Özge Ülkem
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_photo3_24588f06e1.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: oezge.uelkem@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14714
         fax: +49-(0)6221-54 14737
         room: 03/224
-        research_interests: Number theory, arithmetic geometry, modular forms, Galois
-          representations
-        body: Dr. Özge Ülkem completed her PhD in Mathematics at Heidelberg University
-          in December 2020 under the supervision of Prof. Dr. Gebhard Böckle.
-          She was born in Simav, Turkey, and completed her M.Sc. in Mathematics
-          at Sabancı University. She was a member of the Arithmetic Geometry
-          research group at Heidelberg. She is currently a postdoctoral
-          researcher with Professor Chia-Fu Yu at Academia Sinica. Her research
-          interests include number theory, arithmetic geometry, modular forms,
-          and Galois representations.
       - name: Konrad Fischer
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_image3_01_d7fd0284ac.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: konrad.fischer@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         fax: +49-(0)6221-54 14737
         room: 03/222
         office_hours: Wednesday from 3 to 4 p.m. or by appointment
-        research_interests: Number theory, Drinfeld modules, class field theory,
-          Taelman's unit module, function field arithmetic
-        body: Konrad Fischer was a member of the Arithmetic Geometry research group at
-          Heidelberg University. He worked on Drinfeld modules and Taelman's
-          unit module, contributing to research on class field theory and
-          function field arithmetic. His work includes presentations on
-          Taelman's body of work on Drinfeld modules and the analogue of class
-          and unit groups in the function field setting.
       - name: Prof. Dr. Judith Ludwig
         role: Former Member
         group: Members
         photo: /assets/img/judith-ludwig.jpg
+        seo:
+          sitemap_priority: 0.8
+          sitemap_changefreq: monthly
         email: judith.ludwig@iwr.uni-heidelberg.de
         room: 03/225 (INF 205)
         office_hours: by appointment
-        research_interests: Number theory, Langlands programme, p-adic automorphic
-          forms, p-adic geometry, non-archimedean geometry, representation
-          theory, arithmetic geometry, formalisation of mathematics
-        body: Prof. Dr. Judith Ludwig is a professor of mathematics at Heidelberg
-          University, leading the research group "Automorphic Forms and p-adic
-          Geometry". Her research focuses on the Langlands programme via
-          arithmetic geometry, specifically the interplay of representation
-          theory and non-archimedean geometry in the theory of p-adic
-          automorphic forms. She works on p-adic families of automorphic
-          representations and has contributed to understanding complex
-          multiplication points on eigencurves. She is also interested in
-          formalization of mathematics. She previously held positions including
-          working with Prof. Peter Scholze.
         links:
           - url: https://www.judith-ludwig.com/
             text: Website
