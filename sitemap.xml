@@ -8,19 +8,20 @@ layout: null
   {% assign items_by_url = all_items | group_by: "url" %}
 
   {% for entry in items_by_url %}
-    {% assign item = entry.items[0] %}
-    {% if item.url and item.url != "" %}
-      {% unless item.url contains '.pdf' %}
-        {% unless item.sitemap == false %}
-          <url>
-            <loc>{{ site.url }}{{ site.baseurl }}{{ item.url }}</loc>
-            {% if item.last_modified_at %}
-              <lastmod>{{ item.last_modified_at | date_to_xmlschema }}</lastmod>
-            {% endif %}
-          </url>
+    {% for item in entry.items limit:1 %}
+      {% if item.url != nil and item.url != empty and item.url != "" %}
+        {% unless item.url contains '.pdf' %}
+          {% unless item.sitemap == false %}
+            <url>
+              <loc>{{ site.url }}{{ site.baseurl }}{{ item.url }}</loc>
+              {% if item.last_modified_at %}
+                <lastmod>{{ item.last_modified_at | date_to_xmlschema }}</lastmod>
+              {% endif %}
+            </url>
+          {% endunless %}
         {% endunless %}
-      {% endunless %}
-    {% endif %}
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 
 </urlset>
