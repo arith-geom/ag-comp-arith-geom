@@ -40,6 +40,7 @@ module Jekyll
 
     def generate(site)
       if site.data['publications'] && site.data['publications']['publications']
+        site.config['generated_publications'] = []
         site.data['publications']['publications'].each do |publication|
           # Create slug from title using Jekyll's utility to match Liquid filter
           slug = Utils.slugify(publication['title'], mode: 'latin')
@@ -67,7 +68,9 @@ module Jekyll
           end
           
           # Create page at /publications/:slug/
-          site.pages << PublicationPage.new(site, site.source, File.join('publications', slug), publication)
+          page = PublicationPage.new(site, site.source, File.join('publications', slug), publication)
+          site.pages << page
+          site.config['generated_publications'] << page
         end
       end
     end
