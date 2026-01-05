@@ -65,6 +65,7 @@ collections:
 plugins:
   - jekyll-seo-tag
   - jekyll-scholar
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
