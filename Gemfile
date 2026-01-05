@@ -6,7 +6,6 @@ gem "jekyll", "~> 4.3.0"
 # Basic plugins for Phase 1
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.17"
-  gem "jekyll-sitemap"
   gem "jekyll-seo-tag"
   gem "jekyll-scholar"
 end
