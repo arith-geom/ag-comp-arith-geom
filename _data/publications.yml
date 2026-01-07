@@ -89,18 +89,6 @@ publications:
     links:
       - label: arXiv
         url: https://arxiv.org/abs/1309.1035
-  - title: Division Towers for Triangle Shimura Curves.
-    year: "2025"
-    authors: Joint with M. Dettweiler
-    journal_details: Preprint
-    status: Submitted
-    type: Article
-  - title: Lifts of mod p Galois representations with local supercuspidal types.
-    year: "2025"
-    authors: Gebhard Böckle
-    journal_details: Preprint
-    status: Submitted
-    type: Article
   - title: Lattices in rigid analytic representations
     year: "2024"
     authors: Joint with A. Conti, E. Torti
