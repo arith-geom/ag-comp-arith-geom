@@ -603,11 +603,6 @@ publications:
     pdfs:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/GeneriFiberMM2.pdf
-  - title: Test
-    year: "2026"
-    mr_number: "12345"
-    authors: Böckle
-    body: Testing
 seo:
   sitemap_priority: 0.5
   sitemap_changefreq: monthly
