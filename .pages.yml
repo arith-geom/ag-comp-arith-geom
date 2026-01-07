@@ -20,7 +20,6 @@ content:
           - { name: "subtitle", label: "Subtitle", type: "string" }
           - { name: "description", label: "Description", type: "rich-text" }
 
-
       - name: "feature_cards"
         label: "Feature Cards"
         type: "object"
@@ -52,8 +51,6 @@ content:
           - { name: "title", label: "Title", type: "string" }
           - { name: "icon", label: "Icon Class (e.g. fas fa-infinity)", type: "string" }
           - { name: "content", label: "Content", type: "rich-text" }
-
-
 
   - name: "publications"
     label: "Publications"
@@ -101,7 +98,6 @@ content:
             fields:
               - { name: "label", label: "Label", type: "string" }
               - { name: "file", label: "File", type: "file" }
-
 
       - name: "software"
         label: "Software Packages"
@@ -155,7 +151,6 @@ content:
                   - { name: "course_type", label: "Course Type (Subpage Only)", type: "select", options: { values: ["Lecture", "Seminar", "Proseminar", "Exercise", "Other"] } }
                   - { name: "description", label: "Description (Both)", type: "rich-text" }
 
-
                   - name: "links"
                     label: "Links (Both)"
                     type: "object"
@@ -206,7 +201,6 @@ content:
               - { name: "group", label: "Group (Both)", type: "select", options: { values: ["Head", "Secretary", "Members", "Former Members"] }, default: "Members", hidden: true }
               - { name: "photo", label: "Photo (Both)", type: "image" }
               - { name: "description", label: "Short Description (Card) (Main Page Only)", type: "rich-text" }
-
 
               - { name: "email", label: "Email (Subpage Only)", type: "string" }
               - { name: "orcid", label: "ORCID (Subpage Only)", type: "string", hint: "e.g. 0000-0002-1825-0097" }
