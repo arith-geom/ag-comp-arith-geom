@@ -3,15 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url={{ page.target }}">
+    {% assign redirect_url = page.target %}
+    {% unless page.target contains '://' %}
+    {% assign redirect_url = page.target | relative_url %}
+    {% endunless %}
+    <meta http-equiv="refresh" content="0; url={{ redirect_url }}">
     <title>{{ page.title }}</title>
     <script type="text/javascript">
-        window.location.href = "{{ page.target }}";
+        window.location.href = "{{ redirect_url }}";
     </script>
 </head>
 
 <body>
-    <p>Redirecting to <a href="{{ page.target }}">{{ page.target }}</a>...</p>
+    <p>Redirecting to <a href="{{ redirect_url }}">{{ redirect_url }}</a>...</p>
 </body>
 
 </html>
