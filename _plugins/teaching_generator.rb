@@ -23,6 +23,12 @@ module Jekyll
       self.data['pdfs'] = course['pdfs']
       self.data['year'] = year
       self.data['semester'] = semester
+      
+      # Set default SEO values if missing (matching .pages.yml defaults)
+      seo = course['seo'] || {}
+      seo['sitemap_priority'] ||= 0.6
+      seo['sitemap_changefreq'] ||= 'monthly'
+      self.data['seo'] = seo
 
       
       # Handle body content (rich text)
@@ -35,6 +41,7 @@ module Jekyll
 
     def generate(site)
       if site.data['teaching'] && site.data['teaching']['courses']
+        site.config['generated_teaching'] = []
         site.data['teaching']['courses'].each do |year_data|
           year = year_data['year']
           if year_data['semesters']
@@ -99,7 +106,9 @@ module Jekyll
                   semester_slug = Utils.slugify(semester_title, mode: 'latin')
                   
                   # Create page at /teaching/:year/:semester/:slug/ to ensure uniqueness
-                  site.pages << TeachingPage.new(site, site.source, File.join('teaching', year.to_s, semester_slug, slug), course, year, semester)
+                  page = TeachingPage.new(site, site.source, File.join('teaching', year.to_s, semester_slug, slug), course, year, semester)
+                  site.pages << page
+                  site.config['generated_teaching'] << page
                 end
               end
             end

@@ -31,8 +31,14 @@ module Jekyll
       self.data['office_hours'] = member['office_hours']
       self.data['selected_publications'] = member['selected_publications']
       self.data['theses'] = member['theses']
+      self.data['theses'] = member['theses']
       self.data['content_match_name'] = member['content_match_name']
-
+      
+      # Set default SEO values if missing (matching .pages.yml defaults)
+      seo = member['seo'] || {}
+      seo['sitemap_priority'] ||= 0.8
+      seo['sitemap_changefreq'] ||= 'monthly'
+      self.data['seo'] = seo
       
       # Handle body content (rich text)
       self.content = member['body'] || ""
@@ -44,6 +50,7 @@ module Jekyll
 
     def generate(site)
       if site.data['members'] && site.data['members']['sections']
+        site.config['generated_members'] = []
         site.data['members']['sections'].each do |section|
           if section['members']
             section['members'].each do |member|
@@ -75,8 +82,11 @@ module Jekyll
                 end
               end
               
+              
               # Create page at /members/:slug/
-              site.pages << MemberPage.new(site, site.source, File.join('members', slug), member)
+              page = MemberPage.new(site, site.source, File.join('members', slug), member)
+              site.pages << page
+              site.config['generated_members'] << page
             end
           end
         end

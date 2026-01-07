@@ -19,12 +19,7 @@ content:
           - { name: "title", label: "Title", type: "string" }
           - { name: "subtitle", label: "Subtitle", type: "string" }
           - { name: "description", label: "Description", type: "rich-text" }
-      - name: "seo"
-        label: "Sitemap / SEO Overrides"
-        type: "object"
-        fields:
-          - { name: "sitemap_priority", label: "Sitemap Priority", type: "number", hint: "0.0 to 1.0 (Default 1.0 for home)", default: 1.0 }
-          - { name: "sitemap_changefreq", label: "Change Frequency", type: "select", options: { values: ["always", "hourly", "daily", "weekly", "monthly", "yearly", "never"] }, default: "weekly" }
+
 
       - name: "feature_cards"
         label: "Feature Cards"
@@ -57,12 +52,7 @@ content:
           - { name: "title", label: "Title", type: "string" }
           - { name: "icon", label: "Icon Class (e.g. fas fa-infinity)", type: "string" }
           - { name: "content", label: "Content", type: "rich-text" }
-      - name: "seo"
-        label: "Sitemap / SEO Overrides"
-        type: "object"
-        fields:
-          - { name: "sitemap_priority", label: "Sitemap Priority", type: "number", default: 0.7 }
-          - { name: "sitemap_changefreq", label: "Change Frequency", type: "select", options: { values: ["always", "hourly", "daily", "weekly", "monthly", "yearly", "never"] }, default: "monthly" }
+
 
 
   - name: "publications"
@@ -111,12 +101,7 @@ content:
             fields:
               - { name: "label", label: "Label", type: "string" }
               - { name: "file", label: "File", type: "file" }
-      - name: "seo"
-        label: "Sitemap / SEO Overrides"
-        type: "object"
-        fields:
-          - { name: "sitemap_priority", label: "Sitemap Priority", type: "number", default: 0.5 }
-          - { name: "sitemap_changefreq", label: "Change Frequency", type: "select", options: { values: ["always", "hourly", "daily", "weekly", "monthly", "yearly", "never"] }, default: "monthly" }
+
 
       - name: "software"
         label: "Software Packages"
@@ -169,12 +154,7 @@ content:
                   - { name: "instructor", label: "Instructor (Both)", type: "string" }
                   - { name: "course_type", label: "Course Type (Subpage Only)", type: "select", options: { values: ["Lecture", "Seminar", "Proseminar", "Exercise", "Other"] } }
                   - { name: "description", label: "Description (Both)", type: "rich-text" }
-                  - name: "seo"
-                    label: "Sitemap / SEO Overrides"
-                    type: "object"
-                    fields:
-                      - { name: "sitemap_priority", label: "Sitemap Priority", type: "number", default: 0.6 }
-                      - { name: "sitemap_changefreq", label: "Change Frequency", type: "select", options: { values: ["always", "hourly", "daily", "weekly", "monthly", "yearly", "never"] }, default: "monthly" }
+
 
                   - name: "links"
                     label: "Links (Both)"
@@ -226,12 +206,7 @@ content:
               - { name: "group", label: "Group (Both)", type: "select", options: { values: ["Head", "Secretary", "Members", "Former Members"] }, default: "Members", hidden: true }
               - { name: "photo", label: "Photo (Both)", type: "image" }
               - { name: "description", label: "Short Description (Card) (Main Page Only)", type: "rich-text" }
-              - name: "seo"
-                label: "Sitemap / SEO Overrides"
-                type: "object"
-                fields:
-                  - { name: "sitemap_priority", label: "Sitemap Priority", type: "number", default: 0.8 }
-                  - { name: "sitemap_changefreq", label: "Change Frequency", type: "select", options: { values: ["always", "hourly", "daily", "weekly", "monthly", "yearly", "never"] }, default: "monthly" }
+
 
               - { name: "email", label: "Email (Subpage Only)", type: "string" }
               - { name: "orcid", label: "ORCID (Subpage Only)", type: "string", hint: "e.g. 0000-0002-1825-0097" }
@@ -390,3 +365,20 @@ content:
           - { name: "intro", label: "Intro Text", type: "rich-text" }
           - { name: "address", label: "Email Address", type: "string" }
           - { name: "outro", label: "Outro Text", type: "rich-text" }
+
+  - name: "shortlinks"
+    label: "Shortlinks"
+    path: "_data/shortlinks.yml"
+    type: "file"
+    fields:
+      - name: "shortlinks"
+        label: "Redirects"
+        type: "object"
+        list:
+          collapsible:
+            summary: "/{fields.slug} -> {fields.target}"
+            collapsed: true
+        fields:
+          - { name: "slug", label: "Short Slug", type: "string", hint: "The part after the domain, e.g. 'paper1'" }
+          - { name: "target", label: "Target URL", type: "string", hint: "Absolute or relative path, e.g. '/publications/...' or 'https://google.com'" }
+          - { name: "title", label: "Internal Note/Title", type: "string" }

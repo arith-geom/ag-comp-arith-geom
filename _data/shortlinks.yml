@@ -1,0 +1,4 @@
+shortlinks:
+  - slug: test-redirect
+    target: /publications/
+    title: Test Redirect

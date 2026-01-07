@@ -4,7 +4,7 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  {% assign all_items = site.pages | concat: site.documents | concat: site.generated_publications %}
+  {% assign all_items = site.pages | concat: site.documents | concat: site.generated_publications | concat: site.generated_members | concat: site.generated_teaching %}
   {% assign items_by_url = all_items | group_by: "url" %}
 
   {% for entry in items_by_url %}
@@ -14,8 +14,31 @@ layout: null
           {% unless item.sitemap == false %}
             <url>
               <loc>{{ site.url }}{{ site.baseurl }}{{ item.url }}</loc>
-              {% if item.last_modified_at %}
-                <lastmod>{{ item.last_modified_at | date_to_xmlschema }}</lastmod>
+              {% assign priority = item.sitemap_priority %}
+              {% assign changefreq = item.sitemap_changefreq %}
+              
+              {% if item.seo %}
+                {% if priority == nil %}{% assign priority = item.seo.sitemap_priority %}{% endif %}
+                {% if changefreq == nil %}{% assign changefreq = item.seo.sitemap_changefreq %}{% endif %}
+              {% endif %}
+
+              {% comment %} specialized lookups for data-driven pages {% endcomment %}
+              {% if item.url == '/' and site.data.home.seo %}
+                {% if priority == nil %}{% assign priority = site.data.home.seo.sitemap_priority %}{% endif %}
+                {% if changefreq == nil %}{% assign changefreq = site.data.home.seo.sitemap_changefreq %}{% endif %}
+              {% elsif item.url == '/publications/' and site.data.publications.seo %}
+                  {% if priority == nil %}{% assign priority = site.data.publications.seo.sitemap_priority %}{% endif %}
+                  {% if changefreq == nil %}{% assign changefreq = site.data.publications.seo.sitemap_changefreq %}{% endif %}
+              {% elsif item.url == '/research/' and site.data.research.seo %}
+                  {% if priority == nil %}{% assign priority = site.data.research.seo.sitemap_priority %}{% endif %}
+                  {% if changefreq == nil %}{% assign changefreq = site.data.research.seo.sitemap_changefreq %}{% endif %}
+              {% endif %}
+
+              {% if priority %}
+                <priority>{{ priority }}</priority>
+              {% endif %}
+              {% if changefreq %}
+                <changefreq>{{ changefreq }}</changefreq>
               {% endif %}
             </url>
           {% endunless %}
