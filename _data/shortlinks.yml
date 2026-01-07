@@ -1,4 +1,4 @@
 shortlinks:
-  - slug: test-redirect
-    target: /publications/
+  - slug: HAS2025
+    target: /assets/migrated/Homological_algebra___Seminar_2025.pdf
     title: Test Redirect
