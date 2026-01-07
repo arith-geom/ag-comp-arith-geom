@@ -6,8 +6,8 @@ This section explains how to access the website management interface and the bas
 
 1.  Go to **[https://pagescms.org](https://pagescms.org)**.
 2.  Click **"Sign in with GitHub"**.
-2. **Note: You can also be invited by a member in PagesCMS.**
 3.  Select the repository for the website (e.g., `arith-geom/ag-comp-arith-geom`).
+**You must be added to the Github repository as a collaborator to be able to log in.**
 
 Once logged in, you will see the **Dashboard**.
 

@@ -37,6 +37,10 @@ This guide is designed to help you update and maintain the website content witho
    - Updating Contact information.
    - Managing Links.
 
+6. **[Managing Shortlinks](8-shortlinks.md)**
+   - Creating short, memorable URLs.
+   - Redirecting to external sites or long paths.
+
 ---
 
 ## 🆘 Need Help?
