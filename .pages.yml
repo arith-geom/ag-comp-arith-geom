@@ -370,7 +370,7 @@ content:
         type: "object"
         list:
           collapsible:
-            summary: "/{fields.slug} -> {fields.target}"
+            summary: "{fields.title} (/{fields.slug})"
             collapsed: true
         fields:
           - { name: "slug", label: "Short Slug", type: "string", hint: "The part after the domain, e.g. 'paper1'" }
