@@ -52,11 +52,13 @@ publications:
   - title: On nearly holomorphic Drinfeld modular forms for admissible coefficient
       rings
     year: "2025"
-    authors: Sriram Chinthalagiri Venkata
-    journal_details: arXiv preprint arXiv:2503.01357
-    status: Preprint
-    doi: 10.48550/arXiv.2503.01357
+    authors: Oğuz Gezmis, Sriram Chinthalagiri Venkata
+    journal_details: Research in Number Theory
+    status: Journal Article
+    doi: https://doi.org/10.1007/s40993-025-00666-2
     type: Article
+    links:
+      - {}
   - title: Equidimensionality of universal pseudodeformation rings in characteristic
       p for absolute Galois groups of p-adic fields (pdf), 91 pages.
     year: "2023"
@@ -591,13 +593,10 @@ publications:
     pdfs:
       - label: PDF
         file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/GeneriFiberMM2.pdf
-seo:
-  sitemap_priority: 0.5
-  sitemap_changefreq: monthly
 software:
   - title: Magma package QaQuotGraphs
     description: to compute the action by unit groups of maximal orders in
-      quaternion algebras over $F\_q(T)$.
+      quaternion algebras over $Fq(T)$.
     author: Dr. Ralf Butenuth
     link: /members/dr-ralf-butenuth
     link_text: View Package
@@ -610,7 +609,7 @@ software:
     link_text: View Package
   - title: Magma package (Hecke eigensystems)
     description: to compute Hecke eigensystems for harmonic cocycles on the
-      Bruhat-Tits tree for $GL\_2(F\_q(T))$, thesis available here.
+      Bruhat-Tits tree for $GL2(Fq(T))$, thesis available here.
     author: Burak Cakir
     link: https://github.com/b-cakir/hecke-operator
     link_text: View Package
