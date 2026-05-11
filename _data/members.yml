@@ -6,7 +6,6 @@ sections:
         role: Group Leader
         group: Members
         photo: /assets/migrated/csm_Boeckle_d715f254f6.jpg
-        seo:
         email: gebhard.boeckle@iwr.uni-heidelberg.de
         orcid: 0000-0003-1758-1537
         aliases:
@@ -38,7 +37,6 @@ sections:
       - name: Maximilian Heger
         role: Assistant
         group: Members
-        seo:
         email: sekretariat.boeckle@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14734
         fax: +49-(0)6221-54 14737
@@ -50,7 +48,6 @@ sections:
         role: Postdoc
         group: Members
         photo: /assets/migrated/csm_Shavali_e11bd855eb.jpg
-        seo:
         email: alireza.shavali@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14714
         room: 03/335
@@ -78,7 +75,6 @@ sections:
         role: Postdoc
         group: Members
         photo: /assets/migrated/csm_Andrea_Conti_1d0460d7f0.jpg
-        seo:
         orcid: 0000-0001-9279-9451
         aliases:
           - name: Conti
@@ -99,7 +95,6 @@ sections:
         role: Postdoc
         group: Members
         photo: /assets/img/giacomo-hermes-ferraro.jpg
-        seo:
         email: giacomo.ferraro@iwr.uni-heidelberg.de
         orcid: 0000-0002-6443-564X
         aliases:
@@ -122,7 +117,6 @@ sections:
         role: PhD Student
         group: Members
         photo: /assets/img/paola-chilla.jpg
-        seo:
         email: paola.chilla@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         room: 03/222
@@ -142,29 +136,31 @@ sections:
         role: PhD Student
         group: Members
         photo: /assets/img/sriram-chinthalagiri-venkata.jpg
-        seo:
         email: sriram.chinthalagiri@iwr.uni-heidelberg.de
         aliases:
           - name: Sriram
           - name: C.V. Sriram
         phone: +49-(0)6221-54 14713
         room: 03/222 (INF 205)
-        research_interests: Nearly holomorphic Drinfeld modular forms, admissible level structures
+        research_interests: Bruhat-Tits buildings, harmonic cocycles, nearly holomorphic
+          Drinfeld modular forms
         body: Sriram Chinthalagiri Venkata is a PhD student in the Arithmetic Geometry
           group at Heidelberg University, working under the supervision of Prof.
           Dr. Gebhard Böckle. He completed his MSc in Mathematics at the Chennai
           Mathematical Institute (CMI), India. He is part of the CRC-326 GAUS
           (Geometry and arithmetic of uniformized structures). His research
-          focuses on Drinfeld's theory of elliptic sheaves and Shtukas,
-          L-parameters, and nearly holomorphic Drinfeld modular forms. He works
-          on admissible level structures and the arithmetic and geometric
-          aspects of function field arithmetic, contributing to the
-          understanding of Drinfeld modular varieties and their applications.
+          focuses on elucidating the combinatorial and geometric aspects of
+          function field arithmetic. Specifically he investigates harmonic
+          cocycles on the Bruhat-Tits building associated with the general
+          linear group of a Laurent series field over a finite field. His work
+          also explores Drinfeld modular forms and their variants on the
+          Drinfeld period domain.
+        links:
+          - url: https://sriram-chinthalagiri.github.io/webpage/
       - name: Theresa Kaiser
         role: PhD Student
         group: Members
         photo: /assets/migrated/csm_Kaiser-Theresa_aa9c1ced0f.jpeg
-        seo:
         email: theresa.kaiser@iwr.uni-heidelberg.de
         aliases:
           - name: Kaiser
@@ -187,12 +183,10 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/alain-muller.jpg
-        seo:
       - name: Dr. Andreas Maurischat
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_Maurischat_7b6f31e6ea.jpg
-        seo:
         email: amaurischat@mathi.uni-heidelberg.de
         orcid: 0000-0002-3867-8429
         phone: +49-(0)6221-54 14714
@@ -201,7 +195,6 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_Juschka2_01_f2b754bf3f.jpg
-        seo:
         email: ann-kristin.juschka@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         fax: +49-(0)6221-54 14737
@@ -210,12 +203,10 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/archiebold-karumbidza.jpg
-        seo:
       - name: Dr. Barinder Banwait
         role: Former Member
         group: Members
         photo: /assets/img/barinder-banwait.jpg
-        seo:
         email: barinder.banwait@iwr.uni-heidelberg.de
         orcid: 0000-0001-5873-8399
         aliases:
@@ -226,17 +217,14 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/david-a-guiraud.jpg
-        seo:
       - name: Dr. Juan Marcos Cerviño
         role: Former Member
         group: Members
         photo: /assets/img/juan-marcos-cervino.jpg
-        seo:
       - name: Dr. Julian Quast
         role: Former Member
         group: Members
         photo: /assets/img/julian-quast.jpg
-        seo:
         email: julian.quast@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14840
         room: 04/231 (INF 205)
@@ -248,7 +236,6 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/narasimha-kumar-cheraku.jpg
-        seo:
         links:
           - url: https://sites.google.com/site/chnarasimhakumar/
             text: Website
@@ -256,7 +243,6 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/oguz-gezmis.jpg
-        seo:
         email: oguz.gezmis@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14714
         room: 03/224 (INF 205)
@@ -268,12 +254,10 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/patrik-hubschmid.jpg
-        seo:
       - name: Dr. Peter Gräf
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_Gra_f__Peter_01_a81f8eb5c5.jpg
-        seo:
         email: peter.graef@iwr.uni-heidelberg.de
         aliases:
           - name: Gräf
@@ -287,12 +271,10 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/ralf-butenuth.jpg
-        seo:
       - name: Dr. Rudolph Perkins
         role: Former Member
         group: Members
         photo: /assets/img/rudolph-perkins.jpg
-        seo:
         links:
           - url: https://rudolphperkins.wordpress.com/
             text: Website
@@ -300,7 +282,6 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/samuele-anni.jpg
-        seo:
         links:
           - url: https://sites.google.com/view/samuele-anni/home
             text: Website
@@ -308,27 +289,22 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/sundeep-balaji.jpg
-        seo:
       - name: Dr. Tommaso Centeleghe
         role: Former Member
         group: Members
         photo: /assets/img/tommaso-centeleghe.jpg
-        seo:
       - name: Dr. Yamidt Bermudez Tobon
         role: Former Member
         group: Members
         photo: /assets/img/yamidt-bermudez-tobon.jpg
-        seo:
       - name: Dr. Yujia Qiu
         role: Former Member
         group: Members
         photo: /assets/img/yujia-qiu.jpg
-        seo:
       - name: Dr. Özge Ülkem
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_photo3_24588f06e1.jpg
-        seo:
         email: oezge.uelkem@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14714
         fax: +49-(0)6221-54 14737
@@ -337,7 +313,6 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/migrated/csm_image3_01_d7fd0284ac.jpg
-        seo:
         email: konrad.fischer@iwr.uni-heidelberg.de
         phone: +49-(0)6221-54 14713
         fax: +49-(0)6221-54 14737
@@ -347,7 +322,6 @@ sections:
         role: Former Member
         group: Members
         photo: /assets/img/judith-ludwig.jpg
-        seo:
         email: judith.ludwig@iwr.uni-heidelberg.de
         room: 03/225 (INF 205)
         office_hours: by appointment
