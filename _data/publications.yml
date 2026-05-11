@@ -58,6 +58,9 @@ publications:
     doi: https://doi.org/10.1007/s40993-025-00666-2
     type: Article
     links:
+      - label: Link to PDF
+        url: https://link.springer.com/epdf/10.1007/s40993-025-00666-2?sharing_token=WwR3FtvZKnNQlgm-IdFZ5Pe4RwlQNchNByi7wbcMAY7rXmZbgivqQFBVeYElHqszdPx21aQNH4kuPd1Mtp49-cfFCbgNJ0YV5vkHR7ikv1Bg0tqnFHktx69093eOYhF-ax85GnwUlohTzRuz3HaTsML_4gkXa2WZxfmJ-QAfPGg%3D
+    pdfs:
       - {}
   - title: Equidimensionality of universal pseudodeformation rings in characteristic
       p for absolute Galois groups of p-adic fields (pdf), 91 pages.
