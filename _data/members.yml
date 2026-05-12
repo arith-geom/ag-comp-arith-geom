@@ -176,6 +176,11 @@ sections:
           representations. She is involved in projects studying the
           Wiles-Lenstra-Diamond numerical criterion and its applications to
           modular forms and arithmetic geometry.
+      - name: Nils Tietke
+        role: PhD Student
+        group: Members
+        phone: +49-(0)6221-54 14714
+        room: 03/224, INF 205
   - title: Former Members
     layout: small
     members:
