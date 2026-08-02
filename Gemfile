@@ -32,6 +32,7 @@ gem "csv"
 gem "base64"
 
 group :development do
+  gem "bundler-audit", "~> 0.9"
   gem "html-proofer", "~> 5.0"
   gem "minitest", "~> 5.0"
   gem "rake", "~> 13.0"
