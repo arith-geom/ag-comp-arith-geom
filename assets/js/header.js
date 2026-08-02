@@ -4,23 +4,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebarOverlay = document.querySelector('.sidebar-overlay');
   const sidebarClose = document.querySelector('.sidebar-close');
 
+  if (!navToggle || !sidebarNav || !sidebarOverlay || !sidebarClose) {
+    return;
+  }
+
   function openSidebar() {
     sidebarNav.classList.add('is-open');
     sidebarOverlay.classList.add('is-active');
+    sidebarNav.setAttribute('aria-hidden', 'false');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Close navigation');
+    sidebarClose.focus();
   }
 
   function closeSidebar() {
     sidebarNav.classList.remove('is-open');
     sidebarOverlay.classList.remove('is-active');
+    sidebarNav.setAttribute('aria-hidden', 'true');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation');
+    navToggle.focus();
   }
 
-  if (navToggle) {
-    navToggle.addEventListener('click', openSidebar);
-  }
-  if (sidebarOverlay) {
-    sidebarOverlay.addEventListener('click', closeSidebar);
-  }
-  if (sidebarClose) {
-    sidebarClose.addEventListener('click', closeSidebar);
-  }
+  navToggle.addEventListener('click', () => {
+    if (sidebarNav.classList.contains('is-open')) closeSidebar();
+    else openSidebar();
+  });
+  sidebarOverlay.addEventListener('click', closeSidebar);
+  sidebarClose.addEventListener('click', closeSidebar);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && sidebarNav.classList.contains('is-open')) {
+      closeSidebar();
+    }
+  });
 });

@@ -1,6 +1,6 @@
 // assets/js/footer.js
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   const backToTopButton = document.getElementById('back-to-top');
 
   if (backToTopButton) {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Add event listeners
-    window.addEventListener('scroll', toggleBackToTopButton);
+    window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
     backToTopButton.addEventListener('click', scrollToTop);
 
     // Initial check in case the page is already scrolled down
