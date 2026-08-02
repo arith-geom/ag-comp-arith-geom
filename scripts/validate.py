@@ -75,6 +75,60 @@ class Validator:
             if size_mb > 2:
                 self.warning(f"{relative}: large file ({size_mb:.2f} MB)")
 
+    def validate_pages_cms(self) -> None:
+        config_path = ROOT / ".pages.yml"
+        try:
+            with config_path.open(encoding="utf-8") as stream:
+                config = yaml.safe_load(stream)
+        except (OSError, UnicodeError, yaml.YAMLError) as error:
+            self.error(f".pages.yml: cannot be read: {error}")
+            return
+
+        config = self.require_mapping(config, ".pages.yml")
+        if config is None:
+            return
+
+        content = self.require_list(config.get("content"), ".pages.yml.content")
+        if content is not None:
+            names: set[str] = set()
+            for index, raw_item in enumerate(content, start=1):
+                location = f".pages.yml.content[{index}]"
+                item = self.require_mapping(raw_item, location)
+                if item is None:
+                    continue
+                name = item.get("name")
+                self.require_text(name, f"{location}.name")
+                if isinstance(name, str):
+                    if name in names:
+                        self.error(f"{location}.name: duplicate content name {name!r}")
+                    names.add(name)
+                path = item.get("path")
+                self.require_text(path, f"{location}.path")
+                if isinstance(path, str) and not (ROOT / path).is_file():
+                    self.error(f"{location}.path: file does not exist: {path}")
+
+        actions = self.require_list(config.get("actions", []), ".pages.yml.actions")
+        if actions is not None:
+            for index, raw_action in enumerate(actions, start=1):
+                location = f".pages.yml.actions[{index}]"
+                action = self.require_mapping(raw_action, location)
+                if action is None:
+                    continue
+                workflow = action.get("workflow")
+                self.require_text(workflow, f"{location}.workflow")
+                if not isinstance(workflow, str):
+                    continue
+                workflow_name = Path(workflow)
+                if workflow_name.name != workflow or workflow_name.suffix not in {
+                    ".yml",
+                    ".yaml",
+                }:
+                    self.error(f"{location}.workflow: expected a workflow filename")
+                    continue
+                workflow_path = ROOT / ".github" / "workflows" / workflow
+                if not workflow_path.is_file():
+                    self.error(f"{location}.workflow: file does not exist: {workflow}")
+
     def validate_members(self) -> None:
         data = self.require_mapping(self.load_yaml("members.yml"), "_data/members.yml")
         if data is None:
@@ -243,6 +297,7 @@ class Validator:
                 self.error(f"{location}.map_url: must not contain secret parameter(s): {names}")
 
     def run(self) -> int:
+        self.validate_pages_cms()
         self.validate_uploads()
         self.validate_members()
         self.validate_publications()
