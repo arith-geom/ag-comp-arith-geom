@@ -44,6 +44,7 @@ task site: :build do
      "--swap-urls '/ag-comp-arith-geom/:/' --no-check-internal-hash --no-enforce-https"
   sh "#{python} scripts/check_generated_site.py"
   sh "#{python} scripts/check_external_resources.py"
+  sh "#{python} scripts/check_seo.py"
 end
 
 desc "Run all repository checks"

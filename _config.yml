@@ -5,6 +5,7 @@ description: This is the website of the research group "computational arithmetic
 url: https://arith-geom.github.io
 baseurl: "/ag-comp-arith-geom"
 logo: assets/img/IWRLOGO.png
+image: assets/img/IWRLOGO.png
 twitter_username:
 github_username: arith-geom
 
@@ -25,6 +26,10 @@ creator:
 # Contact Information
 contact:
   address: "Mathematikon, INF 205, 69120 Heidelberg, Germany"
+  street_address: "Im Neuenheimer Feld 205"
+  address_locality: "Heidelberg"
+  postal_code: "69120"
+  address_country: "DE"
   phone: "+49-6221-54-14734"
   fax: "+49-6221-54-14737"
   email: "arithgeo@iwr.uni-heidelberg.de"
@@ -65,6 +70,7 @@ collections:
 plugins:
   - jekyll-seo-tag
   - jekyll-scholar
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -94,6 +100,7 @@ exclude:
   - venv/
   - .venv/
   - requirements.txt
+  - scripts/
 
 # Performance and regeneration settings
 incremental: false
@@ -116,6 +123,22 @@ sass:
   style: compressed
 
 defaults:
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
+  - scope:
+      path: "_teaching/pdfs"
+    values:
+      sitemap: false
+  - scope:
+      path: "google8edbf0462b291fc3.html"
+    values:
+      sitemap: false
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/IWRLOGO.png
   - scope:
       path: ""
       type: "pages"
