@@ -3,6 +3,7 @@ layout: page
 permalink: "/teaching/"
 title: "Teaching"
 show_title: false
+mathjax: true
 description: "An overview of our courses, seminars, and lectures, organized by semester."
 ---
 
