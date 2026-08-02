@@ -1,5 +1,79 @@
 @use 'variables' as v;
 
+.publication-search {
+  margin-bottom: 0.5rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+  }
+}
+
+.publication-search-control {
+  position: relative;
+
+  > i {
+    position: absolute;
+    top: 50%;
+    left: 0.85rem;
+    color: var(--text-muted);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.65rem 4.75rem 0.65rem 2.5rem;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: v.$radius-sm;
+
+    &:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.publication-search-clear {
+  position: absolute;
+  top: 50%;
+  right: 0.35rem;
+  min-width: 44px;
+  min-height: 34px;
+  padding: 0.3rem 0.6rem;
+  color: var(--primary);
+  background: transparent;
+  border: 0;
+  border-radius: v.$radius-sm;
+  transform: translateY(-50%);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--bg-secondary);
+  }
+}
+
+.search-results-header {
+  min-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.publication-search-empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.publication-card[hidden],
+.publication-search-clear[hidden],
+.publication-search-empty[hidden] {
+  display: none !important;
+}
+
 .publication-grid {
   display: grid;
   grid-template-columns: 1fr;
