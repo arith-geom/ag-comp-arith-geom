@@ -23,6 +23,26 @@ def main() -> int:
         relative = path.relative_to(ROOT)
         soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
 
+        if soup.html is None:
+            continue
+
+        is_redirect = soup.select_one('meta[http-equiv="refresh"]') is not None
+        if not is_redirect and soup.select_one("main h1, [role='main'] h1") is None:
+            errors.append(f"{relative}: main content is missing an h1")
+
+        ids = [str(element["id"]) for element in soup.select("[id]")]
+        duplicate_ids = sorted({value for value in ids if ids.count(value) > 1})
+        for duplicate_id in duplicate_ids:
+            errors.append(f"{relative}: duplicate id {duplicate_id!r}")
+
+        for image in soup.find_all("img"):
+            if not image.has_attr("alt"):
+                errors.append(f"{relative}: image is missing alt text")
+
+        for frame in soup.find_all("iframe"):
+            if not str(frame.get("title", "")).strip():
+                errors.append(f"{relative}: iframe is missing a title")
+
         for tag, attribute in (("a", "href"), ("img", "src"), ("script", "src")):
             for element in soup.find_all(tag):
                 if element.has_attr(attribute) and not str(element[attribute]).strip():

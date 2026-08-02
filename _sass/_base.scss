@@ -1593,3 +1593,32 @@ table {
     background-color: rgba(0, 0, 0, 0.02);
   }
 }
+/* Keyboard-only shortcut that remains outside the visual layout until focused. */
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2000;
+  padding: 0.75rem 1rem;
+  background: var(--global-bg-color, #fff);
+  color: var(--global-text-color, #111) !important;
+  border: 2px solid var(--primary, #c22032);
+  border-radius: 0.375rem;
+  transform: translateY(-150%);
+  transition: none;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
