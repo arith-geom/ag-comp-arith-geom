@@ -8,6 +8,7 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.17"
   gem "jekyll-seo-tag"
   gem "jekyll-scholar"
+  gem "jekyll-sitemap", "~> 1.4"
 end
 
 # Theme support

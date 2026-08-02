@@ -168,3 +168,33 @@ layout: default
         </div>
     </div>
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": {{ page.title | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "description": {{ page.description | strip_html | strip_newlines | jsonify }},
+  "datePublished": {{ page.year | jsonify }},
+  "author": [
+    {% assign publication_authors = page.authors | split: ',' %}
+    {% for author in publication_authors %}
+    { "@type": "Person", "name": {{ author | strip | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "isPartOf": {
+    "@type": "Periodical",
+    "name": {{ page.journal_details | strip_html | jsonify }}
+  },
+  {% if page.mr_number and page.mr_number != empty %}
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "MathSciNet",
+    "value": {{ page.mr_number | jsonify }}
+  }
+  {% else %}
+  "identifier": {{ page.isbn | jsonify }}
+  {% endif %}
+}
+</script>

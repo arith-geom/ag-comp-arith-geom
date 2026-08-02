@@ -24,6 +24,11 @@ module Jekyll
       self.data['type'] = publication['type']
       self.data['mr_number'] = publication['mr_number']
       self.data['year'] = publication['year']
+      description_parts = [publication['authors'], publication['journal_details']]
+                          .compact
+                          .map { |part| part.to_s.gsub(%r{<[^>]*>}, ' ').gsub(/\s+/, ' ').strip }
+                          .reject(&:empty?)
+      self.data['description'] = description_parts.join('. ')
 
       self.data['reviewer'] = publication['reviewer']
       self.data['citation_count'] = publication['citation_count']
