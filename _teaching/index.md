@@ -75,14 +75,14 @@ description: "An overview of our courses, seminars, and lectures, organized by s
           {% assign highlight_class = "highlight-current" %}
         {% endif %}
         <div class="semester-section {{ highlight_class | strip }}">
-          <h4 class="semester-title">{{ semester_title | escape }}</h4>
+          <h2 class="semester-title">{{ semester_title | escape }}</h2>
           {% for course in semester.courses %}
             <div class="course-card position-relative">
-              <h5 class="course-title">
+              <h3 class="course-title">
                 {% assign course_slug = course.title | slugify: "latin" %}
                 {% assign semester_slug = semester_title | slugify: "latin" %}
                 <a href="{{ '/teaching/' | append: year_data.year | append: '/' | append: semester_slug | append: '/' | append: course_slug | append: '/' | relative_url }}" class="text-decoration-none text-dark stretched-link">{{ course.title | escape }}</a>
-              </h5>
+              </h3>
               {% if course.instructor %}
                 <p class="course-instructor"><i class="fas fa-user-tie"></i> {{ course.instructor | escape }}</p>
               {% endif %}

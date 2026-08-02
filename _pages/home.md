@@ -5,6 +5,7 @@ nav: true
 nav_order: 1
 order: 100
 show_title: false
+has_content_h1: true
 title: Home
 description: "Official website of the Computational Arithmetic Geometry research group at Heidelberg University."
 about_title: "About Our Research Group"
