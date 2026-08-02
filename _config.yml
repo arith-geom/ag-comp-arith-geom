@@ -76,6 +76,9 @@ exclude:
   - .git/
   - .gitignore
   - README.md
+  - Rakefile
+  - requirements-dev.txt
+  - scripts/
   - _site/
   - .sass-cache/
   - .jekyll-cache/

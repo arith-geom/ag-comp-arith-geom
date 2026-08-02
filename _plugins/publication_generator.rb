@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require_relative 'generated_content_helpers'
+
 module Jekyll
   class PublicationPage < Page
     def initialize(site, base, dir, publication)
@@ -41,32 +45,15 @@ module Jekyll
     def generate(site)
       if site.data['publications'] && site.data['publications']['publications']
         site.config['generated_publications'] = []
-        site.data['publications']['publications'].each do |publication|
+        site.data['publications']['publications'].each do |source_publication|
+          publication = GeneratedContentHelpers.normalized_copy(
+            source_publication,
+            collection_keys: %w[pdfs links]
+          )
+
           # Create slug from title using Jekyll's utility to match Liquid filter
           slug = Utils.slugify(publication['title'], mode: 'latin')
 
-          # Auto-fix relative links in body
-          if publication['body']
-            # Fix markdown links [label](assets/...) -> [label](/assets/...)
-            publication['body'] = publication['body'].gsub(/\]\(assets\//, '](/assets/')
-            # Fix HTML links href="assets/..." -> href="/assets/..."
-            publication['body'] = publication['body'].gsub(/href="assets\//, 'href="/assets/')
-          end
-
-          # Auto-fix relative links in pdfs and links arrays
-          ['pdfs', 'links'].each do |key|
-            if publication[key]
-              publication[key].each do |item|
-                if item['file'] && item['file'].start_with?('assets/')
-                  item['file'] = '/' + item['file']
-                end
-                if item['url'] && item['url'].start_with?('assets/')
-                  item['url'] = '/' + item['url']
-                end
-              end
-            end
-          end
-          
           # Create page at /publications/:slug/
           page = PublicationPage.new(site, site.source, File.join('publications', slug), publication)
           site.pages << page

@@ -37,8 +37,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install pyyaml beautifulsoup4 yamllint
-          npm install -D stylelint stylelint-config-standard-scss
+          pip install -r requirements-dev.txt
+          npm ci
 
       - name: Guardian - Lint YAML
         run: yamllint .
@@ -47,7 +47,10 @@ jobs:
         run: npx stylelint "**/*.scss"
 
       - name: Guardian - Validate Data & Assets
-        run: python3 .github/scripts/validate.py
+        run: python3 scripts/validate.py
+
+      - name: Test custom Jekyll plugins
+        run: bundle exec ruby scripts/test_plugins.rb
 
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
@@ -60,8 +63,8 @@ jobs:
 
       - name: Guardian - Check Site Health (Links & HTML)
         run: |
-          gem install html-proofer
-          htmlproofer ./_site --disable-external --allow-hash-href --ignore-empty-alt --swap-urls "/ag-comp-arith-geom/:/" --no-check-internal-hash --allow-missing-href --no-enforce-https
+          bundle exec htmlproofer ./_site --disable-external --allow-hash-href --swap-urls "/ag-comp-arith-geom/:/" --no-check-internal-hash --no-enforce-https
+          python3 scripts/check_generated_site.py
   deploy:
     needs: build
     runs-on: ubuntu-latest

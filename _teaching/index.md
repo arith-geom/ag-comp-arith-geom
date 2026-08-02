@@ -93,14 +93,26 @@ description: "An overview of our courses, seminars, and lectures, organized by s
                 {% if course.links or course.pdfs %}
                 <div class="course-resources mt-2 position-relative" style="z-index: 2;">
                   {% for link in course.links %}
+                    {% if link.url and link.url != empty %}
                     <a href="{{ link.url | escape }}" class="btn btn-sm btn-outline-primary me-1 mb-1" target="_blank" rel="noopener">
                       <i class="fas fa-external-link-alt"></i> {{ link.label | default: "More Info" | escape }}
                     </a>
+                    {% else %}
+                    <span class="btn btn-sm btn-outline-primary me-1 mb-1" aria-disabled="true">
+                      <i class="fas fa-external-link-alt"></i> {{ link.label | default: "More Info" | escape }}
+                    </span>
+                    {% endif %}
                   {% endfor %}
                   {% for pdf in course.pdfs %}
+                    {% if pdf.file and pdf.file != empty %}
                     <a href="{{ pdf.file | relative_url | escape }}" class="btn btn-sm btn-outline-danger me-1 mb-1" target="_blank" rel="noopener">
                       <i class="fas fa-file-pdf"></i> {{ pdf.label | default: "PDF" | escape }}
                     </a>
+                    {% else %}
+                    <span class="btn btn-sm btn-outline-danger me-1 mb-1" aria-disabled="true">
+                      <i class="fas fa-file-pdf"></i> {{ pdf.label | default: "PDF" | escape }}
+                    </span>
+                    {% endif %}
                   {% endfor %}
                 </div>
                 {% endif %}

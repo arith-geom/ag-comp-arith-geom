@@ -2,6 +2,15 @@
   "name": "ag-computational-arithmetic-geometry",
   "version": "2.0.0",
   "description": "Website for AG Computational Arithmetic Geometry with modern Pages CMS configuration",
+  "private": true,
+  "scripts": {
+    "audit": "npm audit --audit-level=high",
+    "check": "npm run lint:styles && npm run audit",
+    "lint:styles": "stylelint \"**/*.scss\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {},
   "devDependencies": {
     "prettier": "^2.8.8",

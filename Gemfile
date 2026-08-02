@@ -25,8 +25,14 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
 # do not have a Java counterpart.
-gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby] 
+gem "http_parser.rb", "~> 0.6.0", platforms: [:jruby]
 
-# add missing dependency
+# Ruby 3.4+ no longer bundles these standard libraries.
 gem "csv"
 gem "base64"
+
+group :development do
+  gem "html-proofer", "~> 5.0"
+  gem "minitest", "~> 5.0"
+  gem "rake", "~> 13.0"
+end
