@@ -1,6 +1,29 @@
 # This file is used to configure the PagesCMS interface.
 # For more information, see: https://pagescms.org/docs/configuration/
 
+settings:
+  content:
+    # Keep data keys that are not currently exposed as CMS fields.
+    merge: true
+  commit:
+    identity: app
+    templates:
+      create: "content(create): {path}"
+      update: "content(update): {path}"
+      delete: "content(delete): {path}"
+      rename: "content(rename): {oldPath} -> {newPath}"
+
+actions:
+  - name: "validate-site"
+    label: "Validate site"
+    workflow: "pages-cms-validate.yml"
+    ref: "current"
+    cancelable: true
+    confirm:
+      title: "Validate the site?"
+      message: "Run the repository checks without deploying or changing content."
+      button: "Validate"
+
 media:
   input: "assets/uploads"
   output: "/assets/uploads"
