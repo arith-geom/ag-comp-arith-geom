@@ -120,6 +120,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- MathJax for LaTeX support -->
+{% assign mathjax_layouts = "member,publication,publication_subpage,teaching_subpage" | split: "," %}
+{% if page.mathjax or mathjax_layouts contains page.layout %}
 <script>
   window.MathJax = {
     tex: {
@@ -137,6 +139,7 @@
 
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="{{ '/assets/js/components/mathjax-setup.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
 
 {% if site.enable_darkmode %}
   <link

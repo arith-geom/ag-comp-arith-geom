@@ -4,6 +4,7 @@ permalink: "/publications/"
 nav: true
 nav_order: 5
 show_title: false
+mathjax: true
 order: 100
 title: Publications
 description: "Browse the comprehensive list of publications from the Computational Arithmetic Geometry research group, including journal articles, preprints, and books."

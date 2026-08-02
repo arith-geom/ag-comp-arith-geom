@@ -7,7 +7,14 @@ nav_order: 1
 ---
 
 <div class="hero-header">
-  <img src="{{ site.data.home.hero.image | relative_url }}" alt="Panoramic view of Heidelberg, home to the Computational Arithmetic Geometry research group at Heidelberg University." class="hero-image" loading="lazy">
+  <picture>
+    <source
+      type="image/webp"
+      srcset="{{ '/assets/img/heidelberg-480.webp' | relative_url }} 480w, {{ '/assets/img/heidelberg-960.webp' | relative_url }} 960w, {{ '/assets/img/heidelberg-1440.webp' | relative_url }} 1440w"
+      sizes="(max-width: 768px) calc(100vw - 40px), calc(100vw - 40px)"
+    >
+    <img src="{{ site.data.home.hero.image | relative_url }}" alt="Panoramic view of Heidelberg, home to the Computational Arithmetic Geometry research group at Heidelberg University." class="hero-image" width="1920" height="1280" fetchpriority="high" decoding="async">
+  </picture>
   <div class="hero-overlay">
     <div class="hero-content">
       <h1 class="hero-title">{{ site.data.home.hero.title | escape }}</h1>
