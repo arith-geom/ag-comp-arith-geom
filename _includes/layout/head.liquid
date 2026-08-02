@@ -31,8 +31,8 @@
 <!-- Vendor CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" integrity="sha384-kj1RBJ7aqGUnavWQDbYyovF5HQGHlvNf6SZ2CfaCNkoBJBEux2JXFCXqGZTAYENh" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@v1.9.4/css/academicons.min.css" integrity="sha384-cxs0Bj979VdNByRZzAJ2KJWG8vH/kG7fwWZAIZW3Tmsw0rAuP/pu3I3LitFWEs18" crossorigin="anonymous" referrerpolicy="no-referrer">
 
 
 <!-- Google Fonts - Modern Academic Style (similar to Heidelberg University) -->
@@ -52,7 +52,7 @@
 
 {% if page.toc and page.toc.sidebar %}
   <!-- Sidebar Table of Contents -->
-  <link defer href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+  <link defer href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet" integrity="sha384-oJyFk/zeMJXNIGMVvmH262FT6dbSYss66WJHHgp1RlUk4/LfONQTzkAsHHwfcqat" crossorigin="anonymous" referrerpolicy="no-referrer">
 {% endif %}
 
 <!-- Styles -->
@@ -104,6 +104,7 @@
 
 <!-- Theme Color for Mobile Browsers -->
 <meta name="theme-color" content="#C22032" id="theme-color-meta">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 
 <!-- Enhanced Meta Tags -->
 <meta name="application-name" content="AG Computational Arithmetic Geometry">
@@ -126,7 +127,7 @@
   };
 </script>
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ '/assets/js/components/mathjax-setup.js' | relative_url | bust_file_cache }}"></script>
 
 {% if site.enable_darkmode %}
