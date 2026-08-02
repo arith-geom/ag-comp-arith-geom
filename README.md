@@ -73,3 +73,9 @@ are pinned in `requirements-dev.txt`.
 
 - **Validation**: `python3 scripts/validate.py` - "The Guardian". Checks data integrity, filenames, and image sizes.
 - **Generated-site check**: `python3 scripts/check_generated_site.py` - Rejects empty asset and link attributes after a build.
+
+## AI Assistance Disclosure
+
+AI-assisted development tools have been used for parts of this repository's code,
+tooling, tests, and documentation. Changes remain subject to human review and the
+same validation and testing requirements as other contributions.
