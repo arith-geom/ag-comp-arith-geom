@@ -21,6 +21,13 @@ namespace :lint do
   end
 end
 
+namespace :audit do
+  desc "Report duplicate, oversized, unreferenced, and mislabeled assets"
+  task :assets do
+    sh "#{python} scripts/audit_assets.py"
+  end
+end
+
 desc "Build the Jekyll site"
 task :build do
   sh "bundle exec jekyll build"
@@ -39,7 +46,7 @@ task site: :build do
 end
 
 desc "Run all repository checks"
-task check: [:validate, "lint:yaml", "lint:styles", :test, :site] do
+task check: [:validate, "lint:yaml", "lint:styles", :test, :site, "audit:assets"] do
   sh "npm run audit"
 end
 
