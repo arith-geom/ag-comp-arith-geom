@@ -47,6 +47,7 @@ jobs:
         run: |
           pip install -r requirements-dev.txt
           npm ci
+          npx playwright install --with-deps chromium
 
       - name: Guardian - Lint YAML
         run: yamllint .
@@ -73,6 +74,9 @@ jobs:
         run: |
           bundle exec htmlproofer ./_site --disable-external --allow-hash-href --swap-urls "/ag-comp-arith-geom/:/" --no-check-internal-hash --no-enforce-https
           python3 scripts/check_generated_site.py
+
+      - name: Browser smoke tests
+        run: npm run test:e2e
   deploy:
     needs: build
     runs-on: ubuntu-latest

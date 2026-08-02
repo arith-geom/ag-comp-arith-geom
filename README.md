@@ -51,6 +51,7 @@ This website is built with **Jekyll** and hosted on **GitHub Pages**.
    ```bash
    bundle install
    npm ci
+   npx playwright install chromium
    python3 -m venv .venv
    .venv/bin/pip install -r requirements-dev.txt
    ```
@@ -64,6 +65,7 @@ This website is built with **Jekyll** and hosted on **GitHub Pages**.
 4. **Run the same checks used in CI:**
    ```bash
    bundle exec rake check
+   npm run test:e2e
    ```
 
 ### Maintenance Scripts
