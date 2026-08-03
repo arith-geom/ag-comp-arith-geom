@@ -76,6 +76,7 @@ are pinned in `requirements-dev.txt`.
 - **Validation**: `python3 scripts/validate.py` - "The Guardian". Checks data integrity, filenames, and image sizes.
 - **Generated-site check**: `python3 scripts/check_generated_site.py` - Rejects empty asset and link attributes after a build.
 - **Asset inventory**: `bundle exec rake audit:assets` - Reports duplicate, oversized, unreferenced, and mislabeled assets without changing contributor files.
+- **Search visibility**: See [`docs/search-visibility.md`](docs/search-visibility.md) for the post-deployment Search Console and indexing checklist.
 
 ## AI Assistance Disclosure
 
