@@ -14,19 +14,13 @@ scripts:
 ---
 
 <div class="publications-container">
-  <section class="publication-search-panel" aria-labelledby="publications-heading">
-    <div class="publication-search-heading">
-      <div class="publication-search-heading-icon" aria-hidden="true">
-        <i class="fas fa-book-open"></i>
-      </div>
-      <div>
-        <span class="publication-search-eyebrow">Research output</span>
-        <h1 id="publications-heading">Publications</h1>
-        <p>Browse articles, preprints, books, and software from the research group.</p>
-      </div>
-    </div>
+  <header class="publication-page-heading">
+    <h1 id="publications-heading">Publications</h1>
+    <p>Browse articles, preprints, books, and software from the research group.</p>
+  </header>
+  <section class="publication-search-panel" aria-label="Filter publications">
     <form class="publication-search" role="search" aria-label="Search publications" novalidate>
-      <label for="publication-search-input">Search the publication archive</label>
+      <label class="visually-hidden" for="publication-search-input">Search publications</label>
       <div class="publication-search-control">
         <i class="fas fa-search" aria-hidden="true"></i>
         <input
@@ -34,7 +28,7 @@ scripts:
           type="search"
           inputmode="search"
           autocomplete="off"
-          placeholder="Title, author, journal, year, status, or MR number"
+          placeholder="Search publications"
           aria-controls="publication-grid"
           aria-describedby="publication-result-count"
         >

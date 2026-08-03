@@ -77,9 +77,16 @@ test('site search returns readable results and an empty state', async ({ page })
 test('publication search filters and clears without changing source content', async ({ page }) => {
   await page.goto('publications/');
   const cards = page.locator('#publication-grid > .publication-card');
+  const searchPanel = page.locator('.publication-search-panel');
+  const searchInput = page.locator('#publication-search-input');
   const total = await cards.count();
 
-  await page.locator('#publication-search-input').fill('arithmetic');
+  const panelBox = await searchPanel.boundingBox();
+  const inputBox = await searchInput.boundingBox();
+  expect(panelBox?.height).toBeLessThan(100);
+  expect(inputBox?.height).toBeLessThanOrEqual(44);
+
+  await searchInput.fill('arithmetic');
   const filtered = await page.locator('#publication-grid > .publication-card:visible').count();
   expect(filtered).toBeGreaterThan(0);
   expect(filtered).toBeLessThan(total);

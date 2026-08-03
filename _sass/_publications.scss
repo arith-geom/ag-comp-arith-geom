@@ -1,61 +1,32 @@
 @use 'variables' as v;
 
 .publication-search-panel {
-  margin-bottom: 1.25rem;
-  padding: clamp(1rem, 2.5vw, 1.5rem);
-  border: 1px solid var(--border-color);
-  border-top: 4px solid v.$primary;
-  border-radius: v.$radius-md;
-  background: linear-gradient(135deg, v.$red-50 0%, var(--bg-primary) 58%);
-  box-shadow: v.$shadow-sm;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.publication-search-heading {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 1.2rem;
+.publication-page-heading {
+  margin-bottom: 0.9rem;
 
   h1 {
-    margin: 0.05rem 0 0;
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin: 0;
+    font-size: clamp(1.55rem, 2.4vw, 1.9rem);
   }
 
   p {
-    margin: 0.35rem 0 0;
+    margin: 0.2rem 0 0;
     color: var(--text-muted);
+    font-size: 0.9rem;
   }
-}
-
-.publication-search-heading-icon {
-  display: grid;
-  flex: 0 0 auto;
-  width: 3.25rem;
-  height: 3.25rem;
-  place-items: center;
-  border: 1px solid v.$red-200;
-  border-radius: 50%;
-  background: v.$red-100;
-  color: v.$red-800;
-  font-size: 1.25rem;
-}
-
-.publication-search-eyebrow {
-  color: v.$red-800;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
 }
 
 .publication-search {
+  flex: 0 1 30rem;
   margin: 0;
-
-  label {
-    display: block;
-    margin-bottom: 0.45rem;
-    font-weight: 600;
-  }
 }
 
 .publication-search-control {
@@ -72,13 +43,14 @@
 
   input {
     width: 100%;
-    min-height: 52px;
-    padding: 0.65rem 4.75rem 0.65rem 2.5rem;
+    min-height: 42px;
+    padding: 0.5rem 4.5rem 0.5rem 2.4rem;
     color: var(--text-primary);
     background: var(--bg-primary);
     border: 1px solid v.$gray-300;
     border-radius: v.$radius-sm;
-    box-shadow: v.$shadow-sm;
+    font: inherit;
+    font-size: 0.95rem;
     transition: border-color 160ms ease, box-shadow 160ms ease;
 
     &:focus {
@@ -94,7 +66,7 @@
   top: 50%;
   right: 0.35rem;
   min-width: 44px;
-  min-height: 34px;
+  min-height: 32px;
   padding: 0.3rem 0.6rem;
   color: var(--primary);
   background: transparent;
@@ -109,17 +81,14 @@
 }
 
 .search-results-header {
-  display: inline-flex;
-  gap: 0.45rem;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.4rem;
   align-items: center;
-  min-height: 1.5rem;
-  margin-top: 0.85rem;
-  padding: 0.3rem 0.65rem;
-  border-radius: v.$radius-full;
-  background: v.$red-100;
-  color: v.$red-800;
-  font-size: 0.85rem;
-  font-weight: 700;
+  min-height: 42px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
 
   i,
   span {
@@ -147,16 +116,17 @@
 
 @media (max-width: 575.98px) {
   .publication-search-panel {
-    border-radius: v.$radius-sm;
+    display: block;
+    padding-bottom: 0.8rem;
   }
 
-  .publication-search-heading {
-    align-items: flex-start;
+  .publication-search {
+    width: 100%;
   }
 
-  .publication-search-heading-icon {
-    width: 2.75rem;
-    height: 2.75rem;
+  .search-results-header {
+    min-height: auto;
+    margin-top: 0.45rem;
   }
 }
 
