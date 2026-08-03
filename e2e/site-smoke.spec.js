@@ -12,6 +12,15 @@ const criticalRoutes = [
 
 for (const route of criticalRoutes) {
   test(`${route.label} renders the shared page shell`, async ({ page }) => {
+    const browserProblems = [];
+    page.on('console', (message) => {
+      if (message.type() === 'error') browserProblems.push(`console: ${message.text()}`);
+    });
+    page.on('pageerror', (error) => browserProblems.push(`page: ${error.message}`));
+    page.on('requestfailed', (request) => {
+      const failure = request.failure();
+      browserProblems.push(`request: ${request.url()} (${failure?.errorText || 'failed'})`);
+    });
     const response = await page.goto(route.path);
 
     expect(response?.ok()).toBeTruthy();
@@ -24,6 +33,12 @@ for (const route of criticalRoutes) {
       .locator('a[href=""], img[src=""], script[src=""]')
       .count();
     expect(emptyResourceAttributes).toBe(0);
+
+    const horizontalOverflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    );
+    expect(horizontalOverflow).toBeLessThanOrEqual(1);
+    expect(browserProblems).toEqual([]);
   });
 }
 

@@ -1,4 +1,4 @@
-const { defineConfig } = require('@playwright/test');
+const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
   testDir: './e2e',
@@ -12,6 +12,20 @@ module.exports = defineConfig({
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
   },
+  projects: [
+    {
+      name: 'desktop-chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'android-mobile',
+      use: { ...devices['Pixel 7'], browserName: 'chromium' },
+    },
+    {
+      name: 'ios-mobile-emulation',
+      use: { ...devices['iPhone 13'], browserName: 'chromium' },
+    },
+  ],
   webServer: {
     command: 'bundle exec jekyll serve --no-watch --host 127.0.0.1 --port 4000',
     url: 'http://127.0.0.1:4000/ag-comp-arith-geom/',
