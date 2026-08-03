@@ -19,6 +19,8 @@ layout: default
     </div>
   </div>
 </div>
+{% elsif page.url != '/' and page.has_content_h1 != true %}
+  <h1 class="visually-hidden">{{ page.title | default: page.name | escape }}</h1>
 {% endif %}
 
 <article class="page-article tex2jax_process">

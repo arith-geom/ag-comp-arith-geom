@@ -124,11 +124,20 @@
     flex-shrink: 0;
 
     @media (max-width: 1199.98px) {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: none;
       border: none;
       padding: 0.5rem;
+      min-width: 44px;
+      min-height: 44px;
       cursor: pointer;
+
+      &:focus-visible {
+        outline: 2px solid white;
+        outline-offset: 2px;
+      }
 
       .nav-toggle-icon {
         display: block;
