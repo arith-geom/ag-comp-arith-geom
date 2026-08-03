@@ -13,17 +13,6 @@ settings:
       delete: "content(delete): {path}"
       rename: "content(rename): {oldPath} -> {newPath}"
 
-actions:
-  - name: "validate-site"
-    label: "Validate site"
-    workflow: "pages-cms-validate.yml"
-    ref: "current"
-    cancelable: true
-    confirm:
-      title: "Validate the site?"
-      message: "Run the repository checks without deploying or changing content."
-      button: "Validate"
-
 media:
   input: "assets/uploads"
   output: "/assets/uploads"
@@ -33,6 +22,10 @@ content:
     label: "Home Page"
     path: "_data/home.yml"
     type: "file"
+    operations:
+      create: false
+      rename: false
+      delete: false
     fields:
       - name: "hero"
         label: "Hero Section"
@@ -62,6 +55,10 @@ content:
     label: "Research Page"
     path: "_data/research.yml"
     type: "file"
+    operations:
+      create: false
+      rename: false
+      delete: false
     fields:
       - name: "research_areas"
         label: "Research Areas"
@@ -79,6 +76,10 @@ content:
     label: "Publications"
     path: "_data/publications.yml"
     type: "file"
+    operations:
+      create: false
+      rename: false
+      delete: false
     fields:
       - name: "publications"
         label: "Publications List"
@@ -141,6 +142,10 @@ content:
     label: "Teaching"
     path: "_data/teaching.yml"
     type: "file"
+    operations:
+      create: false
+      rename: false
+      delete: false
     fields:
       - name: "courses"
         label: "Courses by Year"
@@ -200,6 +205,10 @@ content:
     label: "Members"
     path: "_data/members.yml"
     type: "file"
+    operations:
+      create: false
+      rename: false
+      delete: false
     fields:
       - name: "sections"
         label: "Member Sections"
@@ -309,6 +318,10 @@ content:
     label: "Links Page"
     path: "_data/links.yml"
     type: "file"
+    operations:
+      create: false
+      rename: false
+      delete: false
     fields:
       - name: "groups"
         label: "Link Groups"
@@ -335,6 +348,10 @@ content:
     label: "Contact Page"
     path: "_data/contact.yml"
     type: "file"
+    operations:
+      create: false
+      rename: false
+      delete: false
     fields:
       - name: "address"
         label: "Address"
@@ -387,6 +404,10 @@ content:
     label: "Shortlinks"
     path: "_data/shortlinks.yml"
     type: "file"
+    operations:
+      create: false
+      rename: false
+      delete: false
     fields:
       - name: "shortlinks"
         label: "Redirects"

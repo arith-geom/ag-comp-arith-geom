@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "_data"
 UPLOADS_DIR = ROOT / "assets" / "uploads"
 SAFE_FILENAME = re.compile(r"^[A-Za-z0-9._-]+$")
+UPLOAD_EXTENSIONS = {".gif", ".jpeg", ".jpg", ".pdf", ".png", ".svg", ".webp"}
+LEGACY_UPLOAD_MISMATCHES = {"assets/uploads/Boeckle.pdf"}
 
 
 class Validator:
@@ -65,15 +67,36 @@ class Validator:
             if not path.is_file():
                 continue
             relative = path.relative_to(ROOT)
+            relative_name = relative.as_posix()
             if not SAFE_FILENAME.fullmatch(path.name):
                 self.error(f"{relative}: filename contains unsafe characters")
+            if path.suffix.casefold() not in UPLOAD_EXTENSIONS:
+                self.error(f"{relative}: unsupported upload type {path.suffix or '(none)'}")
             try:
-                size_mb = path.stat().st_size / (1024 * 1024)
+                size = path.stat().st_size
             except OSError as error:
                 self.warning(f"{relative}: cannot read file size: {error}")
                 continue
-            if size_mb > 2:
-                self.warning(f"{relative}: large file ({size_mb:.2f} MB)")
+            if size == 0:
+                self.error(f"{relative}: uploaded file is empty")
+                continue
+            size_mb = size / (1024 * 1024)
+            if size_mb > 5:
+                self.error(f"{relative}: upload exceeds the 5 MB limit ({size_mb:.2f} MB)")
+
+            if path.suffix.casefold() == ".pdf":
+                try:
+                    is_pdf = path.read_bytes()[:5] == b"%PDF-"
+                except OSError as error:
+                    self.warning(f"{relative}: cannot inspect file type: {error}")
+                    continue
+                if not is_pdf and relative_name in LEGACY_UPLOAD_MISMATCHES:
+                    self.warning(
+                        f"{relative}: legacy file is not a PDF; replace it through a "
+                        "content-reviewed asset change"
+                    )
+                elif not is_pdf:
+                    self.error(f"{relative}: file content does not match its .pdf extension")
 
     def validate_pages_cms(self) -> None:
         config_path = ROOT / ".pages.yml"
@@ -106,6 +129,17 @@ class Validator:
                 self.require_text(path, f"{location}.path")
                 if isinstance(path, str) and not (ROOT / path).is_file():
                     self.error(f"{location}.path: file does not exist: {path}")
+                if item.get("type") == "file":
+                    operations = self.require_mapping(
+                        item.get("operations"), f"{location}.operations"
+                    )
+                    if operations is not None:
+                        for operation in ("create", "rename", "delete"):
+                            if operations.get(operation) is not False:
+                                self.error(
+                                    f"{location}.operations.{operation}: expected false "
+                                    "for a protected singleton file"
+                                )
 
         actions = self.require_list(config.get("actions", []), ".pages.yml.actions")
         if actions is not None:
