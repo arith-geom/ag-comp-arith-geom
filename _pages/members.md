@@ -56,7 +56,10 @@ excerpt_separator: ""
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
+  "@type": "CollectionPage",
+  "url": {{ page.url | absolute_url | jsonify }},
+  "mainEntity": {
+    "@type": "ItemList",
     {% assign all_members = "" | split: "" %}
     {% for section in site.data.members.sections %}
       {% if section.title != "Former Members" %}
@@ -64,31 +67,19 @@ excerpt_separator: ""
       {% endif %}
     {% endfor %}
 
-    {% for member in all_members %}
-      {
-        "@type": "Person",
-        "name": {{ member.name | jsonify }},
-        "jobTitle": {{ member.role | jsonify }},
-        "worksFor": {
-          "@type": "EducationalOrganization",
-          "name": {{ site.title | jsonify }}
-        },
+    "numberOfItems": {{ all_members.size }},
+    "itemListElement": [
+      {% for member in all_members %}
         {% assign member_slug = member.name | slugify: "latin" %}
-        "url": {{ '/members/' | append: member_slug | append: '/' | absolute_url | jsonify }}
-        {% if member.links %}
-          {% assign valid_links = "" | split: "" %}
-          {% for link in member.links %}
-            {% unless link.url contains "mailto:" %}
-              {% assign valid_links = valid_links | push: link.url %}
-            {% endunless %}
-          {% endfor %}
-          {% if valid_links.size > 0 %}
-          ,"sameAs": {{ valid_links | jsonify }}
-          {% endif %}
-        {% endif %}
-      }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ]
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "name": {{ member.name | jsonify }},
+          "url": {{ '/members/' | append: member_slug | append: '/' | absolute_url | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
 }
 </script>
 

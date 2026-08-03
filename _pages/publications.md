@@ -133,33 +133,22 @@ excerpt_separator: ""
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
+  "@type": "CollectionPage",
+  "url": {{ page.url | absolute_url | jsonify }},
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": {{ site.data.publications.publications.size }},
+    "itemListElement": [
     {% for pub in site.data.publications.publications %}
+    {% assign pub_slug = pub.title | slugify: 'latin' %}
     {
-      "@type": "ScholarlyArticle",
-      "headline": {{ pub.title | jsonify }},
-      "author": [
-        {% assign authors = pub.authors | split: ', ' %}
-        {% for author in authors %}
-          {
-            "@type": "Person",
-            "name": {{ author | strip | jsonify }}
-          }{% unless forloop.last %},{% endunless %}
-        {% endfor %}
-      ],
-      {% assign year = pub.journal_details | split: '(' | last | split: ')' | first %}
-      "datePublished": {{ year | jsonify }},
-      "isPartOf": {
-        "@type": "PublicationIssue",
-        "name": {{ pub.journal_details | jsonify }}
-      },
-      "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "MathSciNet",
-        "value": {{ pub.mr_number | jsonify }}
-      }
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": {{ pub.title | jsonify }},
+      "url": {{ '/publications/' | append: pub_slug | append: '/' | absolute_url | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
-  ]
+    ]
+  }
 }
 </script>
