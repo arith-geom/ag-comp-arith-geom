@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -47,6 +48,27 @@ def main() -> int:
             for element in soup.find_all(tag):
                 if element.has_attr(attribute) and not str(element[attribute]).strip():
                     errors.append(f"{relative}: empty {tag}[{attribute}]")
+
+    search_index_path = SITE_DIR / "search-index.json"
+    try:
+        search_entries = json.loads(search_index_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        errors.append(f"_site/search-index.json: cannot be read: {error}")
+        search_entries = []
+    if not isinstance(search_entries, list) or not search_entries:
+        errors.append("_site/search-index.json: expected a non-empty list")
+    else:
+        for index, entry in enumerate(search_entries, start=1):
+            location = f"_site/search-index.json[{index}]"
+            if not isinstance(entry, dict):
+                errors.append(f"{location}: expected an object")
+                continue
+            for field in ("title", "url", "type", "text"):
+                if not isinstance(entry.get(field), str):
+                    errors.append(f"{location}.{field}: expected text")
+            url = entry.get("url")
+            if isinstance(url, str) and (not url.startswith("/") or url.startswith("//")):
+                errors.append(f"{location}.url: expected a root-relative URL")
 
     for error in errors:
         print(f"[ERROR] {error}")

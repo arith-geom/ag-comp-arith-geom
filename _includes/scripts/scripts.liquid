@@ -82,3 +82,4 @@
     <script defer src="{{ script | relative_url }}" type="text/javascript"></script>
   {% endfor %}
 {% endif %}
+<script defer src="{{ '/assets/js/site-search.js' | relative_url | bust_file_cache }}"></script>
