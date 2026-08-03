@@ -44,15 +44,17 @@ jobs:
             sleep 1
           done
           mkdir -p lighthouse-results
-          npx --yes lighthouse@13.4.1 http://127.0.0.1:4000/ag-comp-arith-geom/ \
-            --chrome-flags="--headless --no-sandbox" --output=json \
-            --output-path=lighthouse-results/home.json --quiet
-          npx --yes lighthouse@13.4.1 http://127.0.0.1:4000/ag-comp-arith-geom/publications/ \
-            --chrome-flags="--headless --no-sandbox" --output=json \
-            --output-path=lighthouse-results/publications.json --quiet
-          npx --yes lighthouse@13.4.1 http://127.0.0.1:4000/ag-comp-arith-geom/teaching/ \
-            --chrome-flags="--headless --no-sandbox" --output=json \
-            --output-path=lighthouse-results/teaching.json --quiet
+          for run in 1 2 3; do
+            npx --yes lighthouse@13.4.1 http://127.0.0.1:4000/ag-comp-arith-geom/ \
+              --chrome-flags="--headless --no-sandbox" --output=json \
+              --output-path="lighthouse-results/home-${run}.json" --quiet
+            npx --yes lighthouse@13.4.1 http://127.0.0.1:4000/ag-comp-arith-geom/publications/ \
+              --chrome-flags="--headless --no-sandbox" --output=json \
+              --output-path="lighthouse-results/publications-${run}.json" --quiet
+            npx --yes lighthouse@13.4.1 http://127.0.0.1:4000/ag-comp-arith-geom/teaching/ \
+              --chrome-flags="--headless --no-sandbox" --output=json \
+              --output-path="lighthouse-results/teaching-${run}.json" --quiet
+          done
           python3 scripts/check_lighthouse.py lighthouse-results/*.json
       - name: Upload reports
         if: always()
