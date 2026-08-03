@@ -1,0 +1,65 @@
+name: Lighthouse
+
+on:
+  pull_request:
+  schedule:
+    - cron: "13 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lighthouse-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Build site
+        run: bundle exec jekyll build
+      - name: Audit representative pages
+        run: |
+          bundle exec jekyll serve --skip-initial-build --port 4000 > /tmp/jekyll.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4000/ag-comp-arith-geom/ > /dev/null; then
+              break
+            fi
+            sleep 1
+          done
+          mkdir -p lighthouse-results
+          for run in 1 2 3; do
+            npx --yes lighthouse@13.4.1 http://127.0.0.1:4000/ag-comp-arith-geom/ \
+              --chrome-flags="--headless --no-sandbox" --output=json \
+              --output-path="lighthouse-results/home-${run}.json" --quiet
+            npx --yes lighthouse@13.4.1 http://127.0.0.1:4000/ag-comp-arith-geom/publications/ \
+              --chrome-flags="--headless --no-sandbox" --output=json \
+              --output-path="lighthouse-results/publications-${run}.json" --quiet
+            npx --yes lighthouse@13.4.1 http://127.0.0.1:4000/ag-comp-arith-geom/teaching/ \
+              --chrome-flags="--headless --no-sandbox" --output=json \
+              --output-path="lighthouse-results/teaching-${run}.json" --quiet
+          done
+          python3 scripts/check_lighthouse.py lighthouse-results/*.json
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: lighthouse-results
+          path: lighthouse-results
+          retention-days: 30
