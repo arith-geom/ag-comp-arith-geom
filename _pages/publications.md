@@ -9,13 +9,31 @@ order: 100
 title: Publications
 description: "Browse the comprehensive list of publications from the Computational Arithmetic Geometry research group, including journal articles, preprints, and books."
 excerpt_separator: ""
+scripts:
+  - /assets/js/publication-search.js
 ---
 
 <div class="publications-container">
-  <div class="search-results-header">
-    <span class="results-count">{{ site.data.publications.publications.size }} results</span>
+  <form class="publication-search" role="search" aria-label="Search publications" novalidate>
+    <label for="publication-search-input">Search publications</label>
+    <div class="publication-search-control">
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <input
+        id="publication-search-input"
+        type="search"
+        inputmode="search"
+        autocomplete="off"
+        placeholder="Title, author, journal, year, status, or MR number"
+        aria-controls="publication-grid"
+        aria-describedby="publication-result-count"
+      >
+      <button type="button" class="publication-search-clear" aria-label="Clear publication search" hidden>Clear</button>
+    </div>
+  </form>
+  <div class="search-results-header" aria-live="polite" aria-atomic="true">
+    <span class="results-count" id="publication-result-count">{{ site.data.publications.publications.size }} publications</span>
   </div>
-  <div class="publication-grid">
+  <div class="publication-grid" id="publication-grid">
     {% assign all_pubs = site.data.publications.publications %}
     {% assign pubs_with_year = all_pubs | where_exp: "item", "item.year != nil and item.year != ''" %}
     {% assign pubs_without_year = all_pubs | where_exp: "item", "item.year == nil or item.year == ''" %}
@@ -96,6 +114,7 @@ excerpt_separator: ""
       </div>
     {% endfor %}
   </div>
+  <p class="publication-search-empty" hidden>No publications match your search.</p>
 
   {% if site.data.publications.software %}
   <div class="software-section mt-5">
