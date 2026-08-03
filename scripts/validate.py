@@ -7,7 +7,7 @@ import re
 import sys
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 import yaml
 
@@ -216,12 +216,39 @@ class Validator:
                         f"{location}.target: expected a root-relative path or HTTP(S) URL"
                     )
 
+    def validate_contact(self) -> None:
+        data = self.require_mapping(self.load_yaml("contact.yml"), "_data/contact.yml")
+        if data is None:
+            return
+        addresses = self.require_list(data.get("address"), "_data/contact.yml.address")
+        if addresses is None:
+            return
+        for index, raw_address in enumerate(addresses, start=1):
+            location = f"_data/contact.yml.address[{index}]"
+            address = self.require_mapping(raw_address, location)
+            if address is None:
+                continue
+            map_url = address.get("map_url")
+            self.require_text(map_url, f"{location}.map_url")
+            if not isinstance(map_url, str) or not map_url.strip():
+                continue
+            parsed = urlparse(map_url.strip())
+            if parsed.scheme != "https" or not parsed.netloc:
+                self.error(f"{location}.map_url: expected an HTTPS URL")
+            sensitive_parameters = {"key", "token", "secret"} & {
+                name.casefold() for name in parse_qs(parsed.query)
+            }
+            if sensitive_parameters:
+                names = ", ".join(sorted(sensitive_parameters))
+                self.error(f"{location}.map_url: must not contain secret parameter(s): {names}")
+
     def run(self) -> int:
         self.validate_uploads()
         self.validate_members()
         self.validate_publications()
         self.validate_teaching()
         self.validate_shortlinks()
+        self.validate_contact()
 
         for message in self.warnings:
             print(f"[WARNING] {message}")

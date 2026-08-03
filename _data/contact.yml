@@ -8,7 +8,7 @@ address:
     description: Located in the Neuenheimer Feld campus area, our research group is
       part of Heidelberg University's prestigious Interdisciplinary Center for
       Scientific Computing (IWR).
-    map_url: https://www.google.com/maps/embed/v1/place?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8
+    map_url: https://www.google.com/maps?q=Im+Neuenheimer+Feld+205,+69120+Heidelberg,+Germany&output=embed
 contact_details:
   - phone: +49-6221-54-14715
     phone_hours: "Office hours: Mon-Fri, 9:00-17:00 CET"
