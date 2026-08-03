@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require_relative 'generated_content_helpers'
+
 module Jekyll
   class MemberPage < Page
     def initialize(site, base, dir, member)
@@ -31,7 +35,6 @@ module Jekyll
       self.data['office_hours'] = member['office_hours']
       self.data['selected_publications'] = member['selected_publications']
       self.data['theses'] = member['theses']
-      self.data['theses'] = member['theses']
       self.data['content_match_name'] = member['content_match_name']
       
       # Set default SEO values if missing (matching .pages.yml defaults)
@@ -53,36 +56,15 @@ module Jekyll
         site.config['generated_members'] = []
         site.data['members']['sections'].each do |section|
           if section['members']
-            section['members'].each do |member|
+            section['members'].each do |source_member|
+              member = GeneratedContentHelpers.normalized_copy(
+                source_member,
+                collection_keys: %w[pdfs links theses selected_publications files]
+              )
+
               # Create slug from name using Jekyll's utility to match Liquid filter
               slug = Utils.slugify(member['name'], mode: 'latin')[0..100]
 
-              # Auto-fix relative links in body
-              if member['body']
-                # Fix markdown links [label](assets/...) -> [label](/assets/...)
-                member['body'] = member['body'].gsub(/\]\(assets\//, '](/assets/')
-                # Fix HTML links href="assets/..." -> href="/assets/..."
-                member['body'] = member['body'].gsub(/href="assets\//, 'href="/assets/')
-              end
-
-              # Auto-fix relative links in pdfs and links arrays
-              ['pdfs', 'links', 'theses', 'selected_publications', 'files'].each do |key|
-                if member[key]
-                  member[key].each do |item|
-                    if item['file'] && item['file'].start_with?('assets/')
-                      item['file'] = '/' + item['file']
-                    end
-                    if item['url'] && item['url'].start_with?('assets/')
-                      item['url'] = '/' + item['url']
-                    end
-                    if item['link'] && item['link'].start_with?('assets/')
-                      item['link'] = '/' + item['link']
-                    end
-                  end
-                end
-              end
-              
-              
               # Create page at /members/:slug/
               page = MemberPage.new(site, site.source, File.join('members', slug), member)
               site.pages << page

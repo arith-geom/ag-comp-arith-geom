@@ -16,14 +16,14 @@
         {% endfor %}
       </ul>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle navigation">
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="sidebar-navigation" aria-expanded="false">
       <span class="nav-toggle-icon"></span>
     </button>
   </div>
 </header>
 
-<div class="sidebar-nav">
-  <button class="sidebar-close" aria-label="Close navigation">&times;</button>
+<div class="sidebar-nav" id="sidebar-navigation" aria-hidden="true">
+  <button class="sidebar-close" type="button" aria-label="Close navigation">&times;</button>
   <ul>
     {% for item in site.data.navigation %}
       <li {% if page.url == item.url %}class="active"{% endif %}>

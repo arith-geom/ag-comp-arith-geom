@@ -1,13 +1,17 @@
 <!-- Vendor JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
-<script src="{{ site.third_party_libraries.jquery.url.js }}" integrity="{{ site.third_party_libraries.jquery.integrity.js }}" crossorigin="anonymous"></script>
+{% if site.third_party_libraries.jquery.url.js %}
+  <script src="{{ site.third_party_libraries.jquery.url.js }}" integrity="{{ site.third_party_libraries.jquery.integrity.js }}" crossorigin="anonymous"></script>
+{% endif %}
 
-<!-- Lunr.js for search -->
-<script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
-        integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
-        crossorigin="anonymous"
-        defer></script>
+{% if site.search_enabled %}
+  <!-- Lunr.js for search -->
+  <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+          integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+          crossorigin="anonymous"
+          defer></script>
+{% endif %}
 <script>
   // Ensure navigation helpers are available to search.js in case it loads first
   if (!window.prefixBase) {
@@ -46,22 +50,26 @@
     });
   });
 </script>
-<script src="{{ '/assets/js/search/search.js' | relative_url }}"></script>
+{% if site.search_enabled %}
+  <script src="{{ '/assets/js/search/search.js' | relative_url }}"></script>
+{% endif %}
 
 
 
-<!-- Bootstrap Table of Contents -->
-<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js"></script>
-<script>
-  $(function () {
-    var navSelector = '#toc';
-    var $myNav = $(navSelector);
-    Toc.init($myNav);
-    $('body').scrollspy({
-      target: navSelector
+{% if page.toc and site.third_party_libraries.jquery.url.js %}
+  <!-- Bootstrap Table of Contents -->
+  <script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js"></script>
+  <script>
+    $(function () {
+      var navSelector = '#toc';
+      var $myNav = $(navSelector);
+      Toc.init($myNav);
+      $('body').scrollspy({
+        target: navSelector
+      });
     });
-  });
-</script>
+  </script>
+{% endif %}
 
 <!-- Dynamic Header -->
 <script defer src="{{ 'assets/js/dynamic-header.js' | relative_url }}" type="text/javascript"></script>

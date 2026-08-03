@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cgi'
 module Jekyll
   module LinkifyAuthorsFilter
@@ -150,13 +152,10 @@ module Jekyll
   module SanitizeUrlFilter
     def sanitize_url(input)
       return input if input.nil? || input.empty?
-      
-      
-      # Check for javascript: protocol (case insensitive)
-      if input.to_s.strip.downcase.start_with?("javascript:")
-        return "#"
-      end
-      
+
+      normalized = CGI.unescapeHTML(input.to_s).gsub(/[\u0000-\u0020\u007F]+/, '').downcase
+      return '#' if normalized.match?(/\A(?:javascript|vbscript|data):/)
+
       input
     end
   end

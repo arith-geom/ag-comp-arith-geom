@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 require 'cgi'
+require_relative 'generated_content_helpers'
 
 module Jekyll
   class TeachingPage < Page
@@ -48,17 +51,16 @@ module Jekyll
             year_data['semesters'].each do |semester_data|
               semester = semester_data['semester']
               if semester_data['courses']
-                semester_data['courses'].each do |course|
+                semester_data['courses'].each do |source_course|
+                  course = GeneratedContentHelpers.normalized_copy(
+                    source_course,
+                    collection_keys: %w[pdfs links]
+                  )
+
                   # Create slug from title
                   slug = Utils.slugify(course['title'], mode: 'latin')
 
-                  # Auto-fix relative links in body
                   if course['body']
-                    # Fix markdown links [label](assets/...) -> [label](/assets/...)
-                    course['body'] = course['body'].gsub(/\]\(assets\//, '](/assets/')
-                    # Fix HTML links href="assets/..." -> href="/assets/..."
-                    course['body'] = course['body'].gsub(/href="assets\//, 'href="/assets/')
-                    
                     # Proactively fix member links with non-ASCII characters or encoding
                     # This ensures that even if hardcoded in CMS, they match the new 'latin' slug format
                     course['body'] = course['body'].gsub(/\/members\/([^\/)]+)\//) do |match|
@@ -69,27 +71,13 @@ module Jekyll
                         # Re-slugify using 'latin' mode
                         new_slug = Utils.slugify(decoded_slug, mode: 'latin')
                         "/members/#{new_slug}/"
-                      rescue => e
+                      rescue StandardError => e
                         Jekyll.logger.warn "TeachingGenerator:", "Failed to process member link #{match}: #{e.message}"
                         match
                       end
                     end
                   end
 
-                  # Auto-fix relative links in pdfs and links arrays
-                  ['pdfs', 'links'].each do |key|
-                    if course[key]
-                      course[key].each do |item|
-                        if item['file'] && item['file'].start_with?('assets/')
-                          item['file'] = '/' + item['file']
-                        end
-                        if item['url'] && item['url'].start_with?('assets/')
-                          item['url'] = '/' + item['url']
-                        end
-                      end
-                    end
-                  end
-                  
                   # Generate full semester title for slug to match Liquid template
                   semester_title = semester
                   if semester == "Winter"

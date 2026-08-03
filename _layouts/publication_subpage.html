@@ -52,7 +52,7 @@ layout: default
 
                         {% if page.mr_number and page.mr_number != "" %}
                         <a href="https://mathscinet.ams.org/mathscinet/article?mr={{ page.mr_number | remove: 'MR' | escape }}"
-                            target="_blank" class="btn-custom btn-custom-outline">
+                            target="_blank" rel="noopener noreferrer" class="btn-custom btn-custom-outline">
                             {{ page.mr_number | escape }} <i class="fas fa-external-link-alt ms-1"></i>
                         </a>
                         {% endif %}
@@ -65,7 +65,7 @@ layout: default
 
                         {% if page.doi %}
                         <a href="https://doi.org/{{ page.doi | escape }}" target="_blank"
-                            class="badge-custom badge-custom-warning text-decoration-none">
+                            rel="noopener noreferrer" class="badge-custom badge-custom-warning text-decoration-none">
                             <i class="fas fa-link me-1"></i> DOI: {{ page.doi | escape }}
                         </a>
                         {% endif %}
@@ -97,22 +97,34 @@ layout: default
                             <div class="d-flex flex-wrap gap-3">
                                 {% if page.pdfs %}
                                 {% for pdf in page.pdfs %}
+                                {% if pdf.file and pdf.file != empty %}
                                 <a href="{{ pdf.file | relative_url }}" class="btn-custom btn-custom-danger"
-                                    target="_blank">
+                                    target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-file-pdf me-2"></i> {{ pdf.label | default: "Download PDF" | escape
                                     }}
                                 </a>
+                                {% else %}
+                                <span class="btn-custom btn-custom-danger" aria-disabled="true">
+                                    <i class="fas fa-file-pdf me-2"></i> {{ pdf.label | default: "Download PDF" | escape }}
+                                </span>
+                                {% endif %}
                                 {% endfor %}
                                 {% endif %}
 
                                 {% if page.links %}
                                 {% for link in page.links %}
+                                {% if link.url and link.url != empty %}
                                 <a href="{{ link.url | sanitize_url | escape }}" class="btn-custom btn-custom-outline"
                                     target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-external-link-alt me-2"></i> {{ link.label | default: "External
                                     Link" | escape
                                     }}
                                 </a>
+                                {% else %}
+                                <span class="btn-custom btn-custom-outline" aria-disabled="true">
+                                    <i class="fas fa-external-link-alt me-2"></i> {{ link.label | default: "External Link" | escape }}
+                                </span>
+                                {% endif %}
                                 {% endfor %}
                                 {% endif %}
                             </div>

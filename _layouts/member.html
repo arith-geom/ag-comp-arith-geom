@@ -109,7 +109,7 @@ layout: default
               <div class="list-group-item px-0 py-4 publication-item">
                 <h5 class="h5 fw-bold mb-2">
                   {% if software.link %}
-                  <a href="{{ software.link }}" target="_blank" class="text-decoration-none text-dark">{{ software.title
+                  <a href="{{ software.link }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">{{ software.title
                     }}</a>
                   {% else %}
                   {{ software.title }}
@@ -117,7 +117,7 @@ layout: default
                 </h5>
                 <div class="text-secondary mb-2">{{ software.description | markdownify }}</div>
                 {% if software.thesis %}
-                <a href="{{ software.thesis }}" class="btn-custom btn-custom-danger" target="_blank">
+                <a href="{{ software.thesis }}" class="btn-custom btn-custom-danger" target="_blank" rel="noopener noreferrer">
                   <i class="fas fa-file-pdf me-1"></i> Thesis
                 </a>
                 {% endif %}
@@ -259,7 +259,7 @@ layout: default
                 <h5 class="h5 fw-bold mb-2">
                   {% if pub.link %}
                   <a href="{{ pub.link | sanitize_url | escape }}" target="_blank"
-                    class="text-decoration-none text-dark">{{ pub.title }}</a>
+                    rel="noopener noreferrer" class="text-decoration-none text-dark">{{ pub.title }}</a>
                   {% else %}
                   {{ pub.title }}
                   {% endif %}
@@ -285,7 +285,7 @@ layout: default
                   {{ thesis.type }}, {{ thesis.institution }} ({{ thesis.year }})
                 </div>
                 {% if thesis.file %}
-                <a href="{{ thesis.file | relative_url }}" class="btn-custom btn-custom-danger" target="_blank">
+                <a href="{{ thesis.file | relative_url }}" class="btn-custom btn-custom-danger" target="_blank" rel="noopener noreferrer">
                   <i class="fas fa-file-pdf me-1"></i> Download Thesis
                 </a>
                 {% endif %}
@@ -321,6 +321,7 @@ layout: default
               {% if page.orcid %}
               <div class="mb-3">
                 <a href="https://orcid.org/{{ page.orcid }}" target="_blank"
+                  rel="noopener noreferrer"
                   class="d-flex align-items-center text-decoration-none text-dark p-2 rounded hover-bg-light">
                   <div class="icon-box me-3 text-success"><i class="fab fa-orcid fa-lg"></i></div>
                   <span class="text-break">{{ page.orcid }}</span>
@@ -381,7 +382,7 @@ layout: default
                 {% for file in page.files %}
                 {% if file.file %}
                 <a href="{{ file.file | relative_url }}"
-                  class="btn-custom btn-custom-primary w-100 justify-content-center" target="_blank">
+                  class="btn-custom btn-custom-primary w-100 justify-content-center" target="_blank" rel="noopener noreferrer">
                   <i class="fas fa-file-pdf me-2"></i> {{ file.label }}
                 </a>
                 {% endif %}
@@ -390,7 +391,7 @@ layout: default
               {% elsif page.cv %}
               {# Backward compatibility #}
               <a href="{{ page.cv | relative_url }}"
-                class="btn-custom btn-custom-primary w-100 mb-3 justify-content-center" target="_blank">
+                class="btn-custom btn-custom-primary w-100 mb-3 justify-content-center" target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-file-pdf me-2"></i> Download CV
               </a>
               {% endif %}

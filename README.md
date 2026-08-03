@@ -35,8 +35,9 @@ Our group focuses on:
 This website is built with **Jekyll** and hosted on **GitHub Pages**.
 
 ### Prerequisites
-- **Ruby** (with Bundler)
-- **Python 3** (for maintenance scripts)
+- **Ruby 3.3** (with Bundler; matches CI)
+- **Node.js 20+**
+- **Python 3** (for validation tooling)
 
 ### Local Development
 
@@ -49,6 +50,9 @@ This website is built with **Jekyll** and hosted on **GitHub Pages**.
 2. **Install dependencies:**
    ```bash
    bundle install
+   npm ci
+   python3 -m venv .venv
+   .venv/bin/pip install -r requirements-dev.txt
    ```
 
 3. **Start the local server:**
@@ -57,14 +61,21 @@ This website is built with **Jekyll** and hosted on **GitHub Pages**.
    ```
    The site will be available at `http://localhost:4000`.
 
+4. **Run the same checks used in CI:**
+   ```bash
+   bundle exec rake check
+   ```
+
 ### Maintenance Scripts
 
-We have utility scripts in `scripts/` to maintain data quality. These require `PyYAML`:
-
-```bash
-pip install PyYAML
-```
+We have utility scripts in `scripts/` to maintain data quality. Their dependencies
+are pinned in `requirements-dev.txt`.
 
 - **Validation**: `python3 scripts/validate.py` - "The Guardian". Checks data integrity, filenames, and image sizes.
-- **Sorting**: `python3 scripts/sort_data.py` - Enforces consistent ordering.
-- **Cleanup**: `python3 scripts/cleanup_unused_media.py` - Finds files not used in content.
+- **Generated-site check**: `python3 scripts/check_generated_site.py` - Rejects empty asset and link attributes after a build.
+
+## AI Assistance Disclosure
+
+AI-assisted development tools have been used for parts of this repository's code,
+tooling, tests, and documentation. Changes remain subject to human review and the
+same validation and testing requirements as other contributions.

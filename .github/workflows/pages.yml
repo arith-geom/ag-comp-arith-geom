@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -27,18 +27,26 @@ jobs:
           bundler-cache: true
       - name: Configure GitHub Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
         with:
           enablement: true
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
+          cache: npm
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
 
       - name: Install Dependencies
         run: |
-          pip install pyyaml beautifulsoup4 yamllint
-          npm install -D stylelint stylelint-config-standard-scss
+          pip install -r requirements-dev.txt
+          npm ci
 
       - name: Guardian - Lint YAML
         run: yamllint .
@@ -47,21 +55,24 @@ jobs:
         run: npx stylelint "**/*.scss"
 
       - name: Guardian - Validate Data & Assets
-        run: python3 .github/scripts/validate.py
+        run: python3 scripts/validate.py
+
+      - name: Test custom Jekyll plugins
+        run: bundle exec ruby scripts/test_plugins.rb
 
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./_site
 
       - name: Guardian - Check Site Health (Links & HTML)
         run: |
-          gem install html-proofer
-          htmlproofer ./_site --disable-external --allow-hash-href --ignore-empty-alt --swap-urls "/ag-comp-arith-geom/:/" --no-check-internal-hash --allow-missing-href --no-enforce-https
+          bundle exec htmlproofer ./_site --disable-external --allow-hash-href --swap-urls "/ag-comp-arith-geom/:/" --no-check-internal-hash --no-enforce-https
+          python3 scripts/check_generated_site.py
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -70,4 +81,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
