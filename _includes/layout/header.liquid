@@ -14,6 +14,12 @@
             </a>
           </li>
         {% endfor %}
+        <li>
+          <button class="site-search-button" type="button" data-site-search-open aria-haspopup="dialog" aria-controls="site-search-dialog">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span>Search</span>
+          </button>
+        </li>
       </ul>
     </nav>
     <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="sidebar-navigation" aria-expanded="false">
@@ -33,6 +39,25 @@
         </a>
       </li>
     {% endfor %}
+    <li>
+      <button class="site-search-button" type="button" data-site-search-open aria-haspopup="dialog" aria-controls="site-search-dialog">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <span>Search</span>
+      </button>
+    </li>
   </ul>
 </div>
 <div class="sidebar-overlay"></div>
+
+<dialog class="site-search-dialog" id="site-search-dialog" aria-labelledby="site-search-title">
+  <div class="site-search-panel">
+    <div class="site-search-heading">
+      <h2 id="site-search-title">Search this site</h2>
+      <button class="site-search-close" type="button" aria-label="Close search">&times;</button>
+    </div>
+    <label class="site-search-label" for="site-search-input">Search pages, people, publications, research, and teaching</label>
+    <input class="site-search-input" id="site-search-input" type="search" inputmode="search" autocomplete="off" placeholder="Enter one or more keywords">
+    <p class="site-search-status" id="site-search-status" role="status" aria-live="polite">Start typing to search the site.</p>
+    <ul class="site-search-results" id="site-search-results"></ul>
+  </div>
+</dialog>
