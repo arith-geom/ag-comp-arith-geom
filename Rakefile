@@ -33,8 +33,9 @@ task :build do
   sh "bundle exec jekyll build"
 end
 
-desc "Run unit tests for custom Jekyll plugins"
+desc "Run unit tests for custom validators and Jekyll plugins"
 task :test do
+  sh "#{python} scripts/test_validate.py"
   sh "bundle exec ruby scripts/test_plugins.rb"
 end
 

@@ -5,9 +5,9 @@ from __future__ import annotations
 
 import re
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qsl, urlparse
 
 import yaml
 
@@ -16,8 +16,44 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "_data"
 UPLOADS_DIR = ROOT / "assets" / "uploads"
 SAFE_FILENAME = re.compile(r"^[A-Za-z0-9._-]+$")
+SENSITIVE_QUERY_PARAMETER = re.compile(
+    r"(?:^|[._-])(?:api[._-]?key|access[._-]?token|key|token|secret)(?:$|[._-])",
+    re.IGNORECASE,
+)
 UPLOAD_EXTENSIONS = {".gif", ".jpeg", ".jpg", ".pdf", ".png", ".svg", ".webp"}
 LEGACY_UPLOAD_MISMATCHES = {"assets/uploads/Boeckle.pdf"}
+
+
+def has_safe_path_components(path: PurePosixPath) -> bool:
+    return bool(path.parts) and all(SAFE_FILENAME.fullmatch(part) for part in path.parts)
+
+
+def resolve_repo_file(value: str) -> Path | None:
+    if not value or "\\" in value:
+        return None
+    path = PurePosixPath(value)
+    if path.is_absolute() or ".." in path.parts:
+        return None
+    root = ROOT.resolve()
+    candidate = (root / Path(*path.parts)).resolve()
+    try:
+        candidate.relative_to(root)
+    except ValueError:
+        return None
+    return candidate
+
+
+def is_sensitive_query_parameter(name: str) -> bool:
+    normalized = name.casefold()
+    compact = re.sub(r"[._-]", "", normalized)
+    return compact in {
+        "key",
+        "apikey",
+        "token",
+        "accesstoken",
+        "secret",
+        "clientsecret",
+    } or bool(SENSITIVE_QUERY_PARAMETER.search(normalized))
 
 
 class Validator:
@@ -68,8 +104,9 @@ class Validator:
                 continue
             relative = path.relative_to(ROOT)
             relative_name = relative.as_posix()
-            if not SAFE_FILENAME.fullmatch(path.name):
-                self.error(f"{relative}: filename contains unsafe characters")
+            upload_path = path.relative_to(UPLOADS_DIR)
+            if not has_safe_path_components(PurePosixPath(upload_path.as_posix())):
+                self.error(f"{relative}: path contains unsafe characters")
             if path.suffix.casefold() not in UPLOAD_EXTENSIONS:
                 self.error(f"{relative}: unsupported upload type {path.suffix or '(none)'}")
             try:
@@ -86,7 +123,8 @@ class Validator:
 
             if path.suffix.casefold() == ".pdf":
                 try:
-                    is_pdf = path.read_bytes()[:5] == b"%PDF-"
+                    with path.open("rb") as stream:
+                        is_pdf = stream.read(5) == b"%PDF-"
                 except OSError as error:
                     self.warning(f"{relative}: cannot inspect file type: {error}")
                     continue
@@ -127,8 +165,12 @@ class Validator:
                     names.add(name)
                 path = item.get("path")
                 self.require_text(path, f"{location}.path")
-                if isinstance(path, str) and not (ROOT / path).is_file():
-                    self.error(f"{location}.path: file does not exist: {path}")
+                if isinstance(path, str):
+                    repo_file = resolve_repo_file(path)
+                    if repo_file is None:
+                        self.error(f"{location}.path: expected a safe repository-relative path")
+                    elif not repo_file.is_file():
+                        self.error(f"{location}.path: file does not exist: {path}")
                 if item.get("type") == "file":
                     operations = self.require_mapping(
                         item.get("operations"), f"{location}.operations"
@@ -323,8 +365,10 @@ class Validator:
             parsed = urlparse(map_url.strip())
             if parsed.scheme != "https" or not parsed.netloc:
                 self.error(f"{location}.map_url: expected an HTTPS URL")
-            sensitive_parameters = {"key", "token", "secret"} & {
-                name.casefold() for name in parse_qs(parsed.query)
+            sensitive_parameters = {
+                name
+                for name, _value in parse_qsl(parsed.query, keep_blank_values=True)
+                if is_sensitive_query_parameter(name)
             }
             if sensitive_parameters:
                 names = ", ".join(sorted(sensitive_parameters))

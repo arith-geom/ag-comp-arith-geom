@@ -1,11 +1,59 @@
 @use 'variables' as v;
 
+.publication-search-panel {
+  margin-bottom: 1.25rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  border: 1px solid var(--border-color);
+  border-top: 4px solid v.$primary;
+  border-radius: v.$radius-md;
+  background: linear-gradient(135deg, v.$red-50 0%, var(--bg-primary) 58%);
+  box-shadow: v.$shadow-sm;
+}
+
+.publication-search-heading {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.2rem;
+
+  h1 {
+    margin: 0.05rem 0 0;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+  }
+
+  p {
+    margin: 0.35rem 0 0;
+    color: var(--text-muted);
+  }
+}
+
+.publication-search-heading-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border: 1px solid v.$red-200;
+  border-radius: 50%;
+  background: v.$red-100;
+  color: v.$red-800;
+  font-size: 1.25rem;
+}
+
+.publication-search-eyebrow {
+  color: v.$red-800;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
 .publication-search {
-  margin-bottom: 0.5rem;
+  margin: 0;
 
   label {
     display: block;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.45rem;
     font-weight: 600;
   }
 }
@@ -24,16 +72,19 @@
 
   input {
     width: 100%;
-    min-height: 44px;
+    min-height: 52px;
     padding: 0.65rem 4.75rem 0.65rem 2.5rem;
     color: var(--text-primary);
     background: var(--bg-primary);
-    border: 1px solid var(--border-color);
+    border: 1px solid v.$gray-300;
     border-radius: v.$radius-sm;
+    box-shadow: v.$shadow-sm;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
 
-    &:focus-visible {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
+    &:focus {
+      border-color: v.$primary;
+      outline: 0;
+      box-shadow: 0 0 0 3px rgb(198 24 38 / 14%);
     }
   }
 }
@@ -58,8 +109,22 @@
 }
 
 .search-results-header {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
   min-height: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.85rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: v.$radius-full;
+  background: v.$red-100;
+  color: v.$red-800;
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  i,
+  span {
+    color: inherit;
+  }
 }
 
 .publication-search-empty {
@@ -78,6 +143,21 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.5rem;
+}
+
+@media (max-width: 575.98px) {
+  .publication-search-panel {
+    border-radius: v.$radius-sm;
+  }
+
+  .publication-search-heading {
+    align-items: flex-start;
+  }
+
+  .publication-search-heading-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
 }
 
 .publication-card {

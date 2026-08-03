@@ -94,8 +94,9 @@ description: "An overview of our courses, seminars, and lectures, organized by s
                 {% if course.links or course.pdfs %}
                 <div class="course-resources mt-2 position-relative" style="z-index: 2;">
                   {% for link in course.links %}
-                    {% if link.url and link.url != empty %}
-                    <a href="{{ link.url | escape }}" class="btn btn-sm btn-outline-primary me-1 mb-1" target="_blank" rel="noopener">
+                    {% assign safe_link_url = link.url | sanitize_url %}
+                    {% if link.url and link.url != empty and safe_link_url != "#" %}
+                    <a href="{{ safe_link_url | escape }}" class="btn btn-sm btn-outline-primary me-1 mb-1" target="_blank" rel="noopener">
                       <i class="fas fa-external-link-alt"></i> {{ link.label | default: "More Info" | escape }}
                     </a>
                     {% else %}

@@ -14,25 +14,38 @@ scripts:
 ---
 
 <div class="publications-container">
-  <form class="publication-search" role="search" aria-label="Search publications" novalidate>
-    <label for="publication-search-input">Search publications</label>
-    <div class="publication-search-control">
-      <i class="fas fa-search" aria-hidden="true"></i>
-      <input
-        id="publication-search-input"
-        type="search"
-        inputmode="search"
-        autocomplete="off"
-        placeholder="Title, author, journal, year, status, or MR number"
-        aria-controls="publication-grid"
-        aria-describedby="publication-result-count"
-      >
-      <button type="button" class="publication-search-clear" aria-label="Clear publication search" hidden>Clear</button>
+  <section class="publication-search-panel" aria-labelledby="publications-heading">
+    <div class="publication-search-heading">
+      <div class="publication-search-heading-icon" aria-hidden="true">
+        <i class="fas fa-book-open"></i>
+      </div>
+      <div>
+        <span class="publication-search-eyebrow">Research output</span>
+        <h1 id="publications-heading">Publications</h1>
+        <p>Browse articles, preprints, books, and software from the research group.</p>
+      </div>
     </div>
-  </form>
-  <div class="search-results-header" aria-live="polite" aria-atomic="true">
-    <span class="results-count" id="publication-result-count">{{ site.data.publications.publications.size }} publications</span>
-  </div>
+    <form class="publication-search" role="search" aria-label="Search publications" novalidate>
+      <label for="publication-search-input">Search the publication archive</label>
+      <div class="publication-search-control">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input
+          id="publication-search-input"
+          type="search"
+          inputmode="search"
+          autocomplete="off"
+          placeholder="Title, author, journal, year, status, or MR number"
+          aria-controls="publication-grid"
+          aria-describedby="publication-result-count"
+        >
+        <button type="button" class="publication-search-clear" aria-label="Clear publication search" hidden>Clear</button>
+      </div>
+    </form>
+    <div class="search-results-header" aria-live="polite" aria-atomic="true">
+      <i class="fas fa-list" aria-hidden="true"></i>
+      <span class="results-count" id="publication-result-count">{{ site.data.publications.publications.size }} publications</span>
+    </div>
+  </section>
   <div class="publication-grid" id="publication-grid">
     {% assign all_pubs = site.data.publications.publications %}
     {% assign pubs_with_year = all_pubs | where_exp: "item", "item.year != nil and item.year != ''" %}
@@ -121,10 +134,16 @@ scripts:
     <h2>Software Packages</h2>
     <div class="publication-grid">
       {% for software in site.data.publications.software %}
+        {% assign safe_software_link = software.link | sanitize_url %}
+        {% assign safe_thesis_link = software.thesis | sanitize_url %}
         <div class="publication-card">
           <div class="publication-main">
             <div class="publication-title">
-              <a href="{{ software.link | escape }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">{{ software.title | escape }}</a>
+              {% if software.link and safe_software_link != "#" %}
+                <a href="{{ safe_software_link | escape }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">{{ software.title | escape }}</a>
+              {% else %}
+                {{ software.title | escape }}
+              {% endif %}
             </div>
             <div class="publication-details">
               {{ software.description | markdownify }}
@@ -132,16 +151,18 @@ scripts:
             <div class="publication-authors">
               By {{ software.author | escape }}
             </div>
-            {% if software.thesis %}
+            {% if software.thesis and safe_thesis_link != "#" %}
             <div class="publication-links mt-2">
-               <a href="{{ software.thesis | escape }}" target="_blank" rel="noopener noreferrer">Thesis</a>
+               <a href="{{ safe_thesis_link | escape }}" target="_blank" rel="noopener noreferrer">Thesis</a>
             </div>
             {% endif %}
           </div>
           <div class="publication-sidebar">
-             <a href="{{ software.link | escape }}" target="_blank" rel="noopener noreferrer" class="btn-custom btn-custom-outline btn-custom-sm">
+             {% if software.link and safe_software_link != "#" %}
+             <a href="{{ safe_software_link | escape }}" target="_blank" rel="noopener noreferrer" class="btn-custom btn-custom-outline btn-custom-sm">
                 <i class="fas fa-code"></i> {{ software.link_text | escape }}
              </a>
+             {% endif %}
           </div>
         </div>
       {% endfor %}
