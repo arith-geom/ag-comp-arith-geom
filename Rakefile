@@ -45,6 +45,7 @@ task site: :build do
   sh "#{python} scripts/check_generated_site.py"
   sh "#{python} scripts/check_external_resources.py"
   sh "#{python} scripts/check_seo.py"
+  sh "#{python} scripts/check_performance.py"
 end
 
 desc "Run all repository checks"

@@ -6,6 +6,7 @@ nav_order: 2
 show_title: false
 order: 100
 title: Research Areas
+mathjax: true
 description: "Explore the research areas of the Computational Arithmetic Geometry group at Heidelberg University."
 excerpt_separator: ""
 ---
