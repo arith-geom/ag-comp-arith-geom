@@ -109,4 +109,6 @@ test/
 tests/
 spec/
 coverage/
+playwright-report/
+test-results/
 pagescmsdocs/
