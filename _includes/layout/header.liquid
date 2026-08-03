@@ -52,12 +52,30 @@
 <dialog class="site-search-dialog" id="site-search-dialog" aria-labelledby="site-search-title">
   <div class="site-search-panel">
     <div class="site-search-heading">
-      <h2 id="site-search-title">Search this site</h2>
-      <button class="site-search-close" type="button" aria-label="Close search">&times;</button>
+      <div class="site-search-heading-icon" aria-hidden="true">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="site-search-heading-copy">
+        <span class="site-search-eyebrow">Explore the research group</span>
+        <h2 id="site-search-title">Search this site</h2>
+        <p>Find people, publications, research areas, and teaching materials.</p>
+      </div>
+      <button class="site-search-close" type="button" aria-label="Close search">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
     </div>
-    <label class="site-search-label" for="site-search-input">Search pages, people, publications, research, and teaching</label>
-    <input class="site-search-input" id="site-search-input" type="search" inputmode="search" autocomplete="off" placeholder="Enter one or more keywords">
-    <p class="site-search-status" id="site-search-status" role="status" aria-live="polite">Start typing to search the site.</p>
-    <ul class="site-search-results" id="site-search-results"></ul>
+    <div class="site-search-body">
+      <label class="visually-hidden" for="site-search-input">Search pages, people, publications, research, and teaching</label>
+      <div class="site-search-control">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input class="site-search-input" id="site-search-input" type="search" inputmode="search" autocomplete="off" placeholder="What are you looking for?">
+        <kbd aria-hidden="true">/</kbd>
+      </div>
+      <div class="site-search-meta">
+        <p class="site-search-status" id="site-search-status" role="status" aria-live="polite">Start typing to search the site.</p>
+        <span class="site-search-hint">Esc to close</span>
+      </div>
+      <ul class="site-search-results" id="site-search-results"></ul>
+    </div>
   </div>
 </dialog>

@@ -86,7 +86,7 @@ module Jekyll
             title: member['name'],
             url: "/members/#{slug}/",
             type: 'Member',
-            text: member.reject { |key, _value| %w[photo files].include?(key) }
+            text: [member['role'], member['research_interests'], member['body']]
           )
         end
       end
@@ -97,10 +97,10 @@ module Jekyll
         slug = Utils.slugify(publication['title'], mode: 'latin')
         SiteSearchIndex.add(
           entries,
-          title: publication['title'],
-          url: "/publications/#{slug}/",
-          type: 'Publication',
-          text: publication.reject { |key, _value| %w[pdfs links].include?(key) }
+            title: publication['title'],
+            url: "/publications/#{slug}/",
+            type: 'Publication',
+            text: [publication['authors'], publication['journal_details'], publication['year'], publication['status']]
         )
       end
     end
@@ -118,7 +118,7 @@ module Jekyll
               title: course['title'],
               url: "/teaching/#{year}/#{semester_slug}/#{course_slug}/",
               type: 'Teaching',
-              text: [year, semester, course.reject { |key, _value| %w[pdfs links].include?(key) }]
+              text: [course['instructor'], year, semester, course['description']]
             )
           end
         end
@@ -139,12 +139,15 @@ module Jekyll
 
     def add_links(entries, site)
       Array(site.data.dig('links', 'groups')).each do |group|
+        link_summaries = Array(group['links']).map do |link|
+          [link['title'], link['description']]
+        end
         SiteSearchIndex.add(
           entries,
           title: group['title'],
           url: '/links/',
           type: 'Links',
-          text: group['links']
+          text: link_summaries
         )
       end
     end

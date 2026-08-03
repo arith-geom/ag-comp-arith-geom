@@ -106,18 +106,20 @@ layout: default
             <h2 class="h3 fw-bold mb-4 text-dark border-bottom pb-2">Software Packages</h2>
             <div class="list-group list-group-flush">
               {% for software in matching_software %}
+              {% assign safe_software_link = software.link | sanitize_url %}
+              {% assign safe_thesis_link = software.thesis | sanitize_url %}
               <div class="list-group-item px-0 py-4 publication-item">
                 <h5 class="h5 fw-bold mb-2">
-                  {% if software.link %}
-                  <a href="{{ software.link }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">{{ software.title
+                  {% if software.link and safe_software_link != "#" %}
+                  <a href="{{ safe_software_link | escape }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">{{ software.title
                     }}</a>
                   {% else %}
                   {{ software.title }}
                   {% endif %}
                 </h5>
                 <div class="text-secondary mb-2">{{ software.description | markdownify }}</div>
-                {% if software.thesis %}
-                <a href="{{ software.thesis }}" class="btn-custom btn-custom-danger" target="_blank" rel="noopener noreferrer">
+                {% if software.thesis and safe_thesis_link != "#" %}
+                <a href="{{ safe_thesis_link | escape }}" class="btn-custom btn-custom-danger" target="_blank" rel="noopener noreferrer">
                   <i class="fas fa-file-pdf me-1"></i> Thesis
                 </a>
                 {% endif %}

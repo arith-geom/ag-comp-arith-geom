@@ -53,6 +53,43 @@ test('CMS-backed overview pages contain generated entries', async ({ page }) => 
   expect(await page.locator('.course-card').count()).toBeGreaterThan(0);
 });
 
+test('site search returns readable results and an empty state', async ({ page }) => {
+  await page.goto('./');
+  await page.keyboard.press('/');
+
+  const dialog = page.locator('#site-search-dialog');
+  const input = page.locator('#site-search-input');
+  await expect(dialog).toBeVisible();
+  await expect(input).toBeFocused();
+
+  await input.fill('arithmetic');
+  await expect(page.locator('#site-search-results > li').first()).toBeVisible();
+  await expect(page.locator('.site-search-result-type').first()).not.toBeEmpty();
+
+  await input.fill('definitely-no-result-xyz');
+  await expect(page.locator('.site-search-empty')).toBeVisible();
+  await expect(page.locator('#site-search-status')).toHaveText('No results found.');
+
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+});
+
+test('publication search filters and clears without changing source content', async ({ page }) => {
+  await page.goto('publications/');
+  const cards = page.locator('#publication-grid > .publication-card');
+  const total = await cards.count();
+
+  await page.locator('#publication-search-input').fill('arithmetic');
+  const filtered = await page.locator('#publication-grid > .publication-card:visible').count();
+  expect(filtered).toBeGreaterThan(0);
+  expect(filtered).toBeLessThan(total);
+  await expect(page).toHaveURL(/\?q=arithmetic$/);
+
+  await page.locator('.publication-search-clear').click();
+  expect(await page.locator('#publication-grid > .publication-card:visible').count()).toBe(total);
+  await expect(page).not.toHaveURL(/\?q=/);
+});
+
 test.describe('mobile navigation', () => {
   test.use({ viewport: { width: 390, height: 844 } });
 
@@ -70,6 +107,20 @@ test.describe('mobile navigation', () => {
     await page.keyboard.press('Escape');
     await expect(toggle).toHaveAttribute('aria-expanded', 'false');
     await expect(sidebar).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  test('hands off cleanly from navigation to site search', async ({ page }) => {
+    await page.goto('./');
+
+    const toggle = page.locator('.nav-toggle');
+    const sidebar = page.locator('#sidebar-navigation');
+    await toggle.click();
+    await page.locator('#sidebar-navigation [data-site-search-open]').click();
+
+    await expect(sidebar).toHaveAttribute('aria-hidden', 'true');
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await expect(page.locator('#site-search-dialog')).toBeVisible();
+    await expect(page.locator('#site-search-input')).toBeFocused();
   });
 });
 

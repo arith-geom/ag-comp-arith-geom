@@ -9,6 +9,14 @@
 
   let documents;
   let lastOpener;
+  const typeIcons = {
+    Page: 'fa-compass',
+    Member: 'fa-user',
+    Publication: 'fa-book-open',
+    Teaching: 'fa-chalkboard-teacher',
+    Research: 'fa-flask',
+    Links: 'fa-link',
+  };
   const normalize = (value) => String(value || '')
     .normalize('NFKD')
     .replace(/[\u0300-\u036f]/g, '')
@@ -32,20 +40,41 @@
   const resultLink = (entry) => {
     const item = document.createElement('li');
     const link = document.createElement('a');
+    const icon = document.createElement('span');
+    const content = document.createElement('span');
+    const headingRow = document.createElement('span');
     const heading = document.createElement('span');
     const type = document.createElement('span');
     const excerpt = document.createElement('span');
 
+    item.className = 'site-search-result';
     link.href = window.prefixBase ? window.prefixBase(entry.url) : entry.url;
+    icon.className = 'site-search-result-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    const iconGlyph = document.createElement('i');
+    iconGlyph.className = `fas ${typeIcons[entry.type] || 'fa-file'}`;
+    icon.append(iconGlyph);
+    content.className = 'site-search-result-content';
+    headingRow.className = 'site-search-result-heading';
     heading.className = 'site-search-result-title';
     heading.textContent = entry.title;
     type.className = 'site-search-result-type';
     type.textContent = entry.type;
     excerpt.className = 'site-search-result-excerpt';
-    excerpt.textContent = entry.text.length > 180 ? `${entry.text.slice(0, 177)}…` : entry.text;
-    link.append(heading, type, excerpt);
+    excerpt.textContent = entry.text.length > 150 ? `${entry.text.slice(0, 147)}…` : entry.text;
+    headingRow.append(heading, type);
+    content.append(headingRow);
+    if (entry.text) content.append(excerpt);
+    link.append(icon, content);
     item.append(link);
     return item;
+  };
+
+  const renderEmptyState = () => {
+    const item = document.createElement('li');
+    item.className = 'site-search-empty';
+    item.innerHTML = '<i class="fas fa-search" aria-hidden="true"></i><strong>No matching pages</strong><span>Try a person, topic, publication title, or course.</span>';
+    results.append(item);
   };
 
   const search = async () => {
@@ -63,6 +92,7 @@
         .filter((entry) => terms.every((term) => entry.searchable.includes(term)))
         .slice(0, 12);
       matches.forEach((entry) => results.append(resultLink(entry)));
+      if (!matches.length) renderEmptyState();
       status.textContent = matches.length
         ? `${matches.length} ${matches.length === 1 ? 'result' : 'results'}`
         : 'No results found.';
@@ -72,7 +102,16 @@
   };
 
   const openSearch = (opener) => {
-    lastOpener = opener;
+    const sidebar = opener.closest('.sidebar-nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    if (sidebar) {
+      sidebar.classList.remove('is-open');
+      sidebar.setAttribute('aria-hidden', 'true');
+      document.querySelector('.sidebar-overlay')?.classList.remove('is-active');
+      navToggle?.setAttribute('aria-expanded', 'false');
+      navToggle?.setAttribute('aria-label', 'Open navigation');
+    }
+    lastOpener = sidebar && navToggle ? navToggle : opener;
     if (typeof dialog.showModal === 'function') dialog.showModal();
     else dialog.setAttribute('open', '');
     input.focus();
@@ -90,6 +129,11 @@
   document.addEventListener('keydown', (event) => {
     const target = event.target;
     const isTyping = target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target?.isContentEditable;
+    if (event.key === 'Escape' && dialog.open) {
+      event.preventDefault();
+      dialog.close();
+      return;
+    }
     if ((event.key === '/' && !isTyping) || (event.key.toLocaleLowerCase() === 'k' && (event.ctrlKey || event.metaKey))) {
       event.preventDefault();
       openSearch(openers[0]);
