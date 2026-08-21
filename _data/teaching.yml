@@ -8,7 +8,7 @@ courses:
             course_type: Seminar
             pdfs:
               - label: seminar program
-                file: /assets/migrated/Homological_algebra___Seminar_2025.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/Homological_algebra___Seminar_2025.pdf
             body: >-
               ## Seminar on Homological Algebra (Summer Semester 2025)
 
@@ -25,7 +25,7 @@ courses:
 
 
               Please refer to the [seminar
-              program](/assets/migrated/Homological_algebra___Seminar_2025.pdf)
+              program](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/Homological_algebra___Seminar_2025.pdf)
               for further details.
 
 
@@ -45,13 +45,13 @@ courses:
             pdfs:
               - label: Congruence Modules and the Wiles–Lenstra–Diamond Numerical Criterion in
                   Higher Codimension
-                file: /assets/migrated/GAUS-AG-WiSe2024-25-IKM-2024-12-11.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/GAUS-AG-WiSe2024-25-IKM-2024-12-11.pdf
           - title: Seminar on Commutative Algebra
             instructor: Prof. Dr. Böckle, Dr. Conti
             course_type: Seminar
             pdfs:
               - label: Commutative Algebra
-                file: /assets/migrated/comm_alg_announcement.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/comm_alg_announcement.pdf
           - title: Vorlesung Modularity and Galois Representations
             instructor: Prof. Dr. Böckle, Shavali
             course_type: Lecture
@@ -142,15 +142,15 @@ courses:
             pdfs:
               - label: Shtukas for reductive groups and global Langlands correspondence after
                   Vincent Lafforgue
-                file: /assets/migrated/Seminar.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/Seminar.pdf
           - title: Seminar on Representation theory of finite groups
             instructor: Prof. Dr. Böckle, Chilla, Dr. Gezmiş
             course_type: Seminar
             pdfs:
               - label: the seminar program
-                file: /assets/migrated/SeminarProgramSummer2024.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/SeminarProgramSummer2024.pdf
               - label: Here
-                file: /assets/migrated/VorbesprechungNotes_240122_165909.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/VorbesprechungNotes_240122_165909.pdf
             body: >-
               ## Seminar on Representation theory of finite groups (Summer
               semester 2024)
@@ -168,7 +168,7 @@ courses:
 
 
               Please refer to the announcement and [the seminar
-              program](/assets/migrated/SeminarProgramSummer2024.pdf) for
+              program](/assets/img/fileadmin/groups/arithgeo/SeminarProgramSummer2024.pdf) for
               further details.
 
 
@@ -177,7 +177,7 @@ courses:
               here (or feel free to make your own format).
 
 
-              [Here](/assets/migrated/VorbesprechungNotes_240122_165909.pdf) are
+              [Here](/assets/img/fileadmin/groups/arithgeo/VorbesprechungNotes_240122_165909.pdf) are
               the notes from Vorbesprechung.
           - title: Vorlesung Algebra 2
             instructor: Prof. Dr. Böckle, Shavali
@@ -192,17 +192,17 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Rigid meromorphic cocycles
-                file: /assets/migrated/RMCprogram_01.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/RMCprogram_01.pdf
           - title: Proseminar on Quadratic forms
             instructor: Prof. Dr. Böckle, C.V. Sriram
             course_type: Seminar
             pdfs:
               - label: announcement
-                file: /assets/migrated/annquad__2_.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/annquad__2_.pdf
               - label: here
-                file: /assets/migrated/quad_form.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/quad_form.pdf
               - label: Handout
-                file: /assets/migrated/document_2_.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/document_2_.pdf
             body: >-
               ## Proseminar on Quadratic forms(WS 23/24)
 
@@ -213,13 +213,13 @@ courses:
               required such as the field of p-adic numbers, geometry of numbers
               etc. will be introduced during the course.</p></div><div
               class="ce-textpic ce-center ce-above"><p>Here's the proseminar <a
-              href="/assets/migrated/annquad__2_.pdf">announcement</a>; and <a
-              href="/assets/migrated/quad_form.pdf">here</a> the
+              href="/assets/img/fileadmin/groups/arithgeo/annquad__2_.pdf">announcement</a>; and <a
+              href="/assets/img/fileadmin/groups/arithgeo/quad_form.pdf">here</a> the
               rubric.</p><p>Participants are also expected to prepare a handout
               for their talks. Regarding a sample format of an handout, please
               refer to a previous proseminar (or come up with your own
               format:-)).</p><p><a
-              href="/assets/migrated/document_2_.pdf">Handout</a> for the last
+              href="/assets/img/fileadmin/groups/arithgeo/document_2_.pdf">Handout</a> for the last
               talk.</p></div>
           - title: Vorlesung Algebra 1
             instructor: Prof. Dr. Böckle, Shavali
@@ -235,9 +235,9 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Announcement
-                file: /assets/migrated/Announcement.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/Announcement.pdf
               - label: here
-                file: /assets/migrated/p_adic_psem.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/p_adic_psem.pdf
             body: >-
               ## Proseminar on p-adic numbers
 
@@ -257,11 +257,11 @@ courses:
 
 
               The announcement of the proseminar:
-              [Announcement](/assets/migrated/Announcement.pdf).
+              [Announcement](/assets/img/fileadmin/groups/arithgeo/Announcement.pdf).
 
 
               A detailed description of the talks and also the practicalities
-              can be found [here](/assets/migrated/p_adic_psem.pdf)
+              can be found [here](/assets/img/fileadmin/groups/arithgeo/p_adic_psem.pdf)
 
 
               The proseminar also requires its participants to prepare handouts
@@ -292,9 +292,9 @@ courses:
               on the Bruhat-Tits tree for $GL\_2(F\_q(T))$
             pdfs:
               - label: Announcement
-                file: /assets/migrated/Announcement-1.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/Announcement-1.pdf
               - label: here
-                file: /assets/migrated/AffineAlgGrpSem.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/AffineAlgGrpSem.pdf
             body: >-
               ## Seminar on Affine Algebraic Groups(Winter Semester 2022/23)
 
@@ -322,10 +322,10 @@ courses:
               30, 2022</strong> from <strong>2 PM to 4 PM</strong>; <strong>SR2,
               INF 205</strong></p><p>Here you will find the announcement of the
               seminar: <a
-              href="/assets/migrated/Announcement-1.pdf">Announcement</a>.</p><p>A
+              href="/assets/img/fileadmin/groups/arithgeo/Announcement-1.pdf">Announcement</a>.</p><p>A
               detailed description of the talks and also the practicalities of
               the seminar can be found <a
-              href="/assets/migrated/AffineAlgGrpSem.pdf">here</a>.</p><p>A
+              href="/assets/img/fileadmin/groups/arithgeo/AffineAlgGrpSem.pdf">here</a>.</p><p>A
               template(LaTeX file) for creating handout is available here (There
               are two ways of compiling this file :-(i) using the online editor
               <a href="https://www.overleaf.com/"
@@ -347,33 +347,33 @@ courses:
             course_type: Seminar
             pdfs:
               - label: click here
-                file: /assets/migrated/announcement-crypto.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/announcement-crypto.pdf
               - label: click here
-                file: /assets/migrated/program-crypto.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/program-crypto.pdf
               - label: click here
-                file: /assets/migrated/seminar_prime_numbers.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/seminar_prime_numbers.pdf
               - label: click here
-                file: /assets/migrated/handout_stock.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_stock.pdf
               - label: click here
-                file: /assets/migrated/handout_hoecht.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_hoecht.pdf
               - label: click here
-                file: /assets/migrated/handout_nazari.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_nazari.pdf
               - label: click here
-                file: /assets/migrated/handout_behr.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_behr.pdf
               - label: click here
-                file: /assets/migrated/handout_mandour.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_mandour.pdf
               - label: click here
-                file: /assets/migrated/handout_zahlen.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_zahlen.pdf
               - label: click here
-                file: /assets/migrated/handout_sriram.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_sriram.pdf
               - label: click here
-                file: /assets/migrated/handout_eichberg.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_eichberg.pdf
               - label: click here
-                file: /assets/migrated/handout_yilmaz.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_yilmaz.pdf
               - label: click here
-                file: /assets/migrated/handout_scheerer.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_scheerer.pdf
               - label: click here
-                file: /assets/migrated/handout_banwait.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_banwait.pdf
             body: >-
               ## Prime numbers and cryptography (Proseminar/Seminar SS 2022)
 
@@ -393,14 +393,14 @@ courses:
 
 
               **Announcement**: [click
-              here](/assets/migrated/announcement-crypto.pdf)
+              here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/announcement-crypto.pdf)
 
 
-              **Program**: [click here](/assets/migrated/program-crypto.pdf)
+              **Program**: [click here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/program-crypto.pdf)
 
 
               **Vorbesprechung slides**: [click
-              here](/assets/migrated/seminar_prime_numbers.pdf)
+              here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/seminar_prime_numbers.pdf)
 
 
               **Thema**:
@@ -433,44 +433,44 @@ courses:
 
               | Prime numbers and Complexity analysis | Etienne Stock |
               11.4.2022 | 09:15 | [click
-              here](/assets/migrated/handout_stock.pdf) |
+              here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_stock.pdf) |
 
               | Fast arithmetic I : Fourier Transform Algorithms | Jonas Höcht |
               11.4.2022 | 11:00 | [click
-              here](/assets/migrated/handout_hoecht.pdf) |
+              here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_hoecht.pdf) |
 
               | Pseudoprimes and the Miller-Rabin test | Philipp Nazari |
               11.4.2022 | 14:15 | [click
-              here](/assets/migrated/handout_nazari.pdf) |
+              here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_nazari.pdf) |
 
               | The Theorem of Agrawal-Kayal-Saxena I | Carola Behr | 12.4.2022
-              | 09:15 | [click here](/assets/migrated/handout_behr.pdf) |
+              | 09:15 | [click here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_behr.pdf) |
 
               | The Theorem of Agrawal-Kayal-Saxena II | Saif Mandour |
               12.4.2022 | 11:00 | [click
-              here](/assets/migrated/handout_mandour.pdf) |
+              here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_mandour.pdf) |
 
               | Brief overview of Algebraic number theory | Vincent Zahlen |
               12.4.2022 | 14:15 | [click
-              here](/assets/migrated/handout_zahlen.pdf) |
+              here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_zahlen.pdf) |
 
               | Factorisation III - The number field sieve | C. V. Sriram |
               12.4.2022 | 16:00 | [click
-              here](/assets/migrated/handout_sriram.pdf) |
+              here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_sriram.pdf) |
 
               | Brief overview of elliptic curves | Marcel Eichberg | 13.4.2022
-              | 09:15 | [click here](/assets/migrated/handout_eichberg.pdf) |
+              | 09:15 | [click here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_eichberg.pdf) |
 
               | Public-key cryptography | Akin Yilmaz | 13.4.2022 | 11:00 |
-              [click here](/assets/migrated/handout_yilmaz.pdf) |
+              [click here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_yilmaz.pdf) |
 
               | Lenstra's elliptic curve method and elliptic curve primality
               proving | Mona Scheerer | 14.4.2022 | 09:15 | [click
-              here](/assets/migrated/handout_scheerer.pdf) |
+              here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_scheerer.pdf) |
 
               | Post-quantum cryptography, and the Supersingular Isogeny
               Diffie-Hellman protocol | B. S. Banwait | 14.4.2022 | 11:00 |
-              [click here](/assets/migrated/handout_banwait.pdf) |
+              [click here](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/handout_banwait.pdf) |
   - year: 2021
     semesters:
       - semester: Winter
@@ -484,13 +484,13 @@ courses:
             course_type: Seminar
             pdfs:
               - label: PDF
-                file: /assets/migrated/H.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Derivierte_Kategorien/H.pdf
               - label: Programm
-                file: /assets/migrated/program-Seminar-AV.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/program-Seminar-AV.pdf
               - label: Handout 1
-                file: /assets/migrated/AV_handout_1.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/AV_handout_1.pdf
               - label: Handout 2
-                file: /assets/migrated/av_handout02.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/av_handout02.pdf
             body: >-
               ## Seminar on Abelian Varieties (WiSe 2021/22)
 
@@ -519,7 +519,7 @@ courses:
               Bitte sehen Sie die Programm des Kurses.
 
 
-              *   [Programm](/assets/migrated/program-Seminar-AV.pdf "Opens
+              *   [Programm](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/program-Seminar-AV.pdf "Opens
               internal link in current window")
 
 
@@ -533,10 +533,10 @@ courses:
               | Title | Speaker | Date | Handout |
 
               | Definitions and Basic Concepts | C V Sriram | 16.11.2021 |
-              [Handout 1](/assets/migrated/AV_handout_1.pdf) |
+              [Handout 1](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/AV_handout_1.pdf) |
 
               | Line bundles and divisors on abelian varieties | C V Sriram |
-              23.11.2021 | [Handout 2](/assets/migrated/av_handout02.pdf) |
+              23.11.2021 | [Handout 2](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/av_handout02.pdf) |
 
               | Torsion and isogenies | B S Banwait | 30.11.2021 |     |
 
@@ -552,7 +552,7 @@ courses:
             course_type: Lecture
             pdfs:
               - label: Computational Number Theory
-                file: /assets/migrated/program_comp_nt.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Vorlesungen/program_comp_nt.pdf
           - title: Vorlesung Étale Kohomologie
             instructor: Prof. Dr. Böckle, Chilla, Quast, Sriram
             course_type: Lecture
@@ -567,11 +567,11 @@ courses:
             course_type: Seminar
             pdfs:
               - label: PDF
-                file: /assets/migrated/H.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Derivierte_Kategorien/H.pdf
               - label: Programm
-                file: /assets/migrated/Programm_Derivierte_Kategorien.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Derivierte_Kategorien/Programm_Derivierte_Kategorien.pdf
               - label: Tipps für gute Seminarvorträge
-                file: /assets/migrated/Tipps.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Elliptische_Kurven/Tipps.pdf
             body: >-
               ## Seminar Derivierte Kategorien und Algebraische Geometrie (SoSe
               2021)
@@ -628,10 +628,10 @@ courses:
               Kategorie die Varietät schon festlegt.
 
 
-              *   [Programm](/assets/migrated/Programm_Derivierte_Kategorien.pdf
+              *   [Programm](/assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Derivierte_Kategorien/Programm_Derivierte_Kategorien.pdf
               "Opens internal link in current window")
 
-              *   [Tipps für gute Seminarvorträge](/assets/migrated/Tipps.pdf
+              *   [Tipps für gute Seminarvorträge](/assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Elliptische_Kurven/Tipps.pdf
               "Opens internal link in current window")
 
 
@@ -667,9 +667,9 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Programm
-                file: /assets/migrated/Programm_Elliptische_Kurven.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Elliptische_Kurven/Programm_Elliptische_Kurven.pdf
               - label: Tipps für gute Seminarvorträge
-                file: /assets/migrated/Tipps.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Elliptische_Kurven/Tipps.pdf
             body: >-
               ## Seminar Elliptische Kurven (WS 2020/21)
 
@@ -754,10 +754,10 @@ courses:
               Kryptographie zur Erstellung von Kryptosystemen benutzt.
 
 
-              *   [Programm](/assets/migrated/Programm_Elliptische_Kurven.pdf
+              *   [Programm](/assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Elliptische_Kurven/Programm_Elliptische_Kurven.pdf
               "Opens internal link in current window")
 
-              *   [Tipps für gute Seminarvorträge](/assets/migrated/Tipps.pdf
+              *   [Tipps für gute Seminarvorträge](/assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Elliptische_Kurven/Tipps.pdf
               "Opens internal link in current window")
 
 
@@ -815,7 +815,7 @@ courses:
             course_type: Lecture
             pdfs:
               - label: Adic spaces
-                file: /assets/migrated/WedhornAdicSpaces.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Skripte/WedhornAdicSpaces.pdf
             body: >-
               ## Vorlesung Adische Räume II (Sommersemester 2020)
 
@@ -890,7 +890,7 @@ courses:
               "Opens internal link in current window")_, Vorlesungsskript, 2019.
 
               *   \[Wed\] Torsten Wedhorn, _[Adic
-              spaces](/assets/migrated/WedhornAdicSpaces.pdf "Opens internal
+              spaces](/assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Skripte/WedhornAdicSpaces.pdf "Opens internal
               link in current window")_, Vorlesungsskript, 2012.
 
 
@@ -943,9 +943,9 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Aushang
-                file: /assets/migrated/Seminar_Affine_Algebraische_Gruppen_Aushang.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/Seminar_Affine_Algebraische_Gruppen_Aushang.pdf
               - label: Programm
-                file: /assets/migrated/Seminar_Affine_Algebraische_Gruppen__Programm.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/Seminar_Affine_Algebraische_Gruppen__Programm.pdf
             body: >-
               ## Seminar "Affine algebraische Gruppen" (WS 2019/20)
 
@@ -969,10 +969,10 @@ courses:
               Vorlesungswoche).
 
 
-              [**Aushang**](/assets/migrated/Seminar_Affine_Algebraische_Gruppen_Aushang.pdf)
+              [**Aushang**](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/Seminar_Affine_Algebraische_Gruppen_Aushang.pdf)
 
 
-              [**Programm**](/assets/migrated/Seminar_Affine_Algebraische_Gruppen__Programm.pdf)
+              [**Programm**](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/Seminar_Affine_Algebraische_Gruppen__Programm.pdf)
 
 
               **Vorlage fürs Handout**
@@ -1046,13 +1046,13 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Program (PDF)
-                file: /assets/migrated/Programm_la-courbe_SoSe19.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/Programm_la-courbe_SoSe19.pdf
           - title: Kompatible Systeme von Galoisdarstellungen
             instructor: Prof. Dr. Böckle, Dr. Conti
             course_type: Lecture
             pdfs:
               - label: Vorlesungsankündigung
-                file: /assets/migrated/Vorlesungsankuendigung-MumfordTate.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Vorlesungsankuendigung-MumfordTate.pdf
             body: >-
               ## Vorlesung "Kompatible Systeme von Galoisdarstellungen" (SS
               2018)
@@ -1065,7 +1065,7 @@ courses:
 
 
               Hier ist die
-              [**Vorlesungsankündigung**](/assets/migrated/Vorlesungsankuendigung-MumfordTate.pdf
+              [**Vorlesungsankündigung**](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/Vorlesungsankuendigung-MumfordTate.pdf
               "Opens internal link in current window").
 
 
@@ -1114,9 +1114,9 @@ courses:
             course_type: Proseminar
             pdfs:
               - label: Ankündigung
-                file: /assets/migrated/Proseminar_Bilinearformen_und_Klassische_Gruppen_Aushang.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/Proseminar_Bilinearformen_und_Klassische_Gruppen_Aushang.pdf
               - label: Programm
-                file: /assets/migrated/Proseminar_Bilinearformen_und_klassische_Gruppen__Programm.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/Proseminar_Bilinearformen_und_klassische_Gruppen__Programm.pdf
             body: >-
               ## Proseminar "Bilinearformen und Klassische Gruppen" (SS 2019)
 
@@ -1130,11 +1130,11 @@ courses:
               internal link in current window")
 
 
-              **[Ankündigung](/assets/migrated/Proseminar_Bilinearformen_und_Klassische_Gruppen_Aushang.pdf
+              **[Ankündigung](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/Proseminar_Bilinearformen_und_Klassische_Gruppen_Aushang.pdf
               "Opens internal link in current window")**
 
 
-              [**Programm**](/assets/migrated/Proseminar_Bilinearformen_und_klassische_Gruppen__Programm.pdf)
+              [**Programm**](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/Proseminar_Bilinearformen_und_klassische_Gruppen__Programm.pdf)
 
 
               **Vorlage fürs Handout:** Latex-Vorlage
@@ -1217,13 +1217,13 @@ courses:
             description: dasdas
             pdfs:
               - label: hier
-                file: /assets/migrated/Ankuendigung_p-divisible_groups.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Ankuendigung_p-divisible_groups.pdf
               - label: Übungen April
-                file: /assets/migrated/Blatt1.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Blatt1.pdf
               - label: Übungen Mai
-                file: /assets/migrated/Blatt2.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Blatt2.pdf
               - label: Übungen Juni
-                file: /assets/migrated/Blatt3.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Blatt3.pdf
             body: >-
               ## Vorlesung: p-divisible Gruppen
 
@@ -1247,20 +1247,20 @@ courses:
 
 
               Die Ankündigung der Vorlesung findet sich
-              [hier](/assets/migrated/Ankuendigung_p-divisible_groups.pdf
+              [hier](/assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Ankuendigung_p-divisible_groups.pdf
               "Initiates file download").
 
 
               #### Übungen
 
 
-              *   [Übungen April](/assets/migrated/Blatt1.pdf "Opens internal
+              *   [Übungen April](/assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Blatt1.pdf "Opens internal
               link in current window")
 
-              *   [Übungen Mai](/assets/migrated/Blatt2.pdf "Opens internal link
+              *   [Übungen Mai](/assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Blatt2.pdf "Opens internal link
               in current window")
 
-              *   [Übungen Juni](/assets/migrated/Blatt3.pdf "Opens internal
+              *   [Übungen Juni](/assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Blatt3.pdf "Opens internal
               link in current window")
 
 
@@ -1299,29 +1299,29 @@ courses:
             course_type: Lecture
             pdfs:
               - label: Übungsblatt 1
-                file: /assets/migrated/ft2_blatt01.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt01.pdf
               - label: Übungsblatt 2
-                file: /assets/migrated/ft2_blatt02.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt02.pdf
               - label: Übungsblatt 3
-                file: /assets/migrated/ft2_blatt03.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt03.pdf
               - label: Übungsblatt 4
-                file: /assets/migrated/ft2_blatt04.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt04.pdf
               - label: Übungsblatt 5
-                file: /assets/migrated/ft2_blatt05.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt05.pdf
               - label: Übungsblatt 6
-                file: /assets/migrated/ft2_blatt06.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt06.pdf
               - label: Übungsblatt 7
-                file: /assets/migrated/ft2_blatt07.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt07.pdf
               - label: Übungsblatt 8
-                file: /assets/migrated/ft2_blatt08.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt08.pdf
               - label: Übungsblatt 9 (Korrektur 7.1.19)
-                file: /assets/migrated/ft2_blatt09__Korrektur_.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt09__Korrektur_.pdf
               - label: Übungsblatt 10
-                file: /assets/migrated/ft2_blatt10.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt10.pdf
               - label: Übungsblatt 11
-                file: /assets/migrated/ft2_blatt11.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt11.pdf
               - label: Übungsblatt 12
-                file: /assets/migrated/ft2_blatt12.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt12.pdf
             body: >-
               ## Vorlesung "Funktionentheorie 2" (WS 2018/19)
 
@@ -1397,52 +1397,52 @@ courses:
               Übungsblätter:
 
 
-              [Übungsblatt 1](/assets/migrated/ft2_blatt01.pdf "Opens internal
+              [Übungsblatt 1](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt01.pdf "Opens internal
               link in current window")
 
 
-              [Übungsblatt 2](/assets/migrated/ft2_blatt02.pdf "Opens internal
+              [Übungsblatt 2](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt02.pdf "Opens internal
               link in current window")
 
 
-              [Übungsblatt 3](/assets/migrated/ft2_blatt03.pdf "Opens internal
+              [Übungsblatt 3](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt03.pdf "Opens internal
               link in current window")
 
 
-              [Übungsblatt 4](/assets/migrated/ft2_blatt04.pdf "Opens internal
+              [Übungsblatt 4](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt04.pdf "Opens internal
               link in current window")
 
 
-              [Übungsblatt 5](/assets/migrated/ft2_blatt05.pdf "Opens internal
+              [Übungsblatt 5](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt05.pdf "Opens internal
               link in current window")
 
 
-              [Übungsblatt 6](/assets/migrated/ft2_blatt06.pdf "Opens internal
+              [Übungsblatt 6](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt06.pdf "Opens internal
               link in current window")
 
 
-              [Übungsblatt 7](/assets/migrated/ft2_blatt07.pdf "Opens internal
+              [Übungsblatt 7](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt07.pdf "Opens internal
               link in current window")
 
 
-              [Übungsblatt 8](/assets/migrated/ft2_blatt08.pdf "Opens internal
+              [Übungsblatt 8](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt08.pdf "Opens internal
               link in current window")
 
 
               [Übungsblatt 9 (Korrektur
-              7.1.19)](/assets/migrated/ft2_blatt09__Korrektur_.pdf "Opens
+              7.1.19)](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt09__Korrektur_.pdf "Opens
               internal link in current window")
 
 
-              [Übungsblatt 10](/assets/migrated/ft2_blatt10.pdf "Initiates file
+              [Übungsblatt 10](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt10.pdf "Initiates file
               download")
 
 
-              [Übungsblatt 11](/assets/migrated/ft2_blatt11.pdf "Opens internal
+              [Übungsblatt 11](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt11.pdf "Opens internal
               link in current window")
 
 
-              [Übungsblatt 12](/assets/migrated/ft2_blatt12.pdf "Opens internal
+              [Übungsblatt 12](/assets/img/fileadmin/groups/arithgeo/templates/data/Julian_Quast/ft2_blatt12.pdf "Opens internal
               link in current window")
           - title: Galoiskohomologie und Galoisdarstellungen
             instructor: Prof. Dr. Böckle
@@ -1507,15 +1507,15 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Program (PDF)
-                file: /assets/migrated/WS1819_lokale_G-shtukas.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/WS1819_lokale_G-shtukas.pdf
           - title: "Seminar: Algorithmische Algebra"
             instructor: Dr. Maurischat
             course_type: Seminar
             pdfs:
               - label: hier
-                file: /assets/migrated/ws18-sem-algo-alg-ankuendigung.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws18-sem-algo-alg-ankuendigung.pdf
               - label: Programm
-                file: /assets/migrated/ws18-sem-algo-alg-programm.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws18-sem-algo-alg-programm.pdf
             body: >-
               **Seminar** **"Algorithmische Algebra"** im Wintersemester 2018/19
 
@@ -1524,10 +1524,10 @@ courses:
 
 
               Eine Ankündigung findet sich
-              [**hier**](/assets/migrated/ws18-sem-algo-alg-ankuendigung.pdf
+              [**hier**](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws18-sem-algo-alg-ankuendigung.pdf
               "Opens external link in new window"). Die detaillierte
               Vortragsliste gibt es hier:
-              [**Programm**](/assets/migrated/ws18-sem-algo-alg-programm.pdf
+              [**Programm**](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws18-sem-algo-alg-programm.pdf
               "Initiates file download").
 
 
@@ -1556,7 +1556,7 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Program (PDF)
-                file: /assets/migrated/Programm_GL2_WS1819.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Judith_Ludwig/Programm_GL2_WS1819.pdf
       - semester: Summer
         courses:
           - title: Algebraische Zahlentheorie 2
@@ -1564,27 +1564,27 @@ courses:
             course_type: Lecture
             pdfs:
               - label: Übungsblatt 1
-                file: /assets/migrated/AZT2-Blatt1.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt1.pdf
               - label: Übungsblatt 2
-                file: /assets/migrated/AZT2-Blatt2.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt2.pdf
               - label: Übungsblatt 3
-                file: /assets/migrated/AZT2-Blatt3.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt3.pdf
               - label: Übungsblatt 4
-                file: /assets/migrated/AZT2-Blatt4.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt4.pdf
               - label: Übungsblatt 5
-                file: /assets/migrated/AZT2-Blatt5.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt5.pdf
               - label: Übungsblatt 6
-                file: /assets/migrated/AZT2-Blatt6.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt6.pdf
               - label: Übungsblatt 7
-                file: /assets/migrated/AZT2-Blatt7.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt7.pdf
               - label: Übungsblatt 8
-                file: /assets/migrated/AZT2-Blatt8.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt8.pdf
               - label: Übungsblatt 9
-                file: /assets/migrated/AZT2-Blatt9.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt9.pdf
               - label: Übungsblatt 10-11
-                file: /assets/migrated/AZT2-Blatt10.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt10.pdf
               - label: Übungsblatt 12
-                file: /assets/migrated/AZT2-Blatt12.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt12.pdf
             body: >-
               ## Vorlesung "Algebraische Zahlentheorie 2" (SS 2018)
 
@@ -1641,53 +1641,53 @@ courses:
               **Übungsblätter:**
 
 
-              [Übungsblatt 1](/assets/migrated/AZT2-Blatt1.pdf "Opens internal
+              [Übungsblatt 1](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt1.pdf "Opens internal
               link in current window") (Besprechung: Di 24.04.2018)
 
 
-              [Übungsblatt 2](/assets/migrated/AZT2-Blatt2.pdf "Opens internal
+              [Übungsblatt 2](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt2.pdf "Opens internal
               link in current window") (Corrected version: the original
               statement of exercise 5 contained a mistake, as one should exclude
               the places above \\ell; Besprechung: Di 08.05.2018)
 
 
-              [Übungsblatt 3](/assets/migrated/AZT2-Blatt3.pdf "Opens internal
+              [Übungsblatt 3](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt3.pdf "Opens internal
               link in current window") (Besprechung: Di 15.05.2018)
 
 
-              [Übungsblatt 4](/assets/migrated/AZT2-Blatt4.pdf "Opens internal
+              [Übungsblatt 4](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt4.pdf "Opens internal
               link in current window") (The starred exercises are optional;
               Besprechung: Di 22.05.2018)
 
 
-              [Übungsblatt 5](/assets/migrated/AZT2-Blatt5.pdf "Opens internal
+              [Übungsblatt 5](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt5.pdf "Opens internal
               link in current window") (**Corrected version:** in the original
               introduction a condition was missing from the definition of
               extension of G by a G-module A; Besprechung: Di 29.05.2018)
 
 
-              [Übungsblatt 6](/assets/migrated/AZT2-Blatt6.pdf "Opens internal
+              [Übungsblatt 6](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt6.pdf "Opens internal
               link in current window") (Besprechung: Di 05.06.2018)
 
 
-              [Übungsblatt 7](/assets/migrated/AZT2-Blatt7.pdf "Opens internal
+              [Übungsblatt 7](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt7.pdf "Opens internal
               link in current window") (Besprechung: Di 12.06.2018)
 
 
-              [Übungsblatt 8](/assets/migrated/AZT2-Blatt8.pdf "Opens internal
+              [Übungsblatt 8](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt8.pdf "Opens internal
               link in current window") (Besprechung: Di 19.06.2018)
 
 
-              [Übungsblatt 9](/assets/migrated/AZT2-Blatt9.pdf "Opens internal
+              [Übungsblatt 9](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt9.pdf "Opens internal
               link in current window") (Besprechung: Di 26.06.2018)
 
 
-              [Übungsblatt 10-11](/assets/migrated/AZT2-Blatt10.pdf "Opens
+              [Übungsblatt 10-11](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt10.pdf "Opens
               internal link in current window") (Besprechung: Fr 13.07 und Di
               17.07.2018)
 
 
-              [Übungsblatt 12](/assets/migrated/AZT2-Blatt12.pdf "Opens internal
+              [Übungsblatt 12](/assets/img/fileadmin/groups/arithgeo/templates/data/Gebhard_Boeckle/AZT2-Blatt12.pdf "Opens internal
               link in current window") (Nicht in der Pruefung; Besprechung: Di
               24.06.2018)
           - title: Galois representations and their deformations
@@ -1728,8 +1728,7 @@ courses:
 
               *   F. Goûvea, Lecture notes for the course \"Deformations of
               Galois Representations\",
-              [PDF](/assets/migrated/Gouvea-2001-Deformations_of_Galois_represe\
-              ntations.pdf \"Opens internal link in current window\")
+              [PDF](/assets/migrated/Gouvea-2001-Deformations_of_Galois_representations.pdf \"Opens internal link in current window\")
 
               *   A. M\x13ezard, Lecture notes for the course \"D\x13eformations
               de repr\x13esentations galoisiennes\", in French, PDF
@@ -1745,7 +1744,7 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Seminar program
-                file: /assets/migrated/oberseminar-ss2018.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/oberseminar-ss2018.pdf
             body: >-
               **Hauptseminar "Arithmetik von Zahl- und Funktionenkörpern" (SS
               2018)**
@@ -1758,16 +1757,16 @@ courses:
               place on April 19.
 
 
-              [Seminar program](/assets/migrated/oberseminar-ss2018.pdf "Opens
+              [Seminar program](/assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/oberseminar-ss2018.pdf "Opens
               internal link in current window")
           - title: "Seminar: Lokale Klassenkörpertheorie nach Lubin-Tate"
             instructor: Prof. Dr. Böckle, Fischer
             course_type: Seminar
             pdfs:
               - label: hier
-                file: /assets/migrated/ws17_sem_gp-coh_INFO.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws17_sem_gp-coh_INFO.pdf
               - label: Programm
-                file: /assets/migrated/SS18_LT_Programm.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/SS18_LT_Programm.pdf
             body: >-
               **Seminar** **"Lubin-Tate Theorie"** im Sommersemester 2018
 
@@ -1780,9 +1779,9 @@ courses:
 
 
               Eine Ankündigung findet sich
-              [**hier**](/assets/migrated/ws17_sem_gp-coh_INFO.pdf "Opens
+              [**hier**](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws17_sem_gp-coh_INFO.pdf "Opens
               external link in new window"). Die detaillierte Vortragsliste gibt
-              es hier: [**Programm**](/assets/migrated/SS18_LT_Programm.pdf).
+              es hier: [**Programm**](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/SS18_LT_Programm.pdf).
 
 
               **Zeit & Ort**: voraussichtlich Dienstag 14-16 Uhr; in
@@ -1896,7 +1895,7 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Seminar program
-                file: /assets/migrated/oberseminar.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/David_Guiraud/oberseminar.pdf
             body: >-
               **Hauptseminar "Arithmetik von Zahl- und Funktionenkörpern" (WS
               2017/18)**
@@ -1909,16 +1908,16 @@ courses:
               place on October 19.
 
 
-              [Seminar program](/assets/migrated/oberseminar.pdf "Opens internal
+              [Seminar program](/assets/img/fileadmin/groups/arithgeo/templates/data/David_Guiraud/oberseminar.pdf "Opens internal
               link in current window")
           - title: "Seminar: Gruppenkohomologie"
             instructor: Prof. Dr. Böckle, Fischer
             course_type: Seminar
             pdfs:
               - label: hier
-                file: /assets/migrated/ws17_sem_gp-coh_INFO.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws17_sem_gp-coh_INFO.pdf
               - label: Programm
-                file: /assets/migrated/programm_gp-coh.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/programm_gp-coh.pdf
             body: '<div class="ce-textpic ce-center ce-above"><p><b>Seminar</b><b>
               "Gruppenkohomologie"</b> im Wintersemester 2017</p><p>Prof. Dr.
               Gebhard Böckle, Konrad Fischer</p><p><b>Ziel</b>: Das Seminar wird
@@ -1926,10 +1925,10 @@ courses:
               Verlauf werden Anwendungen in der Zahlentheorie (etwa auf die
               Brauergruppe eines Körpers) thematisiert.</p><p>Eine Ankündigung
               findet sich <a class="download"
-              href="/assets/migrated/ws17_sem_gp-coh_INFO.pdf" title="Opens
+              href="/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws17_sem_gp-coh_INFO.pdf" title="Opens
               external link in new window"><b>hier</b></a>. Die detaillierte
               Vortragsliste gibt es hier: <b><a class="download"
-              href="/assets/migrated/programm_gp-coh.pdf" title="Opens internal
+              href="/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/programm_gp-coh.pdf" title="Opens internal
               link in current window">Programm</a></b>.</p><p><b>Zeit &amp;
               Ort</b>: Dienstag 14-16 Uhr im kleinen Hörsaal des COS (INF 230);
               Raumnummer 00.001/kHS (kleiner Hörsaal im
@@ -2121,9 +2120,9 @@ courses:
             course_type: Proseminar
             pdfs:
               - label: hier
-                file: /assets/migrated/ws16_prosem_ankuendigung.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws16_prosem_ankuendigung.pdf
               - label: hier.
-                file: /assets/migrated/ws16_sem_talks_details.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws16_sem_talks_details.pdf
             body: >-
               **Proseminar** **"Primzahlen und Faktorisierung für die
               Kryptographie"** im Wintersemester 2016
@@ -2141,11 +2140,11 @@ courses:
 
 
               Eine Ankündigung findet sich
-              [**hier**](/assets/migrated/ws16_prosem_ankuendigung.pdf).
+              [**hier**](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws16_prosem_ankuendigung.pdf).
 
 
               **Update**: Die detaillierte Vortragsliste findet sich
-              **[hier.](/assets/migrated/ws16_sem_talks_details.pdf "Initiates
+              **[hier.](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/ws16_sem_talks_details.pdf "Initiates
               file download")**
 
 
@@ -2183,7 +2182,7 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Program
-                file: /assets/migrated/Program_SS2016.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/Program_SS2016.pdf
             body: >-
               ## Working group seminar: p-adic Uniformization
 
@@ -2197,7 +2196,7 @@ courses:
 
 
               The program with details to each talk can be found here:
-              [Program](/assets/migrated/Program_SS2016.pdf "Opens external link
+              [Program](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/Program_SS2016.pdf "Opens external link
               in new window")
           - title: Lineare Algebra 2
             instructor: Prof. Dr. Böckle
@@ -2207,7 +2206,7 @@ courses:
             course_type: Proseminar
             pdfs:
               - label: hier
-                file: /assets/migrated/p-adic_analysis_prosem.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/p-adic_analysis_prosem.pdf
             body: >-
               ## Proseminar p-adische Analysis
 
@@ -2259,7 +2258,7 @@ courses:
 
 
               Das Seminarprogramm findet sich
-              [hier](/assets/migrated/p-adic_analysis_prosem.pdf "Initiates file
+              [hier](/assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/p-adic_analysis_prosem.pdf "Initiates file
               download").
 
 
@@ -2342,7 +2341,7 @@ courses:
             course_type: Seminar
             pdfs:
               - label: hier
-                file: /assets/migrated/Seminarprogram.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
             body: >-
               ## Seminar zur Darstellungstheorie endlicher Gruppen
 
@@ -2380,7 +2379,7 @@ courses:
 
 
               Das vorläufige Seminarprogramm befindet sich
-              [hier](/assets/migrated/Seminarprogram.pdf "Initiates file
+              [hier](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download").
 
 
@@ -2474,9 +2473,9 @@ courses:
             course_type: Seminar
             pdfs:
               - label: hier
-                file: /assets/migrated/Seminarprogram.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: hier
-                file: /assets/migrated/Vorbesprechung.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
             body: >-
               ## Seminar zur Klassenkörpertheorie über Funktionenkörpern und
               Drinfeld Moduln
@@ -2515,7 +2514,7 @@ courses:
 
 
               Das vorläufige Seminarprogramm befindet sich
-              [hier](/assets/migrated/Seminarprogram.pdf "Initiates file
+              [hier](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download").
 
 
@@ -2587,7 +2586,7 @@ courses:
 
 
               Die PDF-Version des Seminarprograms befindet sich
-              [hier](/assets/migrated/Vorbesprechung.pdf "Initiates file
+              [hier](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download").
 
 
@@ -2620,9 +2619,9 @@ courses:
             course_type: Seminar
             pdfs:
               - label: hier
-                file: /assets/migrated/Seminarp-adischeGeometrie.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Ann-Kristin_Juschka/LiteraturSS14/Seminarp-adischeGeometrie.pdf
               - label: hier
-                file: /assets/migrated/Ankuendigungp-adischeGeometrie.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Ann-Kristin_Juschka/LiteraturSS14/Ankuendigungp-adischeGeometrie.pdf
             body: >-
               ## Seminar zur p-adischen Geometrie
 
@@ -2664,7 +2663,7 @@ courses:
 
 
               Das vorläufige Seminarprogramm befindet sich
-              [hier](/assets/migrated/Seminarp-adischeGeometrie.pdf "Initiates
+              [hier](/assets/img/fileadmin/groups/arithgeo/templates/data/Ann-Kristin_Juschka/LiteraturSS14/Seminarp-adischeGeometrie.pdf "Initiates
               file download").
 
 
@@ -2776,7 +2775,7 @@ courses:
 
 
               Die PDF-Version der Ankündigung befindet
-              sich [hier](/assets/migrated/Ankuendigungp-adischeGeometrie.pdf
+              sich [hier](/assets/img/fileadmin/groups/arithgeo/templates/data/Ann-Kristin_Juschka/LiteraturSS14/Ankuendigungp-adischeGeometrie.pdf
               "Initiates file download") und dies ist der Eintrag im
               kommentierten Vorlesungsverzeichnis (KVV).
 
@@ -2801,7 +2800,7 @@ courses:
             course_type: Seminar
             pdfs:
               - label: Program
-                file: /assets/migrated/WS1314_ModLifting.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/WS1314_ModLifting.pdf
             body: >-
               ## Working group seminar: Modularity lifting theorems
 
@@ -2810,7 +2809,7 @@ courses:
               every wednesday, 9am in Room 248 of the IWR, starting<b> 16th of
               September</b>.</p><p><br>The program with details to each talk can
               be found here: <a class="download"
-              href="/assets/migrated/WS1314_ModLifting.pdf" title="Opens
+              href="/assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/WS1314_ModLifting.pdf" title="Opens
               external link in new window">Program</a></p><p>If you are
               interested in giving a talk please let me <a class="mail"
               href="mailto:konrad.fischer@iwr.uni-heidelberg.de" title="Opens
@@ -2825,9 +2824,9 @@ courses:
             course_type: Seminar
             pdfs:
               - label: hier
-                file: /assets/migrated/SeminarDeterminants_01.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Ann-Kristin_Juschka/Literatur/SeminarDeterminants_01.pdf
               - label: hier
-                file: /assets/migrated/AnkuendigungDeterminants.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Ann-Kristin_Juschka/Literatur/AnkuendigungDeterminants.pdf
             body: >-
               ## Seminar über Deformationen von (Pseudo-)Darstellungen
 
@@ -2861,7 +2860,7 @@ courses:
 
 
               Das Seminarprogramm befindet sich
-              [hier](/assets/migrated/SeminarDeterminants_01.pdf "Initiates file
+              [hier](/assets/img/fileadmin/groups/arithgeo/templates/data/Ann-Kristin_Juschka/Literatur/SeminarDeterminants_01.pdf "Initiates file
               download").
 
 
@@ -2926,7 +2925,7 @@ courses:
 
 
               Die PDF-Version der Ankündigung befindet sich
-              [hier](/assets/migrated/AnkuendigungDeterminants.pdf "Initiates
+              [hier](/assets/img/fileadmin/groups/arithgeo/templates/data/Ann-Kristin_Juschka/Literatur/AnkuendigungDeterminants.pdf "Initiates
               file download") oder (kürzer) im KVV: als PDF oder HTML.
 
 
@@ -3093,33 +3092,33 @@ courses:
             course_type: Exercise
             pdfs:
               - label: hier
-                file: /assets/migrated/AZ.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 12
-                file: /assets/migrated/Aufgaben-12.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Wiederholungszettel
-                file: /assets/migrated/Wiederholungszettel.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 11
-                file: /assets/migrated/AufgabenAZ-11.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 10
-                file: /assets/migrated/AufgabenAZ-10.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 9
-                file: /assets/migrated/AufgabenAZ-9.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben  8
-                file: /assets/migrated/AufgabenAZ-8.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 7
-                file: /assets/migrated/AufgabenAZ7.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 6
-                file: /assets/migrated/AufgabenAZ6.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 5
-                file: /assets/migrated/AufgabenAZ5.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 4
-                file: /assets/migrated/AufgabenAZ4.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 3
-                file: /assets/migrated/AufgabenAZ3.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 2
-                file: /assets/migrated/AufgabenAZ2.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               - label: Aufgaben 1
-                file: /assets/migrated/AufgabenAZ1.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
             body: >-
               ## Analytische Zahlentheorie I
 
@@ -3155,7 +3154,7 @@ courses:
               ## Skript für den Kurs
 
 
-              [hier](/assets/migrated/AZ.pdf "Initiates file download")
+              [hier](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file download")
 
 
               updated: 21.03.2013
@@ -3164,56 +3163,56 @@ courses:
               ## Aufgaben
 
 
-              [Aufgaben 12](/assets/migrated/Aufgaben-12.pdf "Initiates file
+              [Aufgaben 12](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
-              [Wiederholungszettel](/assets/migrated/Wiederholungszettel.pdf
+              [Wiederholungszettel](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf
               "Initiates file download")  zu eroertern in der Uebungsstunde am
               30.01.
 
 
-              [Aufgaben 11](/assets/migrated/AufgabenAZ-11.pdf "Initiates file
+              [Aufgaben 11](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
-               [Aufgaben 10](/assets/migrated/AufgabenAZ-10.pdf "Opens internal
+               [Aufgaben 10](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Opens internal
               link in current window")
 
 
-              [Aufgaben 9](/assets/migrated/AufgabenAZ-9.pdf "Initiates file
+              [Aufgaben 9](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
-              [Aufgaben  8](/assets/migrated/AufgabenAZ-8.pdf "Initiates file
+              [Aufgaben  8](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
-              [Aufgaben 7](/assets/migrated/AufgabenAZ7.pdf "Initiates file
+              [Aufgaben 7](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
-              [Aufgaben 6](/assets/migrated/AufgabenAZ6.pdf "Initiates file
+              [Aufgaben 6](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
-              [Aufgaben 5](/assets/migrated/AufgabenAZ5.pdf "Initiates file
+              [Aufgaben 5](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
-              [Aufgaben 4](/assets/migrated/AufgabenAZ4.pdf "Initiates file
+              [Aufgaben 4](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
-              [Aufgaben 3](/assets/migrated/AufgabenAZ3.pdf "Initiates file
+              [Aufgaben 3](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
-              [Aufgaben 2](/assets/migrated/AufgabenAZ2.pdf "Initiates file
+              [Aufgaben 2](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
-              [Aufgaben 1](/assets/migrated/AufgabenAZ1.pdf "Initiates file
+              [Aufgaben 1](/assets/img/fileadmin/groups/arithgeo/templates/data/Yujia_Qiu/AZ.pdf "Initiates file
               download")
 
 
@@ -3425,7 +3424,7 @@ courses:
             pdfs:
               - {}
               - label: The Eigencurve (mit U. Goertz und G. Wiese)
-                file: /assets/migrated/0910WS_Eigencurve.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/0910WS_Eigencurve.pdf
           - title: Mathematik Vorkurs
             instructor: Dr. Cerviño
             course_type: Lecture
@@ -3439,7 +3438,7 @@ courses:
               - {}
               - label: Study group on p-adic L-functions and the Mazur-Tate-Teitelbaum
                   conjecture
-                file: /assets/migrated/09SS_pAdicLF.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/09SS_pAdicLF.pdf
           - title: Mathematik für Biologen
             instructor: Prof. Dr. Böckle
             course_type: Lecture
@@ -3456,7 +3455,7 @@ courses:
             pdfs:
               - {}
               - label: p-adische Galoisdarstellungen
-                file: /assets/migrated/0809WS_PadicGalois.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/0809WS_PadicGalois.pdf
           - title: Mathematik Vorkurs
             instructor: Dr. Cerviño
             course_type: Lecture
@@ -3472,14 +3471,14 @@ courses:
             pdfs:
               - {}
               - label: Eine kanonische Kompaktifizierung des Modulraums Abelscher Varietäten
-                file: /assets/migrated/08SS_CanComp.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/08SS_CanComp.pdf
           - title: "Arbeitsgemeinschaft: Quaternionenalgebren"
             instructor: G. Böckle, J.-M. Cerviño, G. Wiese
             course_type: Seminar
             pdfs:
               - {}
               - label: Quaternionenalgebren
-                file: /assets/migrated/08SS_QuaternionAlgebras.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/08SS_QuaternionAlgebras.pdf
           - title: Explizite Klassenkörpertheorie
             instructor: Prof. Böckle
             course_type: Lecture
@@ -3489,7 +3488,7 @@ courses:
             pdfs:
               - {}
               - label: Quadratische Formen
-                file: /assets/migrated/QF_ProgrammC.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/QF_ProgrammC.pdf
   - year: 2007
     semesters:
       - semester: Winter
@@ -3500,7 +3499,7 @@ courses:
             pdfs:
               - {}
               - label: Kolyvagin's Euler system for elliptic curves
-                file: /assets/migrated/0708WS_Kolyv.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/0708WS_Kolyv.pdf
           - title: Mathematik Vorkurs
             instructor: Dr. Cerviño
             course_type: Lecture
@@ -3517,14 +3516,14 @@ courses:
             pdfs:
               - {}
               - label: Einführung in die Theorie der Automorphen Formen
-                file: /assets/migrated/06SS_AutFormen.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Hauptseminare/06SS_AutFormen.pdf
           - title: Seminar "Elliptische Kurven"
             instructor: Prof. Dr. Böckle, Dr. Cerviño
             course_type: Seminar
             pdfs:
               - {}
               - label: Elliptische Kurven
-                file: /assets/migrated/EllKurvenSemRev2.pdf
+                file: /assets/img/fileadmin/groups/arithgeo/templates/data/Seminare/EllKurvenSemRev2.pdf
           - title: Übungen zu "Lineare Algebra II"
             instructor: Dr. Cerviño
             course_type: Exercise

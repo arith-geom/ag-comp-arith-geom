@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
   audit:
@@ -24,9 +25,45 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
       - name: Audit Ruby dependencies
         run: bundle exec bundler-audit check --update
       - name: Audit JavaScript dependencies
         run: npm audit --audit-level=high
+      - name: Open issue on failure
+        if: failure()
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const title = "Weekly dependency audit failed";
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              per_page: 100,
+            });
+            const existing = issues.find((issue) => issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body: `Another scheduled audit failed: ${runUrl}`,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body: [
+                  "The scheduled dependency audit did not pass.",
+                  "",
+                  `Failed run: ${runUrl}`,
+                  "",
+                  "Run `npm audit` and `bundle exec bundler-audit check --update` locally,",
+                  "upgrade the affected packages, and close this issue once the workflow is green again.",
+                ].join("\n"),
+              });
+            }
