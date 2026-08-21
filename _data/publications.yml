@@ -339,7 +339,7 @@ publications:
     type: Article
     pdfs:
       - label: PDF
-        file: /assets/migrated/Thesis_Cakir.pdf
+        file: /assets/img/fileadmin/groups/arithgeo/templates/data/Thesis_Cakir.pdf
   - title: $\hat G$-local systems on smooth projective curves are potentially
       automorphic
     year: "2019"
