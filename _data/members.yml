@@ -45,7 +45,6 @@ sections:
     layout: medium
     members:
       - name: Alireza Shavali
-        role: Postdoc
         group: Members
         photo: /assets/migrated/csm_Shavali_e11bd855eb.jpg
         email: alireza.shavali@iwr.uni-heidelberg.de
@@ -55,18 +54,16 @@ sections:
           representations, p-adic families of automorphic forms, irreducibility
           of automorphic Galois representations, computing monodromy, geometry
           of eigenvarieties
-        body: Alireza Shavali is a postdoctoral researcher in the Arithmetic Geometry
-          group at Heidelberg University, working with Prof. Dr. Judith Ludwig.
-          He is part of the CRC-326 GAUS (Geometry and arithmetic of uniformized
-          structures). He completed his PhD in Mathematics at Heidelberg
-          University (2021-2025) under the supervision of Prof. Dr. Gebhard
-          Böckle, and holds an MSc in Mathematics from Sharif University of
-          Technology, Iran (2018-2021). His research focuses on the arithmetic
-          aspects of the Langlands programme, p-adic Galois representations,
-          automorphic forms, and the geometry of eigenvarieties. His recent work
-          includes studies on the image of automorphic Galois representations
-          and the endomorphism algebra of abelian varieties associated with
-          Hilbert modular forms.
+        body: Alireza Shavali is a researcher in the Arithmetic Geometry group at
+          Heidelberg University, working with Prof. Dr. Gebhard Böckle, and
+          Prof. Dr. Judith Ludwig. He is part of the CRC-326 GAUS (Geometry and
+          arithmetic of uniformized structures). He holds an MSc in Mathematics
+          from Sharif University of Technology, Iran (2018-2021). His research
+          focuses on the arithmetic aspects of the Langlands programme, p-adic
+          Galois representations, automorphic forms, and the geometry of
+          eigenvarieties. His recent work includes studies on the image of
+          automorphic Galois representations and the endomorphism algebra of
+          abelian varieties associated with Hilbert modular forms.
         links:
           - url: https://sites.google.com/view/alireza-shavali/home
             icon: fas fa-globe
